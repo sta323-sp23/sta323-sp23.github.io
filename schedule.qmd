@@ -1,0 +1,88 @@
+---
+title: "schedule"
+---
+
+```{r load-libraries, echo = F, message = F, eval = F}
+library(tidyverse)
+library(knitr)
+library(emo)
+```
+
+```{r smart-date-setup, echo = F, message = F, eval = F}
+# set these:
+firstDay = as.Date("2023-01-12")
+firstDayID = "Thu"
+lastDay = as.Date("2023-04-26")
+lectureDays = c("Wed", "Fri")
+labDays = c("Tue")
+holidays = as.Date(c("2023-01-16", "2023-03-14", "2023-03-15", "2023-03-17"))
+
+### render table
+allDates = seq(from = firstDay, to = lastDay, by = 'day')
+schedule = data.frame(allDates,
+                        dayOfWeek = weekdays(allDates, abbreviate=T)) %>%
+  filter(dayOfWeek %in% c(lectureDays, labDays))
+schedule = schedule %>%
+  mutate(lab = ifelse(dayOfWeek %in% labDays, TRUE, FALSE)) %>%
+  mutate(Topic = ifelse(allDates %in% holidays, "NO CLASS", "")) %>%
+  mutate(Date = format(allDates, format = "%b %d")) %>%
+  mutate(Date = paste(dayOfWeek, Date)) %>%
+  mutate(Week = rep("", nrow(schedule))) %>%
+  mutate(Prepare = rep("", nrow(schedule))) %>%
+  mutate(AE = rep("", nrow(schedule))) %>%
+  mutate(Assignment = rep("", nrow(schedule))) %>%
+  mutate(Exam = rep("", nrow(schedule))) %>%
+  mutate(Project = rep("", nrow(schedule))) %>%
+  select(Week, Date, Topic, Prepare, AE, Assignment, Exam, Project)
+# to be pasted into console then pasted into markdown:
+schedule %>%
+  kable(format = "markdown")
+```
+
+| Week | Date       | Topic                                     | Notes | Lab | Exam | Project |
+|:---------|:---------|:---------------|:---------|:---------|:---------|:---------|
+| 0    | Fri Jan 13 | welcome                                   |       |     |      |         |
+| 1    | Tue Jan 17 | git                                       |       |     |      |         |
+|      | Wed Jan 18 | types, control flow and filesystems       |       |     |      |         |
+|      | Fri Jan 20 | NAs, functions and loops                  |       |     |      |         |
+| 2    | Tue Jan 24 |                                           |       |     |      |         |
+|      | Wed Jan 25 | lists, attributes, and S3                 |       |     |      |         |
+|      | Fri Jan 27 | data frames, matrices and subsetting      |       |     |      |         |
+| 3    | Tue Jan 31 |                                           |       |     |      |         |
+|      | Wed Feb 01 | tidy data and dplyr                       |       |     |      |         |
+|      | Fri Feb 03 | functional programming and purrr          |       |     |      |         |
+| 4    | Tue Feb 07 |                                           |       |     |      |         |
+|      | Wed Feb 08 | ggplot                                    |       |     |      |         |
+|      | Fri Feb 10 | text processing and regular expressions   |       |     |      |         |
+| 5    | Tue Feb 14 |                                           |       |     |      |         |
+|      | Wed Feb 15 | complexity, profiling and parallelization |       |     |      |         |
+|      | Fri Feb 17 | statistical modeling overview             |       |     |      |         |
+| 6    | Tue Feb 21 |                                           |       |     |      |         |
+|      | Wed Feb 22 | intro to optimization                     |       |     |      |         |
+|      | Fri Feb 24 | univariate Newton-Raphson                 |       |     |      |         |
+| 7    | Tue Feb 28 |                                           |       |     |      |         |
+|      | Wed Mar 01 | multivariate Newton-Raphson examples      |       |     |      |         |
+|      | Fri Mar 03 | MM algorithm I                            |       |     |      |         |
+| 8    | Tue Mar 07 |                                           |       |     |      |         |
+|      | Wed Mar 08 | MM algorithm II                           |       |     |      |         |
+|      | Fri Mar 10 | EM algorithm                              |       |     |      |         |
+| 9    | Tue Mar 14 | NO CLASS: Spring break                    |       |     |      |         |
+|      | Wed Mar 15 | NO CLASS: Spring break                    |       |     |      |         |
+|      | Fri Mar 17 | NO CLASS: Spring break                    |       |     |      |         |
+| 10   | Tue Mar 21 |                                           |       |     |      |         |
+|      | Wed Mar 22 | matrices and BLAS                         |       |     |      |         |
+|      | Fri Mar 24 | project tips                              |       |     |      |         |
+| 11   | Tue Mar 28 |                                           |       |     |      |         |
+|      | Wed Mar 29 | shiny I                                   |       |     |      |         |
+|      | Fri Mar 31 | shiny II                                  |       |     |      |         |
+| 12   | Tue Apr 04 |                                           |       |     |      |         |
+|      | Wed Apr 05 | Monte Carlo integration                   |       |     |      |         |
+|      | Fri Apr 07 | importance sampling                       |       |     |      |         |
+| 13   | Tue Apr 11 |                                           |       |     |      |         |
+|      | Wed Apr 12 | spatial data                              |       |     |      |         |
+|      | Fri Apr 14 | covariance                                |       |     |      |         |
+| 14   | Tue Apr 18 |                                           |       |     |      |         |
+|      | Wed Apr 19 | APIs                                      |       |     |      |         |
+|      | Fri Apr 21 | SQL                                       |       |     |      |         |
+| 15   | Tue Apr 25 | project presentations                     |       |     |      |         |
+|      | Wed Apr 26 | special topic                             |       |     |      |         |

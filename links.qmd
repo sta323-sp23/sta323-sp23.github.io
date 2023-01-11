@@ -1,0 +1,20 @@
+---
+title: "links"
+---
+
+Code
+
+- [RStudio containers](https://cmgr.oit.duke.edu/containers)
+
+Communication 
+
+- [course slack](https://sta323-sp23.slack.com)
+
+Collaboration
+
+- [course GitHub organization](https://github.com/sta323-sp23)
+
+Textbooks
+
+- [Advanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)](https://adv-r.hadley.nz/)
+- [R for Data Science - Grolemund, Wickham - O'Reilly, 2016 (978-1491910399)](https://r4ds.had.co.nz/)

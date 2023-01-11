@@ -1,0 +1,146 @@
+---
+title: "syllabus"
+fontsize: 12pt
+---
+
+### Logistics
+
+course website:
+
+{{< include _logistics.qmd >}}
+
+
+#### Textbooks
+
+There are no required textbooks for this course, the following textbooks are recommended for supplementary and reference purposes.
+
+- [Advanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)](https://adv-r.hadley.nz/)
+- [R for Data Science - Grolemund, Wickham - O'Reilly, 2016 (978-1491910399)](https://r4ds.had.co.nz/)
+
+
+### Course objectives
+
+By the end of this course you will be able to
+
+1. write efficient R code to (1) wrangle, explore and analyze data, (2) make inference under a variety of data generative models
+
+<!-- 2. construct data-generative models -->
+
+2. conduct independent data analysis and subsequently write and present results effectively
+
+### Grading policy
+
+| Assignment          | Description                        |
+|---------------------|------------------------------------|
+| Labs (45%)          | Biweekly lab assignments.       |
+| Exams (35%)         | Two take-home open-notes exams.    |
+| Final Project (15%) | Written report and presentation.   |
+| Quizzes (5%)       | In-class pop quizzes.         |
+
+A $>= 93$, A- $< 93$, B+ $< 90$, B $< 87$, B- $< 83$, C+ $<80$, C $< 77$, C- $< 73$, D+ $< 70$, D $< 67$, D- $< 63$, F $< 60$
+
+#### Labs
+
+In labs, you will apply the concepts discussed in lecture. Labs will focus on both computation and conceptualization. Lab assignments will be completed using quarto and submitted by pushing your best version to GitHub by the deadline. While you may collaborate with others on lab assignments, your final solution must be your own.
+
+#### Exams
+
+There will be two take-home, open notes exams. Through these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in labs. More details about the content and structure of the exams will be discussed during the semester.
+
+#### Final project
+
+The final project allows you to explore a question and data set of your own choosing. More details about
+the project will be provided during the semester. Projects will be completed in teams.
+
+#### Quizzes
+
+On random class days, there will be a brief quiz on the previous lectures. If you score  $>80\%$ on quizzes, you will receive full participation credit.
+
+
+### Where to find help
+
+#### Office hours
+
+Many questions are most effectively answered in-person, so office hours are a valuable resource. Please make use of them. A list of instructor and TA office hours can be found on the course website.
+
+#### Slack
+
+Outside of class and office hours, any general questions about course content or assignments should be posted on Slack. The instructors and TAs will monitor Slack and reply quickly to your public or private messages. Also, feel free to answer posted questions and ask follow-up questions.
+
+### Policies
+
+#### Academic integrity
+
+You should be familiar with Duke's community standard: <https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard>
+
+By enrolling in this course, you commit to upholding Duke's community standard reproduced as follows:
+
+-   I will not lie, cheat, or steal in my academic endeavors;
+-   I will conduct myself honorably in all my endeavors; and
+-   I will act if the Standard is compromised.
+
+Any violations in academic integrity standards as outlined in the Duke Community Standard and those specific to this course will **automatically result in a 0** for the assignment and will be reported to the Office of Student Conduct for further action.
+
+Please abide by the following as you work on assignments in this course: 
+
+- You may discuss lab assignments with other students; however, you may not directly share (or copy) code or write up with other students. For team assignments, you may collaborate freely within your team.
+You may discuss the assignment with other teams; however, you may not directly share (or copy) code or write up with another team. Unauthorized sharing (or copying) of the code or write up will be considered a violation for all students involved.
+
+- You may not discuss or otherwise work with others on the exams.
+Unauthorized collaboration or using unauthorized materials will be considered a violation for all students involved. More details will be given closer to the exam date.
+
+- Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack- Overflow) for coding examples on assignments.
+If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code.
+Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
+
+#### Errors in grading
+
+Errors in grading must be brought to the attention of the TA during office hours within 1 week of receiving the grade.
+
+#### Late work
+
+Late work may be submitted with 48 hours of the assignment deadline. Late work submitted within 24 hours (even 1 minute late) will receive a 5% late penalty. Late work submitted between 24 to 48 hours of the deadline will receive a 10% late penalty. Work submitted after 48 hours will not be accepted. Exams cannot be turned in late and can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.
+
+#### Inclusion
+
+In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke’s Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean. 
+
+#### Accessibility
+
+If there is any portion of the course that is not accessible to you due to challenges with technology or the course format, please let me know so we can make appropriate accommodations.
+The Student Disability Access Office (SDAO) is available to ensure that students are able to engage with their courses and related assignments.
+Students should be in touch with the Student Disability Access Office to request or update accommodations under these circumstances.
+Please note that accommodations are not retroactive and disability accommodations cannot be provided until a Faculty Accommodation Letter has been given to me.
+Please contact SDAO for more information: [sdao\@duke.edu](sdao@duke.edu) or [access.duke.edu](https://access.duke.edu).
+
+## Additional resources
+
+Student mental health and wellness are of primary importance at Duke, and the university offers resources to support students in managing daily stress and self-care.
+Duke offers several resources for students to seek assistance on coursework and to nurture daily habits that support overall well-being, some of which are listed below
+
+-   The Academic Resource Center: (919) 684-5917, [theARC\@duke.edu](theARC@duke.edu), or [arc.duke.edu](https://arc.duke.edu).
+    The Academic Resource Center (the ARC) offers services to support students academically during their undergraduate careers at Duke.
+    The ARC can provide support with time management, academic skills and strategies, course-specific tutoring, and more.
+    ARC services are available free to any Duke undergraduate student, studying any discipline.
+
+-   DuWell: (919) 681-8421, provides Moments of Mindfulness (stress management and resilience building) and meditation programming (Koru workshop) to assist students in developing a daily emotional well-being practice.
+    To see schedules for programs please see <https://studentaffairs.duke.edu/duwell>.
+    All are welcome and no experience necessary.
+
+If your mental health concerns and/or stressful events negatively affect your daily emotional state, academic performance, or ability to participate in your daily activities, many resources are available to help you through difficult times.
+Duke encourages all students to access these resources.
+
+-   DukeReach.
+    Provides comprehensive outreach services to identify and support students in managing all aspects of well-being.
+    If you have concerns about a student's behavior or health visit the website for resources and assistance: <https://students.duke.edu/wellness/dukereach/>
+
+-   Counseling and Psychological Services (CAPS).
+    CAPS services include individual and group counseling services, psychiatric services, and workshops.
+    To initiate services, walk-in/call-in 9-4 M,W,Th,F and 9-6 Tuesdays.
+    CAPS also provides referral to off- campus resources for specialized care.
+
+    (919) 660-1000 or <https://students.duke.edu/wellness/caps/>
+
+-   TimelyCare (formerly known as Blue Devils Care).
+    An online platform that is a convenient, confidential, and free way for Duke students to receive 24/7 mental health support through TalkNow and scheduled counseling.
+    bluedevilscare.duke.edu

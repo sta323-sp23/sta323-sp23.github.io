@@ -1,0 +1,8 @@
+---
+title: "statistical computing"
+subtitle: "spring 2023"
+---
+
+STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.
+
+{{< include _logistics.qmd >}}

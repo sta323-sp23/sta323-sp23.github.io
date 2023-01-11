@@ -1,0 +1,20 @@
+project:
+  type: website
+
+website:
+  title: "STA323"
+  search: false
+  navbar:
+    left:
+    - schedule.qmd
+    - syllabus.qmd
+    - links.qmd
+      
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+
+
