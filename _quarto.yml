@@ -1,10 +1,12 @@
 project:
   type: website
-
+  output-dir: docs
+  
 website:
   title: "STA323"
   search: false
   navbar:
+    background: "#2774AE" # nice blue -- Spring 2023
     left:
     - schedule.qmd
     - syllabus.qmd
