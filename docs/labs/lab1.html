@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA323 - Lab 1: Hello R; hi git</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STA323</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html">schedule</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html">syllabus</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../links.html">links</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#log-in-to-rstudio" id="toc-log-in-to-rstudio" class="nav-link" data-scroll-target="#log-in-to-rstudio">Log in to RStudio</a></li>
+  <li><a href="#set-up-your-ssh-key" id="toc-set-up-your-ssh-key" class="nav-link" data-scroll-target="#set-up-your-ssh-key">Set up your SSH key</a></li>
+  <li><a href="#configure-git" id="toc-configure-git" class="nav-link" data-scroll-target="#configure-git">Configure Git</a></li>
+  <li><a href="#clone-the-repo-start-new-rstudio-project" id="toc-clone-the-repo-start-new-rstudio-project" class="nav-link" data-scroll-target="#clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</a></li>
+  <li><a href="#r-and-r-studio" id="toc-r-and-r-studio" class="nav-link" data-scroll-target="#r-and-r-studio">R and R Studio</a></li>
+  <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
+  <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
+  <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">Push changes</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 1: Hello R; hi git</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>This lab will introduce you to the course computing workflow. The main goal is to get you setup with git in GitHub, link GitHub with RStudio and play around with a few basics.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This lab will not be graded.</p>
+</div>
+</div>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Git is a version control system (like “Track Changes” features from Microsoft Word but more powerful) and GitHub is the home for your git-based projects on the internet (like DropBox but much better).</p>
+</div>
+</div>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>Be familiar with the workflow using R, RStudio, Git, and GitHub</li>
+<li>Gain practice writing a reproducible report using Quarto</li>
+<li>Practice version control using GitHub</li>
+</ul>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your lab TA will lead you through the Getting Started and Packages sections.</p>
+</div>
+</div>
+<section id="log-in-to-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="log-in-to-rstudio">Log in to RStudio</h2>
+<ul>
+<li>Go to <a href="https://cmgr.oit.duke.edu/containers" class="uri">https://cmgr.oit.duke.edu/containers</a> and login with your Duke NetID and Password.</li>
+<li>Click <code>STA198-199</code> to log into the Docker container. You should now see the RStudio environment.</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you haven’t yet done so, you will need to reserve a container for <code>STA323</code> first.</p>
+</div>
+</div>
+</section>
+<section id="set-up-your-ssh-key" class="level2">
+<h2 class="anchored" data-anchor-id="set-up-your-ssh-key">Set up your SSH key</h2>
+<p>You will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You only need to do this authentication process one time on a single system.</p>
+</div>
+</div>
+<ul>
+<li>Type <code>credentials::ssh_setup_github()</code> into your console.</li>
+<li>R will ask “No SSH key found. Generate one now?” You should click 1 for yes.</li>
+<li>You will generate a key. It will begin with “ssh-rsa….” R will then ask “Would you like to open a browser now?” You should click 1 for yes.</li>
+<li>You may be asked to provide your GitHub username and password to log into GitHub. After entering this information, you should paste the key in and give it a name. You might name it in a way that indicates where the key will be used, e.g., <code>sta199</code>).</li>
+</ul>
+<p>You can find more detailed instructions <a href="https://github.com/DukeStatSci/github_auth_guide">here</a> if you’re interested.</p>
+</section>
+<section id="configure-git" class="level2">
+<h2 class="anchored" data-anchor-id="configure-git">Configure Git</h2>
+<p>There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.</p>
+<p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package. (And we also need to install a package called <code>gert</code> just for this step.)</p>
+<p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the email address associated with your GitHub account.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpTHnYj6/remotes41fc39fb9922/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
+* preparing ‘gert’:
+* checking DESCRIPTION meta-information ... OK
+* cleaning src
+* running ‘cleanup’
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘gert_1.9.2.tar.gz’</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in i.p(...): installation of package '/var/folders/
+36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpTHnYj6/file41fc479e6066/
+gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>For example, mine would be</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpTHnYj6/remotes41fc8c916c2/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
+* preparing ‘gert’:
+* checking DESCRIPTION meta-information ... OK
+* cleaning src
+* running ‘cleanup’
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘gert_1.9.2.tar.gz’</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in i.p(...): installation of package '/var/folders/
+36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpTHnYj6/file41fc49f51f0f/
+gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Alexander Fisher"</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"alexander.fisher@duke.edu"</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You are now ready interact with GitHub via RStudio!</p>
+</section>
+<section id="clone-the-repo-start-new-rstudio-project" class="level2">
+<h2 class="anchored" data-anchor-id="clone-the-repo-start-new-rstudio-project">Clone the repo &amp; start new RStudio project</h2>
+<ul>
+<li><p>Go to the course organization at <a href="https://github.com/sta199-sp23-1">github.com/sta199-sp23-1</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
+<li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
+<li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
+<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
+<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
+<li><p>Click <em>lab-0-datasaurus.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
+</ul>
+</section>
+<section id="r-and-r-studio" class="level2">
+<h2 class="anchored" data-anchor-id="r-and-r-studio">R and R Studio</h2>
+<p>Below are the components of the RStudio IDE.</p>
+<p><img src="images/lab-1/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
+<p>Below are the components of a Quarto (.qmd) file.</p>
+<p><img src="images/lab-1/quarto.png" class="img-fluid" alt="Quarto document"></p>
+</section>
+<section id="yaml" class="level2">
+<h2 class="anchored" data-anchor-id="yaml">YAML</h2>
+<p>The top portion of your R Markdown file (between the three dashed lines) is called <strong>YAML</strong>. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.</p>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Open the Quarto (<code>.qmd</code>) file in your project, change the author name to your name, and render the document. Examine the rendered document.</p>
+</div>
+</div>
+</section>
+<section id="committing-changes" class="level2">
+<h2 class="anchored" data-anchor-id="committing-changes">Committing changes</h2>
+<p>Now, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.</p>
+<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
+<p>If you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the <strong>Commit message</strong> box. Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p>
+<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration.</p>
+<p>In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
+<p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p>
+</section>
+<section id="push-changes" class="level2">
+<h2 class="anchored" data-anchor-id="push-changes">Push changes</h2>
+<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
+<p>In order to push your changes to GitHub, you must have <strong>staged</strong> your <strong>commit</strong> to be pushed. click on <strong>Push</strong>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
