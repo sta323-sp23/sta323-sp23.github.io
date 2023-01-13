@@ -156,3 +156,16 @@ Now that you have made an update and committed this change, it's time to push th
 
 In order to push your changes to GitHub, you must have **staged** your **commit** to be pushed.
 click on **Push**.
+
+
+## Exercises
+
+1. Do floating point numbers obey the rules of algebra? Are the following always true?
+
+- additive association: `(x + y) + z == x + (y + z)`. Let $x = 0.1$, $y = 0.1$ and $z = 1$. Explain what you find.
+- associative rule for multiplication: `(x * y) * z == x  * (y * z)`
+- distributive rule: `a * (x + y) == a * x + a * y`
+- is `0 * x == 0` true for all floating point numbers `x`?
+- is `x / a == x * (1 / a) always true?
+
+

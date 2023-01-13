@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA323 - Lab 0: Hello R; hi git</title>
+<title>STA323 - Lab 0: Hello R; hi git.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,6 +107,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -158,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
   <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">Push changes</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -167,7 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 0: Hello R; hi git</h1>
+<h1 class="title">Lab 0: Hello R; hi git.</h1>
 </div>
 
 
@@ -284,8 +286,22 @@ Note
 <pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
+<pre><code>curl (4.3.3 -&gt; 5.0.0) [CRAN]</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Installing 1 packages: curl</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>
-* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmppFuysg/remotes45627c38498/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
+  There is a binary version available but the source version is later:
+     binary source needs_compilation
+curl  4.3.3  5.0.0              TRUE</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>installing the source package 'curl'</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpfvQmAa/remotes7a8d2045cafe/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
 * preparing ‘gert’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -296,23 +312,23 @@ Note
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in i.p(...): installation of package '/var/folders/
-36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmppFuysg/file456227d9b0c4/
+36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpfvQmAa/file7a8d7880f9c8/
 gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, mine would be</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmppFuysg/remotes45627c588de4/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
+* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpfvQmAa/remotes7a8d8d545f2/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
 * preparing ‘gert’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -323,13 +339,13 @@ gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
 </div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning in i.p(...): installation of package '/var/folders/
-36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmppFuysg/file456219cbb383/
+36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpfvQmAa/file7a8d69e31765/
 gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Alexander Fisher"</span>, </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"alexander.fisher@duke.edu"</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Alexander Fisher"</span>, </span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"alexander.fisher@duke.edu"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You are now ready interact with GitHub via RStudio!</p>
 </section>
@@ -381,6 +397,19 @@ Important
 <h2 class="anchored" data-anchor-id="push-changes">Push changes</h2>
 <p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
 <p>In order to push your changes to GitHub, you must have <strong>staged</strong> your <strong>commit</strong> to be pushed. click on <strong>Push</strong>.</p>
+</section>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<ol type="1">
+<li>Do floating point numbers obey the rules of algebra? Are the following always true?</li>
+</ol>
+<ul>
+<li>additive association: <code>(x + y) + z == x + (y + z)</code>. Let <span class="math inline">\(x = 0.1\)</span>, <span class="math inline">\(y = 0.1\)</span> and <span class="math inline">\(z = 1\)</span>. Explain what you find.</li>
+<li>associative rule for multiplication: <code>(x * y) * z == x  * (y * z)</code></li>
+<li>distributive rule: <code>a * (x + y) == a * x + a * y</code></li>
+<li>is <code>0 * x == 0</code> true for all floating point numbers <code>x</code>?</li>
+<li>is `x / a == x * (1 / a) always true?</li>
+</ul>
 
 
 </section>

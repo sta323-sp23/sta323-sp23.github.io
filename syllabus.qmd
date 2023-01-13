@@ -93,6 +93,10 @@ Unauthorized collaboration or using unauthorized materials will be considered a 
 If you directly use code from an outside source (or use it as inspiration), you must explicitly cite where you obtained the code.
 Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism.
 
+#### Team work policy
+
+The final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group.
+
 #### Errors in grading
 
 Errors in grading must be brought to the attention of the TA during office hours within 1 week of receiving the grade.
@@ -103,7 +107,7 @@ Late work may be submitted with 48 hours of the assignment deadline. Late work s
 
 #### Inclusion
 
-In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke’s Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean. 
+In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke’s Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean.
 
 #### Accessibility
 

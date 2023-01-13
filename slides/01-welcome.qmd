@@ -1,0 +1,322 @@
+---
+title: "Welcome to STA 323"
+author: "Dr. Alexander Fisher"
+date: "January 13, 2023"
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Meet the professor
+
+```{r}
+#| echo: false
+#| warning: false
+library(countdown)
+```
+
+::: columns
+::: {.column width="50%"}
+-   Alexander Fisher
+-   [alexander.fisher\@duke.edu](alexander.fisher@duke.edu)
+-   [Office hours](https://docs.google.com/spreadsheets/d/16gf9dQ_41V628vKvFdS95JBOUKYSjuxJBo7OzPye-SI/edit?usp=sharing): Wednesday 1:30-3:30pm in Old Chem 207
+-   A little bit about my research...
+:::
+
+::: {.column width="50%"}
+::: fragment
+![](images/01-welcome/alignment.png){fig-align="center" width="260"}
+
+![](images/01-welcome/basic_tree.png){fig-align="center" width="320"}
+:::
+:::
+:::
+
+## What is statistical computing?
+
+Broadly, it's turning data into knowledge using the computer.
+
+. . .
+
+###### Examples of things we'll do in this course:
+
+-   Scrape data off the web
+
+-   Interact with databases
+
+-   Extract useful parts of massive datasets in the blink of an eye using regular expressions
+
+-   Optimize code in R
+
+-   Model data with complicated likelihood functions and then write algorithms to maximize the likelihood
+
+-   Build shiny web apps
+
+## 
+
+![](images/01-welcome/NHLapp_demo.gif){fig.align = "center"}
+
+## Learning objectives
+
+By the end of this course you will be able to...
+
+-   write efficient R code to (1) wrangle, explore and analyze data, (2) program algorithms to make inference under a variety of data generative models
+
+-   conduct independent data analysis and subsequently write and present results effectively
+
+## Assessments
+
+| Assignment          | Description                      |
+|---------------------|----------------------------------|
+| Labs (45%)          | Biweekly lab assignments.        |
+| Exams (35%)         | Two take-home open-notes exams.  |
+| Final Project (15%) | Written report and presentation. |
+| Quizzes (5%)        | In-class pop quizzes.            |
+
+# Course Policies
+
+## Community
+
+Uphold the **Duke Community Standard**:
+
+> I will not lie, cheat, or steal in my academic endeavors;
+>
+> I will conduct myself honorably in all my endeavors; and
+>
+> I will act if the Standard is compromised.
+
+Any violations in academic honesty standards as outlined in the Duke Community Standard and those specific to this course will automatically result in a 0 for the assignment and will be reported to the Office of Student Conduct for further action.
+
+### Learning environment
+
+-   Create a learning environment that is welcoming, inclusive, and accessible to everyone.
+-   Respect and honor each other.
+
+. . .
+
+### Team work policy
+
+The final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group.
+
+## Sharing / reusing code
+
+-   Unless explicitly stated otherwise, this course's policy is that you may make use of any online resources (e.g. Google, existing StackOverflow answers, etc.) but you must explicitly cite where you obtained any code you directly use or use as inspiration in your solution(s).
+
+-   Any recycled code that is discovered and is not explicitly cited will be treated as plagiarism, regardless of source.
+
+-   Narrative (non-code solutions) should always be entirely your own.
+
+### Late policy
+
+-   Homeworks and labs can be turned in within 48 hours of the deadline for grade penalty (5% off per day).
+
+-   Exams and the final project cannot be turned in late and can only be excused under exceptional circumstances.
+
+-   The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days). For emergencies, email notification is needed at the first reasonable time.
+
+-   Last minute coding/rendering issues will not be granted extensions.
+
+## Course toolkit
+
+| Resource                                                     | Description                                                  |
+|-----------------------|------------------------------------------------|
+| [course website](https://sta323-sp23.github.io/)             | course notes, deadlines, assignments, office hours, syllabus |
+| [Sakai](sakai.duke.edu)                                      | class recordings, solutions and announcements                |
+| [course organization](https://github.com/sta323-sp23)        | assignments, collaboration                                   |
+| [slack](https://sta323-sp23.slack.com)                       | primary communication                                        |
+| [RStudio containers](https://cmgr.oit.duke.edu/containers)\* | online coding platform                                       |
+
+You are welcome to install R and RStudio locally on your computer. If working locally you should make sure that your environment meets the following requirements:
+
+-   latest R version
+
+-   latest RStudio
+
+-   working git installation
+
+-   ability to create ssh keys (for GitHub authentication)
+
+-   All R packages updated to their latest version from CRAN
+
+## Communication and missing class
+
+If you have questions about homework/lab exercises, debugging, or any question about course materials
+
+-   come to office hours
+-   post to a public channel in slack.
+
+. . .
+
+::: callout-warning
+The teaching team will not debug via email.
+:::
+
+. . .
+
+When you miss a class:
+
+-   watch the recorded lecture on Sakai
+-   come to office hours or post in a public channel of slack if you have questions
+
+## Beginnings
+
+-   Check your email / Sakai announcements for slack invite.
+
+-   Post on slack
+
+-   Create a GitHub account (unless you already have one) on <https://github.com/>
+
+    -   one day you might want to show off your work, so choose a username you will be proud to show to a future employer.
+
+-   Tell me your username by taking [this survey](https://forms.gle/uszBD9k14hj9hG9v8). This is essential to receive credit on future assignments
+
+```{r}
+#| echo: false
+
+countdown(minutes = 4, font_size = "1.5em",
+          color_running_background = "#2774AE")
+```
+
+# R fundamentals
+
+## Vectors
+
+The fundamental building block of data in R is a vector (collections of related values, objects, other data structures, etc).
+
+R has two types of vectors:
+
+-   atomic vectors
+    -   homogeneous collections of the same type (e.g. all logical values, all numbers, or all character strings).
+-   generic vectors
+    -   heterogeneous collections of any type of R object, even other lists (meaning they can have a hierarchical/tree-like structure).
+
+I will use the term component or element when referring to a value inside a vector.
+
+## Vector relationships
+
+![](images/01-welcome/vectorRelationships.png){fig-align="center" width="900"}
+
+Source: <https://r4ds.had.co.nz/vectors.html>
+
+## Atomic vectors
+
+R has six atomic vector types:
+
+`logical, integer, double, character, complex, raw`
+
+In this course we will mostly work with the first four. You will rarely work with the last two types - complex and raw.
+
+. . .
+
+```{r}
+x <- c(T, F, TRUE, FALSE)
+typeof(x)
+```
+
+```{r}
+y <- c("a", "few", "more", "slides")
+typeof(y)
+```
+
+::: callout-note
+`c()` is a function that combines arguments to form a vector. It's a quick way to make small vectors for testing and experimentation. Later, we'll see better ways to create vectors.
+:::
+
+## Coercion hierarchy
+
+If you try to combine components of different types into a single atomic vector, R will try to coerce all elements so they can be represented as the simplest type. The ordering is `logical` \< `integer` \< `double` \< `character`, where `logical` is considered the "simplest".
+
+```{r}
+x <- c(T, 5, F, 0, 1)
+y <- c("a", 1, T)
+z <- c(3.0, 4L, 0L)
+```
+
+::: columns
+::: {.column width="50%"}
+```{r}
+x
+y
+z
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+typeof(x)
+typeof(y)
+typeof(z)
+```
+:::
+:::
+
+## Logical operations
+
+### Boolean operations
+
+| Operator | Definition   | Vectorized? |
+|----------|--------------|-------------|
+| x \| y   | or           | yes         |
+| x & y    | and          | yes         |
+| !x       | not          | yes         |
+| x \|\| y | or           | no          |
+| x && y   | and          | no          |
+| xor(x,y) | exclusive or | yes         |
+
+### Comparison operations
+
+| Operator | Definition            | Vectorized?  |
+|----------|-----------------------|--------------|
+| x \< y   | less than             | yes          |
+| x \<= y  | less than or equal to | yes          |
+| x != y   | not equal to          | yes          |
+| x == y   | equal to              | yes          |
+| x %in% y | is x contained in y   | yes (over x) |
+
+## Length coercion (vector recycling)
+
+The shorter of two atomic vectors in an operation is recycled until it is the same length as the longer atomic vector.
+
+```{r}
+x <- c(2, 4, 6)
+y <- c(1, 1, 1, 2, 2)
+```
+
+```{r}
+x > y
+```
+
+```{r}
+x == y
+```
+
+```{r}
+10 / x
+```
+
+## Exercises
+
+What do each of the following return? Run the code to check your answer.
+
+Exercise 1. 
+```{r}
+#| eval: false
+a = c(1,4)
+b = c(1,2,3,5)
+a + b
+```
+Exercise 2. 
+```{r}
+#| eval: false
+x = c(1,2)
+y = c(5,10,15,20)
+z = c(2,4)
+(x * y) / z
+```
+Exercise 3. 
+```{r}
+#| eval: false
+x = c(1, TRUE, 0)
+typeof(x)
+```
+

@@ -1,0 +1,14 @@
+institute: "Duke University"
+# author: "Alexander Fisher"
+footer: "[🔗 sta323-sp23.github.io](https://sta199-sp23-1.github.io/)"
+# logo: "images/logo.png"
+format:
+  revealjs:
+    theme: slides.scss
+    transition: none
+    slide-number: "c"
+    chalkboard: true
+editor: visual
+execute:
+  freeze: auto
+  echo: true
