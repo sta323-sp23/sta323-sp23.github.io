@@ -159,6 +159,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#style-guidelines" id="toc-style-guidelines" class="nav-link" data-scroll-target="#style-guidelines">Style guidelines</a></li>
   <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
   </ul></li>
   </ul>
@@ -435,6 +436,21 @@ To quantify the inefficiency of a poorly written for loop, time both the code bl
 <li><p>Compare <span class="math inline">\(||x||_2\)</span> and <span class="math inline">\(||y||_2\)</span> where <span class="math inline">\(y = \left(0.8, 2.4, -6.4 \right)\)</span>.</p></li>
 <li><p>Compare <span class="math inline">\(||x||_1\)</span> and <span class="math inline">\(||y||_1\)</span>, where again <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the vectors given above. Which is larger?</p></li>
 </ul>
+</section>
+<section id="style-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="style-guidelines">Style guidelines</h2>
+<p>All assignments in this course must employ proper coding style, as outlined below:</p>
+<ul>
+<li><p>All code should obey the 80 character limit per line (i.e.&nbsp;no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to <code>RStudio</code> &gt; <code>Preferences</code> &gt; <code>Code</code> &gt; <code>Display</code> &gt; <code>Show margin</code> &gt; <code>80</code>. This will enable a vertical line in your <code>.qmd</code> files that shows you where the 80 character cutoff is for code chunks.</p></li>
+<li><p>All commas should be followed by a space.</p></li>
+<li><p>All binary operators should be surrounded by space. For example <code>x + y</code> is appropriate. <code>x+y</code> is not.</p></li>
+<li><p>All pipes <code>%&gt;%</code> or <code>|&gt;</code> as well as ggplot layers <code>+</code> should be followed by a new line.</p></li>
+<li><p>You should be consistent with stylistic choices, e.g.&nbsp;only use 1 of <code>=</code> vs <code>&lt;-</code> and <code>%&gt;%</code> vs <code>|&gt;</code></p></li>
+<li><p>Your name should be at the top (in the YAML) of each document under “author:”</p></li>
+<li><p>All code chunks should be named (with names that don’t have spaces, e.g.&nbsp;<code>ex-1</code>, <code>ex-2</code> etc.)</p></li>
+<li><p>File names in your GitHub repo such as <code>lab-0.qmd</code> must not be changed and left as provided.</p></li>
+</ul>
+<p>If you have any questions about style, please ask a member of the teaching team.</p>
 </section>
 <section id="submitting-your-lab" class="level2">
 <h2 class="anchored" data-anchor-id="submitting-your-lab">Submitting your lab</h2>
