@@ -429,9 +429,9 @@ To quantify the inefficiency of a poorly written for loop, time both the code bl
 <p><span class="math display">\[
 ||x||_p = \left( \sum_{i=1}^n |x_i |^p \right)^{1/p}
 \]</span></p>
-<p>for <span class="math inline">\(p = 1, 2, ...\)</span>. For example, if <span class="math inline">\(p = 2\)</span> we have the <em>Euclidean norm</em>, also known as the <span class="math inline">\(l^2\)</span> (read “L-2”) norm.</p>
+<p>for <span class="math inline">\(p = 1, 2, ...\)</span>. For example, if <span class="math inline">\(p = 2\)</span> we have the <em>Euclidean norm</em>, also known as the <span class="math inline">\(l_2\)</span> (read “L-2”) norm.</p>
 <ul>
-<li><p>Verify that the Euclidean norm of <span class="math inline">\(x = \left( 1, 2.5, -6.3 \right)\)</span> is <code>6.851277</code> in R. You can compute the <span class="math inline">\(l^1\)</span> and <span class="math inline">\(l^2\)</span> norms in R using <code>norm(x, type = "1")</code> and <code>norm(x, type = "2")</code> respectively. Read the documentation, <code>?norm()</code> and you will see you need to make sure the argument <code>x</code> is a matrix.</p></li>
+<li><p>Verify that the Euclidean norm of <span class="math inline">\(x = \left( 1, 2.5, -6.3 \right)\)</span> is <code>6.851277</code> in R. You can compute the <span class="math inline">\(l_1\)</span> and <span class="math inline">\(l_2\)</span> norms in R using <code>norm(x, type = "1")</code> and <code>norm(x, type = "2")</code> respectively. Read the documentation, <code>?norm()</code> and you will see you need to make sure the argument <code>x</code> is a matrix.</p></li>
 <li><p>Compare <span class="math inline">\(||x||_2\)</span> and <span class="math inline">\(||y||_2\)</span> where <span class="math inline">\(y = \left(0.8, 2.4, -6.4 \right)\)</span>.</p></li>
 <li><p>Compare <span class="math inline">\(||x||_1\)</span> and <span class="math inline">\(||y||_1\)</span>, where again <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the vectors given above. Which is larger?</p></li>
 </ul>

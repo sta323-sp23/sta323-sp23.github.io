@@ -224,9 +224,9 @@ $$
 ||x||_p = \left( \sum_{i=1}^n |x_i |^p \right)^{1/p}
 $$
 
-for $p = 1, 2, ...$. For example, if $p = 2$ we have the *Euclidean norm*, also known as the $l^2$ (read "L-2") norm.
+for $p = 1, 2, ...$. For example, if $p = 2$ we have the *Euclidean norm*, also known as the $l_2$ (read "L-2") norm.
 
--   Verify that the Euclidean norm of $x = \left( 1, 2.5, -6.3 \right)$ is `6.851277` in R. You can compute the $l^1$ and $l^2$ norms in R using `norm(x, type = "1")` and `norm(x, type = "2")` respectively. Read the documentation, `?norm()` and you will see you need to make sure the argument `x` is a matrix.
+-   Verify that the Euclidean norm of $x = \left( 1, 2.5, -6.3 \right)$ is `6.851277` in R. You can compute the $l_1$ and $l_2$ norms in R using `norm(x, type = "1")` and `norm(x, type = "2")` respectively. Read the documentation, `?norm()` and you will see you need to make sure the argument `x` is a matrix.
 
 -   Compare $||x||_2$ and $||y||_2$ where $y = \left(0.8, 2.4, -6.4 \right)$.
 
