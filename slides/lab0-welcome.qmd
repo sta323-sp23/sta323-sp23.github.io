@@ -1,0 +1,52 @@
+---
+title: "Welcome to Lab"
+date: "January 17, 2023"
+format: revealjs
+---
+
+## Introductions
+
+```{r}
+#| echo: false
+#| warning: false
+library(countdown)
+```
+
+-   Meet the TA!
+
+-   Introduce yourself (icebreaker)
+
+-   Follow along these slides on the course website (under slides): [sta323-sp23.github.io](https://sta323-sp23.github.io)
+
+-   Bookmark this!
+    It's the course website.
+
+## What to expect in labs
+
+-   Introduce lab assignment (5-10 minutes, longer today)
+-   Work on the lab assignment (you can find it on the course website). You will work with others but your submission must be your own for the first few labs.
+-   Typically you won't finish labs in-class and they will be due 1 week after they are released.
+
+## Tips
+
+-   Read **all** instructions on the lab.
+-   One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when we can help you on the spot and leave the narrative writing until later.
+-   Make use of office hours. Before you need help!
+
+## Beginnings
+
+- If you correctly followed the instructions from lecture then you should be a member of the course organization and have a repo `lab-0-username` in [the course organization](https://github.com/orgs/sta323-sp23/repositories).
+
+- If you missed the first lecture, take the survey from the first lecture, found [here](http://sta323-sp23.github.io/slides/01-welcome.html#/beginnings) and tell me your GitHub username so I can invite you to the organization and manually create a repo for you.
+
+## Demo: setting up
+
+Now that your lab repo is created, let's setup git to work within RStudio.
+
+To begin, open
+
+- the lab instructions [here](https://sta323-sp23.github.io/labs/lab0.html) and
+- the RStudio containers [here](https://cmgr.oit.duke.edu/containers)
+- your repo (that contains your starting files for the lab) [here](https://github.com/sta323-sp23)
+
+Follow the instructions in the lab as I demo.

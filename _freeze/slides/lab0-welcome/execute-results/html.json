@@ -1,0 +1,18 @@
+{
+  "hash": "bcc49018565d907e339215493e7c1eb2",
+  "result": {
+    "markdown": "---\ntitle: \"Welcome to Lab\"\ndate: \"January 17, 2023\"\nformat: revealjs\n---\n\n\n## Introductions\n\n\n::: {.cell}\n\n:::\n\n\n-   Meet the TA!\n\n-   Introduce yourself (icebreaker)\n\n-   Follow along these slides on the course website (under slides): [sta323-sp23.github.io](https://sta323-sp23.github.io)\n\n-   Bookmark this!\n    It's the course website.\n\n## What to expect in labs\n\n-   Introduce lab assignment (5-10 minutes, longer today)\n-   Work on the lab assignment (you can find it on the course website). You will work with others but your submission must be your own for the first few labs.\n-   Typically you won't finish labs in-class and they will be due 1 week after they are released.\n\n## Tips\n\n-   Read **all** instructions on the lab.\n-   One work strategy is to get through portions that you think will be most challenging (which initially might be the coding component) during lab when we can help you on the spot and leave the narrative writing until later.\n-   Make use of office hours. Before you need help!\n\n## Beginnings\n\n- If you correctly followed the instructions from lecture then you should be a member of the course organization and have a repo `lab-0-username` in [the course organization](https://github.com/orgs/sta323-sp23/repositories).\n\n- If you missed the first lecture, take the survey from the first lecture, found [here](http://sta323-sp23.github.io/slides/01-welcome.html#/beginnings) and tell me your GitHub username so I can invite you to the organization and manually create a repo for you.\n\n## Demo: setting up\n\nNow that your lab repo is created, let's setup git to work within RStudio.\n\nTo begin, open\n\n- the lab instructions [here](https://sta323-sp23.github.io/labs/lab0.html) and\n- the RStudio containers [here](https://cmgr.oit.duke.edu/containers)\n- your repo (that contains your starting files for the lab) [here](https://github.com/sta323-sp23)\n\nFollow the instructions in the lab as I demo.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {
+      "include-after-body": [
+        "\n<script>\n  // htmlwidgets need to know to resize themselves when slides are shown/hidden.\n  // Fire the \"slideenter\" event (handled by htmlwidgets.js) when the current\n  // slide changes (different for each slide format).\n  (function () {\n    function fireSlideChanged(previousSlide, currentSlide) {\n\n      // dispatch for htmlwidgets\n      const event = window.document.createEvent(\"Event\");\n      event.initEvent(\"slideenter\", true, true);\n      window.document.dispatchEvent(event);\n\n      // dispatch for shiny\n      if (window.jQuery) {\n        if (previousSlide) {\n          window.jQuery(previousSlide).trigger(\"hidden\");\n        }\n        if (currentSlide) {\n          window.jQuery(currentSlide).trigger(\"shown\");\n        }\n      }\n    }\n\n    // hookup for reveal\n    if (window.Reveal) {\n      window.Reveal.addEventListener(\"slidechanged\", function(event) {\n        fireSlideChanged(event.previousSlide, event.currentSlide);\n      });\n    }\n\n    // hookup for slidy\n    if (window.w3c_slidy) {\n      window.w3c_slidy.add_observer(function (slide_num) {\n        // slide_num starts at position 1\n        fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);\n      });\n    }\n\n  })();\n</script>\n\n"
+      ]
+    },
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

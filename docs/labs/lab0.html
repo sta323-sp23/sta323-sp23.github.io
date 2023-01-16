@@ -158,8 +158,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#r-and-r-studio" id="toc-r-and-r-studio" class="nav-link" data-scroll-target="#r-and-r-studio">R and R Studio</a></li>
   <li><a href="#yaml" id="toc-yaml" class="nav-link" data-scroll-target="#yaml">YAML</a></li>
   <li><a href="#committing-changes" id="toc-committing-changes" class="nav-link" data-scroll-target="#committing-changes">Committing changes</a></li>
-  <li><a href="#push-changes" id="toc-push-changes" class="nav-link" data-scroll-target="#push-changes">Push changes</a></li>
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -281,71 +281,21 @@ Note
 <p>To do so, you will use the <code>use_git_config()</code> function from the <code>usethis</code> package. (And we also need to install a package called <code>gert</code> just for this step.)</p>
 <p>Type the following lines of code in the <strong>console</strong> in RStudio filling in your name and the email address associated with your GitHub account.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>curl (4.3.3 -&gt; 5.0.0) [CRAN]</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Installing 1 packages: curl</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-  There is a binary version available but the source version is later:
-     binary source needs_compilation
-curl  4.3.3  5.0.0              TRUE</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>installing the source package 'curl'</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpfvQmAa/remotes7a8d2045cafe/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
-* preparing ‘gert’:
-* checking DESCRIPTION meta-information ... OK
-* cleaning src
-* running ‘cleanup’
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘gert_1.9.2.tar.gz’</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in i.p(...): installation of package '/var/folders/
-36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpfvQmAa/file7a8d7880f9c8/
-gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Your name"</span>, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"Email associated with your GitHub account"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For example, mine would be</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Downloading GitHub repo r-lib/gert@HEAD</code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-* checking for file ‘/private/var/folders/36/9fvw0zp94f7382yggl_jvx5w0000gn/T/RtmpfvQmAa/remotes7a8d8d545f2/r-lib-gert-a1ccebd/DESCRIPTION’ ... OK
-* preparing ‘gert’:
-* checking DESCRIPTION meta-information ... OK
-* cleaning src
-* running ‘cleanup’
-* checking for LF line-endings in source and make files and shell scripts
-* checking for empty or unneeded directories
-* building ‘gert_1.9.2.tar.gz’</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning in i.p(...): installation of package '/var/folders/
-36/9fvw0zp94f7382yggl_jvx5w0000gn/T//RtmpfvQmAa/file7a8d69e31765/
-gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Alexander Fisher"</span>, </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"alexander.fisher@duke.edu"</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"r-lib/gert"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.name =</span> <span class="st">"Alexander Fisher"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">user.email =</span> <span class="st">"alexander.fisher@duke.edu"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>You are now ready interact with GitHub via RStudio!</p>
 </section>
@@ -354,18 +304,17 @@ gert_1.9.2.tar.gz' had non-zero exit status</code></pre>
 <ul>
 <li><p>Go to the course organization at <a href="https://github.com/sta323-sp23">github.com/sta323-sp23</a> organization on GitHub. Click on the repo with the prefix <strong>lab-0</strong>. It contains the starter documents you need to complete the lab.</p></li>
 <li><p>Click on the green <strong>CODE</strong> button, select <strong>Use SSH</strong> (this might already be selected by default, and if it is, you’ll see the text <strong>Clone with SSH</strong>). Click on the clipboard icon to copy the repo URL.</p></li>
-<li><p>In RStudio, go to <em>File</em> ➛ <em>New Project</em> ➛<em>Version Control</em> ➛ <em>Git</em>.</p></li>
-<li><p>Copy and paste the URL of your assignment repo into the dialog box <em>Repository URL</em>. Again, please make sure to have <em>SSH</em> highlighted under <em>Clone</em> when you copy the address.</p></li>
-<li><p>Click <em>Create Project</em>, and the files from your GitHub repo will be displayed in the <em>Files</em> pane in RStudio.</p></li>
-<li><p>Click <em>lab-0-datasaurus.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
+<li><p>In RStudio, go to <strong>Project</strong> in the upper-right. Click <em>New Project</em> -&gt; <em>Version Control</em> -&gt; <em>Git</em> and paste the SSH URL under “Repository URL”. Select <em>Create Project</em>.</p></li>
+<li><p>The R Project will open by default. In the future, you can open the project manually by clicking in the upper right, <em>Open Project</em>, and navigate to <code>lab-0.Rproj</code> from the drop-down menu.</p></li>
+<li><p>Click <em>lab-0.qmd</em> to open the template Quarto file. This is where you will write up your code and narrative for the lab.</p></li>
 </ul>
 </section>
 <section id="r-and-r-studio" class="level2">
 <h2 class="anchored" data-anchor-id="r-and-r-studio">R and R Studio</h2>
 <p>Below are the components of the RStudio IDE.</p>
-<p><img src="images/lab-0/rstudio.png" class="img-fluid" alt="RStudio IDE"></p>
+<p><img src="../slides/images/lab-0/rstudio.png" class="img-fluid"></p>
 <p>Below are the components of a Quarto (.qmd) file.</p>
-<p><img src="images/lab-0/quarto.png" class="img-fluid" alt="Quarto document"></p>
+<p><img src="../slides/images/lab-0/quarto.png" class="img-fluid"></p>
 </section>
 <section id="yaml" class="level2">
 <h2 class="anchored" data-anchor-id="yaml">YAML</h2>
@@ -386,30 +335,110 @@ Important
 </section>
 <section id="committing-changes" class="level2">
 <h2 class="anchored" data-anchor-id="committing-changes">Committing changes</h2>
-<p>Now, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.</p>
-<p>If you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on <strong>Diff</strong>. This shows you the <em>diff</em>erence between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.</p>
-<p>If you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, <strong>stage</strong> your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the <strong>Commit message</strong> box. Finally, click <strong>Commit</strong>. Note that every commit needs to have a commit message associated with it.</p>
-<p>You don’t have to commit after every change, as this would get quite tedious. You should commit states that are <em>meaningful to you</em> for inspection, comparison, or restoration.</p>
-<p>In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.</p>
-<p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p>
-</section>
-<section id="push-changes" class="level2">
-<h2 class="anchored" data-anchor-id="push-changes">Push changes</h2>
-<p>Now that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.</p>
-<p>In order to push your changes to GitHub, you must have <strong>staged</strong> your <strong>commit</strong> to be pushed. click on <strong>Push</strong>.</p>
+<ul>
+<li>In the <strong>Terminal</strong> pane of RStudio, type <code>pwd</code> to “print working directory”, i.e.&nbsp;show where in the filesystem you are. You should see something like <em>/home/guest/lab-0-username</em>. Next type <code>ls</code> to list files in the directory. You should see something similar:</li>
+</ul>
+<pre><code>lab-0.Rproj  README.md lab-0.qmd</code></pre>
+<ul>
+<li><p>Type <code>git status</code> and press enter. You should see which files have been edited (highlighted in red). <em>lab-0.qmd</em> should be in red since you updated the YAML.</p></li>
+<li><p>Type <code>git add lab-0.qmd</code>. This stages the file to be committed. In the future you can add several files to the same commit by repeating this step. You can type <code>git status</code> again to see the staged file (in green). Next type <code>git commit -m "updating YAML"</code>. This will commit the file with the message between quotes.</p></li>
+<li><p>Finally <code>git push</code> to push the changes to the remote repository.</p></li>
+<li><p>Now let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!</p></li>
+</ul>
 </section>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>For all exercises, you should respond in the space provided in the template <code>lab-0.qmd</code> and show all your work. This <em>lab-0</em> just has a few warm-up exercises to introduce you to some computing phenomena and general ideas.</p>
 <ol type="1">
-<li>Do floating point numbers obey the rules of algebra? Are the following always true?</li>
+<li>Floating point algebra.<br>
+<br>
+Do floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. <code>(x + y) + z == x + (y + z)</code>. Check if this true in <code>R</code> using <span class="math inline">\(x = 0.1\)</span>, <span class="math inline">\(y = 0.1\)</span> and <span class="math inline">\(z = 1\)</span>. <strong>Explain what you find.</strong></li>
 </ol>
+<p>Additional examples of floating point pecularity are provided below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example 1</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fl">0.2</span> <span class="sc">==</span> <span class="fl">0.6</span> <span class="sc">/</span> <span class="dv">3</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># example 2</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>point3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span> <span class="sc">-</span> <span class="fl">0.1</span>, <span class="fl">0.5</span> <span class="sc">-</span> <span class="fl">0.2</span>, <span class="fl">0.6</span> <span class="sc">-</span> <span class="fl">0.3</span>, <span class="fl">0.7</span> <span class="sc">-</span> <span class="fl">0.4</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>point3</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>point3 <span class="sc">==</span> <span class="fl">0.3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To work around these issues, you could use <code>all.equal()</code> for checking the equality of two double quantities in R. <strong>What does <code>all.equal()</code> do?</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># example 1, all.equal()</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(<span class="fl">0.2</span>, <span class="fl">0.6</span> <span class="sc">/</span> <span class="dv">3</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># example 2, all.equal()</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>point3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.4</span> <span class="sc">-</span> <span class="fl">0.1</span>, <span class="fl">0.5</span> <span class="sc">-</span> <span class="fl">0.2</span>, <span class="fl">0.6</span> <span class="sc">-</span> <span class="fl">0.3</span>, <span class="fl">0.7</span> <span class="sc">-</span> <span class="fl">0.4</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>point3</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">all.equal</span>(point3, <span class="fu">rep</span>(.<span class="dv">3</span>, <span class="fu">length</span>(point3)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="2" type="1">
+<li>Inefficient math.<br>
+<br>
+You’ve collected 10 million observations in a vector called <code>x</code> and you summarize the mean of your observations:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">10000000</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rnorm</span>(n, <span class="dv">1</span>, <span class="dv">10</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>xbar <span class="ot">=</span> <span class="fu">mean</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>A new observation comes in <code>new_x = 15.0</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>new_x <span class="ot">=</span> <span class="dv">15</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>updated_x <span class="ot">=</span> <span class="fu">c</span>(x, new_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Although it won’t change much, you want to recompute the mean with this new data point. You could recompute the mean by re-running <code>mean()</code> on <code>updated_x</code> or you could observe that:</p>
+<p><span class="math display">\[
+\bar{x}_{n+1} = \frac{1}{n+1}(n \cdot\bar{x}_n + x_{n+1})
+\]</span></p>
+<p>Compare the time each method takes by surrounding each method with <code>system.time({})</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># method 1</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(updated_x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#method 2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="do">## program the equation above here and then time it with system.time({})</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="3" type="1">
+<li>Inefficient code.<br>
+<br>
+To quantify the inefficiency of a poorly written for loop, time both the code blocks below. Experiment with different values of n.&nbsp;What do you observe?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># method 1</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(n)) {</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">c</span>(x, <span class="fu">sqrt</span>(x[i] <span class="sc">*</span> i))</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># method 2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">1</span>, n <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_len</span>(n)) {</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  x[i <span class="sc">+</span> <span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(x[i] <span class="sc">*</span> i)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol start="4" type="1">
+<li>Vector norms.</li>
+</ol>
+<p>If <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are scalar numbers, <span class="math inline">\(x&lt;y\)</span> makes sense. How do you compare the size of two different vectors <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>? A very typical way is the vector norm. The p-norm of vector <span class="math inline">\(x\)</span> of length <span class="math inline">\(n\)</span> is:</p>
+<p><span class="math display">\[
+||x||_p = \left( \sum_{i=1}^n |x_i |^p \right)^{1/p}
+\]</span></p>
+<p>for <span class="math inline">\(p = 1, 2, ...\)</span>. For example, if <span class="math inline">\(p = 2\)</span> we have the <em>Euclidean norm</em>, also known as the <span class="math inline">\(l^2\)</span> (read “L-2”) norm.</p>
 <ul>
-<li>additive association: <code>(x + y) + z == x + (y + z)</code>. Let <span class="math inline">\(x = 0.1\)</span>, <span class="math inline">\(y = 0.1\)</span> and <span class="math inline">\(z = 1\)</span>. Explain what you find.</li>
-<li>associative rule for multiplication: <code>(x * y) * z == x  * (y * z)</code></li>
-<li>distributive rule: <code>a * (x + y) == a * x + a * y</code></li>
-<li>is <code>0 * x == 0</code> true for all floating point numbers <code>x</code>?</li>
-<li>is `x / a == x * (1 / a) always true?</li>
+<li><p>Verify that the Euclidean norm of <span class="math inline">\(x = \left( 1, 2.5, -6.3 \right)\)</span> is <code>6.851277</code> in R. You can compute the <span class="math inline">\(l^1\)</span> and <span class="math inline">\(l^2\)</span> norms in R using <code>norm(x, type = "1")</code> and <code>norm(x, type = "2")</code> respectively. Read the documentation, <code>?norm()</code> and you will see you need to make sure the argument <code>x</code> is a matrix.</p></li>
+<li><p>Compare <span class="math inline">\(||x||_2\)</span> and <span class="math inline">\(||y||_2\)</span> where <span class="math inline">\(y = \left(0.8, 2.4, -6.4 \right)\)</span>.</p></li>
+<li><p>Compare <span class="math inline">\(||x||_1\)</span> and <span class="math inline">\(||y||_1\)</span>, where again <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> are the vectors given above. Which is larger?</p></li>
 </ul>
+</section>
+<section id="submitting-your-lab" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-your-lab">Submitting your lab</h2>
+<p>For future lab assignments (this one isn’t graded), you will submit your lab assignment by simply committing and pushing your completed <code>lab-x.qmd</code> to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see <a href="../syllabus.html">the syllabus</a>).</p>
 
 
 </section>

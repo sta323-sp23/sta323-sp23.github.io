@@ -1,6 +1,8 @@
 ---
 title: "Lab 0: Hello R; hi git."
 editor: source
+execute:
+  eval: false
 ---
 
 This lab will introduce you to the course computing workflow. The main goal is to get you setup with git in GitHub, link GitHub with RStudio and play around with a few basics.
@@ -36,8 +38,7 @@ If you haven't yet done so, you will need to reserve a container for `STA323` fi
 
 ## Set up your SSH key
 
-You will authenticate GitHub using SSH.
-Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.
+You will authenticate GitHub using SSH. Below are an outline of the authentication steps; you are encouraged to follow along as your TA demonstrates the steps.
 
 ::: callout-note
 You only need to do this authentication process one time on a single system.
@@ -52,12 +53,9 @@ You can find more detailed instructions [here](https://github.com/DukeStatSci/gi
 
 ## Configure Git
 
-There is one more thing we need to do before getting started on the assignment.
-Specifically, we need to configure your git so that RStudio can communicate with GitHub.
-This requires two pieces of information: your name and email address.
+There is one more thing we need to do before getting started on the assignment. Specifically, we need to configure your git so that RStudio can communicate with GitHub. This requires two pieces of information: your name and email address.
 
-To do so, you will use the `use_git_config()` function from the `usethis` package.
-(And we also need to install a package called `gert` just for this step.)
+To do so, you will use the `use_git_config()` function from the `usethis` package. (And we also need to install a package called `gert` just for this step.)
 
 Type the following lines of code in the **console** in RStudio filling in your name and the email address associated with your GitHub account.
 
@@ -85,87 +83,155 @@ You are now ready interact with GitHub via RStudio!
 
 ## Clone the repo & start new RStudio project
 
--   Go to the course organization at [github.com/sta323-sp23](https://github.com/sta323-sp23) organization on GitHub.
-    Click on the repo with the prefix **lab-0**.
-    It contains the starter documents you need to complete the lab.
+-   Go to the course organization at [github.com/sta323-sp23](https://github.com/sta323-sp23) organization on GitHub. Click on the repo with the prefix **lab-0**. It contains the starter documents you need to complete the lab.
 
--   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**).
-    Click on the clipboard icon to copy the repo URL.
+-   Click on the green **CODE** button, select **Use SSH** (this might already be selected by default, and if it is, you'll see the text **Clone with SSH**). Click on the clipboard icon to copy the repo URL.
 
--   In RStudio, go to *File* ➛ *New Project* ➛*Version Control* ➛ *Git*.
+-   In RStudio, go to **Project** in the upper-right. Click *New Project* -> *Version Control* -> *Git* and paste the SSH URL under "Repository URL". Select *Create Project*.
 
--   Copy and paste the URL of your assignment repo into the dialog box *Repository URL*. Again, please make sure to have *SSH* highlighted under *Clone* when you copy the address.
+-   The R Project will open by default. In the future, you can open the project manually by clicking in the upper right, *Open Project*, and navigate to `lab-0.Rproj` from the drop-down menu.
 
--   Click *Create Project*, and the files from your GitHub repo will be displayed in the *Files* pane in RStudio.
-
--   Click *lab-0-datasaurus.qmd* to open the template Quarto file.
-    This is where you will write up your code and narrative for the lab.
+-   Click *lab-0.qmd* to open the template Quarto file. This is where you will write up your code and narrative for the lab.
 
 ## R and R Studio
 
 Below are the components of the RStudio IDE.
 
-![](images/lab-0/rstudio.png){fig-alt="RStudio IDE"}
+![](/slides/images/lab-0/rstudio.png)
 
 Below are the components of a Quarto (.qmd) file.
 
-![](images/lab-0/quarto.png){fig-alt="Quarto document"}
+![](/slides/images/lab-0/quarto.png)
 
 ## YAML
 
-The top portion of your R Markdown file (between the three dashed lines) is called **YAML**.
-It stands for "YAML Ain't Markup Language".
-It is a human friendly data serialization standard for all programming languages.
-All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+The top portion of your R Markdown file (between the three dashed lines) is called **YAML**. It stands for "YAML Ain't Markup Language". It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
 
 ::: callout-important
-Open the Quarto (`.qmd`) file in your project, change the author name to your name, and render the document.
-Examine the rendered document.
+Open the Quarto (`.qmd`) file in your project, change the author name to your name, and render the document. Examine the rendered document.
 :::
 
 ## Committing changes
 
-Now, go to the Git pane in your RStudio instance.
-This will be in the top right hand corner in a separate tab.
+- In the **Terminal** pane of RStudio, type `pwd` to "print working directory", i.e. show where in the filesystem you are. You should see something like */home/guest/lab-0-username*. Next type `ls` to list files in the directory. You should see something similar:
 
-If you have made changes to your Quarto (.qmd) file, you should see it listed here.
-Click on it to select it in this list and then click on **Diff**.
-This shows you the *diff*erence between the last committed state of the document and its current state including changes.
-You should see deletions in red and additions in green.
+```
+lab-0.Rproj  README.md lab-0.qmd
+```
 
-If you're happy with these changes, we'll prepare the changes to be pushed to your remote repository.
-First, **stage** your changes by checking the appropriate box on the files you want to prepare.
-Next, write a meaningful commit message (for instance, "updated author name") in the **Commit message** box.
-Finally, click **Commit**.
-Note that every commit needs to have a commit message associated with it.
+- Type `git status` and press enter. You should see which files have been edited (highlighted in red). *lab-0.qmd* should be in red since you updated the YAML. 
 
-You don't have to commit after every change, as this would get quite tedious.
-You should commit states that are *meaningful to you* for inspection, comparison, or restoration.
+- Type `git add lab-0.qmd`. This stages the file to be committed. In the future you can add several files to the same commit by repeating this step. You can type `git status` again to see the staged file (in green). Next type `git commit -m "updating YAML"`. This will commit the file with the message between quotes. 
 
-In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use.
-As the semester progresses we will let you make these decisions.
+- Finally `git push` to push the changes to the remote repository.
 
-Now let's make sure all the changes went to GitHub.
-Go to your GitHub repo and refresh the page.
-You should see your commit message next to the updated files.
-If you see this, all your changes are on GitHub and you're good to go!
-
-## Push changes
-
-Now that you have made an update and committed this change, it's time to push these changes to your repo on GitHub.
-
-In order to push your changes to GitHub, you must have **staged** your **commit** to be pushed.
-click on **Push**.
-
+- Now let's make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you're good to go!
 
 ## Exercises
 
-1. Do floating point numbers obey the rules of algebra? Are the following always true?
+For all exercises, you should respond in the space provided in the template `lab-0.qmd` and show all your work. This *lab-0* just has a few warm-up exercises to introduce you to some computing phenomena and general ideas.
 
-- additive association: `(x + y) + z == x + (y + z)`. Let $x = 0.1$, $y = 0.1$ and $z = 1$. Explain what you find.
-- associative rule for multiplication: `(x * y) * z == x  * (y * z)`
-- distributive rule: `a * (x + y) == a * x + a * y`
-- is `0 * x == 0` true for all floating point numbers `x`?
-- is `x / a == x * (1 / a) always true?
+1.  Floating point algebra.\
+    \
+    Do floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. `(x + y) + z == x + (y + z)`. Check if this true in `R` using $x = 0.1$, $y = 0.1$ and $z = 1$. **Explain what you find.**
 
+Additional examples of floating point pecularity are provided below.
 
+```{r cpu-arithmetic, eval=FALSE}
+# example 1
+0.2 == 0.6 / 3
+# example 2
+point3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)
+point3
+point3 == 0.3
+```
+
+To work around these issues, you could use `all.equal()` for checking the equality of two double quantities in R. **What does `all.equal()` do?**
+
+```{r cpu-arithmetic2, eval=FALSE}
+# example 1, all.equal()
+all.equal(0.2, 0.6 / 3)
+# example 2, all.equal()
+point3 <- c(0.3, 0.4 - 0.1, 0.5 - 0.2, 0.6 - 0.3, 0.7 - 0.4)
+point3
+all.equal(point3, rep(.3, length(point3)))
+```
+
+2.  Inefficient math. \
+    \
+    You've collected 10 million observations in a vector called `x` and you summarize the mean of your observations:
+
+```{r }
+set.seed(2)
+n = 10000000
+x = rnorm(n, 1, 10)
+xbar = mean(x)
+```
+
+A new observation comes in `new_x = 15.0`.
+
+```{r}
+new_x = 15
+updated_x = c(x, new_x)
+```
+
+Although it won't change much, you want to recompute the mean with this new data point. You could recompute the mean by re-running `mean()` on `updated_x` or you could observe that:
+
+$$
+\bar{x}_{n+1} = \frac{1}{n+1}(n \cdot\bar{x}_n + x_{n+1})
+$$
+
+Compare the time each method takes by surrounding each method with `system.time({})`.
+
+```{r}
+# method 1
+mean(updated_x)
+```
+
+```{r}
+#method 2
+## program the equation above here and then time it with system.time({})
+
+```
+
+3.  Inefficient code. \
+    \
+    To quantify the inefficiency of a poorly written for loop, time both the code blocks below. Experiment with different values of n. What do you observe?
+
+```{r}
+# method 1
+n <- 10
+x <- 1
+for (i in seq_len(n)) {
+  x <- c(x, sqrt(x[i] * i))
+}
+```
+
+```{r}
+# method 2
+n <- 10
+x <- rep(1, n + 1)
+for (i in seq_len(n)) {
+  x[i + 1] <- sqrt(x[i] * i)
+}
+```
+
+4.  Vector norms.
+
+If $x$ and $y$ are scalar numbers, $x<y$ makes sense. How do you compare the size of two different vectors $x$ and $y$? A very typical way is the vector norm. The p-norm of vector $x$ of length $n$ is:
+
+$$
+||x||_p = \left( \sum_{i=1}^n |x_i |^p \right)^{1/p}
+$$
+
+for $p = 1, 2, ...$. For example, if $p = 2$ we have the *Euclidean norm*, also known as the $l^2$ (read "L-2") norm.
+
+-   Verify that the Euclidean norm of $x = \left( 1, 2.5, -6.3 \right)$ is `6.851277` in R. You can compute the $l^1$ and $l^2$ norms in R using `norm(x, type = "1")` and `norm(x, type = "2")` respectively. Read the documentation, `?norm()` and you will see you need to make sure the argument `x` is a matrix.
+
+-   Compare $||x||_2$ and $||y||_2$ where $y = \left(0.8, 2.4, -6.4 \right)$.
+
+-   Compare $||x||_1$ and $||y||_1$, where again $x$ and $y$ are the vectors given above. Which is larger?
+
+## Submitting your lab
+
+For future lab assignments (this one isn't graded), you will submit your lab assignment by simply committing and pushing your completed `lab-x.qmd` to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see [the syllabus](/syllabus.html)).
