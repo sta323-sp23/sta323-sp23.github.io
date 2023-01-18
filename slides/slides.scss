@@ -8,6 +8,7 @@ $presentation-heading-color: #2774AE; /* nice blue - Spring 2023 */
 $presentation-title-slide-text-align: "left";
 $link-color: #2774AE;
 $code-block-font-size: 1em;
+$code-block-bg: #ECECEC;
 
 /*-- scss:rules --*/
 
@@ -54,4 +55,10 @@ details>summary {
   margin-bottom: 0.5em;
   padding: 0.5em;
   background: #EBF7FF;
+}
+
+.reveal div.sourceCode {
+  border: none;
+  border-radius: 0px;
+  margin-bottom: 10px !important;
 }

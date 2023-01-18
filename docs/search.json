@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ntypes, control flow and filesystems\n\n\n\n\n\n\n\nFri Jan 20\nNAs, functions and loops\n\n\n\n\n\n\n2\nTue Jan 24\n\n\n\n\n\n\n\n\nWed Jan 25\nlists, attributes, and S3\n\n\n\n\n\n\n\nFri Jan 27\ndata frames, matrices and subsetting\n\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\ntidy data and dplyr\n\n\n\n\n\n\n\nFri Feb 03\nfunctional programming and purrr\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\nggplot\n\n\n\n\n\n\n\nFri Feb 10\ntext processing and regular expressions\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nstatistical modeling overview\n\n\n\n\n\n\n6\nTue Feb 21\n\n\n\n\n\n\n\n\nWed Feb 22\nintro to optimization\n\n\n\n\n\n\n\nFri Feb 24\nunivariate Newton-Raphson\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 03\nMM algorithm I\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 10\nEM algorithm\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Mar 24\nproject tips\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny I\n\n\n\n\n\n\n\nFri Mar 31\nshiny II\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, attributes and S3\n\n\n\n\n\n\n2\nTue Jan 24\n\n\n\n\n\n\n\n\nWed Jan 25\nUNIX and filesystems\n\n\n\n\n\n\n\nFri Jan 27\ntidy data, dplyr and ggplot\n\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 03\ntext processing and regular expressions\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\n\n\n\n\n\n\n\n\nFri Feb 10\n\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nstatistical modeling overview\n\n\n\n\n\n\n6\nTue Feb 21\n\n\n\n\n\n\n\n\nWed Feb 22\nintro to optimization\n\n\n\n\n\n\n\nFri Feb 24\nunivariate Newton-Raphson\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 03\nMM algorithm I\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 10\nEM algorithm\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Mar 24\nproject tips\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny I\n\n\n\n\n\n\n\nFri Mar 31\nshiny II\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -369,5 +369,208 @@
     "title": "Lab 0: Hello R; hi git.",
     "section": "Style guidelines",
     "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to RStudio > Preferences > Code > Display > Show margin > 80. This will enable a vertical line in your .qmd files that shows you where the 80 character cutoff is for code chunks.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-0.qmd must not be changed and left as provided.\n\nIf you have any questions about style, please ask a member of the teaching team."
+  },
+  {
+    "objectID": "slides/lec02.html#if-and-ifelse",
+    "href": "slides/lec02.html#if-and-ifelse",
+    "title": "Control flow, loops, and functions",
+    "section": "if and ifelse",
+    "text": "if and ifelse\n\nif (test) {\n  do stuff\n}\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec02.html#if",
+    "href": "slides/lec02.html#if",
+    "title": "Control flow, loops, and functions",
+    "section": "if",
+    "text": "if\n\nif (condition) {\n  do stuff # when condition is TRUE\n}\n\nExamples\n\nx = c(1,2,3)\nif (2 %in% x) {\n  print(\"2 is in x!\")\n}\n\n[1] \"2 is in x!\"\n\n\n\nif (5 %in% x) \n  print(\"5 is in x!\")\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec02.html#if-statements",
+    "href": "slides/lec02.html#if-statements",
+    "title": "Control flow, loops, and functions",
+    "section": "if statements",
+    "text": "if statements\n\nif (condition) {\n  do stuff # when condition is TRUE\n}\n\nExamples\n\nx = c(1,2,3)\nif (2 %in% x) {\n  print(\"2 is in x!\")\n}\n\n[1] \"2 is in x!\"\n\n\n\nif (-6) {\n  print(\"Other types are coerced to logical if possible.\")\n}\n\n[1] \"Other types are coerced to logical if possible.\"\n\n\n\nif (5 %in% x) \n  print(\"5 is in x!\")\n\n\nif the statement is FALSE, {the code} does not execute"
+  },
+  {
+    "objectID": "slides/lec02.html#if-is-not-vectorized",
+    "href": "slides/lec02.html#if-is-not-vectorized",
+    "title": "Control flow, loops, and functions",
+    "section": "if is not vectorized",
+    "text": "if is not vectorized\nWhile many operators and functions in R are vectorized,\n\nx = c(1,2,3)\n\n\nexp(x)\n\n[1]  2.718282  7.389056 20.085537\n\nlog(x)\n\n[1] 0.0000000 0.6931472 1.0986123\n\nx + 2\n\n[1] 3 4 5\n\n\n\nif statements are not\n\n\n\nif (x == 1) {\n  print(\"x is 1!\")\n}\n\nWarning in if (x == 1) {: the condition has length > 1 and only the first\nelement will be used\n\n\n[1] \"x is 1!\""
+  },
+  {
+    "objectID": "slides/lec02.html#collapsing-logical-vectors",
+    "href": "slides/lec02.html#collapsing-logical-vectors",
+    "title": "Control flow, loops, and functions",
+    "section": "Collapsing logical vectors",
+    "text": "Collapsing logical vectors\n\nx = c(1, 2, 3)\nx > 0\n\n[1] TRUE TRUE TRUE\n\n\nany() and all() can help us collapse this to a single argument (like “or”/“and” logic)\n\nany(x > 0)\n\n[1] TRUE\n\nall(x > 0)\n\n[1] TRUE\n\n\n\n\nif (any(x > 0)) {\n  print(\"At least one element of x is greater than 0.\")\n}\n\n[1] \"At least one element of x is greater than 0.\""
+  },
+  {
+    "objectID": "slides/lec02.html#else-if-else-and-ifelse",
+    "href": "slides/lec02.html#else-if-else-and-ifelse",
+    "title": "Control flow, loops, and functions",
+    "section": "else if, else and ifelse",
+    "text": "else if, else and ifelse\n\n\n\nx = 3\nif (x < 0) {\n  \"x is negative\"\n} else if (x > 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is positive\"\n\n\n\n\nx = 0\nif (x < 0) {\n  \"x is negative\"\n} else if (x > 0) {\n  \"x is positive\"\n} else {\n  \"x is zero\"\n}\n\n[1] \"x is zero\"\n\n\n\n\nx = -1\nifelse(x > 0,\n       \"positive\",\n       \"not positive\")\n\n[1] \"not positive\""
+  },
+  {
+    "objectID": "slides/lec02.html#stop-and-stopifnot",
+    "href": "slides/lec02.html#stop-and-stopifnot",
+    "title": "Control flow, loops, and functions",
+    "section": "stop and stopifnot",
+    "text": "stop and stopifnot\nWe often need to validate user input and function arguments. If our validation fails, we want to report the error and stop execution.\n\nok = FALSE\n\n\nif (!ok)\n  stop(\"Things are not ok.\")\n\nError in eval(expr, envir, enclos): Things are not ok.\n\n\n\nstopifnot(ok)\n\nError: ok is not TRUE\n\n\n\n\n\n\n\n\nNote\n\n\nAn error (like the one generated by stop) will prevent a quarto document from rendering unless #| error: true is set for that code chunk"
+  },
+  {
+    "objectID": "slides/lec02.html#placing-checkpoints",
+    "href": "slides/lec02.html#placing-checkpoints",
+    "title": "Control flow, loops, and functions",
+    "section": "Placing checkpoints",
+    "text": "Placing checkpoints\nAlways place checkpoints upstream (find errors as quickly as possible).\n\n\nBad checkpoint placement\n\nif (condition_one) {\n  ##\n  ## Do stuff\n  ##\n} else if (condition_two) {\n  ##\n  ## Do other stuff\n  ##\n} else if (condition_error) {\n  stop(\"Condition error occured\")\n}\n\n\nGood checkpoint placement\n\n# Do stuff better\nif (condition_error) {\n  stop(\"Condition error occured\")\n}\nif (condition_one) {\n  ##\n  ## Do stuff\n  ##\n} else if (condition_two) {\n  ##\n  ## Do other stuff\n  ##\n}"
+  },
+  {
+    "objectID": "slides/lec02.html#exercise-1",
+    "href": "slides/lec02.html#exercise-1",
+    "title": "Control flow, loops, and functions",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nConsider two vectors, x and y, each of length one. Write a set of conditionals that satisfy the following.\n\nIf x is positive and y is negative or y is positive and x is negative, print “knits”.\nIf x divided by y is positive, print “stink”.\nStop execution if x or y are zero.\n\nTest your code with various x and y values. Where did you place the stop execution code?"
+  },
+  {
+    "objectID": "slides/lec02.html#loop-types",
+    "href": "slides/lec02.html#loop-types",
+    "title": "Control flow, loops, and functions",
+    "section": "Loop types",
+    "text": "Loop types\nR supports three types of loops: for, while, and repeat.\n\nfor (item in vector) {\n##\n## Iterate this code\n##\n}\n\n\nwhile (we_have_a_true_condition) {\n##\n## Iterate this code\n##\n}\n\n\nrepeat {\n##\n## Iterate this code\n##\n}"
+  },
+  {
+    "objectID": "slides/lec02.html#for-loops",
+    "href": "slides/lec02.html#for-loops",
+    "title": "Control flow, loops, and functions",
+    "section": "for loops",
+    "text": "for loops\nfor loops are used to iterate over items in a vector. They have the following basic form:\n\nfor (item in vector) perform_action\n\n\nfor (nakama in c(\"Luffy\", \"Nami\", \"Zoro\")) {\n  print(nakama)\n}\n\n[1] \"Luffy\"\n[1] \"Nami\"\n[1] \"Zoro\"\n\n\n\nfor (i in 1:4) {\n  log(i)\n}\n\n\nAutomatic printing is turned off in loops."
+  },
+  {
+    "objectID": "slides/lec02.html#while-loops",
+    "href": "slides/lec02.html#while-loops",
+    "title": "Control flow, loops, and functions",
+    "section": "while loops",
+    "text": "while loops\nwhile loops interate until a condition is false\n\nsquares = rep(0, 5)\nsquares\n\n[1] 0 0 0 0 0\n\n\n\ni = 1\nwhile (i < 6) {\n  squares[i] = i^2\n  i = i + 1\n}\nsquares\n\n[1]  1  4  9 16 25"
+  },
+  {
+    "objectID": "slides/lec02.html#repeat-loops",
+    "href": "slides/lec02.html#repeat-loops",
+    "title": "Control flow, loops, and functions",
+    "section": "repeat loops",
+    "text": "repeat loops\nrepeat loops repeatedly iterate code until a break is reached.\n\ni = 1\nsquares = rep(0, 5)\nrepeat {\nsquares[i] = i ^ 2\ni = i + 1\nif (i > 5) {break}\n}\nsquares\n\n[1]  1  4  9 16 25"
+  },
+  {
+    "objectID": "slides/lec02.html#loop-keywords-next-and-break",
+    "href": "slides/lec02.html#loop-keywords-next-and-break",
+    "title": "Control flow, loops, and functions",
+    "section": "loop keywords: next and break",
+    "text": "loop keywords: next and break\n\nnext exits the current iteration and advances the looping index\nbreak exits the loop\nboth break andnext apply only to the innermost of nested loops.\n\n\nfor (i in 1:10) {\n  if (i %% 2 == 0) {next}\n  print(paste(\"Number\", i, \"is odd.\"))\n  if (i %% 7 == 0) {break}\n  }\n\n[1] \"Number 1 is odd.\"\n[1] \"Number 3 is odd.\"\n[1] \"Number 5 is odd.\"\n[1] \"Number 7 is odd.\""
+  },
+  {
+    "objectID": "slides/lec02.html#auxiliary-loop-functions",
+    "href": "slides/lec02.html#auxiliary-loop-functions",
+    "title": "Control flow, loops, and functions",
+    "section": "Auxiliary loop functions",
+    "text": "Auxiliary loop functions\nYou may want to loop over indices of an object as opposed to the object’s values. To do this, consider using one of length(), seq(), seq_along(), and seq_len().\n\n\n\nseq_along(x) is preferred to 1:length(x) e.g.\nx = list()\nlength(x)\n\n[1] 0\n\n1:length(x)\n\n[1] 1 0\n\nseq_along(x)\n\ninteger(0)\n\n\n\n\nMany ways to generate sequences…\n\n1:5\n\n[1] 1 2 3 4 5\n\nseq(1:5)\n\n[1] 1 2 3 4 5\n\nseq_len(5)\n\n[1] 1 2 3 4 5"
+  },
+  {
+    "objectID": "slides/lec02.html#exercise-2",
+    "href": "slides/lec02.html#exercise-2",
+    "title": "Control flow, loops, and functions",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality\n\\[\n|cos(k)−z|<0.001\n\\]\nfor each component of z."
+  },
+  {
+    "objectID": "slides/lec02.html#exercise-3",
+    "href": "slides/lec02.html#exercise-3",
+    "title": "Control flow, loops, and functions",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality\n\\[\n|cos(k)−z|<0.001\n\\]\nfor each component of z."
+  },
+  {
+    "objectID": "slides/lec02.html#exercises",
+    "href": "slides/lec02.html#exercises",
+    "title": "Control flow, loops, and functions",
+    "section": "Exercises",
+    "text": "Exercises\nExercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality $$ |cos(k)−z|<0.001\n$$ for each component of z."
+  },
+  {
+    "objectID": "slides/lec02.html#function-composition",
+    "href": "slides/lec02.html#function-composition",
+    "title": "Control flow, loops, and functions",
+    "section": "Function composition",
+    "text": "Function composition\nA function is comprised of arguments (formals), and code (body).\n\nquadraticRoots = function(a, b, c) {\n  x1 = (-b + sqrt((b^2) - (4*a*c))) / (2*a)\n  x2 = (-b - sqrt((b^2) - (4*a*c))) / (2*a)\n  return(c(x1, x2))\n}\n\nquadraticRoots(1, -2, -3)\n\n[1]  3 -1\n\n\n\nformals(quadraticRoots)\n\n$a\n\n\n$b\n\n\n$c\n\nbody(quadraticRoots)\n\n{\n    x1 = (-b + sqrt((b^2) - (4 * a * c)))/(2 * a)\n    x2 = (-b - sqrt((b^2) - (4 * a * c)))/(2 * a)\n    return(c(x1, x2))\n}"
+  },
+  {
+    "objectID": "slides/lec02.html#returns",
+    "href": "slides/lec02.html#returns",
+    "title": "Control flow, loops, and functions",
+    "section": "Returns",
+    "text": "Returns\nThere are two approaches to returning values from functions in R - explicit and implicit returns.\nExplicit - using one or more return function calls\n\nf = function(x) {\n  return(x * x)\n}\nf(2)\n\n[1] 4\n\n\n\nImplicit - return value of the last expression is returned.\n\ng = function(x) {\n  x * x\n}\ng(3)\n\n[1] 9"
+  },
+  {
+    "objectID": "slides/lec02.html#invisible-returns",
+    "href": "slides/lec02.html#invisible-returns",
+    "title": "Control flow, loops, and functions",
+    "section": "Invisible returns",
+    "text": "Invisible returns\nMany functions in R make use of an invisible return value\n\nvisible\n\n\nf = function(x) {\n  print(x)\n}\ny = f(1)\n\n[1] 1\n\ny\n\n[1] 1\n\n\n\n\ninvisible\n\n\ng = function(x) {\n  invisible(x)\n}\ng(2)\nz = g(2)\nz\n\n[1] 2"
+  },
+  {
+    "objectID": "slides/lec02.html#invisible-returns-1",
+    "href": "slides/lec02.html#invisible-returns-1",
+    "title": "Control flow, loops, and functions",
+    "section": "Invisible returns",
+    "text": "Invisible returns\nMany functions in R make use of an invisible return value\n\nvisible\n\n\nf = function(x) {\n  print(x)\n}\ny = f(1)\n\n[1] 1\n\ny\n\n[1] 1\n\n\n\ninvisible\n\n\ng = function(x) {\n  invisible(x)\n}\ng(2)\nz = g(2)\nz\n\n[1] 2\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec02.html#arguments",
+    "href": "slides/lec02.html#arguments",
+    "title": "Control flow, loops, and functions",
+    "section": "Arguments",
+    "text": "Arguments\nWhen defining a function we explicitly define names for the arguments, which become variables within the scope of the function.\nWhen calling a function we can use these names to pass arguments in an alternative order.\n\nf = function(x, y, z = 1) { # z defaults to 1\n  paste0(\"x=\", x, \" y=\", y, \" z=\", z)\n}\n\n\n\n\nf(1, 2, 3)\n\n[1] \"x=1 y=2 z=3\"\n\nf(z = 1, x = 2, y = 3)\n\n[1] \"x=2 y=3 z=1\"\n\nf(y = 2, 1, 3)\n\n[1] \"x=1 y=2 z=3\"\n\n\n\n\nf(1)\n\nError in paste0(\"x=\", x, \" y=\", y, \" z=\", z): argument \"y\" is missing, with no default\n\nf(1, 2)\n\n[1] \"x=1 y=2 z=1\"\n\nf(1, 2, 3, 4)\n\nError in f(1, 2, 3, 4): unused argument (4)\n\nf(1 , 2, m = 3)\n\nError in f(1, 2, m = 3): unused argument (m = 3)"
+  },
+  {
+    "objectID": "slides/lec02.html#scope",
+    "href": "slides/lec02.html#scope",
+    "title": "Control flow, loops, and functions",
+    "section": "Scope",
+    "text": "Scope\nR has generous scoping rules, if it can’t find a variable in the current scope (e.g. a function’s body) it will look for it in the next higher scope, and so on.\n\ny = 1\nf = function(x) {\n  x + y\n}\nf(3)\n\n[1] 4\n\n\n\n\ny = 1\ng = function(x) {\n  y = 2\n  x + y\n}\ng(3)\n\n[1] 5\n\n\n\n\nAdditionally, variables defined within a scope only persist for the duration of that scope, and do not overwrite variables at a higher scopes"
+  },
+  {
+    "objectID": "slides/lec02.html#lazy-evaluation",
+    "href": "slides/lec02.html#lazy-evaluation",
+    "title": "Control flow, loops, and functions",
+    "section": "Lazy evaluation",
+    "text": "Lazy evaluation\nArguments to R functions are not evaluated until needed.\n\nf = function(a, b, x) {\n  print(a)\n  print(b ^ 2)\n  0 * x\n}\nf(5, 6)\n\n[1] 5\n[1] 36\n\n\nError in f(5, 6): argument \"x\" is missing, with no default"
+  },
+  {
+    "objectID": "slides/lec02.html#function-forms",
+    "href": "slides/lec02.html#function-forms",
+    "title": "Control flow, loops, and functions",
+    "section": "Function forms",
+    "text": "Function forms\n\n\n\n\n\n\n\n\nForm\nDescription\nExample(s)\n\n\n\n\nPrefix\nname comes before arguments\nlog(x, base = exp(1))\n\n\nInfix\nname between arguments\n+, %>%, %/%\n\n\nReplacement\nreplace values by assignment\nnames(x) <- c(\"a\", \"b\")\n\n\nSpecial\nall others not defined above\n[[, for, break, ("
+  },
+  {
+    "objectID": "slides/lec02.html#help",
+    "href": "slides/lec02.html#help",
+    "title": "Control flow, loops, and functions",
+    "section": "Help",
+    "text": "Help\nTo get help on any function, type ?fcn_name in your console, where fcn_name is the function’s name. For infix, replacement, and special functions you will need to surround the function with backticks.\n\n?mean\n?`for`\n?`+`\n\nFor functions not in the base package, you can generally see their implementation by entering the function name without parentheses (or using the body function).\n\nlm |>\n  head()\n\n                                                                         \n1 function (formula, data, subset, weights, na.action, method = \"qr\",    \n2     model = TRUE, x = FALSE, y = FALSE, qr = TRUE, singular.ok = TRUE, \n3     contrasts = NULL, offset, ...)                                     \n4 {                                                                      \n5     ret.x <- x                                                         \n6     ret.y <- y"
+  },
+  {
+    "objectID": "slides/lec02.html#function-best-practices",
+    "href": "slides/lec02.html#function-best-practices",
+    "title": "Control flow, loops, and functions",
+    "section": "Function best practices",
+    "text": "Function best practices\n\nWrite a function when you have copied code more than twice.\nTry to use a verb for your function’s name.\nKeep argument names short but descriptive.\nAdd code comments to explain the “why” of your code.\nLink a family of functions with a common prefix: pnorm(), pbinom(), ppois().\nKeep data arguments first, then other required arguments, then followed by default arguments. The … argument can be placed last."
+  },
+  {
+    "objectID": "slides/lec02.html#a-summary-of-r",
+    "href": "slides/lec02.html#a-summary-of-r",
+    "title": "Control flow, loops, and functions",
+    "section": "A summary of R",
+    "text": "A summary of R\n\nTo understand computations in R, two slogans are helpful:\nEverything that exists is an object.\nEverything that happens is a function call.\n— John Chambers\n\nJohn McKinley Chambers is the creator of the S programming language, and core member of the R programming language project. The R programming is often called a successor to the S programming language.\n\n\n🔗 sta323-sp23.github.io"
   }
 ]
