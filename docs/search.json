@@ -494,7 +494,7 @@
     "href": "slides/lec02.html#exercises",
     "title": "Control flow, loops, and functions",
     "section": "Exercises",
-    "text": "Exercises\nExercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality $$ |cos(k)−z|<0.001\n$$ for each component of z."
+    "text": "Exercises\nExercise 2\nConsider the vector x below.\n\nx = c(3, 4, 12, 19, 23, 49, 100, 63, 70)\n\nWrite R code that prints the perfect squares in x.\nExercise 3\nConsider z = c(-1, .5, 0, .5, 1). Write R code that prints the smallest non-negative integer k satisfying the inequality\n\\[\n|cos(k)−z|<0.001\n\\]\nfor each component of z."
   },
   {
     "objectID": "slides/lec02.html#function-composition",

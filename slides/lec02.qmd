@@ -363,9 +363,13 @@ Write R code that prints the perfect squares in x.
 
 ### Exercise 3
 
-Consider `z = c(-1, .5, 0, .5, 1)`. Write R code that prints the smallest non-negative integer k satisfying the inequality $$
+Consider `z = c(-1, .5, 0, .5, 1)`. Write R code that prints the smallest non-negative integer k satisfying the inequality 
+
+$$
 |cos(k)−z|<0.001
-$$ for each component of z.
+$$ 
+
+for each component of z.
 
 # Functions
 
