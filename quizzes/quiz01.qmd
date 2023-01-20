@@ -1,0 +1,44 @@
+---
+title: "Quiz 1"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1
+
+Is `x` a list or an atomic vector?
+
+```{r}
+#| eval: false
+x = c(1L, 1)
+```
+
+### Exercise 2
+
+The code below is the result of printing object `y` to the screen. Is `y` a list or an atomic vector?
+
+```{r}
+#| echo: false
+f = function(x) {
+  return(x ^ 2)
+}
+
+list(3, f)
+```
+
+### Exercise 3
+
+What is the output of the following code chunk:
+
+```{r}
+#| eval: false
+TRUE | NA
+```
+
+### Exercise 4
+
+### Exercise 5
+
+
+
+

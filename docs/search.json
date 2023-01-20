@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, attributes and S3\n\n\n\n\n\n\n2\nTue Jan 24\n\n\n\n\n\n\n\n\nWed Jan 25\nUNIX and filesystems\n\n\n\n\n\n\n\nFri Jan 27\ntidy data, dplyr and ggplot\n\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 03\ntext processing and regular expressions\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\n\n\n\n\n\n\n\n\nFri Feb 10\n\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nstatistical modeling overview\n\n\n\n\n\n\n6\nTue Feb 21\n\n\n\n\n\n\n\n\nWed Feb 22\nintro to optimization\n\n\n\n\n\n\n\nFri Feb 24\nunivariate Newton-Raphson\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 03\nMM algorithm I\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 10\nEM algorithm\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Mar 24\nproject tips\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny I\n\n\n\n\n\n\n\nFri Mar 31\nshiny II\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\n\n\n\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n\n\n\n\n\n\n\nFri Jan 27\ntidy data, dplyr and ggplot\n\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 03\nUNIX and filesystems\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\ntext processing and regular expressions\n\n\n\n\n\n\n\nFri Feb 10\n\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nstatistical modeling overview\n\n\n\n\n\n\n6\nTue Feb 21\n\n\n\n\n\n\n\n\nWed Feb 22\nintro to optimization\n\n\n\n\n\n\n\nFri Feb 24\nunivariate Newton-Raphson\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 03\nMM algorithm I\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 10\nEM algorithm\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Mar 24\nproject tips\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny I\n\n\n\n\n\n\n\nFri Mar 31\nshiny II\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -572,5 +572,229 @@
     "title": "Control flow, loops, and functions",
     "section": "A summary of R",
     "text": "A summary of R\n\nTo understand computations in R, two slogans are helpful:\nEverything that exists is an object.\nEverything that happens is a function call.\n— John Chambers\n\nJohn McKinley Chambers is the creator of the S programming language, and core member of the R programming language project. The R programming is often called a successor to the S programming language.\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec03.html#missing-values",
+    "href": "slides/lec03.html#missing-values",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Missing values",
+    "text": "Missing values\nR uses NA to represent missing values in its data structures.NA is a logical type. What may not be obvious is that NA may be treated as a different type thanks to coercion.\n\n\n\ntypeof(NA)\n\n[1] \"logical\"\n\n\n\ntypeof(NA + 1)\n\n[1] \"double\"\n\n\n\ntypeof(NA + 1L)\n\n[1] \"integer\"\n\n\n\ntypeof(c(NA, \"\"))\n\n[1] \"character\"\n\n\n\n\n\ntypeof(NA_character_)\n\n[1] \"character\"\n\n\n\ntypeof(NA_real_)\n\n[1] \"double\"\n\n\n\ntypeof(NA_integer_)\n\n[1] \"integer\"\n\n\n\ntypeof(NA_complex_)\n\n[1] \"complex\""
+  },
+  {
+    "objectID": "slides/lec03.html#na-stickiness",
+    "href": "slides/lec03.html#na-stickiness",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "NA stickiness",
+    "text": "NA stickiness\nBecause NAs represent missing values it makes sense that any calculation using them should also be missing.\n\n\n\n1 + NA\n\n[1] NA\n\n\n\n1 / NA\n\n[1] NA\n\n\n\nNA * 5\n\n[1] NA\n\n\n\n\nsqrt(NA)\n\n[1] NA\n\n\n\n3 ^ NA\n\n[1] NA\n\n\n\nsum(c(1, 2, 3, NA))\n\n[1] NA\n\n\n\n\n\nSummarizing functions (e.g. sum(), mean(), sd(), etc.) will often have a na.rm argument which will allow you to drop missing values.\n\nmean(c(1, 2, NA), na.rm = TRUE)\n\n[1] 1.5\n\n\n\nsum(c(1, 2, NA), na.rm = TRUE)\n\n[1] 3"
+  },
+  {
+    "objectID": "slides/lec03.html#nas-are-not-always-sticky",
+    "href": "slides/lec03.html#nas-are-not-always-sticky",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "NAs are not always sticky",
+    "text": "NAs are not always sticky\nA useful mental model for NAs is to consider them as a unknown value that could take any of the possible values for that type.\nFor numbers or characters this isn’t very helpful, but for a logical value we know that the value must either be TRUE or FALSE and we can use that when deciding what value to return.\nIf the value of NA affects the logical outcome, it is indeterminate and the operation will return NA. If the value of NA does not affect the logical outcome, the operation will return the outcome.\n\nCodeOutput\n\n\n\nTRUE & NA\n\n\nFALSE & NA\n\n\nTRUE | NA\n\n\nFALSE | NA\n\n\n\n\n\n[1] NA\n\n\n[1] FALSE\n\n\n[1] TRUE\n\n\n[1] NA"
+  },
+  {
+    "objectID": "slides/lec03.html#test",
+    "href": "slides/lec03.html#test",
+    "title": "NAs, lists, atrributes and S3",
+    "section": "Test",
+    "text": "Test\n\nCodeOutput\n\n\n\nTRUE & NA\n\n\n\n\n\n[1] NA\n\n\n\n\n\n\nCodeOutput\n\n\n\nFALSE & NA\n\n\n\n\n\n[1] FALSE"
+  },
+  {
+    "objectID": "slides/lec03.html#problem",
+    "href": "slides/lec03.html#problem",
+    "title": "NAs, lists, atrributes and S3",
+    "section": "Problem",
+    "text": "Problem\nHere here here."
+  },
+  {
+    "objectID": "slides/lec03.html#solution",
+    "href": "slides/lec03.html#solution",
+    "title": "NAs, lists, atrributes and S3",
+    "section": "Solution",
+    "text": "Solution\nThere there there."
+  },
+  {
+    "objectID": "slides/lec03.html#testing-for-na",
+    "href": "slides/lec03.html#testing-for-na",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Testing for NA",
+    "text": "Testing for NA\nBecause NA could take any value, the result of, for example, 2 != NA or 1 == NA is inconclusive and returns NA.\nExamples\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n\n\nWe should instead:\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(NA)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/lec03.html#examples",
+    "href": "slides/lec03.html#examples",
+    "title": "NAs, lists, atrributes and S3",
+    "section": "Examples",
+    "text": "Examples\n\n2 != NA\n\n[1] NA\n\n\n\n1 == NA\n\n[1] NA\n\n\n\nWho’s to say two missing values are equal?\n\nNA == NA\n\n[1] NA\n\n\n\n\nIn these cases we should instead\n\n!is.na(2)\n\n[1] TRUE\n\n\n\nis.na(1)\n\n[1] FALSE\n\n\n\nis.na(NA)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/lec03.html#other-special-values-double",
+    "href": "slides/lec03.html#other-special-values-double",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Other Special values (double)",
+    "text": "Other Special values (double)\nThese are defined as part of the IEEE floating point standard (not unique to R)\n\nNaN - Not a number\nInf - Positive infinity\n-Inf - Negative infinity\n\n\n\n\npi / 0\n\n[1] Inf\n\n\n\n0 / 0\n\n[1] NaN\n\n\n\n1 /0 + 1/0\n\n[1] Inf\n\n\n\n\n1/0 - 1/0\n\n[1] NaN\n\n\n\nNaN / NA\n\n[1] NaN\n\n\n\nInf - Inf\n\n[1] NaN\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nIEEE (Institute of Electrical and Electronics Engineers) develops global standards for a broad range of industries including floating-point arithmetic. Read more about the IEEE 754 (the standard for floating-point arithmetic) here"
+  },
+  {
+    "objectID": "slides/lec03.html#exercises",
+    "href": "slides/lec03.html#exercises",
+    "title": "NAs, lists, attributes and S3",
+    "section": "Exercises",
+    "text": "Exercises"
+  },
+  {
+    "objectID": "slides/lec03.html#testing-for-inf-and-nan",
+    "href": "slides/lec03.html#testing-for-inf-and-nan",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Testing for Inf and NaN",
+    "text": "Testing for Inf and NaN\n\n\n\nis.finite(Inf)\n\n[1] FALSE\n\n\n\nis.infinite(-Inf)\n\n[1] TRUE\n\n\n\nis.nan(Inf)\n\n[1] FALSE\n\n\n\nInf > 1\n\n[1] TRUE\n\n\n\n-Inf > 1\n\n[1] FALSE\n\n\n\n\nis.finite(NaN)\n\n[1] FALSE\n\n\n\nis.infinite(NaN)\n\n[1] FALSE\n\n\n\nis.nan(NaN)\n\n[1] TRUE\n\n\n\nis.finite(NA)\n\n[1] FALSE\n\n\n\nis.nan(NA)\n\n[1] FALSE"
+  },
+  {
+    "objectID": "slides/lec03.html#forced-coercion",
+    "href": "slides/lec03.html#forced-coercion",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Forced coercion",
+    "text": "Forced coercion\n\n\nYou can coerce one type to another with as.()\n\nis.integer(2.0)\n\n[1] FALSE\n\n\n\nas.integer(\"2.0\")\n\n[1] 2\n\n\n\nis.integer(as.integer(2.0))\n\n[1] TRUE\n\n\n\nis.integer(Inf)\n\n[1] FALSE\n\n\n\n\nInf and NaN are doubles, however their coercion behavior is not the same as for other doubles.\n\nis.double(Inf)\n\n[1] TRUE\n\nis.double(NaN)\n\n[1] TRUE\n\n\n\nis.integer(as.integer(Inf))\n\nWarning: NAs introduced by coercion to integer range\n\n\n[1] TRUE\n\n\n\nis.integer(as.integer(NaN))\n\n[1] TRUE"
+  },
+  {
+    "objectID": "quizzes/quiz01.html",
+    "href": "quizzes/quiz01.html",
+    "title": "Quiz 1",
+    "section": "",
+    "text": "Exercise 1\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nExercise 2\nThe code below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\nExercise 3\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\nExercise 4\n\n\nExercise 5"
+  },
+  {
+    "objectID": "slides/lec03.html#section",
+    "href": "slides/lec03.html#section",
+    "title": "NAs, lists, attributes and S3",
+    "section": "",
+    "text": "Two types of vectors in R. Atomic vectors (elements are all the same type) and generic vectors, aka lists (heterogeneous collection of elements). For example, a list can contain atomic vectors, functions, other lists, etc.\n\nlist(\"A\", c(TRUE,FALSE), (1:4)/2, list(TRUE, 1), function(x) x^2)\n\n[[1]]\n[1] \"A\"\n\n[[2]]\n[1]  TRUE FALSE\n\n[[3]]\n[1] 0.5 1.0 1.5 2.0\n\n[[4]]\n[[4]][[1]]\n[1] TRUE\n\n[[4]][[2]]\n[1] 1\n\n\n[[5]]\nfunction(x) x^2"
+  },
+  {
+    "objectID": "slides/lec03.html#generic-vectors-lists",
+    "href": "slides/lec03.html#generic-vectors-lists",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Generic vectors (lists)",
+    "text": "Generic vectors (lists)\nTwo types of vectors in R. Atomic vectors (elements are all the same type) and generic vectors, aka lists (heterogeneous collection of elements). For example, a list can contain atomic vectors, functions, other lists, etc.\n\nlist(\"A\", (1:4)/2, list(TRUE, 1), function(x) x^2)\n\n[[1]]\n[1] \"A\"\n\n[[2]]\n[1] 0.5 1.0 1.5 2.0\n\n[[3]]\n[[3]][[1]]\n[1] TRUE\n\n[[3]][[2]]\n[1] 1\n\n\n[[4]]\nfunction(x) x^2"
+  },
+  {
+    "objectID": "slides/lec03.html#list-structure",
+    "href": "slides/lec03.html#list-structure",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "List structure",
+    "text": "List structure\nWe can view the contents of a list and a brief description of the contents compactly with the structure function str()\n\nstr(list(\"A\", (1:4)/2, list(TRUE, 1), function(x) x^2))\n\nList of 4\n $ : chr \"A\"\n $ : num [1:4] 0.5 1 1.5 2\n $ :List of 2\n  ..$ : logi TRUE\n  ..$ : num 1\n $ :function (x)  \n  ..- attr(*, \"srcref\")= 'srcref' int [1:8] 1 39 1 53 39 53 1 1\n  .. ..- attr(*, \"srcfile\")=Classes 'srcfilecopy', 'srcfile' <environment: 0x7fe6c1cb0ee8> \n\n\n\nstr(1:100)\n\n int [1:100] 1 2 3 4 5 6 7 8 9 10 ...\n\n\n\nstr(list(c(1,2), c(TRUE, FALSE)))\n\nList of 2\n $ : num [1:2] 1 2\n $ : logi [1:2] TRUE FALSE"
+  },
+  {
+    "objectID": "slides/lec03.html#recursive-lists",
+    "href": "slides/lec03.html#recursive-lists",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Recursive lists",
+    "text": "Recursive lists\n\nstr(list(list(list(list())))) # recursive list\n\nList of 1\n $ :List of 1\n  ..$ :List of 1\n  .. ..$ : list()\n\n\n\nstr(list(1, list(2), list(3, 2))) # recursive list\n\nList of 3\n $ : num 1\n $ :List of 1\n  ..$ : num 2\n $ :List of 2\n  ..$ : num 3\n  ..$ : num 2\n\n\nBecause of this, lists become the most natural way of representing tree-like structures within R"
+  },
+  {
+    "objectID": "slides/lec03.html#list-coercion",
+    "href": "slides/lec03.html#list-coercion",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "List coercion",
+    "text": "List coercion\nBy default a vector will be coerced to a list (as a list is more general) if needed\n\nstr( c(1, list(4, list(6, 7))) )\n\nList of 3\n $ : num 1\n $ : num 4\n $ :List of 2\n  ..$ : num 6\n  ..$ : num 7\n\n\nWe can coerce a list into an atomic vector using unlist - the usual type coercion rules then apply to determine the final type.\n\nunlist(list(1:3, list(4:5, 6)))\n\n[1] 1 2 3 4 5 6\n\n\n\nunlist( list(1, list(2, list(3, \"Hello\"))) )\n\n[1] \"1\"     \"2\"     \"3\"     \"Hello\"\n\n\nas.integer and similar functions can be used, but only if the list is flat (i.e. no lists inside your base list)"
+  },
+  {
+    "objectID": "slides/lec03.html#exercise-1",
+    "href": "slides/lec03.html#exercise-1",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nWrite a function that takes vector input x and returns the smallest and largest non-infinite value. Test your function on\n\nx = c(1, Inf, 100, 10, -Inf)"
+  },
+  {
+    "objectID": "slides/lec03.html#named-lists",
+    "href": "slides/lec03.html#named-lists",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Named lists",
+    "text": "Named lists\nBecause of their more complex structure we often want to name the elements of a list (we can also do this with atomic vectors).\nThis can make accessing list elements more straight forward.\n\nstr(list(A = 1, B = list(C = 2, D = 3)))\n\nList of 2\n $ A: num 1\n $ B:List of 2\n  ..$ C: num 2\n  ..$ D: num 3\n\n\nMore complex names need to be quoted,\n\nlist(\"knock knock\" = \"who's there?\")\n\n$`knock knock`\n[1] \"who's there?\""
+  },
+  {
+    "objectID": "slides/lec03.html#exercise-2",
+    "href": "slides/lec03.html#exercise-2",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nRepresent the following JSON (JavaScript Object Notation) data as a list in R.\n\n{\n  \"firstName\": \"John\",\n  \"lastName\": \"Smith\",\n  \"age\": 25,\n  \"address\": \n  {\n    \"streetAddress\": \"21 2nd Street\",\n    \"city\": \"New York\",\n    \"state\": \"NY\",\n    \"postalCode\": 10021\n  },\n  \"phoneNumber\": \n  [\n    {\n      \"type\": \"home\",\n      \"number\": \"212 555-1239\"\n    },\n    {\n      \"type\": \"fax\",\n      \"number\": \"646 555-4567\"\n    }\n  ]\n}"
+  },
+  {
+    "objectID": "slides/lec03.html#the-null-type",
+    "href": "slides/lec03.html#the-null-type",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "The NULL type",
+    "text": "The NULL type\nNULL is a special value within R that represents nothing - it always has length zero and type “NULL” and cannot have any attributes.\n\n\n\nNULL\n\nNULL\n\ntypeof(NULL)\n\n[1] \"NULL\"\n\nlength(NULL)\n\n[1] 0\n\n\n\n\nc()\n\nNULL\n\nc(NULL)\n\nNULL\n\nc(1, NULL, 2)\n\n[1] 1 2\n\nc(NULL, TRUE, \"A\")\n\n[1] \"TRUE\" \"A\"   \n\n\n\n\nWhen combined in a vector, it disappears."
+  },
+  {
+    "objectID": "slides/lec03.html#length-coercion",
+    "href": "slides/lec03.html#length-coercion",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "0-length coercion",
+    "text": "0-length coercion\nPreviously we saw that in multi-vector operations, short vectors get re-used until the length of the long vector is matched.\n0-length length coercion is a special case of length coercion when one of the arguments has length 0. In this case the longer vector’s length is not used and result will have length 0.\n\n\n\ninteger() + 1\n\nnumeric(0)\n\nlog(numeric())\n\nnumeric(0)\n\nlogical() | TRUE\n\nlogical(0)\n\ncharacter() > \"M\"\n\nlogical(0)\n\n\n\n\n\nNULL + 1\n\nnumeric(0)\n\nlog(NULL)\n\nError in log(NULL): non-numeric argument to mathematical function\n\nNULL | TRUE\n\nlogical(0)\n\nNULL > \"M\"\n\nlogical(0)\n\n\n\n\n\n\nAs a NULL values always have length 0, this coercion rule will apply (note type coercion is also occurring here)"
+  },
+  {
+    "objectID": "slides/lec03.html#null-and-comparison",
+    "href": "slides/lec03.html#null-and-comparison",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "NULL and comparison",
+    "text": "NULL and comparison\nGiven the previous issue, comparisons and conditional with NULLs can be problematic.\n\nx = NULL\n\nif (x > 0)\n  print(\"Hello\")\n\nError in if (x > 0) print(\"Hello\"): argument is of length zero\n\nif (!is.null(x) & (x > 0))\n  print(\"Hello\")\n\nError in if (!is.null(x) & (x > 0)) print(\"Hello\"): argument is of length zero\n\n\n\n\nif (!is.null(x) && (x > 0))\n  print(\"Hello\")\n\nThis is due to short circuit evaluation which occurs with && and || but not & or |."
+  },
+  {
+    "objectID": "slides/lec03.html#attributes-1",
+    "href": "slides/lec03.html#attributes-1",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Attributes",
+    "text": "Attributes\nAttributes are named lists that can be attached to objects in R. Attributes contain metadata about an object, e.g. the object’s names, dim, class, levels etc.\n\n\n\n\n\n\n\nAttributes can be interacted with via attr and attributes functions.\n\n(x = c(L=1,M=2,N=3))\n\nL M N \n1 2 3 \n\nattributes(x)\n\n$names\n[1] \"L\" \"M\" \"N\"\n\nstr(attributes(x))\n\nList of 1\n $ names: chr [1:3] \"L\" \"M\" \"N\"\n\n\n\n\nattr(x, \"names\")\n\n[1] \"L\" \"M\" \"N\"\n\n\n\n\n\nattr(x, \"something\")\n\nNULL"
+  },
+  {
+    "objectID": "slides/lec03.html#assigning-attributes",
+    "href": "slides/lec03.html#assigning-attributes",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Assigning attributes",
+    "text": "Assigning attributes\n\nx = c(1, 2, 3)\nx\n\n[1] 1 2 3\n\n\n\nnames(x) = c(\"Z\",\"Y\",\"X\") # helper function\nx\n\nZ Y X \n1 2 3 \n\n\n\nnames(x)\n\n[1] \"Z\" \"Y\" \"X\"\n\nattr(x, \"names\") = c(\"A\",\"B\",\"C\")\nx\n\nA B C \n1 2 3 \n\nnames(x)\n\n[1] \"A\" \"B\" \"C\""
+  },
+  {
+    "objectID": "slides/lec03.html#factors",
+    "href": "slides/lec03.html#factors",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Factors",
+    "text": "Factors\nFactor objects are how R represents categorical data (e.g. a variable where there are a fixed # of possible outcomes).\n\n(x = factor(c(\"Sunny\", \"Cloudy\", \"Rainy\", \"Cloudy\", \"Cloudy\")))\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\n\nstr(x)\n\n Factor w/ 3 levels \"Cloudy\",\"Rainy\",..: 3 1 2 1 1\n\n\n\n\n\ntypeof(x)\n\n[1] \"integer\"\n\n\nWhat’s really going on?\n\n\n\nattributes(x)\n\n$levels\n[1] \"Cloudy\" \"Rainy\"  \"Sunny\" \n\n$class\n[1] \"factor\"\n\n\nA factor is just an integer vector with two attributes: class and levels."
+  },
+  {
+    "objectID": "slides/lec03.html#building-objects",
+    "href": "slides/lec03.html#building-objects",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Building objects",
+    "text": "Building objects\nWe can build our own factor from scratch using,\n\ny = c(3L, 1L, 2L, 1L, 1L)\nattr(y, \"levels\") = c(\"Cloudy\", \"Rainy\", \"Sunny\")\nattr(y, \"class\") = \"factor\"\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\nThe approach we just used is a bit clunky - generally the preferred method for construction an object with attributes from scratch is to use the structure function.\n\ny = structure(\n  c(3L, 1L, 2L, 1L, 1L), # data\n  levels = c(\"Cloudy\", \"Rainy\", \"Sunny\"),\n  class = \"factor\"\n)\ny\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\n\n\n\n\nclass(y)\n\n[1] \"factor\"\n\n\n\n\nis.factor(y)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "slides/lec03.html#knowing-factors-are-stored-as-integers-help-explain-some-of-their-more-interesting-behaviors",
+    "href": "slides/lec03.html#knowing-factors-are-stored-as-integers-help-explain-some-of-their-more-interesting-behaviors",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Knowing factors are stored as integers help explain some of their more interesting behaviors:",
+    "text": "Knowing factors are stored as integers help explain some of their more interesting behaviors:\n\nx\n\n[1] Sunny  Cloudy Rainy  Cloudy Cloudy\nLevels: Cloudy Rainy Sunny\n\nx+1\n\nWarning in Ops.factor(x, 1): '+' not meaningful for factors\n\n\n[1] NA NA NA NA NA\n\nis.integer(x)\n\n[1] FALSE\n\nas.integer(x)\n\n[1] 3 1 2 1 1\n\nas.character(x)\n\n[1] \"Sunny\"  \"Cloudy\" \"Rainy\"  \"Cloudy\" \"Cloudy\"\n\nas.logical(x)\n\n[1] NA NA NA NA NA"
+  },
+  {
+    "objectID": "slides/lec03.html#exercise-3-time-permitting",
+    "href": "slides/lec03.html#exercise-3-time-permitting",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Exercise 3 (time permitting)",
+    "text": "Exercise 3 (time permitting)\nCreate a factor vector based on the vector of airport codes below.\n\nairports = c(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"RDU\", \"GRR\", \"GNV\",\n             \"JFK\", \"JFK\", \"SFO\", \"DTW\")\n\nAll of the possible levels are\n\nc(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"GNV\", \"JFK\", \"SFO\")\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec03.html#exercise-3-time-permitting-practice",
+    "href": "slides/lec03.html#exercise-3-time-permitting-practice",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Exercise 3 (time permitting practice)",
+    "text": "Exercise 3 (time permitting practice)\nCreate a factor vector based on the vector of airport codes below.\n\nairports = c(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"RDU\", \"GRR\", \"GNV\",\n             \"JFK\", \"JFK\", \"SFO\", \"DTW\")\n\nAll of the possible levels are\n\nc(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"GNV\", \"JFK\", \"SFO\")\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec03.html#exercise-3",
+    "href": "slides/lec03.html#exercise-3",
+    "title": "NAs, lists, NULL and attributes",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nCreate a factor vector based on the vector of airport codes below.\n\nairports = c(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"RDU\", \"GRR\", \"GNV\",\n             \"JFK\", \"JFK\", \"SFO\", \"DTW\")\n\nAll of the possible levels are\n\nc(\"RDU\", \"ABE\", \"DTW\", \"GRR\", \"GNV\", \"JFK\", \"SFO\")\n\n\n\n🔗 sta323-sp23.github.io"
   }
 ]

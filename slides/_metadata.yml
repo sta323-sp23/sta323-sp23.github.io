@@ -1,6 +1,6 @@
 institute: "Duke University"
 # author: "Alexander Fisher"
-footer: "[🔗 sta323-sp23.github.io](https://sta323-sp23.github.io/)"
+footer: "[🔗 sta323-sp23.github.io](https://sta323-sp23.github.io/schedule.html)"
 # logo: "images/logo.png"
 format:
   revealjs:
