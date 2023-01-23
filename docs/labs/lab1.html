@@ -239,36 +239,6 @@ Hint
 </div>
 </div>
 <p>In each case above, describe why <code>quadraticRoots()</code> from the lecture fails.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>quadraticRoots <span class="ot">=</span> <span class="cf">function</span>(a, b, c) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    x1 <span class="ot">=</span> (<span class="sc">-</span>b <span class="sc">+</span> <span class="fu">sqrt</span>((b<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> (<span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c))) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>a)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    x2 <span class="ot">=</span> (<span class="sc">-</span>b <span class="sc">-</span> <span class="fu">sqrt</span>((b<span class="sc">^</span><span class="dv">2</span>) <span class="sc">-</span> (<span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c))) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">*</span>a)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(<span class="fu">c</span>(x1, x2))</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">quadraticRoots</span>(a, <span class="sc">-</span>b, <span class="sc">-</span>c)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>robustQuadraticRoots <span class="ot">=</span> <span class="cf">function</span>(a, b, c) {</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  u <span class="ot">=</span> <span class="sc">-</span>b <span class="sc">-</span> <span class="fu">sign</span>(b) <span class="sc">*</span> <span class="fu">sqrt</span>(b<span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> (<span class="dv">4</span><span class="sc">*</span>a<span class="sc">*</span>c) <span class="sc">+</span> 0i)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>  x1 <span class="ot">=</span> u <span class="sc">/</span> (<span class="dv">2</span> <span class="sc">*</span> a)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>  x2 <span class="ot">=</span> (<span class="dv">2</span> <span class="sc">*</span> c) <span class="sc">/</span> u</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">c</span>(x1, x2))</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x1 = (-b + sqrt((b^2) - (4*a*c) + 0i)) / (2*a)</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="co"># x2 = (-b - sqrt((b^2) - (4*a*c) + 0i)) / (2*a)</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># return(c(x1, x2))</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(a, b, c)</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="fl">1.4e155</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>c <span class="ot">=</span> <span class="sc">-</span><span class="dv">2</span></span>
-<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(a,b,c)</span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="fu">quadraticRoots</span>(a,b,c)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </section>
 <section id="stirling-numbers-of-the-second-kind" class="level3">
 <h3 class="anchored" data-anchor-id="stirling-numbers-of-the-second-kind">2. <strong>Stirling numbers of the second kind</strong></h3>
@@ -287,18 +257,18 @@ S(n,k) = S(n-1, k-1) + kS(n-1, k)
 <p>where we start the sequence with <span class="math inline">\(S(n, 1) = 1\)</span> and the boundary condition <span class="math inline">\(S(n, k) = 0\)</span> for <span class="math inline">\(k&gt;n\)</span>.</p>
 <p>Create a function <code>ssk()</code> with arguments <code>n</code> and <code>k</code> that computes <strong>S</strong>tirling numbers of the <strong>s</strong>econd <strong>k</strong>ind. Print the result of your function for the following inputs:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case i</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">1</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># case ii</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">10</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># case iii</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">k =</span> <span class="dv">25</span>)</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># case iv</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">6</span>, <span class="at">k =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case i</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">1</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># case ii</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">10</span>, <span class="at">k =</span> <span class="dv">10</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># case iii</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">k =</span> <span class="dv">25</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># case iv</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ssk</span>(<span class="at">n =</span> <span class="dv">6</span>, <span class="at">k =</span> <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -347,7 +317,7 @@ Q(p) = Q(p, \alpha, x_0) = {x_0}{(1-p)^{-\frac{1}{\alpha - 1}}}.
 \]</span></p>
 <p>Using the definition of <span class="math inline">\(Q(p)\)</span>, we can compute the <span class="math inline">\(p\)</span>th quantile for specific values of <span class="math inline">\(p\)</span> manually. For example, to get the median (<span class="math inline">\(p = 0.5\)</span>) of Pareto distributions with <span class="math inline">\(x_0 = 1, \alpha = 3.5\)</span>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">^</span> (<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span>(<span class="fl">3.5</span> <span class="sc">-</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">*</span> (<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.5</span>) <span class="sc">^</span> (<span class="sc">-</span><span class="dv">1</span><span class="sc">/</span>(<span class="fl">3.5</span> <span class="sc">-</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>It would be helpful to have a function that automated this process, both so we don’t have to remember the form of the quantile function for the Pareto distribution, and so we avoid making mistakes.</p>
 <p>We will build our function, <code>qpareto()</code>, in a sequence of steps.</p>
@@ -369,9 +339,9 @@ Hint
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">2.34</span>, <span class="at">x0 =</span> <span class="fl">6e8</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.92</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">2.34</span>, <span class="at">x0 =</span> <span class="fl">6e8</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_1</span>(<span class="at">p =</span> <span class="fl">0.92</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="step-2" class="level4">
@@ -382,8 +352,8 @@ Hint
 <p>Most of the quantile functions in R have an argument <code>lower.tail</code> that is either <code>TRUE</code> or <code>FALSE</code>. If <code>TRUE</code>, the function returns the <span class="math inline">\(p\)</span>th quantile. If <code>FALSE</code>, the function returns the <span class="math inline">\((1-p)\)</span>th quantile, i.e., returns the value <span class="math inline">\(x_p\)</span> such that <span class="math inline">\(F(x_p) = 1 - p\)</span>.</p>
 <p>Create a function <code>qpareto_2()</code> that has an additional argument <code>lower.tail</code> which is by default set to <code>TRUE</code>. Your <code>qpareto_2</code> function should test whether <code>lower.tail</code> is <code>FALSE</code>. If it is <code>FALSE</code>, the function should replace <span class="math inline">\(p\)</span> by <span class="math inline">\(1-p\)</span>. Then pass either <span class="math inline">\(p\)</span> or <span class="math inline">\(1-p\)</span> to <code>qpareto_1()</code> to compute the appropriate quantile, i.e., <code>qpareto_1()</code> is called from inside of <code>qpareto_2()</code>. Test your function with the two function calls below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_2</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_2</span>(<span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_2</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto_2</span>(<span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>There is a downside to writing the function the way we have. We need <code>qpareto_1()</code> to be in the work space when <code>qpareto_2()</code> is called, but there is a big advantage. If we discover a better way to calculate quantiles of the Pareto distribution, we can rewrite <code>qpareto_1()</code> and the new version will automatically be used in <code>qpareto_2()</code>.</p>
 </section>
@@ -397,11 +367,11 @@ Hint
 <p>Quarto markdown will not compile if your R function stops due to the <code>stopifnot()</code> function. Include <code>#| error: true</code> to allow your document to render. See the hint to exercise 1 for more details.</p>
 <p>Test your function on the five function calls below.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">1.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">x0 =</span> <span class="sc">-</span><span class="dv">4</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="dv">2</span>, <span class="at">x0 =</span> <span class="sc">-</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">3.5</span>, <span class="at">x0 =</span> <span class="dv">1</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">1.08</span>, <span class="at">alpha =</span> <span class="fl">2.5</span>, <span class="at">x0 =</span> <span class="fl">1e6</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">x0 =</span> <span class="sc">-</span><span class="dv">4</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qpareto</span>(<span class="at">p =</span> <span class="fl">0.5</span>, <span class="at">alpha =</span> <span class="dv">2</span>, <span class="at">x0 =</span> <span class="sc">-</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><em>Is your function vectorized? For which parameters is it vectorized?</em></p>
 </section>

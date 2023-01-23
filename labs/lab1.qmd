@@ -62,39 +62,6 @@ robustQuadraticFormula(a = 4.3162933554e-11,
 
 In each case above, describe why `quadraticRoots()` from the lecture fails.
 
-
-```{r}
-quadraticRoots = function(a, b, c) {
-    x1 = (-b + sqrt((b^2) - (4*a*c))) / (2*a)
-    x2 = (-b - sqrt((b^2) - (4*a*c))) / (2*a)
-    return(c(x1, x2))
-}
-
-quadraticRoots(a, -b, -c)
-
-robustQuadraticRoots = function(a, b, c) {
-  u = -b - sign(b) * sqrt(b^2 - (4*a*c) + 0i)
-  x1 = u / (2 * a)
-  x2 = (2 * c) / u
-  return(c(x1, x2))
-  
-    # x1 = (-b + sqrt((b^2) - (4*a*c) + 0i)) / (2*a)
-    # x2 = (-b - sqrt((b^2) - (4*a*c) + 0i)) / (2*a)
-    # return(c(x1, x2))
-}
-
-robustQuadraticRoots(1, 2, 3)
-robustQuadraticRoots(a, b, c)
-
-a = 1
-b = 1.4e155
-c = -2
-
-robustQuadraticRoots(a,b,c)
-quadraticRoots(a,b,c)
-
-```
-
 ### 2. **Stirling numbers of the second kind**
 
 Stirling numbers of the second kind count the number of possible partitions of a set of $n$ objects into $k$ disjoint blocks. For example, the number of ways to partition a set of 3 objects in 2 disjoint blocks is $S(3, 2) = 3$ because the set $\{1, 2, 3\}$ can be partitioned into two disjoint blocks in 3 ways:
