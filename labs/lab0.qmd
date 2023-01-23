@@ -133,7 +133,7 @@ For all exercises, you should respond in the space provided in the template `lab
 
 1.  Floating point algebra.\
     \
-    Do floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. `(x + y) + z == x + (y + z)`. Check if this true in `R` using $x = 0.1$, $y = 0.1$ and $z = 1$. **Explain what you find.**
+    Do floating point numbers obey the rules of algebra? For example, one of the rules of algebra is additive association. `(x + y) + z == x + (y + z)`. Check if this is true in `R` using $x = 0.1$, $y = 0.1$ and $z = 1$. **Explain what you find.**
 
 Additional examples of floating point pecularity are provided below.
 

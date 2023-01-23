@@ -45,7 +45,7 @@ schedule %>%
 | 1    | Tue Jan 17 | git                                       | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |      |         |
 |      | Wed Jan 18 | control flow, loops and functions         |    [💻](/slides/lec02.html)     |                          |      |         |
 |      | Fri Jan 20 | NAs, lists, NULL and attributes             |  [💻](/slides/lec03.html)                               |                          |      |         |
-| 2    | Tue Jan 24 |                                           |                                 |                          |      |         |
+| 2    | Tue Jan 24 | if it's a function, fix it                                          |                                 | [lab 1](/labs/lab1.html)                         |      |         |
 |      | Wed Jan 25 | Object oriented programming                      |                                 |                          |      |         |
 |      | Fri Jan 27 | tidy data, dplyr and ggplot               |                                 |                          |      |         |
 | 3    | Tue Jan 31 |                                           |                                 |                          |      |         |
