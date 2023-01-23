@@ -219,7 +219,10 @@ ax^2 + bx + c = 0.
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># case iv</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="fl">4.3162933554e-11</span>,</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">b =</span> <span class="fl">1.0361118521e6</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">c =</span> <span class="sc">-</span><span class="fl">4.5813932360e5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">c =</span> <span class="sc">-</span><span class="fl">4.5813932360e5</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># case v</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">5</span>, <span class="at">c =</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -235,6 +238,7 @@ Hint
 <li>for case (ii) you should return an error. Since errors will stop your <code>.qmd</code> from rendering, you should include in your code chunk <code>#| error: true</code>. Read <a href="https://quarto.org/docs/computations/execution-options.html">quarto docs here</a> for a full list of code chunk execution options.</li>
 <li>for case (iii) you need to deal with complex numbers <a href="https://www.r-tutor.com/r-introduction/basic-data-types/complex">read here</a></li>
 <li>for case (iv) the correct answer is <span class="math inline">\(x_1 = -2.4e16\)</span> and <span class="math inline">\(x_2 = -.44\)</span> when rounded to two significant figures.</li>
+<li>for case (v), you should use <code>warning()</code> to warn the user that both <em>a</em> and <em>c</em> are 0.</li>
 </ul>
 </div>
 </div>

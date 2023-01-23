@@ -51,6 +51,9 @@ robustQuadraticRoots(a = 1, b = 2, c = 3)
 robustQuadraticRoots(a = 4.3162933554e-11,
                        b = 1.0361118521e6,
                        c = -4.5813932360e5)
+
+# case v
+robustQuadraticRoots(a = 0, b = 5, c = 0)
 ```
 
 ::: callout-tip
@@ -58,6 +61,7 @@ robustQuadraticRoots(a = 4.3162933554e-11,
 - for case (ii) you should return an error. Since errors will stop your `.qmd` from rendering, you should include in your code chunk `#| error: true`. Read [quarto docs here](https://quarto.org/docs/computations/execution-options.html) for a full list of code chunk execution options.
 - for case (iii) you need to deal with complex numbers [read here](https://www.r-tutor.com/r-introduction/basic-data-types/complex)
 - for case (iv) the correct answer is $x_1 = -2.4e16$ and $x_2 = -.44$ when rounded to two significant figures.
+- for case (v), you should use `warning()` to warn the user that both *a* and *c* are 0.
 :::
 
 In each case above, describe why `quadraticRoots()` from the lecture fails.
