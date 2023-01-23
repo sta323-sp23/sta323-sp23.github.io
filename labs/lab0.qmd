@@ -236,7 +236,7 @@ for $p = 1, 2, ...$. For example, if $p = 2$ we have the *Euclidean norm*, also 
 
 All assignments in this course must employ proper coding style, as outlined below:
 
-- All code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to `RStudio` > `Preferences` > `Code` > `Display` > `Show margin` > `80`. This will enable a vertical line in your `.qmd` files that shows you where the 80 character cutoff is for code chunks.
+- All code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, go to `Tools` > `Global Options` > `Code` > `Display` > `Show margin` > `80`. This will enable a vertical line in your `.qmd` files that shows you where the 80 character cutoff is for code chunks. Instructions may vary slightly for local installs of RStudio.
 
 - All commas should be followed by a space.
 
