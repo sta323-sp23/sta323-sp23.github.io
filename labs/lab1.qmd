@@ -34,21 +34,21 @@ $$
 
 In general, $x^*$ such that $f(x^*) = 0$, then $x^*$ is said to be a *root* of $f(x)$. You can find an example of basic implementation of the quadratic formula from [lecture 2: control flow, loops and functions](https://sta323-sp23.github.io/slides/lec02.html#/function-composition).
 
-Write a function named `robustQuadraticFormula()` that accepts three arguments: `a`, `b` and `c` and returns both roots (even if they are repeated) while satisfying the additional cases below. Show the output of your function `robustQuadraticFormula()` on each of the cases below.
+Write a function named `robustQuadraticRoots()` that accepts three arguments: `a`, `b` and `c` and returns both roots (even if they are repeated) while satisfying the additional cases below. Show the output of your function `robustQuadraticRoots()` on each of the cases below.
 
 ```{r}
 #| eval: false
 # case i 
-robustQuadraticFormula(a = 0, b = 3, c = 2)
+robustQuadraticRoots(a = 0, b = 3, c = 2)
 
 # case ii
-robustQuadraticFormula(a = 0, b = 0, c = 0)
+robustQuadraticRoots(a = 0, b = 0, c = 0)
 
 # case iii
-robustQuadraticFormula(a = 1, b = 2, c = 3)
+robustQuadraticRoots(a = 1, b = 2, c = 3)
 
 # case iv
-robustQuadraticFormula(a = 4.3162933554e-11,
+robustQuadraticRoots(a = 4.3162933554e-11,
                        b = 1.0361118521e6,
                        c = -4.5813932360e5)
 ```

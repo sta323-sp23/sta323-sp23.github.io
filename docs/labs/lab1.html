@@ -205,19 +205,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ax^2 + bx + c = 0.
 \]</span></p>
 <p>In general, <span class="math inline">\(x^*\)</span> such that <span class="math inline">\(f(x^*) = 0\)</span>, then <span class="math inline">\(x^*\)</span> is said to be a <em>root</em> of <span class="math inline">\(f(x)\)</span>. You can find an example of basic implementation of the quadratic formula from <a href="https://sta323-sp23.github.io/slides/lec02.html#/function-composition">lecture 2: control flow, loops and functions</a>.</p>
-<p>Write a function named <code>robustQuadraticFormula()</code> that accepts three arguments: <code>a</code>, <code>b</code> and <code>c</code> and returns both roots (even if they are repeated) while satisfying the additional cases below. Show the output of your function <code>robustQuadraticFormula()</code> on each of the cases below.</p>
+<p>Write a function named <code>robustQuadraticRoots()</code> that accepts three arguments: <code>a</code>, <code>b</code> and <code>c</code> and returns both roots (even if they are repeated) while satisfying the additional cases below. Show the output of your function <code>robustQuadraticRoots()</code> on each of the cases below.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case i </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticFormula</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">3</span>, <span class="at">c =</span> <span class="dv">2</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">3</span>, <span class="at">c =</span> <span class="dv">2</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># case ii</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticFormula</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">c =</span> <span class="dv">0</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="dv">0</span>, <span class="at">b =</span> <span class="dv">0</span>, <span class="at">c =</span> <span class="dv">0</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># case iii</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticFormula</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># case iv</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticFormula</span>(<span class="at">a =</span> <span class="fl">4.3162933554e-11</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">robustQuadraticRoots</span>(<span class="at">a =</span> <span class="fl">4.3162933554e-11</span>,</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                       <span class="at">b =</span> <span class="fl">1.0361118521e6</span>,</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                       <span class="at">c =</span> <span class="sc">-</span><span class="fl">4.5813932360e5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
