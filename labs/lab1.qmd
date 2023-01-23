@@ -1,5 +1,6 @@
 ---
 title: "Lab 1: if it's a function, fix it"
+subtitle: "Due Monday January 30 at 5:00pm"  
 editor: source
 execute:
   eval: false
