@@ -91,23 +91,20 @@ Create a function `ssk()` with arguments `n` and `k` that computes **S**tirling 
 #| eval: false
 
 # case i
-ssk(n = 10, k = 1)
+ssk(n = 3, k = 2)
 
 # case ii
-ssk(n = 10, k = 10)
-
+ssk(n = 10, k = 1)
 
 # case iii
-ssk(n = 100, k = 25)
+ssk(n = 10, k = 10)
 
 # case iv
+ssk(n = 15, k = 8)
+
+# case v
 ssk(n = 6, k = 7)
 ```
-
-::: callout-tip
-## Hint
-in case (iv) above, your function should print an error. See the hint from the previous exercise for more details.
-:::
 
 ### 3. **Pareto distribution**
 
