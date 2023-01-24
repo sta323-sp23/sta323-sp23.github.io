@@ -1,0 +1,151 @@
+---
+title: "Object oriented programming"
+author: "Dr. Alexander Fisher"
+date: "January 25, 2023"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# Review of types
+
+## R's type hierarchy
+
+-   from most to least complex: class $\rightarrow$ mode $\rightarrow$ type
+
+```{r}
+#| echo: false
+f = function(x) x^2
+x = factor("A")
+l = list(1, "A")
+```
+
+| value             | `typeof()`       | `mode()`       | `class()`       |
+|:------------------|:-----------------|:---------------|:----------------|
+| `TRUE`            | `r typeof(TRUE)` | `r mode(TRUE)` | `r class(TRUE)` |
+| `1`               | `r typeof(1)`    | `r mode(1)`    | `r class(1)`    |
+| `1L`              | `r typeof(1L)`   | `r mode(1L)`   | `r class(1L)`   |
+| `"A"`             | `r typeof("A")`  | `r mode("A")`  | `r class("A")`  |
+| `NULL`            | `r typeof(NULL)` | `r mode(NULL)` | `r class(NULL)` |
+| `list(1, "A")`    | `r typeof(l)`    | `r mode(l)`    | `r class(l)`    |
+| `factor("A")`     | `r typeof(x)`    | `r mode(x)`    | `r class(x)`    |
+| `function(x) x^2` | `r typeof(f)`    | `r mode(f)`    | `r class(f)`    |
+| `\+`              | builtin          | function       | function        |
+| `\[`              | special          | function       | function        |
+
+. . .
+
+objects have `class` even if no formal `class` attribute (seen with `attributes()`)
+
+# S3 Object System
+
+## What is S3?
+
+- S3 is R's core object oriented implementation
+
+- S3 is the only OO system used in the base and stats packages, and it’s the most commonly used system in CRAN packages.
+
+- S3 is more flexible (read also: easier to break) than traditional object oriented programming you may have seen before (e.g. Java).
+
+. . .
+
+Working model: S3 is a system where we attach metadata to an object via the `class` attribute.
+
+## S3 class specialization
+
+```{r}
+x = c("A","B","A","C")
+```
+
+. . .
+
+```{r}
+print( x )
+```
+
+. . .
+
+```{r}
+print( factor(x) )
+```
+
+. . .
+
+```{r}
+print( unclass( factor(x) ) ) # unclass strips the class attribute
+```
+
+. . .
+
+```{r}
+print.default( factor(x) )
+```
+
+. . .
+
+
+## Other examples
+
+::: columns
+::: {.column width="50%"}
+```{r}
+mean
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+t.test
+```
+:::
+:::
+
+. . .
+
+Not all base functions use this approach,
+
+```{r}
+sum
+```
+
+. . .
+
+::: callout-note
+The `...` (dot-dot-dot) argument means the function can take any number of additional arguments. This is called a "variable argument" and it is commonly used so you pass variables to additional nested functions. For example:
+
+```{r}
+#| eval: false
+f1 =  function(y = 0, z = 0) {
+  return(y + z)
+}
+
+f2 <- function(x, ...) {
+  return(x + f1(...))
+}
+
+f2(x = 1, y = 2, z = 3)
+```
+:::
+
+## Generics (what's going on!?)
+
+- An S3 object behaves differently from its underlying base type whenever it's passed to a **generic** function
+
+The easiest way to tell if a function is a generic is to use `sloop::ftype()` and look for "generic" in the output, e.g.
+
+```{r}
+library(sloop)
+ftype(print)
+```
+
+. . .
+
+Fundamentally, the generic function dispatches to a specialized version of the function depending on the class of its input. `UseMethod()` tells a generic to look for the specialized version.
+
+The syntax for specialized functons is: `<generic>.<class>`
+
+
+
+

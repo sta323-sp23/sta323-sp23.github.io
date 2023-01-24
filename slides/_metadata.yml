@@ -8,6 +8,7 @@ format:
     transition: none
     slide-number: "c"
     chalkboard: true
+    history: false
 editor: visual
 execute:
   freeze: auto

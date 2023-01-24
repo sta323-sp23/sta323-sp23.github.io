@@ -1,16 +1,15 @@
 #### Teaching team & office hours
 
-|                      | Contact                                           | Time                 | Location      |
-|-----------------|----------------------|-----------------|-----------------|
-| Dr. Alexander Fisher | [alexander.fisher\@duke.edu]()                    | We: 1:30pm-3:30pm   | Old Chem 207  |
-| Devin Johnson        | [devin.johnson\@duke.edu](devin.johnson@duke.edu) | Mo: 10:00am-12:00pm | Old Chem 203B |
-| Tong Lin             | [tong.lin\@duke.edu](tong.lin@duke.edu)           | Th: 9:00am-11:00am  | Old Chem 203B |
-
+|                      | Contact                                           | Time                | Location      | Section |
+|--------------|----------------|--------------|--------------|--------------|
+| Dr. Alexander Fisher | [alexander.fisher\@duke.edu]()                    | We: 1:30pm-3:30pm   | Old Chem 207  | Lecture |
+| Devin Johnson        | [devin.johnson\@duke.edu](devin.johnson@duke.edu) | Mo: 10:00am-12:00pm | Old Chem 203B | Lab 01  |
+| Tong Lin             | [tong.lin\@duke.edu](tong.lin@duke.edu)           | Th: 9:00am-11:00am  | Old Chem 203B | Lab 02  |
 
 #### Lecture and lab
 
-|         |                     |                     |
-|---------|---------------------|---------------------|
-| Lecture | We/Fr 12:00 - 1:15pm   | Social Sciences 136 |
-| Lab 01  | Tu 12:00pm - 1:15pm | Old Chemistry 003   |
-| Lab 02  | Tu 1:45pm - 3:00pm  | Old Chemistry 003   |
+|         |                      |                     |
+|---------|----------------------|---------------------|
+| Lecture | We/Fr 12:00 - 1:15pm | Social Sciences 136 |
+| Lab 01  | Tu 12:00pm - 1:15pm  | Old Chemistry 003   |
+| Lab 02  | Tu 1:45pm - 3:00pm   | Old Chemistry 003   |

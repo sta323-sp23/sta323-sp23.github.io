@@ -60,7 +60,7 @@ robustQuadraticRoots(a = 0, b = 5, c = 0)
 ## Hint
 - for case (ii) you should return an error. Since errors will stop your `.qmd` from rendering, you should include in your code chunk `#| error: true`. Read [quarto docs here](https://quarto.org/docs/computations/execution-options.html) for a full list of code chunk execution options.
 - for case (iii) you need to deal with complex numbers [read here](https://www.r-tutor.com/r-introduction/basic-data-types/complex)
-- for case (iv) the correct answer is $x_1 = -2.4e16$ and $x_2 = -.44$ when rounded to two significant figures.
+- for case (iv) the correct answer is $x_1 = -2.4e16$ and $x_2 = .44$ when rounded to two significant figures.
 - for case (v), you should use `warning()` to warn the user that both *a* and *c* are 0.
 :::
 
@@ -266,7 +266,7 @@ All assignments in this course must employ proper coding style, as outlined belo
 
 -   All code chunks should be named (with names that don't have spaces, e.g. `ex-1`, `ex-2` etc.)
 
--   File names in your GitHub repo such as `lab-x.qmd` must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of this check are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.
+-   File names in your GitHub repo such as `lab-x.qmd` must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.
 
 Fundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your `.qmd` renders.
 
