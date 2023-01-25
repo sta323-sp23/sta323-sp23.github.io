@@ -46,7 +46,7 @@ schedule %>%
 |      | Wed Jan 18 | control flow, loops and functions         |    [💻](/slides/lec02.html)     |                          |      |         |
 |      | Fri Jan 20 | NAs, lists, NULL and attributes             |  [💻](/slides/lec03.html)                               |                          |      |         |
 | 2    | Tue Jan 24 | if it's a function, fix it                                          |                                 | [lab 1](/labs/lab1.html)                         |      |         |
-|      | Wed Jan 25 | Object oriented programming                      |                                 |                          |      |         |
+|      | Wed Jan 25 | Object oriented programming                      |  [💻](/slides/lec04.html)                               |                          |      |         |
 |      | Fri Jan 27 | tidy data, dplyr and ggplot               |                                 |                          |      |         |
 | 3    | Tue Jan 31 |                                           |                                 |                          |      |         |
 |      | Wed Feb 01 | functional programming and purrr          |                                 |                          |      |         |
