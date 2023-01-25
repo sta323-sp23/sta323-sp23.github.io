@@ -662,7 +662,7 @@
     "href": "quizzes/quiz01.html",
     "title": "Quiz 1",
     "section": "",
-    "text": "Exercise 1\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nExercise 2\nThe code below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\nExercise 3\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\nExercise 4\n\n\nExercise 5"
+    "text": "Exercise 1\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nExercise 2\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\nExercise 3\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\nExercise 4\nWhat’s a generic?"
   },
   {
     "objectID": "slides/lec03.html#section",

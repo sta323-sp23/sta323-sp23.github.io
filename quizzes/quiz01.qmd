@@ -15,7 +15,7 @@ x = c(1L, 1)
 
 ### Exercise 2
 
-The code below is the result of printing object `y` to the screen. Is `y` a list or an atomic vector?
+The output below is the result of printing object `y` to the screen. Is `y` a list or an atomic vector?
 
 ```{r}
 #| echo: false
@@ -37,7 +37,7 @@ TRUE | NA
 
 ### Exercise 4
 
-### Exercise 5
+What's a **generic**?
 
 
 
