@@ -54,7 +54,7 @@ the project will be provided during the semester. Projects will be completed in 
 
 #### Quizzes
 
-On random class days, there will be a brief quiz on the previous lectures. If you score  $>80\%$ on quizzes, you will receive full participation credit.
+On random class days, there will be a brief quiz on the previous lectures. If you score  $>60\%$ on quizzes, you will receive full participation credit. Your lowest **two** quizzes will also be dropped.
 
 
 ### Where to find help

@@ -1,0 +1,77 @@
+---
+title: "quiz solutions"
+fontsize: 12pt
+---
+
+Find here solutions to quizzes with explanations.
+
+# quiz 1
+
+::: panel-tabset
+### Exercise 1
+
+Is `x` a list or an atomic vector?
+
+```{r}
+#| eval: false
+x = c(1L, 1)
+```
+
+### Solution
+
+`x` is an atomic vector. Specifically, `1L` is coerced to type double due to `c()`.
+
+```{r}
+x = c(1L, 1)
+typeof(x)
+```
+:::
+
+::: panel-tabset
+
+### Exercise 2
+
+The output below is the result of printing object `y` to the screen. Is `y` a list or an atomic vector?
+
+```{r}
+#| echo: false
+f = function(x) {
+  return(x ^ 2)
+}
+
+list(3, f)
+```
+
+### Solution
+
+`y` is a list because it has heterogeneous elements. The first element is the double `3` while the second element is a function.
+
+:::
+
+::: panel-tabset
+### Exercise 3
+What is the output of the following code chunk:
+
+```{r}
+#| eval: false
+TRUE | NA
+```
+
+### Solution
+
+```{r}
+#| echo: false
+TRUE | NA
+```
+:::
+
+::: panel-tabset
+
+### Exercise 4
+
+What's a **generic**?
+
+### Solution
+
+A generic is a function that dispatches to other class-specific functions depending on the class of the argument.
+:::

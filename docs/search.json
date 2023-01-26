@@ -985,5 +985,12 @@
     "title": "Object oriented programming",
     "section": "Build your own data frame",
     "text": "Build your own data frame\n\ndf = list(x = 1:3, y = c(\"a\", \"b\", \"c\"), z = c(TRUE, TRUE, TRUE))\n\nattr(df,\"class\") = \"data.frame\"\nattr(df,\"row.names\") = 1:3\ndf\n\n  x y    z\n1 1 a TRUE\n2 2 b TRUE\n3 3 c TRUE\n\nstr(df)\n\n'data.frame':   3 obs. of  3 variables:\n $ x: int  1 2 3\n $ y: chr  \"a\" \"b\" \"c\"\n $ z: logi  TRUE TRUE TRUE\n\nis.data.frame(df)\n\n[1] TRUE\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "solutions/quizzes.html",
+    "href": "solutions/quizzes.html",
+    "title": "quiz solutions",
+    "section": "",
+    "text": "quiz 1\n\nExercise 1Solution\n\n\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nx is an atomic vector. Specifically, 1L is coerced to type double due to c().\n\nx = c(1L, 1)\ntypeof(x)\n\n[1] \"double\"\n\n\n\n\n\n\nExercise 2Solution\n\n\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\ny is a list because it has heterogeneous elements. The first element is the double 3 while the second element is a function.\n\n\n\n\nExercise 3Solution\n\n\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\n\n\n[1] TRUE\n\n\n\n\n\n\nExercise 4Solution\n\n\nWhat’s a generic?\n\n\nA generic is a function that dispatches to other class-specific functions depending on the class of the argument."
   }
 ]
