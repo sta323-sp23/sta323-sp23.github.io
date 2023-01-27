@@ -1,0 +1,498 @@
+---
+title: "Tidyverse"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# 
+
+![](images/tidyverse/hex-tidyverse.png){fig-align="center"}
+
+## Tidy data
+
+![](images/tidyverse/tidy-data.png)
+
+from [R4DS tidy data](https://r4ds.had.co.nz/tidy-data.html)\
+\
+
+## Tidy vs untidy
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+#| echo: false
+sw_people = purrr::map(
+  repurrrsive::sw_people,
+  ~ .[1:8]
+)
+
+str(sw_people[1:3])
+```
+
+. . .
+
+untidy!
+
+## Tidy vs untidy
+
+```{r}
+#| echo: false
+tidyr::billboard[,1:7]
+```
+
+. . .
+
+Basically tidy, but we have repeated measures.
+
+# Reshape the data
+
+## Pivot longer
+
+```{r}
+#| eval: false
+#| echo: false
+library(tidyr)
+pivot_longer(billboard, 4:ncol(billboard), names_to = "week") |>
+  head(5)
+```
+
+![](images/tidyr_gather-01.png){width="729" fig-align="center"}
+
+. . .
+
+```{r}
+library(tidyr)
+table4a |>
+  pivot_longer(2:3, names_to = "year", values_to = "cases")
+```
+
+From [data import cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf)
+
+## Pivot wider
+
+```{r}
+#| echo: false
+df = data.frame(
+    country = c("A", "A", "A", "A", "B", "B", "B", "B", "C", "C", "C", "C"),
+    year = rep(c(1999, 1999, 2000, 2000), 3), 
+    type = rep(c("cases", "pop"), 6),
+    count = c("0.7K", "19M", "2K", "20M",
+              "37K", "172M", "80K", "174M", 
+              "212K", "1T", "213K", "1T")
+)
+```
+
+<!--comment out below -->
+
+```{r}
+#| eval: false
+#| echo: false
+tidyr::pivot_wider(fish_encounters, names_from = station, 
+                   values_from = seen) |>
+  head(3)
+```
+
+![](images/tidyverse/pivot_wider.png){width="640" fig-align="center"}
+
+. . .
+
+```{r}
+library(tidyr)
+table2 |>
+  pivot_wider(names_from = type, values_from = count)
+```
+
+From [data import cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/tidyr.pdf)
+
+## Exercise 1
+
+Reshape the `billboard` data set from the package `tidyr` so that song/week pairs make a single observation.
+
+```{r}
+tidyr::billboard |>
+  head(10)
+```
+
+# Pipes
+
+::: columns
+::: {.column width="50%"}
+![](images/tidyverse/MagrittePipe.png){width="640" fig-align="center"}
+:::
+
+::: {.column width="50%"}
+![](images/tidyverse/magrittr_hex.png){width="350" fig-align="center"}
+:::
+:::
+
+## A quick note on pipes
+
+In the previous examples, you saw the base R pipe `|>`.
+
+The pipe links functions and arguments together in an easy to read way.
+
+Specifically, the pipe takes what comes before and makes it an argument to what comes after.
+
+### Example
+
+-   nested functions
+
+```{r}
+#| eval: false
+park(drive(start_car(find("keys")), to = "campus"))
+```
+
+-   pipeline
+
+```{r}
+#| eval: false
+find("keys") %>%
+    start_car() %>%
+    drive(to = "campus") %>%
+    park()
+```
+
+## Base r vs magrittr
+
+There are two pipes we'll encounter in R:
+
+-   the base R pipe `|>` added in R v4.1.0
+-   the `magrittr` pipe `%>%`
+
+. . .
+
+The main differences are:
+
+-   the base pipe doesn't require loading the package `magrittr` (contained in the `tidyverse`)
+-   the base pipe is negligibly faster in some cases
+-   the base pipe doesn't support `.` argument passing
+
+. . .
+
+### Example
+
+::: columns
+::: {.column width="50%"}
+```{r}
+x = c(1, 3, NA)
+
+TRUE %>%
+  mean(x, na.rm = .)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+#| error: true
+TRUE |>
+  mean(x, na.rm = .)
+```
+:::
+:::
+
+# dplyr
+
+## dplyr verbs
+
+`dplyr` names functions as verbs that manipulate data frames
+
+Quick summary of key dplyr function from [dplyr vignette](https://dplyr.tidyverse.org/articles/dplyr.html):
+
+::: columns
+::: {.column width="50%"}
+**Rows:**
+
+-   `filter()`:chooses rows based on column values. See [logical operations](https://sta323-sp23.github.io/slides/01-welcome.html#/logical-operations)
+-   `slice()`: chooses rows based on location.
+-   `arrange()`: changes the order of the rows
+-   `distinct()`: filter for unique rows (`.keep_all = TRUE` is useful)
+-   `sample_n()`: take a random subset of the rows
+:::
+
+::: {.column width="50%"}
+**Columns:**
+
+-   `select()`: changes whether or not a column is included.
+-   `rename()`: changes the name of columns.
+-   `mutate()`: changes the values of columns and creates new columns.
+-   `pull()`: grab column as a vector
+-   `relocate()`: change column order
+:::
+:::
+
+**Groups of rows:**
+
+-   `summarise()`: collapses a group into a single row.
+-   `count()`: count unique values of one or more variables.
+-   `group_by()`/`ungroup()`: modify other verbs to act on subsets
+
+... and more
+
+## dplyr rules
+
+1.  First argument is always a data frame
+
+2.  Subsequent arguments say what to do with that data frame
+
+3.  Always return a data frame
+
+4.  Don't modify in place
+
+5.  Lazy evaluation magic
+
+## NYC flights
+
+```{r}
+library(nycflights13)
+glimpse(flights)
+```
+
+# Examples
+
+## distinct()
+
+How many flights are in the data set?
+
+```{r}
+flights %>%
+  distinct(tailnum) %>%
+  nrow()
+```
+
+. . .
+
+How many distinct routes?
+
+```{r}
+flights %>%
+  select(origin, dest) %>%
+  distinct() %>%
+  nrow()
+```
+
+## select() two columns
+
+```{r}
+select(flights, arr_delay, dest)
+```
+
+## select() columns that contain information about departures or arrivals
+
+```{r}
+flights %>% 
+  select(contains("dep_"), contains("arr_"))
+```
+
+## select() the numeric (or not numeric) columns
+
+```{r}
+flights %>% 
+  select(where(is.numeric)) %>%
+  head(3)
+```
+
+```{r}
+flights %>% 
+  select(where(function(x) !is.numeric(x))) %>%
+  head(5)
+```
+
+## exclude with select()
+
+select() all but the first 10 columns
+
+```{r}
+flights %>%
+  select(-1:10)
+```
+
+## relocate()
+
+```{r}
+flights %>% 
+  relocate(carrier, origin, dest) %>% # to the front
+  head(2)
+```
+
+. . .
+
+```{r}
+flights %>%
+  relocate(year, month, day, .after = last_col()) %>% # to the end
+  head(2)
+```
+
+## rename()
+
+change the column names
+
+```{r}
+flights %>% 
+  relocate(tailnum) %>% 
+  rename(tail_number = tailnum)
+```
+
+## re-name with select()
+
+```{r}
+flights %>% 
+  select(tail_number = tailnum)
+```
+
+## arrange()
+
+::: columns
+::: {.column width="50%"}
+```{r}
+set.seed(10)
+flights %>% 
+  slice_sample(n = 3) %>% 
+  select(tailnum, day) %>% 
+  arrange(day)
+```
+
+:::
+
+::: {.column width="50%"}
+```{r}
+set.seed(10)
+flights %>% 
+  slice_sample(n = 3) %>% 
+  select(tailnum, day) %>% 
+  arrange(desc(day))
+```
+
+:::
+:::
+
+. . .
+
+- `arrange()` defaults to ascending order. Use `desc()` for descending order.
+
+- you can arrange by multiple columns
+
+## group_by()
+
+```{r}
+flights %>% 
+  group_by(origin)
+```
+
+
+## summarize() with group_by()
+
+```{r}
+flights %>% 
+  group_by(origin) %>%
+  summarize(
+    n = n(), 
+    min_dep_delay = min(dep_delay, na.rm = TRUE), 
+    max_dep_delay = max(dep_delay, na.rm = TRUE)
+  )
+```
+
+
+## Groups after summarize
+
+::: columns
+::: {.column width="50%"}
+```{r}
+flights %>% 
+  group_by(origin) %>%
+  summarize(
+    n = n(), 
+    min_dep_delay = min(dep_delay, na.rm = TRUE), 
+    max_dep_delay = max(dep_delay, na.rm = TRUE),
+    .groups = "drop_last"
+  )
+```
+
+:::
+
+
+::: {.column width="50%"}
+```{r}
+flights %>% 
+  group_by(origin) %>%
+  summarize(
+    n = n(), 
+    min_dep_delay = min(dep_delay, na.rm = TRUE), 
+    max_dep_delay = max(dep_delay, na.rm = TRUE),
+    .groups = "keep"
+  )
+```
+
+:::
+:::
+
+## count()
+
+`count()` is a quick `group_by()` and `summarize()`
+
+::: columns
+::: {.column width="50%"}
+```{r}
+flights %>% 
+  group_by(origin, carrier) %>%
+  summarize(n = n(), .groups = "drop")
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+flights %>%
+  count(origin, carrier)
+```
+
+:::
+:::
+
+## mutate() with group_by()
+
+```{r}
+flights %>% group_by(origin) %>%
+  mutate(
+    n = n(), 
+  ) %>%
+  select(origin, n)
+```
+
+
+## combined example
+
+What's the average speed in miles per hour of flights traveling to Raleigh-Durham, Atlanta and Orlando airports?
+
+```{r}
+flights %>% 
+  filter(dest %in% c("RDU", "ATL", "MCO")) %>%
+  mutate(time_hours = air_time / 60) %>%
+  mutate(mph = distance / time_hours) %>%
+  group_by(dest) %>%
+  summarize(mean_speed = mean(mph, na.rm = TRUE))
+```
+
+. . .
+
+Take the flights data frame and then filter for destination airports: (RDU, ATL, MCO).
+
+Next mutate a new column `time_hours` that reports air time of the flight in hours.
+
+Mutate a column `mph` that reports miles per hour.
+
+Group by destination and then summarize the mean flight speed towards each destination.
+
+## Exercise 2
+
+- Which plane (check the tail number) flew out of each New York airport the most?
+
+- Which day of the year should you fly on if you want to have the lowest possible average departure delay? What about arrival delay?
+
+- What was the shortest flight out of each airport in terms of distance?

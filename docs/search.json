@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data, dplyr and ggplot\n\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 03\nUNIX and filesystems\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\ntext processing and regular expressions\n\n\n\n\n\n\n\nFri Feb 10\n\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nstatistical modeling overview\n\n\n\n\n\n\n6\nTue Feb 21\n\n\n\n\n\n\n\n\nWed Feb 22\nintro to optimization\n\n\n\n\n\n\n\nFri Feb 24\nunivariate Newton-Raphson\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 03\nMM algorithm I\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 10\nEM algorithm\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Mar 24\nproject tips\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny I\n\n\n\n\n\n\n\nFri Mar 31\nshiny II\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\n\n\n\n\n\n\n\n\nWed Feb 01\nsubsetting and ggplot\n\n\n\n\n\n\n\nFri Feb 03\nfunctional programming and purrr\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\ntext processing and regular expressions\n\n\n\n\n\n\n\nFri Feb 10\nUNIX and filesystems\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -992,5 +992,236 @@
     "title": "quiz solutions",
     "section": "",
     "text": "quiz 1\n\nExercise 1Solution\n\n\nIs x a list or an atomic vector?\n\nx = c(1L, 1)\n\n\n\nx is an atomic vector. Specifically, 1L is coerced to type double due to c().\n\nx = c(1L, 1)\ntypeof(x)\n\n[1] \"double\"\n\n\n\n\n\n\nExercise 2Solution\n\n\nThe output below is the result of printing object y to the screen. Is y a list or an atomic vector?\n\n\n[[1]]\n[1] 3\n\n[[2]]\nfunction(x) {\n  return(x ^ 2)\n}\n\n\n\n\ny is a list because it has heterogeneous elements. The first element is the double 3 while the second element is a function.\n\n\n\n\nExercise 3Solution\n\n\nWhat is the output of the following code chunk:\n\nTRUE | NA\n\n\n\n\n\n[1] TRUE\n\n\n\n\n\n\nExercise 4Solution\n\n\nWhat’s a generic?\n\n\nA generic is a function that dispatches to other class-specific functions depending on the class of the argument."
+  },
+  {
+    "objectID": "slides/lec05.html#tidy-data",
+    "href": "slides/lec05.html#tidy-data",
+    "title": "Tidyverse",
+    "section": "Tidy data",
+    "text": "Tidy data\n\nfrom R4DS tidy data"
+  },
+  {
+    "objectID": "slides/lec05.html#tidy-vs-untidy",
+    "href": "slides/lec05.html#tidy-vs-untidy",
+    "title": "Tidyverse",
+    "section": "Tidy vs untidy",
+    "text": "Tidy vs untidy\n\n\n\n\n\nList of 3\n $ :List of 8\n  ..$ name      : chr \"Luke Skywalker\"\n  ..$ height    : chr \"172\"\n  ..$ mass      : chr \"77\"\n  ..$ hair_color: chr \"blond\"\n  ..$ skin_color: chr \"fair\"\n  ..$ eye_color : chr \"blue\"\n  ..$ birth_year: chr \"19BBY\"\n  ..$ gender    : chr \"male\"\n $ :List of 8\n  ..$ name      : chr \"C-3PO\"\n  ..$ height    : chr \"167\"\n  ..$ mass      : chr \"75\"\n  ..$ hair_color: chr \"n/a\"\n  ..$ skin_color: chr \"gold\"\n  ..$ eye_color : chr \"yellow\"\n  ..$ birth_year: chr \"112BBY\"\n  ..$ gender    : chr \"n/a\"\n $ :List of 8\n  ..$ name      : chr \"R2-D2\"\n  ..$ height    : chr \"96\"\n  ..$ mass      : chr \"32\"\n  ..$ hair_color: chr \"n/a\"\n  ..$ skin_color: chr \"white, blue\"\n  ..$ eye_color : chr \"red\"\n  ..$ birth_year: chr \"33BBY\"\n  ..$ gender    : chr \"n/a\"\n\n\n\nuntidy!"
+  },
+  {
+    "objectID": "slides/lec05.html#tidy-vs-untidy-1",
+    "href": "slides/lec05.html#tidy-vs-untidy-1",
+    "title": "Tidyverse",
+    "section": "Tidy vs untidy",
+    "text": "Tidy vs untidy\n\n\n# A tibble: 317 × 7\n   artist         track                   date.entered   wk1   wk2   wk3   wk4\n   <chr>          <chr>                   <date>       <dbl> <dbl> <dbl> <dbl>\n 1 2 Pac          Baby Don't Cry (Keep... 2000-02-26      87    82    72    77\n 2 2Ge+her        The Hardest Part Of ... 2000-09-02      91    87    92    NA\n 3 3 Doors Down   Kryptonite              2000-04-08      81    70    68    67\n 4 3 Doors Down   Loser                   2000-10-21      76    76    72    69\n 5 504 Boyz       Wobble Wobble           2000-04-15      57    34    25    17\n 6 98^0           Give Me Just One Nig... 2000-08-19      51    39    34    26\n 7 A*Teens        Dancing Queen           2000-07-08      97    97    96    95\n 8 Aaliyah        I Don't Wanna           2000-01-29      84    62    51    41\n 9 Aaliyah        Try Again               2000-03-18      59    53    38    28\n10 Adams, Yolanda Open My Heart           2000-08-26      76    76    74    69\n# … with 307 more rows\n\n\n\nBasically tidy, but we have repeated measures."
+  },
+  {
+    "objectID": "slides/lec05.html#pivot-longer",
+    "href": "slides/lec05.html#pivot-longer",
+    "title": "Tidyverse",
+    "section": "Pivot longer",
+    "text": "Pivot longer\n\n\n\n\n\n\nlibrary(tidyr)\ntable4a |>\n  pivot_longer(2:3, names_to = \"year\", values_to = \"cases\")\n\n# A tibble: 6 × 3\n  country     year   cases\n  <chr>       <chr>  <int>\n1 Afghanistan 1999     745\n2 Afghanistan 2000    2666\n3 Brazil      1999   37737\n4 Brazil      2000   80488\n5 China       1999  212258\n6 China       2000  213766\n\n\nFrom data import cheatsheet"
+  },
+  {
+    "objectID": "slides/lec05.html#pivot-wider",
+    "href": "slides/lec05.html#pivot-wider",
+    "title": "Tidyverse",
+    "section": "Pivot wider",
+    "text": "Pivot wider\n\n\n\n\n\n\n\n\n\n\nlibrary(tidyr)\ntable2 |>\n  pivot_wider(names_from = type, values_from = count)\n\n# A tibble: 6 × 4\n  country      year  cases population\n  <chr>       <int>  <int>      <int>\n1 Afghanistan  1999    745   19987071\n2 Afghanistan  2000   2666   20595360\n3 Brazil       1999  37737  172006362\n4 Brazil       2000  80488  174504898\n5 China        1999 212258 1272915272\n6 China        2000 213766 1280428583\n\n\nFrom data import cheatsheet"
+  },
+  {
+    "objectID": "slides/lec05.html#exercise-1",
+    "href": "slides/lec05.html#exercise-1",
+    "title": "Tidyverse",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nReshape the billboard data set from the package tidyr so that song/week pairs make a single observation.\n\ntidyr::billboard |>\n  head(10)\n\n# A tibble: 10 × 79\n   artist track date.ent…¹   wk1   wk2   wk3   wk4   wk5   wk6   wk7   wk8   wk9\n   <chr>  <chr> <date>     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>\n 1 2 Pac  Baby… 2000-02-26    87    82    72    77    87    94    99    NA    NA\n 2 2Ge+h… The … 2000-09-02    91    87    92    NA    NA    NA    NA    NA    NA\n 3 3 Doo… Kryp… 2000-04-08    81    70    68    67    66    57    54    53    51\n 4 3 Doo… Loser 2000-10-21    76    76    72    69    67    65    55    59    62\n 5 504 B… Wobb… 2000-04-15    57    34    25    17    17    31    36    49    53\n 6 98^0   Give… 2000-08-19    51    39    34    26    26    19     2     2     3\n 7 A*Tee… Danc… 2000-07-08    97    97    96    95   100    NA    NA    NA    NA\n 8 Aaliy… I Do… 2000-01-29    84    62    51    41    38    35    35    38    38\n 9 Aaliy… Try … 2000-03-18    59    53    38    28    21    18    16    14    12\n10 Adams… Open… 2000-08-26    76    76    74    69    68    67    61    58    57\n# … with 67 more variables: wk10 <dbl>, wk11 <dbl>, wk12 <dbl>, wk13 <dbl>,\n#   wk14 <dbl>, wk15 <dbl>, wk16 <dbl>, wk17 <dbl>, wk18 <dbl>, wk19 <dbl>,\n#   wk20 <dbl>, wk21 <dbl>, wk22 <dbl>, wk23 <dbl>, wk24 <dbl>, wk25 <dbl>,\n#   wk26 <dbl>, wk27 <dbl>, wk28 <dbl>, wk29 <dbl>, wk30 <dbl>, wk31 <dbl>,\n#   wk32 <dbl>, wk33 <dbl>, wk34 <dbl>, wk35 <dbl>, wk36 <dbl>, wk37 <dbl>,\n#   wk38 <dbl>, wk39 <dbl>, wk40 <dbl>, wk41 <dbl>, wk42 <dbl>, wk43 <dbl>,\n#   wk44 <dbl>, wk45 <dbl>, wk46 <dbl>, wk47 <dbl>, wk48 <dbl>, wk49 <dbl>, …"
+  },
+  {
+    "objectID": "slides/lec05.html#a-quick-note-on-pipes",
+    "href": "slides/lec05.html#a-quick-note-on-pipes",
+    "title": "Tidyverse",
+    "section": "A quick note on pipes",
+    "text": "A quick note on pipes\nIn the previous examples, you saw the base R pipe |>.\nThe pipe links functions and arguments together in an easy to read way.\nSpecifically, the pipe takes what comes before and makes it an argument to what comes after.\nExample\n\nnested functions\n\n\npark(drive(start_car(find(\"keys\")), to = \"campus\"))\n\n\npipeline\n\n\nfind(\"keys\") %>%\n    start_car() %>%\n    drive(to = \"campus\") %>%\n    park()"
+  },
+  {
+    "objectID": "slides/lec05.html#base-r-vs-magrittr",
+    "href": "slides/lec05.html#base-r-vs-magrittr",
+    "title": "Tidyverse",
+    "section": "Base r vs magrittr",
+    "text": "Base r vs magrittr\nThere are two pipes we’ll encounter in R:\n\nthe base R pipe |> added in R v4.1.0\nthe magrittr pipe %>%\n\n\nThe main differences are:\n\nthe base pipe doesn’t require loading the package magrittr (contained in the tidyverse)\nthe base pipe is negligibly faster in some cases\nthe base pipe doesn’t support . argument passing\n\n\n\nExample\n\n\n\nx = c(1, 3, NA)\n\nTRUE %>%\n  mean(x, na.rm = .)\n\n[1] 2\n\n\n\n\nTRUE |>\n  mean(x, na.rm = .)\n\nError in mean.default(TRUE, x, na.rm = .): object '.' not found"
+  },
+  {
+    "objectID": "slides/lec05.html#dplyr-continued",
+    "href": "slides/lec05.html#dplyr-continued",
+    "title": "Tidyverse",
+    "section": "dplyr continued",
+    "text": "dplyr continued\nadditional useful functions\nGroups of rows:\n\nsummarise(): collapses a group into a single row.\ncount(): count unique values of one or more variables.\ngroup_by(): perform calculations separately for each value of a variable\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec05.html#dplyr-verbs",
+    "href": "slides/lec05.html#dplyr-verbs",
+    "title": "Tidyverse",
+    "section": "dplyr verbs",
+    "text": "dplyr verbs\ndplyr names functions as verbs that manipulate data frames\nQuick summary of key dplyr function from dplyr vignette:\n\n\nRows:\n\nfilter():chooses rows based on column values. See logical operations\nslice(): chooses rows based on location.\narrange(): changes the order of the rows\ndistinct(): filter for unique rows (.keep_all = TRUE is useful)\nsample_n(): take a random subset of the rows\n\n\nColumns:\n\nselect(): changes whether or not a column is included.\nrename(): changes the name of columns.\nmutate(): changes the values of columns and creates new columns.\npull(): grab column as a vector\nrelocate(): change column order\n\n\n\nGroups of rows:\n\nsummarise(): collapses a group into a single row.\ncount(): count unique values of one or more variables.\ngroup_by()/ungroup(): modify other verbs to act on subsets\n\n… and more"
+  },
+  {
+    "objectID": "slides/lec05.html#dplyr-rules",
+    "href": "slides/lec05.html#dplyr-rules",
+    "title": "Tidyverse",
+    "section": "dplyr rules",
+    "text": "dplyr rules\n\nFirst argument is always a data frame\nSubsequent arguments say what to do with that data frame\nAlways return a data frame\nDon’t modify in place\nLazy evaluation magic"
+  },
+  {
+    "objectID": "slides/lec05.html#nyc-flights",
+    "href": "slides/lec05.html#nyc-flights",
+    "title": "Tidyverse",
+    "section": "NYC flights",
+    "text": "NYC flights\n\nlibrary(nycflights13)\nglimpse(flights)\n\nRows: 336,776\nColumns: 19\n$ year           <int> 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2013, 2…\n$ month          <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…\n$ day            <int> 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1…\n$ dep_time       <int> 517, 533, 542, 544, 554, 554, 555, 557, 557, 558, 558, …\n$ sched_dep_time <int> 515, 529, 540, 545, 600, 558, 600, 600, 600, 600, 600, …\n$ dep_delay      <dbl> 2, 4, 2, -1, -6, -4, -5, -3, -3, -2, -2, -2, -2, -2, -1…\n$ arr_time       <int> 830, 850, 923, 1004, 812, 740, 913, 709, 838, 753, 849,…\n$ sched_arr_time <int> 819, 830, 850, 1022, 837, 728, 854, 723, 846, 745, 851,…\n$ arr_delay      <dbl> 11, 20, 33, -18, -25, 12, 19, -14, -8, 8, -2, -3, 7, -1…\n$ carrier        <chr> \"UA\", \"UA\", \"AA\", \"B6\", \"DL\", \"UA\", \"B6\", \"EV\", \"B6\", \"…\n$ flight         <int> 1545, 1714, 1141, 725, 461, 1696, 507, 5708, 79, 301, 4…\n$ tailnum        <chr> \"N14228\", \"N24211\", \"N619AA\", \"N804JB\", \"N668DN\", \"N394…\n$ origin         <chr> \"EWR\", \"LGA\", \"JFK\", \"JFK\", \"LGA\", \"EWR\", \"EWR\", \"LGA\",…\n$ dest           <chr> \"IAH\", \"IAH\", \"MIA\", \"BQN\", \"ATL\", \"ORD\", \"FLL\", \"IAD\",…\n$ air_time       <dbl> 227, 227, 160, 183, 116, 150, 158, 53, 140, 138, 149, 1…\n$ distance       <dbl> 1400, 1416, 1089, 1576, 762, 719, 1065, 229, 944, 733, …\n$ hour           <dbl> 5, 5, 5, 5, 6, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6, 5, 6, 6, 6…\n$ minute         <dbl> 15, 29, 40, 45, 0, 58, 0, 0, 0, 0, 0, 0, 0, 0, 0, 59, 0…\n$ time_hour      <dttm> 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-01 0…"
+  },
+  {
+    "objectID": "slides/lec05.html#example-1-1",
+    "href": "slides/lec05.html#example-1-1",
+    "title": "Tidyverse",
+    "section": "Example 1",
+    "text": "Example 1\n\nflights %>% \n  filter(dest %in% c(\"RDU\", \"ATL\", \"MCO\")) %>%\n  mutate(time_hours = air_time / 60) %>%\n  mutate(mph = distance / time_hours) %>%\n  group_by(dest) %>%\n  summarize(mean_speed = mean(mph, na.rm = TRUE))\n\n# A tibble: 3 × 2\n  dest  mean_speed\n  <chr>      <dbl>\n1 ATL         405.\n2 MCO         422.\n3 RDU         364.\n\n\n\nTake the flights data frame and then filter for destination airports: (RDU, ATL, MCO).\nNext mutate a new column time_hours that reports air time of the flight in hours.\nMutate a column mph that reports miles per hour.\nGroup by destination and then summarize the mean flight speed towards each destination."
+  },
+  {
+    "objectID": "slides/lec05.html#example-2",
+    "href": "slides/lec05.html#example-2",
+    "title": "Tidyverse",
+    "section": "Example 2",
+    "text": "Example 2"
+  },
+  {
+    "objectID": "slides/lec05.html#exercise-2",
+    "href": "slides/lec05.html#exercise-2",
+    "title": "Tidyverse",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\nWhich plane (check the tail number) flew out of each New York airport the most?\nWhich day of the year should you fly on if you want to have the lowest possible average departure delay? What about arrival delay?\nWhat was the shortest flight out of each airport in terms of distance?\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec05.html#example-1-distinct",
+    "href": "slides/lec05.html#example-1-distinct",
+    "title": "Tidyverse",
+    "section": "Example 1: distinct()",
+    "text": "Example 1: distinct()\nHow many flights are in the data set?\n\nflights %>%\n  distinct(tailnum) %>%\n  nrow()\n\n[1] 4044\n\n\n\nHow many distinct routes?\n\nflights %>%\n  select(origin, dest) %>%\n  distinct() %>%\n  nrow()\n\n[1] 224"
+  },
+  {
+    "objectID": "slides/lec05.html#example-2-select",
+    "href": "slides/lec05.html#example-2-select",
+    "title": "Tidyverse",
+    "section": "Example 2: select()",
+    "text": "Example 2: select()\nSelect two columns\n\nselect(flights, arr_delay, dest)\n\n# A tibble: 336,776 × 2\n   arr_delay dest \n       <dbl> <chr>\n 1        11 IAH  \n 2        20 IAH  \n 3        33 MIA  \n 4       -18 BQN  \n 5       -25 ATL  \n 6        12 ORD  \n 7        19 FLL  \n 8       -14 IAD  \n 9        -8 MCO  \n10         8 ORD  \n# … with 336,766 more rows\n\n\n\nSelect columns that contain information about departures or arrivals.\n\nflights %>% \n  select(contains(\"dep_\"), contains(\"arr_\"))\n\n# A tibble: 336,776 × 6\n   dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay\n      <int>          <int>     <dbl>    <int>          <int>     <dbl>\n 1      517            515         2      830            819        11\n 2      533            529         4      850            830        20\n 3      542            540         2      923            850        33\n 4      544            545        -1     1004           1022       -18\n 5      554            600        -6      812            837       -25\n 6      554            558        -4      740            728        12\n 7      555            600        -5      913            854        19\n 8      557            600        -3      709            723       -14\n 9      557            600        -3      838            846        -8\n10      558            600        -2      753            745         8\n# … with 336,766 more rows\n\n\n\n\nSelect the numeric columns\n\nflights %>% \n  select(where(is.numeric))\n\n# A tibble: 336,776 × 14\n    year month   day dep_time sched_dep…¹ dep_d…² arr_t…³ sched…⁴ arr_d…⁵ flight\n   <int> <int> <int>    <int>       <int>   <dbl>   <int>   <int>   <dbl>  <int>\n 1  2013     1     1      517         515       2     830     819      11   1545\n 2  2013     1     1      533         529       4     850     830      20   1714\n 3  2013     1     1      542         540       2     923     850      33   1141\n 4  2013     1     1      544         545      -1    1004    1022     -18    725\n 5  2013     1     1      554         600      -6     812     837     -25    461\n 6  2013     1     1      554         558      -4     740     728      12   1696\n 7  2013     1     1      555         600      -5     913     854      19    507\n 8  2013     1     1      557         600      -3     709     723     -14   5708\n 9  2013     1     1      557         600      -3     838     846      -8     79\n10  2013     1     1      558         600      -2     753     745       8    301\n# … with 336,766 more rows, 4 more variables: air_time <dbl>, distance <dbl>,\n#   hour <dbl>, minute <dbl>, and abbreviated variable names ¹​sched_dep_time,\n#   ²​dep_delay, ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay"
+  },
+  {
+    "objectID": "slides/lec05.html#example-3-many-together",
+    "href": "slides/lec05.html#example-3-many-together",
+    "title": "Tidyverse",
+    "section": "Example 3: many together",
+    "text": "Example 3: many together\nWhat’s the average speed in miles per hour of flights traveling to Raleigh-Durham, Atlanta and Orlando airports?\n\nflights %>% \n  filter(dest %in% c(\"RDU\", \"ATL\", \"MCO\")) %>%\n  mutate(time_hours = air_time / 60) %>%\n  mutate(mph = distance / time_hours) %>%\n  group_by(dest) %>%\n  summarize(mean_speed = mean(mph, na.rm = TRUE))\n\n# A tibble: 3 × 2\n  dest  mean_speed\n  <chr>      <dbl>\n1 ATL         405.\n2 MCO         422.\n3 RDU         364.\n\n\n\nTake the flights data frame and then filter for destination airports: (RDU, ATL, MCO).\nNext mutate a new column time_hours that reports air time of the flight in hours.\nMutate a column mph that reports miles per hour.\nGroup by destination and then summarize the mean flight speed towards each destination."
+  },
+  {
+    "objectID": "slides/lec05.html#distinct",
+    "href": "slides/lec05.html#distinct",
+    "title": "Tidyverse",
+    "section": "distinct()",
+    "text": "distinct()\nHow many flights are in the data set?\n\nflights %>%\n  distinct(tailnum) %>%\n  nrow()\n\n[1] 4044\n\n\n\nHow many distinct routes?\n\nflights %>%\n  select(origin, dest) %>%\n  distinct() %>%\n  nrow()\n\n[1] 224"
+  },
+  {
+    "objectID": "slides/lec05.html#select-two-columns",
+    "href": "slides/lec05.html#select-two-columns",
+    "title": "Tidyverse",
+    "section": "select() two columns",
+    "text": "select() two columns\n\nselect(flights, arr_delay, dest)\n\n# A tibble: 336,776 × 2\n   arr_delay dest \n       <dbl> <chr>\n 1        11 IAH  \n 2        20 IAH  \n 3        33 MIA  \n 4       -18 BQN  \n 5       -25 ATL  \n 6        12 ORD  \n 7        19 FLL  \n 8       -14 IAD  \n 9        -8 MCO  \n10         8 ORD  \n# … with 336,766 more rows"
+  },
+  {
+    "objectID": "slides/lec05.html#select-columns-that-contain-information-about-departures-or-arrivals",
+    "href": "slides/lec05.html#select-columns-that-contain-information-about-departures-or-arrivals",
+    "title": "Tidyverse",
+    "section": "select() columns that contain information about departures or arrivals",
+    "text": "select() columns that contain information about departures or arrivals\n\nflights %>% \n  select(contains(\"dep_\"), contains(\"arr_\"))\n\n# A tibble: 336,776 × 6\n   dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay\n      <int>          <int>     <dbl>    <int>          <int>     <dbl>\n 1      517            515         2      830            819        11\n 2      533            529         4      850            830        20\n 3      542            540         2      923            850        33\n 4      544            545        -1     1004           1022       -18\n 5      554            600        -6      812            837       -25\n 6      554            558        -4      740            728        12\n 7      555            600        -5      913            854        19\n 8      557            600        -3      709            723       -14\n 9      557            600        -3      838            846        -8\n10      558            600        -2      753            745         8\n# … with 336,766 more rows"
+  },
+  {
+    "objectID": "slides/lec05.html#select-the-numeric-or-not-numeric-columns",
+    "href": "slides/lec05.html#select-the-numeric-or-not-numeric-columns",
+    "title": "Tidyverse",
+    "section": "select() the numeric (or not numeric) columns",
+    "text": "select() the numeric (or not numeric) columns\n\nflights %>% \n  select(where(is.numeric)) %>%\n  head(3)\n\n# A tibble: 3 × 14\n   year month   day dep_time sched_dep_…¹ dep_d…² arr_t…³ sched…⁴ arr_d…⁵ flight\n  <int> <int> <int>    <int>        <int>   <dbl>   <int>   <int>   <dbl>  <int>\n1  2013     1     1      517          515       2     830     819      11   1545\n2  2013     1     1      533          529       4     850     830      20   1714\n3  2013     1     1      542          540       2     923     850      33   1141\n# … with 4 more variables: air_time <dbl>, distance <dbl>, hour <dbl>,\n#   minute <dbl>, and abbreviated variable names ¹​sched_dep_time, ²​dep_delay,\n#   ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay\n\n\n\nflights %>% \n  select(where(function(x) !is.numeric(x))) %>%\n  head(5)\n\n# A tibble: 5 × 5\n  carrier tailnum origin dest  time_hour          \n  <chr>   <chr>   <chr>  <chr> <dttm>             \n1 UA      N14228  EWR    IAH   2013-01-01 05:00:00\n2 UA      N24211  LGA    IAH   2013-01-01 05:00:00\n3 AA      N619AA  JFK    MIA   2013-01-01 05:00:00\n4 B6      N804JB  JFK    BQN   2013-01-01 05:00:00\n5 DL      N668DN  LGA    ATL   2013-01-01 06:00:00"
+  },
+  {
+    "objectID": "slides/lec05.html#combined-example",
+    "href": "slides/lec05.html#combined-example",
+    "title": "Tidyverse",
+    "section": "combined example",
+    "text": "combined example\nWhat’s the average speed in miles per hour of flights traveling to Raleigh-Durham, Atlanta and Orlando airports?\n\nflights %>% \n  filter(dest %in% c(\"RDU\", \"ATL\", \"MCO\")) %>%\n  mutate(time_hours = air_time / 60) %>%\n  mutate(mph = distance / time_hours) %>%\n  group_by(dest) %>%\n  summarize(mean_speed = mean(mph, na.rm = TRUE))\n\n# A tibble: 3 × 2\n  dest  mean_speed\n  <chr>      <dbl>\n1 ATL         405.\n2 MCO         422.\n3 RDU         364.\n\n\n\nTake the flights data frame and then filter for destination airports: (RDU, ATL, MCO).\nNext mutate a new column time_hours that reports air time of the flight in hours.\nMutate a column mph that reports miles per hour.\nGroup by destination and then summarize the mean flight speed towards each destination."
+  },
+  {
+    "objectID": "slides/lec05.html#exclude-with-select",
+    "href": "slides/lec05.html#exclude-with-select",
+    "title": "Tidyverse",
+    "section": "exclude with select()",
+    "text": "exclude with select()\nselect() all but the first 10 columns\n\nflights %>%\n  select(-1:10)\n\nWarning in x:y: numerical expression has 18 elements: only the first used\n\n\n# A tibble: 336,776 × 9\n   month   day dep_time sched_dep_time dep_delay arr_t…¹ sched…² arr_d…³ carrier\n   <int> <int>    <int>          <int>     <dbl>   <int>   <int>   <dbl> <chr>  \n 1     1     1      517            515         2     830     819      11 UA     \n 2     1     1      533            529         4     850     830      20 UA     \n 3     1     1      542            540         2     923     850      33 AA     \n 4     1     1      544            545        -1    1004    1022     -18 B6     \n 5     1     1      554            600        -6     812     837     -25 DL     \n 6     1     1      554            558        -4     740     728      12 UA     \n 7     1     1      555            600        -5     913     854      19 B6     \n 8     1     1      557            600        -3     709     723     -14 EV     \n 9     1     1      557            600        -3     838     846      -8 B6     \n10     1     1      558            600        -2     753     745       8 AA     \n# … with 336,766 more rows, and abbreviated variable names ¹​arr_time,\n#   ²​sched_arr_time, ³​arr_delay"
+  },
+  {
+    "objectID": "slides/lec05.html#relocate",
+    "href": "slides/lec05.html#relocate",
+    "title": "Tidyverse",
+    "section": "relocate()",
+    "text": "relocate()\n\nflights %>% \n  relocate(carrier, origin, dest) %>% # to the front\n  head(2)\n\n# A tibble: 2 × 19\n  carrier origin dest   year month   day dep_t…¹ sched…² dep_d…³ arr_t…⁴ sched…⁵\n  <chr>   <chr>  <chr> <int> <int> <int>   <int>   <int>   <dbl>   <int>   <int>\n1 UA      EWR    IAH    2013     1     1     517     515       2     830     819\n2 UA      LGA    IAH    2013     1     1     533     529       4     850     830\n# … with 8 more variables: arr_delay <dbl>, flight <int>, tailnum <chr>,\n#   air_time <dbl>, distance <dbl>, hour <dbl>, minute <dbl>, time_hour <dttm>,\n#   and abbreviated variable names ¹​dep_time, ²​sched_dep_time, ³​dep_delay,\n#   ⁴​arr_time, ⁵​sched_arr_time\n\n\n\n\nflights %>%\n  relocate(year, month, day, .after = last_col()) %>% # to the end\n  head(2)\n\n# A tibble: 2 × 19\n  dep_time sched…¹ dep_d…² arr_t…³ sched…⁴ arr_d…⁵ carrier flight tailnum origin\n     <int>   <int>   <dbl>   <int>   <int>   <dbl> <chr>    <int> <chr>   <chr> \n1      517     515       2     830     819      11 UA        1545 N14228  EWR   \n2      533     529       4     850     830      20 UA        1714 N24211  LGA   \n# … with 9 more variables: dest <chr>, air_time <dbl>, distance <dbl>,\n#   hour <dbl>, minute <dbl>, time_hour <dttm>, year <int>, month <int>,\n#   day <int>, and abbreviated variable names ¹​sched_dep_time, ²​dep_delay,\n#   ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay"
+  },
+  {
+    "objectID": "slides/lec05.html#rename",
+    "href": "slides/lec05.html#rename",
+    "title": "Tidyverse",
+    "section": "rename()",
+    "text": "rename()\nchange the column names\n\nflights %>% \n  relocate(tailnum) %>% \n  rename(tail_number = tailnum)\n\n# A tibble: 336,776 × 19\n   tail_number  year month   day dep_t…¹ sched…² dep_d…³ arr_t…⁴ sched…⁵ arr_d…⁶\n   <chr>       <int> <int> <int>   <int>   <int>   <dbl>   <int>   <int>   <dbl>\n 1 N14228       2013     1     1     517     515       2     830     819      11\n 2 N24211       2013     1     1     533     529       4     850     830      20\n 3 N619AA       2013     1     1     542     540       2     923     850      33\n 4 N804JB       2013     1     1     544     545      -1    1004    1022     -18\n 5 N668DN       2013     1     1     554     600      -6     812     837     -25\n 6 N39463       2013     1     1     554     558      -4     740     728      12\n 7 N516JB       2013     1     1     555     600      -5     913     854      19\n 8 N829AS       2013     1     1     557     600      -3     709     723     -14\n 9 N593JB       2013     1     1     557     600      -3     838     846      -8\n10 N3ALAA       2013     1     1     558     600      -2     753     745       8\n# … with 336,766 more rows, 9 more variables: carrier <chr>, flight <int>,\n#   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,\n#   minute <dbl>, time_hour <dttm>, and abbreviated variable names ¹​dep_time,\n#   ²​sched_dep_time, ³​dep_delay, ⁴​arr_time, ⁵​sched_arr_time, ⁶​arr_delay"
+  },
+  {
+    "objectID": "slides/lec05.html#re-name-with-select",
+    "href": "slides/lec05.html#re-name-with-select",
+    "title": "Tidyverse",
+    "section": "re-name with select()",
+    "text": "re-name with select()\n\nflights %>% \n  select(tail_number = tailnum)\n\n# A tibble: 336,776 × 1\n   tail_number\n   <chr>      \n 1 N14228     \n 2 N24211     \n 3 N619AA     \n 4 N804JB     \n 5 N668DN     \n 6 N39463     \n 7 N516JB     \n 8 N829AS     \n 9 N593JB     \n10 N3ALAA     \n# … with 336,766 more rows"
+  },
+  {
+    "objectID": "slides/lec05.html#arrange",
+    "href": "slides/lec05.html#arrange",
+    "title": "Tidyverse",
+    "section": "arrange()",
+    "text": "arrange()\n\n\n\nset.seed(10)\nflights %>% \n  slice_sample(n = 3) %>% \n  select(tailnum, day) %>% \n  arrange(day)\n\n# A tibble: 3 × 2\n  tailnum   day\n  <chr>   <int>\n1 N258JB     17\n2 N3CPAA     20\n3 N515MJ     31\n\n\n\n\nset.seed(10)\nflights %>% \n  slice_sample(n = 3) %>% \n  select(tailnum, day) %>% \n  arrange(desc(day))\n\n# A tibble: 3 × 2\n  tailnum   day\n  <chr>   <int>\n1 N515MJ     31\n2 N3CPAA     20\n3 N258JB     17\n\n\n\n\n\n\narrange() defaults to ascending order. Use desc() for descending order.\nyou can arrange by multiple columns"
+  },
+  {
+    "objectID": "slides/lec05.html#group_by",
+    "href": "slides/lec05.html#group_by",
+    "title": "Tidyverse",
+    "section": "group_by()",
+    "text": "group_by()\n\nflights %>% \n  group_by(origin)\n\n# A tibble: 336,776 × 19\n# Groups:   origin [3]\n    year month   day dep_time sched_de…¹ dep_d…² arr_t…³ sched…⁴ arr_d…⁵ carrier\n   <int> <int> <int>    <int>      <int>   <dbl>   <int>   <int>   <dbl> <chr>  \n 1  2013     1     1      517        515       2     830     819      11 UA     \n 2  2013     1     1      533        529       4     850     830      20 UA     \n 3  2013     1     1      542        540       2     923     850      33 AA     \n 4  2013     1     1      544        545      -1    1004    1022     -18 B6     \n 5  2013     1     1      554        600      -6     812     837     -25 DL     \n 6  2013     1     1      554        558      -4     740     728      12 UA     \n 7  2013     1     1      555        600      -5     913     854      19 B6     \n 8  2013     1     1      557        600      -3     709     723     -14 EV     \n 9  2013     1     1      557        600      -3     838     846      -8 B6     \n10  2013     1     1      558        600      -2     753     745       8 AA     \n# … with 336,766 more rows, 9 more variables: flight <int>, tailnum <chr>,\n#   origin <chr>, dest <chr>, air_time <dbl>, distance <dbl>, hour <dbl>,\n#   minute <dbl>, time_hour <dttm>, and abbreviated variable names\n#   ¹​sched_dep_time, ²​dep_delay, ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay"
+  },
+  {
+    "objectID": "slides/lec05.html#summarize-with-group_by",
+    "href": "slides/lec05.html#summarize-with-group_by",
+    "title": "Tidyverse",
+    "section": "summarize() with group_by()",
+    "text": "summarize() with group_by()\n\nflights %>% \n  group_by(origin) %>%\n  summarize(\n    n = n(), \n    min_dep_delay = min(dep_delay, na.rm = TRUE), \n    max_dep_delay = max(dep_delay, na.rm = TRUE)\n  )\n\n# A tibble: 3 × 4\n  origin      n min_dep_delay max_dep_delay\n  <chr>   <int>         <dbl>         <dbl>\n1 EWR    120835           -25          1126\n2 JFK    111279           -43          1301\n3 LGA    104662           -33           911"
+  },
+  {
+    "objectID": "slides/lec05.html#groups-after-summarize",
+    "href": "slides/lec05.html#groups-after-summarize",
+    "title": "Tidyverse",
+    "section": "Groups after summarize",
+    "text": "Groups after summarize\n\n\n\nflights %>% \n  group_by(origin) %>%\n  summarize(\n    n = n(), \n    min_dep_delay = min(dep_delay, na.rm = TRUE), \n    max_dep_delay = max(dep_delay, na.rm = TRUE),\n    .groups = \"drop_last\"\n  )\n\n# A tibble: 3 × 4\n  origin      n min_dep_delay max_dep_delay\n  <chr>   <int>         <dbl>         <dbl>\n1 EWR    120835           -25          1126\n2 JFK    111279           -43          1301\n3 LGA    104662           -33           911\n\n\n\n\nflights %>% \n  group_by(origin) %>%\n  summarize(\n    n = n(), \n    min_dep_delay = min(dep_delay, na.rm = TRUE), \n    max_dep_delay = max(dep_delay, na.rm = TRUE),\n    .groups = \"keep\"\n  )\n\n# A tibble: 3 × 4\n# Groups:   origin [3]\n  origin      n min_dep_delay max_dep_delay\n  <chr>   <int>         <dbl>         <dbl>\n1 EWR    120835           -25          1126\n2 JFK    111279           -43          1301\n3 LGA    104662           -33           911"
+  },
+  {
+    "objectID": "slides/lec05.html#count",
+    "href": "slides/lec05.html#count",
+    "title": "Tidyverse",
+    "section": "count()",
+    "text": "count()\ncount() is a quick group_by() and summarize()\n\n\n\nflights %>% \n  group_by(origin, carrier) %>%\n  summarize(n = n(), .groups = \"drop\")\n\n# A tibble: 35 × 3\n   origin carrier     n\n   <chr>  <chr>   <int>\n 1 EWR    9E       1268\n 2 EWR    AA       3487\n 3 EWR    AS        714\n 4 EWR    B6       6557\n 5 EWR    DL       4342\n 6 EWR    EV      43939\n 7 EWR    MQ       2276\n 8 EWR    OO          6\n 9 EWR    UA      46087\n10 EWR    US       4405\n# … with 25 more rows\n\n\n\n\nflights %>%\n  count(origin, carrier)\n\n# A tibble: 35 × 3\n   origin carrier     n\n   <chr>  <chr>   <int>\n 1 EWR    9E       1268\n 2 EWR    AA       3487\n 3 EWR    AS        714\n 4 EWR    B6       6557\n 5 EWR    DL       4342\n 6 EWR    EV      43939\n 7 EWR    MQ       2276\n 8 EWR    OO          6\n 9 EWR    UA      46087\n10 EWR    US       4405\n# … with 25 more rows"
+  },
+  {
+    "objectID": "slides/lec05.html#mutate-with-group_by",
+    "href": "slides/lec05.html#mutate-with-group_by",
+    "title": "Tidyverse",
+    "section": "mutate() with group_by()",
+    "text": "mutate() with group_by()\n\nflights %>% group_by(origin) %>%\n  mutate(\n    n = n(), \n  ) %>%\n  select(origin, n)\n\n# A tibble: 336,776 × 2\n# Groups:   origin [3]\n   origin      n\n   <chr>   <int>\n 1 EWR    120835\n 2 LGA    104662\n 3 JFK    111279\n 4 JFK    111279\n 5 LGA    104662\n 6 EWR    120835\n 7 EWR    120835\n 8 LGA    104662\n 9 JFK    111279\n10 LGA    104662\n# … with 336,766 more rows"
   }
 ]
