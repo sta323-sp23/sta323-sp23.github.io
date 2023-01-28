@@ -219,7 +219,7 @@ print.first_class = function(x) {
 ```
 
 ```{r}
-class(cloud)
+print(cloud)
 ```
 
 . . .
@@ -416,7 +416,8 @@ c(m)
 
 ::: {.column width="50%"}
 ```{r}
-(n = matrix(1:6, nrow=2, ncol=3))
+(n = matrix(1:6, nrow=3,
+            ncol=2, byrow=TRUE))
 c(n)
 ```
 

@@ -858,34 +858,26 @@ $ time_hour      &lt;dttm&gt; 2013-01-01 05:00:00, 2013-01-01 05:00:00, 2013-01-
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>flights <span class="sc">%&gt;%</span> </span>
 <span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">relocate</span>(carrier, origin, dest) <span class="sc">%&gt;%</span> <span class="co"># to the front</span></span>
-<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">head</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 19
-  carrier origin dest   year month   day dep_t…¹ sched…² dep_d…³ arr_t…⁴ sched…⁵
-  &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt;   &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;
-1 UA      EWR    IAH    2013     1     1     517     515       2     830     819
-2 UA      LGA    IAH    2013     1     1     533     529       4     850     830
-# … with 8 more variables: arr_delay &lt;dbl&gt;, flight &lt;int&gt;, tailnum &lt;chr&gt;,
-#   air_time &lt;dbl&gt;, distance &lt;dbl&gt;, hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;,
-#   and abbreviated variable names ¹​dep_time, ²​sched_dep_time, ³​dep_delay,
-#   ⁴​arr_time, ⁵​sched_arr_time</code></pre>
+<pre><code> [1] "carrier"        "origin"         "dest"           "year"          
+ [5] "month"          "day"            "dep_time"       "sched_dep_time"
+ [9] "dep_delay"      "arr_time"       "sched_arr_time" "arr_delay"     
+[13] "flight"         "tailnum"        "air_time"       "distance"      
+[17] "hour"           "minute"         "time_hour"     </code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>flights <span class="sc">%&gt;%</span></span>
 <span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">relocate</span>(year, month, day, <span class="at">.after =</span> <span class="fu">last_col</span>()) <span class="sc">%&gt;%</span> <span class="co"># to the end</span></span>
-<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">head</span>(<span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">names</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 19
-  dep_time sched…¹ dep_d…² arr_t…³ sched…⁴ arr_d…⁵ carrier flight tailnum origin
-     &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;   &lt;int&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt; 
-1      517     515       2     830     819      11 UA        1545 N14228  EWR   
-2      533     529       4     850     830      20 UA        1714 N24211  LGA   
-# … with 9 more variables: dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
-#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;, year &lt;int&gt;, month &lt;int&gt;,
-#   day &lt;int&gt;, and abbreviated variable names ¹​sched_dep_time, ²​dep_delay,
-#   ³​arr_time, ⁴​sched_arr_time, ⁵​arr_delay</code></pre>
+<pre><code> [1] "dep_time"       "sched_dep_time" "dep_delay"      "arr_time"      
+ [5] "sched_arr_time" "arr_delay"      "carrier"        "flight"        
+ [9] "tailnum"        "origin"         "dest"           "air_time"      
+[13] "distance"       "hour"           "minute"         "time_hour"     
+[17] "year"           "month"          "day"           </code></pre>
 </div>
 </div>
 </div>

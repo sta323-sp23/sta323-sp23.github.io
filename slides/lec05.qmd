@@ -319,7 +319,7 @@ flights %>%
 ```{r}
 flights %>% 
   relocate(carrier, origin, dest) %>% # to the front
-  head(2)
+  names()
 ```
 
 . . .
@@ -327,7 +327,7 @@ flights %>%
 ```{r}
 flights %>%
   relocate(year, month, day, .after = last_col()) %>% # to the end
-  head(2)
+  names()
 ```
 
 ## rename()
