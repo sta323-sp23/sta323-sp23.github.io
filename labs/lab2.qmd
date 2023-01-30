@@ -40,6 +40,8 @@ For example, different species of lemurs have very different weights. Even when 
 
 ```{r}
 #| echo: false
+#| eval: true
+#| warning: false
 library(tidyverse)
 lemurs = read_csv("data/lemurs.csv")
 lemurs %>%
