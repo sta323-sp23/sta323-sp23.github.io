@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA323 - Lab 2: computational masonry</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STA323</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html">schedule</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html">syllabus</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../links.html">links</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
+  <ul class="collapse">
+  <li><a href="#mixture-densities" id="toc-mixture-densities" class="nav-link" data-scroll-target="#mixture-densities">1. Mixture densities</a></li>
+  <li><a href="#skeleton-of-a-graphical-model" id="toc-skeleton-of-a-graphical-model" class="nav-link" data-scroll-target="#skeleton-of-a-graphical-model">2. Skeleton of a graphical model</a></li>
+  <li><a href="#lego-sales-data" id="toc-lego-sales-data" class="nav-link" data-scroll-target="#lego-sales-data">3. Lego Sales Data</a></li>
+  </ul></li>
+  <li><a href="#style-guidelines" id="toc-style-guidelines" class="nav-link" data-scroll-target="#style-guidelines">Style guidelines</a></li>
+  <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 2: computational masonry</h1>
+<p class="subtitle lead">Due Monday February 6 at 5:00pm</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>build the bare bones of a probabilistic graphical model using OOP</li>
+<li>reshape and extract insights from data</li>
+<li>write a function to sample from an admixture distribution</li>
+</ul>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>If you did not complete <a href="../labs/lab0.html">lab 0</a>, then go back and do so to set up your SSH key, git, and find instructions on how to clone a project.</p></li>
+<li><p>Next in the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-2-username.git</code> where <code>username</code> is replaced with your username (this is the copied SSH URL from your lab-2 GitHub repo).</p></li>
+<li><p>Navigate to your <code>lab-2</code> folder and open the <code>.Rproj</code> file.</p></li>
+<li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your name.</p></li>
+</ul>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>For all exercises, you should respond in the space provided in the template <code>lab-2.qmd</code> and show all your work. In all answers of type <code>double</code>, three significant figures suffices.</p>
+<section id="mixture-densities" class="level3">
+<h3 class="anchored" data-anchor-id="mixture-densities">1. Mixture densities</h3>
+<p>Sometimes called an “admixture density”, a mixture density is a convex combination (i.e.&nbsp;a weighted sum, with non-negative weights that sum to 1) of other density functions. The general form is</p>
+<p><span class="math display">\[
+f(x) = \sum_{i = 1}^n w_i p_i(x)
+\]</span> where <span class="math inline">\(p_i(x)\)</span> are density functions and <span class="math inline">\(w_i\)</span> are weights such that <span class="math inline">\(w_i \geq 0\)</span> and <span class="math inline">\(\sum_i w_i = 1\)</span>. To sample from <span class="math inline">\(f(x)\)</span>, one can simply sample from <span class="math inline">\(p_i(x)\)</span> with probability <span class="math inline">\(w_i\)</span>.</p>
+<p>Mixture densities are often used to model distinct subpopulations within a population.</p>
+<p>For example, different species of lemurs have very different weights. Even when controlling for sex, age and pregnancy status of the lemurs, the distribution of weights across species still looks bimodal. In the plot below, approximately <span class="math inline">\(\frac{1}{3}\)</span> of lemurs weigh less than 500 grams, and approximately <span class="math inline">\(\frac{2}{3}\)</span> of all lemurs weigh more than 1000 grams.</p>
+<div class="cell">
+
+</div>
+<ul>
+<li>Write a function called <code>rNormalMixture1</code> that takes takes arguments <code>w1</code>, <code>w2</code>, <code>mu1</code>, <code>mu2</code>, <code>sd1</code>, <code>sd2</code> and returns a single sample from a mixture of two Gaussians. Test your function on the following cases</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#case i</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rNormalMixture1</span>(<span class="at">w1 =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">w2 =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu1 =</span> <span class="dv">300</span>,</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu2 =</span> <span class="dv">2750</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd1 =</span> <span class="dv">10</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd2 =</span> <span class="dv">100</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># case ii</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">rNormalMixture1</span>(<span class="at">w1 =</span> <span class="fl">0.6</span>,</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                <span class="at">w2 =</span> <span class="fl">0.5</span>,</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu1 =</span> <span class="dv">1</span>,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu2 =</span> <span class="dv">3</span>,</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd1 =</span> <span class="dv">1</span>,</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd2 =</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># case iii</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">rNormalMixture1</span>(<span class="at">w1 =</span> <span class="sc">-</span><span class="fl">0.6</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>                <span class="at">w2 =</span> <span class="fl">1.6</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu1 =</span> <span class="dv">1</span>,</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu2 =</span> <span class="dv">3</span>,</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd1 =</span> <span class="dv">1</span>,</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd2 =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check that the arguments are numeric and that the weights obey the rules outlined above.</p>
+</div>
+</div>
+<ul>
+<li>Write another function called <code>rNormalMixture2</code> that takes argument <code>n</code>, <code>w1</code>, <code>w2</code>, <code>mu1</code>, <code>mu2</code>, <code>sd1</code>, <code>sd2</code> and returns <span class="math inline">\(n\)</span> samples from your mixture of two Gaussians by calling <code>rNormalMixture1()</code> <span class="math inline">\(n\)</span> times.</li>
+</ul>
+<p>Test your function on the following case and then print out the first 10 entries of <span class="math inline">\(x\)</span> to the screen.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case iv</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">rNormalMixture2</span>(<span class="at">n =</span> <span class="dv">10000</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">w1 =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">w2 =</span> <span class="dv">2</span><span class="sc">/</span><span class="dv">3</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu1 =</span> <span class="dv">300</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">mu2 =</span> <span class="dv">2750</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd1 =</span> <span class="dv">10</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">sd2 =</span> <span class="dv">100</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>x[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Use <code>UnivarMixingDistribution</code> within the <code>distr</code> package to replicate case (iv) above. You might need to install the package in the console with <code>install.packages("distr")</code>. Read the help file on <code>UnivarMixingDistribution</code> for an example of how to create a univariate mixing distribution. Call your distribution <code>myNormalMixture</code> and then use the code below to test it out.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rmyNormalMixture <span class="ot">=</span> <span class="fu">r</span>(myNormalMixture)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rMyNormalMixture</span>(<span class="at">n =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Time (see <code>system.time({})</code> from lab 0) how long <code>rNormalMixture2</code> takes vs how long <code>rMyNormalMixture</code> takes to generate <code>n = 10000</code> samples and report your findings.</li>
+</ul>
+</section>
+<section id="skeleton-of-a-graphical-model" class="level3">
+<h3 class="anchored" data-anchor-id="skeleton-of-a-graphical-model">2. Skeleton of a graphical model</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/graphicalModel.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>We might use the image above to visualize the conditional dependencies between random variables. For example,</p>
+<p><span class="math display">\[
+p(y_2 |y_1) = N(y_1, \sigma_2^2).
+\]</span></p>
+<p>In words, <span class="math inline">\(y_2\)</span> is normally distributed with mean <span class="math inline">\(y_1\)</span> and variance <span class="math inline">\(\sigma_2^2\)</span>.</p>
+<p>Within this context, we say <span class="math inline">\(y_1\)</span> is a parent node to <span class="math inline">\(y_2\)</span>, or <span class="math inline">\(y_2\)</span> is a child node of <span class="math inline">\(y_1\)</span>.</p>
+<ul>
+<li>Create an object <code>y1</code> that has class <code>node</code> and is a list with the following entries:
+<ul>
+<li><code>id</code> = “y1”,</li>
+<li><code>children</code> = “y2”,</li>
+<li><code>parent</code> = NULL,</li>
+<li><code>mean</code> = 0</li>
+<li><code>sd</code> = 1</li>
+</ul></li>
+</ul>
+<p>Print <code>y1</code> to the screen.</p>
+<ul>
+<li>Next create a function <code>makeNode</code> that takes arguments <code>id</code>, <code>children</code>, <code>parent</code>, <code>mean</code>, and <code>sd</code> and returns an object of class <code>node</code>. Your function should check that the arguments are of appropriate type. Make the default argument for <code>parent</code> and <code>children</code> be <code>NULL</code> to represent nodes at the boundaries of your graph. Give a warning if the user tries to create an isolated node (a node with no parent/child nodes). Test your function on the cases below</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># case i</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">makeNode</span>(<span class="at">id =</span> <span class="st">"y2"</span>, <span class="at">children =</span> <span class="cn">NULL</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">parent =</span> <span class="st">"y1"</span>, <span class="at">mean =</span> y1<span class="sc">$</span>mean,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># case ii</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">makdeNode</span>(<span class="at">id =</span> <span class="dv">0</span>, <span class="at">children =</span> <span class="st">"y3"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>          <span class="at">parent =</span> <span class="st">"y1"</span>, <span class="at">mean =</span> y1<span class="sc">$</span>mean, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># case iii</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">makdeNode</span>(<span class="at">id =</span> <span class="st">"y3"</span>, <span class="at">mean =</span> y1<span class="sc">$</span>mean, </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>          <span class="at">sd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Write a vectorized function <code>getParent</code> that takes a list of class <code>node</code> and returns the names of each node’s parents. It should return “No parent” in the case of no parent. Test your function on the code below</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>y1 <span class="ot">=</span> <span class="fu">makeNode</span>(<span class="at">id =</span> <span class="st">"y1"</span>, <span class="at">children =</span> <span class="st">"y2"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">parent =</span> <span class="cn">NULL</span>, <span class="at">mean =</span> <span class="dv">0</span>,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">sd =</span> <span class="dv">1</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>y2 <span class="ot">=</span> <span class="fu">makeNode</span>(<span class="at">id =</span> <span class="st">"y2"</span>, <span class="at">children =</span> <span class="cn">NULL</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">parent =</span> <span class="st">"y1"</span>, <span class="at">mean =</span> y1<span class="sc">$</span>mean,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">sd =</span> <span class="dv">2</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">getParent</span>(<span class="fu">list</span>(y1, y2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The length of <code>NULL</code> is 0.</li>
+<li>Use <code>[[]]</code> to access the object in the list.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="lego-sales-data" class="level3">
+<h3 class="anchored" data-anchor-id="lego-sales-data">3. Lego Sales Data</h3>
+<section id="data" class="level4">
+<h4 class="anchored" data-anchor-id="data">Data</h4>
+<p>For this task you will be working with a synthetic data set of sales records for Lego construction sets. We will assume that the original data was stored in a JSON format but a colleague has managed to import it into R as a list of lists (of lists). The code below will load a copy of the object, called <code>sales</code>, into your environment.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>sales <span class="ot">=</span> <span class="fu">readRDS</span>(<span class="st">"data/lego_sales.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The data is structured such that each entry in the top list represents a different purchaser. These list entries contain basic information about the purchaser (name, age, phone number, etc.) as well as their purchase history. Everyone in the data set has purchased at least one lego set but some many have made multiple purchases. The purchase histories are stored in the <code>purchases</code> element which is also a list of lists. Each entry within the <code>purchases</code> list reflects a different Lego set which the customer purchased. Note that the customer may have purchased more than one copy of any particular set, this number is stored as <code>Quantity</code> within the purchase record.</p>
+<p><br></p>
+</section>
+<section id="part-1---tidy-the-data" class="level4">
+<h4 class="anchored" data-anchor-id="part-1---tidy-the-data">Part 1 - Tidy the data</h4>
+<p>Your job here is to covert the <code>sales</code> object into a tidy data frame. Tidy in this case means each row should represents a separate purchase of a lego set by an individual and the columns should correspond to the keys in the JSON data. Duplicate columns should be avoided as much as possible and no data should be lost / ignored in your conversion.</p>
+<p>Several guidelines / hints:</p>
+<ol type="1">
+<li><p>Be careful about making assumptions about the data - it is not as messy as real world data, but it is also not pristine and you are meant to run into several hiccups along the way.</p></li>
+<li><p>Pay attention to types - the data frame you create should have columns that are of a type that matches the original data.</p></li>
+<li><p>Don’t worry about duplicated data - since a customer can purchase multiple Lego sets that customer’s information may show up in multiple rows. This is fine and expected given the structure of the data. For the CS types: first normal form is ok in this case regardless of whatever your Databases professor may have told you.</p></li>
+<li><p>Dealing with duplicate purchases - some customers purchased more than one copy of a particular lego set, for these individuals you can choose to code the purchase as multiple rows within the data frame or as a single row that also includes the quantity value. Either approach is fine, but your write up should discuss your choice.</p></li>
+<li><p>Avoid hard coding features of the data into your solutions (e.g.&nbsp;column names for your data frame should be determined at runtime as much as possible).</p></li>
+<li><p>Do not use magic numbers, always use column names whenever possible, similarly don’t assume a specific size for the data (e.g.&nbsp;number of columns or rows) - all of these should be determined at run time.</p></li>
+<li><p>More generally, assume that the specific data could be changed at any time, and a new but identically structured data set could be provided. Make as few assumptions as possible about the data (some will be necessary, but should be stated explicitly in your write up).</p></li>
+<li><p>You may assume that <em>purchasers</em> are uniquely identified by the first name, last name, and phone number.</p></li>
+<li><p>When answering questions, in the case of a tie - all equivalent rows should be returned.</p></li>
+</ol>
+<p><br></p>
+</section>
+<section id="part-2---questions" class="level4">
+<h4 class="anchored" data-anchor-id="part-2---questions">Part 2 - Questions</h4>
+<p>This task will involve answering a number of questions about that data that will involve manipulating and summarizing the data frame you created in part 1. You are also welcome to use the original <code>sales</code> object if you believe that approach is more efficient for any particular question.</p>
+<p>No write up is needed for these questions as long as you include reasonably well documented code (using comments). Make sure that your code outputs your answer and only your answer.</p>
+<p><br></p>
+<ol type="1">
+<li><p>What are the three most common first names of purchasers?</p></li>
+<li><p>Which Lego theme has made the most money for Lego?</p></li>
+<li><p>Do men or women buy more Lego sets (per person) on average?</p></li>
+<li><p>What are the five most popular hobbies of Lego purchasers?</p></li>
+<li><p>Which area code has spent the most money on Legos? (In the US the area code is the first 3 digits of a phone number)</p></li>
+</ol>
+<p><br></p>
+</section>
+</section>
+</section>
+<section id="style-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="style-guidelines">Style guidelines</h2>
+<p>All assignments in this course must employ proper coding style, as outlined below:</p>
+<ul>
+<li><p>All code should obey the 80 character limit per line (i.e.&nbsp;no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.</p></li>
+<li><p>All commas should be followed by a space.</p></li>
+<li><p>All binary operators should be surrounded by space. For example <code>x + y</code> is appropriate. <code>x+y</code> is not.</p></li>
+<li><p>All pipes <code>%&gt;%</code> or <code>|&gt;</code> as well as ggplot layers <code>+</code> should be followed by a new line.</p></li>
+<li><p>You should be consistent with stylistic choices, e.g.&nbsp;only use 1 of <code>=</code> vs <code>&lt;-</code> and <code>%&gt;%</code> vs <code>|&gt;</code></p></li>
+<li><p>Your name should be at the top (in the YAML) of each document under “author:”</p></li>
+<li><p>All code chunks should be named (with names that don’t have spaces, e.g.&nbsp;<code>ex-1</code>, <code>ex-2</code> etc.)</p></li>
+<li><p>File names in your GitHub repo such as <code>lab-x.qmd</code> must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.</p></li>
+</ul>
+<p>Fundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your <code>.qmd</code> renders.</p>
+<p>If you have any questions about style, please ask a member of the teaching team.</p>
+</section>
+<section id="submitting-your-lab" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-your-lab">Submitting your lab</h2>
+<p>To submit your assignment, simply commit and push your completed <code>lab-x.qmd</code> to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see <a href="../syllabus.html">the syllabus</a>). For this reason, <strong>do not push commits</strong> after you are satisfied with your work, or a late penalty will be applied.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
