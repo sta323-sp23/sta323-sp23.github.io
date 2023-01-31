@@ -111,7 +111,7 @@ x[1:10]
 
 ```{r}
 #| eval: false
-rmyNormalMixture = r(myNormalMixture)
+rMyNormalMixture = r(myNormalMixture)
 rMyNormalMixture(n = 10000)
 ```
 
