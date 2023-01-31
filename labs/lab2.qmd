@@ -8,9 +8,9 @@ execute:
 
 By the end of the lab, you will...
 
+-   write a function to sample from an admixture distribution
 -   build the bare bones of a probabilistic graphical model using OOP
 -   reshape and extract insights from data
--   write a function to sample from an admixture distribution
 
 # Getting started
 

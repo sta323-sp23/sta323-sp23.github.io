@@ -1,0 +1,21 @@
+---
+title: "Quiz 2"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1
+
+`select()` returns a ___
+
+### Exercise 2
+
+`%>%` and `|>` are both ___
+
+### Exercise 3
+
+`mutate()` creates a new ___
+
+### Exercise 4
+
+TRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.

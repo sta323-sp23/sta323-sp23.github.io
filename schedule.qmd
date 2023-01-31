@@ -48,7 +48,7 @@ schedule %>%
 | 2    | Tue Jan 24 | if it's a function, fix it                |                                 | [lab 1](/labs/lab1.html) |      |         |
 |      | Wed Jan 25 | Object oriented programming               |    [💻](/slides/lec04.html)     |                          |      |         |
 |      | Fri Jan 27 | tidy data and dplyr           |  [💻](/slides/lec05.html)                                |                          |      |         |
-| 3    | Tue Jan 31 |                                           |                                 |                          |      |         |
+| 3    | Tue Jan 31 | computational masonry                                          |                                 |   [lab 2](/labs/lab2.html)                       |      |         |
 |      | Wed Feb 01 | subsetting and ggplot                                   |                                 |                          |      |         |
 |      | Fri Feb 03 | functional programming and purrr          |                                 |                          |      |         |
 | 4    | Tue Feb 07 |                                           |                                 |                          |      |         |
