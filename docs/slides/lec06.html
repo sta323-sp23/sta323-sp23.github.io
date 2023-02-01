@@ -648,11 +648,6 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <pre><code>List of 1
  $ : NULL</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">str</span>(y[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>List of 1
- $ : num 7</code></pre>
-</div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="fragment">
@@ -660,15 +655,15 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h4 id="missing">Missing</h4>
 <p>Subset with a missing value, we will get back a missing value (atomic vector) or <code>NULL</code> (list).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>x[<span class="cn">NA</span>] <span class="co"># logical subsetting with length coercion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a>x[<span class="cn">NA</span>] <span class="co"># logical subsetting with length coercion</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA NA NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="cn">NA</span>)] <span class="co"># integer subsetting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="cn">NA</span>)] <span class="co"># integer subsetting</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  1 NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">str</span>(y[<span class="cn">NA</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">str</span>(y[<span class="cn">NA</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 3
  $ : NULL
@@ -692,22 +687,22 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h4 id="atomic-vectors">Atomic vectors</h4>
 <p><code>[[</code> subsets like <code>[</code> except it can only subset for a single value</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">4</span>, <span class="at">c =</span> <span class="dv">7</span>)</span>
-<span id="cb62-2"><a href="#cb62-2"></a></span>
-<span id="cb62-3"><a href="#cb62-3"></a>x[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">4</span>, <span class="at">c =</span> <span class="dv">7</span>)</span>
+<span id="cb60-2"><a href="#cb60-2"></a></span>
+<span id="cb60-3"><a href="#cb60-3"></a>x[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a 
 1 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>x[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a>x[[<span class="dv">1</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>x[[<span class="cn">TRUE</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a>x[[<span class="cn">TRUE</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>x[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>x[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in x[[1:2]]: attempt to select more than one element in vectorIndex</code></pre>
 </div>
@@ -718,21 +713,21 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h4 id="generic-vectors">Generic vectors</h4>
 <p><code>[[</code> subsets a single value, but returns the value - not a list containing that value like <code>[</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>y <span class="ot">=</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">4</span>, <span class="at">c =</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)</span>
-<span id="cb70-2"><a href="#cb70-2"></a>y[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>y <span class="ot">=</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">4</span>, <span class="at">c =</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">9</span>)</span>
+<span id="cb68-2"><a href="#cb68-2"></a>y[<span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$b
 [1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>y[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>y[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>y[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>y[[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in y[[1:2]]: subscript out of bounds</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>y[[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1"></a>y[[<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">1</span>)]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -771,8 +766,8 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h2><code>[[</code> vs <code>$</code></h2>
 <p><code>$</code> is equivalent to <code>[[</code> but it only works for named <em>lists</em> and it uses partial matching for names.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"abc"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"def"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb78-2"><a href="#cb78-2"></a>x<span class="sc">$</span>abc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"abc"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"def"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb76-2"><a href="#cb76-2"></a>x<span class="sc">$</span>abc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error in x$abc: $ operator is invalid for atomic vectors</code></pre>
 </div>
@@ -780,16 +775,16 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <div class="fragment">
 <p><code>$</code> is only for generic vectors</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>y <span class="ot">=</span> <span class="fu">list</span>(<span class="st">"abc"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"def"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
-<span id="cb80-2"><a href="#cb80-2"></a>y[[<span class="st">"abc"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>y <span class="ot">=</span> <span class="fu">list</span>(<span class="st">"abc"</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"def"</span> <span class="ot">=</span> <span class="dv">5</span>)</span>
+<span id="cb78-2"><a href="#cb78-2"></a>y[[<span class="st">"abc"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a>y<span class="sc">$</span>abc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1"></a>y<span class="sc">$</span>abc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a>y<span class="sc">$</span>d </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1"></a>y<span class="sc">$</span>d </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
@@ -803,20 +798,20 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h2>A common error</h2>
 <p>Why does the following code not work?</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1"></a>x <span class="ot">=</span> <span class="fu">list</span>(<span class="at">abc =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">def =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
-<span id="cb86-2"><a href="#cb86-2"></a>y <span class="ot">=</span> <span class="st">"abc"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1"></a>x <span class="ot">=</span> <span class="fu">list</span>(<span class="at">abc =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">def =</span> <span class="dv">10</span><span class="sc">:</span><span class="dv">1</span>)</span>
+<span id="cb84-2"><a href="#cb84-2"></a>y <span class="ot">=</span> <span class="st">"abc"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>x[[y]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb85"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1"></a>x[[y]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a>x<span class="sc">$</span>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1"></a>x<span class="sc">$</span>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>NULL</code></pre>
 </div>
@@ -831,13 +826,13 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h2>Exercise</h2>
 <p>Below are 100 values,</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">3</span>, <span class="dv">17</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">19</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">6</span>, </span>
-<span id="cb91-2"><a href="#cb91-2"></a>      <span class="dv">31</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">16</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>,</span>
-<span id="cb91-3"><a href="#cb91-3"></a>      <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">18</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">2</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">5</span>, <span class="dv">7</span>, </span>
-<span id="cb91-4"><a href="#cb91-4"></a>      <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">82</span>,</span>
-<span id="cb91-5"><a href="#cb91-5"></a>      <span class="dv">21</span>, <span class="dv">3</span>, <span class="dv">34</span>, <span class="dv">55</span>, <span class="dv">18</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">29</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, </span>
-<span id="cb91-6"><a href="#cb91-6"></a>      <span class="dv">4</span>, <span class="dv">74</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">13</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">13</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">10</span>,</span>
-<span id="cb91-7"><a href="#cb91-7"></a>      <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">4</span>, <span class="dv">17</span>, <span class="dv">1</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">56</span>, <span class="dv">3</span>, <span class="dv">17</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">6</span>, <span class="dv">5</span>, <span class="dv">19</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">13</span>, <span class="dv">12</span>, <span class="dv">6</span>, </span>
+<span id="cb89-2"><a href="#cb89-2"></a>      <span class="dv">31</span>, <span class="dv">10</span>, <span class="dv">21</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">16</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">8</span>, <span class="dv">1</span>,</span>
+<span id="cb89-3"><a href="#cb89-3"></a>      <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">6</span>, <span class="dv">18</span>, <span class="dv">40</span>, <span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">1</span>, <span class="dv">27</span>, <span class="dv">2</span>, <span class="dv">11</span>, <span class="dv">14</span>, <span class="dv">5</span>, <span class="dv">7</span>, </span>
+<span id="cb89-4"><a href="#cb89-4"></a>      <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">8</span>, <span class="dv">82</span>,</span>
+<span id="cb89-5"><a href="#cb89-5"></a>      <span class="dv">21</span>, <span class="dv">3</span>, <span class="dv">34</span>, <span class="dv">55</span>, <span class="dv">18</span>, <span class="dv">2</span>, <span class="dv">9</span>, <span class="dv">29</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">14</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">7</span>, </span>
+<span id="cb89-6"><a href="#cb89-6"></a>      <span class="dv">4</span>, <span class="dv">74</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">13</span>, <span class="dv">2</span>, <span class="dv">8</span>, <span class="dv">1</span>, <span class="dv">6</span>, <span class="dv">13</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">10</span>,</span>
+<span id="cb89-7"><a href="#cb89-7"></a>      <span class="dv">5</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">4</span>, <span class="dv">17</span>, <span class="dv">1</span>, <span class="dv">9</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>subset to accomplish each of the following:</p>
 <ul>
@@ -850,7 +845,7 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <h2>Subsetting data frames</h2>
 <p>Since data frames have two dimensions, we can subset either rows, columns or both.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a>(<span class="at">df =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>), <span class="at">z =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1"></a>(<span class="at">df =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">y =</span> <span class="fu">c</span>(<span class="st">"A"</span>,<span class="st">"B"</span>,<span class="st">"C"</span>), <span class="at">z =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y    z
 1 1 A TRUE
@@ -862,12 +857,12 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <div class="column" style="width:50%;">
 <h4 id="subset-rows">Subset rows</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a>df[<span class="dv">1</span>, ] <span class="co"># first row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1"></a>df[<span class="dv">1</span>, ] <span class="co"># first row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y    z
 1 1 A TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>df[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), ] <span class="co"># first and third row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1"></a>df[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>), ] <span class="co"># first and third row</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y    z
 1 1 A TRUE
@@ -877,11 +872,11 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 </div><div class="column" style="width:50%;">
 <h4 id="subset-columns">Subset columns</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>df[, <span class="dv">1</span>] <span class="co"># first column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1"></a>df[, <span class="dv">1</span>] <span class="co"># first column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="co"># first through second column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1"></a>df[, <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>] <span class="co"># first through second column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y
 1 1 A
@@ -894,7 +889,7 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <div class="fragment">
 <h4 id="subset-both">Subset both</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a>df[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1"></a>df[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  x y
 1 1 A
@@ -909,8 +904,8 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <p>Confusingly, when used with some classes (e.g.&nbsp;data frame, matrix or array) <code>[</code> becomes a <strong>simplifying operator</strong> (does not preserve type) - this behavior is instead controlled by the drop argument.</p>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a>cars <span class="sc">|&gt;</span></span>
-<span id="cb104-2"><a href="#cb104-2"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1"></a>cars <span class="sc">|&gt;</span></span>
+<span id="cb102-2"><a href="#cb102-2"></a>  <span class="fu">head</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  speed dist
 1     4    2
@@ -922,11 +917,11 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <div class="column" style="width:50%;">
 <p>for columns:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a><span class="fu">str</span>(cars[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1"></a><span class="fu">str</span>(cars[, <span class="dv">1</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> num [1:50] 4 4 7 7 8 9 10 10 10 11 ...</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">str</span>(cars[, <span class="dv">1</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1"></a><span class="fu">str</span>(cars[, <span class="dv">1</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   50 obs. of  1 variable:
  $ speed: num  4 4 7 7 8 9 10 10 10 11 ...</code></pre>
@@ -936,13 +931,13 @@ $ dist  &lt;dbl&gt; 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26
 <div class="fragment">
 <p>for rows it’s the opposite:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="fu">str</span>(cars[<span class="dv">1</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1"></a><span class="fu">str</span>(cars[<span class="dv">1</span>, ])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>'data.frame':   1 obs. of  2 variables:
  $ speed: num 4
  $ dist : num 2</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1"></a><span class="fu">str</span>(cars[<span class="dv">1</span>, , <span class="at">drop =</span> <span class="cn">TRUE</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1"></a><span class="fu">str</span>(cars[<span class="dv">1</span>, , <span class="at">drop =</span> <span class="cn">TRUE</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 2
  $ speed: num 4

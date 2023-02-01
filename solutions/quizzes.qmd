@@ -5,6 +5,12 @@ fontsize: 12pt
 
 Find here solutions to quizzes with explanations.
 
+<!-- 
+::: panel-tabset 
+::: 
+-->
+
+
 # quiz 1
 
 ::: panel-tabset
@@ -74,4 +80,52 @@ What's a **generic**?
 ### Solution
 
 A generic is a function that dispatches to other class-specific functions depending on the class of the argument.
+:::
+
+# quiz 2
+
+::: panel-tabset
+
+### Exercise 1
+
+`select()` returns a ___
+
+### Solution
+
+data frame or `tibble`
+
+:::
+
+::: panel-tabset
+
+### Exercise 2
+
+`%>%` and `|>` are both ___
+
+### Solution
+
+pipes
+:::
+
+::: panel-tabset
+
+### Exercise 3
+
+`mutate()` creates a new ___
+
+### Solution
+
+column
+:::
+
+::: panel-tabset
+
+### Exercise 4
+
+TRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.
+
+
+### Solution
+
+`TRUE`
 :::
