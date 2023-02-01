@@ -40,7 +40,7 @@ schedule %>%
 ```
 
 | Week | Date       | Topic                                     |              Notes              | Lab                      | Exam | Project |
-|:---------|:---------|:-------------|:--------:|:------------|:--------------------|:---------|
+|:---------|:------------|:-------------|:--------:|:------------|:--------------------|:---------|
 | 0    | Fri Jan 13 | welcome                                   |  [💻](/slides/01-welcome.html)  |                          |      |         |
 | 1    | Tue Jan 17 | git                                       | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |      |         |
 |      | Wed Jan 18 | control flow, loops and functions         |    [💻](/slides/lec02.html)     |                          |      |         |
@@ -49,11 +49,11 @@ schedule %>%
 |      | Wed Jan 25 | Object oriented programming               |    [💻](/slides/lec04.html)     |                          |      |         |
 |      | Fri Jan 27 | tidy data and dplyr           |  [💻](/slides/lec05.html)                                |                          |      |         |
 | 3    | Tue Jan 31 | computational masonry                                          |                                 |   [lab 2](/labs/lab2.html)                       |      |         |
-|      | Wed Feb 01 | subsetting and ggplot                                   |                                 |                          |      |         |
-|      | Fri Feb 03 | functional programming and purrr          |                                 |                          |      |         |
+|      | Wed Feb 01 | subsetting                                   | [💻](/slides/lec06.html)                                |                          |      |         |
+|      | Fri Feb 03 | ggplot          |                                 |                          |      |         |
 | 4    | Tue Feb 07 |                                           |                                 |                          |      |         |
-|      | Wed Feb 08 | text processing and regular expressions   |                                 |                          |      |         |
-|      | Fri Feb 10 | UNIX and filesystems                      |                                 |                          |      |         |
+|      | Wed Feb 08 | functional programming and purrr   |                                 |                          |      |         |
+|      | Fri Feb 10 | regular expressions; UNIX toolkit                     |                                 |                          |      |         |
 | 5    | Tue Feb 14 |                                           |                                 |                          |      |         |
 |      | Wed Feb 15 | complexity, profiling and parallelization |                                 |                          |      |         |
 |      | Fri Feb 17 | Review                                    |                                 |                          | exam 1    |         |

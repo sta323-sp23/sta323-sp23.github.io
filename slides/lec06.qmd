@@ -1,0 +1,441 @@
+---
+title: "Subsetting"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Announcements
+
+-   exam 1 date on [schedule](/schedule.html)
+
+. . .
+
+-   quiz 02
+
+# Subsetting
+
+## Subsetting in general
+
+R has three subsetting operators (`[`, `[[`, and `$`). The behavior of these operators will depend on the object (class) they are being used with.
+
+. . .
+
+In general there are 6 different types of subsetting that can be performed:
+
+::: columns
+::: {.column width="50%"}
+-   Positive integer
+
+-   Negative integer
+
+-   Logical value
+:::
+
+::: {.column width="50%"}
+-   Empty
+
+-   Zero valued / NULL
+
+-   Character value (names)
+:::
+:::
+
+# `[`
+
+## Integer subsetting: values by index
+
+```{r}
+x = c(1,4,7); y = list(1,4,7)
+```
+
+::: columns
+::: {.column width="50%"}
+#### Positive subsetting
+
+```{r}
+x[1] # subset a vector get a vector
+x[c(1,3)]
+x[c(1.9, 2.1)] # coercion
+```
+
+```{r}
+str(y[1]) # subset a list get a list
+```
+
+```{r}
+str(y[c(1.9, 2.1)]) # coercion
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+#### Negative (exclusionary) subsetting
+
+```{r}
+x[-1]
+```
+
+```{r}
+str(y[-c(1,2)])
+```
+
+```{r}
+#| error: true
+x[c(-1,2)]
+```
+
+You can't mix positive and negative values!
+:::
+:::
+:::
+
+Note that R starts indexing at 1.
+
+## Logical subsetting
+
+Returns values that correspond to `TRUE` in the logical vector.
+
+```{r}
+x = c(1, 4, 7, 12)
+```
+
+```{r}
+x[c(TRUE, FALSE, TRUE, FALSE)]
+```
+
+```{r}
+x[c(TRUE, FALSE)]
+```
+
+. . .
+
+#### Utility of this
+
+```{r}
+x[x %% 2 == 0]
+```
+
+```{r}
+dplyr::glimpse(cars)
+```
+
+```{r}
+#| eval: false
+cars_with_high_speed = 
+  cars[cars$speed > 9,]
+```
+
+## Empty and zero subsetting
+
+```{r}
+x = c(1, 4, 7); y = list(1, 4, 7)
+```
+
+::: columns
+::: {.column width="50%"}
+#### Empty
+
+Returns the original vector, this is not the same thing as subsetting with NULL.
+
+```{r}
+x[]
+```
+
+```{r}
+str(y[])
+```
+:::
+
+::: {.column width="50%"}
+#### Zero subsetting
+
+Same as subsetting with `NULL`
+
+```{r}
+x[NULL]
+x[0]
+str(y[NULL])
+str(y[0])
+```
+:::
+:::
+
+## Character value subsetting
+
+If the vector has names, selects elements whose names correspond to the values in the character vector.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+x = c(a = 1, b = 4, c = 7)
+
+x["a"]
+
+x[c("a", "a")]
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+y = list(a = 1, b = 4, c = 7)
+str(y[c("b", "c")])
+```
+:::
+:::
+
+This is a great way to subset because position is fragile, but the name is usually more robust as we manipulate our object.
+
+## Breaking subsetting
+
+```{r}
+x = c(1, 4, 7); y = list(1, 4, 7)
+```
+
+::: columns
+::: {.column width="50%"}
+#### Out of bounds
+
+-   returns NA for atomic vector
+-   returns NULL for generic vector (list)
+-   no warning!
+
+```{r}
+x[4]
+x[-4]
+str(y[4])
+str(y[-c(1,2)])
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+#### Missing
+
+Subset with a missing value, we will get back a missing value (atomic vector) or `NULL` (list).
+
+```{r}
+x[NA] # logical subsetting with length coercion
+x[c(1,NA)] # integer subsetting
+
+str(y[NA])
+```
+:::
+:::
+:::
+
+# `[[` and `$`
+
+## `[[`
+
+::: columns
+::: {.column width="50%"}
+#### Atomic vectors
+
+`[[` subsets like `[` except it can only subset for a single value
+
+```{r}
+#| error: true
+x = c(a = 1, b = 4, c = 7)
+
+x[1]
+
+x[[1]]
+
+x[[TRUE]]
+
+x[[1:2]]
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+#### Generic vectors
+
+`[[` subsets a single value, but returns the value - not a list containing that value like `[`.
+
+```{r}
+#| error: true
+y = list(a = 1, b = 4, c = 7:9)
+y[2]
+y[[2]]
+y[[1:2]]
+y[[c(2,1)]]
+```
+:::
+:::
+:::
+
+## Hadley's analogy 1
+
+![](images/list_train1.png){width="500" fig-align="center"}
+
+. . .
+
+![](images/list_train2.png){width="500" fig-align="center"}
+
+. . .
+
+![](images/list_train3.png){width="500" fig-align="center"}
+
+## Hadley's analogy 2 
+
+![](images/pepper_subset.png){fig-align="center"}
+
+## `[[` vs `$`
+
+`$` is equivalent to `[[` but it only works for named *lists* and it uses partial matching for names.
+
+```{r}
+#| error: true
+x = c("abc" = 1, "def" = 5)
+x$abc
+```
+
+. . .
+
+`$` is only for generic vectors
+
+```{r}
+y = list("abc" = 1, "def" = 5)
+y[["abc"]]
+y$abc
+y$d 
+```
+
+. . .
+
+Be careful of the last one!
+
+## A common error
+
+Why does the following code not work?
+
+```{r}
+x = list(abc = 1:10, def = 10:1)
+y = "abc"
+```
+
+::: columns
+::: {.column width="50%"}
+```{r}
+x[[y]]
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+x$y
+```
+:::
+:::
+
+. . .
+
+The expression `x$y` gets directly interpreted as `x[["y"]]` by R, note the inclusion of the `"`s, this is not the same as the expression `x[[y]]`.
+
+## Exercise
+
+Below are 100 values,
+
+```{r}
+x = c(56, 3, 17, 2, 4, 9, 6, 5, 19, 5, 2, 3, 5, 0, 13, 12, 6, 
+      31, 10, 21, 8, 4, 1, 1, 2, 5, 16, 1, 3, 8, 1,
+      3, 4, 8, 5, 2, 8, 6, 18, 40, 10, 20, 1, 27, 2, 11, 14, 5, 7, 
+      0, 3, 0, 7, 0, 8, 10, 10, 12, 8, 82,
+      21, 3, 34, 55, 18, 2, 9, 29, 1, 4, 7, 14, 7, 1, 2, 7, 
+      4, 74, 5, 0, 3, 13, 2, 8, 1, 6, 13, 7, 1, 10,
+      5, 2, 4, 4, 14, 15, 4, 17, 1, 9)
+```
+
+subset to accomplish each of the following:
+
+-   Select every third value starting at position 2 in x. The first three entries should be `3, 4, 5`
+
+-   Remove all values with an odd **index** (e.g. 1, 3, etc.)
+
+-   Remove every 4th value, but only if it is odd.
+
+## Subsetting data frames
+
+Since data frames have two dimensions, we can subset either rows, columns or both.
+
+```{r}
+(df = data.frame(x = 1:3, y = c("A","B","C"), z = TRUE))
+```
+
+::: columns
+::: {.column width="50%"}
+#### Subset rows
+
+```{r}
+df[1, ] # first row
+df[c(1,3), ] # first and third row
+```
+:::
+
+::: {.column width="50%"}
+#### Subset columns
+
+```{r}
+df[, 1] # first column
+df[, 1:2] # first through second column
+```
+:::
+:::
+
+. . .
+
+#### Subset both
+
+```{r}
+df[1:2,1:2]
+```
+
+## Preserving vs simplifying
+
+Most of the time, R's `[` is a **preserving** operator, in that the returned object will always have the same type/class as the object being subset.
+
+Confusingly, when used with some classes (e.g. data frame, matrix or array) `[` becomes a **simplifying operator** (does not preserve type) - this behavior is instead controlled by the drop argument.
+
+. . .
+
+```{r}
+cars |>
+  head(3)
+```
+
+::: columns
+::: {.column width="50%"}
+for columns:
+
+```{r}
+str(cars[, 1])
+str(cars[, 1, drop = FALSE])
+```
+:::
+
+::: {.column width="50%"}
+::: fragment
+for rows it's the opposite:
+
+```{r}
+str(cars[1, ])
+str(cars[1, , drop = TRUE])
+```
+:::
+:::
+:::
+
+## Preserving vs simplifying summary
+
+| Type           | Simplifying                            | Preserving                                      |
+|:-----------------|:-----------------|:-----------------------------------|
+| Atomic Vector  | `x[[1]]`                               | `x[1]`                                          |
+| List           | `x[[1]]`                               | `x[1]`                                          |
+| Matrix / Array | `x[[1]]` <br/> `x[1, ]` <br/> `x[, 1]` | `x[1, , drop=FALSE]` <br/> `x[, 1, drop=FALSE]` |
+| Factor         | `x[1:4, drop=TRUE]`                    | `x[1:4]` <br/> `x[[1]]`                         |
+| Data frame     | `x[, 1]` <br/> `x[[1]]`                | `x[, 1, drop=FALSE]` <br/> `x[1]`               |

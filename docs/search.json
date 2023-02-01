@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting and ggplot\n\n\n\n\n\n\n\nFri Feb 03\nfunctional programming and purrr\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\ntext processing and regular expressions\n\n\n\n\n\n\n\nFri Feb 10\nUNIX and filesystems\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -1258,5 +1258,159 @@
     "title": "Lab 2: computational masonry",
     "section": "Submitting your lab",
     "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
+  },
+  {
+    "objectID": "labs/lab3.html",
+    "href": "labs/lab3.html",
+    "title": "Lab 3: picturrrs",
+    "section": "",
+    "text": "By the end of the lab, you will…"
+  },
+  {
+    "objectID": "labs/lab3.html#exercises",
+    "href": "labs/lab3.html#exercises",
+    "title": "Lab 3: picturrrs",
+    "section": "Exercises",
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-3.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2.\n\n\n3."
+  },
+  {
+    "objectID": "labs/lab3.html#style-guidelines",
+    "href": "labs/lab3.html#style-guidelines",
+    "title": "Lab 3: picturrrs",
+    "section": "Style guidelines",
+    "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
+  },
+  {
+    "objectID": "labs/lab3.html#submitting-your-lab",
+    "href": "labs/lab3.html#submitting-your-lab",
+    "title": "Lab 3: picturrrs",
+    "section": "Submitting your lab",
+    "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
+  },
+  {
+    "objectID": "slides/lec06.html#announcements",
+    "href": "slides/lec06.html#announcements",
+    "title": "Subsetting",
+    "section": "Announcements",
+    "text": "Announcements\n\nexam 1 date on schedule\n\n\n\nquiz 02"
+  },
+  {
+    "objectID": "slides/lec06.html#subsetting-in-general",
+    "href": "slides/lec06.html#subsetting-in-general",
+    "title": "Subsetting",
+    "section": "Subsetting in general",
+    "text": "Subsetting in general\nR has three subsetting operators ([, [[, and $). The behavior of these operators will depend on the object (class) they are being used with.\n\nIn general there are 6 different types of subsetting that can be performed:\n\n\n\nPositive integer\nNegative integer\nLogical value\n\n\n\nEmpty\nZero valued / NULL\nCharacter value (names)"
+  },
+  {
+    "objectID": "slides/lec06.html#integer-subsetting",
+    "href": "slides/lec06.html#integer-subsetting",
+    "title": "Subsetting and ggplot",
+    "section": "Integer subsetting",
+    "text": "Integer subsetting\nI want values from a specific index.\nPositive subsetting\n\nx = c(1,4,7); y = list(1,4,7)\n\n::: columns ::: {.column width=“50%”}\n\nx[1]\n\n[1] 1\n\nx[c(1,3)]\n\n[1] 1 7\n\nx[c(1.9, 2.1)]\n\n[1] 1 4\n\n\n\nstr(y[1])\n\nList of 1\n $ : num 1\n\n\n\nstr(y[c(1,3)])\n\nList of 2\n $ : num 1\n $ : num 7\n\nstr(y[c(1.9, 2.1)])\n\nList of 2\n $ : num 1\n $ : num 4\n\n\n:::\n\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec06.html#integer-subsetting-values-by-index",
+    "href": "slides/lec06.html#integer-subsetting-values-by-index",
+    "title": "Subsetting",
+    "section": "Integer subsetting: values by index",
+    "text": "Integer subsetting: values by index\n\nx = c(1,4,7); y = list(1,4,7)\n\n\n\nPositive subsetting\n\nx[1] # subset a vector get a vector\n\n[1] 1\n\nx[c(1,3)]\n\n[1] 1 7\n\nx[c(1.9, 2.1)] # coercion\n\n[1] 1 4\n\n\n\nstr(y[1]) # subset a list get a list\n\nList of 1\n $ : num 1\n\n\n\nstr(y[c(1.9, 2.1)]) # coercion\n\nList of 2\n $ : num 1\n $ : num 4\n\n\n\n\n\nNegative (exclusionary) subsetting\n\nx[-1]\n\n[1] 4 7\n\n\n\nstr(y[-c(1,2)])\n\nList of 1\n $ : num 7\n\n\n\nx[c(-1,2)]\n\nError in x[c(-1, 2)]: only 0's may be mixed with negative subscripts\n\n\nYou can’t mix positive and negative values!\n\n\n\nNote that R starts indexing at 1."
+  },
+  {
+    "objectID": "slides/lec06.html#logical-subsetting",
+    "href": "slides/lec06.html#logical-subsetting",
+    "title": "Subsetting",
+    "section": "Logical subsetting",
+    "text": "Logical subsetting\nReturns values that correspond to TRUE in the logical vector.\n\nx = c(1, 4, 7, 12)\n\n\nx[c(TRUE, FALSE, TRUE, FALSE)]\n\n[1] 1 7\n\n\n\nx[c(TRUE, FALSE)]\n\n[1] 1 7\n\n\n\nUtility of this\n\nx[x %% 2 == 0]\n\n[1]  4 12\n\n\n\ndplyr::glimpse(cars)\n\nRows: 50\nColumns: 2\n$ speed <dbl> 4, 4, 7, 7, 8, 9, 10, 10, 10, 11, 11, 12, 12, 12, 12, 13, 13, 13…\n$ dist  <dbl> 2, 10, 4, 22, 16, 10, 18, 26, 34, 17, 28, 14, 20, 24, 28, 26, 34…\n\n\n\ncars_with_high_speed = \n  cars[cars$speed > 9,]"
+  },
+  {
+    "objectID": "slides/lec06.html#empty-and-zero-subsetting",
+    "href": "slides/lec06.html#empty-and-zero-subsetting",
+    "title": "Subsetting",
+    "section": "Empty and zero subsetting",
+    "text": "Empty and zero subsetting\n\nx = c(1, 4, 7); y = list(1, 4, 7)\n\n\n\nEmpty\nReturns the original vector, this is not the same thing as subsetting with NULL.\n\nx[]\n\n[1] 1 4 7\n\n\n\nstr(y[])\n\nList of 3\n $ : num 1\n $ : num 4\n $ : num 7\n\n\n\nZero subsetting\nSame as subsetting with NULL\n\nx[NULL]\n\nnumeric(0)\n\nx[0]\n\nnumeric(0)\n\nstr(y[NULL])\n\n list()\n\nstr(y[0])\n\n list()"
+  },
+  {
+    "objectID": "slides/lec06.html#character-value-subsetting",
+    "href": "slides/lec06.html#character-value-subsetting",
+    "title": "Subsetting",
+    "section": "Character value subsetting",
+    "text": "Character value subsetting\nIf the vector has names, selects elements whose names correspond to the values in the character vector.\n\n\n\nx = c(a = 1, b = 4, c = 7)\n\nx[\"a\"]\n\na \n1 \n\nx[c(\"a\", \"a\")]\n\na a \n1 1 \n\n\n\n\ny = list(a = 1, b = 4, c = 7)\nstr(y[c(\"b\", \"c\")])\n\nList of 2\n $ b: num 4\n $ c: num 7\n\n\n\n\nThis is a great way to subset because position is fragile, but the name is usually more robust as we manipulate our object."
+  },
+  {
+    "objectID": "slides/lec06.html#breaking-subsetting",
+    "href": "slides/lec06.html#breaking-subsetting",
+    "title": "Subsetting",
+    "section": "Breaking subsetting",
+    "text": "Breaking subsetting\n\nx = c(1, 4, 7); y = list(1, 4, 7)\n\n\n\nOut of bounds\n\nreturns NA for atomic vector\nreturns NULL for generic vector (list)\nno warning!\n\n\nx[4]\n\n[1] NA\n\nx[-4]\n\n[1] 1 4 7\n\nstr(y[4])\n\nList of 1\n $ : NULL\n\nstr(y[-c(1,2)])\n\nList of 1\n $ : num 7\n\n\n\n\n\nMissing\nSubset with a missing value, we will get back a missing value (atomic vector) or NULL (list).\n\nx[NA] # logical subsetting with length coercion\n\n[1] NA NA NA\n\nx[c(1,NA)] # integer subsetting\n\n[1]  1 NA\n\nstr(y[NA])\n\nList of 3\n $ : NULL\n $ : NULL\n $ : NULL"
+  },
+  {
+    "objectID": "slides/lec06.html#section-2",
+    "href": "slides/lec06.html#section-2",
+    "title": "Subsetting",
+    "section": "[[]]",
+    "text": "[[]]\n\n\nAtomic vectors\n[[ subsets like [ except it can only subset for a single value\n\nx = c(a = 1, b = 4, c = 7)\n\nx[1]\n\na \n1 \n\nx[[1]]\n\n[1] 1\n\nx[[TRUE]]\n\n[1] 1\n\nx[[1:2]]\n\nError in x[[1:2]]: attempt to select more than one element in vectorIndex\n\n\n\nGeneric vectors\n[[ subsets a single value, but returns the value - not a list containing that value like [.\n\ny = list(a = 1, b = 4, c = 7:9)\ny[2]\n\n$b\n[1] 4\n\ny[[2]]\n\n[1] 4\n\ny[[1:2]]\n\nError in y[[1:2]]: subscript out of bounds\n\n\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec06.html#section-1",
+    "href": "slides/lec06.html#section-1",
+    "title": "Subsetting",
+    "section": "[[",
+    "text": "[[\n\n\nAtomic vectors\n[[ subsets like [ except it can only subset for a single value\n\nx = c(a = 1, b = 4, c = 7)\n\nx[1]\n\na \n1 \n\nx[[1]]\n\n[1] 1\n\nx[[TRUE]]\n\n[1] 1\n\nx[[1:2]]\n\nError in x[[1:2]]: attempt to select more than one element in vectorIndex\n\n\n\n\n\nGeneric vectors\n[[ subsets a single value, but returns the value - not a list containing that value like [.\n\ny = list(a = 1, b = 4, c = 7:9)\ny[2]\n\n$b\n[1] 4\n\ny[[2]]\n\n[1] 4\n\ny[[1:2]]\n\nError in y[[1:2]]: subscript out of bounds\n\ny[[c(2,1)]]\n\n[1] 4"
+  },
+  {
+    "objectID": "slides/lec06.html#hadleys-analogy-1",
+    "href": "slides/lec06.html#hadleys-analogy-1",
+    "title": "Subsetting",
+    "section": "Hadley’s analogy 1",
+    "text": "Hadley’s analogy 1"
+  },
+  {
+    "objectID": "slides/lec06.html#hadleys-analogy-2",
+    "href": "slides/lec06.html#hadleys-analogy-2",
+    "title": "Subsetting",
+    "section": "Hadley’s analogy 2",
+    "text": "Hadley’s analogy 2"
+  },
+  {
+    "objectID": "slides/lec06.html#vs",
+    "href": "slides/lec06.html#vs",
+    "title": "Subsetting",
+    "section": "[[ vs $",
+    "text": "[[ vs $\n$ is equivalent to [[ but it only works for named lists and it uses partial matching for names.\n\nx = c(\"abc\" = 1, \"def\" = 5)\nx$abc\n\nError in x$abc: $ operator is invalid for atomic vectors\n\n\n\n$ is only for generic vectors\n\ny = list(\"abc\" = 1, \"def\" = 5)\ny[[\"abc\"]]\n\n[1] 1\n\ny$abc\n\n[1] 1\n\ny$d \n\n[1] 5\n\n\n\n\nBe careful of the last one!"
+  },
+  {
+    "objectID": "slides/lec06.html#a-common-error",
+    "href": "slides/lec06.html#a-common-error",
+    "title": "Subsetting",
+    "section": "A common error",
+    "text": "A common error\nWhy does the following code not work?\n\nx = list(abc = 1:10, def = 10:1)\ny = \"abc\"\n\n\n\n\nx[[y]]\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\n\nx$y\n\nNULL\n\n\n\n\n\nThe expression x$y gets directly interpreted as x[[\"y\"]] by R, note the inclusion of the \"s, this is not the same as the expression x[[y]]."
+  },
+  {
+    "objectID": "slides/lec06.html#exercise",
+    "href": "slides/lec06.html#exercise",
+    "title": "Subsetting",
+    "section": "Exercise",
+    "text": "Exercise\nBelow are 100 values,\n\nx = c(56, 3, 17, 2, 4, 9, 6, 5, 19, 5, 2, 3, 5, 0, 13, 12, 6, \n      31, 10, 21, 8, 4, 1, 1, 2, 5, 16, 1, 3, 8, 1,\n      3, 4, 8, 5, 2, 8, 6, 18, 40, 10, 20, 1, 27, 2, 11, 14, 5, 7, \n      0, 3, 0, 7, 0, 8, 10, 10, 12, 8, 82,\n      21, 3, 34, 55, 18, 2, 9, 29, 1, 4, 7, 14, 7, 1, 2, 7, \n      4, 74, 5, 0, 3, 13, 2, 8, 1, 6, 13, 7, 1, 10,\n      5, 2, 4, 4, 14, 15, 4, 17, 1, 9)\n\nsubset to accomplish each of the following:\n\nSelect every third value starting at position 2 in x. The first three entries should be 3, 4, 5\nRemove all values with an odd index (e.g. 1, 3, etc.)\nRemove every 4th value, but only if it is odd."
+  },
+  {
+    "objectID": "slides/lec06.html#subsetting-data-frames",
+    "href": "slides/lec06.html#subsetting-data-frames",
+    "title": "Subsetting",
+    "section": "Subsetting data frames",
+    "text": "Subsetting data frames\nSince data frames have two dimensions, we can subset either rows, columns or both.\n\n(df = data.frame(x = 1:3, y = c(\"A\",\"B\",\"C\"), z = TRUE))\n\n  x y    z\n1 1 A TRUE\n2 2 B TRUE\n3 3 C TRUE\n\n\n\n\nSubset rows\n\ndf[1, ] # first row\n\n  x y    z\n1 1 A TRUE\n\ndf[c(1,3), ] # first and third row\n\n  x y    z\n1 1 A TRUE\n3 3 C TRUE\n\n\n\nSubset columns\n\ndf[, 1] # first column\n\n[1] 1 2 3\n\ndf[, 1:2] # first through second column\n\n  x y\n1 1 A\n2 2 B\n3 3 C\n\n\n\n\n\nSubset both\n\ndf[1:2,1:2]\n\n  x y\n1 1 A\n2 2 B"
+  },
+  {
+    "objectID": "slides/lec06.html#preserving-vs-simplifying",
+    "href": "slides/lec06.html#preserving-vs-simplifying",
+    "title": "Subsetting",
+    "section": "Preserving vs simplifying",
+    "text": "Preserving vs simplifying\nMost of the time, R’s [ is a preserving operator, in that the returned object will always have the same type/class as the object being subset.\nConfusingly, when used with some classes (e.g. data frame, matrix or array) [ becomes a simplifying operator (does not preserve type) - this behavior is instead controlled by the drop argument.\n\n\ncars |>\n  head(3)\n\n  speed dist\n1     4    2\n2     4   10\n3     7    4\n\n\n\n\nfor columns:\n\nstr(cars[, 1])\n\n num [1:50] 4 4 7 7 8 9 10 10 10 11 ...\n\nstr(cars[, 1, drop = FALSE])\n\n'data.frame':   50 obs. of  1 variable:\n $ speed: num  4 4 7 7 8 9 10 10 10 11 ...\n\n\n\n\nfor rows it’s the opposite:\n\nstr(cars[1, ])\n\n'data.frame':   1 obs. of  2 variables:\n $ speed: num 4\n $ dist : num 2\n\nstr(cars[1, , drop = TRUE])\n\nList of 2\n $ speed: num 4\n $ dist : num 2"
+  },
+  {
+    "objectID": "slides/lec06.html#preserving-vs-simplifying-summary",
+    "href": "slides/lec06.html#preserving-vs-simplifying-summary",
+    "title": "Subsetting",
+    "section": "Preserving vs simplifying summary",
+    "text": "Preserving vs simplifying summary\n\n\n\n\n\n\n\n\nType\nSimplifying\nPreserving\n\n\n\n\nAtomic Vector\nx[[1]]\nx[1]\n\n\nList\nx[[1]]\nx[1]\n\n\nMatrix / Array\nx[[1]]  x[1, ]  x[, 1]\nx[1, , drop=FALSE]  x[, 1, drop=FALSE]\n\n\nFactor\nx[1:4, drop=TRUE]\nx[1:4]  x[[1]]\n\n\nData frame\nx[, 1]  x[[1]]\nx[, 1, drop=FALSE]  x[1]\n\n\n\n\n\n🔗 sta323-sp23.github.io"
   }
 ]
