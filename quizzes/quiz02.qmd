@@ -19,3 +19,10 @@ To receive credit for this assignment, write at the top of your paper your name 
 ### Exercise 4
 
 TRUE or FALSE: a tidy data frame has individual observations on the rows, variables on the columns and values in each cell.
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "1.5em",
+          color_running_background = "#2774AE")
+```
