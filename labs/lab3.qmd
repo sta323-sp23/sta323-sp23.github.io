@@ -1,15 +1,18 @@
 ---
-title: "Lab 3: picturrrs"
+title: "Lab 3: dream of plots"
 subtitle: "Due Monday February 13 at 5:00pm"  
 editor: source
 execute:
   eval: false
 ---
 
+> "I dream of plots, and then I plot my dreams"\
+> Vincent van Gogh (loosely)
+
 By the end of the lab, you will...
 
-- 
-- 
+-   recreate plots starting from untidy data sets
+-   
 
 # Getting started
 
@@ -23,11 +26,11 @@ By the end of the lab, you will...
 
 For all exercises, you should respond in the space provided in the template `lab-3.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
 
-### 1. 
+### 1. statsci majors plot
 
-### 2. 
+### 2. stat outlier encircle
 
-### 3.
+### 3. norm plot 
 
 ## Style guidelines
 

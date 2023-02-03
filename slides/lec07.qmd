@@ -1,0 +1,780 @@
+---
+title: "ggplot2"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Announcements
+
+-   exam 1 date on [schedule](/schedule.html)
+
+-   teams for lab 03; see announcement on slack
+
+# 
+
+![](images/ggplot2-logo.png){fig-align="center"}
+
+. . .
+
+included in the tidyverse package
+
+```{r}
+#| warning: false
+library(tidyverse)
+```
+
+## Basics
+
+`ggplot2` is the package. `ggplot` is the main function.
+
+-   the first argument is a data frame we want to plot from
+
+-   the next argument is a list of variables (columns) of our data frame that we want to visualize. These go in the aesthetic `aes()` function.
+
+# Example (step by step)
+
+## Blank canvas
+
+```{r}
+#| warning: false
+library(palmerpenguins)
+```
+
+::: panel-tabset
+### code
+
+```{r}
+#| eval: false
+penguins %>% 
+  ggplot()
+```
+
+### plot
+
+```{r}
+#| echo: false
+penguins %>% 
+  ggplot()
+```
+:::
+
+## x and y aesthetics
+
+::: panel-tabset
+### code
+
+```{r}
+#| eval: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm))
+```
+
+### plot
+
+```{r}
+#| echo: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm))
+```
+:::
+
+## add a geometry
+
+::: panel-tabset
+### code
+
+```{r}
+#| warning: false
+#| eval: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+
+### plot
+
+```{r}
+#| warning: false
+#| echo: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +
+  geom_point()
+```
+:::
+
+## labels
+
+::: panel-tabset
+### code
+
+```{r}
+#| warning: false
+#| eval: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package")
+```
+
+### plot
+
+```{r}
+#| echo: false
+#| warning: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package")
+```
+:::
+
+## add theme and color aesthetic
+
+::: panel-tabset
+### code
+
+```{r}
+#| warning: false
+#| eval: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,
+             color = island)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       color = "Island",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package") +
+  theme_bw()
+```
+
+### plot
+
+```{r}
+#| warning: false
+#| echo: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,
+             color = island)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       color = "Island",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package") +
+  theme_bw()
+```
+:::
+
+## faceting
+
+::: panel-tabset
+### code
+
+```{r}
+#| warning: false
+#| eval: false
+penguins %>%
+  filter(!is.na(sex)) %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,
+             color = island)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       color = "Island",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package") +
+  theme_bw() +
+  facet_wrap(~ sex)
+```
+
+### plot
+
+```{r}
+#| warning: false
+#| echo: false
+penguins %>%
+  filter(!is.na(sex)) %>%
+  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,
+             color = island)) +
+  geom_point() + 
+  labs(x = "Flipper length (mm)", y = "Bill depth (mm)",
+       color = "Island",
+       title = "Bill depth vs flipper length distribution",
+       subtitle = "Penguins from the arctic",
+       caption = "data from palmerpenguins R package") +
+  theme_bw() +
+  facet_wrap(~ sex)
+```
+:::
+
+# General ggplot
+
+## Anatomy of a ggplot
+
+```{r}
+#| eval: false
+ggplot(
+  data = [dataframe],
+  aes(
+    x = [var_x], y = [var_y], 
+    color = [var_for_color], 
+    fill  = [var_for_fill], 
+    shape = [var_for_shape],
+    size  = [var_for_size],
+    alpha = [var_for_alpha],
+    ...#other aesthetics
+  )
+) +
+  geom_<some_geom>([geom_arguments]) +
+  ... # other geoms
+  scale_<some_axis>_<some_scale>() +
+  facet_<some_facet>([formula]) +
+  ... # other options
+```
+
+To visualize multivariate relationships we can add variables to our visualization by specifying aesthetics: color, size, shape, linetype, alpha, or fill; we can also add facets based on variable levels.
+
+## Variable mappings (aesthetics)
+
+The name of the argument is `mapping` because it says how to "map" variables to a visual aesthetic.
+
+```{r}
+#| eval: false
+penguins %>%
+  ggplot(mapping = aes(x = bill_depth_mm, y = flipper_length_mm))
+```
+
+. . .
+
+When does an aesthetic (visual) go inside function `aes()`?
+
+-   If you want an aesthetic to be reflective of a variable's values, it must go inside `aes()`.
+
+-   If you want to set an aesthetic manually and not have it convey information about a variable, use the aesthetic's name **outside** of `aes()`, e.g. in the geometry, and set it to your desired value.
+
+. . .
+
+::: panel-tabset
+### code
+
+```{r}
+#| eval: false
+penguins %>%
+  ggplot(aes(x = flipper_length_mm)) + 
+  geom_histogram(color = "gold", fill = "steelblue")
+```
+
+### plot
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-width: 6
+#| fig-height: 3
+#| fig-pos: center
+penguins %>%
+  ggplot(aes(x = flipper_length_mm)) + 
+  geom_histogram(color = "gold", fill = "steelblue")
+```
+:::
+
+## Continuous and discrete variables
+
+Aesthetics for continuous and discrete variables are measured on continuous and discrete scales, respectively.
+
+::: panel-tabset
+### glimpse
+
+```{r}
+glimpse(mpg)
+```
+
+### code 1
+
+```{r}
+#| eval: false
+mpg %>%
+  ggplot(aes(x = cyl, y = cty)) +
+  geom_boxplot() +
+  labs(x = "Vehicle cylinders", y = "City MPG",
+       title = "Fuel efficiency by year") +
+  theme_bw()
+```
+
+### plot 1
+
+```{r}
+#| warning: false
+#| echo: false
+mpg %>%
+  ggplot(aes(x = cyl, y = cty)) +
+  geom_boxplot() +
+  labs(x = "Vehicle cylinders", y = "City MPG",
+       title = "Fuel efficiency by year") +
+  theme_bw()
+```
+
+### code 2
+
+```{r}
+#| eval: false
+mpg %>%
+  ggplot(aes(x = as.factor(cyl), y = cty)) +
+  geom_boxplot() +
+  labs(x = "Vehicle cylinders", y = "City MPG",
+       title = "Fuel efficiency by year") +
+  theme_bw()
+```
+
+### plot 2
+
+```{r}
+#| echo: false
+mpg %>%
+  ggplot(aes(x = as.factor(cyl), y = cty)) +
+  geom_boxplot() +
+  labs(x = "Vehicle cylinders", y = "City MPG",
+       title = "Fuel efficiency by year") +
+  theme_bw()
+```
+:::
+
+## Common geometries
+
+| geometry           | description                                              |
+|-------------------|-----------------------------------------------------|
+| `geom_point()`     | scatter plot                                             |
+| `geom_histogram()` | histogram                                                |
+| `geom_boxplot()`   | box plot                                                 |
+| `geom_density()`   | density plot                                             |
+| `geom_violin()`    | violin plot                                              |
+| `geom_raster()`    | heat map                                                 |
+| `geom_line()`      | connect observations in a line                           |
+| `geom_bar()`       | bar plot (try with argument `position = fill`)           |
+| `geom_smooth()`    | add a smooth trend line (try with argument `method = lm` |
+| `geom_abline()`    | add an algebraic line                                    |
+
+-   See <https://ggplot2.tidyverse.org/reference/> for more geometries.
+
+-   Some geometries are in additional packages, e.g. see `geom_density_ridges()` within the package `ggridges` to create plots [like these](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html)
+
+## Themes  
+
+![](images/avatar-theme.png){fig-align="center"}
+
+-   image credit: [`tvthemes` package by Ryo Nakagawra](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
+-   See <https://ggplot2.tidyverse.org/reference/ggtheme.html> for a list of default themes.
+
+## Plotting functions
+
+`stat_function()` is a powerful tool
+
+::: panel-tabset
+
+### code
+```{r}
+#| eval: false
+#| fig-align: center
+x = -10:10 # range
+df = data.frame(x)
+
+f = function(x) {
+  dnorm(x)
+}
+
+df %>%
+  ggplot(aes(x = x)) +
+  stat_function(fun=f) +
+  labs(y = "Density", 
+       title = "Gaussian density")
+```
+### plot
+
+```{r}
+#| echo: false
+#| fig-align: center
+x = -10:10 # range
+df = data.frame(x)
+
+f = function(x) {
+  dnorm(x)
+}
+
+df %>%
+  ggplot(aes(x = x)) +
+  stat_function(fun=f) +
+  labs(y = "Density", 
+       title = "Gaussian density")
+```
+
+:::
+
+## Save the plot
+
+-   Save a plot as a file on your computer with `ggsave()`
+
+```{r}
+#| warning: false
+
+penguins %>%
+  ggplot(aes(x = bill_depth_mm, y = species)) + 
+  geom_boxplot() +
+  labs(x = "Bill depth (mm)", y = "Species") +
+  theme_bw()
+```
+
+```{r}
+#| eval: false
+ggsave("penguin-box-plot.png", 
+       plot = last_plot())
+```
+
+# Advanced ggplot
+
+## Annotate
+
+```{r}
+ggplot() +
+  annotate(geom = "text", x = 10, y = 10, 
+           label = "Text at (10, 10)", size = 10)
+```
+
+## Patchwork
+
+```{r}
+library(patchwork)
+```
+
+
+::: panel-tabset 
+
+### code
+```{r}
+#| warning: false
+#| eval: false
+p1 = penguins %>%
+  ggplot(aes(x = species, y = bill_depth_mm)) +
+  geom_violin() +
+  labs(x = "Species", y = "Bill depth (mm)",
+       title = "Violin plots")
+
+p2 = penguins %>%
+  ggplot(aes(x = bill_depth_mm, y = flipper_length_mm, color = island)) +
+  geom_point() +
+  labs(x ="Bill depth (mm)",
+       y = "Flipper length (mm)",
+       color = "Island",
+       title = "Flipper length vs bill depth")
+
+p3 = penguins %>%
+  ggplot(aes(x = body_mass_g)) +
+  geom_histogram(fill = "steelblue") +
+  labs(x = "Body mass (g)",
+       y = "Count",
+       title = "Distribution of penguin body mass")
+
+(p1 + p2) / p3
+```
+
+### plot
+```{r}
+#| warning: false
+#| echo: false
+p1 = penguins %>%
+  ggplot(aes(x = species, y = bill_depth_mm)) +
+  geom_violin() +
+  labs(x = "Species", y = "Bill depth (mm)",
+       title = "Violin plots")
+
+p2 = penguins %>%
+  ggplot(aes(x = bill_depth_mm, y = flipper_length_mm, color = island)) +
+  geom_point() +
+  labs(x ="Bill depth (mm)",
+       y = "Flipper length (mm)",
+       color = "Island",
+       title = "Flipper length vs bill depth")
+
+p3 = penguins %>%
+  ggplot(aes(x = body_mass_g)) +
+  geom_histogram(fill = "steelblue") +
+  labs(x = "Body mass (g)",
+       y = "Count",
+       title = "Distribution of penguin body mass")
+
+(p1 + p2) / p3
+```
+
+:::
+
+## Patchwork layout
+
+
+::: panel-tabset
+
+### horizontal
+```{r}
+#| warning: false
+p1 + p2 + 
+  plot_annotation(title = "Palmer Penguins", tag_levels = c("A"))
+```
+
+### vertical
+
+```{r}
+#| warning: false
+p1 + p2 + plot_layout(ncol = 1) + 
+  plot_annotation(title = "Palmer Penguins", tag_levels = c("i"))
+```
+
+
+:::
+
+## Custom ggplot functions with `ggproto`
+
+
+Encircle the data points that have the minimum x-value
+
+::: panel-tabset
+
+### Output
+
+```{r}
+#| echo: false
+
+# create ggproto object
+StatMin = ggproto("StatMin", Stat,
+                       compute_group = function(data, scales) {
+                          xvar = data$x
+                          yvar = data$y
+                          
+                          data[xvar == min(xvar), ,drop = FALSE]
+                       },
+                       
+                       required_aes = c("x", "y")
+                       
+                       )
+
+# create stat function
+stat_min = function(mapping = NULL, data = NULL, geom = "point",
+                         position = "identity", na.rm = FALSE, show.legend = NA, 
+                         inherit.aes = TRUE,
+                         shape = 21, size = 5, color = "red",
+                         alpha = 1, ...) {
+  layer(
+    stat = StatMin, data = data, mapping = mapping, geom = geom, 
+    position = position, show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(color = color, shape = shape, size = size, alpha = alpha, 
+                  na.rm = na.rm, ...)
+  )
+}
+
+cars %>%
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point() +
+  stat_min(size = 5) +
+  labs(title = "Car speed and stopping distance",
+       x = "Speed", y = "Distance") 
+```
+
+### code
+
+```{r}
+#| eval: false
+cars %>%
+  ggplot(aes(x = speed, y = dist)) +
+  geom_point() +
+  stat_min(size = 5) +
+  labs(title = "Car speed and stopping distance",
+       x = "Speed", y = "Distance") 
+```
+
+
+### stat_min
+```{r}
+#| eval: false
+
+# create ggproto object
+StatMin = ggproto("StatMin", Stat,
+                       compute_group = function(data, scales) {
+                          xvar = data$x
+                          yvar = data$y
+                          
+                          data[xvar == min(xvar), ,drop = FALSE]
+                       },
+                       
+                       required_aes = c("x", "y")
+                       
+                       )
+
+# create stat function
+stat_min = function(mapping = NULL, data = NULL, geom = "point",
+                         position = "identity", na.rm = FALSE, show.legend = NA, 
+                         inherit.aes = TRUE,
+                         shape = 21, size = 5, color = "red",
+                         alpha = 1, ...) {
+  layer(
+    stat = StatMin, data = data, mapping = mapping, geom = geom, 
+    position = position, show.legend = show.legend, inherit.aes = inherit.aes,
+    params = list(color = color, shape = shape, size = size, alpha = alpha, 
+                  na.rm = na.rm, ...)
+  )
+}
+```
+
+:::
+
+
+## `gganimate` example
+
+```{r}
+#| warning: false
+library(gganimate) # animate
+library(gapminder) # data
+```
+
+::: panel-tabset
+
+### code-plot
+```{r}
+#| eval: false
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  theme_bw(base_size = 16)
+
+
+```
+
+### plot
+
+```{r}
+#| echo: false
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  theme_bw(base_size = 16)
+```
+
+### code-animate
+
+```{r}
+#| eval: false
+#| code-line-numbers: "8,9,10"
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  theme_bw(base_size = 16) +
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+```
+
+### animation
+
+```{r}
+#| echo: false
+#| warning: false
+ggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  facet_wrap(~continent) +
+  theme_bw(base_size = 16) +
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +
+  transition_time(year) + 
+  ease_aes('linear')
+```
+
+
+
+:::
+
+## `gganimate` summary
+
+Core functions
+
+  - `transition_*()` defines how the data should be spread out and how it relates to itself across time.
+
+  - `view_*()` defines how the positional scales should change along the animation.
+
+  - `shadow_*()` defines how data from other points in time should be presented in the given point in time.
+
+  - `enter_*()` / `exit_*()` defines how new data should appear and how old data should disappear during the course of the animation.
+
+  - `ease_aes()` defines how different aesthetics should be eased during transitions.
+
+- Label variables
+
+  - function dependent, use { } to access their values.
+
+- See [https://gganimate.com](https://gganimate.com)
+
+
+
+## LaTeX labels
+
+```{r}
+library(latex2exp)
+
+ggplot() +
+  ylab(TeX("Mean: $y = \\beta_0 + \\beta_1 x_1 + \\beta_2 x_2$")) +
+  xlab(TeX("$\\frac{\\alpha}{\\gamma}$")) +
+  theme_grey(base_size = 20)
+  
+  
+```
+
+## Style
+
+- Keep plots simple
+- Don't redundantly encode information
+- Use descriptive titles
+- Always label units
+- Use color and/or annotations to draw attention to a region of your plot
+- Never make a pie chart
+- Don't use the default ggplot background. When in doubt, `theme_bw()` is **always** better.
+
+## Further exploring
+
+- `ggplot2` [documentation](https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf)
+
+- `ggplot2` extensions: [https://exts.ggplot2.tidyverse.org/gallery/](https://exts.ggplot2.tidyverse.org/gallery/)
+
+- [top 50 ggplot2 visualizations](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) with code!
+
+- [extending ggplot2](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) with `ggproto`
+
+- [patchwork](https://github.com/thomasp85/patchwork)
+
+
+
+<!-- 
+::: columns
+::: {.column width="50%"}
+:::
+::: {.column width="50%"}
+:::
+:::
+-->

@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot\n\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\n\n\n\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -1262,28 +1262,28 @@
   {
     "objectID": "labs/lab3.html",
     "href": "labs/lab3.html",
-    "title": "Lab 3: picturrrs",
+    "title": "Lab 3: dream of plots",
     "section": "",
-    "text": "By the end of the lab, you will…"
+    "text": "“I dream of plots, and then I plot my dreams”\nVincent van Gogh (loosely)\nBy the end of the lab, you will…"
   },
   {
     "objectID": "labs/lab3.html#exercises",
     "href": "labs/lab3.html#exercises",
-    "title": "Lab 3: picturrrs",
+    "title": "Lab 3: dream of plots",
     "section": "Exercises",
-    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-3.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2.\n\n\n3."
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-3.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1. statsci majors plot\n\n\n2. stat outlier encircle\n\n\n3. norm plot"
   },
   {
     "objectID": "labs/lab3.html#style-guidelines",
     "href": "labs/lab3.html#style-guidelines",
-    "title": "Lab 3: picturrrs",
+    "title": "Lab 3: dream of plots",
     "section": "Style guidelines",
     "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
   },
   {
     "objectID": "labs/lab3.html#submitting-your-lab",
     "href": "labs/lab3.html#submitting-your-lab",
-    "title": "Lab 3: picturrrs",
+    "title": "Lab 3: dream of plots",
     "section": "Submitting your lab",
     "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
   },
@@ -1412,5 +1412,264 @@
     "title": "Subsetting",
     "section": "Preserving vs simplifying summary",
     "text": "Preserving vs simplifying summary\n\n\n\n\n\n\n\n\nType\nSimplifying\nPreserving\n\n\n\n\nAtomic Vector\nx[[1]]\nx[1]\n\n\nList\nx[[1]]\nx[1]\n\n\nMatrix / Array\nx[[1]]  x[1, ]  x[, 1]\nx[1, , drop=FALSE]  x[, 1, drop=FALSE]\n\n\nFactor\nx[1:4, drop=TRUE]\nx[1:4]  x[[1]]\n\n\nData frame\nx[, 1]  x[[1]]\nx[, 1, drop=FALSE]  x[1]\n\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec07.html#announcements",
+    "href": "slides/lec07.html#announcements",
+    "title": "ggplot2",
+    "section": "Announcements",
+    "text": "Announcements\n\nexam 1 date on schedule\nteams for lab 03; see announcement on slack"
+  },
+  {
+    "objectID": "slides/lec07.html#basics",
+    "href": "slides/lec07.html#basics",
+    "title": "ggplot2",
+    "section": "Basics",
+    "text": "Basics\nggplot2 is the package. ggplot is the main function.\n\nthe first argument is a data frame we want to plot from\nthe next argument is a list of variables (columns) of our data frame that we want to visualize. These go in the aesthetic aes() function."
+  },
+  {
+    "objectID": "slides/lec07.html#example-step-by-step",
+    "href": "slides/lec07.html#example-step-by-step",
+    "title": "ggplot2",
+    "section": "Example step by step",
+    "text": "Example step by step\n\na blank canvas\n\n\nlibrary(palmerpenguins)\n\n\ncodeplot\n\n\n\npenguins %>% \n  ggplot()"
+  },
+  {
+    "objectID": "slides/lec07.html#ggplot-step-2",
+    "href": "slides/lec07.html#ggplot-step-2",
+    "title": "ggplot2",
+    "section": "ggplot step 2",
+    "text": "ggplot step 2\n\nlist of variables we want to visualize\n\n::: panel-tabset\ncode\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm))\n\nplot"
+  },
+  {
+    "objectID": "slides/lec07.html#ggplot-step-3",
+    "href": "slides/lec07.html#ggplot-step-3",
+    "title": "ggplot2",
+    "section": "ggplot step 3",
+    "text": "ggplot step 3\n\nadd geometry\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/lec07.html#ggplot-step-4",
+    "href": "slides/lec07.html#ggplot-step-4",
+    "title": "ggplot2",
+    "section": "ggplot step 4",
+    "text": "ggplot step 4\n\nadd labels\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\")"
+  },
+  {
+    "objectID": "slides/lec07.html#ggplot-step-5",
+    "href": "slides/lec07.html#ggplot-step-5",
+    "title": "ggplot2",
+    "section": "ggplot step 5",
+    "text": "ggplot step 5\n\nadd theme\nadd color\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,\n             color = island)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       color = \"Island\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/lec07.html#ggplot-step-6",
+    "href": "slides/lec07.html#ggplot-step-6",
+    "title": "ggplot2",
+    "section": "ggplot step 6",
+    "text": "ggplot step 6\n\nfacet the plot\n\n\npenguins %>%\n  filter(!is.na(sex)) %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,\n             color = island)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       color = \"Island\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\") +\n  theme_bw() +\n  facet_wrap(~ sex)"
+  },
+  {
+    "objectID": "slides/lec07.html#main-aesthetics",
+    "href": "slides/lec07.html#main-aesthetics",
+    "title": "ggplot2",
+    "section": "Main aesthetics",
+    "text": "Main aesthetics"
+  },
+  {
+    "objectID": "slides/lec07.html#geometries",
+    "href": "slides/lec07.html#geometries",
+    "title": "ggplot2",
+    "section": "Geometries",
+    "text": "Geometries"
+  },
+  {
+    "objectID": "slides/lec07.html#themes",
+    "href": "slides/lec07.html#themes",
+    "title": "ggplot2",
+    "section": "Themes",
+    "text": "Themes\n\n\nimage credit: tvthemes package by Ryo Nakagawra\nSee https://ggplot2.tidyverse.org/reference/ggtheme.html for a list of default themes."
+  },
+  {
+    "objectID": "slides/lec07.html#plotting-functions",
+    "href": "slides/lec07.html#plotting-functions",
+    "title": "ggplot2",
+    "section": "Plotting functions",
+    "text": "Plotting functions\nstat_function() is a powerful tool\n\ncodeplot\n\n\n\nx = -10:10 # range\ndf = data.frame(x)\n\nf = function(x) {\n  dnorm(x)\n}\n\ndf %>%\n  ggplot(aes(x = x)) +\n  stat_function(fun=f) +\n  labs(y = \"Density\", \n       title = \"Gaussian density\")"
+  },
+  {
+    "objectID": "slides/lec07.html#save-the-plot",
+    "href": "slides/lec07.html#save-the-plot",
+    "title": "ggplot2",
+    "section": "Save the plot",
+    "text": "Save the plot\n\nSave a plot as a file on your computer with ggsave()\n\n\npenguins %>%\n  ggplot(aes(x = bill_depth_mm, y = species)) + \n  geom_boxplot() +\n  labs(x = \"Bill depth (mm)\", y = \"Species\") +\n  theme_bw()\n\n\n\nggsave(\"penguin-box-plot.png\", \n       plot = last_plot())"
+  },
+  {
+    "objectID": "slides/lec07.html#custom-ggplot-functions",
+    "href": "slides/lec07.html#custom-ggplot-functions",
+    "title": "ggplot2",
+    "section": "Custom ggplot functions",
+    "text": "Custom ggplot functions"
+  },
+  {
+    "objectID": "slides/lec07.html#latex-labels",
+    "href": "slides/lec07.html#latex-labels",
+    "title": "ggplot2",
+    "section": "LaTeX labels",
+    "text": "LaTeX labels\n\nlibrary(latex2exp)\n\nggplot() +\n  ylab(TeX(\"Mean: $y = \\\\beta_0 + \\\\beta_1 x_1 + \\\\beta_2 x_2$\")) +\n  xlab(TeX(\"$\\\\frac{\\\\alpha}{\\\\gamma}$\")) +\n  theme_grey(base_size = 20)"
+  },
+  {
+    "objectID": "slides/lec07.html#x-and-y-aesthetics",
+    "href": "slides/lec07.html#x-and-y-aesthetics",
+    "title": "ggplot2",
+    "section": "x and y aesthetics",
+    "text": "x and y aesthetics\n\ncodeplot\n\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm))"
+  },
+  {
+    "objectID": "slides/lec07.html#add-a-geometry",
+    "href": "slides/lec07.html#add-a-geometry",
+    "title": "ggplot2",
+    "section": "add a geometry",
+    "text": "add a geometry\n\ncodeplot\n\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/lec07.html#labels",
+    "href": "slides/lec07.html#labels",
+    "title": "ggplot2",
+    "section": "labels",
+    "text": "labels\n\ncodeplot\n\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\")"
+  },
+  {
+    "objectID": "slides/lec07.html#add-theme-and-color-aesthetic",
+    "href": "slides/lec07.html#add-theme-and-color-aesthetic",
+    "title": "ggplot2",
+    "section": "add theme and color aesthetic",
+    "text": "add theme and color aesthetic\n\ncodeplot\n\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,\n             color = island)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       color = \"Island\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/lec07.html#faceting",
+    "href": "slides/lec07.html#faceting",
+    "title": "ggplot2",
+    "section": "faceting",
+    "text": "faceting\n\ncodeplot\n\n\n\npenguins %>%\n  filter(!is.na(sex)) %>%\n  ggplot(aes(x = flipper_length_mm, y = bill_depth_mm,\n             color = island)) +\n  geom_point() + \n  labs(x = \"Flipper length (mm)\", y = \"Bill depth (mm)\",\n       color = \"Island\",\n       title = \"Bill depth vs flipper length distribution\",\n       subtitle = \"Penguins from the arctic\",\n       caption = \"data from palmerpenguins R package\") +\n  theme_bw() +\n  facet_wrap(~ sex)"
+  },
+  {
+    "objectID": "slides/lec07.html#blank-canvas",
+    "href": "slides/lec07.html#blank-canvas",
+    "title": "ggplot2",
+    "section": "Blank canvas",
+    "text": "Blank canvas\n\nlibrary(palmerpenguins)\n\n\ncodeplot\n\n\n\npenguins %>% \n  ggplot()"
+  },
+  {
+    "objectID": "slides/lec07.html#anatomy-of-a-ggplot",
+    "href": "slides/lec07.html#anatomy-of-a-ggplot",
+    "title": "ggplot2",
+    "section": "Anatomy of a ggplot",
+    "text": "Anatomy of a ggplot\n\nggplot(\n  data = [dataframe],\n  aes(\n    x = [var_x], y = [var_y], \n    color = [var_for_color], \n    fill  = [var_for_fill], \n    shape = [var_for_shape],\n    size  = [var_for_size],\n    alpha = [var_for_alpha],\n    ...#other aesthetics\n  )\n) +\n  geom_<some_geom>([geom_arguments]) +\n  ... # other geoms\n  scale_<some_axis>_<some_scale>() +\n  facet_<some_facet>([formula]) +\n  ... # other options\n\nTo visualize multivariate relationships we can add variables to our visualization by specifying aesthetics: color, size, shape, linetype, alpha, or fill; we can also add facets based on variable levels."
+  },
+  {
+    "objectID": "slides/lec07.html#variable-mappings-aesthetics",
+    "href": "slides/lec07.html#variable-mappings-aesthetics",
+    "title": "ggplot2",
+    "section": "Variable mappings (aesthetics)",
+    "text": "Variable mappings (aesthetics)\nThe name of the argument is mapping because it says how to “map” variables to a visual aesthetic.\n\npenguins %>%\n  ggplot(mapping = aes(x = bill_depth_mm, y = flipper_length_mm))\n\n\nWhen does an aesthetic (visual) go inside function aes()?\n\nIf you want an aesthetic to be reflective of a variable’s values, it must go inside aes().\nIf you want to set an aesthetic manually and not have it convey information about a variable, use the aesthetic’s name outside of aes(), e.g. in the geometry, and set it to your desired value.\n\n\n\n\ncodeplot\n\n\n\npenguins %>%\n  ggplot(aes(x = flipper_length_mm)) + \n  geom_histogram(color = \"gold\", fill = \"steelblue\")"
+  },
+  {
+    "objectID": "slides/lec07.html#continuous-and-discrete-variables",
+    "href": "slides/lec07.html#continuous-and-discrete-variables",
+    "title": "ggplot2",
+    "section": "Continuous and discrete variables",
+    "text": "Continuous and discrete variables\nAesthetics for continuous and discrete variables are measured on continuous and discrete scales, respectively.\n\nglimpsecode 1plot 1code 2plot 2\n\n\n\nglimpse(mpg)\n\nRows: 234\nColumns: 11\n$ manufacturer <chr> \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"audi\", \"…\n$ model        <chr> \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4\", \"a4 quattro\", \"…\n$ displ        <dbl> 1.8, 1.8, 2.0, 2.0, 2.8, 2.8, 3.1, 1.8, 1.8, 2.0, 2.0, 2.…\n$ year         <int> 1999, 1999, 2008, 2008, 1999, 1999, 2008, 1999, 1999, 200…\n$ cyl          <int> 4, 4, 4, 4, 6, 6, 6, 4, 4, 4, 4, 6, 6, 6, 6, 6, 6, 8, 8, …\n$ trans        <chr> \"auto(l5)\", \"manual(m5)\", \"manual(m6)\", \"auto(av)\", \"auto…\n$ drv          <chr> \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"f\", \"4\", \"4\", \"4\", \"4\", \"4…\n$ cty          <int> 18, 21, 20, 21, 16, 18, 18, 18, 16, 20, 19, 15, 17, 17, 1…\n$ hwy          <int> 29, 29, 31, 30, 26, 26, 27, 26, 25, 28, 27, 25, 25, 25, 2…\n$ fl           <chr> \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p\", \"p…\n$ class        <chr> \"compact\", \"compact\", \"compact\", \"compact\", \"compact\", \"c…\n\n\n\n\n\nmpg %>%\n  ggplot(aes(x = cyl, y = cty)) +\n  geom_boxplot() +\n  labs(x = \"Vehicle cylinders\", y = \"City MPG\",\n       title = \"Fuel efficiency by year\") +\n  theme_bw()\n\n\n\n\n\n\n\n\n\n\n\nmpg %>%\n  ggplot(aes(x = as.factor(cyl), y = cty)) +\n  geom_boxplot() +\n  labs(x = \"Vehicle cylinders\", y = \"City MPG\",\n       title = \"Fuel efficiency by year\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/lec07.html#common-geometries",
+    "href": "slides/lec07.html#common-geometries",
+    "title": "ggplot2",
+    "section": "Common geometries",
+    "text": "Common geometries\n\n\n\n\n\n\n\ngeometry\ndescription\n\n\n\n\ngeom_point()\nscatter plot\n\n\ngeom_histogram()\nhistogram\n\n\ngeom_boxplot()\nbox plot\n\n\ngeom_density()\ndensity plot\n\n\ngeom_violin()\nviolin plot\n\n\ngeom_raster()\nheat map\n\n\ngeom_line()\nconnect observations in a line\n\n\ngeom_bar()\nbar plot (try with argument position = fill)\n\n\ngeom_smooth()\nadd a smooth trend line (try with argument method = lm\n\n\ngeom_abline()\nadd an algebraic line\n\n\n\n\nSee https://ggplot2.tidyverse.org/reference/ for more geometries.\nSome geometries are in additional packages, e.g. see geom_density_ridges() within the package ggridges to create plots like these"
+  },
+  {
+    "objectID": "slides/lec07.html#annotate",
+    "href": "slides/lec07.html#annotate",
+    "title": "ggplot2",
+    "section": "Annotate",
+    "text": "Annotate\n\nggplot() +\n  annotate(geom = \"text\", x = 10, y = 10, \n           label = \"Text at (10, 10)\", size = 10)"
+  },
+  {
+    "objectID": "slides/lec07.html#patchwork",
+    "href": "slides/lec07.html#patchwork",
+    "title": "ggplot2",
+    "section": "Patchwork",
+    "text": "Patchwork\n\nlibrary(patchwork)\n\n\ncodeplot\n\n\n\np1 = penguins %>%\n  ggplot(aes(x = species, y = bill_depth_mm)) +\n  geom_violin() +\n  labs(x = \"Species\", y = \"Bill depth (mm)\",\n       title = \"Violin plots\")\n\np2 = penguins %>%\n  ggplot(aes(x = bill_depth_mm, y = flipper_length_mm, color = island)) +\n  geom_point() +\n  labs(x =\"Bill depth (mm)\",\n       y = \"Flipper length (mm)\",\n       color = \"Island\",\n       title = \"Flipper length vs bill depth\")\n\np3 = penguins %>%\n  ggplot(aes(x = body_mass_g)) +\n  geom_histogram(fill = \"steelblue\") +\n  labs(x = \"Body mass (g)\",\n       y = \"Count\",\n       title = \"Distribution of penguin body mass\")\n\n(p1 + p2) / p3"
+  },
+  {
+    "objectID": "slides/lec07.html#patchwork-options",
+    "href": "slides/lec07.html#patchwork-options",
+    "title": "ggplot2",
+    "section": "Patchwork options",
+    "text": "Patchwork options\n\np1 + p2\n\n\n\np1 + p2 + plot_layout(ncol = 1)"
+  },
+  {
+    "objectID": "slides/lec07.html#patchwork-layout",
+    "href": "slides/lec07.html#patchwork-layout",
+    "title": "ggplot2",
+    "section": "Patchwork layout",
+    "text": "Patchwork layout\n\nhorizontalvertical\n\n\n\np1 + p2 + \n  plot_annotation(title = \"Palmer Penguins\", tag_levels = c(\"A\"))\n\n\n\n\n\n\n\np1 + p2 + plot_layout(ncol = 1) + \n  plot_annotation(title = \"Palmer Penguins\", tag_levels = c(\"i\"))"
+  },
+  {
+    "objectID": "slides/lec07.html#custom-ggplot-functions-with-ggproto",
+    "href": "slides/lec07.html#custom-ggplot-functions-with-ggproto",
+    "title": "ggplot2",
+    "section": "Custom ggplot functions with ggproto",
+    "text": "Custom ggplot functions with ggproto\nEncircle the data points that have the minimum x-value\n\nOutputcodestat_min\n\n\n\n\n\n\n\n\n\n\ncars %>%\n  ggplot(aes(x = speed, y = dist)) +\n  geom_point() +\n  stat_min(size = 5) +\n  labs(title = \"Car speed and stopping distance\",\n       x = \"Speed\", y = \"Distance\") \n\n\n\n\n# create ggproto object\nStatMin = ggproto(\"StatMin\", Stat,\n                       compute_group = function(data, scales) {\n                          xvar = data$x\n                          yvar = data$y\n                          \n                          data[xvar == min(xvar), ,drop = FALSE]\n                       },\n                       \n                       required_aes = c(\"x\", \"y\")\n                       \n                       )\n\n# create stat function\nstat_min = function(mapping = NULL, data = NULL, geom = \"point\",\n                         position = \"identity\", na.rm = FALSE, show.legend = NA, \n                         inherit.aes = TRUE,\n                         shape = 21, size = 5, color = \"red\",\n                         alpha = 1, ...) {\n  layer(\n    stat = StatMin, data = data, mapping = mapping, geom = geom, \n    position = position, show.legend = show.legend, inherit.aes = inherit.aes,\n    params = list(color = color, shape = shape, size = size, alpha = alpha, \n                  na.rm = na.rm, ...)\n  )\n}"
+  },
+  {
+    "objectID": "slides/lec07.html#style-1",
+    "href": "slides/lec07.html#style-1",
+    "title": "ggplot2",
+    "section": "Style",
+    "text": "Style"
+  },
+  {
+    "objectID": "slides/lec07.html#further-exploring",
+    "href": "slides/lec07.html#further-exploring",
+    "title": "ggplot2",
+    "section": "Further exploring",
+    "text": "Further exploring\n\nggplot2 documentation\nggplot2 extensions: https://exts.ggplot2.tidyverse.org/gallery/\ntop 50 ggplot2 visualizations with code!\nextending ggplot2 with ggproto\npatchwork\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec07.html#style",
+    "href": "slides/lec07.html#style",
+    "title": "ggplot2",
+    "section": "Style",
+    "text": "Style\n\nKeep plots simple\nDon’t redundantly encode information\nUse descriptive titles\nAlways label units\nUse color and/or annotations to draw attention to a region of your plot\nNever make a pie chart\nDon’t use the default ggplot background. When in doubt, theme_bw() is always better."
+  },
+  {
+    "objectID": "slides/lec07.html#gganimate",
+    "href": "slides/lec07.html#gganimate",
+    "title": "ggplot2",
+    "section": "gganimate",
+    "text": "gganimate\n\nlibrary(gapminder) # data\nlibrary(gganimate) # animate\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')"
+  },
+  {
+    "objectID": "slides/lec07.html#gganimate-1",
+    "href": "slides/lec07.html#gganimate-1",
+    "title": "ggplot2",
+    "section": "gganimate",
+    "text": "gganimate\nCore functions\n\ntransition_*() defines how the data should be spread out and how it relates to itself across time.\nview_*() defines how the positional scales should change along the animation.\nshadow_*() defines how data from other points in time should be presented in the given point in time.\nenter_*() / exit_*() defines how new data should appear and how old data should disappear during the course of the animation.\nease_aes() defines how different aesthetics should be eased during transitions.\nLabel variables\n\nfunction dependent, use { } to access their values.\n\nSee https://gganimate.com"
+  },
+  {
+    "objectID": "slides/lec07.html#gganimate-example",
+    "href": "slides/lec07.html#gganimate-example",
+    "title": "ggplot2",
+    "section": "gganimate example",
+    "text": "gganimate example\n\nlibrary(gganimate) # animate\nlibrary(gapminder) # data\n\n\ncode-plotplotcode-animateanimation\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16)\n\n\n\n\n\n\n\n\n\n\n\nggplot(gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, colour = country)) +\n  geom_point(alpha = 0.7, show.legend = FALSE) +\n  scale_colour_manual(values = country_colors) +\n  scale_size(range = c(2, 12)) +\n  scale_x_log10() +\n  facet_wrap(~continent) +\n  theme_bw(base_size = 16) +\n  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'Life expectancy') +\n  transition_time(year) +\n  ease_aes('linear')"
+  },
+  {
+    "objectID": "slides/lec07.html#gganimate-summary",
+    "href": "slides/lec07.html#gganimate-summary",
+    "title": "ggplot2",
+    "section": "gganimate summary",
+    "text": "gganimate summary\nCore functions\n\ntransition_*() defines how the data should be spread out and how it relates to itself across time.\nview_*() defines how the positional scales should change along the animation.\nshadow_*() defines how data from other points in time should be presented in the given point in time.\nenter_*() / exit_*() defines how new data should appear and how old data should disappear during the course of the animation.\nease_aes() defines how different aesthetics should be eased during transitions.\nLabel variables\n\nfunction dependent, use { } to access their values.\n\nSee https://gganimate.com"
   }
 ]
