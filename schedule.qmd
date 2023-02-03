@@ -1,5 +1,8 @@
 ---
 title: "schedule"
+format: 
+  html: 
+    page-layout: full
 ---
 
 ```{r load-libraries, echo = F, message = F, eval = F}
@@ -56,8 +59,8 @@ schedule %>%
 |      | Fri Feb 10 | regular expressions; UNIX toolkit                     |                                 |                          |      |         |
 | 5    | Tue Feb 14 |                                           |                                 |                          |      |         |
 |      | Wed Feb 15 | complexity, profiling and parallelization |                                 |                          |      |         |
-|      | Fri Feb 17 | Review                                    |                                 |                          | exam 1    |         |
-| 6    | Tue Feb 21 | no lab: exam 1                                        |                                 |                          |      |         |
+|      | Fri Feb 17 | Review                                    |                                 |                          | exam 1 release  |         |
+| 6    | Tue Feb 21 | no lab: exam 1                                        |                                 | exam 1 due                         |      |         |
 |      | Wed Feb 22 | statistical modeling overview             |                                 |                          |      |         |
 |      | Fri Feb 24 | intro to optimization                     |                                 |                          |      |         |
 | 7    | Tue Feb 28 |                                           |                                 |                          |      |         |
