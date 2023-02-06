@@ -12,7 +12,12 @@ execute:
 By the end of the lab, you will...
 
 -   recreate plots starting from untidy data sets
--   
+-   create your own plotting tools
+-   plot an admixture density
+
+::: callout-warning
+Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is "accidentally" pushed.
+:::
 
 # Getting started
 
@@ -26,11 +31,87 @@ By the end of the lab, you will...
 
 For all exercises, you should respond in the space provided in the template `lab-3.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
 
-### 1. statsci majors plot
+### 1. Re-create the plot
 
-### 2. stat outlier encircle
+Using the untidy data set `statsci.csv`, re-create the plot below. Pay attention to re-creating exactly all aspects of the plot, e.g. axes, labels, capitalization etc.
 
-### 3. norm plot 
+![](images/statsci-plot-01.png)
+
+::: callout-tip
+## Hint
+
+-   Begin by making the data set tidy.
+-   The colors used are: `"cadetblue4"`, `"cadetblue3"`, `"lightgoldenrod4"`, `"lightgoldenrod3"`.
+-   The position of the legend is $(0.2, 0.8)$.
+-   Double check that your plot renders nicely. The default should be fine, but you might need to adjust `fig-width` and `fig-height` YAML options [read here](https://quarto.org/docs/computations/execution-options.html).
+:::
+
+### 2. Custom `ggplot` functionality
+
+Create a new stat called `stat_outlier_encircle()` that encircles outliers in a set of bivariate data. Define an outlier as when both values in a data pair have a z-score greater than three in absolute value. Check out <https://ggplot2.tidyverse.org/articles/extending-ggplot2.html>.
+
+Some examples of `stat_outlier_encircle()` in action are given below.
+
+A typical scatter plot with `ggplot()` and `geom_point()`:
+
+```{r}
+# copy this code chunk and use this data for the exercise
+library(tidyverse)
+set.seed(09567899)
+data_norm = tibble(x = c(rnorm(95, 100, 5), rnorm(5, 70, 5)), 
+                    y = c(rnorm(95, 100, 5), rnorm(5, 70, 5)))
+
+ggplot(data_norm, mapping = aes(x = x, y = y)) +
+  geom_point() +
+  theme_minimal()
+```
+
+An added layer that marks outliers:
+
+```{r}
+#| eval: false
+ggplot(data_norm, mapping = aes(x = x, y = y)) +
+  geom_point() +
+  stat_outlier_encircle() +
+  theme_minimal()
+```
+
+![](img/lab3-plot1.png)
+
+```{r}
+#| eval: false
+ggplot(data_norm, mapping = aes(x = x, y = y)) +
+  geom_point() +
+  stat_outlier_encircle(color = "purple", size = 14, 
+                        fill = "lightblue", alpha = .4) +
+  theme_minimal()
+```
+
+![](img/lab3-plot2.png)
+
+Create the new stat `stat_outlier_encircle()` so that the code chunks above give the output above.
+
+::: callout-tip
+## Hint
+
+See [ggplot lecture](https://sta323-sp23.github.io/slides/lec07.html#/custom-ggplot-functions-with-ggproto) for a template and read the documentation [here](https://ggplot2.tidyverse.org/articles/extending-ggplot2.html) for help.
+:::
+
+### 3. Admixture density plot
+
+Plot the density of the admixture distribution you created in [lab 2](https://sta323-sp23.github.io/labs/lab2.html) case (iv). Overlay your plot on the histogram of lemur weights (find `lemurs.csv` in the data folder).
+
+Create a second plot like you did above, but adjust $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$ until your distribution fits the plot better. Report the values you choose for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. An example of such a fit is provided below. Your plot does **not** need to look exactly like the one below. Explain why you choose the values you do for $\mu_1$, $\mu_2$, $\sigma_1$ and $\sigma_2$. \
+\
+\
+\
+![](images/mixturePlot.png)
+
+::: callout-tip
+## Hint
+-   How can you make the y-axis of the histogram be on the "density" scale instead of the "count" scale?
+-   Previously you created `rMyNormalMixture` function that randomly sampled from your distribution. Now you want to create a `dMyNormalMixture` function that returns the **density** of the function instead, see e.g. `dnorm` documentation.
+:::
 
 ## Style guidelines
 

@@ -54,7 +54,7 @@ schedule %>%
 | 3    | Tue Jan 31 | computational masonry                                          |                                 |   [lab 2](/labs/lab2.html)                       |      |         |
 |      | Wed Feb 01 | subsetting                                   | [💻](/slides/lec06.html)                                |                          |      |         |
 |      | Fri Feb 03 | ggplot2          | [💻](/slides/lec07.html)                                |                          |      |         |
-| 4    | Tue Feb 07 |                                           |                                 |                          |      |         |
+| 4    | Tue Feb 07 | dream of plots                                          |                                 |  [lab 3](/labs/lab3.html)                        |      |         |
 |      | Wed Feb 08 | functional programming and purrr   |                                 |                          |      |         |
 |      | Fri Feb 10 | regular expressions; UNIX toolkit                     |                                 |                          |      |         |
 | 5    | Tue Feb 14 |                                           |                                 |                          |      |         |
