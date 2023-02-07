@@ -21,11 +21,11 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-3-username.git` where `username` is replaced with your username (this is the copied SSH URL from your lab-2 GitHub repo).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-3-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
 
 -   Navigate to your `lab-3` folder and open the `.Rproj` file.
 
--   Open the Quarto (`.qmd`) file, change the author name to your name.
+-   Open the Quarto (`.qmd`) file, change the author name to your team name followed by a colon and then the names of the team members.
 
 ## Exercises
 
