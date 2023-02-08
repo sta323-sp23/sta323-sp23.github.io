@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -1671,5 +1671,194 @@
     "title": "ggplot2",
     "section": "gganimate summary",
     "text": "gganimate summary\nCore functions\n\ntransition_*() defines how the data should be spread out and how it relates to itself across time.\nview_*() defines how the positional scales should change along the animation.\nshadow_*() defines how data from other points in time should be presented in the given point in time.\nenter_*() / exit_*() defines how new data should appear and how old data should disappear during the course of the animation.\nease_aes() defines how different aesthetics should be eased during transitions.\nLabel variables\n\nfunction dependent, use { } to access their values.\n\nSee https://gganimate.com"
+  },
+  {
+    "objectID": "quizzes/quiz03.html",
+    "href": "quizzes/quiz03.html",
+    "title": "Quiz 3",
+    "section": "",
+    "text": "Exercise 1\nThe gg in ggplot stands for ___ of ___.\n\n\nExercise 2\nTo create a scatter plot with ggplot2, I need to add the geometry geom_[___].\n\n\nExercise 3\nTRUE or FALSE: to change the color of a plot, based on the column var1 of the data set, I need to put color = var1 inside the aesthetic aes() function. To change the color of all points to red, regardless of the data, I should put color = 'red' outside the aesthetic function.\n\n\nExercise 4\nWhat’s wrong with the code below?\n\n\n\n\ncars %>%\n  ggplot(aes(x = dist)) \n  geom_histogram()\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec08.html#announcements",
+    "href": "slides/lec08.html#announcements",
+    "title": "Functional programming and purrr",
+    "section": "Announcements",
+    "text": "Announcements\n\ncheck lab solutions on Sakai\nteams for labs\n\nsee announcement on slack\nmessage me by Friday, Feb 10 if you’d like to be pseudo-randomly assigned a team or\nreach out to any member of the teaching team if you’d like to form a specific team.\n\nquiz 03"
+  },
+  {
+    "objectID": "slides/lec08.html#function-as-objects",
+    "href": "slides/lec08.html#function-as-objects",
+    "title": "Functional programming and purrr",
+    "section": "Function as objects",
+    "text": "Function as objects\nFunctions are first class objects (like vectors).\n\n\n\nf = function(x) {\n  x ^ 2\n}\ng = f\ng(2)\n\n[1] 4\n\n\n\n\nl = list(f = f, g = g)\nl$f(3)\n\n[1] 9\n\n\n\nl[[2]](4)\n\n[1] 16\n\n\n\nl[1](3)\n\nError in eval(expr, envir, enclos): attempt to apply non-function"
+  },
+  {
+    "objectID": "slides/lec08.html#functions-as-arguments",
+    "href": "slides/lec08.html#functions-as-arguments",
+    "title": "Functional programming and purrr",
+    "section": "Functions as arguments",
+    "text": "Functions as arguments\nA functional is a function that takes a function as an input and returns a vector as output.\nExample: lapply() and sapply() accept function arguments.\n\nlapply(), as the name suggests applies a function over a list.\n\n\nx = list( c(1,2,3), b = c(10, 20, 30, 40, 50))\nlapply(x, mean) # output is a list\n\n[[1]]\n[1] 2\n\n$b\n[1] 30\n\n\n\nsapply() works the same but returns a simpler output\n\n\nsapply(x, mean) # output is a vector of doubles\n\n    b \n 2 30"
+  },
+  {
+    "objectID": "slides/lec08.html#functions-as-output",
+    "href": "slides/lec08.html#functions-as-output",
+    "title": "Functional programming and purrr",
+    "section": "Functions as output",
+    "text": "Functions as output\nWe can make a function return another function.\n\nf = function (n) {\n  # function returns \n  # function that raises its argument to the n power\n  g = function(x) {\n    return(x ^ n)\n  }\n  return(g)\n}\n\nf(3)(2) # 2 ^ 3\n\n[1] 8"
+  },
+  {
+    "objectID": "slides/lec08.html#anonymous-functions-lambdas",
+    "href": "slides/lec08.html#anonymous-functions-lambdas",
+    "title": "Functional programming and purrr",
+    "section": "Anonymous functions (lambdas)",
+    "text": "Anonymous functions (lambdas)\nThese are short functions that are created without ever assigning a name\n\nfunction(x) {x + 1}\n\nfunction(x) {x + 1}\n\n(function(y) {y - 1})(10)\n\n[1] 9\n\n\nIdea: won’t create an object we don’t need. This is especially useful for passing a function as an argument.\n\nExample: numerical derivatives\n\nintegrate(function(x) x, 0, 1)\n\n0.5 with absolute error < 5.6e-15\n\n\n\n\n\nintegrate(function(x) (x * x) - (2 * x) + 1, 0, 1)\n\n0.3333333 with absolute error < 3.7e-15"
+  },
+  {
+    "objectID": "slides/lec08.html#base-r-anonymous-function-lambda-shorthand",
+    "href": "slides/lec08.html#base-r-anonymous-function-lambda-shorthand",
+    "title": "Functional programming with purrr",
+    "section": "Base R anonymous function (lambda) shorthand",
+    "text": "Base R anonymous function (lambda) shorthand\nAlong with the base pipe (|>), R v4.1.0 introduced a shortcut for anonymous functions using \\(), we won’t be using this for the same reason but it is useful to know that it exists.\n\nf = \\(x) {1 + x}\nf(1:5)\n\n[1] 2 3 4 5 6\n\n\n\n(\\(x) x ^ 2)(10)\n\n[1] 100\n\n\n\nintegrate(\\(x) sin(x) ^ 2, 0, 1)\n\n0.2726756 with absolute error < 3e-15\n\n\nUse of this with the base pipe is meant avoid the need for ., e.g.\n\ndata.frame(x = runif(10), y = runif(10)) |>\n  {\\(d) lm(y ~ x, data = d)}()\n\n\nCall:\nlm(formula = y ~ x, data = d)\n\nCoefficients:\n(Intercept)            x  \n     0.4744       0.5460  \n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec08.html#base-r-lambda-shorthand",
+    "href": "slides/lec08.html#base-r-lambda-shorthand",
+    "title": "Functional programming and purrr",
+    "section": "Base R lambda shorthand",
+    "text": "Base R lambda shorthand\nAlong with the base pipe (|>), R v4.1.0 introduced a shortcut for anonymous functions using \\(), we won’t be using this for the same reason but it is useful to know that it exists.\n\nf = \\(x) {1 + x}\nf(1:5)\n\n[1] 2 3 4 5 6\n\n\n\n(\\(x) x ^ 2)(10)\n\n[1] 100\n\n\n\nintegrate(\\(x) sin(x) ^ 2, 0, 1)\n\n0.2726756 with absolute error < 3e-15\n\n\nUse of this with the base pipe is meant avoid the need for ., e.g.\n\ndata.frame(x = runif(10), y = runif(10)) |>\n  {\\(d) lm(y ~ x, data = d)}()\n\n\nCall:\nlm(formula = y ~ x, data = d)\n\nCoefficients:\n(Intercept)            x  \n     0.2556       0.6520"
+  },
+  {
+    "objectID": "slides/lec08.html#apply-functions",
+    "href": "slides/lec08.html#apply-functions",
+    "title": "Functional programming and purrr",
+    "section": "apply functions",
+    "text": "apply functions\nThe apply functions are a collection of tools for functional programming in base R, they are variations of the map function found in many other languages and apply a function over the elements of the input (vector).\n\n??base::apply\n---\n## \n## Help files with alias or concept or title matching ‘apply’ using fuzzy\n## matching:\n## \n## base::apply             Apply Functions Over Array Margins\n## base::.subset           Internal Objects in Package 'base'\n## base::by                Apply a Function to a Data Frame Split by Factors\n## base::eapply            Apply a Function Over Values in an Environment\n## base::lapply            Apply a Function over a List or Vector\n## base::mapply            Apply a Function to Multiple List or Vector Arguments\n## base::rapply            Recursively Apply a Function to a List\n## base::tapply            Apply a Function Over a Ragged Array\n\n\napplies function in an iterative format"
+  },
+  {
+    "objectID": "slides/lec08.html#lapply-and-sapply",
+    "href": "slides/lec08.html#lapply-and-sapply",
+    "title": "Functional programming and purrr",
+    "section": "lapply and sapply",
+    "text": "lapply and sapply\n\n\n\n\nlapply(1:4, function(x, pow) x ^ pow, pow = 2) %>% str()\n\nList of 4\n $ : num 1\n $ : num 4\n $ : num 9\n $ : num 16\n\nlapply(1:4, function(x, pow) x ^ pow, x = 2) %>% str()\n\nList of 4\n $ : num 2\n $ : num 4\n $ : num 8\n $ : num 16\n\n\n\nsapply(1:8, function(x) (x + 1) ^ 2)\n\n[1]  4  9 16 25 36 49 64 81\n\nsapply(1:8, function(x) c(x, x ^ 2, x ^ 3))\n\n     [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8]\n[1,]    1    2    3    4    5    6    7    8\n[2,]    1    4    9   16   25   36   49   64\n[3,]    1    8   27   64  125  216  343  512"
+  },
+  {
+    "objectID": "slides/lec08.html#section",
+    "href": "slides/lec08.html#section",
+    "title": "Functional programming and purrr",
+    "section": "",
+    "text": "What happens if the returned lengths don’t match?\n\n\n\nsapply(1:3, seq)\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 1 2\n\n[[3]]\n[1] 1 2 3\n\n\n\n\nlapply(1:3, seq) %>% str()\n\nList of 3\n $ : int 1\n $ : int [1:2] 1 2\n $ : int [1:3] 1 2 3\n\n\n\n\n\nWhat happens if the types don’t match?\n\n\ntype coercion!\n\nl = list(a = 1:3, b = 4:6, c = 7:9, d = list(10, 11, \"A\"))\n\n\nsapply(l, function(x) x[1]) %>% str()\n\nList of 4\n $ a: int 1\n $ b: int 4\n $ c: int 7\n $ d: num 10\n\n\n\ntype consistency issue: can’t quickly see return type"
+  },
+  {
+    "objectID": "slides/lec08.html#beware-sapply",
+    "href": "slides/lec08.html#beware-sapply",
+    "title": "Functional programming and purrr",
+    "section": "Beware sapply()",
+    "text": "Beware sapply()\n\ntype consistency issue: can’t quickly see return type\ngreat to use dynamically and interactively but not robust"
+  },
+  {
+    "objectID": "slides/lec08.html#section-1",
+    "href": "slides/lec08.html#section-1",
+    "title": "Functional programming and purrr",
+    "section": "",
+    "text": "🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec08.html#apply-and-data-frames",
+    "href": "slides/lec08.html#apply-and-data-frames",
+    "title": "Functional programming and purrr",
+    "section": "*apply and data frames",
+    "text": "*apply and data frames\nCommon use case: data frames\n\nrecall: a data frames is just a fancy list\n\n\ndf = data.frame(\n  a = 1:6, \n  b = letters[1:6], \n  c = c(TRUE,FALSE)\n)\n\n\nlapply(df, class) %>% str()\n\nList of 3\n $ a: chr \"integer\"\n $ b: chr \"character\"\n $ c: chr \"logical\"\n\nsapply(df, class)\n\n          a           b           c \n  \"integer\" \"character\"   \"logical\""
+  },
+  {
+    "objectID": "slides/lec08.html#a-more-useful-example",
+    "href": "slides/lec08.html#a-more-useful-example",
+    "title": "Functional programming and purrr",
+    "section": "A more useful example",
+    "text": "A more useful example\nPenalized regression: the lasso\n\\[\n\\min_{\\beta \\in \\mathcal{R^p}} ||y - X\\beta||_2^2  + \\lambda||\\beta||_1\n\\]\n\nIt only makes sense to “shrink” the \\(\\beta_i\\)s if the predictors are on the same scale. Therefore we want to standardize the data in matrix X, e.g.\nfor each column j in X: \n  for each row i:\n    recompute x[i, j] = x[i, j] - mean(x[,j]) / sd(x[,j])\n    \n\n\nWe can solve this elegantly with an *apply.\n\nX = data.frame(height = c(72, 60, 64),\n               bpm = c(82, 55, 60))\n\n\napplylapply\n\n\n\napply(X, 2, function(x) (x - mean(x)) / sd(x)) # returns matrix\n\n         height        bpm\n[1,]  1.0910895  1.1370777\n[2,] -0.8728716 -0.7425813\n[3,] -0.2182179 -0.3944963\n\n\n\n\n\nlapply(X, function (x) (x - mean(x)) / sd(x)) %>% \n  as.data.frame() \n\n      height        bpm\n1  1.0910895  1.1370777\n2 -0.8728716 -0.7425813\n3 -0.2182179 -0.3944963"
+  },
+  {
+    "objectID": "slides/lec08.html#other-less-common-apply-functions",
+    "href": "slides/lec08.html#other-less-common-apply-functions",
+    "title": "Functional programming and purrr",
+    "section": "other less common apply functions",
+    "text": "other less common apply functions\n\napply() - applies a function over the rows or columns of a data frame, matrix or array\nvapply() - is similar to sapply, but has a enforced return type and size\nmapply() - like sapply but will iterate over multiple vectors at the same time.\nrapply() - a recursive version of lapply, behavior depends largely on the how argument\neapply() - apply a function over an environment."
+  },
+  {
+    "objectID": "slides/lec08.html#map-functions",
+    "href": "slides/lec08.html#map-functions",
+    "title": "Functional programming and purrr",
+    "section": "Map functions",
+    "text": "Map functions\n\nreplacements for lapply/sapply/vapply\nmap() - returns a list (same as lapply)\nmap_lgl() - returns a logical vector.\nmap_int() - returns a integer vector.\nmap_dbl() - returns a double vector.\nmap_chr() - returns a character vector.\nmap_dfr() - returns a data frame by row binding.\nmap_dfc() - returns a data frame by column binding.\nwalk() - returns nothing, used exclusively for function side effects"
+  },
+  {
+    "objectID": "slides/lec08.html#type-consistency",
+    "href": "slides/lec08.html#type-consistency",
+    "title": "Functional programming and purrr",
+    "section": "Type consistency",
+    "text": "Type consistency\nR is a weakly / dynamically typed language which means there is no syntactic way to define a function which enforces argument or return types. This flexibility can be useful at times, but often it makes it hard to reason about your code and requires more verbose code to handle edge cases.\n\nset.seed(123)\nx = list(rnorm(1e3), rnorm(1e3), rnorm(1e3))\n\n\n\nmap_dbl(x, mean)\n\n[1]  0.01612787  0.04246525 -0.02011253\n\n\n\n\n\nmap_chr(x, mean)\n\nWarning: Automatic coercion from double to character was deprecated in purrr 1.0.0.\nℹ Please use an explicit call to `as.character()` within `map_chr()` instead.\n\n\n[1] \"0.016128\"  \"0.042465\"  \"-0.020113\"\n\n\n\n\n\n\n\nmap_int(x, mean)\n\nError in `map_int()`:\nℹ In index: 1.\nCaused by error:\n! Can't coerce from a double vector to an integer vector.\n\n\n\n\nmap(x, mean) %>% str()\n\nList of 3\n $ : num 0.0161\n $ : num 0.0425\n $ : num -0.0201"
+  },
+  {
+    "objectID": "slides/lec08.html#working-with-data-frames",
+    "href": "slides/lec08.html#working-with-data-frames",
+    "title": "Functional programming and purrr",
+    "section": "Working with Data Frames",
+    "text": "Working with Data Frames\nmap_dfr and map_dfc are particularly useful when working with and/or creating data frames. Example:\n\nX = data.frame(height = c(72, 60, 64),\n               bpm = c(82, 55, 60),\n               age = c(25, 30, 35))\n\n\nstandardize = function(x) (x - mean(x)) / sd(x)\n\n\n\nmap_dfc(X, standardize)\n\n# A tibble: 3 × 3\n  height    bpm   age\n   <dbl>  <dbl> <dbl>\n1  1.09   1.14     -1\n2 -0.873 -0.743     0\n3 -0.218 -0.394     1\n\n\n\n\n\n\n\nmap_dfr(X, function(x) x[1:2])\n\n# A tibble: 2 × 3\n  height   bpm   age\n   <dbl> <dbl> <dbl>\n1     72    82    25\n2     60    55    30\n\n\n\n\nmap_dfr(X, function(x) x)\n\n# A tibble: 3 × 3\n  height   bpm   age\n   <dbl> <dbl> <dbl>\n1     72    82    25\n2     60    55    30\n3     64    60    35"
+  },
+  {
+    "objectID": "slides/lec08.html#shortcut---purrr-style-lambdas",
+    "href": "slides/lec08.html#shortcut---purrr-style-lambdas",
+    "title": "Functional programming and purrr",
+    "section": "Shortcut - purrr style lambdas",
+    "text": "Shortcut - purrr style lambdas\npurrr lets us write anonymous functions using one sided formulas where the argument is given by . or .x for map and related functions.\n\nmap_dbl(1:5, function(x) x / (x + 1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\n\nRead ~ as “function” and . or .x as “input”\n\nmap_dbl(1:5, ~ . / (. + 1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\n\n\n\nmap_dbl(1:5, ~ .x / (.x + 1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\nGenerally, the latter option is preferred to avoid confusion with magrittr."
+  },
+  {
+    "objectID": "slides/lec08.html#multiargument-anonymous-functions",
+    "href": "slides/lec08.html#multiargument-anonymous-functions",
+    "title": "Functional programming and purrr",
+    "section": "Multiargument anonymous functions",
+    "text": "Multiargument anonymous functions\nFunctions with the map2 prefix work the same as the map functions but they iterate over two objects instead of one. Arguments in an anonymous function are given by .x and .y (or ..1 and ..2) respectively.\n\nmap2_dbl(1:5, 1:5, function(x,y) x / (y+1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\n\n\nmap2_dbl(1:5, 1:5, ~ .x/(.y+1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\n\n\n\nmap2_dbl(1:5, 1:5, ~ ..1/(..2+1))\n\n[1] 0.5000000 0.6666667 0.7500000 0.8000000 0.8333333\n\n\n\n\n\nmap2_chr(LETTERS[1:5], letters[1:5], paste0)\n\n[1] \"Aa\" \"Bb\" \"Cc\" \"Dd\" \"Ee\"\n\n\n\n\nPrioritize readability of your code! For complicated functions, use syntax like the first example."
+  },
+  {
+    "objectID": "slides/lec08.html#lookups",
+    "href": "slides/lec08.html#lookups",
+    "title": "Functional programming and purrr",
+    "section": "Lookups",
+    "text": "Lookups\nVery often we want to extract only certain (named) values from a list, purrr provides a shortcut for this operation - if instead of a function you provide either a character or numeric vector, those values will be used to sequentially subset the elements being iterated.\n\n\npurrr::map_chr(sw_people, \"name\") %>% head()\n\n[1] \"Luke Skywalker\" \"C-3PO\"          \"R2-D2\"          \"Darth Vader\"   \n[5] \"Leia Organa\"    \"Owen Lars\"     \n\n\n\n\n\npurrr::map_chr(sw_people, 1) %>% head()\n\n[1] \"Luke Skywalker\" \"C-3PO\"          \"R2-D2\"          \"Darth Vader\"   \n[5] \"Leia Organa\"    \"Owen Lars\"     \n\n\n\n\n\npurrr::map_chr(sw_people, list(\"films\", 1)) %>% head(n=10)\n\n [1] \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/5/\"\n [3] \"http://swapi.co/api/films/5/\" \"http://swapi.co/api/films/6/\"\n [5] \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/5/\"\n [7] \"http://swapi.co/api/films/5/\" \"http://swapi.co/api/films/1/\"\n [9] \"http://swapi.co/api/films/1/\" \"http://swapi.co/api/films/5/\""
+  },
+  {
+    "objectID": "slides/lec08.html#lookups-sw_people",
+    "href": "slides/lec08.html#lookups-sw_people",
+    "title": "Functional programming and purrr",
+    "section": "Lookups (sw_people)",
+    "text": "Lookups (sw_people)\n\nlibrary(repurrrsive)\n\nsw_people from the repurrrsive package\n\nstr(sw_people[1:5])\n\nList of 5\n $ :List of 16\n  ..$ name      : chr \"Luke Skywalker\"\n  ..$ height    : chr \"172\"\n  ..$ mass      : chr \"77\"\n  ..$ hair_color: chr \"blond\"\n  ..$ skin_color: chr \"fair\"\n  ..$ eye_color : chr \"blue\"\n  ..$ birth_year: chr \"19BBY\"\n  ..$ gender    : chr \"male\"\n  ..$ homeworld : chr \"http://swapi.co/api/planets/1/\"\n  ..$ films     : chr [1:5] \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/3/\" \"http://swapi.co/api/films/2/\" \"http://swapi.co/api/films/1/\" ...\n  ..$ species   : chr \"http://swapi.co/api/species/1/\"\n  ..$ vehicles  : chr [1:2] \"http://swapi.co/api/vehicles/14/\" \"http://swapi.co/api/vehicles/30/\"\n  ..$ starships : chr [1:2] \"http://swapi.co/api/starships/12/\" \"http://swapi.co/api/starships/22/\"\n  ..$ created   : chr \"2014-12-09T13:50:51.644000Z\"\n  ..$ edited    : chr \"2014-12-20T21:17:56.891000Z\"\n  ..$ url       : chr \"http://swapi.co/api/people/1/\"\n $ :List of 14\n  ..$ name      : chr \"C-3PO\"\n  ..$ height    : chr \"167\"\n  ..$ mass      : chr \"75\"\n  ..$ hair_color: chr \"n/a\"\n  ..$ skin_color: chr \"gold\"\n  ..$ eye_color : chr \"yellow\"\n  ..$ birth_year: chr \"112BBY\"\n  ..$ gender    : chr \"n/a\"\n  ..$ homeworld : chr \"http://swapi.co/api/planets/1/\"\n  ..$ films     : chr [1:6] \"http://swapi.co/api/films/5/\" \"http://swapi.co/api/films/4/\" \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/3/\" ...\n  ..$ species   : chr \"http://swapi.co/api/species/2/\"\n  ..$ created   : chr \"2014-12-10T15:10:51.357000Z\"\n  ..$ edited    : chr \"2014-12-20T21:17:50.309000Z\"\n  ..$ url       : chr \"http://swapi.co/api/people/2/\"\n $ :List of 14\n  ..$ name      : chr \"R2-D2\"\n  ..$ height    : chr \"96\"\n  ..$ mass      : chr \"32\"\n  ..$ hair_color: chr \"n/a\"\n  ..$ skin_color: chr \"white, blue\"\n  ..$ eye_color : chr \"red\"\n  ..$ birth_year: chr \"33BBY\"\n  ..$ gender    : chr \"n/a\"\n  ..$ homeworld : chr \"http://swapi.co/api/planets/8/\"\n  ..$ films     : chr [1:7] \"http://swapi.co/api/films/5/\" \"http://swapi.co/api/films/4/\" \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/3/\" ...\n  ..$ species   : chr \"http://swapi.co/api/species/2/\"\n  ..$ created   : chr \"2014-12-10T15:11:50.376000Z\"\n  ..$ edited    : chr \"2014-12-20T21:17:50.311000Z\"\n  ..$ url       : chr \"http://swapi.co/api/people/3/\"\n $ :List of 15\n  ..$ name      : chr \"Darth Vader\"\n  ..$ height    : chr \"202\"\n  ..$ mass      : chr \"136\"\n  ..$ hair_color: chr \"none\"\n  ..$ skin_color: chr \"white\"\n  ..$ eye_color : chr \"yellow\"\n  ..$ birth_year: chr \"41.9BBY\"\n  ..$ gender    : chr \"male\"\n  ..$ homeworld : chr \"http://swapi.co/api/planets/1/\"\n  ..$ films     : chr [1:4] \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/3/\" \"http://swapi.co/api/films/2/\" \"http://swapi.co/api/films/1/\"\n  ..$ species   : chr \"http://swapi.co/api/species/1/\"\n  ..$ starships : chr \"http://swapi.co/api/starships/13/\"\n  ..$ created   : chr \"2014-12-10T15:18:20.704000Z\"\n  ..$ edited    : chr \"2014-12-20T21:17:50.313000Z\"\n  ..$ url       : chr \"http://swapi.co/api/people/4/\"\n $ :List of 15\n  ..$ name      : chr \"Leia Organa\"\n  ..$ height    : chr \"150\"\n  ..$ mass      : chr \"49\"\n  ..$ hair_color: chr \"brown\"\n  ..$ skin_color: chr \"light\"\n  ..$ eye_color : chr \"brown\"\n  ..$ birth_year: chr \"19BBY\"\n  ..$ gender    : chr \"female\"\n  ..$ homeworld : chr \"http://swapi.co/api/planets/2/\"\n  ..$ films     : chr [1:5] \"http://swapi.co/api/films/6/\" \"http://swapi.co/api/films/3/\" \"http://swapi.co/api/films/2/\" \"http://swapi.co/api/films/1/\" ...\n  ..$ species   : chr \"http://swapi.co/api/species/1/\"\n  ..$ vehicles  : chr \"http://swapi.co/api/vehicles/30/\"\n  ..$ created   : chr \"2014-12-10T15:20:09.791000Z\"\n  ..$ edited    : chr \"2014-12-20T21:17:50.315000Z\"\n  ..$ url       : chr \"http://swapi.co/api/people/5/\""
+  },
+  {
+    "objectID": "slides/lec08.html#length-coercion",
+    "href": "slides/lec08.html#length-coercion",
+    "title": "Functional programming and purrr",
+    "section": "Length coercion?",
+    "text": "Length coercion?\n\npurrr::map_chr(sw_people, list(\"starships\", 1))\n\nError in `purrr::map_chr()`:\nℹ In index: 2.\nCaused by error:\n! Result must be length 1, not 0.\n\n\n\n\nsw_people[[2]]$name\n\n[1] \"C-3PO\"\n\nsw_people[[2]]$starships\n\nNULL\n\n\n\n\n\npurrr::map(sw_people, list(\"starships\", 1)) %>% head(n = 3) %>% str()\n\nList of 3\n $ : chr \"http://swapi.co/api/starships/12/\"\n $ : NULL\n $ : NULL\n\n\n\n\n\npurrr::map_chr(sw_people, list(\"starships\", 1), .default = NA) %>% head()\n\n[1] \"http://swapi.co/api/starships/12/\" NA                                 \n[3] NA                                  \"http://swapi.co/api/starships/13/\"\n[5] NA                                  NA"
+  },
+  {
+    "objectID": "slides/lec08.html#manual-unnesting",
+    "href": "slides/lec08.html#manual-unnesting",
+    "title": "Functional programming and purrr",
+    "section": "manual unnesting",
+    "text": "manual unnesting\n\nhow many starships does each character have?\n\n\n\n\n(chars = tibble(\n  name = purrr::map_chr(sw_people, \"name\"),\n  starships = purrr::map(sw_people, \"starships\")\n))\n\n# A tibble: 87 × 2\n   name               starships\n   <chr>              <list>   \n 1 Luke Skywalker     <chr [2]>\n 2 C-3PO              <NULL>   \n 3 R2-D2              <NULL>   \n 4 Darth Vader        <chr [1]>\n 5 Leia Organa        <NULL>   \n 6 Owen Lars          <NULL>   \n 7 Beru Whitesun lars <NULL>   \n 8 R5-D4              <NULL>   \n 9 Biggs Darklighter  <chr [1]>\n10 Obi-Wan Kenobi     <chr [5]>\n# … with 77 more rows\n\n\n\n\nchars %>%\n  mutate(n = map_int(starships, length))\n\n# A tibble: 87 × 3\n   name               starships     n\n   <chr>              <list>    <int>\n 1 Luke Skywalker     <chr [2]>     2\n 2 C-3PO              <NULL>        0\n 3 R2-D2              <NULL>        0\n 4 Darth Vader        <chr [1]>     1\n 5 Leia Organa        <NULL>        0\n 6 Owen Lars          <NULL>        0\n 7 Beru Whitesun lars <NULL>        0\n 8 R5-D4              <NULL>        0\n 9 Biggs Darklighter  <chr [1]>     1\n10 Obi-Wan Kenobi     <chr [5]>     5\n# … with 77 more rows\n\n\n\n\n\nmuch more efficient if you only need a subset of the columns to be “unnested”"
+  },
+  {
+    "objectID": "slides/lec08.html#exercise-1",
+    "href": "slides/lec08.html#exercise-1",
+    "title": "Functional programming and purrr",
+    "section": "Exercise 1",
+    "text": "Exercise 1\n\ndraw_points = function(n) {\n  list(\n    x = runif(n, -1, 1),\n    y = runif(n, -1, 1)\n  )\n}\n\n\nUse the function above to draw n = 1000 points from a box of area 4. Save your output as an object called points.\nUse map or an appropriate version to determine which points \\((x, y)\\) are within the unit circle centered at the origin.\nWhat proportion of points are within the unit circle?\nCan you approximate \\(\\pi\\) like this? How?\nHow can you make your estimate more precise?"
+  },
+  {
+    "objectID": "slides/lec08.html#exercise-2",
+    "href": "slides/lec08.html#exercise-2",
+    "title": "Functional programming and purrr",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nUse mtcars and a single map or map variant to\n\nget the type of each variable\nget the fourth row such that result is a character vector\ncompute the mean of each variable\ncompute the mean and median for each variable such that the result is a data frame with the mean values in row 1 and the median values in row 2.\n\n\n\n🔗 sta323-sp23.github.io"
   }
 ]

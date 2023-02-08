@@ -1,0 +1,45 @@
+---
+title: "Quiz 3"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1
+
+The `gg` in ggplot stands for ___ of ___.
+
+### Exercise 2
+
+To create a scatter plot with `ggplot2`, I need to add the geometry geom_[___].
+
+### Exercise 3
+
+TRUE or FALSE: to change the color of a plot, based on the column `var1` of the data set, I need to put `color = var1` *inside* the aesthetic `aes()` function. To change the color of all points to red, regardless of the data, I should put `color = 'red'` *outside* the aesthetic function.
+
+### Exercise 4
+
+What's wrong with the code below?
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+
+```{r}
+#| error: true
+#| eval: false
+
+cars %>%
+  ggplot(aes(x = dist)) 
+  geom_histogram()
+```
+
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "4em",
+          color_running_background = "#2774AE")
+```

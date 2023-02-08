@@ -1,0 +1,565 @@
+---
+title: "Functional programming and purrr"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Announcements
+
+-   check lab solutions on Sakai
+
+-   teams for labs
+
+    -   see announcement on slack
+    -   message me by *Friday, Feb 10* if you'd like to be pseudo-randomly assigned a team or
+    -   reach out to any member of the teaching team if you'd like to form a specific team.
+
+-   quiz 03
+
+# Functionals
+
+## Function as objects
+
+Functions are first class objects (like vectors).
+
+::: columns
+::: {.column width="50%"}
+```{r}
+f = function(x) {
+  x ^ 2
+}
+g = f
+g(2)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+l = list(f = f, g = g)
+l$f(3)
+```
+
+```{r}
+l[[2]](4)
+```
+
+```{r}
+#| error: true
+l[1](3)
+```
+:::
+:::
+
+## Functions as arguments
+
+A **functional** is a function that takes a function as an input and returns a vector as output.
+
+Example: `lapply()` and `sapply()` accept function arguments.
+
+-   `lapply()`, as the name suggests applies a function over a list.
+
+```{r}
+x = list( c(1,2,3), b = c(10, 20, 30, 40, 50))
+lapply(x, mean) # output is a list
+```
+
+-   `sapply()` works the same but returns a *simpler* output
+
+```{r}
+sapply(x, mean) # output is a vector of doubles
+```
+
+## Functions as output
+
+We can make a function return another function.
+
+```{r}
+f = function (n) {
+  # function returns 
+  # function that raises its argument to the n power
+  g = function(x) {
+    return(x ^ n)
+  }
+  return(g)
+}
+
+f(3)(2) # 2 ^ 3
+```
+
+## Anonymous functions (lambdas)
+
+These are short functions that are created without ever assigning a name
+
+```{r}
+function(x) {x + 1}
+
+(function(y) {y - 1})(10)
+```
+
+Idea: won't create an object we don't need. This is especially useful for passing a function as an argument.
+
+. . .
+
+Example: numerical derivatives
+
+```{r}
+integrate(function(x) x, 0, 1)
+```
+
+. . .
+
+```{r}
+integrate(function(x) (x * x) - (2 * x) + 1, 0, 1)
+```
+
+## Base R lambda shorthand
+
+Along with the base pipe (`|>`), R v4.1.0 introduced a shortcut for anonymous functions using `\()`, we won't be using this for the same reason but it is useful to know that it exists.
+
+```{r}
+f = \(x) {1 + x}
+f(1:5)
+```
+
+```{r}
+(\(x) x ^ 2)(10)
+```
+
+```{r}
+integrate(\(x) sin(x) ^ 2, 0, 1)
+```
+
+Use of this with the base pipe is meant avoid the need for `.`, e.g.
+
+```{r}
+data.frame(x = runif(10), y = runif(10)) |>
+  {\(d) lm(y ~ x, data = d)}()
+```
+
+# apply (base R)
+
+## apply functions
+
+The apply functions are a collection of tools for functional programming in base R, they are variations of the `map` function found in many other languages and apply a function over the elements of the input (vector).
+
+```{r}
+#| eval: false
+
+??base::apply
+---
+## 
+## Help files with alias or concept or title matching ‘apply’ using fuzzy
+## matching:
+## 
+## base::apply             Apply Functions Over Array Margins
+## base::.subset           Internal Objects in Package 'base'
+## base::by                Apply a Function to a Data Frame Split by Factors
+## base::eapply            Apply a Function Over Values in an Environment
+## base::lapply            Apply a Function over a List or Vector
+## base::mapply            Apply a Function to Multiple List or Vector Arguments
+## base::rapply            Recursively Apply a Function to a List
+## base::tapply            Apply a Function Over a Ragged Array
+```
+
+-   applies function in an iterative format
+
+## `lapply` and `sapply`
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+```{r}
+lapply(1:4, function(x, pow) x ^ pow, pow = 2) %>% str()
+
+lapply(1:4, function(x, pow) x ^ pow, x = 2) %>% str()
+```
+
+```{r}
+sapply(1:8, function(x) (x + 1) ^ 2)
+sapply(1:8, function(x) c(x, x ^ 2, x ^ 3))
+```
+
+## 
+
+What happens if the returned lengths don't match?
+
+::: columns
+::: {.column width="50%"}
+```{r}
+sapply(1:3, seq)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+lapply(1:3, seq) %>% str()
+```
+:::
+:::
+
+. . .
+
+What happens if the types don't match?
+
+. . .
+
+type coercion!
+
+```{r}
+l = list(a = 1:3, b = 4:6, c = 7:9, d = list(10, 11, "A"))
+```
+
+```{r}
+sapply(l, function(x) x[1]) %>% str()
+```
+
+-   type consistency issue: can't quickly see return type
+
+## \*apply and data frames
+
+Common use case: data frames
+
+-   recall: a data frames is just a fancy list
+
+```{r}
+df = data.frame(
+  a = 1:6, 
+  b = letters[1:6], 
+  c = c(TRUE,FALSE)
+)
+```
+
+```{r}
+lapply(df, class) %>% str()
+sapply(df, class)
+```
+
+## A more useful example
+
+Penalized regression: the lasso
+
+$$
+\min_{\beta \in \mathcal{R^p}} ||y - X\beta||_2^2  + \lambda||\beta||_1
+$$
+
+. . .
+
+It only makes sense to "shrink" the $\beta_i$s if the predictors are on the same scale. Therefore we want to standardize the data in matrix X, e.g.
+
+    for each column j in X: 
+      for each row i:
+        recompute x[i, j] = x[i, j] - mean(x[,j]) / sd(x[,j])
+        
+
+. . .
+
+We can solve this elegantly with an \*apply.
+
+```{r}
+X = data.frame(height = c(72, 60, 64),
+               bpm = c(82, 55, 60))
+```
+
+::: panel-tabset
+### apply
+
+```{r}
+apply(X, 2, function(x) (x - mean(x)) / sd(x)) # returns matrix
+```
+
+### lapply
+
+```{r}
+lapply(X, function (x) (x - mean(x)) / sd(x)) %>% 
+  as.data.frame() 
+```
+:::
+
+## other less common apply functions
+
+-   `apply()` - applies a function over the rows or columns of a data frame, matrix or array
+
+-   `vapply()` - is similar to `sapply`, but has a enforced return type and size
+
+-   `mapply()` - like `sapply` but will iterate over multiple vectors at the same time.
+
+-   `rapply()` - a recursive version of `lapply`, behavior depends largely on the `how` argument
+
+-   `eapply()` - apply a function over an environment.
+
+# purrr
+
+![](images/purrr-logo.png){fig-align="center"}
+
+## Map functions
+
+- replacements for `lapply`/`sapply`/`vapply`
+
+* `map()` - returns a list (same as `lapply`)
+
+* `map_lgl()` - returns a logical vector.
+
+* `map_int()` - returns a integer vector.
+
+* `map_dbl()` - returns a double vector.
+
+* `map_chr()` - returns a character vector.
+
+* `map_dfr()` - returns a data frame by row binding.
+
+* `map_dfc()` - returns a data frame by column binding.
+
+* `walk()` - returns nothing,  used exclusively for function side effects
+
+## Type consistency
+
+R is a weakly / dynamically typed language which means there is no syntactic way to define a function which enforces argument or return types. This flexibility can be useful at times, but often it makes it hard to reason about your code and requires more verbose code to handle edge cases.
+
+
+```{r}
+set.seed(123)
+x = list(rnorm(1e3), rnorm(1e3), rnorm(1e3))
+```
+
+. . .
+
+```{r}
+map_dbl(x, mean)
+```
+
+. . .
+
+```{r}
+map_chr(x, mean)
+```
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+```{r error=TRUE}
+map_int(x, mean)
+```
+:::
+::: {.column width="50%"}
+```{r}
+map(x, mean) %>% str()
+```
+:::
+:::
+
+## Working with Data Frames
+
+`map_dfr` and `map_dfc` are particularly useful when working with and/or creating data frames. 
+Example:
+
+```{r}
+X = data.frame(height = c(72, 60, 64),
+               bpm = c(82, 55, 60),
+               age = c(25, 30, 35))
+```
+
+
+```{r}
+standardize = function(x) (x - mean(x)) / sd(x)
+```
+
+. . .
+
+```{r}
+map_dfc(X, standardize)
+```
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+```{r}
+map_dfr(X, function(x) x[1:2])
+```
+:::
+::: {.column width="50%"}
+```{r}
+#| error: true
+map_dfr(X, function(x) x)
+```
+:::
+:::
+
+## Shortcut - purrr style lambdas
+
+purrr lets us write anonymous functions using one sided formulas where the argument is given by `.` or `.x` for `map` and related functions.
+
+```{r}
+map_dbl(1:5, function(x) x / (x + 1))
+```
+
+. . .
+
+Read `~` as "function" and `.` or `.x` as "input"
+
+```{r}
+map_dbl(1:5, ~ . / (. + 1))
+```
+
+. . . 
+
+```{r}
+map_dbl(1:5, ~ .x / (.x + 1))
+```
+
+Generally, the latter option is preferred to avoid confusion with magrittr.
+
+## Multiargument anonymous functions
+
+Functions with the `map2` prefix work the same as the `map` functions but they iterate over two objects instead of one. Arguments in an anonymous function are given by `.x` and `.y` (or `..1` and `..2`) respectively.
+
+```{r}
+map2_dbl(1:5, 1:5, function(x,y) x / (y+1))
+```
+
+. . .
+
+```{r}
+map2_dbl(1:5, 1:5, ~ .x/(.y+1))
+```
+
+. . .
+
+```{r}
+map2_dbl(1:5, 1:5, ~ ..1/(..2+1))
+```
+
+. . .
+
+```{r}
+map2_chr(LETTERS[1:5], letters[1:5], paste0)
+```
+
+. . . 
+
+Prioritize readability of your code! For complicated functions, use syntax like the first example.
+
+## Lookups (`sw_people`)
+
+```{r}
+#| warning: false
+library(repurrrsive)
+```
+
+`sw_people` from the `repurrrsive` package
+
+```{r}
+str(sw_people[1:5])
+```
+
+## Lookups
+
+Very often we want to extract only certain (named) values from a list, `purrr` provides a shortcut for this operation - if instead of a function you provide either a character or numeric vector, those values will be used to sequentially subset the elements being iterated.
+
+. . .
+
+```{r}
+purrr::map_chr(sw_people, "name") %>% head()
+```
+
+. . .
+
+```{r}
+purrr::map_chr(sw_people, 1) %>% head()
+```
+
+. . .
+
+```{r}
+purrr::map_chr(sw_people, list("films", 1)) %>% head(n=10)
+```
+## Length coercion?
+
+
+```{r}
+#| error: true
+purrr::map_chr(sw_people, list("starships", 1))
+```
+
+. . .
+
+```{r}
+sw_people[[2]]$name
+sw_people[[2]]$starships
+```
+
+. . .
+
+```{r}
+purrr::map(sw_people, list("starships", 1)) %>% head(n = 3) %>% str()
+```
+. . .
+
+```{r}
+purrr::map_chr(sw_people, list("starships", 1), .default = NA) %>% head()
+```
+
+## manual unnesting
+
+- how many starships does each character have?
+
+
+::: columns
+::: {.column width="50%"}
+```{r}
+(chars = tibble(
+  name = purrr::map_chr(sw_people, "name"),
+  starships = purrr::map(sw_people, "starships")
+))
+```
+:::
+::: {.column width="50%"}
+```{r}
+chars %>%
+  mutate(n = map_int(starships, length))
+```
+:::
+:::
+
+- much more efficient if you only need a subset of the columns to be "unnested"
+
+# Exercises
+
+## Exercise 1
+
+```{r}
+draw_points = function(n) {
+  list(
+    x = runif(n, -1, 1),
+    y = runif(n, -1, 1)
+  )
+}
+```
+
+- Use the function above to draw `n = 1000` points from a box of area 4. Save your output as an object called `points`.
+- Use `map` or an appropriate version to determine which points $(x, y)$ are within the unit circle centered at the origin.
+- What proportion of points are within the unit circle?
+
+- Can you approximate $\pi$ like this? How?
+- How can you make your estimate more precise?
+
+## Exercise 2
+
+Use `mtcars` and a single `map` or map variant to
+
+- get the type of each variable
+
+- get the fourth row such that result is a character vector
+
+- compute the mean of each variable
+
+- compute the mean and median for each variable such that the result is a data frame with the mean values in row 1 and the median values in row 2.
+
