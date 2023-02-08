@@ -128,4 +128,58 @@ TRUE or FALSE: a tidy data frame has individual observations on the rows, variab
 ### Solution
 
 `TRUE`
+
+:::
+
+
+# quiz 3
+
+::: panel-tabset
+### Exercise 1
+The `gg` in ggplot stands for ___ of ___.
+
+### Solution
+
+grammar of graphics
+:::
+
+::: panel-tabset
+### Exercise 2
+To create a scatter plot with `ggplot2`, I need to add the geometry geom_[___]
+
+### Solution
+point, `geom_point()`
+:::
+
+::: panel-tabset
+### Exercise 3
+
+TRUE or FALSE: to change the color of a plot, based on the column `var1` of the data set, I need to put `color = var1` *inside* the aesthetic `aes()` function. To change the color of all points to red, regardless of the data, I should put `color = 'red'` *outside* the aesthetic function.
+
+### Solution
+`TRUE`
+:::
+
+::: panel-tabset
+### Exercise 4
+What's wrong with the code below?
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+
+```{r}
+#| error: true
+#| eval: false
+
+cars %>%
+  ggplot(aes(x = dist)) 
+  geom_histogram()
+```
+
+### Solution
+Missing a `+` to connect ggplot layers.
 :::
