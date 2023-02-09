@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - data/
+  
   
 website:
   title: "STA323"

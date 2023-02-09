@@ -1950,7 +1950,7 @@
     "href": "slides/lec09.html#exercise-1",
     "title": "Regular expressions; unix toolkit",
     "section": "Exercise 1",
-    "text": "Exercise 1\nDownload the files secret-message.txt and emails.txt using the command below in the console:\n\ndownload.file()\n\nIn secret-message.txt, find the secret message. It will be of the form sta323{secret-message} where secret-message is replaced by some other text."
+    "text": "Exercise 1\n\n\n\nDownload the files secret-message.txt and emails.txt using the command below in the console:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-message.txt\", \n              destfile = \"secret-message.txt\")\n\nFor each of the following exercises, you can choose to use either terminal or R, or both if you have time.\npart 1\nIn secret-message.txt, find the secret message. It will be of the form sta323{secret-message} where secret-message is replaced by some other text.\npart 2\nIn emails.txt extract the hosting domain (part after “@”) and count how many emails are Duke emails and how many are gmail."
   },
   {
     "objectID": "slides/lec09.html#formatting-principles",

@@ -768,11 +768,19 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </section>
 <section id="exercise-1" class="slide level2">
 <h2>Exercise 1</h2>
+<div class="cell">
+
+</div>
 <p>Download the files <code>secret-message.txt</code> and <code>emails.txt</code> using the command below in the console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">download.file</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-message.txt"</span>, </span>
+<span id="cb39-2"><a href="#cb39-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-message.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>For each of the following exercises, you can choose to use either terminal or R, or both if you have time.</p>
+<h3 id="part-1">part 1</h3>
 <p>In <code>secret-message.txt</code>, find the secret message. It will be of the form <code>sta323{secret-message}</code> where <code>secret-message</code> is replaced by some other text.</p>
+<h3 id="part-2">part 2</h3>
+<p>In <code>emails.txt</code> extract the hosting domain (part after “@”) and count how many emails are <code>Duke</code> emails and how many are <code>gmail</code>.</p>
 </section></section>
 <section>
 <section id="string-toolkit-appendix" class="title-slide slide level1 center">

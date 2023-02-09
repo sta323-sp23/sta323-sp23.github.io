@@ -382,7 +382,8 @@ Download the files `secret-message.txt` and `emails.txt` using the command below
 
 ```{r}
 #| eval: false
-download.file()
+download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
+              destfile = "secret-message.txt")
 ```
 
 
