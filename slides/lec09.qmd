@@ -1,5 +1,5 @@
 ---
-title: "Regular expressions; unix toolkit"
+title: "Regular expressions"
 author: "Dr. Alexander Fisher"
 execute:
   warning: true
@@ -8,7 +8,7 @@ format:
       smaller: true
 ---
 
-# Regular expressions
+# Regular expressions intro
 
 ## What is a regular expression?
 
@@ -92,37 +92,43 @@ And much, much more!
 
 ## Basic principles III
 
-**Interpolation**
+**Sequencing**
 
 `-` can be used to interpolate between first and last and grab consecutive values. Example: `[A-Z]` matches any capital letters from "A" to "Z". `[1-4]` matches any integer digit from 1 to 4.
 
 \small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
 
-. . . 
+. . .
 
 **Escapism**
 
 You have to "escape" with a `\` quite a lot. More on this in the cheatsheet later. The short version is:
 
-```
-. ^ $ * + ? { } [ ] \ | ( )
-```
+    . ^ $ * + ? { } [ ] \ | ( )
 
 must be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like `\d`, `\s` etc., you need to use *two* levels of escapes on special characters. E.g.
 
 ```{r}
-#| error: true
 txt = "To be, [or] not to be that is the question."
+```
+
+```{r}
+#| error: true
 grepl("[", txt)
+```
+```{r}
+#| error: true
 grepl("\[", txt)
+```
+
+```{r}
 grepl("\\[", txt)
 ```
 
 
-
 ## Examples
 
-In the following example we will search through the text file, line by line, and extract matches.
+In the following example we will search through the text, line by line, and extract matches.
 
     Luffy's phone number is 123 456 7890
     Zoro doesn't have a phone number
@@ -161,7 +167,7 @@ exact match
 
 ### principles
 
-matching xxx-xxx-xxxx using interpolation, repeaters, escaped characters
+matching xxx-xxx-xxxx using sequencing, repeaters, escaped characters
 :::
 
 ## Examples
@@ -252,11 +258,9 @@ Common options include:\
 
 ## base R regex
 
-- `grep()`, `grepl()` - regular expression pattern matching, "l" for return logical
-- `sub()`, `gsub()` - regular expression pattern replacement (replace first, replace all)
-- `regmatches()` - extract or replace matched strings
-
-
+-   `grep()`, `grepl()` - regular expression pattern matching, "l" for return logical
+-   `sub()`, `gsub()` - regular expression pattern replacement (replace first, replace all)
+-   `regmatches()` - extract or replace matched strings
 
 ### Example
 
@@ -266,9 +270,7 @@ txt = c("Luffy: 'I'm going to be king of the pirates! !'",
         "Nami: 'I'm Going to be the world's greatest navigator!'")
 ```
 
-
 ::: panel-tabset
-
 ### grep/grepl
 
 ```{r}
@@ -284,7 +286,6 @@ sub("!", "!!!", txt) # first ! in a string, vectorized
 gsub("!", "!!!", txt) # all !, vectorized
 ```
 
-
 ### regmatches
 
 ```{r}
@@ -292,10 +293,7 @@ regmatches(txt, regexpr(".*:", txt))
 regmatches(txt, regexpr("\\s[a-z]*ng", txt))
 regmatches(txt, regexpr("\\s[A-Z\\|a-z]*ng", txt))
 ```
-
-
 :::
-
 
 ## stringr
 
@@ -304,7 +302,6 @@ regmatches(txt, regexpr("\\s[A-Z\\|a-z]*ng", txt))
 #| warning: false
 library(tidyverse)
 ```
-
 
 `stringr` hosts a convenient set of tools to manipulate strings and extract regular expressions. All functions begin with the prefix `str`.
 
@@ -320,12 +317,10 @@ txt = c("Luffy: 'I'm going to be king of the pirates! !'",
         "Nami: 'I'm Going to be the world's greatest navigator!'")
 ```
 
-
 ::: panel-tabset
-
 ### str_detect()
 
-- like `grepl`
+-   like `grepl`
 
 ```{r}
 str_detect(txt, ":")
@@ -337,14 +332,13 @@ str_detect(txt, ":")
 str_extract(txt, "\\s[A-Z\\|a-z]*ng") # first instance
 str_extract_all(txt, "\\s[A-Z\\|a-z]*ng") %>% str()
 ```
+
 ### str_replace
 
 ```{r}
 str_replace(txt, "Nami", "Zoro") %>%
   str_replace("navigator", "swordsman")
-``` 
-
-
+```
 :::
 
 ## The power of `str_replace`
@@ -357,16 +351,10 @@ no_bots = "My number is one Two tHree 456 fOuR 3 2 1"
 str_to_lower(no_bots) %>%
   str_replace_all(c("one" = "1", "two" = "2", 
                     "three" = "3", "four" = "4")) %>%
-  str_extract_all("\\d") %>%
+  str_extract_all("\\d") %>% # simplify arg here could change pipeline
   unlist() %>%
-  paste(collapse = "")
+  paste(collapse = "") # or use str_c(collapse = "")
 ```
-
-
-
-
-
-
 
 ## Exercise 1
 
@@ -377,15 +365,16 @@ str_to_lower(no_bots) %>%
 sample(letters, 100000, replace = TRUE) %>% paste(collapse = "") %>% write("~/Desktop/secret-message.txt")
 ```
 
-
 Download the files `secret-message.txt` and `emails.txt` using the command below in the console:
 
 ```{r}
 #| eval: false
 download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
               destfile = "secret-message.txt")
-```
 
+download.file("https://sta323-sp23.github.io/data/emails.txt", 
+              destfile = "emails.txt")
+```
 
 For each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with `read_lines()`.
 
@@ -395,30 +384,41 @@ In `secret-message.txt`, find the secret message. It will be of the form `sta323
 
 ### part 2
 
-In `emails.txt` extract the hosting domain (part after "@") and count how many emails are `Duke` emails and how many are `gmail`.
+In `emails.txt` extract the unique part of the email address (part before the "\@") and count the number of each hosting domain, i.e. count how many emails are `Duke` emails and how many are `gmail`.
 
+## Exercise 2
 
-# String toolkit appendix
+The power and ease of the command line...
 
-## Additional string functions in base R
+Using an appropriate grep, find the secret message hidden in *some* of the files in the zip folder:
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/data/secret-messages.zip", 
+              destfile = "secret-messages.zip")
+```
+
+Again, look for `sta323{message-here}`.
+
+# Appendix
+
+## base R string toolkit
 
 The base language provides a number helper functions for additional manipulation of string objects:
 
-- `paste()`, `paste0()` - concatenate strings
-- `substr()`, `substring()` - extract or replace substrings
-- `sprintf()` - C-like string construction
-- `nchar()` - counts characters
-- `strsplit()` - split a string into substrings
-- `tolower()` - make string all lowercase
-- `toupper()` - make string all uppercase
+-   `paste()`, `paste0()` - concatenate strings
+-   `substr()`, `substring()` - extract or replace substrings
+-   `sprintf()` - C-like string construction
+-   `nchar()` - counts characters
+-   `strsplit()` - split a string into substrings
+-   `tolower()` - make string all lowercase
+-   `toupper()` - make string all uppercase
 
 ...many more.
 
 the "See Also" section of the the above functions' documentation is a good place to discover additional functions.
 
-# Unix toolkit
-
-## file and folder interactions
+## basic unix toolkit
 
 A "folder" aka a "directory" is a container. A "file\* is an element of a container, e.g. `lab-1.qmd` is a file contained in a `lab-1-username` directory.
 
@@ -428,6 +428,9 @@ A "folder" aka a "directory" is a container. A "file\* is an element of a contai
 | `$ ls`                           | list files in current directory                                                                                                |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ pwd`                          | print working directory                                                                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ cd`                           | change directory\                                                                                                              |
+|                                  | example: `$ cd ..` to go to parent directory                                                                                   |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ mkdir dname`                  | make directory "dname"                                                                                                         |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
@@ -441,34 +444,11 @@ A "folder" aka a "directory" is a container. A "file\* is an element of a contai
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ wc -l`                        | show \# lines in a file                                                                                                        |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right                                                  |
-|                                  |                                                                                                                                |
+| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right\                                                 |
 |                                  | example: `$ head -N file1.txt > file2.txt` creates a new file called "file2" that is a replica of the first N lines of file 1\ |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ echo 'text here' >> filename` | add text to the end of a file                                                                                                  |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-
-## paths
-
-## pathfinding
-
-### absolute paths
-
-### relative paths
-
-## Exercise 2
-
-
-# Miscellaneous tools
-
-## word count
-
-## pdfcrop
-
-## combine pdfs or pngs
-
-## awk
-
 

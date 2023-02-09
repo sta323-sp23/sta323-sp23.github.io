@@ -1864,7 +1864,7 @@
   {
     "objectID": "slides/lec09.html#what-is-a-regular-expression",
     "href": "slides/lec09.html#what-is-a-regular-expression",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "What is a regular expression?",
     "text": "What is a regular expression?\nA regular expression (aka regex or regexp) is a custom defined string matching pattern. A regular expression lets you:\n\nextract only the phone number from this string: “My phone number is (123) 456-7890, not to be confused with my birth month which is 0”\nsearch and replace multiple spellings of the word gray (grey, 6R3Y) in a document simultaneously\nsearch through all files in a directory for the one that contains a specific string\nfind the specific line number from a file that contains a string\nfind and replace through multiple files simultaneously\n\nAnd much, much more!"
   },
@@ -1934,7 +1934,7 @@
   {
     "objectID": "slides/lec09.html#stringr",
     "href": "slides/lec09.html#stringr",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "stringr",
     "text": "stringr\n\n\n\nstringr hosts a convenient set of tools to manipulate strings and extract regular expressions. All functions begin with the prefix str.\nThe best summary of stringr functions is on this cheatsheet\nNotice below that the string comes first in these functions (in contrast with grep/sub)\nExample\n\ntxt = c(\"Luffy: 'I'm going to be king of the pirates! !'\", \n        \"The straw hat crew set sail.\", \n        \"Nami: 'I'm Going to be the world's greatest navigator!'\")\n\n\nstr_detect()str_extract()str_replace\n\n\n\nlike grepl\n\n\nstr_detect(txt, \":\")\n\n[1]  TRUE FALSE  TRUE\n\n\n\n\n\nstr_extract(txt, \"\\\\s[A-Z\\\\|a-z]*ng\") # first instance\n\n[1] \" going\" NA       \" Going\"\n\nstr_extract_all(txt, \"\\\\s[A-Z\\\\|a-z]*ng\") %>% str()\n\nList of 3\n $ : chr [1:2] \" going\" \" king\"\n $ : chr(0) \n $ : chr \" Going\"\n\n\n\n\n\nstr_replace(txt, \"Nami\", \"Zoro\") %>%\n  str_replace(\"navigator\", \"swordsman\")\n\n[1] \"Luffy: 'I'm going to be king of the pirates! !'\"        \n[2] \"The straw hat crew set sail.\"                           \n[3] \"Zoro: 'I'm Going to be the world's greatest swordsman!'\""
   },
@@ -1948,9 +1948,9 @@
   {
     "objectID": "slides/lec09.html#exercise-1",
     "href": "slides/lec09.html#exercise-1",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Exercise 1",
-    "text": "Exercise 1\n\n\n\nDownload the files secret-message.txt and emails.txt using the command below in the console:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-message.txt\", \n              destfile = \"secret-message.txt\")\n\nFor each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with read_lines().\npart 1\nIn secret-message.txt, find the secret message. It will be of the form sta323{secret-message} where secret-message is replaced by some other text.\npart 2\nIn emails.txt extract the hosting domain (part after “@”) and count how many emails are Duke emails and how many are gmail."
+    "text": "Exercise 1\n\n\n\nDownload the files secret-message.txt and emails.txt using the command below in the console:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-message.txt\", \n              destfile = \"secret-message.txt\")\n\ndownload.file(\"https://sta323-sp23.github.io/data/emails.txt\", \n              destfile = \"emails.txt\")\n\nFor each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with read_lines().\npart 1\nIn secret-message.txt, find the secret message. It will be of the form sta323{secret-message} where secret-message is replaced by some other text.\npart 2\nIn emails.txt extract the unique part of the email address (part before the “@”) and count the number of each hosting domain, i.e. count how many emails are Duke emails and how many are gmail."
   },
   {
     "objectID": "slides/lec09.html#formatting-principles",
@@ -1962,9 +1962,9 @@
   {
     "objectID": "slides/lec09.html#examples",
     "href": "slides/lec09.html#examples",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Examples",
-    "text": "Examples\nIn the following example we will search through the text file, line by line, and extract matches.\nLuffy's phone number is 123 456 7890\nZoro doesn't have a phone number\nNami's number is 012-345-6789\nUsopp's number is (919)000 0000\nSanji's telephone number is (919) 123 4567\n0000000000 is Robin's number.\nChopper doesn't have a phone number, but his lucky number is 1.\nregex extraction\nTest these regular expressions with $ grep -o \"insert regex\" file.txt.\n\nregexoutputprinciples\n\n\n\"123 456 7890\"\n\n\n123 456 7890\n\n\nexact match\n\n\n\n\nregexoutputprinciples\n\n\n\"[0-9]\\{3\\}\\-[0-9]\\{3\\}\\-[0-9]\\{4\\}\"\n\n\n012-345-6789\n\n\nmatching xxx-xxx-xxxx using interpolation, repeaters, escaped characters"
+    "text": "Examples\nIn the following example we will search through the text, line by line, and extract matches.\nLuffy's phone number is 123 456 7890\nZoro doesn't have a phone number\nNami's number is 012-345-6789\nUsopp's number is (919)000 0000\nSanji's telephone number is (919) 123 4567\n0000000000 is Robin's number.\nChopper doesn't have a phone number, but his lucky number is 1.\nregex extraction\nTest these regular expressions with $ grep -o \"insert regex\" file.txt.\n\nregexoutputprinciples\n\n\n\"123 456 7890\"\n\n\n123 456 7890\n\n\nexact match\n\n\n\n\nregexoutputprinciples\n\n\n\"[0-9]\\{3\\}\\-[0-9]\\{3\\}\\-[0-9]\\{4\\}\"\n\n\n012-345-6789\n\n\nmatching xxx-xxx-xxxx using sequencing, repeaters, escaped characters"
   },
   {
     "objectID": "slides/lec09.html#sed-and-grep",
@@ -2025,35 +2025,35 @@
   {
     "objectID": "slides/lec09.html#basic-principles-i",
     "href": "slides/lec09.html#basic-principles-i",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Basic principles I",
     "text": "Basic principles I\n\nTo match a string exactly, just write those characters.\nTo match a single character from a set of possibilities, use square brackets, e.g. [0123456789] matches any digit.\nTo group characters together into an expression, use parentheses, ()\n\n\nRepeaters: * , + and { }: the preceding character is to be used for more than once\n\n* match zero or more occurrences of the preceding expression.\n+ match one or more occurrences of the preceding expression.\n{} match the preceding expression for as many times as the value inside this bracket.\n\n\n\nSymbols\n\n. symbol for wildcard. The dot symbol can take place of any other symbol.\n? symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: docx?\n$ symbol for position match end. Tells the computer that the match must occur at the end of the string or before \\n at the end of the line or string.\n\\ symbol for escaping characters. If you want to match for the actual + or ., etc. add a backslash \\ before that character.\n\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}"
   },
   {
     "objectID": "slides/lec09.html#basic-principles-ii",
     "href": "slides/lec09.html#basic-principles-ii",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Basic principles II",
     "text": "Basic principles II\nSymbols cont.\n\n| symbol for “or”. Match any one element separated by the vertical bar | character. Example: th(e|is|at) will match words “the”, “this” and “that”.\n^ symbol has two meanings.\n\nBy itself, ^ sets the position of the match to the beginning of the string or line. Example: ^\\d{3} says to match the first three digits at the beginning of the string and will return 919 from 919-123-4567.\nTogether with brackets, [^set_of_characters] implies exclusion. Example: [^abc] will match any character except a, b, c.\n\n\n\nCharacter classes: match a character by its class, for example: letter, digit, space, and symbols.\n\n\\s : matches any whitespace characters such as space and tab\n\\S : matches any non-whitespace characters\n\\d : matches any digit character\n\\D : matches any non-digit characters\n\\w : matches any word character (basically alpha-numeric)\n\\W : matches any non-word character\n\\b : matches any word boundary (this would include spaces, dashes, commas, semi-colons, etc)\n\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}"
   },
   {
     "objectID": "slides/lec09.html#basic-principles-iii",
     "href": "slides/lec09.html#basic-principles-iii",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Basic principles III",
-    "text": "Basic principles III\nInterpolation\n- can be used to interpolate between first and last and grab consecutive values. Example: [A-Z] matches any capital letters from “A” to “Z”. [1-4] matches any integer digit from 1 to 4.\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}\n\nEscapism\nYou have to “escape” with a \\ quite a lot. More on this in the cheatsheet later. The short version is:\n. ^ $ * + ? { } [ ] \\ | ( )\nmust be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like \\d, \\s etc., you need to use two levels of escapes on special characters. E.g.\n\ntxt = \"To be, [or] not to be that is the question.\"\ngrepl(\"[\", txt)\ngrepl(\"\\[\", txt)\ngrepl(\"\\\\[\", txt)\n\nError: '\\[' is an unrecognized escape in character string starting \"\"\\[\""
+    "text": "Basic principles III\nSequencing\n- can be used to interpolate between first and last and grab consecutive values. Example: [A-Z] matches any capital letters from “A” to “Z”. [1-4] matches any integer digit from 1 to 4.\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}\n\nEscapism\nYou have to “escape” with a \\ quite a lot. More on this in the cheatsheet later. The short version is:\n. ^ $ * + ? { } [ ] \\ | ( )\nmust be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like \\d, \\s etc., you need to use two levels of escapes on special characters. E.g.\n\ntxt = \"To be, [or] not to be that is the question.\"\n\n\ngrepl(\"[\", txt)\n\nWarning in grepl(\"[\", txt): TRE pattern compilation error 'Missing ']''\n\n\nError in grepl(\"[\", txt): invalid regular expression '[', reason 'Missing ']''\n\n\n\ngrepl(\"\\[\", txt)\n\nError: '\\[' is an unrecognized escape in character string starting \"\"\\[\"\n\n\n\ngrepl(\"\\\\[\", txt)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec09.html#examples-1",
     "href": "slides/lec09.html#examples-1",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Examples",
     "text": "Examples\nLuffy's phone number is 123 456 7890\nZoro doesn't have a phone number\nNami's number is 012-345-6789\nUsopp's number is (919)000 0000\nSanji's telephone number is (919) 123 4567\n0000000000 is Robin's number.\nChopper doesn't have a phone number, but his lucky number is 1.\nregex extraction\nTest these regular expressions with $ grep -o \"insert regex\" file.txt.\n\nregexoutputprinciples\n\n\n\"(\\d\\{3\\})\\.*\\d\\{3\\}\\s\\d\\{4\\}\"\n\n\n(919)000 0000\n\n\nmatching (xxx)xxx xxxx using character classes (\\d for digit, \\s for whitespace) and repeaters\n\n\n\n\nregexoutputprinciples\n\n\n\"(\\d\\{3\\}).\\?\\d\\{3\\}\\s[0-9]\\{4\\}\"\n\n\n(919)000 0000\n(919) 123 4567\n\n\nmatching (xxx)*xxx xxxx using character classes, wildcard (.) and optional chracter (?)\n\n\n\n\nregexoutputprinciples\n\n\n\"(\\?\\d\\{3\\})\\?.\\?\\d\\{3\\}.\\?[0-9]\\{4\\}\"\n\n\n123 456 7890\n012-345-6789\n(919)000 0000\n(919) 123 4567\n0000000000\n\n\nMultiple optional matching"
   },
   {
     "objectID": "slides/lec09.html#on-the-commmand-line-grep",
     "href": "slides/lec09.html#on-the-commmand-line-grep",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "On the commmand line (grep)",
     "text": "On the commmand line (grep)\nThere are three fundamental tools on unix systems to process text patterns: grep, sed and awk.\nThe simplest is grep. grep looks by default for lines of files that match the regex.\nCheck out the documentation with\n$ man grep\nThe basics are:\n$ grep -option path/to/file(s)\nCommon options include:\n\n\n\n\ngrep option\nwhat it does\n\n\n\n\n-c\ncount lines with a match\n\n\n-i\ncase insensitive search\n\n\n-l\nlist only names of matching files\n\n\n-n\neach output is preceded by its line number\n\n\n-o\nprint only the matching parts of lines\n\n\n-v\ninvert; list only lines that do not match pattern"
   },
@@ -2074,14 +2074,14 @@
   {
     "objectID": "slides/lec09.html#exercise-2",
     "href": "slides/lec09.html#exercise-2",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "Exercise 2",
-    "text": "Exercise 2"
+    "text": "Exercise 2\nThe power and ease of the command line…\nUsing an appropriate grep, find the secret message hidden in some of the files in the zip folder:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-messages.zip\", \n              destfile = \"secret-messages.zip\")\n\nAgain, look for sta323{message-here}."
   },
   {
     "objectID": "slides/lec09.html#base-r-regex",
     "href": "slides/lec09.html#base-r-regex",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "base R regex",
     "text": "base R regex\n\ngrep(), grepl() - regular expression pattern matching, “l” for return logical\nsub(), gsub() - regular expression pattern replacement (replace first, replace all)\nregmatches() - extract or replace matched strings\n\nExample\n\ntxt = c(\"Luffy: 'I'm going to be king of the pirates! !'\", \n        \"The straw hat crew set sail.\", \n        \"Nami: 'I'm Going to be the world's greatest navigator!'\")\n\n\ngrep/greplsub/gsubregmatches\n\n\n\ngrep(\":\", txt)\n\n[1] 1 3\n\ngrepl(\":\", txt)\n\n[1]  TRUE FALSE  TRUE\n\ngrep(\":\", txt, value = TRUE)\n\n[1] \"Luffy: 'I'm going to be king of the pirates! !'\"        \n[2] \"Nami: 'I'm Going to be the world's greatest navigator!'\"\n\n\n\n\n\nsub(\"!\", \"!!!\", txt) # first ! in a string, vectorized\n\n[1] \"Luffy: 'I'm going to be king of the pirates!!! !'\"        \n[2] \"The straw hat crew set sail.\"                             \n[3] \"Nami: 'I'm Going to be the world's greatest navigator!!!'\"\n\ngsub(\"!\", \"!!!\", txt) # all !, vectorized\n\n[1] \"Luffy: 'I'm going to be king of the pirates!!! !!!'\"      \n[2] \"The straw hat crew set sail.\"                             \n[3] \"Nami: 'I'm Going to be the world's greatest navigator!!!'\"\n\n\n\n\n\nregmatches(txt, regexpr(\".*:\", txt))\n\n[1] \"Luffy:\" \"Nami:\" \n\nregmatches(txt, regexpr(\"\\\\s[a-z]*ng\", txt))\n\n[1] \" going\"\n\nregmatches(txt, regexpr(\"\\\\s[A-Z\\\\|a-z]*ng\", txt))\n\n[1] \" going\" \" Going\""
   },
@@ -2102,8 +2102,99 @@
   {
     "objectID": "slides/lec09.html#the-power-of-str_replace",
     "href": "slides/lec09.html#the-power-of-str_replace",
-    "title": "Regular expressions; unix toolkit",
+    "title": "Regular expressions",
     "section": "The power of str_replace",
-    "text": "The power of str_replace\n\nno_bots = \"My number is one Two tHree 456 fOuR 3 2 1\"\n\n\nstr_to_lower(no_bots) %>%\n  str_replace_all(c(\"one\" = \"1\", \"two\" = \"2\", \n                    \"three\" = \"3\", \"four\" = \"4\")) %>%\n  str_extract_all(\"\\\\d\") %>%\n  unlist() %>%\n  paste(collapse = \"\")\n\n[1] \"1234564321\""
+    "text": "The power of str_replace\n\nno_bots = \"My number is one Two tHree 456 fOuR 3 2 1\"\n\n\nstr_to_lower(no_bots) %>%\n  str_replace_all(c(\"one\" = \"1\", \"two\" = \"2\", \n                    \"three\" = \"3\", \"four\" = \"4\")) %>%\n  str_extract_all(\"\\\\d\") %>% # simplify arg here could change pipeline\n  unlist() %>%\n  paste(collapse = \"\") # or use str_c(collapse = \"\")\n\n[1] \"1234564321\""
+  },
+  {
+    "objectID": "slides/lec09.html#exercises",
+    "href": "slides/lec09.html#exercises",
+    "title": "Regular expressions",
+    "section": "Exercises",
+    "text": "Exercises\n\n\n\nDownload the files secret-message.txt and emails.txt using the command below in the console:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-message.txt\", \n              destfile = \"secret-message.txt\")\n\nFor each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with read_lines().\npart 1\nIn secret-message.txt, find the secret message. It will be of the form sta323{secret-message} where secret-message is replaced by some other text.\npart 2\nIn emails.txt extract the unique part of the email address (part before the “@”) and count the number of each hosting domain, i.e. count how many emails are Duke emails and how many are gmail."
+  },
+  {
+    "objectID": "slides/lec09.html#base-r-string-toolkit",
+    "href": "slides/lec09.html#base-r-string-toolkit",
+    "title": "Regular expressions",
+    "section": "base R string toolkit",
+    "text": "base R string toolkit\nThe base language provides a number helper functions for additional manipulation of string objects:\n\npaste(), paste0() - concatenate strings\nsubstr(), substring() - extract or replace substrings\nsprintf() - C-like string construction\nnchar() - counts characters\nstrsplit() - split a string into substrings\ntolower() - make string all lowercase\ntoupper() - make string all uppercase\n\n…many more.\nthe “See Also” section of the the above functions’ documentation is a good place to discover additional functions."
+  },
+  {
+    "objectID": "slides/lec09.html#basic-unix-toolkit",
+    "href": "slides/lec09.html#basic-unix-toolkit",
+    "title": "Regular expressions",
+    "section": "basic unix toolkit",
+    "text": "basic unix toolkit\nA “folder” aka a “directory” is a container. A “file* is an element of a container, e.g. lab-1.qmd is a file contained in a lab-1-username directory.\n\n\n\n\n\n\n\ncommand\naction\n\n\n\n\n$ ls\nlist files in current directory\n\n\n$ pwd\nprint working directory\n\n\n$ cd\nchange directory\nexample: $ cd .. to go to parent directory\n\n\n$ mkdir dname\nmake directory “dname”\n\n\n$ mkdir s{1..5}\noverpowered file creation\n\n\n$ rm /path/to/file\nremove a file\n\n\n$ rm -rf dname\nrecursively remove a directory and its contents\n\n\n$ rm core*\nremove all objects in the current working directory that begin with “core”\n\n\n$ wc -l\nshow # lines in a file\n\n\n$ y > x.txt\npass printed output from command “y” on the left to file “x.txt” on the right\nexample: $ head -N file1.txt > file2.txt creates a new file called “file2” that is a replica of the first N lines of file 1\n\n\n\n$ echo 'text here' >> filename\nadd text to the end of a file\n\n\n$ man x\npull up documentation for command x, example: $ man ls\n\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec10.html#basic-tools",
+    "href": "slides/lec10.html#basic-tools",
+    "title": "Unix toolkit",
+    "section": "basic tools",
+    "text": "basic tools\nA “folder” aka a “directory” is a container. A “file* is an element of a container, e.g. lab-1.qmd is a file contained in a lab-1-username directory.\n\n\n\n\n\n\n\ncommand\naction\n\n\n\n\n$ ls\nlist files in current directory\n\n\n$ pwd\nprint working directory\n\n\n$ cd\nchange directory\nexample: $ cd .. to go to parent directory\n\n\n$ mkdir dname\nmake directory “dname”\n\n\n$ mkdir s{1..5}\noverpowered file creation\n\n\n$ rm /path/to/file\nremove a file\n\n\n$ rm -rf dname\nrecursively remove a directory and its contents\n\n\n$ rm core*\nremove all objects in the current working directory that begin with “core”\n\n\n$ wc -l\nshow # lines in a file\n\n\n$ y > x.txt\npass printed output from command “y” on the left to file “x.txt” on the right\nexample: $ head -N file1.txt > file2.txt creates a new file called “file2” that is a replica of the first N lines of file 1\n\n\n\n$ echo 'text here' >> filename\nadd text to the end of a file\n\n\n$ man x\npull up documentation for command x, example: $ man ls"
+  },
+  {
+    "objectID": "slides/lec10.html#paths",
+    "href": "slides/lec10.html#paths",
+    "title": "Unix toolkit",
+    "section": "paths",
+    "text": "paths"
+  },
+  {
+    "objectID": "slides/lec10.html#pathfinding",
+    "href": "slides/lec10.html#pathfinding",
+    "title": "Unix toolkit",
+    "section": "pathfinding",
+    "text": "pathfinding\nabsolute paths\nrelative paths"
+  },
+  {
+    "objectID": "slides/lec10.html#exercise",
+    "href": "slides/lec10.html#exercise",
+    "title": "Unix toolkit",
+    "section": "Exercise",
+    "text": "Exercise"
+  },
+  {
+    "objectID": "slides/lec10.html#word-count",
+    "href": "slides/lec10.html#word-count",
+    "title": "Unix toolkit",
+    "section": "word count",
+    "text": "word count"
+  },
+  {
+    "objectID": "slides/lec10.html#pdfcrop",
+    "href": "slides/lec10.html#pdfcrop",
+    "title": "Unix toolkit",
+    "section": "pdfcrop",
+    "text": "pdfcrop"
+  },
+  {
+    "objectID": "slides/lec10.html#combine-pdfs-or-pngs",
+    "href": "slides/lec10.html#combine-pdfs-or-pngs",
+    "title": "Unix toolkit",
+    "section": "combine pdfs or pngs",
+    "text": "combine pdfs or pngs"
+  },
+  {
+    "objectID": "slides/lec10.html#awk",
+    "href": "slides/lec10.html#awk",
+    "title": "Unix toolkit",
+    "section": "awk",
+    "text": "awk"
+  },
+  {
+    "objectID": "slides/lec10.html#exercise-1",
+    "href": "slides/lec10.html#exercise-1",
+    "title": "Unix toolkit",
+    "section": "Exercise",
+    "text": "Exercise\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec10.html#simple-cheat-sheet",
+    "href": "slides/lec10.html#simple-cheat-sheet",
+    "title": "Unix toolkit",
+    "section": "simple cheat sheet",
+    "text": "simple cheat sheet\nA “folder” aka a “directory” is a container. A “file* is an element of a container, e.g. lab-1.qmd is a file contained in a lab-1-username directory.\n\n\n\n\n\n\n\ncommand\naction\n\n\n\n\n$ ls\nlist files in current directory\n\n\n$ pwd\nprint working directory\n\n\n$ cd\nchange directory\nexample: $ cd .. to go to parent directory\n\n\n$ mkdir dname\nmake directory “dname”\n\n\n$ mkdir s{1..5}\noverpowered file creation\n\n\n$ rm /path/to/file\nremove a file\n\n\n$ rm -rf dname\nrecursively remove a directory and its contents\n\n\n$ rm core*\nremove all objects in the current working directory that begin with “core”\n\n\n$ wc -l\nshow # lines in a file\n\n\n$ y > x.txt\npass printed output from command “y” on the left to file “x.txt” on the right\nexample: $ head -N file1.txt > file2.txt creates a new file called “file2” that is a replica of the first N lines of file 1\n\n\n\n$ echo 'text here' >> filename\nadd text to the end of a file\n\n\n$ man x\npull up documentation for command x, example: $ man ls"
   }
 ]

@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Dr.&nbsp;Alexander Fisher">
-  <title>STA323 - Regular expressions; unix toolkit</title>
+  <title>STA323 - Regular expressions</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,14 +385,14 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Regular expressions; unix toolkit</h1>
+  <h1 class="title">Regular expressions</h1>
   <p class="author">Dr.&nbsp;Alexander Fisher</p>
   <p class="institute">Duke University</p>
 </section>
 
 <section>
-<section id="regular-expressions" class="title-slide slide level1 center">
-<h1>Regular expressions</h1>
+<section id="regular-expressions-intro" class="title-slide slide level1 center">
+<h1>Regular expressions intro</h1>
 
 </section>
 <section id="what-is-a-regular-expression" class="slide level2">
@@ -460,7 +460,7 @@
 </section>
 <section id="basic-principles-iii" class="slide level2">
 <h2>Basic principles III</h2>
-<p><strong>Interpolation</strong></p>
+<p><strong>Sequencing</strong></p>
 <p><code>-</code> can be used to interpolate between first and last and grab consecutive values. Example: <code>[A-Z]</code> matches any capital letters from “A” to “Z”. <code>[1-4]</code> matches any integer digit from 1 to 4.</p>
 <p>{citation: <a href="https://www.geeksforgeeks.org/write-regular-expressions/" class="uri">https://www.geeksforgeeks.org/write-regular-expressions/</a>}</p>
 <div class="fragment">
@@ -469,19 +469,34 @@
 <pre><code>. ^ $ * + ? { } [ ] \ | ( )</code></pre>
 <p>must be escaped to match directly. Since regexps live on top of character escapes i.e.&nbsp;has special classes like <code>\d</code>, <code>\s</code> etc., you need to use <em>two</em> levels of escapes on special characters. E.g.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>txt <span class="ot">=</span> <span class="st">"To be, [or] not to be that is the question."</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">grepl</span>(<span class="st">"["</span>, txt)</span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">grepl</span>(<span class="st">"\["</span>, txt)</span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="fu">grepl</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">["</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>txt <span class="ot">=</span> <span class="st">"To be, [or] not to be that is the question."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">grepl</span>(<span class="st">"["</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in grepl("[", txt): TRE pattern compilation error 'Missing ']''</code></pre>
+</div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in grepl("[", txt): invalid regular expression '[', reason 'Missing ']''</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">grepl</span>(<span class="st">"\["</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <pre><code>Error: '\[' is an unrecognized escape in character string starting ""\["</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">grepl</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">["</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
 </div>
 </div>
 </div>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
-<p>In the following example we will search through the text file, line by line, and extract matches.</p>
+<p>In the following example we will search through the text, line by line, and extract matches.</p>
 <pre><code>Luffy's phone number is 123 456 7890
 Zoro doesn't have a phone number
 Nami's number is 012-345-6789
@@ -515,7 +530,7 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <p><code>012-345-6789</code></p>
 </div>
 <div id="tabset-2-3">
-<p>matching xxx-xxx-xxxx using interpolation, repeaters, escaped characters</p>
+<p>matching xxx-xxx-xxxx using sequencing, repeaters, escaped characters</p>
 </div>
 </div>
 </div>
@@ -633,24 +648,24 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </ul>
 <h3 id="example">Example</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>txt <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Luffy: 'I'm going to be king of the pirates! !'"</span>, </span>
-<span id="cb10-2"><a href="#cb10-2"></a>        <span class="st">"The straw hat crew set sail."</span>, </span>
-<span id="cb10-3"><a href="#cb10-3"></a>        <span class="st">"Nami: 'I'm Going to be the world's greatest navigator!'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>txt <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Luffy: 'I'm going to be king of the pirates! !'"</span>, </span>
+<span id="cb16-2"><a href="#cb16-2"></a>        <span class="st">"The straw hat crew set sail."</span>, </span>
+<span id="cb16-3"><a href="#cb16-3"></a>        <span class="st">"Nami: 'I'm Going to be the world's greatest navigator!'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="panel-tabset">
 <ul id="tabset-6" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-6-1">grep/grepl</a></li><li><a href="#tabset-6-2">sub/gsub</a></li><li><a href="#tabset-6-3">regmatches</a></li></ul>
 <div class="tab-content">
 <div id="tabset-6-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">grep</span>(<span class="st">":"</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">grep</span>(<span class="st">":"</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">grepl</span>(<span class="st">":"</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">grepl</span>(<span class="st">":"</span>, txt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">grep</span>(<span class="st">":"</span>, txt, <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">grep</span>(<span class="st">":"</span>, txt, <span class="at">value =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luffy: 'I'm going to be king of the pirates! !'"        
 [2] "Nami: 'I'm Going to be the world's greatest navigator!'"</code></pre>
@@ -659,13 +674,13 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </div>
 <div id="tabset-6-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">sub</span>(<span class="st">"!"</span>, <span class="st">"!!!"</span>, txt) <span class="co"># first ! in a string, vectorized</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">sub</span>(<span class="st">"!"</span>, <span class="st">"!!!"</span>, txt) <span class="co"># first ! in a string, vectorized</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luffy: 'I'm going to be king of the pirates!!! !'"        
 [2] "The straw hat crew set sail."                             
 [3] "Nami: 'I'm Going to be the world's greatest navigator!!!'"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">gsub</span>(<span class="st">"!"</span>, <span class="st">"!!!"</span>, txt) <span class="co"># all !, vectorized</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">gsub</span>(<span class="st">"!"</span>, <span class="st">"!!!"</span>, txt) <span class="co"># all !, vectorized</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luffy: 'I'm going to be king of the pirates!!! !!!'"      
 [2] "The straw hat crew set sail."                             
@@ -675,15 +690,15 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </div>
 <div id="tabset-6-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">".*:"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">".*:"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luffy:" "Nami:" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">s[a-z]*ng"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">s[a-z]*ng"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] " going"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">regmatches</span>(txt, <span class="fu">regexpr</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>, txt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] " going" " Going"</code></pre>
 </div>
@@ -702,9 +717,9 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <p>Notice below that the string comes first in these functions (in contrast with <code>grep</code>/<code>sub</code>)</p>
 <h3 id="example-1">Example</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>txt <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Luffy: 'I'm going to be king of the pirates! !'"</span>, </span>
-<span id="cb27-2"><a href="#cb27-2"></a>        <span class="st">"The straw hat crew set sail."</span>, </span>
-<span id="cb27-3"><a href="#cb27-3"></a>        <span class="st">"Nami: 'I'm Going to be the world's greatest navigator!'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>txt <span class="ot">=</span> <span class="fu">c</span>(<span class="st">"Luffy: 'I'm going to be king of the pirates! !'"</span>, </span>
+<span id="cb33-2"><a href="#cb33-2"></a>        <span class="st">"The straw hat crew set sail."</span>, </span>
+<span id="cb33-3"><a href="#cb33-3"></a>        <span class="st">"Nami: 'I'm Going to be the world's greatest navigator!'"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="panel-tabset">
 <ul id="tabset-7" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-7-1">str_detect()</a></li><li><a href="#tabset-7-2">str_extract()</a></li><li><a href="#tabset-7-3">str_replace</a></li></ul>
@@ -714,7 +729,7 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <li>like <code>grepl</code></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">str_detect</span>(txt, <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">str_detect</span>(txt, <span class="st">":"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE FALSE  TRUE</code></pre>
 </div>
@@ -722,11 +737,11 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </div>
 <div id="tabset-7-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">str_extract</span>(txt, <span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>) <span class="co"># first instance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="fu">str_extract</span>(txt, <span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>) <span class="co"># first instance</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] " going" NA       " Going"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">str_extract_all</span>(txt, <span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>) <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">str_extract_all</span>(txt, <span class="st">"</span><span class="sc">\\</span><span class="st">s[A-Z</span><span class="sc">\\</span><span class="st">|a-z]*ng"</span>) <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 3
  $ : chr [1:2] " going" " king"
@@ -737,8 +752,8 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </div>
 <div id="tabset-7-3">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">str_replace</span>(txt, <span class="st">"Nami"</span>, <span class="st">"Zoro"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">str_replace</span>(<span class="st">"navigator"</span>, <span class="st">"swordsman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">str_replace</span>(txt, <span class="st">"Nami"</span>, <span class="st">"Zoro"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a>  <span class="fu">str_replace</span>(<span class="st">"navigator"</span>, <span class="st">"swordsman"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luffy: 'I'm going to be king of the pirates! !'"        
 [2] "The straw hat crew set sail."                           
@@ -752,15 +767,15 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <section id="the-power-of-str_replace" class="slide level2">
 <h2>The power of <code>str_replace</code></h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>no_bots <span class="ot">=</span> <span class="st">"My number is one Two tHree 456 fOuR 3 2 1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a>no_bots <span class="ot">=</span> <span class="st">"My number is one Two tHree 456 fOuR 3 2 1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">str_to_lower</span>(no_bots) <span class="sc">%&gt;%</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a>  <span class="fu">str_replace_all</span>(<span class="fu">c</span>(<span class="st">"one"</span> <span class="ot">=</span> <span class="st">"1"</span>, <span class="st">"two"</span> <span class="ot">=</span> <span class="st">"2"</span>, </span>
-<span id="cb37-3"><a href="#cb37-3"></a>                    <span class="st">"three"</span> <span class="ot">=</span> <span class="st">"3"</span>, <span class="st">"four"</span> <span class="ot">=</span> <span class="st">"4"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">str_extract_all</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb37-6"><a href="#cb37-6"></a>  <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">str_to_lower</span>(no_bots) <span class="sc">%&gt;%</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">str_replace_all</span>(<span class="fu">c</span>(<span class="st">"one"</span> <span class="ot">=</span> <span class="st">"1"</span>, <span class="st">"two"</span> <span class="ot">=</span> <span class="st">"2"</span>, </span>
+<span id="cb43-3"><a href="#cb43-3"></a>                    <span class="st">"three"</span> <span class="ot">=</span> <span class="st">"3"</span>, <span class="st">"four"</span> <span class="ot">=</span> <span class="st">"4"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">str_extract_all</span>(<span class="st">"</span><span class="sc">\\</span><span class="st">d"</span>) <span class="sc">%&gt;%</span> <span class="co"># simplify arg here could change pipeline</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">unlist</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">paste</span>(<span class="at">collapse =</span> <span class="st">""</span>) <span class="co"># or use str_c(collapse = "")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1234564321"</code></pre>
 </div>
@@ -773,22 +788,35 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </div>
 <p>Download the files <code>secret-message.txt</code> and <code>emails.txt</code> using the command below in the console:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-message.txt"</span>, </span>
-<span id="cb39-2"><a href="#cb39-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-message.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-message.txt"</span>, </span>
+<span id="cb45-2"><a href="#cb45-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-message.txt"</span>)</span>
+<span id="cb45-3"><a href="#cb45-3"></a></span>
+<span id="cb45-4"><a href="#cb45-4"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/emails.txt"</span>, </span>
+<span id="cb45-5"><a href="#cb45-5"></a>              <span class="at">destfile =</span> <span class="st">"emails.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>For each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with <code>read_lines()</code>.</p>
 <h3 id="part-1">part 1</h3>
 <p>In <code>secret-message.txt</code>, find the secret message. It will be of the form <code>sta323{secret-message}</code> where <code>secret-message</code> is replaced by some other text.</p>
 <h3 id="part-2">part 2</h3>
-<p>In <code>emails.txt</code> extract the hosting domain (part after “@”) and count how many emails are <code>Duke</code> emails and how many are <code>gmail</code>.</p>
+<p>In <code>emails.txt</code> extract the unique part of the email address (part before the “@”) and count the number of each hosting domain, i.e.&nbsp;count how many emails are <code>Duke</code> emails and how many are <code>gmail</code>.</p>
+</section>
+<section id="exercise-2" class="slide level2">
+<h2>Exercise 2</h2>
+<p>The power and ease of the command line…</p>
+<p>Using an appropriate grep, find the secret message hidden in <em>some</em> of the files in the zip folder:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-messages.zip"</span>, </span>
+<span id="cb46-2"><a href="#cb46-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-messages.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Again, look for <code>sta323{message-here}</code>.</p>
 </section></section>
 <section>
-<section id="string-toolkit-appendix" class="title-slide slide level1 center">
-<h1>String toolkit appendix</h1>
+<section id="appendix" class="title-slide slide level1 center">
+<h1>Appendix</h1>
 
 </section>
-<section id="additional-string-functions-in-base-r" class="slide level2">
-<h2>Additional string functions in base R</h2>
+<section id="base-r-string-toolkit" class="slide level2">
+<h2>base R string toolkit</h2>
 <p>The base language provides a number helper functions for additional manipulation of string objects:</p>
 <ul>
 <li><code>paste()</code>, <code>paste0()</code> - concatenate strings</li>
@@ -801,14 +829,9 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </ul>
 <p>…many more.</p>
 <p>the “See Also” section of the the above functions’ documentation is a good place to discover additional functions.</p>
-</section></section>
-<section>
-<section id="unix-toolkit" class="title-slide slide level1 center">
-<h1>Unix toolkit</h1>
-
 </section>
-<section id="file-and-folder-interactions" class="slide level2">
-<h2>file and folder interactions</h2>
+<section id="basic-unix-toolkit" class="slide level2">
+<h2>basic unix toolkit</h2>
 <p>A “folder” aka a “directory” is a container. A “file* is an element of a container, e.g.&nbsp;<code>lab-1.qmd</code> is a file contained in a <code>lab-1-username</code> directory.</p>
 <table>
 <colgroup>
@@ -831,73 +854,50 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <td>print working directory</td>
 </tr>
 <tr class="odd">
+<td><code>$ cd</code></td>
+<td>change directory<br>
+example: <code>$ cd ..</code> to go to parent directory</td>
+</tr>
+<tr class="even">
 <td><code>$ mkdir dname</code></td>
 <td>make directory “dname”</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$ mkdir s{1..5}</code></td>
 <td>overpowered file creation</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$ rm /path/to/file</code></td>
 <td>remove a file</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$ rm -rf dname</code></td>
 <td>recursively remove a directory and its contents</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$ rm core*</code></td>
 <td>remove all objects in the current working directory that begin with “core”</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td><code>$ wc -l</code></td>
 <td>show # lines in a file</td>
 </tr>
-<tr class="odd">
-<td><code>$ y &gt; x.txt</code></td>
-<td><p>pass printed output from command “y” on the left to file “x.txt” on the right</p>
-<p>example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file called “file2” that is a replica of the first N lines of file 1<br>
-</p></td>
-</tr>
 <tr class="even">
+<td><code>$ y &gt; x.txt</code></td>
+<td>pass printed output from command “y” on the left to file “x.txt” on the right<br>
+example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file called “file2” that is a replica of the first N lines of file 1<br>
+</td>
+</tr>
+<tr class="odd">
 <td><code>$ echo 'text here' &gt;&gt; filename</code></td>
 <td>add text to the end of a file</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td><code>$ man x</code></td>
 <td>pull up documentation for command x, example: <code>$ man ls</code></td>
 </tr>
 </tbody>
 </table>
-</section>
-<section id="paths" class="slide level2">
-<h2>paths</h2>
-</section>
-<section id="pathfinding" class="slide level2">
-<h2>pathfinding</h2>
-<h3 id="absolute-paths">absolute paths</h3>
-<h3 id="relative-paths">relative paths</h3>
-</section>
-<section id="exercise-2" class="slide level2">
-<h2>Exercise 2</h2>
-</section></section>
-<section>
-<section id="miscellaneous-tools" class="title-slide slide level1 center">
-<h1>Miscellaneous tools</h1>
-
-</section>
-<section id="word-count" class="slide level2">
-<h2>word count</h2>
-</section>
-<section id="pdfcrop" class="slide level2">
-<h2>pdfcrop</h2>
-</section>
-<section id="combine-pdfs-or-pngs" class="slide level2">
-<h2>combine pdfs or pngs</h2>
-</section>
-<section id="awk" class="slide level2">
-<h2>awk</h2>
 
 <div class="footer footer-default">
 <p><a href="https://sta323-sp23.github.io/schedule.html">🔗 sta323-sp23.github.io</a></p>
