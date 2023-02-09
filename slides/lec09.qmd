@@ -387,7 +387,7 @@ download.file("https://sta323-sp23.github.io/data/secret-message.txt",
 ```
 
 
-For each of the following exercises, you can choose to use either terminal or R, or both if you have time.
+For each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with `read_lines()`.
 
 ### part 1
 
