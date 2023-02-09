@@ -26,7 +26,7 @@ A regular expression (aka regex or regexp) is a custom defined string matching p
 
 And much, much more!
 
-## Basic principles I
+## Basic principles
 
 -   To match a string exactly, just write those characters.
 
@@ -44,9 +44,9 @@ And much, much more!
 
 -   `{}` match the preceding expression for as many times as the value inside this bracket.
 
-. . .
+\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
 
-**Symbols**
+## Symbols
 
 -   `.` symbol for wildcard. The dot symbol can take place of any other symbol.
 
@@ -56,12 +56,6 @@ And much, much more!
 
 -   `\` symbol for escaping characters. If you want to match for the actual `+` or `.`, etc. add a backslash `\` before that character.
 
-\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
-
-## Basic principles II
-
-**Symbols cont.**
-
 -   `|` symbol for "or". Match any one element separated by the vertical bar `|` character. Example: `th(e|is|at)` will match words "the", "this" and "that".
 
 -   `^` symbol has two meanings.
@@ -70,7 +64,8 @@ And much, much more!
 
     -   Together with brackets, `[^set_of_characters]` implies *exclusion*. Example: `[^abc]` will match any character except a, b, c.
 
-. . .
+
+## Character classes
 
 **Character classes**: match a character by its class, for example: letter, digit, space, and symbols.
 
@@ -90,9 +85,15 @@ And much, much more!
 
 \small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
 
-## Basic principles III
+## A hierarchical view of character classes
 
-**Sequencing**
+![](images/regex_char_classes.png){fig-align="center" width="479"}
+
+\small{citation: [http://perso.ens-lyon.fr/lise.vaudor/strings-et-expressions-regulieres/]()}
+
+## Ranges and escaping
+
+**Ranges**
 
 `-` can be used to interpolate between first and last and grab consecutive values. Example: `[A-Z]` matches any capital letters from "A" to "Z". `[1-4]` matches any integer digit from 1 to 4.
 
@@ -106,7 +107,7 @@ You have to "escape" with a `\` quite a lot. More on this in the cheatsheet late
 
     . ^ $ * + ? { } [ ] \ | ( )
 
-must be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like `\d`, `\s` etc., you need to use *two* levels of escapes on special characters. E.g.
+must be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like `\d`, `\s` etc., you need to use *two* levels of escape to escape a special character. Example:
 
 ```{r}
 txt = "To be, [or] not to be that is the question."
@@ -116,6 +117,7 @@ txt = "To be, [or] not to be that is the question."
 #| error: true
 grepl("[", txt)
 ```
+
 ```{r}
 #| error: true
 grepl("\[", txt)
@@ -124,7 +126,6 @@ grepl("\[", txt)
 ```{r}
 grepl("\\[", txt)
 ```
-
 
 ## Examples
 
@@ -167,7 +168,7 @@ exact match
 
 ### principles
 
-matching xxx-xxx-xxxx using sequencing, repeaters, escaped characters
+matching xxx-xxx-xxxx using ranges, repeaters, escaped characters
 :::
 
 ## Examples
@@ -388,9 +389,9 @@ In `emails.txt` extract the unique part of the email address (part before the "\
 
 ## Exercise 2
 
-The power and ease of the command line...
+The power and ease of the terminal...
 
-Using an appropriate grep, find the secret message hidden in *some* of the files in the zip folder:
+Using an appropriate regex and the terminal `grep`, find the secret message hidden in *some* of the files in the zip folder:
 
 ```{r}
 #| eval: false
@@ -451,4 +452,3 @@ A "folder" aka a "directory" is a container. A "file\* is an element of a contai
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
 +----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-

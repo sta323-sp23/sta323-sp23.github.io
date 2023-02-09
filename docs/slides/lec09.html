@@ -407,8 +407,8 @@
 </ol>
 <p>And much, much more!</p>
 </section>
-<section id="basic-principles-i" class="slide level2">
-<h2>Basic principles I</h2>
+<section id="basic-principles" class="slide level2">
+<h2>Basic principles</h2>
 <ul>
 <li><p>To match a string exactly, just write those characters.</p></li>
 <li><p>To match a single character from a set of possibilities, use square brackets, e.g.&nbsp;<code>[0123456789]</code> matches any digit.</p></li>
@@ -421,22 +421,16 @@
 <li><p><code>+</code> match one or more occurrences of the preceding expression.</p></li>
 <li><p><code>{}</code> match the preceding expression for as many times as the value inside this bracket.</p></li>
 </ul>
+<p>{citation: <a href="https://www.geeksforgeeks.org/write-regular-expressions/" class="uri">https://www.geeksforgeeks.org/write-regular-expressions/</a>}</p>
 </div>
-<div class="fragment">
-<p><strong>Symbols</strong></p>
+</section>
+<section id="symbols" class="slide level2">
+<h2>Symbols</h2>
 <ul>
 <li><p><code>.</code> symbol for wildcard. The dot symbol can take place of any other symbol.</p></li>
 <li><p><code>?</code> symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: <code>docx?</code></p></li>
 <li><p><code>$</code> symbol for position match end. Tells the computer that the match must occur at the end of the string or before <code>\n</code> at the end of the line or string.</p></li>
 <li><p><code>\</code> symbol for escaping characters. If you want to match for the actual <code>+</code> or <code>.</code>, etc. add a backslash <code>\</code> before that character.</p></li>
-</ul>
-<p>{citation: <a href="https://www.geeksforgeeks.org/write-regular-expressions/" class="uri">https://www.geeksforgeeks.org/write-regular-expressions/</a>}</p>
-</div>
-</section>
-<section id="basic-principles-ii" class="slide level2">
-<h2>Basic principles II</h2>
-<p><strong>Symbols cont.</strong></p>
-<ul>
 <li><p><code>|</code> symbol for “or”. Match any one element separated by the vertical bar <code>|</code> character. Example: <code>th(e|is|at)</code> will match words “the”, “this” and “that”.</p></li>
 <li><p><code>^</code> symbol has two meanings.</p>
 <ul>
@@ -444,7 +438,9 @@
 <li><p>Together with brackets, <code>[^set_of_characters]</code> implies <em>exclusion</em>. Example: <code>[^abc]</code> will match any character except a, b, c.</p></li>
 </ul></li>
 </ul>
-<div class="fragment">
+</section>
+<section id="character-classes" class="slide level2">
+<h2>Character classes</h2>
 <p><strong>Character classes</strong>: match a character by its class, for example: letter, digit, space, and symbols.</p>
 <ul>
 <li><p><code>\s</code> : matches any whitespace characters such as space and tab</p></li>
@@ -456,18 +452,22 @@
 <li><p><code>\b</code> : matches any word boundary (this would include spaces, dashes, commas, semi-colons, etc)</p></li>
 </ul>
 <p>{citation: <a href="https://www.geeksforgeeks.org/write-regular-expressions/" class="uri">https://www.geeksforgeeks.org/write-regular-expressions/</a>}</p>
-</div>
 </section>
-<section id="basic-principles-iii" class="slide level2">
-<h2>Basic principles III</h2>
-<p><strong>Sequencing</strong></p>
+<section id="a-hierarchical-view-of-character-classes" class="slide level2">
+<h2>A hierarchical view of character classes</h2>
+
+<img data-src="images/regex_char_classes.png" width="479" class="r-stretch quarto-figure-center"><p>{citation: <a href="">http://perso.ens-lyon.fr/lise.vaudor/strings-et-expressions-regulieres/</a>}</p>
+</section>
+<section id="ranges-and-escaping" class="slide level2">
+<h2>Ranges and escaping</h2>
+<p><strong>Ranges</strong></p>
 <p><code>-</code> can be used to interpolate between first and last and grab consecutive values. Example: <code>[A-Z]</code> matches any capital letters from “A” to “Z”. <code>[1-4]</code> matches any integer digit from 1 to 4.</p>
 <p>{citation: <a href="https://www.geeksforgeeks.org/write-regular-expressions/" class="uri">https://www.geeksforgeeks.org/write-regular-expressions/</a>}</p>
 <div class="fragment">
 <p><strong>Escapism</strong></p>
 <p>You have to “escape” with a <code>\</code> quite a lot. More on this in the cheatsheet later. The short version is:</p>
 <pre><code>. ^ $ * + ? { } [ ] \ | ( )</code></pre>
-<p>must be escaped to match directly. Since regexps live on top of character escapes i.e.&nbsp;has special classes like <code>\d</code>, <code>\s</code> etc., you need to use <em>two</em> levels of escapes on special characters. E.g.</p>
+<p>must be escaped to match directly. Since regexps live on top of character escapes i.e.&nbsp;has special classes like <code>\d</code>, <code>\s</code> etc., you need to use <em>two</em> levels of escape to escape a special character. Example:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>txt <span class="ot">=</span> <span class="st">"To be, [or] not to be that is the question."</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -530,7 +530,7 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <p><code>012-345-6789</code></p>
 </div>
 <div id="tabset-2-3">
-<p>matching xxx-xxx-xxxx using sequencing, repeaters, escaped characters</p>
+<p>matching xxx-xxx-xxxx using ranges, repeaters, escaped characters</p>
 </div>
 </div>
 </div>
@@ -802,8 +802,8 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 </section>
 <section id="exercise-2" class="slide level2">
 <h2>Exercise 2</h2>
-<p>The power and ease of the command line…</p>
-<p>Using an appropriate grep, find the secret message hidden in <em>some</em> of the files in the zip folder:</p>
+<p>The power and ease of the terminal…</p>
+<p>Using an appropriate regex and the terminal <code>grep</code>, find the secret message hidden in <em>some</em> of the files in the zip folder:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-messages.zip"</span>, </span>
 <span id="cb46-2"><a href="#cb46-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-messages.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

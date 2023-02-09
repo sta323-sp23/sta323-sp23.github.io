@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions; UNIX toolkit\n\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\n\n\n\n\n\n\n\n\nWed Feb 15\ncomplexity, profiling and parallelization\n\n\n\n\n\n\n\nFri Feb 17\nReview\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\nstatistical modeling overview\n\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nunivariate Newton-Raphson\n\n\n\n\n\n\n\nFri Mar 03\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nMM algorithm I\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm II\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nmatrices and BLAS\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nproject tips\n\n\n\n\n\n\n\nFri Mar 31\nshiny\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nMonte Carlo integration\n\n\n\n\n\n\n\nFri Apr 07\nimportance sampling\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nspatial data\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -1964,7 +1964,7 @@
     "href": "slides/lec09.html#examples",
     "title": "Regular expressions",
     "section": "Examples",
-    "text": "Examples\nIn the following example we will search through the text, line by line, and extract matches.\nLuffy's phone number is 123 456 7890\nZoro doesn't have a phone number\nNami's number is 012-345-6789\nUsopp's number is (919)000 0000\nSanji's telephone number is (919) 123 4567\n0000000000 is Robin's number.\nChopper doesn't have a phone number, but his lucky number is 1.\nregex extraction\nTest these regular expressions with $ grep -o \"insert regex\" file.txt.\n\nregexoutputprinciples\n\n\n\"123 456 7890\"\n\n\n123 456 7890\n\n\nexact match\n\n\n\n\nregexoutputprinciples\n\n\n\"[0-9]\\{3\\}\\-[0-9]\\{3\\}\\-[0-9]\\{4\\}\"\n\n\n012-345-6789\n\n\nmatching xxx-xxx-xxxx using sequencing, repeaters, escaped characters"
+    "text": "Examples\nIn the following example we will search through the text, line by line, and extract matches.\nLuffy's phone number is 123 456 7890\nZoro doesn't have a phone number\nNami's number is 012-345-6789\nUsopp's number is (919)000 0000\nSanji's telephone number is (919) 123 4567\n0000000000 is Robin's number.\nChopper doesn't have a phone number, but his lucky number is 1.\nregex extraction\nTest these regular expressions with $ grep -o \"insert regex\" file.txt.\n\nregexoutputprinciples\n\n\n\"123 456 7890\"\n\n\n123 456 7890\n\n\nexact match\n\n\n\n\nregexoutputprinciples\n\n\n\"[0-9]\\{3\\}\\-[0-9]\\{3\\}\\-[0-9]\\{4\\}\"\n\n\n012-345-6789\n\n\nmatching xxx-xxx-xxxx using ranges, repeaters, escaped characters"
   },
   {
     "objectID": "slides/lec09.html#sed-and-grep",
@@ -2041,7 +2041,7 @@
     "href": "slides/lec09.html#basic-principles-iii",
     "title": "Regular expressions",
     "section": "Basic principles III",
-    "text": "Basic principles III\nSequencing\n- can be used to interpolate between first and last and grab consecutive values. Example: [A-Z] matches any capital letters from “A” to “Z”. [1-4] matches any integer digit from 1 to 4.\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}\n\nEscapism\nYou have to “escape” with a \\ quite a lot. More on this in the cheatsheet later. The short version is:\n. ^ $ * + ? { } [ ] \\ | ( )\nmust be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like \\d, \\s etc., you need to use two levels of escapes on special characters. E.g.\n\ntxt = \"To be, [or] not to be that is the question.\"\n\n\ngrepl(\"[\", txt)\n\nWarning in grepl(\"[\", txt): TRE pattern compilation error 'Missing ']''\n\n\nError in grepl(\"[\", txt): invalid regular expression '[', reason 'Missing ']''\n\n\n\ngrepl(\"\\[\", txt)\n\nError: '\\[' is an unrecognized escape in character string starting \"\"\\[\"\n\n\n\ngrepl(\"\\\\[\", txt)\n\n[1] TRUE"
+    "text": "Basic principles III\nRanges\n- can be used to interpolate between first and last and grab consecutive values. Example: [A-Z] matches any capital letters from “A” to “Z”. [1-4] matches any integer digit from 1 to 4.\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}\n\nEscapism\nYou have to “escape” with a \\ quite a lot. More on this in the cheatsheet later. The short version is:\n. ^ $ * + ? { } [ ] \\ | ( )\nmust be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like \\d, \\s etc., you need to use two levels of escape to escape a special character. Example:\n\ntxt = \"To be, [or] not to be that is the question.\"\n\n\ngrepl(\"[\", txt)\n\nWarning in grepl(\"[\", txt): TRE pattern compilation error 'Missing ']''\n\n\nError in grepl(\"[\", txt): invalid regular expression '[', reason 'Missing ']''\n\n\n\ngrepl(\"\\[\", txt)\n\nError: '\\[' is an unrecognized escape in character string starting \"\"\\[\"\n\n\n\ngrepl(\"\\\\[\", txt)\n\n[1] TRUE"
   },
   {
     "objectID": "slides/lec09.html#examples-1",
@@ -2076,7 +2076,7 @@
     "href": "slides/lec09.html#exercise-2",
     "title": "Regular expressions",
     "section": "Exercise 2",
-    "text": "Exercise 2\nThe power and ease of the command line…\nUsing an appropriate grep, find the secret message hidden in some of the files in the zip folder:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-messages.zip\", \n              destfile = \"secret-messages.zip\")\n\nAgain, look for sta323{message-here}."
+    "text": "Exercise 2\nThe power and ease of the terminal…\nUsing an appropriate regex and the terminal grep, find the secret message hidden in some of the files in the zip folder:\n\ndownload.file(\"https://sta323-sp23.github.io/data/secret-messages.zip\", \n              destfile = \"secret-messages.zip\")\n\nAgain, look for sta323{message-here}."
   },
   {
     "objectID": "slides/lec09.html#base-r-regex",
@@ -2196,5 +2196,40 @@
     "title": "Unix toolkit",
     "section": "simple cheat sheet",
     "text": "simple cheat sheet\nA “folder” aka a “directory” is a container. A “file* is an element of a container, e.g. lab-1.qmd is a file contained in a lab-1-username directory.\n\n\n\n\n\n\n\ncommand\naction\n\n\n\n\n$ ls\nlist files in current directory\n\n\n$ pwd\nprint working directory\n\n\n$ cd\nchange directory\nexample: $ cd .. to go to parent directory\n\n\n$ mkdir dname\nmake directory “dname”\n\n\n$ mkdir s{1..5}\noverpowered file creation\n\n\n$ rm /path/to/file\nremove a file\n\n\n$ rm -rf dname\nrecursively remove a directory and its contents\n\n\n$ rm core*\nremove all objects in the current working directory that begin with “core”\n\n\n$ wc -l\nshow # lines in a file\n\n\n$ y > x.txt\npass printed output from command “y” on the left to file “x.txt” on the right\nexample: $ head -N file1.txt > file2.txt creates a new file called “file2” that is a replica of the first N lines of file 1\n\n\n\n$ echo 'text here' >> filename\nadd text to the end of a file\n\n\n$ man x\npull up documentation for command x, example: $ man ls"
+  },
+  {
+    "objectID": "slides/lec09.html#basic-principles",
+    "href": "slides/lec09.html#basic-principles",
+    "title": "Regular expressions",
+    "section": "Basic principles",
+    "text": "Basic principles\n\nTo match a string exactly, just write those characters.\nTo match a single character from a set of possibilities, use square brackets, e.g. [0123456789] matches any digit.\nTo group characters together into an expression, use parentheses, ()\n\n\nRepeaters: * , + and { }: the preceding character is to be used for more than once\n\n* match zero or more occurrences of the preceding expression.\n+ match one or more occurrences of the preceding expression.\n{} match the preceding expression for as many times as the value inside this bracket.\n\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}"
+  },
+  {
+    "objectID": "slides/lec09.html#a-hierarchical-view-of-character-classes",
+    "href": "slides/lec09.html#a-hierarchical-view-of-character-classes",
+    "title": "Regular expressions",
+    "section": "A hierarchical view of character classes",
+    "text": "A hierarchical view of character classes\n\n{citation: http://perso.ens-lyon.fr/lise.vaudor/strings-et-expressions-regulieres/}"
+  },
+  {
+    "objectID": "slides/lec09.html#symbols",
+    "href": "slides/lec09.html#symbols",
+    "title": "Regular expressions",
+    "section": "Symbols",
+    "text": "Symbols\n\n. symbol for wildcard. The dot symbol can take place of any other symbol.\n? symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: docx?\n$ symbol for position match end. Tells the computer that the match must occur at the end of the string or before \\n at the end of the line or string.\n\\ symbol for escaping characters. If you want to match for the actual + or ., etc. add a backslash \\ before that character.\n| symbol for “or”. Match any one element separated by the vertical bar | character. Example: th(e|is|at) will match words “the”, “this” and “that”.\n^ symbol has two meanings.\n\nBy itself, ^ sets the position of the match to the beginning of the string or line. Example: ^\\d{3} says to match the first three digits at the beginning of the string and will return 919 from 919-123-4567.\nTogether with brackets, [^set_of_characters] implies exclusion. Example: [^abc] will match any character except a, b, c."
+  },
+  {
+    "objectID": "slides/lec09.html#character-classes",
+    "href": "slides/lec09.html#character-classes",
+    "title": "Regular expressions",
+    "section": "Character classes",
+    "text": "Character classes\nCharacter classes: match a character by its class, for example: letter, digit, space, and symbols.\n\n\\s : matches any whitespace characters such as space and tab\n\\S : matches any non-whitespace characters\n\\d : matches any digit character\n\\D : matches any non-digit characters\n\\w : matches any word character (basically alpha-numeric)\n\\W : matches any non-word character\n\\b : matches any word boundary (this would include spaces, dashes, commas, semi-colons, etc)\n\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}"
+  },
+  {
+    "objectID": "slides/lec09.html#ranges-and-escaping",
+    "href": "slides/lec09.html#ranges-and-escaping",
+    "title": "Regular expressions",
+    "section": "Ranges and escaping",
+    "text": "Ranges and escaping\nRanges\n- can be used to interpolate between first and last and grab consecutive values. Example: [A-Z] matches any capital letters from “A” to “Z”. [1-4] matches any integer digit from 1 to 4.\n{citation: https://www.geeksforgeeks.org/write-regular-expressions/}\n\nEscapism\nYou have to “escape” with a \\ quite a lot. More on this in the cheatsheet later. The short version is:\n. ^ $ * + ? { } [ ] \\ | ( )\nmust be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like \\d, \\s etc., you need to use two levels of escape to escape a special character. Example:\n\ntxt = \"To be, [or] not to be that is the question.\"\n\n\ngrepl(\"[\", txt)\n\nWarning in grepl(\"[\", txt): TRE pattern compilation error 'Missing ']''\n\n\nError in grepl(\"[\", txt): invalid regular expression '[', reason 'Missing ']''\n\n\n\ngrepl(\"\\[\", txt)\n\nError: '\\[' is an unrecognized escape in character string starting \"\"\\[\"\n\n\n\ngrepl(\"\\\\[\", txt)\n\n[1] TRUE"
   }
 ]

@@ -56,7 +56,7 @@ schedule %>%
 |      | Fri Feb 03 | ggplot2          | [💻](/slides/lec07.html)                                |                          |      |         |
 | 4    | Tue Feb 07 | dream of plots                                          |                                 |  [lab 3](/labs/lab3.html)                        |      |         |
 |      | Wed Feb 08 | functional programming and purrr   |  [💻](/slides/lec08.html)                               |                          |      |         |
-|      | Fri Feb 10 | regular expressions; UNIX toolkit                     |                                 |                          |      |         |
+|      | Fri Feb 10 | regular expressions                     |  [💻](/slides/lec09.html)                               |                          |      |         |
 | 5    | Tue Feb 14 |                                           |                                 |                          |      |         |
 |      | Wed Feb 15 | complexity, profiling and parallelization |                                 |                          |      |         |
 |      | Fri Feb 17 | Review                                    |                                 |                          | exam 1 release  |         |
