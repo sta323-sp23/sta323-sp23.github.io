@@ -559,7 +559,7 @@ lm(formula = y ~ x, data = d)
 
 Coefficients:
 (Intercept)            x  
-     0.2556       0.6520  </code></pre>
+     0.5540      -0.3096  </code></pre>
 </div>
 </div>
 </section></section>
@@ -634,16 +634,12 @@ Coefficients:
 <div class="columns">
 <div class="column" style="width:50%;">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, seq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, seq) <span class="sc">%&gt;%</span> <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] 1
-
-[[2]]
-[1] 1 2
-
-[[3]]
-[1] 1 2 3</code></pre>
+<pre><code>List of 3
+ $ : int 1
+ $ : int [1:2] 1 2
+ $ : int [1:3] 1 2 3</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">

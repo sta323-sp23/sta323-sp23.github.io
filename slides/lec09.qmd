@@ -1,0 +1,473 @@
+---
+title: "Regular expressions; unix toolkit"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# Regular expressions
+
+## What is a regular expression?
+
+A regular expression (aka regex or regexp) is a custom defined string matching pattern. A regular expression lets you:
+
+1.  extract *only* the phone number from this string: "My phone number is (123) 456-7890, not to be confused with my birth month which is 0"
+
+2.  search and replace multiple spellings of the word gray (grey, 6R3Y) in a document simultaneously
+
+3.  search through all files in a directory for the one that contains a specific string
+
+4.  find the specific line number from a file that contains a string
+
+5.  find and replace through multiple files simultaneously
+
+And much, much more!
+
+## Basic principles I
+
+-   To match a string exactly, just write those characters.
+
+-   To match a single character from a set of possibilities, use square brackets, e.g. `[0123456789]` matches any digit.
+
+-   To group characters together into an expression, use parentheses, `()`
+
+. . .
+
+**Repeaters:** `*` , `+` and `{ }`: the preceding character is to be used for more than once
+
+-   `*` match zero or more occurrences of the preceding expression.
+
+-   `+` match one or more occurrences of the preceding expression.
+
+-   `{}` match the preceding expression for as many times as the value inside this bracket.
+
+. . .
+
+**Symbols**
+
+-   `.` symbol for wildcard. The dot symbol can take place of any other symbol.
+
+-   `?` symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: `docx?`
+
+-   `$` symbol for position match end. Tells the computer that the match must occur at the end of the string or before `\n` at the end of the line or string.
+
+-   `\` symbol for escaping characters. If you want to match for the actual `+` or `.`, etc. add a backslash `\` before that character.
+
+\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
+
+## Basic principles II
+
+**Symbols cont.**
+
+-   `|` symbol for "or". Match any one element separated by the vertical bar `|` character. Example: `th(e|is|at)` will match words "the", "this" and "that".
+
+-   `^` symbol has two meanings.
+
+    -   By itself, `^` sets the position of the match to the beginning of the string or line. Example: `^\d{3}` says to match the first three digits at the beginning of the string and will return `919` from `919-123-4567`.
+
+    -   Together with brackets, `[^set_of_characters]` implies *exclusion*. Example: `[^abc]` will match any character except a, b, c.
+
+. . .
+
+**Character classes**: match a character by its class, for example: letter, digit, space, and symbols.
+
+-   `\s` : matches any whitespace characters such as space and tab
+
+-   `\S` : matches any non-whitespace characters
+
+-   `\d` : matches any digit character
+
+-   `\D` : matches any non-digit characters
+
+-   `\w` : matches any word character (basically alpha-numeric)
+
+-   `\W` : matches any non-word character
+
+-   `\b` : matches any word boundary (this would include spaces, dashes, commas, semi-colons, etc)
+
+\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
+
+## Basic principles III
+
+**Interpolation**
+
+`-` can be used to interpolate between first and last and grab consecutive values. Example: `[A-Z]` matches any capital letters from "A" to "Z". `[1-4]` matches any integer digit from 1 to 4.
+
+\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
+
+. . . 
+
+**Escapism**
+
+You have to "escape" with a `\` quite a lot. More on this in the cheatsheet later. The short version is:
+
+```
+. ^ $ * + ? { } [ ] \ | ( )
+```
+
+must be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like `\d`, `\s` etc., you need to use *two* levels of escapes on special characters. E.g.
+
+```{r}
+#| error: true
+txt = "To be, [or] not to be that is the question."
+grepl("[", txt)
+grepl("\[", txt)
+grepl("\\[", txt)
+```
+
+
+
+## Examples
+
+In the following example we will search through the text file, line by line, and extract matches.
+
+    Luffy's phone number is 123 456 7890
+    Zoro doesn't have a phone number
+    Nami's number is 012-345-6789
+    Usopp's number is (919)000 0000
+    Sanji's telephone number is (919) 123 4567
+    0000000000 is Robin's number.
+    Chopper doesn't have a phone number, but his lucky number is 1.
+
+### regex extraction
+
+Test these regular expressions with `$ grep -o "insert regex" file.txt`.
+
+::: panel-tabset
+### regex
+
+`"123 456 7890"`
+
+### output
+
+`123 456 7890`
+
+### principles
+
+exact match
+:::
+
+::: panel-tabset
+### regex
+
+`"[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}"`
+
+### output
+
+`012-345-6789`
+
+### principles
+
+matching xxx-xxx-xxxx using interpolation, repeaters, escaped characters
+:::
+
+## Examples
+
+    Luffy's phone number is 123 456 7890
+    Zoro doesn't have a phone number
+    Nami's number is 012-345-6789
+    Usopp's number is (919)000 0000
+    Sanji's telephone number is (919) 123 4567
+    0000000000 is Robin's number.
+    Chopper doesn't have a phone number, but his lucky number is 1.
+
+### regex extraction
+
+Test these regular expressions with `$ grep -o "insert regex" file.txt`.
+
+::: panel-tabset
+### regex
+
+`"(\d\{3\})\.*\d\{3\}\s\d\{4\}"`
+
+### output
+
+`(919)000 0000`
+
+### principles
+
+matching (xxx)xxx xxxx using character classes (`\d` for digit, `\s` for whitespace) and repeaters
+:::
+
+::: panel-tabset
+### regex
+
+`"(\d\{3\}).\?\d\{3\}\s[0-9]\{4\}"`
+
+### output
+
+    (919)000 0000
+    (919) 123 4567
+
+### principles
+
+matching (xxx)\*xxx xxxx using character classes, wildcard (`.`) and optional chracter (`?`)
+:::
+
+::: panel-tabset
+### regex
+
+`"(\?\d\{3\})\?.\?\d\{3\}.\?[0-9]\{4\}"`
+
+### output
+
+    123 456 7890
+    012-345-6789
+    (919)000 0000
+    (919) 123 4567
+    0000000000
+
+### principles
+
+Multiple optional matching
+:::
+
+## On the commmand line (grep)
+
+There are three fundamental tools on unix systems to process text patterns: grep, sed and awk.
+
+The simplest is grep. grep looks by default for **lines** of **files** that match the regex.
+
+Check out the documentation with
+
+    $ man grep
+
+The basics are:
+
+    $ grep -option path/to/file(s)
+
+Common options include:\
+
+| grep option | what it does                                      |
+|-------------|---------------------------------------------------|
+| -c          | count lines with a match                          |
+| -i          | case insensitive search                           |
+| -l          | list only names of matching files                 |
+| -n          | each output is preceded by its line number        |
+| -o          | print only the matching parts of lines            |
+| -v          | invert; list only lines that do not match pattern |
+
+## base R regex
+
+- `grep()`, `grepl()` - regular expression pattern matching, "l" for return logical
+- `sub()`, `gsub()` - regular expression pattern replacement (replace first, replace all)
+- `regmatches()` - extract or replace matched strings
+
+
+
+### Example
+
+```{r}
+txt = c("Luffy: 'I'm going to be king of the pirates! !'", 
+        "The straw hat crew set sail.", 
+        "Nami: 'I'm Going to be the world's greatest navigator!'")
+```
+
+
+::: panel-tabset
+
+### grep/grepl
+
+```{r}
+grep(":", txt)
+grepl(":", txt)
+grep(":", txt, value = TRUE)
+```
+
+### sub/gsub
+
+```{r}
+sub("!", "!!!", txt) # first ! in a string, vectorized
+gsub("!", "!!!", txt) # all !, vectorized
+```
+
+
+### regmatches
+
+```{r}
+regmatches(txt, regexpr(".*:", txt))
+regmatches(txt, regexpr("\\s[a-z]*ng", txt))
+regmatches(txt, regexpr("\\s[A-Z\\|a-z]*ng", txt))
+```
+
+
+:::
+
+
+## stringr
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+
+`stringr` hosts a convenient set of tools to manipulate strings and extract regular expressions. All functions begin with the prefix `str`.
+
+The best summary of `stringr` functions is [on this cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/strings.pdf)
+
+Notice below that the string comes first in these functions (in contrast with `grep`/`sub`)
+
+### Example
+
+```{r}
+txt = c("Luffy: 'I'm going to be king of the pirates! !'", 
+        "The straw hat crew set sail.", 
+        "Nami: 'I'm Going to be the world's greatest navigator!'")
+```
+
+
+::: panel-tabset
+
+### str_detect()
+
+- like `grepl`
+
+```{r}
+str_detect(txt, ":")
+```
+
+### str_extract()
+
+```{r}
+str_extract(txt, "\\s[A-Z\\|a-z]*ng") # first instance
+str_extract_all(txt, "\\s[A-Z\\|a-z]*ng") %>% str()
+```
+### str_replace
+
+```{r}
+str_replace(txt, "Nami", "Zoro") %>%
+  str_replace("navigator", "swordsman")
+``` 
+
+
+:::
+
+## The power of `str_replace`
+
+```{r}
+no_bots = "My number is one Two tHree 456 fOuR 3 2 1"
+```
+
+```{r}
+str_to_lower(no_bots) %>%
+  str_replace_all(c("one" = "1", "two" = "2", 
+                    "three" = "3", "four" = "4")) %>%
+  str_extract_all("\\d") %>%
+  unlist() %>%
+  paste(collapse = "")
+```
+
+
+
+
+
+
+
+## Exercise 1
+
+```{r}
+#| echo: false 
+#| eval: false
+# to make another example in the future
+sample(letters, 100000, replace = TRUE) %>% paste(collapse = "") %>% write("~/Desktop/secret-message.txt")
+```
+
+
+Download the files `secret-message.txt` and `emails.txt` using the command below in the console:
+
+```{r}
+#| eval: false
+download.file()
+```
+
+
+For each of the following exercises, you can choose to use either terminal or R, or both if you have time.
+
+### part 1
+
+In `secret-message.txt`, find the secret message. It will be of the form `sta323{secret-message}` where `secret-message` is replaced by some other text.
+
+### part 2
+
+In `emails.txt` extract the hosting domain (part after "@") and count how many emails are `Duke` emails and how many are `gmail`.
+
+
+# String toolkit appendix
+
+## Additional string functions in base R
+
+The base language provides a number helper functions for additional manipulation of string objects:
+
+- `paste()`, `paste0()` - concatenate strings
+- `substr()`, `substring()` - extract or replace substrings
+- `sprintf()` - C-like string construction
+- `nchar()` - counts characters
+- `strsplit()` - split a string into substrings
+- `tolower()` - make string all lowercase
+- `toupper()` - make string all uppercase
+
+...many more.
+
+the "See Also" section of the the above functions' documentation is a good place to discover additional functions.
+
+# Unix toolkit
+
+## file and folder interactions
+
+A "folder" aka a "directory" is a container. A "file\* is an element of a container, e.g. `lab-1.qmd` is a file contained in a `lab-1-username` directory.
+
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| command                          | action                                                                                                                         |
++==================================+================================================================================================================================+
+| `$ ls`                           | list files in current directory                                                                                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ pwd`                          | print working directory                                                                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ mkdir dname`                  | make directory "dname"                                                                                                         |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ mkdir s{1..5}`                | overpowered file creation                                                                                                      |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm /path/to/file`             | remove a file                                                                                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm -rf dname`                 | recursively remove a directory and its contents                                                                                |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ rm core*`                     | remove all objects in the current working directory that begin with "core"                                                     |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ wc -l`                        | show \# lines in a file                                                                                                        |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right                                                  |
+|                                  |                                                                                                                                |
+|                                  | example: `$ head -N file1.txt > file2.txt` creates a new file called "file2" that is a replica of the first N lines of file 1\ |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ echo 'text here' >> filename` | add text to the end of a file                                                                                                  |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+| `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
++----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+
+## paths
+
+## pathfinding
+
+### absolute paths
+
+### relative paths
+
+## Exercise 2
+
+
+# Miscellaneous tools
+
+## word count
+
+## pdfcrop
+
+## combine pdfs or pngs
+
+## awk
+
+
