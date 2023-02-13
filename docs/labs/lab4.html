@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA323 - Lab 4:</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">STA323</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../schedule.html">schedule</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../syllabus.html">syllabus</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../links.html">links</a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a>
+  <ul class="collapse">
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#task" id="toc-task" class="nav-link" data-scroll-target="#task">Task</a></li>
+  </ul></li>
+  <li><a href="#style-guidelines" id="toc-style-guidelines" class="nav-link" data-scroll-target="#style-guidelines">Style guidelines</a></li>
+  <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 4:</h1>
+<p class="subtitle lead">Due Friday February 17 at 5:00pm</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+
+</div>
+<p>By the end of the lab, you will…</p>
+<ul>
+<li>use regular expressions to build a data frame summarizing thousands of emails for the purposes of text classification in a future lab</li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is “accidentally” pushed.</p>
+</div>
+</div>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<ul>
+<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-4-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
+<li><p>Navigate to your <code>lab-4</code> folder and open the <code>.Rproj</code> file.</p></li>
+<li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members.</p></li>
+</ul>
+<section id="exercises" class="level2">
+<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
+<p>For all exercises, you should respond in the space provided in the template <code>lab-4.qmd</code>. Any task that says “print to the screen”, or “glimpse the data frame” etc. should be reproduced in your <code>qmd</code> and be visible upon rendering.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this lab, there is only one exercise.</p>
+</div>
+</div>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<section id="goal" class="level3">
+<h3 class="anchored" data-anchor-id="goal">Goal</h3>
+<p>The goal of this exercise is to build a data set for use in a future lab. The ultimate goal is to build an algorithm to classify which “class” each document belongs to.</p>
+</section>
+<section id="data" class="level3">
+<h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>There are 4989 documents. Each document is an email from one of 5 email listservs (news groups), that, as far as I can tell, were all hosted at Carnegie Mellon University in the early 90s. The original data set (with a total of 20 news groups) can be found <a href="http://qwone.com/~jason/20Newsgroups/">here</a>. This data set is a popular choice for experiments in text classification and clustering. Please note the following warning: similar to many modern forums on the internet, the emails in this data set may contain profanity and offensive language. I do not condone, endorse nor promote any language, views or content expressed within this data set.</p>
+</section>
+<section id="task" class="level3">
+<h3 class="anchored" data-anchor-id="task">Task</h3>
+<p>We will comb through 12013 documents and construct a single data frame from these documents for use in a future lab. Our goal is to create a data frame that looks like the following:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/document_example_df.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+<p>where the column <code>Document</code> contains the documents name or #, <code>Newsgroup</code> contains the category the document belongs to, <code>total_words</code> contains the total words in the document, <code>word_1</code>, <code>word_2</code> up to <code>word_v</code> contains every word in every document and the values represent the number of occurrences of each given word in the document.</p>
+<p>To make this task more manageable, let’s break this into smaller tasks below:</p>
+<section id="part-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-1">part 1</h4>
+<p>Read in the data from the file <code>37916</code> with, e.g.&nbsp;<code>readLines</code>, e.g.&nbsp;<code>x = readLines("pathToFile/37916")</code>. Write a regular expression to identify the “Newsgroup” from the text. Save the result as an object called <code>newsgroup_id</code>. Print <code>newsgroup_id</code> to the screen.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Some documents (emails) are featured in multiple newsgroups, separated by a “,”. In this case, you should return a character vector of the newsgroups like below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"rec.autos,rec.autos.tech"</span> <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "rec.autos"      "rec.autos.tech"</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="part-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-2">part 2</h4>
+<p>Identify which part of the document is the body of the email. Write a regular expression to extract each word (alphanumeric) from the body of the email. Save a <strong>character vector</strong> of words in the email as an object called <code>words_in_email</code>. Print <code>words_in_email</code> to the screen.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Find which entry has “Lines:”</li>
+<li>Subset the document <code>x</code> to only be what occurs after this entry.</li>
+<li>Extract each word followed by a break.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="part-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-3">part 3</h4>
+<p>Save your result from part 1 and 2 into a list like so:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">=</span> <span class="dv">37916</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc_i <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"doc_id"</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Newsgroup"</span> <span class="ot">=</span> newsgroup_id,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"words"</span> <span class="ot">=</span> words_in_email</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>and then write a for loop, using the template code below as a starting point to make a list of lists for each document.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_docs <span class="ot">=</span> <span class="fu">list.files</span>(<span class="st">"/data/newsgroups_5"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doc_words <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># begin for loop over i in all_docs </span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read in doc i</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create newsgroup_id</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create words_in_email</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put both together in a list called doc_i</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  doc_words[[<span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>)]] <span class="ot">=</span> doc_i</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># end for loop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Print the first three lists inside of <code>doc_words</code> using the code below:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>doc_words[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Use <code>paste</code> or <code>paste0</code> to concatenate the filepath and filenames as you read them in.</p>
+</div>
+</div>
+</section>
+<section id="part-4" class="level4">
+<h4 class="anchored" data-anchor-id="part-4">part 4</h4>
+<p>Using the appropriate lookup functions from <code>purrr</code> (see lecture on functional programming) turn your list of lists <code>doc_words</code> into a tibble called <code>doc_words_df</code> that looks like the data frame pictured below. While building your data frame, remove all documents for which there are <strong>multiple newsgroups</strong>. Print the first 10 rows to the screen <strong>and</strong> glimpse your resulting data frame. There should be <strong>3924</strong> rows and <strong>5</strong> columns.<br>
+<br>
+<br>
+<img src="images/example-tibble-lab4.png" class="img-fluid" data-fig-align="center"></p>
+</section>
+</section>
+</section>
+<section id="style-guidelines" class="level2">
+<h2 class="anchored" data-anchor-id="style-guidelines">Style guidelines</h2>
+<p>All assignments in this course must employ proper coding style, as outlined below:</p>
+<ul>
+<li><p>All code should obey the 80 character limit per line (i.e.&nbsp;no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.</p></li>
+<li><p>All commas should be followed by a space.</p></li>
+<li><p>All binary operators should be surrounded by space. For example <code>x + y</code> is appropriate. <code>x+y</code> is not.</p></li>
+<li><p>All pipes <code>%&gt;%</code> or <code>|&gt;</code> as well as ggplot layers <code>+</code> should be followed by a new line.</p></li>
+<li><p>You should be consistent with stylistic choices, e.g.&nbsp;only use 1 of <code>=</code> vs <code>&lt;-</code> and <code>%&gt;%</code> vs <code>|&gt;</code></p></li>
+<li><p>Your name should be at the top (in the YAML) of each document under “author:”</p></li>
+<li><p>All code chunks should be named (with names that don’t have spaces, e.g.&nbsp;<code>ex-1</code>, <code>ex-2</code> etc.)</p></li>
+<li><p>File names in your GitHub repo such as <code>lab-x.qmd</code> must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.</p></li>
+</ul>
+<p>Fundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your <code>.qmd</code> renders.</p>
+<p>If you have any questions about style, please ask a member of the teaching team.</p>
+</section>
+<section id="submitting-your-lab" class="level2">
+<h2 class="anchored" data-anchor-id="submitting-your-lab">Submitting your lab</h2>
+<p>To submit your assignment, simply commit and push your completed <code>lab-x.qmd</code> to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see <a href="../syllabus.html">the syllabus</a>). For this reason, <strong>do not push commits</strong> after you are satisfied with your work, or a late penalty will be applied.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
