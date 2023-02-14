@@ -1,10 +1,14 @@
 ---
-title: "Lab 4:"
+title: "Lab 4: wrangling the written word"
 subtitle: "Due Friday February 17 at 5:00pm"  
 editor: source
 execute:
   eval: false
 ---
+
+> "A [computer keyboard] is to me as a beak is to a hen." 
+> — J. R. R. Tolkien (loosely)
+
 
 ```{r}
 #| echo: false
@@ -45,7 +49,24 @@ The goal of this exercise is to build a data set for use in a future lab. The ul
 
 ### Data
 
+Download the data for this lab by pasting the code below into the console:
+
+```{r}
+#| eval: false
+download.file("sta323-sp23.github.io/data/newsgroups_5.zip")
+```
+
+
 There are 4989 documents. Each document is an email from one of 5 email listservs (news groups), that, as far as I can tell, were all hosted at Carnegie Mellon University in the early 90s. The original data set (with a total of 20 news groups) can be found [here](http://qwone.com/~jason/20Newsgroups/). This data set is a popular choice for experiments in text classification and clustering. Please note the following warning: similar to many modern forums on the internet, the emails in this data set may contain profanity and offensive language. I do not condone, endorse nor promote any language, views or content expressed within this data set.
+
+The five document classes (newsgroups) are as follows:
+
+1. `comp.graphics`
+2. `comp.sys.mac.hardware`
+3. `rec.autos`
+4. `rec.sport.baseball`
+5. `sci.space`
+
 
 ### Task
 
@@ -59,12 +80,12 @@ To make this task more manageable, let's break this into smaller tasks below:
 
 #### part 1
 
-Read in the data from the file `37916` with, e.g. `readLines`, e.g. `x = readLines("pathToFile/37916")`. Write a regular expression to identify the "Newsgroup" from the text. Save the result as an object called `newsgroup_id`. Print `newsgroup_id` to the screen.
+Read in the data from the file `37916` with `readLines`, e.g. `x = readLines("pathToFile/37916")`. Write a regular expression to identify the "Newsgroup" from the text. Save the result as an object called `newsgroup_id`. Print `newsgroup_id` to the screen.
 
 ::: callout-tip
 ## Hint
 
-Some documents (emails) are featured in multiple newsgroups, separated by a ",". In this case, you should return a character vector of the newsgroups like below:
+Some documents (emails) are featured in multiple newsgroups, separated by a comma `,`. You should return a character vector of the newsgroups and can handle this like below:
 
 ```{r}
 #| eval: true
@@ -76,7 +97,11 @@ Some documents (emails) are featured in multiple newsgroups, separated by a ",".
 
 #### part 2
 
-Identify which part of the document is the body of the email. Write a regular expression to extract each word (alphanumeric) from the body of the email. Save a **character vector** of words in the email as an object called `words_in_email`. Print `words_in_email` to the screen.
+Identify which part of the document is the body of the email. Write a regular expression to extract each word (alphanumeric) from the body of the email. Save a **character vector** of words in the email as an object called `words_in_email`. Print the first 10 `words_in_email` to the screen. The first three should be 
+
+```
+"I" "recently" "got"
+```
 
 ::: callout-tip
 ## Hint
@@ -138,14 +163,23 @@ Use `paste` or `paste0` to concatenate the filepath and filenames as you read th
 
 #### part 4
 
-Using the appropriate lookup functions from `purrr` (see lecture on functional programming) turn your list of lists `doc_words` into a tibble called `doc_words_df` that looks like the data frame pictured below. While building your data frame, remove all documents for which there are **multiple newsgroups**. Print the first 10 rows to the screen **and** glimpse your resulting data frame. There should be **3924** rows and **5** columns.\
-\
-\
-![](images/example-tibble-lab4.png){fig-align="center"}
+Using the appropriate lookup functions from `purrr` (see lecture on functional programming) turn your list of lists `doc_words` into a tibble called `doc_words_df` that looks like the data frame pictured below. While building your data frame, remove all documents for which there are **multiple newsgroups**.
 
-#### part 5
+```
+  Document   Newsgroup          total_words words      
+  <chr>      <chr>                    <int> <list>     
+1 doc_100521 rec.sport.baseball         261 <chr [261]>
+2 doc_101551 rec.autos                  439 <chr [439]>
+3 doc_101552 rec.autos                  147 <chr [147]>
+```
 
-Unnest columns, re-order them and remove any extra columns as appropriate to make your data frame match our goal data frame from the [task section](#task) above. Your final data frame should have 3924 rows
+- Print the first 10 rows to the screen **and** glimpse your resulting data frame. There should be **3924** rows and **4** columns.\
+
+- Finally, print a count of how many observations of each Newsgroup is in the data set.
+
+::: callout-warning
+Do **not** unnest the `words` column. This operation is too expensive to play with and may freeze your container/computer.
+:::
 
 ## Style guidelines
 

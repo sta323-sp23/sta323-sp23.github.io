@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA323 - Lab 4:</title>
+<title>STA323 - Lab 4: wrangling the written word</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,7 +168,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 4:</h1>
+<h1 class="title">Lab 4: wrangling the written word</h1>
 <p class="subtitle lead">Due Friday February 17 at 5:00pm</p>
 </div>
 
@@ -183,6 +183,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
+<blockquote class="blockquote">
+<p>“A [computer keyboard] is to me as a beak is to a hen.” — J. R. R. Tolkien (loosely)</p>
+</blockquote>
 <div class="cell">
 
 </div>
@@ -235,7 +238,19 @@ Note
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
+<p>Download the data for this lab by pasting the code below into the console:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">"sta323-sp23.github.io/data/newsgroups_5.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 <p>There are 4989 documents. Each document is an email from one of 5 email listservs (news groups), that, as far as I can tell, were all hosted at Carnegie Mellon University in the early 90s. The original data set (with a total of 20 news groups) can be found <a href="http://qwone.com/~jason/20Newsgroups/">here</a>. This data set is a popular choice for experiments in text classification and clustering. Please note the following warning: similar to many modern forums on the internet, the emails in this data set may contain profanity and offensive language. I do not condone, endorse nor promote any language, views or content expressed within this data set.</p>
+<p>The five document classes (newsgroups) are as follows:</p>
+<ol type="1">
+<li><code>comp.graphics</code></li>
+<li><code>comp.sys.mac.hardware</code></li>
+<li><code>rec.autos</code></li>
+<li><code>rec.sport.baseball</code></li>
+<li><code>sci.space</code></li>
+</ol>
 </section>
 <section id="task" class="level3">
 <h3 class="anchored" data-anchor-id="task">Task</h3>
@@ -249,7 +264,7 @@ Note
 <p>To make this task more manageable, let’s break this into smaller tasks below:</p>
 <section id="part-1" class="level4">
 <h4 class="anchored" data-anchor-id="part-1">part 1</h4>
-<p>Read in the data from the file <code>37916</code> with, e.g.&nbsp;<code>readLines</code>, e.g.&nbsp;<code>x = readLines("pathToFile/37916")</code>. Write a regular expression to identify the “Newsgroup” from the text. Save the result as an object called <code>newsgroup_id</code>. Print <code>newsgroup_id</code> to the screen.</p>
+<p>Read in the data from the file <code>37916</code> with <code>readLines</code>, e.g.&nbsp;<code>x = readLines("pathToFile/37916")</code>. Write a regular expression to identify the “Newsgroup” from the text. Save the result as an object called <code>newsgroup_id</code>. Print <code>newsgroup_id</code> to the screen.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -260,11 +275,11 @@ Hint
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Some documents (emails) are featured in multiple newsgroups, separated by a “,”. In this case, you should return a character vector of the newsgroups like below:</p>
+<p>Some documents (emails) are featured in multiple newsgroups, separated by a comma <code>,</code>. You should return a character vector of the newsgroups and can handle this like below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"rec.autos,rec.autos.tech"</span> <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="st">"rec.autos,rec.autos.tech"</span> <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str_split</span>(<span class="st">","</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">unlist</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "rec.autos"      "rec.autos.tech"</code></pre>
 </div>
@@ -274,7 +289,8 @@ Hint
 </section>
 <section id="part-2" class="level4">
 <h4 class="anchored" data-anchor-id="part-2">part 2</h4>
-<p>Identify which part of the document is the body of the email. Write a regular expression to extract each word (alphanumeric) from the body of the email. Save a <strong>character vector</strong> of words in the email as an object called <code>words_in_email</code>. Print <code>words_in_email</code> to the screen.</p>
+<p>Identify which part of the document is the body of the email. Write a regular expression to extract each word (alphanumeric) from the body of the email. Save a <strong>character vector</strong> of words in the email as an object called <code>words_in_email</code>. Print the first 10 <code>words_in_email</code> to the screen. The first three should be</p>
+<pre><code>"I" "recently" "got"</code></pre>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -297,34 +313,34 @@ Hint
 <h4 class="anchored" data-anchor-id="part-3">part 3</h4>
 <p>Save your result from part 1 and 2 into a list like so:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">=</span> <span class="dv">37916</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>doc_i <span class="ot">=</span> <span class="fu">list</span>(</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"doc_id"</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Newsgroup"</span> <span class="ot">=</span> newsgroup_id,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"words"</span> <span class="ot">=</span> words_in_email</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>i <span class="ot">=</span> <span class="dv">37916</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>doc_i <span class="ot">=</span> <span class="fu">list</span>(</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"doc_id"</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>),</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Newsgroup"</span> <span class="ot">=</span> newsgroup_id,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"words"</span> <span class="ot">=</span> words_in_email</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>and then write a for loop, using the template code below as a starting point to make a list of lists for each document.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>all_docs <span class="ot">=</span> <span class="fu">list.files</span>(<span class="st">"/data/newsgroups_5"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>doc_words <span class="ot">=</span> <span class="fu">list</span>()</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># begin for loop over i in all_docs </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read in doc i</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create newsgroup_id</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create words_in_email</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put both together in a list called doc_i</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  doc_words[[<span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>)]] <span class="ot">=</span> doc_i</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># end for loop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>all_docs <span class="ot">=</span> <span class="fu">list.files</span>(<span class="st">"/data/newsgroups_5"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>doc_words <span class="ot">=</span> <span class="fu">list</span>()</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># begin for loop over i in all_docs </span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read in doc i</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create newsgroup_id</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># create words_in_email</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># put both together in a list called doc_i</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  doc_words[[<span class="fu">paste</span>(<span class="st">"doc"</span>, i, <span class="at">sep =</span> <span class="st">"_"</span>)]] <span class="ot">=</span> doc_i</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># end for loop</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Print the first three lists inside of <code>doc_words</code> using the code below:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>doc_words[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span> </span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>doc_words[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>] <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">str</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -342,10 +358,30 @@ Hint
 </section>
 <section id="part-4" class="level4">
 <h4 class="anchored" data-anchor-id="part-4">part 4</h4>
-<p>Using the appropriate lookup functions from <code>purrr</code> (see lecture on functional programming) turn your list of lists <code>doc_words</code> into a tibble called <code>doc_words_df</code> that looks like the data frame pictured below. While building your data frame, remove all documents for which there are <strong>multiple newsgroups</strong>. Print the first 10 rows to the screen <strong>and</strong> glimpse your resulting data frame. There should be <strong>3924</strong> rows and <strong>5</strong> columns.<br>
-<br>
-<br>
-<img src="images/example-tibble-lab4.png" class="img-fluid" data-fig-align="center"></p>
+<p>Using the appropriate lookup functions from <code>purrr</code> (see lecture on functional programming) turn your list of lists <code>doc_words</code> into a tibble called <code>doc_words_df</code> that looks like the data frame pictured below. While building your data frame, remove all documents for which there are <strong>multiple newsgroups</strong>.</p>
+<pre><code>  Document   Newsgroup          total_words words      
+  &lt;chr&gt;      &lt;chr&gt;                    &lt;int&gt; &lt;list&gt;     
+1 doc_100521 rec.sport.baseball         261 &lt;chr [261]&gt;
+2 doc_101551 rec.autos                  439 &lt;chr [439]&gt;
+3 doc_101552 rec.autos                  147 &lt;chr [147]&gt;</code></pre>
+<ul>
+<li><p>Print the first 10 rows to the screen <strong>and</strong> glimpse your resulting data frame. There should be <strong>3924</strong> rows and <strong>4</strong> columns.<br>
+</p></li>
+<li><p>Finally, print a count of how many observations of each Newsgroup is in the data set.</p></li>
+</ul>
+<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do <strong>not</strong> unnest the <code>words</code> column. This operation is too expensive to play with and may freeze your container/computer.</p>
+</div>
+</div>
 </section>
 </section>
 </section>
