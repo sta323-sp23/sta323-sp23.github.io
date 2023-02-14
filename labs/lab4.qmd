@@ -73,7 +73,7 @@ The five document classes (newsgroups) are as follows:
 
 ### Task
 
-We will comb through 12013 documents and construct a single data frame from these documents for use in a future lab. Our goal is to create a data frame that looks like the following:
+We will comb through 4989 documents and construct a single data frame from these documents for use in a future lab. Our goal is to create a data frame that looks like the following:
 
 ![](img/document_example_df.png){fig-align="center"}
 
