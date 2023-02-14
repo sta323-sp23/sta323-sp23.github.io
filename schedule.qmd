@@ -57,7 +57,7 @@ schedule %>%
 | 4    | Tue Feb 07 | dream of plots                                          |                                 |  [lab 3](/labs/lab3.html)                        |      |         |
 |      | Wed Feb 08 | functional programming and purrr   |  [💻](/slides/lec08.html)                               |                          |      |         |
 |      | Fri Feb 10 | regular expressions                     |  [💻](/slides/lec09.html)                               |                          |      |         |
-| 5    | Tue Feb 14 |                                           |                                 |                          |      |         |
+| 5    | Tue Feb 14 | wrangling the written word                                         |                                 |  [lab 4](/labs/lab4.html)                         |      |         |
 |      | Wed Feb 15 | complexity, profiling and parallelization |                                 |                          |      |         |
 |      | Fri Feb 17 | Review                                    |                                 |                          | exam 1 release  |         |
 | 6    | Tue Feb 21 | no lab: exam 1                                        |                                 | exam 1 due                         |      |         |

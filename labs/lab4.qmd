@@ -56,7 +56,7 @@ Download the data for this lab by pasting the code below into the console:
 download.file("sta323-sp23.github.io/data/newsgroups_5.zip", 
               destfile = "ng_5.zip")
 
-unzip("ng_5.zip", exdir = "ng_5")
+unzip("ng_5.zip", exdir = ".")
 ```
 
 
