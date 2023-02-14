@@ -397,6 +397,8 @@ Using an appropriate regex and the terminal `grep`, find the secret message hidd
 #| eval: false
 download.file("https://sta323-sp23.github.io/data/secret-messages.zip", 
               destfile = "secret-messages.zip")
+
+unzip("secret-messages.zip", exdir = secret-messages)
 ```
 
 Again, look for `sta323{message-here}`.

@@ -806,7 +806,9 @@ Chopper doesn't have a phone number, but his lucky number is 1.</code></pre>
 <p>Using an appropriate regex and the terminal <code>grep</code>, find the secret message hidden in <em>some</em> of the files in the zip folder:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-messages.zip"</span>, </span>
-<span id="cb46-2"><a href="#cb46-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-messages.zip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb46-2"><a href="#cb46-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-messages.zip"</span>)</span>
+<span id="cb46-3"><a href="#cb46-3"></a></span>
+<span id="cb46-4"><a href="#cb46-4"></a><span class="fu">unzip</span>(<span class="st">"secret-messages.zip"</span>, <span class="at">exdir =</span> secret<span class="sc">-</span>messages)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Again, look for <code>sta323{message-here}</code>.</p>
 </section></section>
