@@ -59,30 +59,30 @@ schedule %>%
 |      | Fri Feb 10 | regular expressions                     |  [💻](/slides/lec09.html)                               |                          |      |         |
 | 5    | Tue Feb 14 | wrangling the written word                                         |                                 |  [lab 4](/labs/lab4.html)                         |      |         |
 |      | Wed Feb 15 | catch-up |                                 |                          |      |         |
-|      | Fri Feb 17 | complexity, profiling and parallelization                                   |                                 |                          | exam 1 release  |         |
+|      | Fri Feb 17 | review / questions / exam                                   |                                 |                          | exam 1 release  |         |
 | 6    | Tue Feb 21 | no lab: exam 1                                        |                                 | exam 1 due                         |      |         |
-|      | Wed Feb 22 | statistical modeling overview             |                                 |                          |      |         |
-|      | Fri Feb 24 | intro to optimization                     |                                 |                          |      |         |
+|      | Wed Feb 22 | complexity, profiling, parallelization             |                                 |                          |      |         |
+|      | Fri Feb 24 |statistical modeling overview                    |                                 |                          |      |         |
 | 7    | Tue Feb 28 |                                           |                                 |                          |      |         |
-|      | Wed Mar 01 | univariate Newton-Raphson                 |                                 |                          |      |         |
-|      | Fri Mar 03 | multivariate Newton-Raphson examples      |                                 |                          |      |         |
+|      | Wed Mar 01 | intro to optimization                |                                 |                          |      |         |
+|      | Fri Mar 03 | univariate Newton-Raphson      |                                 |                          |      |         |
 | 8    | Tue Mar 07 |                                           |                                 |                          |      |         |
-|      | Wed Mar 08 | MM algorithm I                            |                                 |                          |      |         |
-|      | Fri Mar 10 | MM algorithm II                           |                                 |                          |      |         |
+|      | Wed Mar 08 | multivariate Newton-Raphson examples                            |                                 |                          |      |         |
+|      | Fri Mar 10 | MM algorithm I                          |                                 |                          |      |         |
 | 9    | Tue Mar 14 | NO CLASS: Spring break                    |                                 |                          |      |         |
 |      | Wed Mar 15 | NO CLASS: Spring break                    |                                 |                          |      |         |
 |      | Fri Mar 17 | NO CLASS: Spring break                    |                                 |                          |      |         |
 | 10   | Tue Mar 21 |                                           |                                 |                          |      |         |
-|      | Wed Mar 22 | EM algorithm                              |                                 |                          |      |         |
-|      | Fri Mar 24 | matrices and BLAS                         |                                 |                          |      |         |
+|      | Wed Mar 22 | MM algorithm II                            |                                 |                          |      |         |
+|      | Fri Mar 24 | EM algorithm                         |                                 |                          |      |         |
 | 11   | Tue Mar 28 |                                           |                                 |                          |      |         |
-|      | Wed Mar 29 | project tips                              |                                 |                          |      |         |
-|      | Fri Mar 31 | shiny                                     |                                 |                          |      |         |
+|      | Wed Mar 29 | shiny                              |                                 |                          |      |         |
+|      | Fri Mar 31 | project tips                                     |                                 |                          |      |         |
 | 12   | Tue Apr 04 |                                           |                                 |                          |      |         |
-|      | Wed Apr 05 | Monte Carlo integration                   |                                 |                          |      |         |
-|      | Fri Apr 07 | importance sampling                       |                                 |                          |      |         |
+|      | Wed Apr 05 | matrices and BLAS                   |                                 |                          |      |         |
+|      | Fri Apr 07 | Monte Carlo integration                    |                                 |                          |      |         |
 | 13   | Tue Apr 11 |                                           |                                 |                          |      |         |
-|      | Wed Apr 12 | spatial data                              |                                 |                          |      |         |
+|      | Wed Apr 12 | importance sampling                                 |                                 |                          |      |         |
 |      | Fri Apr 14 | covariance                                |                                 |                          |      |         |
 | 14   | Tue Apr 18 |                                           |                                 |                          |      |         |
 |      | Wed Apr 19 | APIs                                      |                                 |                          |      |         |
