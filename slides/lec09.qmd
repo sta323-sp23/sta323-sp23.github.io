@@ -8,9 +8,9 @@ format:
       smaller: true
 ---
 
-# Regular expressions intro
+# What is a regular expression?
 
-## What is a regular expression?
+## Definition and utility
 
 A regular expression (aka regex or regexp) is a custom defined string matching pattern. A regular expression lets you:
 
@@ -25,6 +25,97 @@ A regular expression (aka regex or regexp) is a custom defined string matching p
 5.  find and replace through multiple files simultaneously
 
 And much, much more!
+
+## Quick example
+
+`grep` and `grepl` are base R functions that return the index of a match and the logical value of a match respectively.
+
+```{r}
+text = c("Wealth, fame, power. Gold Roger, the King of the Pirates, attained",
+         "everything this world has to offer.")
+text
+```
+
+```{r}
+grep("Pirate", text)
+grepl("Pirate", text)
+```
+
+. . .
+
+regular expressions are case-sensitive
+
+```{r}
+grep("pirate", text)
+grepl("pirate", text)
+```
+
+# stringr
+
+![](images/stringr.png){fig-align="center"}
+
+## introducing stringr
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+`stringr` hosts a convenient set of tools to manipulate strings and extract regular expressions. All functions begin with the prefix `str`.
+
+The best summary of `stringr` functions is [on this cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/strings.pdf)
+
+Notice below that the string comes first in these functions (in contrast with `grep`)
+
+### Example
+
+```{r}
+txt = c("Luffy: 'I'm going to be king of the pirates! !'", 
+        "The straw hat crew set sail.", 
+        "Nami: 'I'm Going to be the world's greatest navigator!'")
+```
+
+::: panel-tabset
+### str_detect()
+
+-   like `grepl`
+
+```{r}
+str_detect(txt, ":")
+```
+
+### str_extract()
+
+-   return the match
+
+```{r}
+str_extract(txt, "\\s([A-Z]|[a-z])*ng") # first instance
+str_extract_all(txt, "\\s([A-Z]|[a-z])*ng") %>% str()
+```
+
+### str_replace
+
+```{r}
+str_replace(txt, "Nami", "Zoro") %>%
+  str_replace("navigator", "swordsman")
+```
+:::
+
+## The power of `str_replace`
+
+```{r}
+no_bots = "My number is one Two tHree 456 fOuR 3 2 1"
+```
+
+```{r}
+str_to_lower(no_bots) %>%
+  str_replace_all(c("one" = "1", "two" = "2", 
+                    "three" = "3", "four" = "4")) %>%
+  str_extract_all("\\d") %>% # simplify arg here could change pipeline
+  unlist() %>%
+  paste(collapse = "") # or use str_c(collapse = "")
+```
 
 ## Basic principles
 
@@ -44,13 +135,27 @@ And much, much more!
 
 -   `{}` match the preceding expression for as many times as the value inside this bracket.
 
+. . .
+
+Some repeater examples:\
+\
+
+| regexp   | explanation                       |
+|----------|-----------------------------------|
+| `a*`     | match 0 or more occurences of "a" |
+|  `a+`        | match 1 more occurences of "a"                                 |
+|   `(abc)+`  | match 1 or more back-to-back occurence of the group "abc"                               |
+| `a{3}`   | match a 3 times                   |
+| `a{3,}`  | match a 3 or more times           |
+| `a{3,5}` | match "a" 3, 4 or 5 times         |
+
 \small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
 
 ## Symbols
 
 -   `.` symbol for wildcard. The dot symbol can take place of any other symbol.
 
--   `?` symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: `docx?`
+-   `?` symbol for optional character. The preceding character may or may not be present in the string to be matched. Example: `docx?` will match both `docx` and `doc`
 
 -   `$` symbol for position match end. Tells the computer that the match must occur at the end of the string or before `\n` at the end of the line or string.
 
@@ -63,7 +168,6 @@ And much, much more!
     -   By itself, `^` sets the position of the match to the beginning of the string or line. Example: `^\d{3}` says to match the first three digits at the beginning of the string and will return `919` from `919-123-4567`.
 
     -   Together with brackets, `[^set_of_characters]` implies *exclusion*. Example: `[^abc]` will match any character except a, b, c.
-
 
 ## Character classes
 
@@ -91,23 +195,21 @@ And much, much more!
 
 \small{citation: [http://perso.ens-lyon.fr/lise.vaudor/strings-et-expressions-regulieres/]()}
 
-## Ranges and escaping
-
-**Ranges**
+## Ranges
 
 `-` can be used to interpolate between first and last and grab consecutive values. Example: `[A-Z]` matches any capital letters from "A" to "Z". `[1-4]` matches any integer digit from 1 to 4.
 
-\small{citation: <https://www.geeksforgeeks.org/write-regular-expressions/>}
+To match an alphabetical character (upper or lower case "A-Z" or "a-z") but not numbers, you can use the regular expression `([A-Z]|[a-z])`
 
-. . .
+To match everything but capital "F" through "N", you can use the regular expression `[^F-N]`
 
-**Escapism**
+## Escapism
 
-You have to "escape" with a `\` quite a lot. More on this in the cheatsheet later. The short version is:
+When to escape?
 
     . ^ $ * + ? { } [ ] \ | ( )
 
-must be escaped to match directly. Since regexps live on top of character escapes i.e. has special classes like `\d`, `\s` etc., you need to use *two* levels of escape to escape a special character. Example:
+Are all special and perform as described on the previous slides by default. Therefore, these special characters must be escaped to match directly. You need to use *two* levels of escape to escape a special character. Example:
 
 ```{r}
 txt = "To be, [or] not to be that is the question."
@@ -115,17 +217,90 @@ txt = "To be, [or] not to be that is the question."
 
 ```{r}
 #| error: true
-grepl("[", txt)
+str_detect("[", txt)
 ```
 
 ```{r}
 #| error: true
-grepl("\[", txt)
+str_detect("\[", txt)
 ```
 
 ```{r}
 grepl("\\[", txt)
 ```
+
+## Escape classes
+
+In order to access the presumed functionality of character classes, you need to use a double escape as well. Example:
+
+```{r}
+txt = c("A1", "B2", "CC", "DD", "EE2")
+```
+
+-   Which strings end with a digit?
+
+```{r}
+#| error: true
+str_detect(txt, "\d$")
+```
+
+```{r}
+#| error: true
+str_detect(txt, "\\d$")
+```
+
+-   Which strings contain 3 alphanumeric characters?
+
+```{r}
+str_detect(txt, "\\w{3}")
+```
+
+. . .
+
+::: callout-note
+## tl;dr
+
+to match a symbol or character class, use double escapes
+:::
+
+## Exercise 1
+
+```{r}
+#| echo: false 
+#| eval: false
+# to make another example in the future
+x = sample(letters, 500000, replace = TRUE) %>% paste(collapse = "") 
+
+x %>%
+  paste0("sta323{https://www.youtube.com/watch?v=dQw4w9WgXcQ}") %>% 
+  paste0(x) %>%  
+  write("~/Desktop/secret-message.txt")
+```
+
+Download the files `secret-message.txt` and `emails.txt` using the command below in the console:
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
+              destfile = "secret-message.txt")
+
+download.file("https://sta323-sp23.github.io/data/emails.txt", 
+              destfile = "emails.txt")
+```
+
+::: callout-tip
+## Hint
+
+read in the file as a string with `read_lines()`
+:::
+
+### part 1
+
+In `secret-message.txt`, find the secret message. It will be of the form `sta323{secret-message}` where `secret-message` is replaced by some other text.
+
+### part 2
+
+In `emails.txt` extract the unique part of the email address (part before the "\@") and count the number of each hosting domain, i.e. count how many emails are `Duke` emails and how many are `gmail`.
 
 ## Examples
 
@@ -141,12 +316,34 @@ In the following example we will search through the text, line by line, and extr
 
 ### regex extraction
 
-Test these regular expressions with `$ grep -o "insert regex" file.txt`.
+```{r}
+#| eval: true
+#| echo: false
+#| warning: false
+pirate_phone = "Luffy's phone number is 123 456 7890
+    Zoro doesn't have a phone number
+    Nami's number is 012-345-6789
+    Usopp's number is (919)000 0000
+    Sanji's telephone number is (919) 123 4567
+    0000000000 is Robin's number.
+    Chopper doesn't have a phone number, but his lucky number is 1."
+```
+
+You can download the text file with
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/data/pirate-phone.txt",
+destfile = "pirate-phone.txt")
+```
 
 ::: panel-tabset
 ### regex
 
-`"123 456 7890"`
+```{r}
+#| eval: false
+str_extract(pirate_phone, "123 456 7890")
+```
 
 ### output
 
@@ -160,7 +357,10 @@ exact match
 ::: panel-tabset
 ### regex
 
-`"[0-9]\{3\}\-[0-9]\{3\}\-[0-9]\{4\}"`
+```{r}
+#| eval: false
+str_extract(pirate_phone, "[0-9]{3}\\-[0-9]{3}\\-[0-9]{4}")
+```
 
 ### output
 
@@ -183,12 +383,13 @@ matching xxx-xxx-xxxx using ranges, repeaters, escaped characters
 
 ### regex extraction
 
-Test these regular expressions with `$ grep -o "insert regex" file.txt`.
-
 ::: panel-tabset
 ### regex
 
-`"(\d\{3\})\.*\d\{3\}\s\d\{4\}"`
+```{r}
+#| eval: false
+str_extract_all(pirate_phone, "\\(\\d{3}\\)\\d{3}\\s\\d{4}")
+```
 
 ### output
 
@@ -202,7 +403,10 @@ matching (xxx)xxx xxxx using character classes (`\d` for digit, `\s` for whitesp
 ::: panel-tabset
 ### regex
 
-`"(\d\{3\}).\?\d\{3\}\s[0-9]\{4\}"`
+```{r}
+#| eval: false
+str_extract_all(pirate_phone, "\\(\\d{3}\\).?\\d{3}\\s[0-9]{4}")
+```
 
 ### output
 
@@ -214,10 +418,15 @@ matching (xxx)xxx xxxx using character classes (`\d` for digit, `\s` for whitesp
 matching (xxx)\*xxx xxxx using character classes, wildcard (`.`) and optional chracter (`?`)
 :::
 
+. . .
+
 ::: panel-tabset
 ### regex
 
-`"(\?\d\{3\})\?.\?\d\{3\}.\?[0-9]\{4\}"`
+```{r}
+#| eval: false
+# hidden exercise, code here!
+```
 
 ### output
 
@@ -231,6 +440,44 @@ matching (xxx)\*xxx xxxx using character classes, wildcard (`.`) and optional ch
 
 Multiple optional matching
 :::
+
+## Greedy vs ungreedy matching
+
+What went wrong here?
+
+```{r}
+text = "<div class='main'> <div> <a href='here.pdf'>Here!</a> </div> </div>"
+```
+
+```{r}
+str_extract(text, "<div>.*</div>")
+```
+
+. . .
+
+If you add `?` after a repeater, the matching will be non-greedy (find the shortest possible match, not the longest).
+
+```{r}
+str_extract(text, "<div>.*?</div>")
+```
+
+# Appendix
+
+## base R string toolkit
+
+The base language provides a number helper functions for additional manipulation of string objects:
+
+-   `paste()`, `paste0()` - concatenate strings
+-   `substr()`, `substring()` - extract or replace substrings
+-   `sprintf()` - C-like string construction
+-   `nchar()` - counts characters
+-   `strsplit()` - split a string into substrings
+-   `tolower()` - make string all lowercase
+-   `toupper()` - make string all uppercase
+
+...many more.
+
+the "See Also" section of the the above functions' documentation is a good place to discover additional functions.
 
 ## On the commmand line (grep)
 
@@ -256,6 +503,22 @@ Common options include:\
 | -n          | each output is preceded by its line number        |
 | -o          | print only the matching parts of lines            |
 | -v          | invert; list only lines that do not match pattern |
+
+## Exercise 2
+
+The power and ease of the terminal...
+
+Using an appropriate regex and the terminal `grep`, find the secret message hidden in *some* of the files in the zip folder:
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/data/secret-messages.zip", 
+              destfile = "secret-messages.zip")
+
+unzip("secret-messages.zip", exdir = "secret-messages")
+```
+
+Again, look for `sta323{message-here}`.
 
 ## base R regex
 
@@ -295,131 +558,6 @@ regmatches(txt, regexpr("\\s[a-z]*ng", txt))
 regmatches(txt, regexpr("\\s[A-Z\\|a-z]*ng", txt))
 ```
 :::
-
-## stringr
-
-```{r}
-#| echo: false
-#| warning: false
-library(tidyverse)
-```
-
-`stringr` hosts a convenient set of tools to manipulate strings and extract regular expressions. All functions begin with the prefix `str`.
-
-The best summary of `stringr` functions is [on this cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/master/strings.pdf)
-
-Notice below that the string comes first in these functions (in contrast with `grep`/`sub`)
-
-### Example
-
-```{r}
-txt = c("Luffy: 'I'm going to be king of the pirates! !'", 
-        "The straw hat crew set sail.", 
-        "Nami: 'I'm Going to be the world's greatest navigator!'")
-```
-
-::: panel-tabset
-### str_detect()
-
--   like `grepl`
-
-```{r}
-str_detect(txt, ":")
-```
-
-### str_extract()
-
-```{r}
-str_extract(txt, "\\s[A-Z\\|a-z]*ng") # first instance
-str_extract_all(txt, "\\s[A-Z\\|a-z]*ng") %>% str()
-```
-
-### str_replace
-
-```{r}
-str_replace(txt, "Nami", "Zoro") %>%
-  str_replace("navigator", "swordsman")
-```
-:::
-
-## The power of `str_replace`
-
-```{r}
-no_bots = "My number is one Two tHree 456 fOuR 3 2 1"
-```
-
-```{r}
-str_to_lower(no_bots) %>%
-  str_replace_all(c("one" = "1", "two" = "2", 
-                    "three" = "3", "four" = "4")) %>%
-  str_extract_all("\\d") %>% # simplify arg here could change pipeline
-  unlist() %>%
-  paste(collapse = "") # or use str_c(collapse = "")
-```
-
-## Exercise 1
-
-```{r}
-#| echo: false 
-#| eval: false
-# to make another example in the future
-sample(letters, 100000, replace = TRUE) %>% paste(collapse = "") %>% write("~/Desktop/secret-message.txt")
-```
-
-Download the files `secret-message.txt` and `emails.txt` using the command below in the console:
-
-```{r}
-#| eval: false
-download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
-              destfile = "secret-message.txt")
-
-download.file("https://sta323-sp23.github.io/data/emails.txt", 
-              destfile = "emails.txt")
-```
-
-For each of the following exercises, you can choose to use either terminal or R, or both if you have time. Note: if you are using R you might want to read in the file as a string with `read_lines()`.
-
-### part 1
-
-In `secret-message.txt`, find the secret message. It will be of the form `sta323{secret-message}` where `secret-message` is replaced by some other text.
-
-### part 2
-
-In `emails.txt` extract the unique part of the email address (part before the "\@") and count the number of each hosting domain, i.e. count how many emails are `Duke` emails and how many are `gmail`.
-
-## Exercise 2
-
-The power and ease of the terminal...
-
-Using an appropriate regex and the terminal `grep`, find the secret message hidden in *some* of the files in the zip folder:
-
-```{r}
-#| eval: false
-download.file("https://sta323-sp23.github.io/data/secret-messages.zip", 
-              destfile = "secret-messages.zip")
-
-unzip("secret-messages.zip", exdir = secret-messages)
-```
-
-Again, look for `sta323{message-here}`.
-
-# Appendix
-
-## base R string toolkit
-
-The base language provides a number helper functions for additional manipulation of string objects:
-
--   `paste()`, `paste0()` - concatenate strings
--   `substr()`, `substring()` - extract or replace substrings
--   `sprintf()` - C-like string construction
--   `nchar()` - counts characters
--   `strsplit()` - split a string into substrings
--   `tolower()` - make string all lowercase
--   `toupper()` - make string all uppercase
-
-...many more.
-
-the "See Also" section of the the above functions' documentation is a good place to discover additional functions.
 
 ## basic unix toolkit
 
