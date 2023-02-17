@@ -704,6 +704,19 @@
 
 </div>
 <p>Download the files <code>secret-message.txt</code> and <code>emails.txt</code> using the command below in the console:</p>
+<div class="callout callout-important callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>WARNING</strong></p>
+</div>
+<div class="callout-content">
+<p>DO NOT VIEW THE FILE – YOUR CONTAINER MAY CRASH!</p>
+</div>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/secret-message.txt"</span>, </span>
 <span id="cb38-2"><a href="#cb38-2"></a>              <span class="at">destfile =</span> <span class="st">"secret-message.txt"</span>)</span>
@@ -711,19 +724,7 @@
 <span id="cb38-4"><a href="#cb38-4"></a><span class="fu">download.file</span>(<span class="st">"https://sta323-sp23.github.io/data/emails.txt"</span>, </span>
 <span id="cb38-5"><a href="#cb38-5"></a>              <span class="at">destfile =</span> <span class="st">"emails.txt"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout callout-tip callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Hint</strong></p>
-</div>
-<div class="callout-content">
-<p>read in the file as a string with <code>read_lines()</code></p>
-</div>
-</div>
-</div>
+<p><em>Hint</em>: read in the file as a string with <code>read_lines()</code></p>
 <h3 id="part-1">part 1</h3>
 <p>In <code>secret-message.txt</code>, find the secret message. It will be of the form <code>sta323{secret-message}</code> where <code>secret-message</code> is replaced by some other text.</p>
 <h3 id="part-2">part 2</h3>

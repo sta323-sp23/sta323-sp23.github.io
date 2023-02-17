@@ -279,6 +279,11 @@ x %>%
 
 Download the files `secret-message.txt` and `emails.txt` using the command below in the console:
 
+::: callout-important 
+## WARNING
+DO NOT VIEW THE FILE -- YOUR CONTAINER MAY CRASH!
+:::
+
 ```{r}
 #| eval: false
 download.file("https://sta323-sp23.github.io/data/secret-message.txt", 
@@ -288,11 +293,8 @@ download.file("https://sta323-sp23.github.io/data/emails.txt",
               destfile = "emails.txt")
 ```
 
-::: callout-tip
-## Hint
 
-read in the file as a string with `read_lines()`
-:::
+*Hint*: read in the file as a string with `read_lines()`
 
 ### part 1
 

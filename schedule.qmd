@@ -42,50 +42,50 @@ schedule %>%
   kable(format = "markdown")
 ```
 
-| Week | Date       | Topic                                     |              Notes              | Lab                      | Exam | Project |
-|:---------|:------------|:-------------|:--------:|:------------|:--------------------|:---------|
-| 0    | Fri Jan 13 | welcome                                   |  [💻](/slides/01-welcome.html)  |                          |      |         |
-| 1    | Tue Jan 17 | git                                       | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |      |         |
-|      | Wed Jan 18 | control flow, loops and functions         |    [💻](/slides/lec02.html)     |                          |      |         |
-|      | Fri Jan 20 | NAs, lists, NULL and attributes           |    [💻](/slides/lec03.html)     |                          |      |         |
-| 2    | Tue Jan 24 | if it's a function, fix it                |                                 | [lab 1](/labs/lab1.html) |      |         |
-|      | Wed Jan 25 | Object oriented programming               |    [💻](/slides/lec04.html)     |                          |      |         |
-|      | Fri Jan 27 | tidy data and dplyr           |  [💻](/slides/lec05.html)                                |                          |      |         |
-| 3    | Tue Jan 31 | computational masonry                                          |                                 |   [lab 2](/labs/lab2.html)                       |      |         |
-|      | Wed Feb 01 | subsetting                                   | [💻](/slides/lec06.html)                                |                          |      |         |
-|      | Fri Feb 03 | ggplot2          | [💻](/slides/lec07.html)                                |                          |      |         |
-| 4    | Tue Feb 07 | dream of plots                                          |                                 |  [lab 3](/labs/lab3.html)                        |      |         |
-|      | Wed Feb 08 | functional programming and purrr   |  [💻](/slides/lec08.html)                               |                          |      |         |
-|      | Fri Feb 10 | regular expressions                     |  [💻](/slides/lec09.html)                               |                          |      |         |
-| 5    | Tue Feb 14 | wrangling the written word                                         |                                 |  [lab 4](/labs/lab4.html)                         |      |         |
-|      | Wed Feb 15 | catch-up |                                 |                          |      |         |
-|      | Fri Feb 17 | review / questions / exam                                   |                                 |                          | exam 1 release  |         |
-| 6    | Tue Feb 21 | no lab: exam 1                                        |                                 | exam 1 due                         |      |         |
-|      | Wed Feb 22 | complexity, profiling, parallelization             |                                 |                          |      |         |
-|      | Fri Feb 24 |statistical modeling overview                    |                                 |                          |      |         |
-| 7    | Tue Feb 28 |                                           |                                 |                          |      |         |
-|      | Wed Mar 01 | intro to optimization                |                                 |                          |      |         |
-|      | Fri Mar 03 | univariate Newton-Raphson      |                                 |                          |      |         |
-| 8    | Tue Mar 07 |                                           |                                 |                          |      |         |
-|      | Wed Mar 08 | multivariate Newton-Raphson examples                            |                                 |                          |      |         |
-|      | Fri Mar 10 | MM algorithm I                          |                                 |                          |      |         |
-| 9    | Tue Mar 14 | NO CLASS: Spring break                    |                                 |                          |      |         |
-|      | Wed Mar 15 | NO CLASS: Spring break                    |                                 |                          |      |         |
-|      | Fri Mar 17 | NO CLASS: Spring break                    |                                 |                          |      |         |
-| 10   | Tue Mar 21 |                                           |                                 |                          |      |         |
-|      | Wed Mar 22 | MM algorithm II                            |                                 |                          |      |         |
-|      | Fri Mar 24 | EM algorithm                         |                                 |                          |      |         |
-| 11   | Tue Mar 28 |                                           |                                 |                          |      |         |
-|      | Wed Mar 29 | shiny                              |                                 |                          |      |         |
-|      | Fri Mar 31 | project tips                                     |                                 |                          |      |         |
-| 12   | Tue Apr 04 |                                           |                                 |                          |      |         |
-|      | Wed Apr 05 | matrices and BLAS                   |                                 |                          |      |         |
-|      | Fri Apr 07 | Monte Carlo integration                    |                                 |                          |      |         |
-| 13   | Tue Apr 11 |                                           |                                 |                          |      |         |
-|      | Wed Apr 12 | importance sampling                                 |                                 |                          |      |         |
-|      | Fri Apr 14 | covariance                                |                                 |                          |      |         |
-| 14   | Tue Apr 18 |                                           |                                 |                          |      |         |
-|      | Wed Apr 19 | APIs                                      |                                 |                          |      |         |
-|      | Fri Apr 21 | SQL                                       |                                 |                          |      |         |
-| 15   | Tue Apr 25 | project presentations                     |                                 |                          |      |         |
-|      | Wed Apr 26 | special topic                             |                                 |                          |      |         |
+| Week | Date       | Topic                                  |              Notes              | Lab                      | Exam                                  | Project |
+|:----------|:----------|:----------|:---------:|:----------|:----------|:----------|
+| 0    | Fri Jan 13 | welcome                                |  [💻](/slides/01-welcome.html)  |                          |                                       |         |
+| 1    | Tue Jan 17 | git                                    | [💻](/slides/lab0-welcome.html) | [lab 0](/labs/lab0.html) |                                       |         |
+|      | Wed Jan 18 | control flow, loops and functions      |    [💻](/slides/lec02.html)     |                          |                                       |         |
+|      | Fri Jan 20 | NAs, lists, NULL and attributes        |    [💻](/slides/lec03.html)     |                          |                                       |         |
+| 2    | Tue Jan 24 | if it's a function, fix it             |                                 | [lab 1](/labs/lab1.html) |                                       |         |
+|      | Wed Jan 25 | Object oriented programming            |    [💻](/slides/lec04.html)     |                          |                                       |         |
+|      | Fri Jan 27 | tidy data and dplyr                    |    [💻](/slides/lec05.html)     |                          |                                       |         |
+| 3    | Tue Jan 31 | computational masonry                  |                                 | [lab 2](/labs/lab2.html) |                                       |         |
+|      | Wed Feb 01 | subsetting                             |    [💻](/slides/lec06.html)     |                          |                                       |         |
+|      | Fri Feb 03 | ggplot2                                |    [💻](/slides/lec07.html)     |                          |                                       |         |
+| 4    | Tue Feb 07 | dream of plots                         |                                 | [lab 3](/labs/lab3.html) |                                       |         |
+|      | Wed Feb 08 | functional programming and purrr       |    [💻](/slides/lec08.html)     |                          |                                       |         |
+|      | Fri Feb 10 | regular expressions                    |    [💻](/slides/lec09.html)     |                          |                                       |         |
+| 5    | Tue Feb 14 | wrangling the written word             |                                 | [lab 4](/labs/lab4.html) |                                       |         |
+|      | Wed Feb 15 | catch-up                               |                                 |                          |                                       |         |
+|      | Fri Feb 17 | review / questions / exam              |                                 |                          | \[exam 1 release\](/exams/exam01.html |         |
+| 6    | Tue Feb 21 | no lab: exam 1                         |                                 | exam 1 due               |                                       |         |
+|      | Wed Feb 22 | complexity, profiling, parallelization |                                 |                          |                                       |         |
+|      | Fri Feb 24 | statistical modeling overview          |                                 |                          |                                       |         |
+| 7    | Tue Feb 28 |                                        |                                 |                          |                                       |         |
+|      | Wed Mar 01 | intro to optimization                  |                                 |                          |                                       |         |
+|      | Fri Mar 03 | univariate Newton-Raphson              |                                 |                          |                                       |         |
+| 8    | Tue Mar 07 |                                        |                                 |                          |                                       |         |
+|      | Wed Mar 08 | multivariate Newton-Raphson examples   |                                 |                          |                                       |         |
+|      | Fri Mar 10 | MM algorithm I                         |                                 |                          |                                       |         |
+| 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
+|      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
+|      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
+| 10   | Tue Mar 21 |                                        |                                 |                          |                                       |         |
+|      | Wed Mar 22 | MM algorithm II                        |                                 |                          |                                       |         |
+|      | Fri Mar 24 | EM algorithm                           |                                 |                          |                                       |         |
+| 11   | Tue Mar 28 |                                        |                                 |                          |                                       |         |
+|      | Wed Mar 29 | shiny                                  |                                 |                          |                                       |         |
+|      | Fri Mar 31 | project tips                           |                                 |                          |                                       |         |
+| 12   | Tue Apr 04 |                                        |                                 |                          |                                       |         |
+|      | Wed Apr 05 | matrices and BLAS                      |                                 |                          |                                       |         |
+|      | Fri Apr 07 | Monte Carlo integration                |                                 |                          |                                       |         |
+| 13   | Tue Apr 11 |                                        |                                 |                          |                                       |         |
+|      | Wed Apr 12 | importance sampling                    |                                 |                          |                                       |         |
+|      | Fri Apr 14 | covariance                             |                                 |                          |                                       |         |
+| 14   | Tue Apr 18 |                                        |                                 |                          |                                       |         |
+|      | Wed Apr 19 | APIs                                   |                                 |                          |                                       |         |
+|      | Fri Apr 21 | SQL                                    |                                 |                          |                                       |         |
+| 15   | Tue Apr 25 | project presentations                  |                                 |                          |                                       |         |
+|      | Wed Apr 26 | special topic                          |                                 |                          |                                       |         |
