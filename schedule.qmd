@@ -59,7 +59,7 @@ schedule %>%
 |      | Fri Feb 10 | regular expressions                    |    [💻](/slides/lec09.html)     |                          |                                       |         |
 | 5    | Tue Feb 14 | wrangling the written word             |                                 | [lab 4](/labs/lab4.html) |                                       |         |
 |      | Wed Feb 15 | catch-up                               |                                 |                          |                                       |         |
-|      | Fri Feb 17 | review / questions / exam              |                                 |                          | \[exam 1 release\](/exams/exam01.html |         |
+|      | Fri Feb 17 | review / questions / exam              |                                 |                          | [exam 1 release](/exams/exam01.html) |         |
 | 6    | Tue Feb 21 | no lab: exam 1                         |                                 | exam 1 due               |                                       |         |
 |      | Wed Feb 22 | complexity, profiling, parallelization |                                 |                          |                                       |         |
 |      | Fri Feb 24 | statistical modeling overview          |                                 |                          |                                       |         |
