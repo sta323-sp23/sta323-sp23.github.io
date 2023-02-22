@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\ncomplexity, profiling, parallelization\n\n\n\n\n\n\n\nFri Feb 24\nstatistical modeling overview\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nintro to optimization\n\n\n\n\n\n\n\nFri Mar 03\nunivariate Newton-Raphson\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm I\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 24\nEM algorithm\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny\n\n\n\n\n\n\n\nFri Mar 31\nproject tips\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Apr 07\nMonte Carlo integration\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nimportance sampling\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nObject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\nexam 1 due\n\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nstatistical modeling overview\n\n\n\n\n\n\n7\nTue Feb 28\n\n\n\n\n\n\n\n\nWed Mar 01\nintro to optimization\n\n\n\n\n\n\n\nFri Mar 03\nunivariate Newton-Raphson\n\n\n\n\n\n\n8\nTue Mar 07\n\n\n\n\n\n\n\n\nWed Mar 08\nmultivariate Newton-Raphson examples\n\n\n\n\n\n\n\nFri Mar 10\nMM algorithm I\n\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nMM algorithm II\n\n\n\n\n\n\n\nFri Mar 24\nEM algorithm\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nshiny\n\n\n\n\n\n\n\nFri Mar 31\nproject tips\n\n\n\n\n\n\n12\nTue Apr 04\n\n\n\n\n\n\n\n\nWed Apr 05\nmatrices and BLAS\n\n\n\n\n\n\n\nFri Apr 07\nMonte Carlo integration\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nimportance sampling\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\n\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26\nspecial topic"
   },
   {
     "objectID": "links.html",
@@ -2413,5 +2413,285 @@
     "title": "Exam 01 Instructions",
     "section": "Academic Integrity",
     "text": "Academic Integrity\nBy taking this exam, you pledge to uphold the Duke Community Standard:\n\nI will not lie, cheat, or steal in my academic endeavors;\nI will conduct myself honorably in all my endeavors; and\nI will act if the Standard is compromised."
+  },
+  {
+    "objectID": "slides/lec11.html#overview",
+    "href": "slides/lec11.html#overview",
+    "title": "Intro to optimization",
+    "section": "Overview",
+    "text": "Overview\nTo to develop a statistical model means to propose a mechanism by which data are generated.\nFor example, a company wants to gain understanding of how different age demographics interact with their product. The company releases a survey that contains the following prompt:\nSelect your age category:\n\n1. <18\n2. 18-24\n3. 25-35\n4. 36-49\n5. 50-64\n6. 65+ \nThere are six possible selections.\nImagine each survey subject rolls a six-sided die and then answers with the category the die lands. This is an example of a data-generative model: a proposed mechanism by which the data is generated."
+  },
+  {
+    "objectID": "slides/lec11.html#parametric-distributions",
+    "href": "slides/lec11.html#parametric-distributions",
+    "title": "Intro to optimization",
+    "section": "Parametric distributions",
+    "text": "Parametric distributions"
+  },
+  {
+    "objectID": "slides/lec11.html#deterministic-and-stochastic-components",
+    "href": "slides/lec11.html#deterministic-and-stochastic-components",
+    "title": "Intro to optimization",
+    "section": "Deterministic and stochastic components",
+    "text": "Deterministic and stochastic components"
+  },
+  {
+    "objectID": "slides/lec11.html#structure-of-the-data",
+    "href": "slides/lec11.html#structure-of-the-data",
+    "title": "Intro to optimization",
+    "section": "Structure of the data",
+    "text": "Structure of the data"
+  },
+  {
+    "objectID": "slides/lec11.html#regression",
+    "href": "slides/lec11.html#regression",
+    "title": "Intro to optimization",
+    "section": "Regression",
+    "text": "Regression"
+  },
+  {
+    "objectID": "slides/lec11.html#least-squares",
+    "href": "slides/lec11.html#least-squares",
+    "title": "Intro to optimization",
+    "section": "Least squares",
+    "text": "Least squares\nIn ordinary least squares regression, the goal is to minimize the sum of squared residuals.\n\\[\n\\text{argmin} \\beta\n\\]\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec10.html#measuring-efficiency",
+    "href": "slides/lec10.html#measuring-efficiency",
+    "title": "Complexity and parallelization",
+    "section": "Measuring efficiency",
+    "text": "Measuring efficiency\nflops or floating point operations measure the efficiency of an algorithm. flops consist of the binary floating point operations: addition, subtraction, multiplication, division and comparison. Individual floating point operations are performed by a single “core” of your computer’s CPU or GPU.\nWe use “big O” \\(\\mathcal{O}(n)\\) notation to denote the complexity of an algorithm. For example,\n\nmatrix-vector multiplication A %*% b, where \\(A\\) is \\(m \\times n\\) and \\(b\\) is \\(n \\times 1\\) takes \\(2mn\\) or \\(\\mathcal{O}(mn)\\) flops.\nmatrix-matrix multiplication A %*% B, where \\(A\\) is \\(m \\times n\\) and \\(B\\) is \\(n \\times p\\) takes \\(2mnp\\) or \\(\\mathcal{O}(mnp)\\) flops.\n\nNotice that in reporting complexity of each example we drop the leading constant “2”.\nA hierarchy of computational complexity (let \\(n\\) be the problem size):\n\n\n\n\n\nexponential order: \\(\\mathcal{O}(b^n)\\)\nNP-hard (horrible)\n\n\npolynomial order: \\(\\mathcal{O}(n^q)\\)\ndoable\n\n\n\\(\\mathcal{O}(n \\log n)\\)\nfast\n\n\nlinear order: \\(\\mathcal{O}(n)\\)\nfast\n\n\nlog order: \\(\\mathcal{O}(\\log n)\\)\nsuper fast\n\n\n\n\n\n\n\n\n\nNote\n\n\nSome references count multiplication followed by an addition (fused multiply-add, FMA) as one flop.\n\n\n\n{This slide adapted from notes by Dr. Hua Zhou}"
+  },
+  {
+    "objectID": "slides/lec10.html#measuring-efficiency-example",
+    "href": "slides/lec10.html#measuring-efficiency-example",
+    "title": "Complexity and parallelization",
+    "section": "Measuring efficiency (example)",
+    "text": "Measuring efficiency (example)\nSuppose you wish to calculate a likelihood \\(L(x|\\theta)\\) for \\(n\\) iid observations: \\(x = \\{x_i\\}; i \\in \\{1, \\ldots, n \\}\\). The likelihood looks like\n\\[\nL(x|\\theta) = \\prod_i^n f(x_i | \\theta)\n\\] where \\(f\\) is some density function dependent on parameters \\(\\theta\\).\n\\(L(x|\\theta)\\) has \\(\\mathcal{O}(n)\\) complexity, i.e. scales linearly with the number of data points."
+  },
+  {
+    "objectID": "slides/lec10.html#evaluation-matters",
+    "href": "slides/lec10.html#evaluation-matters",
+    "title": "Complexity, profiling, parallelization",
+    "section": "Evaluation matters",
+    "text": "Evaluation matters\nThe form of a mathematical expression and the way the expression should be evaluated in actual practice may be quite different.\nFor example, compare flops of the two mathematically equivalent expressions:\n\nA %*% B %*% x\nA %*% (B %*% x)\n\nwhere A and B are matrices and x is a vector. Which method is faster?\n\n\nN = 1300\nset.seed(1)\nA = matrix(rnorm(N ^ 2), nrow= N)\nB = matrix(rnorm(N ^ 2), nrow = N)\nx = matrix(rnorm(N ^ 2), nrow = N)\n\nbench::mark(\n{C = A %*% B %*% x},\n{A %*% (B %*% x)}\n)\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec10.html#bench",
+    "href": "slides/lec10.html#bench",
+    "title": "Complexity and parallelization",
+    "section": "bench",
+    "text": "bench\n\n\n\n\nd = tibble(\n  x = runif(10000),\n  y=runif(10000)\n)\n(b = bench::mark(\n  d[d$x > 0.5, ],\n  d[which(d$x > 0.5), ],\n  subset(d, x > 0.5),\n  filter(d, x > 0.5)\n))\n\n# A tibble: 4 × 6\n  expression                 min   median `itr/sec` mem_alloc `gc/sec`\n  <bch:expr>            <bch:tm> <bch:tm>     <dbl> <bch:byt>    <dbl>\n1 d[d$x > 0.5, ]        102.92µs 116.71µs     7998.  252.16KB     21.7\n2 d[which(d$x > 0.5), ]  88.08µs     99µs     9353.   271.9KB     51.1\n3 subset(d, x > 0.5)    145.17µs 160.38µs     5938.   288.2KB     35.0\n4 filter(d, x > 0.5)      2.05ms   2.15ms      454.    2.01MB     12.7"
+  },
+  {
+    "objectID": "slides/lec10.html#bench---relative-results",
+    "href": "slides/lec10.html#bench---relative-results",
+    "title": "Complexity and parallelization",
+    "section": "bench - relative results",
+    "text": "bench - relative results\n\nsummary(b, relative = TRUE)\n\n# A tibble: 4 × 6\n  expression              min median `itr/sec` mem_alloc `gc/sec`\n  <bch:expr>            <dbl>  <dbl>     <dbl>     <dbl>    <dbl>\n1 d[d$x > 0.5, ]         1.17   1.18      17.6      1        1.71\n2 d[which(d$x > 0.5), ]  1      1         20.6      1.08     4.03\n3 subset(d, x > 0.5)     1.65   1.62      13.1      1.14     2.76\n4 filter(d, x > 0.5)    23.2   21.7        1        8.17     1"
+  },
+  {
+    "objectID": "slides/lec10.html#parallel-base-r",
+    "href": "slides/lec10.html#parallel-base-r",
+    "title": "Complexity, profiling, parallelization",
+    "section": "parallel (base R)",
+    "text": "parallel (base R)\n\ntools for the forking of R processes (some functions do not work on Windows)\nCore functions:\n\ndetectCores\npvec\nmclapply\nmcparallel & mccollect"
+  },
+  {
+    "objectID": "slides/lec10.html#parallel",
+    "href": "slides/lec10.html#parallel",
+    "title": "Complexity, profiling, parallelization",
+    "section": "parallel",
+    "text": "parallel\n\nbase R package\ntools for the forking of R processes (some functions do not work on Windows)\nCore functions:\n\ndetectCores\npvec\nmclapply\nmcparallel & mccollect"
+  },
+  {
+    "objectID": "slides/lec10.html#pvec",
+    "href": "slides/lec10.html#pvec",
+    "title": "Complexity and parallelization",
+    "section": "pvec",
+    "text": "pvec\nParallelization of a vectorized function call. Forking takes time.\n\nlibrary(parallel)\nsystem.time(pvec(1:1e7, sqrt, mc.cores = 1))\n\n## user  system elapsed \n## 0.031   0.032   0.063 \n\nsystem.time(pvec(1:1e7, sqrt, mc.cores = 4))\n\n## user  system elapsed \n## 0.249   0.197   0.323 \n\nsystem.time(pvec(1:1e7, sqrt, mc.cores = 8))\n\n## user  system elapsed \n## 0.156   0.225   0.204 \n\n\n?proc.time for info\nUser CPU time: the CPU time spent by the current process, in our case, the R session\nSystem CPU time: the CPU time spent by the OS on behalf of the current running process\n\nNote that the wall time may be the less than the sum total (user + system) since parallelized processes accumulate user/system time at the same time."
+  },
+  {
+    "objectID": "slides/lec10.html#pvec---benchsystem_time",
+    "href": "slides/lec10.html#pvec---benchsystem_time",
+    "title": "Complexity and parallelization",
+    "section": "pvec - bench::system_time",
+    "text": "pvec - bench::system_time\n\nlibrary(bench)\nsystem_time(pvec(1:1e7, sqrt, mc.cores = 1))\n\n## process    real \n## 83.5ms  83.2ms \n\nsystem_time(pvec(1:1e7, sqrt, mc.cores = 4))\n\n## process    real \n## 266ms   312ms \n\nsystem_time(pvec(1:1e7, sqrt, mc.cores = 8))\n\n## process    real \n## 249ms   262ms"
+  },
+  {
+    "objectID": "slides/lec10.html#mclapply",
+    "href": "slides/lec10.html#mclapply",
+    "title": "Complexity and parallelization",
+    "section": "mclapply",
+    "text": "mclapply\n\nParallelized lapply\n\n\nsystem.time(rnorm(1e6))\n\n## user  system elapsed \n## 0.047   0.004   0.051 \n\nsystem.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 2)))\n\n## user  system elapsed \n## 0.055   0.032   0.049 \n\nsystem.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 4)))\n\n## user  system elapsed \n## 0.058   0.039   0.036"
+  },
+  {
+    "objectID": "slides/lec10.html#mclapply-1",
+    "href": "slides/lec10.html#mclapply-1",
+    "title": "Complexity and parallelization",
+    "section": "mclapply",
+    "text": "mclapply\n\nsystem.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 8)))\n\n## user  system elapsed \n## 0.064   0.068   0.039 \n\nsystem.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 10)))\n\n## user  system elapsed \n## 0.068   0.084   0.046 \n\nsystem.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 12)))\n\n## user  system elapsed \n## 0.067   0.078   0.045"
+  },
+  {
+    "objectID": "slides/lec10.html#what-is-parallelization",
+    "href": "slides/lec10.html#what-is-parallelization",
+    "title": "Complexity and parallelization",
+    "section": "What is parallelization?",
+    "text": "What is parallelization?\n\n“parallelization” or “parallel computing” means deploying an algorithm’s calculations across several cores of a computer to perform computation at the same time\n\nTerminology\n\nCPU: central processing unit, primary component of a computer that processes instructions\nCore: an individual processor within a CPU, more cores can improve performance and efficiency\nForking: a copy of the current R session is moved to new cores.\n\nNot available on Windows\nLess overhead and easy to implement\n\nSockets: a new R session is launched on each core.\n\nAvailable on all systems\nEach process on each core is unique"
+  },
+  {
+    "objectID": "slides/lec10.html#package-parallel",
+    "href": "slides/lec10.html#package-parallel",
+    "title": "Complexity and parallelization",
+    "section": "Package parallel",
+    "text": "Package parallel\n\nbase R package\ntools for the forking of R processes (some functions do not work on Windows)\nCore functions:\n\ndetectCores\npvec\nmclapply\nmcparallel & mccollect"
+  },
+  {
+    "objectID": "slides/lec10.html#mcparallel",
+    "href": "slides/lec10.html#mcparallel",
+    "title": "Complexity and parallelization",
+    "section": "mcparallel",
+    "text": "mcparallel\nAsynchronously evaluation of an R expression in a separate process\n\nm = mcparallel(rnorm(1e6))\nn = mcparallel(rbeta(1e6,1,1))\no = mcparallel(rgamma(1e6,1,1))\n\nstr(m)\n\nList of 2\n $ pid: int 12106\n $ fd : int [1:2] 4 7\n - attr(*, \"class\")= chr [1:3] \"parallelJob\" \"childProcess\" \"process\"\n\nstr(n)\n\nList of 2\n $ pid: int 12107\n $ fd : int [1:2] 5 9\n - attr(*, \"class\")= chr [1:3] \"parallelJob\" \"childProcess\" \"process\""
+  },
+  {
+    "objectID": "slides/lec10.html#mccollect",
+    "href": "slides/lec10.html#mccollect",
+    "title": "Complexity and parallelization",
+    "section": "mccollect",
+    "text": "mccollect\nChecks mcparallel objects for completion\n\nstr(mccollect(list(m,n,o)))\n\nList of 3\n $ 12106: num [1:1000000] 1.62 0.904 -1.865 -2.384 -0.16 ...\n $ 12107: num [1:1000000] 0.224 0.241 0.733 0.532 0.129 ...\n $ 12108: num [1:1000000] 0.2199 0.0562 0.3705 0.998 6.7013 ...\n\n\n\nmccollect - waiting\n\np = mcparallel(mean(rnorm(1e5)))\nmccollect(p, wait = FALSE, 10) # will retrieve the result (since it's fast)\n\n$`12109`\n[1] 0.001003654\n\nmccollect(p, wait = FALSE) # will signal the job as terminating\n\nWarning in selectChildren(jobs, timeout): cannot wait for child 12109 as it does\nnot exist\n\n\nNULL"
+  },
+  {
+    "objectID": "slides/lec10.html#domc-foreach-1",
+    "href": "slides/lec10.html#domc-foreach-1",
+    "title": "Complexity and parallelization",
+    "section": "doMC & foreach",
+    "text": "doMC & foreach\nPackages by Revolution Analytics that provides the foreach function which is a parallelizable for loop.\nPackage doMC is a parallel backend for the foreach package - a package that allows you to execute for loops in parallel.\n\nlibrary(doMC)\n\nLoading required package: foreach\n\n\n\nAttaching package: 'foreach'\n\n\nThe following objects are masked from 'package:purrr':\n\n    accumulate, when\n\n\nLoading required package: iterators\n\n\nCore functions:\n\ndoMC::registerDoMC sets the number of cores for the parallel backend to be used with foreach\nforeach, %dopar%, %do%\n\ndoMC serves as an interface between foreach and parallel Since parallel only works with systems that support forking, these functions will not work properly on Windows."
+  },
+  {
+    "objectID": "slides/lec10.html#set-workers",
+    "href": "slides/lec10.html#set-workers",
+    "title": "Complexity and parallelization",
+    "section": "Set workers",
+    "text": "Set workers\nTo get started, set the number of cores with registerDoMC().\n\n# check cores set up\ngetDoParWorkers()\n\n[1] 1\n\n# set 4 cores\nregisterDoMC(4)\ngetDoParWorkers()\n\n[1] 4"
+  },
+  {
+    "objectID": "slides/lec10.html#serial-and-parallel-with-foreach",
+    "href": "slides/lec10.html#serial-and-parallel-with-foreach",
+    "title": "Complexity and parallelization",
+    "section": "Serial and parallel with foreach()",
+    "text": "Serial and parallel with foreach()\n\n\nSequential\n\n%do% single execution\n\n\nforeach(i = 1:4) %do% \n  sort(runif(n = 1e7, max = i))[1]\n\n[[1]]\n[1] 1.653098e-08\n\n[[2]]\n[1] 1.634471e-07\n\n[[3]]\n[1] 2.214219e-07\n\n[[4]]\n[1] 2.998859e-07\n\ntimes(2) %do%\n  sort(runif(n = 1e7))[1]\n\n[1] 1.515727e-07 8.847564e-09\n\n\n\nParallel\n\n%dopar% multicore execution\n\n\nforeach(i = 1:4) %dopar%\n  sort(runif(n = 1e7, max = i))[1]\n\n[[1]]\n[1] 1.001172e-08\n\n[[2]]\n[1] 1.653098e-07\n\n[[3]]\n[1] 5.587935e-09\n\n[[4]]\n[1] 1.529232e-06\n\ntimes(2) %dopar%\n  sort(runif(n = 1e7))[1]\n\n[1] 2.444722e-08 1.024455e-08"
+  },
+  {
+    "objectID": "slides/lec10.html#time-comparison",
+    "href": "slides/lec10.html#time-comparison",
+    "title": "Complexity and parallelization",
+    "section": "Time comparison",
+    "text": "Time comparison\n\n\nSequential\n\nsystem.time({\nforeach(i = 1:4) %do% \n  sort(runif(n = 1e7, max = i))[1]\n\ntimes(2) %do%\n  sort(runif(n = 1e7))[1]\n})\n\n##  user  system elapsed \n## 3.371   0.143   3.507 \n\n\nParallel\n\nsystem.time({\nforeach(i = 1:4) %dopar% \n  sort(runif(n = 1e7, max = i))[1]\n\ntimes(2) %dopar%\n  sort(runif(n = 1e7))[1]\n})\n\n##  user  system elapsed \n## 2.917   0.603   1.376"
+  },
+  {
+    "objectID": "slides/lec10.html#things-to-know-about-foreach",
+    "href": "slides/lec10.html#things-to-know-about-foreach",
+    "title": "Complexity and parallelization",
+    "section": "Things to know about foreach",
+    "text": "Things to know about foreach\nforeach can iterate across more than one value, but it doesn’t do length coercion.\n\n\nNote: foreach is iterating over both simultaneously. This is not a nested for loop.\n\nforeach(i = 1:3, j = 1:3) %do% {\n  sqrt(i^2+j^2)   \n}\n\n[[1]]\n[1] 1.414214\n\n[[2]]\n[1] 2.828427\n\n[[3]]\n[1] 4.242641\n\n\n\nNote: foreach coerces the longer vector to be shorter!\n\nforeach(i = 1:5, j = 1:2) %do% {\n  sqrt(i^2+j^2)   \n}\n\n[[1]]\n[1] 1.414214\n\n[[2]]\n[1] 2.828427"
+  },
+  {
+    "objectID": "slides/lec10.html#foreach-bookkeeping",
+    "href": "slides/lec10.html#foreach-bookkeeping",
+    "title": "Complexity and parallelization",
+    "section": "foreach bookkeeping",
+    "text": "foreach bookkeeping\n\nforeach does some bookkeeping for you and returns a list by default. Compare this to the traditional for loop that does no bookkeeping.\nyou can easily customize the bookkeeping.\n\n\nforeach(i = 1:5, .combine='c') %do% {\n  sqrt(i)\n}\n\n[1] 1.000000 1.414214 1.732051 2.000000 2.236068\n\nforeach(i = 1:5, .combine='cbind') %do% {\n  sqrt(i)\n}\n\n     result.1 result.2 result.3 result.4 result.5\n[1,]        1 1.414214 1.732051        2 2.236068\n\nforeach(i = 1:5, .combine='+') %do% {\n  sqrt(i)\n}\n\n[1] 8.382332"
+  },
+  {
+    "objectID": "slides/lec10.html#nested-foreach",
+    "href": "slides/lec10.html#nested-foreach",
+    "title": "Complexity and parallelization",
+    "section": "nested foreach",
+    "text": "nested foreach\n\nThe %:% operator is the nesting operator, used for creating nested foreach loops.\n\n\nforeach(i = 1:4, .combine = \"c\") %:% \n  foreach(j = 0:1, .combine = \"c\") %dopar% \n    {i ^ j}\n\n[1] 1 1 1 2 1 3 1 4\n\n\n\n\nforeach(i = 1:4, .combine = \"data.frame\") %:% \n  foreach(j = 0:1, .combine = \"c\") %dopar% \n    {i ^ j}\n\n  result.1 result.2 result.3 result.4\n1        1        1        1        1\n2        1        2        3        4\n\n\n\n\n\nforeach(i = 1:4, .combine = \"c\") %:% \n  foreach(j = 0:1, .combine = \"+\") %dopar% \n    {i ^ j}\n\n[1] 2 3 4 5"
+  },
+  {
+    "objectID": "slides/lec10.html#section",
+    "href": "slides/lec10.html#section",
+    "title": "Complexity and parallelization",
+    "section": "",
+    "text": "plan(multisession, workers = 8)\nfuture_map_dbl(mtcars, mean)\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\n\n\nNot sure we are running in parallel?\n\n\n\nsystem.time({map_dbl(mtcars, ~ {Sys.sleep(.1); mean(.x)})})\n\n   user  system elapsed \n  0.004   0.000   1.138 \n\n\n\nsystem.time({future_map_dbl(mtcars, ~ {Sys.sleep(.1); mean(.x)})})\n\n   user  system elapsed \n  0.043   0.002   0.258 \n\n\n\n\n\nplan(sequential)"
+  },
+  {
+    "objectID": "slides/lec10.html#future",
+    "href": "slides/lec10.html#future",
+    "title": "Complexity and parallelization",
+    "section": "future",
+    "text": "future\nA “future” is an abstraction for a value that may be available at some point in the future.\nThe purpose of the future package is to provide a very simple and uniform way of evaluating R expressions asynchronously using various resources available to the user.\n\nSee the CRAN future documentation for further reading."
+  },
+  {
+    "objectID": "slides/lec10.html#furrr-and-purrr",
+    "href": "slides/lec10.html#furrr-and-purrr",
+    "title": "Complexity and parallelization",
+    "section": "furrr and purrr",
+    "text": "furrr and purrr\n\nfurrr functions are just like purrr functions but begin with future_\n\nExample\n\nlibrary(furrr)\nlibrary(tidyverse)\n\n\nmap_dbl(mtcars, mean)\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500 \n\nfuture_map_dbl(mtcars, mean)\n\n       mpg        cyl       disp         hp       drat         wt       qsec \n 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 \n        vs         am       gear       carb \n  0.437500   0.406250   3.687500   2.812500"
+  },
+  {
+    "objectID": "slides/lec10.html#example-1",
+    "href": "slides/lec10.html#example-1",
+    "title": "Complexity and parallelization",
+    "section": "Example",
+    "text": "Example\n\nHow could you parallelize the text mining of lab 4?\nDemo\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "labs/lab6.html",
+    "href": "labs/lab6.html",
+    "title": "Lab 6:",
+    "section": "",
+    "text": "By the end of the lab, you will…"
+  },
+  {
+    "objectID": "labs/lab6.html#exercises",
+    "href": "labs/lab6.html#exercises",
+    "title": "Lab 6:",
+    "section": "Exercises",
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-5.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2."
+  },
+  {
+    "objectID": "labs/lab6.html#style-guidelines",
+    "href": "labs/lab6.html#style-guidelines",
+    "title": "Lab 6:",
+    "section": "Style guidelines",
+    "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
+  },
+  {
+    "objectID": "labs/lab6.html#submitting-your-lab",
+    "href": "labs/lab6.html#submitting-your-lab",
+    "title": "Lab 6:",
+    "section": "Submitting your lab",
+    "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
+  },
+  {
+    "objectID": "labs/lab7.html",
+    "href": "labs/lab7.html",
+    "title": "Lab 5:",
+    "section": "",
+    "text": "By the end of the lab, you will…"
+  },
+  {
+    "objectID": "labs/lab7.html#exercises",
+    "href": "labs/lab7.html#exercises",
+    "title": "Lab 5:",
+    "section": "Exercises",
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-5.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2."
+  },
+  {
+    "objectID": "labs/lab7.html#style-guidelines",
+    "href": "labs/lab7.html#style-guidelines",
+    "title": "Lab 5:",
+    "section": "Style guidelines",
+    "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
+  },
+  {
+    "objectID": "labs/lab7.html#submitting-your-lab",
+    "href": "labs/lab7.html#submitting-your-lab",
+    "title": "Lab 5:",
+    "section": "Submitting your lab",
+    "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
   }
 ]

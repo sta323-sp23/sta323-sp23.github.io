@@ -1,0 +1,61 @@
+---
+title: "Lab 6:"
+subtitle: "Due  5:00pm"  
+editor: source
+execute:
+  eval: false
+---
+
+
+By the end of the lab, you will...
+
+- 
+- 
+
+::: callout-warning
+Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is "accidentally" pushed.
+:::
+
+# Getting started
+
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-5-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+
+-   Navigate to your `lab-5` folder and open the `.Rproj` file.
+
+-   Open the Quarto (`.qmd`) file, change the author name to your team name followed by a colon and then the names of the team members.
+
+## Exercises
+
+For all exercises, you should respond in the space provided in the template `lab-5.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
+
+### 1. 
+
+### 2. 
+
+## Style guidelines
+
+All assignments in this course must employ proper coding style, as outlined below:
+
+-   All code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.
+
+-   All commas should be followed by a space.
+
+-   All binary operators should be surrounded by space. For example `x + y` is appropriate. `x+y` is not.
+
+-   All pipes `%>%` or `|>` as well as ggplot layers `+` should be followed by a new line.
+
+-   You should be consistent with stylistic choices, e.g. only use 1 of `=` vs `<-` and `%>%` vs `|>`
+
+-   Your name should be at the top (in the YAML) of each document under "author:"
+
+-   All code chunks should be named (with names that don't have spaces, e.g. `ex-1`, `ex-2` etc.)
+
+-   File names in your GitHub repo such as `lab-x.qmd` must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.
+
+Fundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your `.qmd` renders.
+
+If you have any questions about style, please ask a member of the teaching team.
+
+## Submitting your lab
+
+To submit your assignment, simply commit and push your completed `lab-x.qmd` to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see [the syllabus](/syllabus.html)). For this reason, **do not push commits** after you are satisfied with your work, or a late penalty will be applied.

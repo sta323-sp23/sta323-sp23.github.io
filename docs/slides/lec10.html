@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Dr.&nbsp;Alexander Fisher">
-  <title>STA323 - Unix toolkit</title>
+  <title>STA323 - Complexity and parallelization</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -23,6 +23,70 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -321,115 +385,636 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Unix toolkit</h1>
+  <h1 class="title">Complexity and parallelization</h1>
   <p class="author">Dr.&nbsp;Alexander Fisher</p>
   <p class="institute">Duke University</p>
 </section>
 
 <section>
-<section id="basic-tools" class="title-slide slide level1 center">
-<h1>basic tools</h1>
+<section id="computational-complexity" class="title-slide slide level1 center">
+<h1>Computational complexity</h1>
 
 </section>
-<section id="simple-cheat-sheet" class="slide level2">
-<h2>simple cheat sheet</h2>
-<p>A “folder” aka a “directory” is a container. A “file* is an element of a container, e.g.&nbsp;<code>lab-1.qmd</code> is a file contained in a <code>lab-1-username</code> directory.</p>
+<section id="measuring-efficiency" class="slide level2">
+<h2>Measuring efficiency</h2>
+<p><strong>flops</strong> or floating point operations measure the efficiency of an algorithm. <strong>flops</strong> consist of the binary floating point operations: addition, subtraction, multiplication, division and comparison. Individual floating point operations are performed by a single “core” of your computer’s CPU or GPU.</p>
+<p>We use “big O” <span class="math inline">\(\mathcal{O}(n)\)</span> notation to denote the complexity of an algorithm. For example,</p>
+<ul>
+<li><p>matrix-vector multiplication <code>A %*% b</code>, where <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and <span class="math inline">\(b\)</span> is <span class="math inline">\(n \times 1\)</span> takes <span class="math inline">\(2mn\)</span> or <span class="math inline">\(\mathcal{O}(mn)\)</span> flops.</p></li>
+<li><p>matrix-matrix multiplication <code>A %*% B</code>, where <span class="math inline">\(A\)</span> is <span class="math inline">\(m \times n\)</span> and <span class="math inline">\(B\)</span> is <span class="math inline">\(n \times p\)</span> takes <span class="math inline">\(2mnp\)</span> or <span class="math inline">\(\mathcal{O}(mnp)\)</span> flops.</p></li>
+</ul>
+<p>Notice that in reporting complexity of each example we drop the leading constant “2”.</p>
+<p>A hierarchy of computational complexity (let <span class="math inline">\(n\)</span> be the problem size):<br>
+<br>
+</p>
 <table>
-<colgroup>
-<col style="width: 21%">
-<col style="width: 78%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>command</th>
-<th>action</th>
-</tr>
-</thead>
 <tbody>
 <tr class="odd">
-<td><code>$ ls</code></td>
-<td>list files in current directory</td>
+<td>exponential order: <span class="math inline">\(\mathcal{O}(b^n)\)</span></td>
+<td>NP-hard (horrible)</td>
 </tr>
 <tr class="even">
-<td><code>$ pwd</code></td>
-<td>print working directory</td>
+<td>polynomial order: <span class="math inline">\(\mathcal{O}(n^q)\)</span></td>
+<td>doable</td>
 </tr>
 <tr class="odd">
-<td><code>$ cd</code></td>
-<td>change directory<br>
-example: <code>$ cd ..</code> to go to parent directory</td>
+<td><span class="math inline">\(\mathcal{O}(n \log n)\)</span></td>
+<td>fast</td>
 </tr>
 <tr class="even">
-<td><code>$ mkdir dname</code></td>
-<td>make directory “dname”</td>
+<td>linear order: <span class="math inline">\(\mathcal{O}(n)\)</span></td>
+<td>fast</td>
 </tr>
 <tr class="odd">
-<td><code>$ mkdir s{1..5}</code></td>
-<td>overpowered file creation</td>
-</tr>
-<tr class="even">
-<td><code>$ rm /path/to/file</code></td>
-<td>remove a file</td>
-</tr>
-<tr class="odd">
-<td><code>$ rm -rf dname</code></td>
-<td>recursively remove a directory and its contents</td>
-</tr>
-<tr class="even">
-<td><code>$ rm core*</code></td>
-<td>remove all objects in the current working directory that begin with “core”</td>
-</tr>
-<tr class="odd">
-<td><code>$ wc -l</code></td>
-<td>show # lines in a file</td>
-</tr>
-<tr class="even">
-<td><code>$ y &gt; x.txt</code></td>
-<td>pass printed output from command “y” on the left to file “x.txt” on the right<br>
-example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file called “file2” that is a replica of the first N lines of file 1<br>
-</td>
-</tr>
-<tr class="odd">
-<td><code>$ echo 'text here' &gt;&gt; filename</code></td>
-<td>add text to the end of a file</td>
-</tr>
-<tr class="even">
-<td><code>$ man x</code></td>
-<td>pull up documentation for command x, example: <code>$ man ls</code></td>
+<td>log order: <span class="math inline">\(\mathcal{O}(\log n)\)</span></td>
+<td>super fast</td>
 </tr>
 </tbody>
 </table>
+<div class="callout callout-note callout-captioned callout-style-default">
+<div class="callout-body">
+<div class="callout-caption">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Some references count multiplication followed by an addition (fused multiply-add, FMA) as one flop.</p>
+</div>
+</div>
+</div>
+<p>{This slide adapted from <a href="http://hua-zhou.github.io/teaching/biostatm280-2019spring/slides/05-algo/algo.html">notes</a> by Dr.&nbsp;Hua Zhou}</p>
 </section>
-<section id="paths" class="slide level2">
-<h2>paths</h2>
-</section>
-<section id="pathfinding" class="slide level2">
-<h2>pathfinding</h2>
-<h3 id="absolute-paths">absolute paths</h3>
-<h3 id="relative-paths">relative paths</h3>
-</section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
+<section id="measuring-efficiency-example" class="slide level2">
+<h2>Measuring efficiency (example)</h2>
+<p>Suppose you wish to calculate a likelihood <span class="math inline">\(L(x|\theta)\)</span> for <span class="math inline">\(n\)</span> iid observations: <span class="math inline">\(x = \{x_i\}; i \in \{1, \ldots, n \}\)</span>. The likelihood looks like</p>
+<p><span class="math display">\[
+L(x|\theta) = \prod_i^n f(x_i | \theta)
+\]</span> where <span class="math inline">\(f\)</span> is some density function dependent on parameters <span class="math inline">\(\theta\)</span>.</p>
+<p><span class="math inline">\(L(x|\theta)\)</span> has <span class="math inline">\(\mathcal{O}(n)\)</span> complexity, i.e.&nbsp;scales linearly with the number of data points.</p>
 </section></section>
 <section>
-<section id="miscellaneous-tools" class="title-slide slide level1 center">
-<h1>Miscellaneous tools</h1>
+<section id="benchmarking" class="title-slide slide level1 center">
+<h1>Benchmarking</h1>
 
 </section>
-<section id="word-count" class="slide level2">
-<h2>word count</h2>
+<section id="bench" class="slide level2">
+<h2><code>bench</code></h2>
+<div class="cell">
+
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>d <span class="ot">=</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="at">x =</span> <span class="fu">runif</span>(<span class="dv">10000</span>),</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="at">y=</span><span class="fu">runif</span>(<span class="dv">10000</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>)</span>
+<span id="cb1-5"><a href="#cb1-5"></a>(<span class="at">b =</span> bench<span class="sc">::</span><span class="fu">mark</span>(</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  d[d<span class="sc">$</span>x <span class="sc">&gt;</span> <span class="fl">0.5</span>, ],</span>
+<span id="cb1-7"><a href="#cb1-7"></a>  d[<span class="fu">which</span>(d<span class="sc">$</span>x <span class="sc">&gt;</span> <span class="fl">0.5</span>), ],</span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">subset</span>(d, x <span class="sc">&gt;</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="fu">filter</span>(d, x <span class="sc">&gt;</span> <span class="fl">0.5</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 6
+  expression                 min   median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;            &lt;bch:tm&gt; &lt;bch:tm&gt;     &lt;dbl&gt; &lt;bch:byt&gt;    &lt;dbl&gt;
+1 d[d$x &gt; 0.5, ]        102.92µs 116.71µs     7998.  252.16KB     21.7
+2 d[which(d$x &gt; 0.5), ]  88.08µs     99µs     9353.   271.9KB     51.1
+3 subset(d, x &gt; 0.5)    145.17µs 160.38µs     5938.   288.2KB     35.0
+4 filter(d, x &gt; 0.5)      2.05ms   2.15ms      454.    2.01MB     12.7</code></pre>
+</div>
+</div>
 </section>
-<section id="pdfcrop" class="slide level2">
-<h2>pdfcrop</h2>
+<section id="bench---relative-results" class="slide level2">
+<h2><code>bench</code> - relative results</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">summary</span>(b, <span class="at">relative =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 6
+  expression              min median `itr/sec` mem_alloc `gc/sec`
+  &lt;bch:expr&gt;            &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 d[d$x &gt; 0.5, ]         1.17   1.18      17.6      1        1.71
+2 d[which(d$x &gt; 0.5), ]  1      1         20.6      1.08     4.03
+3 subset(d, x &gt; 0.5)     1.65   1.62      13.1      1.14     2.76
+4 filter(d, x &gt; 0.5)    23.2   21.7        1        8.17     1   </code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="parallelization" class="title-slide slide level1 center">
+<h1>Parallelization</h1>
+
 </section>
-<section id="combine-pdfs-or-pngs" class="slide level2">
-<h2>combine pdfs or pngs</h2>
+<section id="what-is-parallelization" class="slide level2">
+<h2>What is parallelization?</h2>
+<ul>
+<li>“parallelization” or “parallel computing” means deploying an algorithm’s calculations across several cores of a computer to perform computation at the same time</li>
+</ul>
+<h3 id="terminology">Terminology</h3>
+<ul>
+<li><p>CPU: central processing unit, primary component of a computer that processes instructions</p></li>
+<li><p>Core: an individual processor within a CPU, more cores can improve performance and efficiency</p></li>
+<li><p>Forking: a copy of the current R session is moved to new cores.</p>
+<ul>
+<li>Not available on Windows</li>
+<li>Less overhead and easy to implement</li>
+</ul></li>
+<li><p>Sockets: a new R session is launched on each core.</p>
+<ul>
+<li>Available on all systems</li>
+<li>Each process on each core is unique</li>
+</ul></li>
+</ul>
 </section>
-<section id="awk" class="slide level2">
-<h2>awk</h2>
+<section id="package-parallel" class="slide level2">
+<h2>Package <code>parallel</code></h2>
+<ul>
+<li><p>base R package</p></li>
+<li><p>tools for the forking of R processes (some functions do not work on Windows)</p></li>
+<li><p>Core functions:</p>
+<ul>
+<li><code>detectCores</code></li>
+<li><code>pvec</code></li>
+<li><code>mclapply</code></li>
+<li><code>mcparallel</code> &amp; <code>mccollect</code></li>
+</ul></li>
+</ul>
 </section>
-<section id="exercise-1" class="slide level2">
-<h2>Exercise</h2>
+<section id="pvec" class="slide level2">
+<h2>pvec</h2>
+<p>Parallelization of a vectorized function call. Forking takes time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">library</span>(parallel)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">system.time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">1</span>))</span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="do">## 0.031   0.032   0.063 </span></span>
+<span id="cb5-6"><a href="#cb5-6"></a></span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="fu">system.time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">4</span>))</span>
+<span id="cb5-8"><a href="#cb5-8"></a></span>
+<span id="cb5-9"><a href="#cb5-9"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb5-10"><a href="#cb5-10"></a><span class="do">## 0.249   0.197   0.323 </span></span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a><span class="fu">system.time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">8</span>))</span>
+<span id="cb5-13"><a href="#cb5-13"></a></span>
+<span id="cb5-14"><a href="#cb5-14"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="do">## 0.156   0.225   0.204 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><code>?proc.time</code> for info</p></li>
+<li><p><strong>User CPU time</strong>: the CPU time spent by the current process, in our case, the R session</p></li>
+<li><p><strong>System CPU time</strong>: the CPU time spent by the OS on behalf of the current running process</p></li>
+</ul>
+<p>Note that the <em>wall time</em> may be the less than the sum total (user + system) since parallelized processes accumulate user/system time at the same time.</p>
+</section>
+<section id="pvec---benchsystem_time" class="slide level2">
+<h2>pvec - <code>bench::system_time</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">library</span>(bench)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fu">system_time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">1</span>))</span>
+<span id="cb6-3"><a href="#cb6-3"></a></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="do">## process    real </span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="do">## 83.5ms  83.2ms </span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="fu">system_time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">4</span>))</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="do">## process    real </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="do">## 266ms   312ms </span></span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="fu">system_time</span>(<span class="fu">pvec</span>(<span class="dv">1</span><span class="sc">:</span><span class="fl">1e7</span>, sqrt, <span class="at">mc.cores =</span> <span class="dv">8</span>))</span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="do">## process    real </span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="do">## 249ms   262ms</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mclapply" class="slide level2">
+<h2><code>mclapply</code></h2>
+<ul>
+<li>Parallelized <code>lapply</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">system.time</span>(<span class="fu">rnorm</span>(<span class="fl">1e6</span>))</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="do">## 0.047   0.004   0.051 </span></span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="fu">system.time</span>(<span class="fu">unlist</span>(<span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="fl">1e5</span>), <span class="at">mc.cores =</span> <span class="dv">2</span>)))</span>
+<span id="cb7-7"><a href="#cb7-7"></a></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="do">## 0.055   0.032   0.049 </span></span>
+<span id="cb7-10"><a href="#cb7-10"></a></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="fu">system.time</span>(<span class="fu">unlist</span>(<span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="fl">1e5</span>), <span class="at">mc.cores =</span> <span class="dv">4</span>)))</span>
+<span id="cb7-12"><a href="#cb7-12"></a></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="do">## 0.058   0.039   0.036 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mclapply-1" class="slide level2">
+<h2><code>mclapply</code></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">system.time</span>(<span class="fu">unlist</span>(<span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="fl">1e5</span>), <span class="at">mc.cores =</span> <span class="dv">8</span>)))</span>
+<span id="cb8-2"><a href="#cb8-2"></a></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb8-4"><a href="#cb8-4"></a><span class="do">## 0.064   0.068   0.039 </span></span>
+<span id="cb8-5"><a href="#cb8-5"></a></span>
+<span id="cb8-6"><a href="#cb8-6"></a><span class="fu">system.time</span>(<span class="fu">unlist</span>(<span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="fl">1e5</span>), <span class="at">mc.cores =</span> <span class="dv">10</span>)))</span>
+<span id="cb8-7"><a href="#cb8-7"></a></span>
+<span id="cb8-8"><a href="#cb8-8"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="do">## 0.068   0.084   0.046 </span></span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="fu">system.time</span>(<span class="fu">unlist</span>(<span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>, <span class="cf">function</span>(x) <span class="fu">rnorm</span>(<span class="fl">1e5</span>), <span class="at">mc.cores =</span> <span class="dv">12</span>)))</span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="do">## user  system elapsed </span></span>
+<span id="cb8-14"><a href="#cb8-14"></a><span class="do">## 0.067   0.078   0.045 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mcparallel" class="slide level2">
+<h2><code>mcparallel</code></h2>
+<p>Asynchronously evaluation of an R expression in a separate process</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>m <span class="ot">=</span> <span class="fu">mcparallel</span>(<span class="fu">rnorm</span>(<span class="fl">1e6</span>))</span>
+<span id="cb9-2"><a href="#cb9-2"></a>n <span class="ot">=</span> <span class="fu">mcparallel</span>(<span class="fu">rbeta</span>(<span class="fl">1e6</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb9-3"><a href="#cb9-3"></a>o <span class="ot">=</span> <span class="fu">mcparallel</span>(<span class="fu">rgamma</span>(<span class="fl">1e6</span>,<span class="dv">1</span>,<span class="dv">1</span>))</span>
+<span id="cb9-4"><a href="#cb9-4"></a></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="fu">str</span>(m)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 2
+ $ pid: int 12106
+ $ fd : int [1:2] 4 7
+ - attr(*, "class")= chr [1:3] "parallelJob" "childProcess" "process"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">str</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 2
+ $ pid: int 12107
+ $ fd : int [1:2] 5 9
+ - attr(*, "class")= chr [1:3] "parallelJob" "childProcess" "process"</code></pre>
+</div>
+</div>
+</section>
+<section id="mccollect" class="slide level2">
+<h2><code>mccollect</code></h2>
+<p>Checks <code>mcparallel</code> objects for completion</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">str</span>(<span class="fu">mccollect</span>(<span class="fu">list</span>(m,n,o)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>List of 3
+ $ 12106: num [1:1000000] 1.62 0.904 -1.865 -2.384 -0.16 ...
+ $ 12107: num [1:1000000] 0.224 0.241 0.733 0.532 0.129 ...
+ $ 12108: num [1:1000000] 0.2199 0.0562 0.3705 0.998 6.7013 ...</code></pre>
+</div>
+</div>
+<div class="fragment">
+<h4 id="mccollect---waiting">mccollect - waiting</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>p <span class="ot">=</span> <span class="fu">mcparallel</span>(<span class="fu">mean</span>(<span class="fu">rnorm</span>(<span class="fl">1e5</span>)))</span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">mccollect</span>(p, <span class="at">wait =</span> <span class="cn">FALSE</span>, <span class="dv">10</span>) <span class="co"># will retrieve the result (since it's fast)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$`12109`
+[1] 0.001003654</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">mccollect</span>(p, <span class="at">wait =</span> <span class="cn">FALSE</span>) <span class="co"># will signal the job as terminating</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in selectChildren(jobs, timeout): cannot wait for child 12109 as it does
+not exist</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>NULL</code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="domc-foreach" class="title-slide slide level1 center">
+<h1>doMC &amp; foreach</h1>
+
+</section>
+<section id="domc-foreach-1" class="slide level2">
+<h2>doMC &amp; foreach</h2>
+<p>Packages by Revolution Analytics that provides the <code>foreach</code> function which is a parallelizable for loop.</p>
+<p>Package <code>doMC</code> is a parallel backend for the <code>foreach</code> package - a package that allows you to execute for loops in parallel.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">library</span>(doMC)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: foreach</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'foreach'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:purrr':
+
+    accumulate, when</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: iterators</code></pre>
+</div>
+</div>
+<p>Core functions:</p>
+<ul>
+<li><p><code>doMC::registerDoMC</code> sets the number of cores for the parallel backend to be used with foreach</p></li>
+<li><p><code>foreach</code>, <code>%dopar%</code>, <code>%do%</code></p></li>
+</ul>
+<p><code>doMC</code> serves as an interface between <code>foreach</code> and <code>parallel</code> Since <code>parallel</code> only works with systems that support forking, these functions will not work properly on Windows.</p>
+</section>
+<section id="set-workers" class="slide level2">
+<h2>Set workers</h2>
+<p>To get started, set the number of cores with <code>registerDoMC()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># check cores set up</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">getDoParWorkers</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="co"># set 4 cores</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">registerDoMC</span>(<span class="dv">4</span>)</span>
+<span id="cb27-3"><a href="#cb27-3"></a><span class="fu">getDoParWorkers</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+</section>
+<section id="serial-and-parallel-with-foreach" class="slide level2">
+<h2>Serial and parallel with foreach()</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="sequential">Sequential</h4>
+<ul>
+<li><code>%do%</code> single execution</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%do%</span> </span>
+<span id="cb29-2"><a href="#cb29-2"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>, <span class="at">max =</span> i))[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1.653098e-08
+
+[[2]]
+[1] 1.634471e-07
+
+[[3]]
+[1] 2.214219e-07
+
+[[4]]
+[1] 2.998859e-07</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">times</span>(<span class="dv">2</span>) <span class="sc">%do%</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>))[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.515727e-07 8.847564e-09</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<h4 id="parallel">Parallel</h4>
+<ul>
+<li><code>%dopar%</code> multicore execution</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dopar%</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>, <span class="at">max =</span> i))[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1.001172e-08
+
+[[2]]
+[1] 1.653098e-07
+
+[[3]]
+[1] 5.587935e-09
+
+[[4]]
+[1] 1.529232e-06</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">times</span>(<span class="dv">2</span>) <span class="sc">%dopar%</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>))[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.444722e-08 1.024455e-08</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="time-comparison" class="slide level2">
+<h2>Time comparison</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="sequential-1">Sequential</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">system.time</span>({</span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%do%</span> </span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>, <span class="at">max =</span> i))[<span class="dv">1</span>]</span>
+<span id="cb37-4"><a href="#cb37-4"></a></span>
+<span id="cb37-5"><a href="#cb37-5"></a><span class="fu">times</span>(<span class="dv">2</span>) <span class="sc">%do%</span></span>
+<span id="cb37-6"><a href="#cb37-6"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>))[<span class="dv">1</span>]</span>
+<span id="cb37-7"><a href="#cb37-7"></a>})</span>
+<span id="cb37-8"><a href="#cb37-8"></a></span>
+<span id="cb37-9"><a href="#cb37-9"></a><span class="do">##  user  system elapsed </span></span>
+<span id="cb37-10"><a href="#cb37-10"></a><span class="do">## 3.371   0.143   3.507 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column" style="width:50%;">
+<h4 id="parallel-1">Parallel</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="fu">system.time</span>({</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>) <span class="sc">%dopar%</span> </span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>, <span class="at">max =</span> i))[<span class="dv">1</span>]</span>
+<span id="cb38-4"><a href="#cb38-4"></a></span>
+<span id="cb38-5"><a href="#cb38-5"></a><span class="fu">times</span>(<span class="dv">2</span>) <span class="sc">%dopar%</span></span>
+<span id="cb38-6"><a href="#cb38-6"></a>  <span class="fu">sort</span>(<span class="fu">runif</span>(<span class="at">n =</span> <span class="fl">1e7</span>))[<span class="dv">1</span>]</span>
+<span id="cb38-7"><a href="#cb38-7"></a>})</span>
+<span id="cb38-8"><a href="#cb38-8"></a></span>
+<span id="cb38-9"><a href="#cb38-9"></a><span class="do">##  user  system elapsed </span></span>
+<span id="cb38-10"><a href="#cb38-10"></a><span class="do">## 2.917   0.603   1.376 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="things-to-know-about-foreach" class="slide level2">
+<h2>Things to know about <code>foreach</code></h2>
+<p><code>foreach</code> can iterate across more than one value, but it doesn’t do length coercion.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>Note: <code>foreach</code> is iterating over both simultaneously. This is <em>not</em> a nested for loop.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%do%</span> {</span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">sqrt</span>(i<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>j<span class="sc">^</span><span class="dv">2</span>)   </span>
+<span id="cb39-3"><a href="#cb39-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1.414214
+
+[[2]]
+[1] 2.828427
+
+[[3]]
+[1] 4.242641</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p>Note: <code>foreach</code> coerces the longer vector to be shorter!</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">j =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">%do%</span> {</span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">sqrt</span>(i<span class="sc">^</span><span class="dv">2</span><span class="sc">+</span>j<span class="sc">^</span><span class="dv">2</span>)   </span>
+<span id="cb41-3"><a href="#cb41-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 1.414214
+
+[[2]]
+[1] 2.828427</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="foreach-bookkeeping" class="slide level2">
+<h2><code>foreach</code> bookkeeping</h2>
+<ul>
+<li><p><code>foreach</code> does some bookkeeping for you and returns a list by default. Compare this to the traditional for loop that does no bookkeeping.</p></li>
+<li><p>you can easily customize the bookkeeping.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">.combine=</span><span class="st">'c'</span>) <span class="sc">%do%</span> {</span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">sqrt</span>(i)</span>
+<span id="cb43-3"><a href="#cb43-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.000000 1.414214 1.732051 2.000000 2.236068</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">.combine=</span><span class="st">'cbind'</span>) <span class="sc">%do%</span> {</span>
+<span id="cb45-2"><a href="#cb45-2"></a>  <span class="fu">sqrt</span>(i)</span>
+<span id="cb45-3"><a href="#cb45-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     result.1 result.2 result.3 result.4 result.5
+[1,]        1 1.414214 1.732051        2 2.236068</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">.combine=</span><span class="st">'+'</span>) <span class="sc">%do%</span> {</span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">sqrt</span>(i)</span>
+<span id="cb47-3"><a href="#cb47-3"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8.382332</code></pre>
+</div>
+</div>
+</section>
+<section id="nested-foreach" class="slide level2">
+<h2>nested <code>foreach</code></h2>
+<ul>
+<li>The <code>%:%</code> operator is the nesting operator, used for creating nested foreach loops.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">.combine =</span> <span class="st">"c"</span>) <span class="sc">%:%</span> </span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="fu">foreach</span>(<span class="at">j =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">.combine =</span> <span class="st">"c"</span>) <span class="sc">%dopar%</span> </span>
+<span id="cb49-3"><a href="#cb49-3"></a>    {i <span class="sc">^</span> j}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 1 1 2 1 3 1 4</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">.combine =</span> <span class="st">"data.frame"</span>) <span class="sc">%:%</span> </span>
+<span id="cb51-2"><a href="#cb51-2"></a>  <span class="fu">foreach</span>(<span class="at">j =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">.combine =</span> <span class="st">"c"</span>) <span class="sc">%dopar%</span> </span>
+<span id="cb51-3"><a href="#cb51-3"></a>    {i <span class="sc">^</span> j}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  result.1 result.2 result.3 result.4
+1        1        1        1        1
+2        1        2        3        4</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="fu">foreach</span>(<span class="at">i =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">.combine =</span> <span class="st">"c"</span>) <span class="sc">%:%</span> </span>
+<span id="cb53-2"><a href="#cb53-2"></a>  <span class="fu">foreach</span>(<span class="at">j =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">1</span>, <span class="at">.combine =</span> <span class="st">"+"</span>) <span class="sc">%dopar%</span> </span>
+<span id="cb53-3"><a href="#cb53-3"></a>    {i <span class="sc">^</span> j}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2 3 4 5</code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="furrr" class="title-slide slide level1 center">
+<h1>furrr</h1>
+
+</section>
+<section id="future" class="slide level2">
+<h2><code>future</code></h2>
+<p>A “future” is an abstraction for a value that may be available at some point in the future.</p>
+<p>The purpose of the <code>future</code> package is to provide a very simple and uniform way of evaluating R expressions asynchronously using various resources available to the user.</p>
+<ul>
+<li>See <a href="https://cran.r-project.org/web/packages/future/vignettes/future-1-overview.html">the CRAN <code>future</code> documentation</a> for further reading.</li>
+</ul>
+</section>
+<section id="furrr-and-purrr" class="slide level2">
+<h2>furrr and purrr</h2>
+<ul>
+<li><code>furrr</code> functions are just like <code>purrr</code> functions but begin with <code>future_</code></li>
+</ul>
+<h4 id="example">Example</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">library</span>(furrr)</span>
+<span id="cb55-2"><a href="#cb55-2"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">map_dbl</span>(mtcars, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1"></a><span class="fu">future_map_dbl</span>(mtcars, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
+</div>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1"></a><span class="fu">plan</span>(multisession, <span class="at">workers =</span> <span class="dv">8</span>)</span>
+<span id="cb60-2"><a href="#cb60-2"></a><span class="fu">future_map_dbl</span>(mtcars, mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       mpg        cyl       disp         hp       drat         wt       qsec 
+ 20.090625   6.187500 230.721875 146.687500   3.596563   3.217250  17.848750 
+        vs         am       gear       carb 
+  0.437500   0.406250   3.687500   2.812500 </code></pre>
+</div>
+</div>
+<div class="fragment">
+<p>Not sure we are running in parallel?</p>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1"></a><span class="fu">system.time</span>({<span class="fu">map_dbl</span>(mtcars, <span class="sc">~</span> {<span class="fu">Sys.sleep</span>(.<span class="dv">1</span>); <span class="fu">mean</span>(.x)})})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   user  system elapsed 
+  0.004   0.000   1.138 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1"></a><span class="fu">system.time</span>({<span class="fu">future_map_dbl</span>(mtcars, <span class="sc">~</span> {<span class="fu">Sys.sleep</span>(.<span class="dv">1</span>); <span class="fu">mean</span>(.x)})})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   user  system elapsed 
+  0.043   0.002   0.258 </code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a><span class="fu">plan</span>(sequential)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<ul>
+<li><p>How could you parallelize the text mining of lab 4?</p></li>
+<li><p>Demo</p></li>
+</ul>
 
 <div class="footer footer-default">
 <p><a href="https://sta323-sp23.github.io/schedule.html">🔗 sta323-sp23.github.io</a></p>
@@ -648,6 +1233,48 @@ example: <code>$ head -N file1.txt &gt; file2.txt</code> creates a new file call
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

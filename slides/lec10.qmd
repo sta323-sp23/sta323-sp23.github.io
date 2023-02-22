@@ -1,5 +1,5 @@
 ---
-title: "Unix toolkit"
+title: "Complexity and parallelization"
 author: "Dr. Alexander Fisher"
 execute:
   warning: true
@@ -8,60 +8,472 @@ format:
       smaller: true
 ---
 
-# basic tools
+# Computational complexity
 
-## simple cheat sheet
+## Measuring efficiency
 
-A "folder" aka a "directory" is a container. A "file\* is an element of a container, e.g. `lab-1.qmd` is a file contained in a `lab-1-username` directory.
+**flops** or floating point operations measure the efficiency of an algorithm. **flops** consist of the binary floating point operations: addition, subtraction, multiplication, division and comparison. Individual floating point operations are performed by a single "core" of your computer's CPU or GPU.
 
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| command                          | action                                                                                                                         |
-+==================================+================================================================================================================================+
-| `$ ls`                           | list files in current directory                                                                                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ pwd`                          | print working directory                                                                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ cd`                           | change directory\                                                                                                              |
-|                                  | example: `$ cd ..` to go to parent directory                                                                                   |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ mkdir dname`                  | make directory "dname"                                                                                                         |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ mkdir s{1..5}`                | overpowered file creation                                                                                                      |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm /path/to/file`             | remove a file                                                                                                                  |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm -rf dname`                 | recursively remove a directory and its contents                                                                                |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ rm core*`                     | remove all objects in the current working directory that begin with "core"                                                     |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ wc -l`                        | show \# lines in a file                                                                                                        |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ y > x.txt`                    | pass printed output from command "y" on the left to file "x.txt" on the right\                                                 |
-|                                  | example: `$ head -N file1.txt > file2.txt` creates a new file called "file2" that is a replica of the first N lines of file 1\ |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ echo 'text here' >> filename` | add text to the end of a file                                                                                                  |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
-| `$ man x`                        | pull up documentation for command x, example: `$ man ls`                                                                       |
-+----------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
+We use "big O" $\mathcal{O}(n)$ notation to denote the complexity of an algorithm. For example,
 
-## paths
+-   matrix-vector multiplication `A %*% b`, where $A$ is $m \times n$ and $b$ is $n \times 1$ takes $2mn$ or $\mathcal{O}(mn)$ flops.
 
-## pathfinding
+-   matrix-matrix multiplication `A %*% B`, where $A$ is $m \times n$ and $B$ is $n \times p$ takes $2mnp$ or $\mathcal{O}(mnp)$ flops.
 
-### absolute paths
+Notice that in reporting complexity of each example we drop the leading constant "2".
 
-### relative paths
+A hierarchy of computational complexity (let $n$ be the problem size):\
+\
 
-## Exercise
+|                                       |                    |
+|---------------------------------------|--------------------|
+| exponential order: $\mathcal{O}(b^n)$ | NP-hard (horrible) |
+| polynomial order: $\mathcal{O}(n^q)$  | doable             |
+| $\mathcal{O}(n \log n)$               | fast               |
+| linear order: $\mathcal{O}(n)$        | fast               |
+| log order: $\mathcal{O}(\log n)$      | super fast         |
 
-# Miscellaneous tools
+::: callout-note
+Some references count multiplication followed by an addition (fused multiply-add, FMA) as one flop.
+:::
 
-## word count
+\small{This slide adapted from [notes](http://hua-zhou.github.io/teaching/biostatm280-2019spring/slides/05-algo/algo.html) by Dr. Hua Zhou}
 
-## pdfcrop
+## Measuring efficiency (example)
 
-## combine pdfs or pngs
+Suppose you wish to calculate a likelihood $L(x|\theta)$ for $n$ iid observations: $x = \{x_i\}; i \in \{1, \ldots, n \}$. The likelihood looks like
 
-## awk
+$$
+L(x|\theta) = \prod_i^n f(x_i | \theta)
+$$ where $f$ is some density function dependent on parameters $\theta$.
 
-## Exercise
+$L(x|\theta)$ has $\mathcal{O}(n)$ complexity, i.e. scales linearly with the number of data points.
+
+# Benchmarking
+
+## `bench`
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+library(parallel)
+library(bench)
+```
+
+```{r}
+d = tibble(
+  x = runif(10000),
+  y=runif(10000)
+)
+(b = bench::mark(
+  d[d$x > 0.5, ],
+  d[which(d$x > 0.5), ],
+  subset(d, x > 0.5),
+  filter(d, x > 0.5)
+))
+```
+
+## `bench` - relative results
+
+```{r}
+summary(b, relative = TRUE)
+```
+
+# Parallelization
+
+## What is parallelization?
+
+-   "parallelization" or "parallel computing" means deploying an algorithm's calculations across several cores of a computer to perform computation at the same time
+
+### Terminology
+
+-   CPU: central processing unit, primary component of a computer that processes instructions
+
+-   Core: an individual processor within a CPU, more cores can improve performance and efficiency
+
+-   Forking: a copy of the current R session is moved to new cores.
+
+    -   Not available on Windows
+    -   Less overhead and easy to implement
+
+-   Sockets: a new R session is launched on each core.
+
+    -   Available on all systems
+    -   Each process on each core is unique
+
+## Package `parallel`
+
+-   base R package
+
+-   tools for the forking of R processes (some functions do not work on Windows)
+
+-   Core functions:
+
+    -   `detectCores`
+    -   `pvec`
+    -   `mclapply`
+    -   `mcparallel` & `mccollect`
+
+## pvec
+
+Parallelization of a vectorized function call. Forking takes time.
+
+```{r}
+#| eval: false
+library(parallel)
+system.time(pvec(1:1e7, sqrt, mc.cores = 1))
+
+## user  system elapsed 
+## 0.031   0.032   0.063 
+
+system.time(pvec(1:1e7, sqrt, mc.cores = 4))
+
+## user  system elapsed 
+## 0.249   0.197   0.323 
+
+system.time(pvec(1:1e7, sqrt, mc.cores = 8))
+
+## user  system elapsed 
+## 0.156   0.225   0.204 
+```
+
+-   `?proc.time` for info
+
+-   **User CPU time**: the CPU time spent by the current process, in our case, the R session
+
+-   **System CPU time**: the CPU time spent by the OS on behalf of the current running process
+
+Note that the *wall time* may be the less than the sum total (user + system) since parallelized processes accumulate user/system time at the same time.
+
+## pvec - `bench::system_time`
+
+```{r}
+#| eval: false
+library(bench)
+system_time(pvec(1:1e7, sqrt, mc.cores = 1))
+
+## process    real 
+## 83.5ms  83.2ms 
+
+system_time(pvec(1:1e7, sqrt, mc.cores = 4))
+
+## process    real 
+## 266ms   312ms 
+
+system_time(pvec(1:1e7, sqrt, mc.cores = 8))
+
+## process    real 
+## 249ms   262ms
+```
+
+## `mclapply`
+
+-   Parallelized `lapply`
+
+```{r}
+#| eval: false
+system.time(rnorm(1e6))
+
+## user  system elapsed 
+## 0.047   0.004   0.051 
+
+system.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 2)))
+
+## user  system elapsed 
+## 0.055   0.032   0.049 
+
+system.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 4)))
+
+## user  system elapsed 
+## 0.058   0.039   0.036 
+```
+
+## `mclapply`
+
+```{r}
+#| eval: false
+system.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 8)))
+
+## user  system elapsed 
+## 0.064   0.068   0.039 
+
+system.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 10)))
+
+## user  system elapsed 
+## 0.068   0.084   0.046 
+
+system.time(unlist(mclapply(1:10, function(x) rnorm(1e5), mc.cores = 12)))
+
+## user  system elapsed 
+## 0.067   0.078   0.045 
+```
+
+## `mcparallel`
+
+Asynchronously evaluation of an R expression in a separate process
+
+```{r}
+m = mcparallel(rnorm(1e6))
+n = mcparallel(rbeta(1e6,1,1))
+o = mcparallel(rgamma(1e6,1,1))
+
+str(m)
+str(n)
+```
+
+## `mccollect`
+
+Checks `mcparallel` objects for completion
+
+```{r}
+str(mccollect(list(m,n,o)))
+```
+
+. . .
+
+#### mccollect - waiting
+
+```{r}
+p = mcparallel(mean(rnorm(1e5)))
+mccollect(p, wait = FALSE, 10) # will retrieve the result (since it's fast)
+mccollect(p, wait = FALSE) # will signal the job as terminating
+```
+
+# doMC & foreach
+
+## doMC & foreach
+
+Packages by Revolution Analytics that provides the `foreach` function which is a parallelizable for loop.
+
+Package `doMC` is a parallel backend for the `foreach` package - a package that allows you to execute for loops in parallel.
+
+```{r}
+library(doMC)
+```
+
+Core functions:
+
+-   `doMC::registerDoMC` sets the number of cores for the parallel backend to be used with foreach
+
+-   `foreach`, `%dopar%`, `%do%`
+
+`doMC` serves as an interface between `foreach` and `parallel` Since `parallel` only works with systems that support forking, these functions will not work properly on Windows.
+
+## Set workers
+
+To get started, set the number of cores with `registerDoMC()`.
+
+```{r}
+# check cores set up
+getDoParWorkers()
+
+# set 4 cores
+registerDoMC(4)
+getDoParWorkers()
+```
+
+## Serial and parallel with foreach()
+
+::: columns
+::: {.column width="50%"}
+#### Sequential
+
+-   `%do%` single execution
+
+```{r}
+foreach(i = 1:4) %do% 
+  sort(runif(n = 1e7, max = i))[1]
+
+times(2) %do%
+  sort(runif(n = 1e7))[1]
+```
+:::
+
+::: {.column width="50%"}
+#### Parallel
+
+-   `%dopar%` multicore execution
+
+```{r}
+foreach(i = 1:4) %dopar%
+  sort(runif(n = 1e7, max = i))[1]
+
+times(2) %dopar%
+  sort(runif(n = 1e7))[1]
+```
+:::
+:::
+
+## Time comparison
+
+::: columns
+::: {.column width="50%"}
+#### Sequential
+
+```{r}
+#| eval: false
+system.time({
+foreach(i = 1:4) %do% 
+  sort(runif(n = 1e7, max = i))[1]
+
+times(2) %do%
+  sort(runif(n = 1e7))[1]
+})
+
+##  user  system elapsed 
+## 3.371   0.143   3.507 
+```
+:::
+
+::: {.column width="50%"}
+#### Parallel
+
+```{r}
+#| eval: false
+system.time({
+foreach(i = 1:4) %dopar% 
+  sort(runif(n = 1e7, max = i))[1]
+
+times(2) %dopar%
+  sort(runif(n = 1e7))[1]
+})
+
+##  user  system elapsed 
+## 2.917   0.603   1.376 
+```
+:::
+:::
+
+## Things to know about `foreach`
+
+`foreach` can iterate across more than one value, but it doesn't do length coercion.
+
+::: columns
+::: {.column width="50%"}
+Note: `foreach` is iterating over both simultaneously. This is *not* a nested for loop.
+
+```{r}
+foreach(i = 1:3, j = 1:3) %do% {
+  sqrt(i^2+j^2)   
+}
+```
+:::
+
+::: {.column width="50%"}
+Note: `foreach` coerces the longer vector to be shorter!
+
+```{r}
+foreach(i = 1:5, j = 1:2) %do% {
+  sqrt(i^2+j^2)   
+}
+```
+:::
+:::
+
+## `foreach` bookkeeping
+
+-   `foreach` does some bookkeeping for you and returns a list by default. Compare this to the traditional for loop that does no bookkeeping.
+
+-   you can easily customize the bookkeeping.
+
+```{r}
+foreach(i = 1:5, .combine='c') %do% {
+  sqrt(i)
+}
+foreach(i = 1:5, .combine='cbind') %do% {
+  sqrt(i)
+}
+foreach(i = 1:5, .combine='+') %do% {
+  sqrt(i)
+}
+```
+
+## nested `foreach`
+
+-   The `%:%` operator is the nesting operator, used for creating nested foreach loops.
+
+```{r}
+foreach(i = 1:4, .combine = "c") %:% 
+  foreach(j = 0:1, .combine = "c") %dopar% 
+    {i ^ j}
+```
+
+. . .
+
+```{r}
+foreach(i = 1:4, .combine = "data.frame") %:% 
+  foreach(j = 0:1, .combine = "c") %dopar% 
+    {i ^ j}
+```
+
+. . .
+
+```{r}
+foreach(i = 1:4, .combine = "c") %:% 
+  foreach(j = 0:1, .combine = "+") %dopar% 
+    {i ^ j}
+```
+
+# furrr
+
+## `future`
+
+A "future" is an abstraction for a value that may be available at some point in the future.
+
+The purpose of the `future` package is to provide a very simple and uniform way of evaluating R expressions asynchronously using various resources available to the user.
+
+-   See [the CRAN `future` documentation](https://cran.r-project.org/web/packages/future/vignettes/future-1-overview.html) for further reading.
+
+## furrr and purrr
+
+- `furrr` functions are just like `purrr` functions but begin with `future_`
+
+#### Example
+
+```{r}
+#| warning: false
+library(furrr)
+library(tidyverse)
+```
+
+```{r}
+map_dbl(mtcars, mean)
+future_map_dbl(mtcars, mean)
+```
+
+##
+
+```{r}
+plan(multisession, workers = 8)
+future_map_dbl(mtcars, mean)
+```
+
+. . .
+
+Not sure we are running in parallel?
+
+. . . 
+
+```{r}
+system.time({map_dbl(mtcars, ~ {Sys.sleep(.1); mean(.x)})})
+```
+
+```{r}
+system.time({future_map_dbl(mtcars, ~ {Sys.sleep(.1); mean(.x)})})
+```
+
+. . .
+
+```{r}
+plan(sequential)
+```
+
+## Example
+
+- How could you parallelize the text mining of lab 4?
+
+- Demo
+
+
