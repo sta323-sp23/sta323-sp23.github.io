@@ -49,7 +49,7 @@ schedule %>%
 |      | Wed Jan 18 | control flow, loops and functions      |    [💻](/slides/lec02.html)     |                          |                                       |         |
 |      | Fri Jan 20 | NAs, lists, NULL and attributes        |    [💻](/slides/lec03.html)     |                          |                                       |         |
 | 2    | Tue Jan 24 | if it's a function, fix it             |                                 | [lab 1](/labs/lab1.html) |                                       |         |
-|      | Wed Jan 25 | Object oriented programming            |    [💻](/slides/lec04.html)     |                          |                                       |         |
+|      | Wed Jan 25 | object oriented programming            |    [💻](/slides/lec04.html)     |                          |                                       |         |
 |      | Fri Jan 27 | tidy data and dplyr                    |    [💻](/slides/lec05.html)     |                          |                                       |         |
 | 3    | Tue Jan 31 | computational masonry                  |                                 | [lab 2](/labs/lab2.html) |                                       |         |
 |      | Wed Feb 01 | subsetting                             |    [💻](/slides/lec06.html)     |                          |                                       |         |
@@ -60,11 +60,11 @@ schedule %>%
 | 5    | Tue Feb 14 | wrangling the written word             |                                 | [lab 4](/labs/lab4.html) |                                       |         |
 |      | Wed Feb 15 | catch-up                               |                                 |                          |                                       |         |
 |      | Fri Feb 17 | review / questions / exam              |                                 |                          | [exam 1 release](/exams/exam01.html) |         |
-| 6    | Tue Feb 21 | no lab: exam 1                         |                                 | exam 1 due               |                                       |         |
+| 6    | Tue Feb 21 | no lab: exam 1                         |                                 |                |   exam 1 due                                    |         |
 |      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         |
-|      | Fri Feb 24 | statistical modeling overview          |                                 |                          |                                       |         |
+|      | Fri Feb 24 | intro to optimization          |                                 |                          |                                       |         |
 | 7    | Tue Feb 28 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 01 | intro to optimization                  |                                 |                          |                                       |         |
+|      | Wed Mar 01 |                  |                                 |                          |                                       |         |
 |      | Fri Mar 03 | univariate Newton-Raphson              |                                 |                          |                                       |         |
 | 8    | Tue Mar 07 |                                        |                                 |                          |                                       |         |
 |      | Wed Mar 08 | multivariate Newton-Raphson examples   |                                 |                          |                                       |         |
@@ -77,11 +77,11 @@ schedule %>%
 |      | Fri Mar 24 | EM algorithm                           |                                 |                          |                                       |         |
 | 11   | Tue Mar 28 |                                        |                                 |                          |                                       |         |
 |      | Wed Mar 29 | shiny                                  |                                 |                          |                                       |         |
-|      | Fri Mar 31 | project tips                           |                                 |                          |                                       |         |
-| 12   | Tue Apr 04 |                                        |                                 |                          |                                       |         |
+|      | Fri Mar 31 | project tips                           |                                 |                          |                                      |         |
+| 12   | Tue Apr 04 |                                       |                                 |                          |                                       |         |
 |      | Wed Apr 05 | matrices and BLAS                      |                                 |                          |                                       |         |
-|      | Fri Apr 07 | Monte Carlo integration                |                                 |                          |                                       |         |
-| 13   | Tue Apr 11 |                                        |                                 |                          |                                       |         |
+|      | Fri Apr 07 | Monte Carlo integration                |                                 |                          |      exam 2 release                                  |         |
+| 13   | Tue Apr 11 |     no lab: exam 2                                   |                                 |                          |     exam 2 due                                  |         |
 |      | Wed Apr 12 | importance sampling                    |                                 |                          |                                       |         |
 |      | Fri Apr 14 | covariance                             |                                 |                          |                                       |         |
 | 14   | Tue Apr 18 |                                        |                                 |                          |                                       |         |

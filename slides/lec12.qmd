@@ -1,0 +1,15 @@
+---
+title: "Intro to optimization"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# 
+
+## Negative binomial regression
+
+## Find the MLE
