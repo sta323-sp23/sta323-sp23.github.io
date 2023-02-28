@@ -1,6 +1,6 @@
 ---
-title: "Lab 5:"
-subtitle: "Due  5:00pm"  
+title: "Lab 5: Where's zero?"
+subtitle: "Due Friday, March 10 5:00pm"  
 editor: source
 execute:
   eval: false
@@ -9,8 +9,8 @@ execute:
 
 By the end of the lab, you will...
 
-- 
-- 
+- write likelihoods
+- compute MLEs using Newton's method
 
 ::: callout-warning
 Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is "accidentally" pushed.
@@ -22,15 +22,139 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 -   Navigate to your `lab-5` folder and open the `.Rproj` file.
 
--   Open the Quarto (`.qmd`) file, change the author name to your team name followed by a colon and then the names of the team members.
+-   Open the Quarto (`.qmd`) file, change the author name to your team name followed by a colon and then the names of the team members. Note that to make sure your teammates names all render within the 80 character code limit, you can write
+
+```
+author: |
+    | author 1 
+    | author 2
+    | author 3
+```
 
 ## Exercises
 
 For all exercises, you should respond in the space provided in the template `lab-5.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
 
-### 1. 
+### 1. Weibull MLE
 
-### 2. 
+```{r}
+x = c(1.811328, 0.9210481, 1.753609, 0.1971982, 1.957823, 0.9607706, 0.3611815,
+      0.9710981, 1.684854, 1.49811, 0.4599071, 1.18149, 0.04501055, 0.2688005,
+      0.9070787, 0.1067991, 0.8979944, 0.1442192, 0.3690044, 1.250377,
+      0.7919656, 0.2785386, 1.312061, 1.794021, 1.867813, 1.374013, 0.7282234,
+      0.6067082, 1.062187, 0.08889603, 0.5668522, 0.743226, 0.6237324,
+      0.2951361, 0.2185725, 0.8271643, 0.4682848, 0.7791434, 0.2655503,
+      0.5545753, 0.7419484, 0.1427752, 0.3778655, 1.327472, 0.93939,
+      0.9402052, 0.8784793, 0.605618, 0.7390297, 0.7402008)
+```
+
+Assume 
+$$
+x_i
+\overset{\mathrm{iid}}{\sim}
+Weibull(\lambda, k) 
+$$
+Find the maximum likelihood estimates $\hat{k}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
+
+Initialize your algorithm with $k = 2$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
+
+::: callout-tip
+## Hint
+- You only need to perform Newton's method on the parameter $k$ here.
+:::
+
+
+### 2. visualize Weibull gradient w.r.t $k$
+
+Following up on the previous exercise, let's gain insight into when and how Newton's method can fail.
+
+- Set your starting $k = 4$. What value $k$ converge to? Is this a valid value of $k$?
+
+- To gain insight into this, plot the derivative of the log-likelihood of $k$ from `0.01` to `5`. Why does starting at 4 change the result? 
+
+- Next plot the derivative of the log-likelihood from `-5` to `-0.01`. Be sure to appropriately label your plots, add relative titles, etc. Combine your plots using [`patchwork`](https://sta323-sp23.github.io/slides/lec07.html#/patchwork). 
+
+- Finally, edit your Newton-Raphson algorithm to "reflect" negative values, i.e. if the updated iterate is negative, force it to be positive. Re-run your Newton's method starting at $k=4$. What does $k$ converge to? Why?
+
+::: callout-tip 
+## Hint
+
+Write the gradient with respect to $k$ as a function of $k$ alone (as in lecture).
+:::
+
+### 3. zero-inflated Poisson
+
+Zero-inflated models allow for frequent zero-valued observations. You observe 100 people at the beach fishing. The number of fish each individual catches is reported in the data `fishing_count` below.
+
+```{r}
+fishing_count = c(0, 0, 0, 3, 0, 3, 5, 0, 8, 1,
+                  0, 0, 0, 0, 3, 4, 0, 4, 8, 0,
+                  0, 0, 4, 0, 0, 6, 4, 0, 4, 0,
+                  0, 0, 0, 0, 4, 8, 4, 0, 0, 0,
+                  7, 3, 0, 2, 0, 0, 7, 7, 5, 0,
+                  0, 0, 7, 6, 0, 3, 0, 0, 0, 5,
+                  4, 1, 0, 0, 0, 0, 0, 0, 0, 8,
+                  0, 5, 0, 3, 0, 0, 3, 0, 0, 2,
+                  0, 5, 0, 7, 7, 0, 1, 0, 2, 7,
+                  0, 2, 4, 0, 0, 1, 5, 0, 0, 0)
+```
+
+- Visualize the distribution of the data using an appropriate visualization. Label axes and describe your plot.
+
+The data can be described as being generated from a zero-inflated mixture model. Let $Y_i$ be the number of fish an individual catches at the beach.
+
+$$
+\begin{aligned}
+p(Y_i = 0) &= p + (1-p) e^{-\lambda}\\
+p(Y_i = y_i) &= \frac{(1 - p)\lambda^{y_i}e^{-\lambda}}{y_i!}, \ \ y_i = 1, 2, 3, \ldots
+\end{aligned}
+$$
+
+- Visualize the likelihood as a function of $p$ over the support of $p$ while fixing $\lambda = 5$. Repeat for $\lambda = 4$ (on the same plot). Based on your plot, which value of $\lambda$ is more likely? Also, assuming these $\lambda$ are sufficiently close to the true $\lambda$, what is (approximately) the MLE of $p$ based on your plot? 
+
+Using this mixture model, and assuming observations $\{Y_i\}$ are independent, compute the maximum likelihood estimates $\hat{p}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
+
+Initialize your algorithm with $\lambda = 1$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
+
+::: callout-tip
+## Hint
+- To begin, write the likelihood of the data. This is your **objective** function that you wish to maximize.
+
+- You only need to perform Newton's method on the parameter $\lambda$ here.
+:::
+
+```{r}
+#| echo: false
+#| eval: false
+set.seed(4)
+n = 100
+lambda = 4
+p = 0.5
+
+y = rpois(n, lambda = lambda) * rbinom(n, prob = 1 - p, size = 1)
+y %>%
+  hist()
+```
+
+
+```{r}
+#| echo: false
+#| eval: false
+library(tidyverse)
+set.seed(1)
+m = 15
+n = rbinom(15, prob = 0.8, size = 10)
+id = seq(1, m)
+n
+
+p = rbeta(15, 0.5, 0.5)
+p
+
+data.frame(id, n, p) %>%
+  mutate(success = rbinom(15, size = n, prob = p))
+```
+
+
 
 ## Style guidelines
 

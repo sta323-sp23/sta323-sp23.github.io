@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA323 - Lab 5:</title>
+<title>STA323 - Lab 5: Where’s zero?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -44,6 +107,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -89,8 +153,9 @@ ul.task-list{list-style: none;}
   <ul class="collapse">
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1.</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2.</a></li>
+  <li><a href="#weibull-mle" id="toc-weibull-mle" class="nav-link" data-scroll-target="#weibull-mle">1. Weibull MLE</a></li>
+  <li><a href="#visualize-weibull-gradient-w.r.t-k" id="toc-visualize-weibull-gradient-w.r.t-k" class="nav-link" data-scroll-target="#visualize-weibull-gradient-w.r.t-k">2. visualize Weibull gradient w.r.t <span class="math inline">\(k\)</span></a></li>
+  <li><a href="#zero-inflated-poisson" id="toc-zero-inflated-poisson" class="nav-link" data-scroll-target="#zero-inflated-poisson">3. zero-inflated Poisson</a></li>
   </ul></li>
   <li><a href="#style-guidelines" id="toc-style-guidelines" class="nav-link" data-scroll-target="#style-guidelines">Style guidelines</a></li>
   <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
@@ -103,8 +168,8 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 5:</h1>
-<p class="subtitle lead">Due 5:00pm</p>
+<h1 class="title">Lab 5: Where’s zero?</h1>
+<p class="subtitle lead">Due Friday, March 10 5:00pm</p>
 </div>
 
 
@@ -120,8 +185,8 @@ ul.task-list{list-style: none;}
 
 <p>By the end of the lab, you will…</p>
 <ul>
-<li></li>
-<li></li>
+<li>write likelihoods</li>
+<li>compute MLEs using Newton’s method</li>
 </ul>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -141,16 +206,126 @@ Warning
 <ul>
 <li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-5-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
 <li><p>Navigate to your <code>lab-5</code> folder and open the <code>.Rproj</code> file.</p></li>
-<li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members.</p></li>
+<li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members. Note that to make sure your teammates names all render within the 80 character code limit, you can write</p></li>
 </ul>
+<pre><code>author: |
+    | author 1 
+    | author 2
+    | author 3</code></pre>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
 <p>For all exercises, you should respond in the space provided in the template <code>lab-5.qmd</code> and show all your work. In all answers of type <code>double</code>, three significant figures suffices.</p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">1.</h3>
+<section id="weibull-mle" class="level3">
+<h3 class="anchored" data-anchor-id="weibull-mle">1. Weibull MLE</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="fl">1.811328</span>, <span class="fl">0.9210481</span>, <span class="fl">1.753609</span>, <span class="fl">0.1971982</span>, <span class="fl">1.957823</span>, <span class="fl">0.9607706</span>, <span class="fl">0.3611815</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.9710981</span>, <span class="fl">1.684854</span>, <span class="fl">1.49811</span>, <span class="fl">0.4599071</span>, <span class="fl">1.18149</span>, <span class="fl">0.04501055</span>, <span class="fl">0.2688005</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.9070787</span>, <span class="fl">0.1067991</span>, <span class="fl">0.8979944</span>, <span class="fl">0.1442192</span>, <span class="fl">0.3690044</span>, <span class="fl">1.250377</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.7919656</span>, <span class="fl">0.2785386</span>, <span class="fl">1.312061</span>, <span class="fl">1.794021</span>, <span class="fl">1.867813</span>, <span class="fl">1.374013</span>, <span class="fl">0.7282234</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.6067082</span>, <span class="fl">1.062187</span>, <span class="fl">0.08889603</span>, <span class="fl">0.5668522</span>, <span class="fl">0.743226</span>, <span class="fl">0.6237324</span>,</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.2951361</span>, <span class="fl">0.2185725</span>, <span class="fl">0.8271643</span>, <span class="fl">0.4682848</span>, <span class="fl">0.7791434</span>, <span class="fl">0.2655503</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.5545753</span>, <span class="fl">0.7419484</span>, <span class="fl">0.1427752</span>, <span class="fl">0.3778655</span>, <span class="fl">1.327472</span>, <span class="fl">0.93939</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>      <span class="fl">0.9402052</span>, <span class="fl">0.8784793</span>, <span class="fl">0.605618</span>, <span class="fl">0.7390297</span>, <span class="fl">0.7402008</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Assume</p>
+<p><span class="math display">\[
+x_i
+\overset{\mathrm{iid}}{\sim}
+Weibull(\lambda, k)
+\]</span></p>
+<p>Find the maximum likelihood estimates <span class="math inline">\(\hat{k}_{MLE}\)</span> and <span class="math inline">\(\hat{\lambda}_{MLE}\)</span> using Newton’s method. In your solution, code Newton’s method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).</p>
+<p>Initialize your algorithm with <span class="math inline">\(k = 2\)</span>. Set your stopping tolerance to <code>0.001</code> and maximum iterations to <code>500</code>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>You only need to perform Newton’s method on the parameter <span class="math inline">\(k\)</span> here.</li>
+</ul>
+</div>
+</div>
 </section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">2.</h3>
+<section id="visualize-weibull-gradient-w.r.t-k" class="level3">
+<h3 class="anchored" data-anchor-id="visualize-weibull-gradient-w.r.t-k">2. visualize Weibull gradient w.r.t <span class="math inline">\(k\)</span></h3>
+<p>Following up on the previous exercise, let’s gain insight into when and how Newton’s method can fail.</p>
+<ul>
+<li><p>Set your starting <span class="math inline">\(k = 4\)</span>. What value <span class="math inline">\(k\)</span> converge to? Is this a valid value of <span class="math inline">\(k\)</span>?</p></li>
+<li><p>To gain insight into this, plot the derivative of the log-likelihood of <span class="math inline">\(k\)</span> from <code>0.01</code> to <code>5</code>. Why does starting at 4 change the result?</p></li>
+<li><p>Next plot the derivative of the log-likelihood from <code>-5</code> to <code>-0.01</code>. Be sure to appropriately label your plots, add relative titles, etc. Combine your plots using <a href="https://sta323-sp23.github.io/slides/lec07.html#/patchwork"><code>patchwork</code></a>.</p></li>
+<li><p>Finally, edit your Newton-Raphson algorithm to “reflect” negative values, i.e.&nbsp;if the updated iterate is negative, force it to be positive. Re-run your Newton’s method starting at <span class="math inline">\(k=4\)</span>. What does <span class="math inline">\(k\)</span> converge to? Why?</p></li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Write the gradient with respect to <span class="math inline">\(k\)</span> as a function of <span class="math inline">\(k\)</span> alone (as in lecture).</p>
+</div>
+</div>
+</section>
+<section id="zero-inflated-poisson" class="level3">
+<h3 class="anchored" data-anchor-id="zero-inflated-poisson">3. zero-inflated Poisson</h3>
+<p>Zero-inflated models allow for frequent zero-valued observations. You observe 100 people at the beach fishing. The number of fish each individual catches is reported in the data <code>fishing_count</code> below.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fishing_count <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">8</span>, <span class="dv">1</span>,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">0</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">6</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">0</span>,</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>,</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">7</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">5</span>, <span class="dv">0</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">5</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">8</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">2</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">7</span>, <span class="dv">7</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">7</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>                  <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Visualize the distribution of the data using an appropriate visualization. Label axes and describe your plot.</li>
+</ul>
+<p>The data can be described as being generated from a zero-inflated mixture model. Let <span class="math inline">\(Y_i\)</span> be the number of fish an individual catches at the beach.</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(Y_i = 0) &amp;= p + (1-p) e^{-\lambda}\\
+p(Y_i = y_i) &amp;= \frac{(1 - p)\lambda^{y_i}e^{-\lambda}}{y_i!}, \ \ y_i = 1, 2, 3, \ldots
+\end{aligned}
+\]</span></p>
+<ul>
+<li>Visualize the likelihood as a function of <span class="math inline">\(p\)</span> over the support of <span class="math inline">\(p\)</span> while fixing <span class="math inline">\(\lambda = 5\)</span>. Repeat for <span class="math inline">\(\lambda = 4\)</span> (on the same plot). Based on your plot, which value of <span class="math inline">\(\lambda\)</span> is more likely? Also, assuming these <span class="math inline">\(\lambda\)</span> are sufficiently close to the true <span class="math inline">\(\lambda\)</span>, what is (approximately) the MLE of <span class="math inline">\(p\)</span> based on your plot?</li>
+</ul>
+<p>Using this mixture model, and assuming observations <span class="math inline">\(\{Y_i\}\)</span> are independent, compute the maximum likelihood estimates <span class="math inline">\(\hat{p}_{MLE}\)</span> and <span class="math inline">\(\hat{\lambda}_{MLE}\)</span> using Newton’s method. In your solution, code Newton’s method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).</p>
+<p>Initialize your algorithm with <span class="math inline">\(\lambda = 1\)</span>. Set your stopping tolerance to <code>0.001</code> and maximum iterations to <code>500</code>.</p>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>To begin, write the likelihood of the data. This is your <strong>objective</strong> function that you wish to maximize.</p></li>
+<li><p>You only need to perform Newton’s method on the parameter <span class="math inline">\(\lambda\)</span> here.</p></li>
+</ul>
+</div>
+</div>
+<div class="cell">
+
+</div>
+<div class="cell">
+
+</div>
 </section>
 </section>
 <section id="style-guidelines" class="level2">

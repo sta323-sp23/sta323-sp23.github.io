@@ -63,11 +63,11 @@ schedule %>%
 | 6    | Tue Feb 21 | no lab: exam 1                         |                                 |                |   exam 1 due                                    |         |
 |      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         |
 |      | Fri Feb 24 | intro to optimization          |  [💻](/slides/lec11.html)                                |                          |                                       |         |
-| 7    | Tue Feb 28 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 01 |                  |                                 |                          |                                       |         |
-|      | Fri Mar 03 | univariate Newton-Raphson              |                                 |                          |                                       |         |
+| 7    | Tue Feb 28 | Where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         |
+|      | Wed Mar 01 | univariate Newton-Raphson                  |                                 |                          |                                       |         |
+|      | Fri Mar 03 | multivariate Newton-Raphson examples             |                                 |                          |                                       |         |
 | 8    | Tue Mar 07 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 08 | multivariate Newton-Raphson examples   |                                 |                          |                                       |         |
+|      | Wed Mar 08 |    |                                 |                          |                                       |         |
 |      | Fri Mar 10 | MM algorithm I                         |                                 |                          |                                       |         |
 | 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
@@ -84,8 +84,8 @@ schedule %>%
 | 13   | Tue Apr 11 |     no lab: exam 2                                   |                                 |                          |     exam 2 due                                  |         |
 |      | Wed Apr 12 | importance sampling                    |                                 |                          |                                       |         |
 |      | Fri Apr 14 | covariance                             |                                 |                          |                                       |         |
-| 14   | Tue Apr 18 |                                        |                                 |                          |                                       |         |
+| 14   | Tue Apr 18 | project peer-review                                       |                                 |                          |                                       |         |
 |      | Wed Apr 19 | APIs                                   |                                 |                          |                                       |         |
 |      | Fri Apr 21 | SQL                                    |                                 |                          |                                       |         |
-| 15   | Tue Apr 25 | project presentations                  |                                 |                          |                                       |         |
-|      | Wed Apr 26 | special topic                          |                                 |                          |                                       |         |
+| 15   | Tue Apr 25 | project work day                |                                 |                          |                                       |         |
+|      | Wed Apr 26 | project presentations                           |                                 |                          |                                       |         |
