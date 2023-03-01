@@ -56,7 +56,9 @@ Weibull(\lambda, k)
 $$
 Find the maximum likelihood estimates $\hat{k}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
 
-Initialize your algorithm with $k = 2$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
+Initialize your algorithm with $k = 2$. Set your stopping tolerance to `0.001` and maximum iterations to `500`. 
+
+Report your estimates $\hat{k}_{MLE}$ and $\hat{\lambda}_{MLE}$.
 
 ::: callout-tip
 ## Hint
@@ -72,7 +74,7 @@ Following up on the previous exercise, let's gain insight into when and how Newt
 
 - To gain insight into this, plot the derivative of the log-likelihood of $k$ from `0.01` to `5`. Why does starting at 4 change the result? 
 
-- Next plot the derivative of the log-likelihood from `-5` to `-0.01`. Be sure to appropriately label your plots, add relative titles, etc. Combine your plots using [`patchwork`](https://sta323-sp23.github.io/slides/lec07.html#/patchwork). 
+- Next plot the derivative of the log-likelihood from `-5` to `-0.01`. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using [`patchwork`](https://sta323-sp23.github.io/slides/lec07.html#/patchwork). 
 
 - Finally, edit your Newton-Raphson algorithm to "reflect" negative values, i.e. if the updated iterate is negative, force it to be positive. Re-run your Newton's method starting at $k=4$. What does $k$ converge to? Why?
 

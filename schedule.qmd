@@ -64,28 +64,28 @@ schedule %>%
 |      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         |
 |      | Fri Feb 24 | intro to optimization          |  [💻](/slides/lec11.html)                                |                          |                                       |         |
 | 7    | Tue Feb 28 | Where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         |
-|      | Wed Mar 01 | univariate Newton-Raphson                  |                                 |                          |                                       |         |
-|      | Fri Mar 03 | multivariate Newton-Raphson examples             |                                 |                          |                                       |         |
-| 8    | Tue Mar 07 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 08 |    |                                 |                          |                                       |         |
-|      | Fri Mar 10 | MM algorithm I                         |                                 |                          |                                       |         |
+|      | Wed Mar 01 | Newton-Raphson                  |[💻](/slides/lec12.html)                                  |                          |                                       |         |
+|      | Fri Mar 03 | Newton-Raphson examples           |                                 |                          |                                       |         |
+| 8    | Tue Mar 07 |  continue lab                                      |                                 |                          |                                       |         |
+|      | Wed Mar 08 | MM algorithm I   |                                 |                          |                                       |         |
+|      | Fri Mar 10 | MM algorithm II                         |                                 |                          |                                       |         |
 | 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 | 10   | Tue Mar 21 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 22 | MM algorithm II                        |                                 |                          |                                       |         |
-|      | Fri Mar 24 | EM algorithm                           |                                 |                          |                                       |         |
+|      | Wed Mar 22 | EM algorithm                      |                                 |                          |                                       |         |
+|      | Fri Mar 24 | Monte Carlo Integration                          |                                 |                          |                                       |         |
 | 11   | Tue Mar 28 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 29 | shiny                                  |                                 |                          |                                       |         |
-|      | Fri Mar 31 | project tips                           |                                 |                          |                                      |         |
-| 12   | Tue Apr 04 |                                       |                                 |                          |                                       |         |
-|      | Wed Apr 05 | matrices and BLAS                      |                                 |                          |                                       |         |
-|      | Fri Apr 07 | Monte Carlo integration                |                                 |                          |      exam 2 release                                  |         |
-| 13   | Tue Apr 11 |     no lab: exam 2                                   |                                 |                          |     exam 2 due                                  |         |
-|      | Wed Apr 12 | importance sampling                    |                                 |                          |                                       |         |
-|      | Fri Apr 14 | covariance                             |                                 |                          |                                       |         |
+|      | Wed Mar 29 | Importance sampling                                 |                                 |                          |                                       |         |
+|      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   exam 2 release                                   |          |
+| 12   | Tue Apr 04 |  no lab: exam 2                                       |                                 |                          |  exam 2 due                                     |         |
+|      | Wed Apr 05 |  shiny I                 |                                 |                          |                                       |         |
+|      | Fri Apr 07 | shiny II              |                                 |                          |                                       |         |
+| 13   | Tue Apr 11 |                                   |                                 |                          |                                  |         |
+|      | Wed Apr 12 | project tips                   |                                 |                          |                                       |         |
+|      | Fri Apr 14 | covariance                            |                                 |                          |                                       |         |
 | 14   | Tue Apr 18 | project peer-review                                       |                                 |                          |                                       |         |
 |      | Wed Apr 19 | APIs                                   |                                 |                          |                                       |         |
 |      | Fri Apr 21 | SQL                                    |                                 |                          |                                       |         |
-| 15   | Tue Apr 25 | project work day                |                                 |                          |                                       |         |
-|      | Wed Apr 26 | project presentations                           |                                 |                          |                                       |         |
+| 15   | Tue Apr 25 | project presentations              |                                 |                          |                                       |         |
+|      | Wed Apr 26 |                           |                                 |                          |                                       |         |

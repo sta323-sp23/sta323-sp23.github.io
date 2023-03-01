@@ -235,6 +235,7 @@ Weibull(\lambda, k)
 \]</span></p>
 <p>Find the maximum likelihood estimates <span class="math inline">\(\hat{k}_{MLE}\)</span> and <span class="math inline">\(\hat{\lambda}_{MLE}\)</span> using Newton’s method. In your solution, code Newton’s method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).</p>
 <p>Initialize your algorithm with <span class="math inline">\(k = 2\)</span>. Set your stopping tolerance to <code>0.001</code> and maximum iterations to <code>500</code>.</p>
+<p>Report your estimates <span class="math inline">\(\hat{k}_{MLE}\)</span> and <span class="math inline">\(\hat{\lambda}_{MLE}\)</span>.</p>
 <div class="callout-tip callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -257,7 +258,7 @@ Hint
 <ul>
 <li><p>Set your starting <span class="math inline">\(k = 4\)</span>. What value <span class="math inline">\(k\)</span> converge to? Is this a valid value of <span class="math inline">\(k\)</span>?</p></li>
 <li><p>To gain insight into this, plot the derivative of the log-likelihood of <span class="math inline">\(k\)</span> from <code>0.01</code> to <code>5</code>. Why does starting at 4 change the result?</p></li>
-<li><p>Next plot the derivative of the log-likelihood from <code>-5</code> to <code>-0.01</code>. Be sure to appropriately label your plots, add relative titles, etc. Combine your plots using <a href="https://sta323-sp23.github.io/slides/lec07.html#/patchwork"><code>patchwork</code></a>.</p></li>
+<li><p>Next plot the derivative of the log-likelihood from <code>-5</code> to <code>-0.01</code>. Be sure to appropriately label your plots, add relevant titles, etc. Combine your plots using <a href="https://sta323-sp23.github.io/slides/lec07.html#/patchwork"><code>patchwork</code></a>.</p></li>
 <li><p>Finally, edit your Newton-Raphson algorithm to “reflect” negative values, i.e.&nbsp;if the updated iterate is negative, force it to be positive. Re-run your Newton’s method starting at <span class="math inline">\(k=4\)</span>. What does <span class="math inline">\(k\)</span> converge to? Why?</p></li>
 </ul>
 <div class="callout-tip callout callout-style-default callout-captioned">
