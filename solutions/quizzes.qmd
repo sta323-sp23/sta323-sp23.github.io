@@ -183,3 +183,29 @@ cars %>%
 ### Solution
 Missing a `+` to connect ggplot layers.
 :::
+
+# quiz 4
+
+::: panel-tabset
+
+### Exercise 1
+
+true or false: Newton's method, $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$, iterates to find extrema of function $f$.
+
+### Solution
+
+false
+
+:::
+
+::: panel-tabset
+
+### Exercise 2
+
+true or false: Newton's method always converges to the same point, regardless of starting position $x_0$.
+
+### Solution
+
+false
+
+:::

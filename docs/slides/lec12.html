@@ -478,7 +478,7 @@ X \sim Binomial(n, p)
 <p><span class="math display">\[
 p \sim Beta(\alpha, \beta)
 \]</span></p>
-<p>This data-generative process models a set of <span class="math inline">\(N\)</span> binomial experiments, each possibly having their own local <span class="math inline">\(p_i\)</span>, for <span class="math inline">\(i \in \{1, \ldots N\}\)</span>.</p>
+<p>This data-generative process models a set of <span class="math inline">\(N\)</span> binomial experiments, each possibly having their own local <span class="math inline">\(p_i\)</span>, and local <span class="math inline">\(n_i\)</span> for <span class="math inline">\(i \in \{1, \ldots N\}\)</span>.</p>
 <div class="fragment">
 <p>Example:</p>
 <blockquote>
@@ -557,7 +557,7 @@ f_p(\mathbf{p} | \alpha, \beta) = \prod_{i = 1}^{N} \frac{p_i^{\alpha - 1} (1-p_
 </div>
 </div>
 <div class="fragment">
-<p>Fundamentally, we are interested in the underlying Beta distribution that the <span class="math inline">\(p_i\)</span> are drawn from. We don’t care about the individual <span class="math inline">\(p_i\)</span> themselves. We integrate out <span class="math inline">\(p_i\)</span>,</p>
+<p>Fundamentally, we are interested in the underlying Beta distribution that the <span class="math inline">\(p_i\)</span> are drawn from. We don’t care about the individual <span class="math inline">\(p_i\)</span> themselves. We integrate out <span class="math inline">\(\mathbf{p}\)</span>,</p>
 <p><span class="math display">\[
 \begin{aligned}
 f_x(\mathbf{x}|\mathbf{n}, \alpha, \beta) &amp;= \int f_x(\mathbf{x}, \mathbf{p} | \mathbf{n}, \alpha, \beta)
@@ -577,11 +577,13 @@ f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
 \int
 f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
 \ d\mathbf{p} &amp;=
+\int
 \prod_{i = 1}^{N} {n_i \choose{x_i}}
 \frac{p_i^{x_i + \alpha - 1} (1-p_i)^{n_i - x_i +\beta - 1}}{B(\alpha, \beta)}
 \end{aligned}
+d \mathbf{p}
 \]</span></p>
-<p>Conjugacy! This is itself is proportional to a Beta distribution, hence</p>
+<p>Conjugacy! This is proportional to a Beta distribution, hence</p>
 <p><span class="math display">\[
 \begin{aligned}
 f_x(\mathbf{x}|\mathbf{n}, \alpha, \beta) &amp;=

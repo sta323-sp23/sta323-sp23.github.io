@@ -40,6 +40,6 @@ cars %>%
 ```{r}
 #| echo: false
 library(countdown)
-countdown(minutes = 4, font_size = "4em",
+countdown(minutes = 4, font_size = "3.5em",
           color_running_background = "#2774AE")
 ```

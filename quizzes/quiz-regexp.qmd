@@ -1,0 +1,46 @@
+---
+title: "Quiz regexp"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1
+
+In a regexp, `*` is used to repeat what comes before it __ or more times.
+
+### Exercise 2
+
+The regexp `"a{4}"` will match... [short response]
+
+### Exercise 3
+
+Functions in `stringr` begin with the prefix ___.
+
+
+### Exercise 4
+
+What's wrong with the regexp below? Note: you are trying to match the `?`
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+```
+
+
+```{r}
+#| error: true
+#| eval: false
+
+txt = "Can you match this?"
+
+str_detect(txt, "?")
+```
+
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "4em",
+          color_running_background = "#2774AE")
+```

@@ -116,7 +116,7 @@ $$
 p \sim Beta(\alpha, \beta)
 $$
 
-This data-generative process models a set of $N$ binomial experiments, each possibly having their own local $p_i$, for $i \in \{1, \ldots N\}$.
+This data-generative process models a set of $N$ binomial experiments, each possibly having their own local $p_i$, and local $n_i$ for $i \in \{1, \ldots N\}$.
 
 . . . 
 
@@ -171,7 +171,7 @@ where $B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\bet
 
 . . . 
 
-Fundamentally, we are interested in the underlying Beta distribution that the $p_i$ are drawn from. We don't care about the individual $p_i$ themselves. We integrate out $p_i$,
+Fundamentally, we are interested in the underlying Beta distribution that the $p_i$ are drawn from. We don't care about the individual $p_i$ themselves. We integrate out $\mathbf{p}$,
 
 $$
 \begin{aligned}
@@ -191,12 +191,14 @@ $$
 \int
 f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
 \ d\mathbf{p} &=
+\int
 \prod_{i = 1}^{N} {n_i \choose{x_i}}
 \frac{p_i^{x_i + \alpha - 1} (1-p_i)^{n_i - x_i +\beta - 1}}{B(\alpha, \beta)}
 \end{aligned}
+d \mathbf{p}
 $$
 
-Conjugacy! This is itself is proportional to a Beta distribution, hence
+Conjugacy! This is proportional to a Beta distribution, hence
 
 $$
 \begin{aligned}

@@ -23,6 +23,6 @@ TRUE or FALSE: a tidy data frame has individual observations on the rows, variab
 ```{r}
 #| echo: false
 library(countdown)
-countdown(minutes = 4, font_size = "1.5em",
+countdown(minutes = 4, font_size = "4em",
           color_running_background = "#2774AE")
 ```
