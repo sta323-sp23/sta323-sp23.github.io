@@ -226,7 +226,7 @@ $$
 ## Log-likelihood 
 
 $$
-\log L = N \left(\log \Gamma(\alpha+\beta) - \log \Gamma(\alpha) -\log\Gamma(\beta) \right)+\\
+\log L = N \left(\log \Gamma(\alpha+\beta) + \log \Gamma(\alpha) -\log\Gamma(\beta) \right)+\\
 \sum_{i=1}^N \log {n_i \choose x_i} + \log \Gamma(x_i + \alpha) +
 \log \Gamma(n_i -x_i + \beta) - \log {\Gamma(n_i + \alpha + \beta)}
 $$
@@ -238,16 +238,16 @@ We want to maximize the log-likelihood.
 
 ### Gradient of log-likelihood
 
-- derivative of log-Gamma function is the [digamma function](https://en.wikipedia.org/wiki/Digamma_function), often denoted by the Greek $\psi$ ("psi").
+- derivative of log-Gamma function is the [digamma(https://en.wikipedia.org/wiki/Digamma_function) function], often denoted by the Greek $\psi$ ("psi").
 
 $$
-\frac{\partial}{\partial \alpha} \log L = N \left[\psi(\alpha + \beta) - \psi(\alpha)\right] +
+\frac{\partial}{\partial \alpha} \log L = N \left[\psi(\alpha + \beta) + \psi(\alpha)\right] +
 \sum_{i=1}^N \psi(x_i + \alpha) - \psi(n_i + \alpha + \beta)
 $$
 
 $$
 \frac{\partial}{\partial \beta}\log L = 
-N \left[\psi(\alpha + \beta) - \psi(\beta)\right] + \sum_{i=1}^N
+N \left[\psi(\alpha + \beta) + \psi(\beta)\right] + \sum_{i=1}^N
 \psi(n_i - x_i + \beta) - \psi(n_i + \alpha + \beta)
 $$
 ## Jacobian
@@ -255,12 +255,12 @@ $$
 - second derivative of log-Gamma function is the [trigamma function](https://en.wikipedia.org/wiki/Trigamma_function), often denoted by the Greek $\psi_1$ ("psi") with a subscript "1".
 
 $$
-\frac{\partial^2}{\partial \alpha^2} \log L = N \left[\psi_1(\alpha + \beta) - \psi_1(\alpha)\right] +
+\frac{\partial^2}{\partial \alpha^2} \log L = N \left[\psi_1(\alpha + \beta) + \psi_1(\alpha)\right] +
 \sum_{i=1}^N \psi_1(x_i + \alpha) - \psi_1(n_i + \alpha + \beta)
 $$
 $$
 \frac{\partial^2}{\partial \beta^2}\log L = 
-N \left[\psi_1(\alpha + \beta) - \psi_1(\beta)\right] + \sum_{i=1}^N
+N \left[\psi_1(\alpha + \beta) + \psi_1(\beta)\right] + \sum_{i=1}^N
 \psi_1(n_i - x_i + \beta) - \psi_1(n_i + \alpha + \beta)
 $$
 - Same thing but with trigamma functions!
@@ -289,8 +289,7 @@ $$
 The same intuition applies, but in higher dimensions.
 
 Let $\mathbf{a}$ satisfy $f(\mathbf{a}) = 0$.
-
-- Based on first order approximation of a function, $\ f(\mathbf{a}) \approx f(\mathbf{x}) + f'(\mathbf{x})(\mathbf{a}- \mathbf{x})$
+-   Based on first order approximation of a function, $\ f(\mathbf{a}) \approx f(\mathbf{x}) + f'(\mathbf{x})(\mathbf{a}- \mathbf{x})$
 
 Near fixed points, the first order approximation is: 
 
@@ -307,11 +306,7 @@ $$
 
 Method of moments. 
 
-Set the first and second moments ($\mathbb{E} [x]$ and $\mathbb{E} [x^2]$ respectively) equal to the sample first and second moments.
-
-- Sample first moment (the sample mean): $m_1 = \frac{1}{N}\sum_{i = 1}^N x_i$
-
-- Sample second moment (non-central): $m_2 = \frac{1}{N} \sum_{i = 1}^N x_i^2$
+Set the moments equal to the sample mean, $\bar{x}$ and sample variance $s^2$.
 
 $$
 \hat{\alpha} = \frac{n m_1 - m_2}{n (\frac{m_2}{m_1} - m_1 - 1) + m_1} 
@@ -319,7 +314,7 @@ $$
 
 $$
 \hat{\beta} = \frac{(n- m_1) (n - \frac{m_2}{m_1})}{
-n (\frac{m_2}{m_1} - m_1 - 1) + m_1
+n (\frac{m_2}{m_1} - m_1 - 1 + m_1)
 }
 $$
 ## Exercise: find the MLE
@@ -330,10 +325,8 @@ $$
 #| eval: false
 x = data.frame(families = c(3, 24, 104, 286, 670, 1033, 1343, 1112,
                             829, 478, 181, 45, 7),
-               m = seq(0, 12))
-
-y = rep(x$m, x$families) # data as we will use it
-N = sum(x$families)
-n = 12
+               m = seq(0, 12),
+               n = rep(12, 13)) %>%
+  mutate(p = m / n)
 ```
 

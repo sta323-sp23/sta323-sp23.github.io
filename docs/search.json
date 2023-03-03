@@ -2944,35 +2944,35 @@
     "href": "slides/lec12.html#log-likelihood",
     "title": "Newton-Raphson",
     "section": "Log-likelihood",
-    "text": "Log-likelihood\n\\[\n\\log L = N \\left(\\log \\Gamma(\\alpha+\\beta) + \\log \\Gamma(\\alpha) -\\log\\Gamma(\\beta) \\right)+\\\\\n\\sum_{i=1}^N \\log {n_i \\choose x_i} + \\log \\Gamma(x_i + \\alpha) +\n\\log \\Gamma(n_i -x_i + \\beta) - \\log {\\Gamma(n_i + \\alpha + \\beta)}\n\\]\n\nWe want to maximize the log-likelihood.\n\n\nGradient of log-likelihood\n\nderivative of log-Gamma function is the [digamma(https://en.wikipedia.org/wiki/Digamma_function) function], often denoted by the Greek \\(\\psi\\) (“psi”).\n\n\\[\n\\frac{\\partial}{\\partial \\alpha} \\log L = N \\left[\\psi(\\alpha + \\beta) + \\psi(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi(x_i + \\alpha) - \\psi(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial}{\\partial \\beta}\\log L =\nN \\left[\\psi(\\alpha + \\beta) + \\psi(\\beta)\\right] + \\sum_{i=1}^N\n\\psi(n_i - x_i + \\beta) - \\psi(n_i + \\alpha + \\beta)\n\\]"
+    "text": "Log-likelihood\n\\[\n\\log L = N \\left(\\log \\Gamma(\\alpha+\\beta) - \\log \\Gamma(\\alpha) -\\log\\Gamma(\\beta) \\right)+\\\\\n\\sum_{i=1}^N \\log {n_i \\choose x_i} + \\log \\Gamma(x_i + \\alpha) +\n\\log \\Gamma(n_i -x_i + \\beta) - \\log {\\Gamma(n_i + \\alpha + \\beta)}\n\\]\n\nWe want to maximize the log-likelihood.\n\n\nGradient of log-likelihood\n\nderivative of log-Gamma function is the digamma function, often denoted by the Greek \\(\\psi\\) (“psi”).\n\n\\[\n\\frac{\\partial}{\\partial \\alpha} \\log L = N \\left[\\psi(\\alpha + \\beta) - \\psi(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi(x_i + \\alpha) - \\psi(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial}{\\partial \\beta}\\log L =\nN \\left[\\psi(\\alpha + \\beta) - \\psi(\\beta)\\right] + \\sum_{i=1}^N\n\\psi(n_i - x_i + \\beta) - \\psi(n_i + \\alpha + \\beta)\n\\]"
   },
   {
     "objectID": "slides/lec12.html#jacobian",
     "href": "slides/lec12.html#jacobian",
     "title": "Newton-Raphson",
     "section": "Jacobian",
-    "text": "Jacobian\n\nsecond derivative of log-Gamma function is the trigamma function, often denoted by the Greek \\(\\psi_1\\) (“psi”) with a subscript “1”.\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha^2} \\log L = N \\left[\\psi_1(\\alpha + \\beta) + \\psi_1(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi_1(x_i + \\alpha) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial^2}{\\partial \\beta^2}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta) + \\psi_1(\\beta)\\right] + \\sum_{i=1}^N\n\\psi_1(n_i - x_i + \\beta) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\nSame thing but with trigamma functions!\n\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha \\partial \\beta}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta)\\right] - \\sum_{i=1}^N \\psi_1(n_i + \\alpha + \\beta)\n\\]\nIn general, the Jacobian,\n\\[\nJ=\\left[\\begin{array}{ccc}\n\\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{n}} \\\\\n\\vdots & \\ddots & \\vdots \\\\\n\\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{n}}\n\\end{array}\\right]\n\\]"
+    "text": "Jacobian\n\nsecond derivative of log-Gamma function is the trigamma function, often denoted by the Greek \\(\\psi_1\\) (“psi”) with a subscript “1”.\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha^2} \\log L = N \\left[\\psi_1(\\alpha + \\beta) - \\psi_1(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi_1(x_i + \\alpha) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial^2}{\\partial \\beta^2}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta) - \\psi_1(\\beta)\\right] + \\sum_{i=1}^N\n\\psi_1(n_i - x_i + \\beta) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\nSame thing but with trigamma functions!\n\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha \\partial \\beta}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta)\\right] - \\sum_{i=1}^N \\psi_1(n_i + \\alpha + \\beta)\n\\]\nIn general, the Jacobian,\n\\[\nJ=\\left[\\begin{array}{ccc}\n\\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{n}} \\\\\n\\vdots & \\ddots & \\vdots \\\\\n\\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{n}}\n\\end{array}\\right]\n\\]"
   },
   {
     "objectID": "slides/lec12.html#multivariate-newton-raphson",
     "href": "slides/lec12.html#multivariate-newton-raphson",
     "title": "Newton-Raphson",
     "section": "multivariate Newton-Raphson",
-    "text": "multivariate Newton-Raphson\nThe same intuition applies, but in higher dimensions.\nLet \\(\\mathbf{a}\\) satisfy \\(f(\\mathbf{a}) = 0\\). - Based on first order approximation of a function, \\(\\ f(\\mathbf{a}) \\approx f(\\mathbf{x}) + f'(\\mathbf{x})(\\mathbf{a}- \\mathbf{x})\\)\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(\\mathbf{x}) + Df(\\mathbf{x})(\\mathbf{a} - \\mathbf{x}).\n\\]\nTo find the root, we rearrange (solve for \\(\\mathbf{a}\\)) again and iterate\n\\[\n\\mathbf{x}_{n+1} = \\mathbf{x}_n - J^{-1}(\\mathbf{x}_n) f(\\mathbf{x}_n)\n\\]"
+    "text": "multivariate Newton-Raphson\nThe same intuition applies, but in higher dimensions.\nLet \\(\\mathbf{a}\\) satisfy \\(f(\\mathbf{a}) = 0\\).\n\nBased on first order approximation of a function, \\(\\ f(\\mathbf{a}) \\approx f(\\mathbf{x}) + f'(\\mathbf{x})(\\mathbf{a}- \\mathbf{x})\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(\\mathbf{x}) + Df(\\mathbf{x})(\\mathbf{a} - \\mathbf{x}).\n\\]\nTo find the root, we rearrange (solve for \\(\\mathbf{a}\\)) again and iterate\n\\[\n\\mathbf{x}_{n+1} = \\mathbf{x}_n - J^{-1}(\\mathbf{x}_n) f(\\mathbf{x}_n)\n\\]"
   },
   {
     "objectID": "slides/lec12.html#a-good-starting-point",
     "href": "slides/lec12.html#a-good-starting-point",
     "title": "Newton-Raphson",
     "section": "A good starting point",
-    "text": "A good starting point\nMethod of moments.\nSet the moments equal to the sample mean, \\(\\bar{x}\\) and sample variance \\(s^2\\).\n\\[\n\\hat{\\alpha} = \\frac{n m_1 - m_2}{n (\\frac{m_2}{m_1} - m_1 - 1) + m_1}\n\\]\n\\[\n\\hat{\\beta} = \\frac{(n- m_1) (n - \\frac{m_2}{m_1})}{\nn (\\frac{m_2}{m_1} - m_1 - 1 + m_1)\n}\n\\]"
+    "text": "A good starting point\nMethod of moments.\nSet the first and second moments (\\(\\mathbb{E} [x]\\) and \\(\\mathbb{E} [x^2]\\) respectively) equal to the sample first and second moments.\n\nSample first moment (the sample mean): \\(m_1 = \\frac{1}{N}\\sum_{i = 1}^N x_i\\)\nSample second moment (non-central): \\(m_2 = \\frac{1}{N} \\sum_{i = 1}^N x_i^2\\)\n\n\\[\n\\hat{\\alpha} = \\frac{n m_1 - m_2}{n (\\frac{m_2}{m_1} - m_1 - 1) + m_1}\n\\]\n\\[\n\\hat{\\beta} = \\frac{(n- m_1) (n - \\frac{m_2}{m_1})}{\nn (\\frac{m_2}{m_1} - m_1 - 1) + m_1\n}\n\\]"
   },
   {
     "objectID": "slides/lec12.html#exercise-find-the-mle",
     "href": "slides/lec12.html#exercise-find-the-mle",
     "title": "Newton-Raphson",
     "section": "Exercise: find the MLE",
-    "text": "Exercise: find the MLE\n\nCode Newton-Raphson to find \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\) for the 19th century hospital record example here.\n\n\nx = data.frame(families = c(3, 24, 104, 286, 670, 1033, 1343, 1112,\n                            829, 478, 181, 45, 7),\n               m = seq(0, 12),\n               n = rep(12, 13)) %>%\n  mutate(p = m / n)\n\n\n\n🔗 sta323-sp23.github.io"
+    "text": "Exercise: find the MLE\n\nCode Newton-Raphson to find \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\) for the 19th century hospital record example here.\n\n\nx = data.frame(families = c(3, 24, 104, 286, 670, 1033, 1343, 1112,\n                            829, 478, 181, 45, 7),\n               m = seq(0, 12))\n\ny = rep(x$m, x$families) # data as we will use it\nN = sum(x$families)\nn = 12\n\n\n\n🔗 sta323-sp23.github.io"
   },
   {
     "objectID": "quizzes/quiz-regexp.html",

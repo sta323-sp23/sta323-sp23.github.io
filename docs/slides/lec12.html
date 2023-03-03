@@ -607,7 +607,7 @@ L(\alpha, \beta) =
 <section id="log-likelihood" class="slide level2">
 <h2>Log-likelihood</h2>
 <p><span class="math display">\[
-\log L = N \left(\log \Gamma(\alpha+\beta) + \log \Gamma(\alpha) -\log\Gamma(\beta) \right)+\\
+\log L = N \left(\log \Gamma(\alpha+\beta) - \log \Gamma(\alpha) -\log\Gamma(\beta) \right)+\\
 \sum_{i=1}^N \log {n_i \choose x_i} + \log \Gamma(x_i + \alpha) +
 \log \Gamma(n_i -x_i + \beta) - \log {\Gamma(n_i + \alpha + \beta)}
 \]</span></p>
@@ -617,15 +617,15 @@ L(\alpha, \beta) =
 <div class="fragment">
 <h3 id="gradient-of-log-likelihood">Gradient of log-likelihood</h3>
 <ul>
-<li>derivative of log-Gamma function is the [digamma(https://en.wikipedia.org/wiki/Digamma_function) function], often denoted by the Greek <span class="math inline">\(\psi\)</span> (“psi”).</li>
+<li>derivative of log-Gamma function is the <a href="https://en.wikipedia.org/wiki/Digamma_function">digamma function</a>, often denoted by the Greek <span class="math inline">\(\psi\)</span> (“psi”).</li>
 </ul>
 <p><span class="math display">\[
-\frac{\partial}{\partial \alpha} \log L = N \left[\psi(\alpha + \beta) + \psi(\alpha)\right] +
+\frac{\partial}{\partial \alpha} \log L = N \left[\psi(\alpha + \beta) - \psi(\alpha)\right] +
 \sum_{i=1}^N \psi(x_i + \alpha) - \psi(n_i + \alpha + \beta)
 \]</span></p>
 <p><span class="math display">\[
 \frac{\partial}{\partial \beta}\log L =
-N \left[\psi(\alpha + \beta) + \psi(\beta)\right] + \sum_{i=1}^N
+N \left[\psi(\alpha + \beta) - \psi(\beta)\right] + \sum_{i=1}^N
 \psi(n_i - x_i + \beta) - \psi(n_i + \alpha + \beta)
 \]</span></p>
 </div>
@@ -636,12 +636,12 @@ N \left[\psi(\alpha + \beta) + \psi(\beta)\right] + \sum_{i=1}^N
 <li>second derivative of log-Gamma function is the <a href="https://en.wikipedia.org/wiki/Trigamma_function">trigamma function</a>, often denoted by the Greek <span class="math inline">\(\psi_1\)</span> (“psi”) with a subscript “1”.</li>
 </ul>
 <p><span class="math display">\[
-\frac{\partial^2}{\partial \alpha^2} \log L = N \left[\psi_1(\alpha + \beta) + \psi_1(\alpha)\right] +
+\frac{\partial^2}{\partial \alpha^2} \log L = N \left[\psi_1(\alpha + \beta) - \psi_1(\alpha)\right] +
 \sum_{i=1}^N \psi_1(x_i + \alpha) - \psi_1(n_i + \alpha + \beta)
 \]</span></p>
 <p><span class="math display">\[
 \frac{\partial^2}{\partial \beta^2}\log L =
-N \left[\psi_1(\alpha + \beta) + \psi_1(\beta)\right] + \sum_{i=1}^N
+N \left[\psi_1(\alpha + \beta) - \psi_1(\beta)\right] + \sum_{i=1}^N
 \psi_1(n_i - x_i + \beta) - \psi_1(n_i + \alpha + \beta)
 \]</span></p>
 <ul>
@@ -670,7 +670,10 @@ J=\left[\begin{array}{ccc}
 <section id="multivariate-newton-raphson" class="slide level2">
 <h2>multivariate Newton-Raphson</h2>
 <p>The same intuition applies, but in higher dimensions.</p>
-<p>Let <span class="math inline">\(\mathbf{a}\)</span> satisfy <span class="math inline">\(f(\mathbf{a}) = 0\)</span>. - Based on first order approximation of a function, <span class="math inline">\(\ f(\mathbf{a}) \approx f(\mathbf{x}) + f'(\mathbf{x})(\mathbf{a}- \mathbf{x})\)</span></p>
+<p>Let <span class="math inline">\(\mathbf{a}\)</span> satisfy <span class="math inline">\(f(\mathbf{a}) = 0\)</span>.</p>
+<ul>
+<li>Based on first order approximation of a function, <span class="math inline">\(\ f(\mathbf{a}) \approx f(\mathbf{x}) + f'(\mathbf{x})(\mathbf{a}- \mathbf{x})\)</span></li>
+</ul>
 <p>Near fixed points, the first order approximation is:</p>
 <p><span class="math display">\[
 0 \approx f(\mathbf{x}) + Df(\mathbf{x})(\mathbf{a} - \mathbf{x}).
@@ -683,13 +686,17 @@ J=\left[\begin{array}{ccc}
 <section id="a-good-starting-point" class="slide level2">
 <h2>A good starting point</h2>
 <p>Method of moments.</p>
-<p>Set the moments equal to the sample mean, <span class="math inline">\(\bar{x}\)</span> and sample variance <span class="math inline">\(s^2\)</span>.</p>
+<p>Set the first and second moments (<span class="math inline">\(\mathbb{E} [x]\)</span> and <span class="math inline">\(\mathbb{E} [x^2]\)</span> respectively) equal to the sample first and second moments.</p>
+<ul>
+<li><p>Sample first moment (the sample mean): <span class="math inline">\(m_1 = \frac{1}{N}\sum_{i = 1}^N x_i\)</span></p></li>
+<li><p>Sample second moment (non-central): <span class="math inline">\(m_2 = \frac{1}{N} \sum_{i = 1}^N x_i^2\)</span></p></li>
+</ul>
 <p><span class="math display">\[
 \hat{\alpha} = \frac{n m_1 - m_2}{n (\frac{m_2}{m_1} - m_1 - 1) + m_1}
 \]</span></p>
 <p><span class="math display">\[
 \hat{\beta} = \frac{(n- m_1) (n - \frac{m_2}{m_1})}{
-n (\frac{m_2}{m_1} - m_1 - 1 + m_1)
+n (\frac{m_2}{m_1} - m_1 - 1) + m_1
 }
 \]</span></p>
 </section>
@@ -701,9 +708,11 @@ n (\frac{m_2}{m_1} - m_1 - 1 + m_1)
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">families =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">24</span>, <span class="dv">104</span>, <span class="dv">286</span>, <span class="dv">670</span>, <span class="dv">1033</span>, <span class="dv">1343</span>, <span class="dv">1112</span>,</span>
 <span id="cb4-2"><a href="#cb4-2"></a>                            <span class="dv">829</span>, <span class="dv">478</span>, <span class="dv">181</span>, <span class="dv">45</span>, <span class="dv">7</span>),</span>
-<span id="cb4-3"><a href="#cb4-3"></a>               <span class="at">m =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12</span>),</span>
-<span id="cb4-4"><a href="#cb4-4"></a>               <span class="at">n =</span> <span class="fu">rep</span>(<span class="dv">12</span>, <span class="dv">13</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> m <span class="sc">/</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3"></a>               <span class="at">m =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12</span>))</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>y <span class="ot">=</span> <span class="fu">rep</span>(x<span class="sc">$</span>m, x<span class="sc">$</span>families) <span class="co"># data as we will use it</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>N <span class="ot">=</span> <span class="fu">sum</span>(x<span class="sc">$</span>families)</span>
+<span id="cb4-7"><a href="#cb4-7"></a>n <span class="ot">=</span> <span class="dv">12</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
