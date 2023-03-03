@@ -2980,5 +2980,89 @@
     "title": "Quiz regexp",
     "section": "",
     "text": "Exercise 1\nIn a regexp, * is used to repeat what comes before it __ or more times.\n\n\nExercise 2\nThe regexp \"a{4}\" will match… [short response]\n\n\nExercise 3\nFunctions in stringr begin with the prefix ___.\n\n\nExercise 4\nWhat’s wrong with the regexp below? Note: you are trying to match the ?\n\n\n\n\ntxt = \"Can you match this?\"\n\nstr_detect(txt, \"?\")\n\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec13.html#univariate-newton-raphson",
+    "href": "slides/lec13.html#univariate-newton-raphson",
+    "title": "Newton-Raphson",
+    "section": "univariate Newton-Raphson",
+    "text": "univariate Newton-Raphson\n\nIf \\(a\\) satisfies \\(f(a) = 0\\), \\(a\\) is said to be a “fixed point” or “root” of the function\nNewton-Raphson is a “root-finding” method\nBased on first order approximation of a function, \\(\\ f(a) \\approx f(x) + f'(x)(a - x)\\)\n\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(x) + f'(x)(a - x).\n\\]\nWe are trying to find \\(a\\), so if \\(f'(x)\\) invertible, we rearrange\n\\[\na = x - \\frac{f(x)}{f'(x)}\n\\]\n\nand the procedural update is\n\\[\nx_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#code-example",
+    "href": "slides/lec13.html#code-example",
+    "title": "Newton-Raphson",
+    "section": "Code example",
+    "text": "Code example\n\n\n\nIn practice, we tolerate close solutions, i.e. \\(a\\) such that \\(f(a) \\approx 0\\).\n\nnewton = function(f, fp, x, tol) {\n  for (i in 1:100) {\n    x = x - f(x) / fp(x)\n    if (abs(f(x)) < tol) {\n      return(x)\n    }\n  }\n  return(x)\n}\n\n\nf = function(x) {\n  return(x ^ 3 - 5 * x + 1)\n}\n\nfp = function(x) {\n  return(3 * (x ^ 2) - 5.0)\n}\nnewton(f, fp, -2.0, 1e-14)\n\n[1] -2.330059\n\n\n\nf is the function we are finding a root of."
+  },
+  {
+    "objectID": "slides/lec13.html#where-we-start-matters",
+    "href": "slides/lec13.html#where-we-start-matters",
+    "title": "Newton-Raphson",
+    "section": "Where we start matters",
+    "text": "Where we start matters"
+  },
+  {
+    "objectID": "slides/lec13.html#what-can-go-wrong",
+    "href": "slides/lec13.html#what-can-go-wrong",
+    "title": "Newton-Raphson",
+    "section": "What can go wrong",
+    "text": "What can go wrong\n\nderivative not continuous at the root\nIf \\(f'(x_n)=0\\), can’t proceed\niterates can “cycle” rather than converge to the solution\nIf \\(f'(x_n)\\) is small, but not zero, approximate solutions can diverge to infinity.\nSensitive to initial point \\(x_0\\)"
+  },
+  {
+    "objectID": "slides/lec13.html#beta-binomial",
+    "href": "slides/lec13.html#beta-binomial",
+    "title": "Newton-Raphson",
+    "section": "Beta-binomial",
+    "text": "Beta-binomial\n\\[\nX \\sim Binomial(n, p)\n\\]\n\\[\np \\sim Beta(\\alpha, \\beta)\n\\]\nThis data-generative process models a set of \\(N\\) binomial experiments, each possibly having their own local \\(p_i\\), and local \\(n_i\\) for \\(i \\in \\{1, \\ldots N\\}\\).\n\nExample:\n\nSchuckers, ME “Using the Beta-binomial distribution to assess performance of a biometric identification device” International Journal of Image and Graphics, vol. 3, no. 3, July 2003\n\n\n\nData:\n\n\n\n\n\nid\nn\nsuccess\n\n\n\n\n1\n9\n3\n\n\n2\n9\n0\n\n\n3\n8\n8\n\n\n4\n6\n6\n\n\n5\n9\n8"
+  },
+  {
+    "objectID": "slides/lec13.html#beta-binomial-1",
+    "href": "slides/lec13.html#beta-binomial-1",
+    "title": "Newton-Raphson",
+    "section": "Beta-binomial",
+    "text": "Beta-binomial\n\\[\nf_x(\\mathbf{x}|\\mathbf{p}, \\mathbf{n}) =\n\\prod_{i = 1}^{N} {n_i \\choose{x_i}} p_i^{x_i}(1-p_i)^{n_i-x_i}  \n\\]\nwhere \\(\\mathbf{x} = \\{x_i \\}\\), \\(\\mathbf{p} = \\{ p_i \\}\\) and \\(\\mathbf{n} = \\{n_i \\}\\).\n\\[\nf_p(\\mathbf{p} | \\alpha, \\beta) = \\prod_{i = 1}^{N} \\frac{p_i^{\\alpha - 1} (1-p_i)^{\\beta - 1}}{B(\\alpha, \\beta)}\n\\]\nwhere \\(B(\\alpha, \\beta) = \\frac{\\Gamma(\\alpha) \\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)}\\).\n\n\n\n\n\n\nNote\n\n\n\n\\(\\Gamma\\) is the gamma function (read ?gamma and wikipedia).\nbeta() is the R function for \\(B(\\alpha, \\beta)\\).\n\n\n\n\n\nFundamentally, we are interested in the underlying Beta distribution that the \\(p_i\\) are drawn from. We don’t care about the individual \\(p_i\\) themselves. We integrate out \\(\\mathbf{p}\\),\n\\[\n\\begin{aligned}\nf_x(\\mathbf{x}|\\mathbf{n}, \\alpha, \\beta) &= \\int f_x(\\mathbf{x}, \\mathbf{p} | \\mathbf{n}, \\alpha, \\beta)\n\\ d\\mathbf{p}\\\\\n&=\n\\int\nf_x(\\mathbf{x}|\\mathbf{p}, \\mathbf{n}) f_p(\\mathbf{p} | \\alpha, \\beta)\n\\ d\\mathbf{p}\n\\end{aligned}\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#integrating-out-the-nuisance-parameters-continued",
+    "href": "slides/lec13.html#integrating-out-the-nuisance-parameters-continued",
+    "title": "Newton-Raphson",
+    "section": "Integrating out the nuisance parameters continued",
+    "text": "Integrating out the nuisance parameters continued\n\\[\n\\begin{aligned}\n\\int\nf_x(\\mathbf{x}|\\mathbf{p}, \\mathbf{n}) f_p(\\mathbf{p} | \\alpha, \\beta)\n\\ d\\mathbf{p} &=\n\\int\n\\prod_{i = 1}^{N} {n_i \\choose{x_i}}\n\\frac{p_i^{x_i + \\alpha - 1} (1-p_i)^{n_i - x_i +\\beta - 1}}{B(\\alpha, \\beta)}\n\\end{aligned}\nd \\mathbf{p}\n\\]\nConjugacy! This is proportional to a Beta distribution, hence\n\\[\n\\begin{aligned}\nf_x(\\mathbf{x}|\\mathbf{n}, \\alpha, \\beta) &=\n\\prod_{i = 1}^N {n_i \\choose x_i}\n\\frac{B(x_i + \\alpha, n_i - x_i +\\beta)}{B(\\alpha, \\beta)}\\\\\n&= \\prod_{i = 1}^N {n_i \\choose x_i}\n\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)}\n\\frac{\\Gamma(x_i + \\alpha)\\Gamma(n_i -x_i + \\beta)}{\\Gamma(n_i + \\alpha + \\beta)}\n\\end{aligned}\n\\]\n\nThis in fact our likelihood! We can still simplify by pulling out the part that isn’t indexed by \\(i\\),\n\\[\nL(\\alpha, \\beta) =\n\\left(\\frac{\\Gamma(\\alpha+\\beta)}{\\Gamma(\\alpha) \\Gamma(\\beta)}\\right)^N \\cdot\n\\prod_{i = 1}^N {n_i \\choose x_i}\n\\frac{\\Gamma(x_i + \\alpha)\\Gamma(n_i -x_i + \\beta)}{\\Gamma(n_i + \\alpha + \\beta)}\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#log-likelihood",
+    "href": "slides/lec13.html#log-likelihood",
+    "title": "Newton-Raphson",
+    "section": "Log-likelihood",
+    "text": "Log-likelihood\n\\[\n\\log L = N \\left(\\log \\Gamma(\\alpha+\\beta) + \\log \\Gamma(\\alpha) -\\log\\Gamma(\\beta) \\right)+\\\\\n\\sum_{i=1}^N \\log {n_i \\choose x_i} + \\log \\Gamma(x_i + \\alpha) +\n\\log \\Gamma(n_i -x_i + \\beta) - \\log {\\Gamma(n_i + \\alpha + \\beta)}\n\\]\n\nWe want to maximize the log-likelihood.\n\n\nGradient of log-likelihood\n\nderivative of log-Gamma function is the [digamma(https://en.wikipedia.org/wiki/Digamma_function) function], often denoted by the Greek \\(\\psi\\) (“psi”).\n\n\\[\n\\frac{\\partial}{\\partial \\alpha} \\log L = N \\left[\\psi(\\alpha + \\beta) + \\psi(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi(x_i + \\alpha) - \\psi(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial}{\\partial \\beta}\\log L =\nN \\left[\\psi(\\alpha + \\beta) + \\psi(\\beta)\\right] + \\sum_{i=1}^N\n\\psi(n_i - x_i + \\beta) - \\psi(n_i + \\alpha + \\beta)\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#jacobian",
+    "href": "slides/lec13.html#jacobian",
+    "title": "Newton-Raphson",
+    "section": "Jacobian",
+    "text": "Jacobian\n\nsecond derivative of log-Gamma function is the trigamma function, often denoted by the Greek \\(\\psi_1\\) (“psi”) with a subscript “1”.\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha^2} \\log L = N \\left[\\psi_1(\\alpha + \\beta) + \\psi_1(\\alpha)\\right] +\n\\sum_{i=1}^N \\psi_1(x_i + \\alpha) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\\[\n\\frac{\\partial^2}{\\partial \\beta^2}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta) + \\psi_1(\\beta)\\right] + \\sum_{i=1}^N\n\\psi_1(n_i - x_i + \\beta) - \\psi_1(n_i + \\alpha + \\beta)\n\\]\n\nSame thing but with trigamma functions!\n\n\n\\[\n\\frac{\\partial^2}{\\partial \\alpha \\partial \\beta}\\log L =\nN \\left[\\psi_1(\\alpha + \\beta)\\right] - \\sum_{i=1}^N \\psi_1(n_i + \\alpha + \\beta)\n\\]\nIn general, the Jacobian,\n\\[\nJ=\\left[\\begin{array}{ccc}\n\\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{1}(\\mathbf{x})}{\\partial x_{n}} \\\\\n\\vdots & \\ddots & \\vdots \\\\\n\\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{1}} & \\cdots & \\dfrac{\\partial f_{m}(\\mathbf{x})}{\\partial x_{n}}\n\\end{array}\\right]\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#multivariate-newton-raphson",
+    "href": "slides/lec13.html#multivariate-newton-raphson",
+    "title": "Newton-Raphson",
+    "section": "multivariate Newton-Raphson",
+    "text": "multivariate Newton-Raphson\nThe same intuition applies, but in higher dimensions.\nLet \\(\\mathbf{a}\\) satisfy \\(f(\\mathbf{a}) = 0\\). - Based on first order approximation of a function, \\(\\ f(\\mathbf{a}) \\approx f(\\mathbf{x}) + f'(\\mathbf{x})(\\mathbf{a}- \\mathbf{x})\\)\nNear fixed points, the first order approximation is:\n\\[\n0 \\approx f(\\mathbf{x}) + Df(\\mathbf{x})(\\mathbf{a} - \\mathbf{x}).\n\\]\nTo find the root, we rearrange (solve for \\(\\mathbf{a}\\)) again and iterate\n\\[\n\\mathbf{x}_{n+1} = \\mathbf{x}_n - J^{-1}(\\mathbf{x}_n) f(\\mathbf{x}_n)\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#a-good-starting-point",
+    "href": "slides/lec13.html#a-good-starting-point",
+    "title": "Newton-Raphson",
+    "section": "A good starting point",
+    "text": "A good starting point\nMethod of moments.\nSet the moments equal to the sample mean, \\(\\bar{x}\\) and sample variance \\(s^2\\).\n\\[\n\\hat{\\alpha} = \\frac{n m_1 - m_2}{n (\\frac{m_2}{m_1} - m_1 - 1) + m_1}\n\\]\n\\[\n\\hat{\\beta} = \\frac{(n- m_1) (n - \\frac{m_2}{m_1})}{\nn (\\frac{m_2}{m_1} - m_1 - 1 + m_1)\n}\n\\]"
+  },
+  {
+    "objectID": "slides/lec13.html#exercise-find-the-mle",
+    "href": "slides/lec13.html#exercise-find-the-mle",
+    "title": "Newton-Raphson",
+    "section": "Exercise: find the MLE",
+    "text": "Exercise: find the MLE\n\nCode Newton-Raphson to find \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\) for the 19th century hospital record example here.\n\n\nx = data.frame(families = c(3, 24, 104, 286, 670, 1033, 1343, 1112,\n                            829, 478, 181, 45, 7),\n               m = seq(0, 12),\n               n = rep(12, 13)) %>%\n  mutate(p = m / n)\n\n\n\n🔗 sta323-sp23.github.io"
   }
 ]
