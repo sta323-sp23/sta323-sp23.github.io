@@ -15,6 +15,7 @@ x = data.frame(families = c(3, 24, 104, 286, 670, 1033, 1343, 1112,
 
 y = rep(x$m, x$families) # data as we will use it
 N = sum(x$families)
+N = length(y)
 n = 12
 
 ############################# #### #############################
@@ -75,7 +76,7 @@ Jinverse = function(x) {
 }
 
 # need to start pretty close
-newton(f, Jinverse, x = c(31, 30), tol = 1e-10)
+newton(f, Jinverse, x = c(28, 30), tol = 1e-10)
 
 ######################
 # Method of Moments ##
@@ -113,7 +114,7 @@ BetaBinomial = bb(0:12, n, alpha, beta)
 # bb is the pmf of the beta-binomial, i.e. p(x_i | alpha, beta)
 # notice bb returns probability of individual x_i
 # we scale by number of observations to get a bar graph of mass
-# the smooth density line drawn by "stat_function" interpolates between
+# the smooth density line drawn by "geom_line" connects
 # the points.
 
 phat = mean(y) / 12 # for binomial

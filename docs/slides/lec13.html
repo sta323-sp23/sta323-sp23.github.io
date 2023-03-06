@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Dr.&nbsp;Alexander Fisher">
-  <title>STA323 - Newton-Raphson</title>
+  <title>STA323 - MM Algorithm</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,7 +385,7 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Newton-Raphson</h1>
+  <h1 class="title">MM Algorithm</h1>
   <p class="author">Dr.&nbsp;Alexander Fisher</p>
   <p class="institute">Duke University</p>
 </section>
@@ -395,319 +395,42 @@
 <h1>Overview</h1>
 
 </section>
-<section id="univariate-newton-raphson" class="slide level2">
-<h2>univariate Newton-Raphson</h2>
-<ul>
-<li>If <span class="math inline">\(a\)</span> satisfies <span class="math inline">\(f(a) = 0\)</span>, <span class="math inline">\(a\)</span> is said to be a “fixed point” or “root” of the function</li>
-<li>Newton-Raphson is a “root-finding” method</li>
-<li>Based on first order approximation of a function, <span class="math inline">\(\ f(a) \approx f(x) + f'(x)(a - x)\)</span></li>
-</ul>
-<p>Near fixed points, the first order approximation is:</p>
-<p><span class="math display">\[
-0 \approx f(x) + f'(x)(a - x).
-\]</span></p>
-<p>We are trying to find <span class="math inline">\(a\)</span>, so if <span class="math inline">\(f'(x)\)</span> invertible, we rearrange</p>
-<p><span class="math display">\[
-a = x - \frac{f(x)}{f'(x)}
-\]</span></p>
-<div class="fragment">
-<p>and the procedural update is</p>
-<p><span class="math display">\[
-x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
-\]</span></p>
-</div>
-</section>
-<section id="code-example" class="slide level2">
-<h2>Code example</h2>
+<section id="definition" class="slide level2">
+<h2>Definition</h2>
 <div class="cell">
 
 </div>
-<p>In practice, we tolerate close solutions, i.e.&nbsp;<span class="math inline">\(a\)</span> such that <span class="math inline">\(f(a) \approx 0\)</span>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>newton <span class="ot">=</span> <span class="cf">function</span>(f, fp, x, tol) {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>) {</span>
-<span id="cb1-3"><a href="#cb1-3"></a>    x <span class="ot">=</span> x <span class="sc">-</span> <span class="fu">f</span>(x) <span class="sc">/</span> <span class="fu">fp</span>(x)</span>
-<span id="cb1-4"><a href="#cb1-4"></a>    <span class="cf">if</span> (<span class="fu">abs</span>(<span class="fu">f</span>(x)) <span class="sc">&lt;</span> tol) {</span>
-<span id="cb1-5"><a href="#cb1-5"></a>      <span class="fu">return</span>(x)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    }</span>
-<span id="cb1-7"><a href="#cb1-7"></a>  }</span>
-<span id="cb1-8"><a href="#cb1-8"></a>  <span class="fu">return</span>(x)</span>
-<span id="cb1-9"><a href="#cb1-9"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>f <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">return</span>(x <span class="sc">^</span> <span class="dv">3</span> <span class="sc">-</span> <span class="dv">5</span> <span class="sc">*</span> x <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>}</span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a>fp <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb2-6"><a href="#cb2-6"></a>  <span class="fu">return</span>(<span class="dv">3</span> <span class="sc">*</span> (x <span class="sc">^</span> <span class="dv">2</span>) <span class="sc">-</span> <span class="fl">5.0</span>)</span>
-<span id="cb2-7"><a href="#cb2-7"></a>}</span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu">newton</span>(f, fp, <span class="sc">-</span><span class="fl">2.0</span>, <span class="fl">1e-14</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -2.330059</code></pre>
-</div>
-</div>
 <ul>
-<li><code>f</code> is the function we are finding a root of.</li>
+<li><p>MM stands for “majorize-minimization” and “minorize-maximization”.</p></li>
+<li><p>Key idea: it’s easier to optimize a <strong>surrogate</strong> function than the true objective.</p></li>
 </ul>
-</section>
-<section id="where-we-start-matters" class="slide level2">
-<h2>Where we start matters</h2>
-
-<img data-src="lec13_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
-<section id="what-can-go-wrong" class="slide level2">
-<h2>What can go wrong</h2>
-<ul>
-<li><p>derivative not continuous at the root</p></li>
-<li><p>If <span class="math inline">\(f'(x_n)=0\)</span>, can’t proceed</p></li>
-<li><p>iterates can “cycle” rather than converge to the solution</p></li>
-<li><p>If <span class="math inline">\(f'(x_n)\)</span> is small, but not zero, approximate solutions can diverge to infinity.</p></li>
-<li><p>Sensitive to initial point <span class="math inline">\(x_0\)</span></p></li>
-</ul>
-</section></section>
-<section>
-<section id="example-math" class="title-slide slide level1 center">
-<h1>Example: math</h1>
-
-</section>
-<section id="beta-binomial" class="slide level2">
-<h2>Beta-binomial</h2>
-<p><span class="math display">\[
-X \sim Binomial(n, p)
-\]</span></p>
-<p><span class="math display">\[
-p \sim Beta(\alpha, \beta)
-\]</span></p>
-<p>This data-generative process models a set of <span class="math inline">\(N\)</span> binomial experiments, each possibly having their own local <span class="math inline">\(p_i\)</span>, and local <span class="math inline">\(n_i\)</span> for <span class="math inline">\(i \in \{1, \ldots N\}\)</span>.</p>
 <div class="fragment">
-<p>Example:</p>
-<blockquote>
-<p>Schuckers, ME “<a href="http://myslu.stlawu.edu/~msch/biometrics/papers.htm">Using the Beta-binomial distribution to assess performance of a biometric identification device</a>” International Journal of Image and Graphics, vol.&nbsp;3, no. 3, July 2003</p>
-</blockquote>
+<p>Let <span class="math inline">\(f(\theta)\)</span> be a function we wish to maximize. <span class="math inline">\(g(\theta | \theta_n)\)</span> is a surrogate function that “minorizes” <span class="math inline">\(f\)</span> if it satisfies:</p>
+<ul>
+<li><p><span class="math inline">\(g(\theta | \theta_n) \leq f(\theta) \ \  \forall \ \theta\)</span> (minorization)</p></li>
+<li><p><span class="math inline">\(g(\theta_n | \theta_n) = f(\theta_n)\)</span> (equality at an anchor point)</p></li>
+</ul>
 </div>
 <div class="fragment">
-<p>Data:</p>
+<p>univariate example:</p>
+<ul>
+<li><span class="math inline">\(f(\theta) = sin(\theta)\)</span></li>
+<li><span class="math inline">\(g(\theta | \theta_n) = 2\)</span></li>
+</ul>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">2</span><span class="sc">*</span>pi) <span class="sc">+</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">geom_function</span>(<span class="at">fun =</span> sin) <span class="sc">+</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="fu">expression</span>(theta), <span class="at">y =</span> <span class="st">"f"</span>) <span class="sc">+</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: right;">id</th>
-<th style="text-align: right;">n</th>
-<th style="text-align: right;">success</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">3</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">8</td>
-<td style="text-align: right;">8</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">6</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">8</td>
-</tr>
-</tbody>
-</table>
+<p><img data-src="lec13_files/figure-revealjs/unnamed-chunk-4-1.png" width="960"></p>
 </div>
-</div>
-</div>
-</section>
-<section id="beta-binomial-1" class="slide level2">
-<h2>Beta-binomial</h2>
-<p><span class="math display">\[
-f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) =
-\prod_{i = 1}^{N} {n_i \choose{x_i}} p_i^{x_i}(1-p_i)^{n_i-x_i}  
-\]</span></p>
-<p>where <span class="math inline">\(\mathbf{x} = \{x_i \}\)</span>, <span class="math inline">\(\mathbf{p} = \{ p_i \}\)</span> and <span class="math inline">\(\mathbf{n} = \{n_i \}\)</span>.</p>
-<p><span class="math display">\[
-f_p(\mathbf{p} | \alpha, \beta) = \prod_{i = 1}^{N} \frac{p_i^{\alpha - 1} (1-p_i)^{\beta - 1}}{B(\alpha, \beta)}
-\]</span></p>
-<p>where <span class="math inline">\(B(\alpha, \beta) = \frac{\Gamma(\alpha) \Gamma(\beta)}{\Gamma(\alpha+\beta)}\)</span>.</p>
-<div class="callout callout-note callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Note</strong></p>
-</div>
-<div class="callout-content">
-<ul>
-<li><span class="math inline">\(\Gamma\)</span> is the <code>gamma</code> function (read <code>?gamma</code> and <a href="https://en.wikipedia.org/wiki/Gamma_function">wikipedia</a>).</li>
-<li><code>beta()</code> is the R function for <span class="math inline">\(B(\alpha, \beta)\)</span>.</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p>Fundamentally, we are interested in the underlying Beta distribution that the <span class="math inline">\(p_i\)</span> are drawn from. We don’t care about the individual <span class="math inline">\(p_i\)</span> themselves. We integrate out <span class="math inline">\(\mathbf{p}\)</span>,</p>
-<p><span class="math display">\[
-\begin{aligned}
-f_x(\mathbf{x}|\mathbf{n}, \alpha, \beta) &amp;= \int f_x(\mathbf{x}, \mathbf{p} | \mathbf{n}, \alpha, \beta)
-\ d\mathbf{p}\\
-&amp;=
-\int
-f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
-\ d\mathbf{p}
-\end{aligned}
-\]</span></p>
-</div>
-</section>
-<section id="integrating-out-the-nuisance-parameters-continued" class="slide level2">
-<h2>Integrating out the nuisance parameters continued</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\int
-f_x(\mathbf{x}|\mathbf{p}, \mathbf{n}) f_p(\mathbf{p} | \alpha, \beta)
-\ d\mathbf{p} &amp;=
-\int
-\prod_{i = 1}^{N} {n_i \choose{x_i}}
-\frac{p_i^{x_i + \alpha - 1} (1-p_i)^{n_i - x_i +\beta - 1}}{B(\alpha, \beta)}
-\end{aligned}
-d \mathbf{p}
-\]</span></p>
-<p>Conjugacy! This is proportional to a Beta distribution, hence</p>
-<p><span class="math display">\[
-\begin{aligned}
-f_x(\mathbf{x}|\mathbf{n}, \alpha, \beta) &amp;=
-\prod_{i = 1}^N {n_i \choose x_i}
-\frac{B(x_i + \alpha, n_i - x_i +\beta)}{B(\alpha, \beta)}\\
-&amp;= \prod_{i = 1}^N {n_i \choose x_i}
-\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha) \Gamma(\beta)}
-\frac{\Gamma(x_i + \alpha)\Gamma(n_i -x_i + \beta)}{\Gamma(n_i + \alpha + \beta)}
-\end{aligned}
-\]</span></p>
-<div class="fragment">
-<p>This in fact our likelihood! We can still simplify by pulling out the part that isn’t indexed by <span class="math inline">\(i\)</span>,</p>
-<p><span class="math display">\[
-L(\alpha, \beta) =
-\left(\frac{\Gamma(\alpha+\beta)}{\Gamma(\alpha) \Gamma(\beta)}\right)^N \cdot
-\prod_{i = 1}^N {n_i \choose x_i}
-\frac{\Gamma(x_i + \alpha)\Gamma(n_i -x_i + \beta)}{\Gamma(n_i + \alpha + \beta)}
-\]</span></p>
-</div>
-</section>
-<section id="log-likelihood" class="slide level2">
-<h2>Log-likelihood</h2>
-<p><span class="math display">\[
-\log L = N \left(\log \Gamma(\alpha+\beta) + \log \Gamma(\alpha) -\log\Gamma(\beta) \right)+\\
-\sum_{i=1}^N \log {n_i \choose x_i} + \log \Gamma(x_i + \alpha) +
-\log \Gamma(n_i -x_i + \beta) - \log {\Gamma(n_i + \alpha + \beta)}
-\]</span></p>
-<div class="fragment">
-<p>We want to maximize the log-likelihood.</p>
-</div>
-<div class="fragment">
-<h3 id="gradient-of-log-likelihood">Gradient of log-likelihood</h3>
-<ul>
-<li>derivative of log-Gamma function is the [digamma(https://en.wikipedia.org/wiki/Digamma_function) function], often denoted by the Greek <span class="math inline">\(\psi\)</span> (“psi”).</li>
-</ul>
-<p><span class="math display">\[
-\frac{\partial}{\partial \alpha} \log L = N \left[\psi(\alpha + \beta) + \psi(\alpha)\right] +
-\sum_{i=1}^N \psi(x_i + \alpha) - \psi(n_i + \alpha + \beta)
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial}{\partial \beta}\log L =
-N \left[\psi(\alpha + \beta) + \psi(\beta)\right] + \sum_{i=1}^N
-\psi(n_i - x_i + \beta) - \psi(n_i + \alpha + \beta)
-\]</span></p>
-</div>
-</section>
-<section id="jacobian" class="slide level2">
-<h2>Jacobian</h2>
-<ul>
-<li>second derivative of log-Gamma function is the <a href="https://en.wikipedia.org/wiki/Trigamma_function">trigamma function</a>, often denoted by the Greek <span class="math inline">\(\psi_1\)</span> (“psi”) with a subscript “1”.</li>
-</ul>
-<p><span class="math display">\[
-\frac{\partial^2}{\partial \alpha^2} \log L = N \left[\psi_1(\alpha + \beta) + \psi_1(\alpha)\right] +
-\sum_{i=1}^N \psi_1(x_i + \alpha) - \psi_1(n_i + \alpha + \beta)
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial^2}{\partial \beta^2}\log L =
-N \left[\psi_1(\alpha + \beta) + \psi_1(\beta)\right] + \sum_{i=1}^N
-\psi_1(n_i - x_i + \beta) - \psi_1(n_i + \alpha + \beta)
-\]</span></p>
-<ul>
-<li>Same thing but with trigamma functions!</li>
-</ul>
-<div class="fragment">
-<p><span class="math display">\[
-\frac{\partial^2}{\partial \alpha \partial \beta}\log L =
-N \left[\psi_1(\alpha + \beta)\right] - \sum_{i=1}^N \psi_1(n_i + \alpha + \beta)
-\]</span></p>
-<p>In general, the Jacobian,</p>
-<p><span class="math display">\[
-J=\left[\begin{array}{ccc}
-\dfrac{\partial f_{1}(\mathbf{x})}{\partial x_{1}} &amp; \cdots &amp; \dfrac{\partial f_{1}(\mathbf{x})}{\partial x_{n}} \\
-\vdots &amp; \ddots &amp; \vdots \\
-\dfrac{\partial f_{m}(\mathbf{x})}{\partial x_{1}} &amp; \cdots &amp; \dfrac{\partial f_{m}(\mathbf{x})}{\partial x_{n}}
-\end{array}\right]
-\]</span></p>
-</div>
-</section></section>
-<section>
-<section id="example-code" class="title-slide slide level1 center">
-<h1>Example: code</h1>
-
-</section>
-<section id="multivariate-newton-raphson" class="slide level2">
-<h2>multivariate Newton-Raphson</h2>
-<p>The same intuition applies, but in higher dimensions.</p>
-<p>Let <span class="math inline">\(\mathbf{a}\)</span> satisfy <span class="math inline">\(f(\mathbf{a}) = 0\)</span>. - Based on first order approximation of a function, <span class="math inline">\(\ f(\mathbf{a}) \approx f(\mathbf{x}) + f'(\mathbf{x})(\mathbf{a}- \mathbf{x})\)</span></p>
-<p>Near fixed points, the first order approximation is:</p>
-<p><span class="math display">\[
-0 \approx f(\mathbf{x}) + Df(\mathbf{x})(\mathbf{a} - \mathbf{x}).
-\]</span></p>
-<p>To find the root, we rearrange (solve for <span class="math inline">\(\mathbf{a}\)</span>) again and iterate</p>
-<p><span class="math display">\[
-\mathbf{x}_{n+1} = \mathbf{x}_n - J^{-1}(\mathbf{x}_n) f(\mathbf{x}_n)
-\]</span></p>
-</section>
-<section id="a-good-starting-point" class="slide level2">
-<h2>A good starting point</h2>
-<p>Method of moments.</p>
-<p>Set the moments equal to the sample mean, <span class="math inline">\(\bar{x}\)</span> and sample variance <span class="math inline">\(s^2\)</span>.</p>
-<p><span class="math display">\[
-\hat{\alpha} = \frac{n m_1 - m_2}{n (\frac{m_2}{m_1} - m_1 - 1) + m_1}
-\]</span></p>
-<p><span class="math display">\[
-\hat{\beta} = \frac{(n- m_1) (n - \frac{m_2}{m_1})}{
-n (\frac{m_2}{m_1} - m_1 - 1 + m_1)
-}
-\]</span></p>
-</section>
-<section id="exercise-find-the-mle" class="slide level2">
-<h2>Exercise: find the MLE</h2>
-<ul>
-<li>Code Newton-Raphson to find <span class="math inline">\(\hat{\alpha}_{MLE}\)</span> and <span class="math inline">\(\hat{\beta}_{MLE}\)</span> for the 19th century hospital record example <a href="https://en.wikipedia.org/wiki/Beta-binomial_distribution">here</a>.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">families =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">24</span>, <span class="dv">104</span>, <span class="dv">286</span>, <span class="dv">670</span>, <span class="dv">1033</span>, <span class="dv">1343</span>, <span class="dv">1112</span>,</span>
-<span id="cb4-2"><a href="#cb4-2"></a>                            <span class="dv">829</span>, <span class="dv">478</span>, <span class="dv">181</span>, <span class="dv">45</span>, <span class="dv">7</span>),</span>
-<span id="cb4-3"><a href="#cb4-3"></a>               <span class="at">m =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">12</span>),</span>
-<span id="cb4-4"><a href="#cb4-4"></a>               <span class="at">n =</span> <span class="fu">rep</span>(<span class="dv">12</span>, <span class="dv">13</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">mutate</span>(<span class="at">p =</span> m <span class="sc">/</span> n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
 <p><a href="https://sta323-sp23.github.io/schedule.html">🔗 sta323-sp23.github.io</a></p>
+</div>
 </div>
 </section></section>
     </div>

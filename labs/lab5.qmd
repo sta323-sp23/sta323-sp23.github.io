@@ -116,7 +116,7 @@ $$
 
 Using this mixture model, and assuming observations $\{Y_i\}$ are independent, compute the maximum likelihood estimates $\hat{p}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
 
-Initialize your algorithm with $\lambda = 1$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
+Initialize your algorithm with $\lambda = 2$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
 
 ::: callout-tip
 ## Hint
