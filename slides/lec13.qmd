@@ -1,5 +1,5 @@
 ---
-title: "MM Algorithm"
+title: "MM Algorithm Principles"
 author: "Dr. Alexander Fisher"
 execute:
   warning: true
@@ -17,35 +17,273 @@ format:
 #| warning: false
 
 library(tidyverse)
+library(latex2exp)
+library(wesanderson)
 ```
 
 
-- MM stands for "majorize-minimization" and "minorize-maximization".
+- MM stands for "majorize-minimize" and "minorize-maximize".
 
 - Key idea: it's easier to optimize a **surrogate** function than the true objective.
 
 . . .
 
-Let $f(\theta)$ be a function we wish to maximize. $g(\theta | \theta_n)$ is a surrogate function that "minorizes" $f$ if it satisfies:
+Let $f(\theta)$ be a function we wish to maximize. $g(\theta | \theta_n)$ is a surrogate function for $f$, anchored at current iterate $\theta_n$, if
 
-- $g(\theta | \theta_n) \leq f(\theta) \ \  \forall \ \theta$ (minorization)
+- $g$ "minorizes" $f$: $g(\theta | \theta_n) \leq f(\theta) \ \  \forall \ \theta$ 
 
-- $g(\theta_n | \theta_n) = f(\theta_n)$ (equality at an anchor point)
+- $g(\theta_n | \theta_n) = f(\theta_n)$ ("tangency").
 
 . . . 
 
-univariate example:
+Equivalently, if we wish to minimize $f(\theta)$, $g(\theta | \theta_n)$ is a surrogate function for $f$, anchored at current iterate $\theta_n$, if
 
-- $f(\theta) = sin(\theta)$ 
-- $g(\theta | \theta_n) = 2$
+- $g$ "majorizes" $f$: $g(\theta | \theta_n) \geq f(\theta) \ \  \forall \ \theta$ 
 
+- $g(\theta_n | \theta_n) = f(\theta_n)$ ("tangency").
+
+## Toy (conceptual) example
+
+We wish to minimize $f(x) = cos(x)$.
+
+. . .
+
+We need a surrogate $g$ that **majorizes** $f$.
+
+. . .
+
+$$
+g(x | x_n) = cos(x_n) - sin(x_n)(x - x_n) + 
+\frac{1}{2}(x - x_n)^2
+$$
+. . . 
+
+We can minimize $g$ easily, $\frac{d}{dx}g(x | x_n) = -sin(x_n) + (x - x_n)$. 
+
+Next, set equal to zero and set $x_{n+1} = x$, $x_{n+1} = x_n + sin(x_n)$.
 
 ```{r}
+#| echo: false
+#| warning: false
+#| fig-height: 4
+#| fig-width: 9
+#| fig-align: center
+pal = wes_palette("FantasticFox1")
+colors <- c("f" = "black", "g0" = pal[5], "g1" = pal[4])
+
+
+# surrogate
+g = function(x, xn) {
+  cos(xn) - (sin(xn) * (x - xn)) +
+    (.5 * ((x - xn)^2))
+}
+
+nextPoint = function(xn) {
+  xn + sin(xn)
+}
+
+x0 = 1
+x1 = nextPoint(x0)
+x2 = nextPoint(x1)
+
+
+# plot
 ggplot() +
   xlim(0, 2*pi) +
-  geom_function(fun = sin) +
-  labs(x = expression(theta), y = "f") +
-  theme_bw()
+  ylim(-1, 1) +
+  geom_function(fun = cos, aes(color = "f")) +
+  geom_function(fun = g, args = list(xn = x0), aes(color = "g0"),
+                linetype = 'dashed') + 
+  theme_bw() +
+  labs(x = "x", y = "") +
+  annotate(geom = "point", x = 1, y = cos(1), col = 'steelblue') +
+  annotate(geom = "text", x = 1, y = cos(1)-.1, label = TeX("$x_0$")) +
+  annotate(geom = "point", x = x1, y = g(x1, x0), col = 'steelblue') +
+  annotate(geom = "text", x = x1, y = g(x1, x0)-.1, label = TeX("$x_1$")) +
+  geom_function(fun = g, args = list(xn = x1), aes(color = "g1"),
+                linetype = 'dashed') +
+  annotate(geom = "point", x = x1, y = cos(x1), col = 'steelblue') +
+  annotate(geom = "text", x = x1, y = cos(x1)-.1, label = TeX("$x_1$")) +
+  annotate(geom = "point", x = x2, y = g(x2, x1), col = 'steelblue') +
+  annotate(geom = "text", x = x2, y = g(x2, x1)-.1, label = TeX("$x_2$")) +
+   scale_color_manual(name="function",
+      values=c(f = "black", g0= pal[5], g1 = pal[4]), labels = c(TeX("$f(x)$"), TeX("$g(x|x_0)$"), TeX("$g(x|x_1)$")))
 ```
 
+## How did we find $g$?
 
+Finding $g$ is an art. Still, there are widely applicable and powerful tools everyone should have in their toolkit.
+
+# Toolkit
+
+## Quadratic upper bound principle
+
+Objective function: $f(x)$
+
+. . .
+
+second order Taylor expansion of $f$ around $x_n$:
+
+$$
+f(x) = f(x_n) + f'(x_n) (x-x_n) + \frac{1}{2} f''(y) (x - x_n)^2
+$$
+
+Here, $y$ lies between $x$ and $x_n$. If $f''(y) \leq B$ where $B$ is a positive constant, then
+
+$$
+g(x|x_n) = f(x_n) + f'(x_n) (x - x_n) + \frac{1}{2} B (x - x_n)^2
+$$
+
+This is the "quadratic upper bound".
+
+. . .
+
+#### Check your understanding
+
+::: panel-tabset
+
+## Questions
+
+- does $g$ satisfy the tangency condition?
+- does $g$ majorize or minorize $f$?
+- what is $B$ in the previous ($f = cos(x)$) example?
+- what is the general update $x_{n+1} =$ to under the quadratic upper bound principle?
+
+## Answers
+
+- yes
+- majorize
+- 1
+- $x_{n+1} = x_n - f'(x_n) / B$
+:::
+
+## Convex functions
+
+- A twice-differentiable function is **convex** iff $f''(x) \geq 0$. Common examples include $f(x) = x^2$, $f(x) = e^x$ and $f(x) = -\ln(x)$.
+
+. . . 
+
+Equivalently, a function is convex if its epigraph (the points in the region above the graph of the function) form a [convex set](https://en.wikipedia.org/wiki/Convex_set). For example, $f(x) = |x|$ is convex by the epigraph test.
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-height: 4
+#| fig-width: 8
+#| fig-align: center
+
+ggplot() +
+  xlim(-5, 5) +
+  geom_function(fun = abs) +
+  theme_bw() +
+  labs(x = "x", y = "f(x)", title = "Absolute value of x is convex")
+```
+
+. . . 
+
+A function is concave iff its negative is convex.
+
+## Supporting line minorization
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-height: 3
+#| fig-width: 7
+#| fig-align: center
+
+g = function(x, xn) {
+  exp(xn) + (exp(xn) * (x - xn))
+}
+
+ggplot() +
+  xlim(3, 6) +
+  geom_function(fun = exp, aes(color = "f")) +
+  theme_bw() +
+  labs(x = "x", y = "", title = TeX("Supporting line of $e^{x}$")) +
+  geom_function(fun = g, args = list(xn = 5), aes(color = "g")) +
+  annotate(geom = "point", x = 5, y = exp(5), col = 'steelblue') +
+  scale_color_manual(name="function",
+      values=c(f = "black", g= pal[4]))
+
+```
+. . . 
+
+$f(x) \geq f(x_n) + f'(x_n) (x - x_n)$ because $f''(x_n) \geq 0$
+
+. . .
+
+#### Check your understanding
+
+- Write the equation of the line in this example
+
+## Jensen's inequality
+
+For a convex function $f$, Jensen's inequality states
+
+$$
+f(\alpha x + (1 - \alpha) y) \leq \alpha f(x) + (1-\alpha) f(y), \ \  \alpha \in [0, 1]
+$$
+
+```{r}
+#| echo: false
+#| warning: false
+#| fig-height: 3
+#| fig-width: 7
+#| fig-align: center
+
+x1 = 3.5
+x2 = 5.5
+y1 = exp(x1)
+y2 = exp(x2)
+m = (y2 - y1) / (x2 - x1)
+
+g = function(x) {
+  y2 - (m * (x2 - x))
+}
+
+ggplot() +
+  xlim(3, 6) +
+  geom_function(fun = exp, aes(color = "f")) +
+  theme_bw() +
+  geom_function(fun = g, aes(color = "g"), xlim = c(x1, x2)) +
+  labs(x = "x", y = "", title = TeX("Jensen's inequality illustration for $f(x) = e^x$")) +
+  scale_color_manual(name="function",
+      values=c(f = "black", g = pal[3]))
+
+```
+
+. . .
+
+- Big use: majorizing functions of the form $f(u(x) + v(x))$ where $u$ and $v$ are positive functions of parameter $x$.
+
+$$
+f(u + v) \leq \frac{u_n}{u_n + v_n} f\left(\frac{u_n + v_n}{u_n} u\right) +
+\frac{v_n}{u_n + v_n} f\left(\frac{u_n + v_n}{v_n}v\right)
+$$
+
+## Exercise 
+
+### part 1
+
+- Using $f(x) = -\ln(x)$ show that Jensen's inequality let's us derive a minorization that splits the log of a sum.
+
+- Note: this minorization will be useful in maximum likelihood estimation under a mixture model
+
+### part 2
+
+To see why this will be useful, recall: in a mixture model we have a convex combination of density functions:
+
+$$
+h(x | \mathbf{w}, \boldsymbol{\theta}) = \sum_{i = 1}^n w_i~f_i(x | \theta_i).
+$$
+
+where $w_i > 0$ and  $\sum_i w_i = 1$.
+
+- Assume you observe $\{x_1, \ldots x_m\}$ where each $X_i$ is iid from $h(\mathbf{x})$. Write down the log-likelihood of the data.
+
+## Acknowledgements
+
+Content of this lecture based on chapter 1 of Dr. Ken Lange's *MM Optimization Algorithms*.
+
+> Lange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.

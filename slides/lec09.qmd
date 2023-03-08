@@ -217,16 +217,16 @@ txt = "To be, [or] not to be that is the question."
 
 ```{r}
 #| error: true
-str_detect("[", txt)
+str_detect(txt, "[")
 ```
 
 ```{r}
 #| error: true
-str_detect("\[", txt)
+str_detect(txt, "\[")
 ```
 
 ```{r}
-grepl("\\[", txt)
+str_detect(txt, "\\[")
 ```
 
 ## Escape classes

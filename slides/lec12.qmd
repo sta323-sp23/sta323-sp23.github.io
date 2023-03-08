@@ -337,3 +337,12 @@ N = sum(x$families)
 n = 12
 ```
 
+. . . 
+
+Solution: 
+
+```{r}
+download.file("https://sta323-sp23.github.io/scripts/betabinomial.R",
+              destfile = "betabinomial.R")
+```
+

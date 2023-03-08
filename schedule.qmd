@@ -67,8 +67,8 @@ schedule %>%
 |      | Wed Mar 01 | Newton-Raphson                  |[💻](/slides/lec12.html)                                  |                          |                                       |         |
 |      | Fri Mar 03 | Newton-Raphson examples           |                                 |                          |                                       |         |
 | 8    | Tue Mar 07 |  continue lab                                      |                                 |                          |                                       |         |
-|      | Wed Mar 08 | MM algorithm I   |                                 |                          |                                       |         |
-|      | Fri Mar 10 | MM algorithm II                         |                                 |                          |                                       |         |
+|      | Wed Mar 08 | MM principles   |   [💻](/slides/lec13.html)                              |                          |                                       |         |
+|      | Fri Mar 10 | MM examples                        |                                 |                          |                                       |         |
 | 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
