@@ -2391,7 +2391,7 @@
     "href": "exams/exam01.html",
     "title": "Exam 01 Instructions",
     "section": "",
-    "text": "Important\n\n\n\nThe exam is due 5:00PM Tuesday February 21st\nClick here to begin exam 1. All exam questions are contained in exam-1-exercises.qmd."
+    "text": "Important\n\n\n\nThe exam is due 5:00PM Tuesday February 21st"
   },
   {
     "objectID": "exams/exam01.html#rules",
@@ -3148,5 +3148,33 @@
     "title": "MM Algorithm Principles",
     "section": "Acknowledgements",
     "text": "Acknowledgements\nContent of this lecture based on chapter 1 of Dr. Ken Lange’s MM Optimization Algorithms.\n\nLange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "project",
+    "section": "",
+    "text": "Final project presentations will take place in-person in lab Tuesday April 25th\nThe report and completed GitHub repo is due Wednesday April 26th at 5:00pm\n\n\n\n\n\n\n\nImportant\n\n\n\nNo late work will be accepted."
+  },
+  {
+    "objectID": "project.html#criteria",
+    "href": "project.html#criteria",
+    "title": "project",
+    "section": "Criteria",
+    "text": "Criteria\nThe final project has three deliverables:\n\na written report describing your project\na GitHub repo with clear instructions in the README to reproduce all of your results\na final presentation during the last lab session of the semester (slides, chalk-talk, up to you)\n\nThe project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.\nYour report should be professionally formatted (e.g. consistent citation style, no raw r code output and following formatting guidelines consistent with other assignments in the course)."
+  },
+  {
+    "objectID": "project.html#project-description",
+    "href": "project.html#project-description",
+    "title": "project",
+    "section": "Project description",
+    "text": "Project description\nThe goal of the final project is to demonstrate mastery of material learned in this class. An additional goal of the final project is to give you experience working in a team-based development setting.\nThe final project is purposefully open-ended. You may choose to demonstrate mastery of any element of the course. Possible final projects include:\n\nFind a data set of interest, write down a data-generative model and fit the model to the data (e.g compute the MLEs of parameters using numerical methods discussed in class)\nBuild a shiny app that does something useful. For example your app may help you analyze data, illustrate an algorithm, etc.\nProcure or find a messy data set and write a hypothesis you can investigate with the data. Next tidy, clean and wrangle the data. Finally create effective visualization(s) using advanced ggplot methods discussed in class to answer your question.\nSomething not listed here, e.g. implement an algorithm from a paper. Please reach out to Dr. Fisher if you are unsure whether your proposed idea is a good fit for the final project.\n\n\n\n\n\n\n\nReminder\n\n\n\nAll team members should be prepared to describe all aspects of the project.\nTeam work policy from the syllabus:\n\nThe final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group."
+  },
+  {
+    "objectID": "project.html#rubric",
+    "href": "project.html#rubric",
+    "title": "project",
+    "section": "Rubric",
+    "text": "Rubric\nThe project is graded out of a 100 point total\n\nreport 60pts\nThe report should clearly motivate the project, explain the aim, results and conclusions within a strict 10 page limit. In the written report be sure to:\n\nBe concise with your language. Say what you need to in as few words as possible to be effective.\nExplicitly write out any math (e.g. likelihood or model etc.)\nCritique your own analyses and/or discuss future improvements\nList a brief (1 or 2 sentence) summary of the relative contributions of each team member. E.g. “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”\n\n\n\npresentation 25pts\nThe presentation should clearly motivate the project, explain the aim, results and conclusions within a strict 6 minute time-limit. Presentations should be between 5 and 6 minutes.\n\nChoices made (e.g. using a specific model, using a specific plot geometry) should be defensible. You should be prepared to defend your choice of model/plot/etc. during Q&A.\n\n\n\nreproducibility 15pts\n\nREADME should describe the project briefly and detail how to reproduce the results\nAll files to reproduce the work should be in the GitHub repo\nNo rendered/generated files (pdf) should be in the repo unless necessary (shiny app, website html, etc.)"
   }
 ]

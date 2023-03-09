@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA323 - statistical computing</title>
+<title>STA323 - project</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="./syllabus.html">syllabus</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./project.html">project</a>
+    <a class="nav-link active" href="./project.html" aria-current="page">project</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./links.html">links</a>
@@ -84,15 +84,28 @@ ul.task-list{list-style: none;}
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dates" id="toc-dates" class="nav-link active" data-scroll-target="#dates">Dates</a></li>
+  <li><a href="#project-description" id="toc-project-description" class="nav-link" data-scroll-target="#project-description">Project description</a></li>
+  <li><a href="#criteria" id="toc-criteria" class="nav-link" data-scroll-target="#criteria">Criteria</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a>
+  <ul class="collapse">
+  <li><a href="#report-60pts" id="toc-report-60pts" class="nav-link" data-scroll-target="#report-60pts">report <code>60pts</code></a></li>
+  <li><a href="#presentation-25pts" id="toc-presentation-25pts" class="nav-link" data-scroll-target="#presentation-25pts">presentation <code>25pts</code></a></li>
+  <li><a href="#reproducibility-15pts" id="toc-reproducibility-15pts" class="nav-link" data-scroll-target="#reproducibility-15pts">reproducibility <code>15pts</code></a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">statistical computing</h1>
-<p class="subtitle lead">spring 2023</p>
+<h1 class="title">project</h1>
 </div>
 
 
@@ -106,67 +119,95 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>STA 323 introduces computational tools every statistician should know with a focus on efficiency in the R programming language. Topics include data collection, processing, and visualization, statistical modeling, algorithms, and practical implementation.</p>
-<section id="teaching-team-office-hours" class="level4">
-<h4 class="anchored" data-anchor-id="teaching-team-office-hours">Teaching team &amp; office hours</h4>
-<table class="table">
-<thead>
-<tr class="header">
-<th></th>
-<th>Contact</th>
-<th>Time</th>
-<th>Location</th>
-<th>Section</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Dr.&nbsp;Alexander Fisher</td>
-<td><a href="">alexander.fisher@duke.edu</a></td>
-<td>We: 1:30pm-3:30pm</td>
-<td>Old Chem 207</td>
-<td>Lecture</td>
-</tr>
-<tr class="even">
-<td>Devin Johnson</td>
-<td><a href="devin.johnson@duke.edu">devin.johnson@duke.edu</a></td>
-<td>Mo: 10:00am-12:00pm</td>
-<td>Old Chem 203B</td>
-<td>Lab 01</td>
-</tr>
-<tr class="odd">
-<td>Tong Lin</td>
-<td><a href="tong.lin@duke.edu">tong.lin@duke.edu</a></td>
-<td>Th: 9:00am-11:00am</td>
-<td>Old Chem 203B</td>
-<td>Lab 02</td>
-</tr>
-</tbody>
-</table>
+<section id="dates" class="level2">
+<h2 class="anchored" data-anchor-id="dates">Dates</h2>
+<ul>
+<li><p>Final project presentations will take place in-person in lab <strong>Tuesday April 25th</strong></p></li>
+<li><p>The report and completed GitHub repo is due <strong>Wednesday April 26th</strong> at 5:00pm</p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No late work will be accepted.</p>
+</div>
+</div>
 </section>
-<section id="lecture-and-lab" class="level4">
-<h4 class="anchored" data-anchor-id="lecture-and-lab">Lecture and lab</h4>
-<table class="table">
-<tbody>
-<tr class="odd">
-<td>Lecture</td>
-<td>We/Fr 12:00 - 1:15pm</td>
-<td>Social Sciences 136</td>
-</tr>
-<tr class="even">
-<td>Lab 01</td>
-<td>Tu 12:00pm - 1:15pm</td>
-<td>Old Chemistry 003</td>
-</tr>
-<tr class="odd">
-<td>Lab 02</td>
-<td>Tu 1:45pm - 3:00pm</td>
-<td>Old Chemistry 003</td>
-</tr>
-</tbody>
-</table>
+<section id="project-description" class="level2">
+<h2 class="anchored" data-anchor-id="project-description">Project description</h2>
+<p>The goal of the final project is to demonstrate mastery of material learned in this class. An additional goal of the final project is to give you experience working in a team-based development setting.</p>
+<p>The final project is purposefully open-ended. You may choose to demonstrate mastery of any element of the course. Possible final projects include:</p>
+<ul>
+<li><p>Find a data set of interest, write down a data-generative model and fit the model to the data (e.g compute the MLEs of parameters using numerical methods discussed in class)</p></li>
+<li><p>Build a shiny app that does something useful. For example your app may help you analyze data, illustrate an algorithm, etc.</p></li>
+<li><p>Procure or find a messy data set and write a hypothesis you can investigate with the data. Next tidy, clean and wrangle the data. Finally create effective visualization(s) using advanced ggplot methods discussed in class to answer your question.</p></li>
+<li><p>Something not listed here, e.g.&nbsp;implement an algorithm from a paper. Please reach out to Dr.&nbsp;Fisher if you are unsure whether your proposed idea is a good fit for the final project.</p></li>
+</ul>
+<div class="callout-important callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Reminder
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>All team members should be prepared to describe all aspects of the project.</p>
+<p>Team work policy from the syllabus:</p>
+<blockquote class="blockquote">
+<p>The final project and several labs will be completed in teams. All group members are expected to participate equally. Commit history may be used to give individual team members different grades. Your grade may differ from the rest of your group.</p>
+</blockquote>
+</div>
+</div>
+</section>
+<section id="criteria" class="level2">
+<h2 class="anchored" data-anchor-id="criteria">Criteria</h2>
+<p>The final project has three deliverables:</p>
+<ul>
+<li><p>a written report describing your project</p></li>
+<li><p>a GitHub repo with clear instructions in the README to reproduce all of your results</p></li>
+<li><p>a final presentation during the last lab session of the semester (slides, chalk-talk, up to you)</p></li>
+</ul>
+<p>The project report should be no longer than 10 pages, including text, code, figures, and other output. If your report is longer, you need to make it shorter. There is no minimum report length or required section headers.</p>
+<p>Your report should be professionally formatted (e.g.&nbsp;consistent citation style, no raw <code>r</code> code output and following formatting guidelines consistent with other assignments in the course).</p>
+</section>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<p>The project is graded out of a 100 point total</p>
+<section id="report-60pts" class="level3">
+<h3 class="anchored" data-anchor-id="report-60pts">report <code>60pts</code></h3>
+<p>The report should clearly motivate the project, explain the aim, results and conclusions within a strict 10 page limit. In the written report be sure to:</p>
+<ul>
+<li><p>Be concise with your language. Say what you need to in as few words as possible to be effective.</p></li>
+<li><p>Explicitly write out any math (e.g.&nbsp;likelihood or model etc.)</p></li>
+<li><p>Critique your own analyses and/or discuss future improvements</p></li>
+<li><p>List a brief (1 or 2 sentence) summary of the relative contributions of each team member. E.g. “Aang built the models, Katara implemented them in R, and Sokka wrote the introduction and discussion.”</p></li>
+</ul>
+</section>
+<section id="presentation-25pts" class="level3">
+<h3 class="anchored" data-anchor-id="presentation-25pts">presentation <code>25pts</code></h3>
+<p>The presentation should clearly motivate the project, explain the aim, results and conclusions within a strict 6 minute time-limit. Presentations should be between 5 and 6 minutes.</p>
+<ul>
+<li>Choices made (e.g.&nbsp;using a specific model, using a specific plot geometry) should be defensible. You should be prepared to defend your choice of model/plot/etc. during Q&amp;A.</li>
+</ul>
+</section>
+<section id="reproducibility-15pts" class="level3">
+<h3 class="anchored" data-anchor-id="reproducibility-15pts">reproducibility <code>15pts</code></h3>
+<ul>
+<li><p>README should describe the project briefly and detail how to reproduce the results</p></li>
+<li><p>All files to reproduce the work should be in the GitHub repo</p></li>
+<li><p>No rendered/generated files (pdf) should be in the repo unless necessary (shiny app, website html, etc.)</p></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

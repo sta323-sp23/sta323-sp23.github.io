@@ -14,7 +14,9 @@ website:
     left:
     - schedule.qmd
     - syllabus.qmd
+    - project.qmd
     - links.qmd
+    
       
 format:
   html:
