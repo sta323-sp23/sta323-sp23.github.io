@@ -103,7 +103,7 @@ fishing_count = c(0, 0, 0, 3, 0, 3, 5, 0, 8, 1,
 
 - Visualize the distribution of the data using an appropriate visualization. Label axes and describe your plot.
 
-The data can be described as being generated from a zero-inflated mixture model. Let $Y_i$ be the number of fish an individual catches at the beach.
+The data can be described as being generated from a zero-inflated mixture model. Let $Y_i$ be the number of fish an individual catches at the beach,
 
 $$
 \begin{aligned}
