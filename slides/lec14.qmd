@@ -1,0 +1,202 @@
+---
+title: "MM Algorithm Example"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Announcements
+
+- [project instructions released](/project.html)
+
+# Examples
+
+## Bradley-Terry model 
+
+- Predicts the outcome of a paired comparison. 
+
+. . .
+
+Given two individuals $i$ and $j$ drawn from some population, the Bradley-Terry model estimates the probability that the pairwise comparison $i > j$ turns out true, as
+
+$$
+Pr(i > j) = \frac{p_i}{p_i + p_j},
+$$
+
+where $p_i$ is a positive real-valued score assigned to individual i. The comparison $i > j$ can be read as "$i$ is preferred to $j$", "$i$ ranks higher than $j$", or "$i$ beats $j$", depending on the application.
+
+<!-- . . .  -->
+
+<!-- In some settings, you may see written $p_i = e^{\beta_i}$ so that -->
+
+<!-- $$ -->
+<!-- Pr(i > j) = \frac{e^{\beta_i}}{e^{\beta_i} + e^{\beta_j}}. -->
+<!-- $$ -->
+<!-- . . .  -->
+
+<!-- What's nice about this re-parameterization? -->
+
+## Bradley-Terry Application
+
+One popular application of the Bradley-Terry model is ranking sports teams. We are interested modeling the **outcome** of previous match ups.
+
+### Example data:
+
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(tidyverse)
+
+# get more data sets from
+# https://www.kaggle.com/datasets/schmadam97/nba-playbyplay-data-20182019
+
+```
+
+All 1230 regular season NBA games (82 games per team, 30 teams: 82 * 30 /2) from 2015-2016.[^1]
+
+```{r}
+#| echo: false
+#| warning: false
+NBA = read_csv("../data/NBA_1516.csv")
+glimpse(NBA)
+```
+**Code book:**
+
+- `Home`: unique id for home team
+- `Away`: unique id for away team
+- `Y`: whether the home team won (1) or lost (0)
+
+. . . 
+
+Read in this data:
+
+```{r}
+#| eval: false
+NBA = read_csv("https://sta323-sp23.github.io/data/NBA_1516.csv")
+team_id = read_csv("https://sta323-sp23.github.io/data/teams.csv")
+```
+
+[^1]: data sourced from [Dr. Zhou Fan's inference course here](https://web.stanford.edu/class/stats200/index.html)
+
+## Bradley-Terry with home-court advantage
+
+The most basic Bradley-Terry model does not account for ties, which is fine for our basketball example. However, it would be nice to model and assess the contribution of home-court advantage.
+
+$$
+\text{Pr(i beats j at home)} = \frac{\theta p_i}{\theta p_i + p_j}
+$$
+
+$$
+\text{Pr(i loses to j at home)} = \frac{p_j}{\theta p_i + p_j}.
+$$
+
+Here, $\theta \in [0, 1]$ corresponds to home-court advantage.
+
+. . .
+
+#### Check your understanding
+
+- What does $\theta = 0$ and $\theta = 1$ correspond to?
+
+- What assumptions have we made about home-court advantage in this model?
+
+## Bradley-Terry likelihood
+
+Let $a_{ij}$ be the number of times team $i$ beats team $j$ at home and let $b_{ij}$ be the number of times team $i$ loses to team $j$ at home.  Assuming all the games are independent, we write the log-likelihood of the Bradley Terry model with home-court advantage,
+
+$$
+\log L(\mathbf{p}, \theta) = \sum_{i} \sum_{j} a_{ij} \ln \left( \frac{\theta p_i}{\theta p_i + p_j} \right)
++ b_{ij} \ln \left(\frac{p_j}{\theta p_i + p_j} \right)
+$$
+. . .
+
+
+Let $w_i$ be the total number of wins by team $i$ and let $h = \sum_{i} \sum_{j} a_{ij}$ be the total number of home-court wins across all teams. 
+
+We can re-formulate the log-likelihood,
+
+$$
+\log L(\mathbf{p}, \theta) = h \ln \theta + \sum_{i} w_i \ln p_i - \sum_{i} \sum_{j} (a_{ij} + b_{ij}) \ln (\theta p_i + p_j)
+$$
+. . . 
+
+Hint for algebra: $w_i = \sum_i \sum_j \left[a_{ij} \ln p_i + b_{ij} \ln p_j \right]$.
+
+. . . 
+
+#### Reminder
+
+- We are interested in estimating the home field advantage parameter $\theta$ and team ranking parameters $\mathbf{p} = \{p_1, \ldots, p_n\}$ where $n$ is the total number of teams. The team with the largest $\hat{p_i}$ will be the best team.
+
+## Minorize-maximize the likelihood
+
+#### Notice
+
+- As a side note, notice that the team rank parameter $\mathbf{p}$ is invariant to re-scaling in the log-likelihood. In other words, we can scale all $p_i$ by a constant and obtain the same rank order of the estimates. Without loss of generality, we can set $p_1$ = c and then all other team rankings will be defined relative to the first team. This is a way we can eliminate 1 degree of freedom in our model parameters.
+
+. . . 
+
+#### By the supporting line minorization
+
+$$
+- \ln (\theta p_i + p_j) \geq - \ln (\theta_n p_{ni} + p_{nj}) - 
+\frac{(\theta p_i + p_j) - (\theta_n p_{ni} + p_{nj})}{\theta_n p_{ni} + p_{nj}}
+$$
+If we instead subtract the RHS, we are subtracting something 'smaller' from our log-likelihood. In other words, the log-likelihood dominates $g$ where 
+
+$$
+g(\mathbf{p}, \theta | \mathbf{p}_n, \theta_n) = h \ln \theta + \sum_i \ln p_i - \sum_i \sum_j
+\frac{(a_{ij} + b_{ij}) (\theta p_i + p_j)}{\theta_n p_{ni} + p_{nj}}
+$$
+where we've dropped the irrelevant constant.
+
+## Iterate
+
+Now we can optimize our surrogate $g$, instead of the objective function by setting the $\nabla g = 0$. The $\theta p_i$ term prevents direct optimization. Instead, we perform cyclic block ascent. That is, we update $\theta$ holding $\mathbf{p}$ fixed and we update each $p_i$ holding all other parameters fixed.
+
+. . .
+
+To proceed, update
+
+$$
+\theta_{n + 1} = \frac{h}{\sum_i \sum_j \frac{p_{ni}(a_{ij} + b_{ij})}{\theta_n p_{ni} + p_{nj}}}
+$$
+
+and then update each
+
+$$
+p_{n+1, i} = \frac{w_i}{
+\sum_j \frac{\theta_{n+1}(a_{ij} + b_{ij})}{\theta_{n+1} p_{ni} + p_{nj}}
++ \sum_j \frac{(a_{ji} + b_{ji})}{\theta_{n+1} p_{nj} + p_{ni}}
+}.
+$$
+
+**Crucially** cyclic block ascent preserves the ascent property, that is, for objective function $f$, iterates $f(x_{n+1}) \geq f(x_n)$ when $g$ minorizes $f$.
+
+
+. . . 
+
+#### Check your understanding
+
+- Show the "ascent" property of the Minorize-Maximize algorithm algebraically.
+
+## Exercise
+
+To be completed in the next lab... but we'll get started in class:
+
+Implement the MM algorithm as described on the previous slide for the NBA data. Your implementation should be able to be adapted to another data set of identical construction (i.e. don't hard-code values).
+
+What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?
+
+Is there a home-field advantage? What are the odds of winning at home vs away?
+
+## Acknowledgements
+
+Content of this lecture based on chapter 1 of Dr. Ken Lange's *MM Optimization Algorithms*.
+
+> Lange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.
