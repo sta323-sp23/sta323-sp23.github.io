@@ -485,7 +485,7 @@ $ Y    &lt;dbl&gt; 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0
 \]</span></p>
 </div>
 <div class="fragment">
-<p>Hint for algebra: <span class="math inline">\(w_i = \sum_i \sum_j \left[a_{ij} \log p_i + b_{ij} \log p_j \right]\)</span>.</p>
+<p>Hint for algebra: <span class="math inline">\(\sum_i w_i \log p_i= \sum_i \sum_j \left[a_{ij} \log p_i + b_{ij} \log p_j \right]\)</span>. To see this derived in extra detail, see <a href="#/algebra-trick">here</a>.</p>
 </div>
 <div class="fragment">
 <h4 id="reminder">Reminder</h4>
@@ -549,6 +549,24 @@ p_{n+1, i} = \frac{w_i}{
 <blockquote>
 <p>Lange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.</p>
 </blockquote>
+</section>
+<section id="algebra-trick" class="slide level2">
+<h2>Algebra trick</h2>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\sum_i \sum_j a_{ij} \log p_i + b_{ij} \log p_j = \sum_i \log p_i \sum_j a_{ij} + \sum_j \log p_j \sum_i b_{ij}\\
+\end{aligned}
+\]</span></p>
+<p>Notice <span class="math inline">\(\sum_j a_{ij}\)</span> is the number of wins of team <span class="math inline">\(i\)</span> at home. We’ll call this term <span class="math inline">\(\alpha_i\)</span>. Similarly, <span class="math inline">\(\sum_i b_{ij}\)</span> is the number of wins of team <span class="math inline">\(j\)</span> away. We’ll call this term <span class="math inline">\(\beta_j\)</span>.</p>
+<p>So we have,</p>
+<p><span class="math display">\[
+\sum_i \alpha_i \log p_i + \sum_j \beta_j \log p_j
+\]</span></p>
+<p>Since <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span> are both summations from <span class="math inline">\(1\)</span> to <span class="math inline">\(n\)</span>, where <span class="math inline">\(n\)</span> is the number of teams, we can equivalently write these with the same index:</p>
+<p><span class="math display">\[
+\sum_i (\alpha_i + \beta_i) \log p_i
+\]</span></p>
+<p>where <span class="math inline">\(\alpha_i\)</span> is the number of wins of team <span class="math inline">\(i\)</span> at home and <span class="math inline">\(\beta_i\)</span> is the number of wins of team <span class="math inline">\(i\)</span> away. So <span class="math inline">\(\alpha_i + \beta_i = w_i\)</span>.</p>
 
 <div class="footer footer-default">
 <p><a href="https://sta323-sp23.github.io/schedule.html">🔗 sta323-sp23.github.io</a></p>

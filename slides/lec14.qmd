@@ -125,13 +125,16 @@ $$
 $$
 . . . 
 
-Hint for algebra: $w_i = \sum_i \sum_j \left[a_{ij} \log p_i + b_{ij} \log p_j \right]$.
+
+
+Hint for algebra: $\sum_i w_i \log p_i= \sum_i \sum_j \left[a_{ij} \log p_i + b_{ij} \log p_j \right]$. To see this derived in extra detail, see [here](#algebra-trick).
 
 . . . 
 
 #### Reminder
 
 - We are interested in estimating the home-court advantage parameter $\theta$ and team ranking parameters $\mathbf{p} = \{p_1, \ldots, p_n\}$ where $n$ is the total number of teams. The team with the largest $\hat{p_i}$ will be the best team.
+
 
 ## Minorize-maximize the likelihood
 
@@ -200,3 +203,26 @@ Is there a home-court advantage? What are the odds of winning at home vs away?
 Content of this lecture based on chapter 1 of Dr. Ken Lange's *MM Optimization Algorithms*.
 
 > Lange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.
+
+## Algebra trick{#algebra-trick}
+
+$$
+\begin{aligned}
+&\sum_i \sum_j a_{ij} \log p_i + b_{ij} \log p_j = \sum_i \log p_i \sum_j a_{ij} + \sum_j \log p_j \sum_i b_{ij}\\
+\end{aligned}
+$$
+Notice $\sum_j a_{ij}$ is the number of wins of team $i$ at home. We'll call this term $\alpha_i$. Similarly, $\sum_i b_{ij}$ is the number of wins of team $j$ away. We'll call this term $\beta_j$.
+
+So we have,
+
+$$
+\sum_i \alpha_i \log p_i + \sum_j \beta_j \log p_j
+$$
+Since $i$ and $j$ are both summations from $1$ to $n$, where $n$ is the number of teams, we can equivalently write these with the same index:
+
+$$
+\sum_i (\alpha_i + \beta_i) \log p_i
+$$
+where $\alpha_i$ is the number of wins of team $i$ at home and $\beta_i$ is the number of wins of team $i$ away. So $\alpha_i + \beta_i = w_i$.
+
+

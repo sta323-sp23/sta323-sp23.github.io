@@ -3196,7 +3196,7 @@
     "href": "slides/lec14.html#acknowledgements",
     "title": "MM Algorithm Example",
     "section": "Acknowledgements",
-    "text": "Acknowledgements\nContent of this lecture based on chapter 1 of Dr. Ken Lange’s MM Optimization Algorithms.\n\nLange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016.\n\n\n\n🔗 sta323-sp23.github.io"
+    "text": "Acknowledgements\nContent of this lecture based on chapter 1 of Dr. Ken Lange’s MM Optimization Algorithms.\n\nLange, Kenneth. MM Optimization Algorithms. Society for Industrial and Applied Mathematics, 2016."
   },
   {
     "objectID": "slides/lec14.html#bradley-terry-model",
@@ -3238,7 +3238,7 @@
     "href": "slides/lec14.html#bradley-terry-likelihood",
     "title": "MM Algorithm Example",
     "section": "Bradley-Terry likelihood",
-    "text": "Bradley-Terry likelihood\nLet \\(a_{ij}\\) be the number of times team \\(i\\) beats team \\(j\\) at home and let \\(b_{ij}\\) be the number of times team \\(i\\) loses to team \\(j\\) at home. Assuming all the games are independent, we write the log-likelihood of the Bradley Terry model with home-court advantage,\n\\[\n\\log L(\\mathbf{p}, \\theta) = \\sum_{i} \\sum_{j} a_{ij} \\log \\left( \\frac{\\theta p_i}{\\theta p_i + p_j} \\right)\n+ b_{ij} \\log \\left(\\frac{p_j}{\\theta p_i + p_j} \\right)\n\\]\n\nLet \\(w_i\\) be the total number of wins by team \\(i\\) and let \\(h = \\sum_{i} \\sum_{j} a_{ij}\\) be the total number of home-court wins across all teams.\nWe can re-formulate the log-likelihood,\n\\[\n\\log L(\\mathbf{p}, \\theta) = h \\log \\theta + \\sum_{i} w_i \\log p_i - \\sum_{i} \\sum_{j} (a_{ij} + b_{ij}) \\log (\\theta p_i + p_j)\n\\]\n\n\nHint for algebra: \\(w_i = \\sum_i \\sum_j \\left[a_{ij} \\log p_i + b_{ij} \\log p_j \\right]\\).\n\n\nReminder\n\nWe are interested in estimating the home-court advantage parameter \\(\\theta\\) and team ranking parameters \\(\\mathbf{p} = \\{p_1, \\ldots, p_n\\}\\) where \\(n\\) is the total number of teams. The team with the largest \\(\\hat{p_i}\\) will be the best team."
+    "text": "Bradley-Terry likelihood\nLet \\(a_{ij}\\) be the number of times team \\(i\\) beats team \\(j\\) at home and let \\(b_{ij}\\) be the number of times team \\(i\\) loses to team \\(j\\) at home. Assuming all the games are independent, we write the log-likelihood of the Bradley Terry model with home-court advantage,\n\\[\n\\log L(\\mathbf{p}, \\theta) = \\sum_{i} \\sum_{j} a_{ij} \\log \\left( \\frac{\\theta p_i}{\\theta p_i + p_j} \\right)\n+ b_{ij} \\log \\left(\\frac{p_j}{\\theta p_i + p_j} \\right)\n\\]\n\nLet \\(w_i\\) be the total number of wins by team \\(i\\) and let \\(h = \\sum_{i} \\sum_{j} a_{ij}\\) be the total number of home-court wins across all teams.\nWe can re-formulate the log-likelihood,\n\\[\n\\log L(\\mathbf{p}, \\theta) = h \\log \\theta + \\sum_{i} w_i \\log p_i - \\sum_{i} \\sum_{j} (a_{ij} + b_{ij}) \\log (\\theta p_i + p_j)\n\\]\n\n\nHint for algebra: \\(\\sum_i w_i \\log p_i= \\sum_i \\sum_j \\left[a_{ij} \\log p_i + b_{ij} \\log p_j \\right]\\). To see this derived in extra detail, see here.\n\n\nReminder\n\nWe are interested in estimating the home-court advantage parameter \\(\\theta\\) and team ranking parameters \\(\\mathbf{p} = \\{p_1, \\ldots, p_n\\}\\) where \\(n\\) is the total number of teams. The team with the largest \\(\\hat{p_i}\\) will be the best team."
   },
   {
     "objectID": "slides/lec14.html#minorize-maximize-the-likelihood",
@@ -3274,5 +3274,19 @@
     "title": "MM Algorithm Example",
     "section": "Exercise 2",
     "text": "Exercise 2\nTo be completed in the next lab… but we’ll get started in class:\nImplement the MM algorithm as described on the previous slide for NBA data.\nWhat are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?\nIs there a home-field advantage? What are the odds of winning at home vs away?"
+  },
+  {
+    "objectID": "slides/lec14.html#test-hidden-slide",
+    "href": "slides/lec14.html#test-hidden-slide",
+    "title": "MM Algorithm Example",
+    "section": "Test hidden slide",
+    "text": "Test hidden slide\n\nMaterial here."
+  },
+  {
+    "objectID": "slides/lec14.html#algebra-trick",
+    "href": "slides/lec14.html#algebra-trick",
+    "title": "MM Algorithm Example",
+    "section": "Algebra trick",
+    "text": "Algebra trick\n\\[\n\\begin{aligned}\n&\\sum_i \\sum_j a_{ij} \\log p_i + b_{ij} \\log p_j = \\sum_i \\log p_i \\sum_j a_{ij} + \\sum_j \\log p_j \\sum_i b_{ij}\\\\\n\\end{aligned}\n\\]\nNotice \\(\\sum_j a_{ij}\\) is the number of wins of team \\(i\\) at home. We’ll call this term \\(\\alpha_i\\). Similarly, \\(\\sum_i b_{ij}\\) is the number of wins of team \\(j\\) away. We’ll call this term \\(\\beta_j\\).\nSo we have,\n\\[\n\\sum_i \\alpha_i \\log p_i + \\sum_j \\beta_j \\log p_j\n\\]\nSince \\(i\\) and \\(j\\) are both summations from \\(1\\) to \\(n\\), where \\(n\\) is the number of teams, we can equivalently write these with the same index:\n\\[\n\\sum_i (\\alpha_i + \\beta_i) \\log p_i\n\\]\nwhere \\(\\alpha_i\\) is the number of wins of team \\(i\\) at home and \\(\\beta_i\\) is the number of wins of team \\(i\\) away. So \\(\\alpha_i + \\beta_i = w_i\\).\n\n\n🔗 sta323-sp23.github.io"
   }
 ]
