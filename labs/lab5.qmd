@@ -112,9 +112,9 @@ p(Y_i = y_i) &= \frac{(1 - p)\lambda^{y_i}e^{-\lambda}}{y_i!}, \ \ y_i = 1, 2, 3
 \end{aligned}
 $$
 
-- Visualize the likelihood as a function of $p$ while fixing $\lambda = 5$. Repeat for $\lambda = 4$ (on the same plot). Based on your plot, which value of $\lambda$ is more likely? Also, assuming these $\lambda$ are sufficiently close to the true $\lambda$, what is (approximately) the MLE of $p$ based on your plot? 
+- Assume observations $\{Y_i\}$ are independent. Write down the log-likelihood and visualize the log-likelihood as a function of $p$ while fixing $\lambda = 5$. Repeat for $\lambda = 4$ (on the same plot). Based on your plot, which value of $\lambda$ is more likely? Also, assuming these $\lambda$ are sufficiently close to the true $\lambda$, what is (approximately) the MLE of $p$ based on your plot? 
 
-Using this mixture model, and assuming observations $\{Y_i\}$ are independent, compute the maximum likelihood estimates $\hat{p}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
+Using this mixture model, compute the maximum likelihood estimates $\hat{p}_{MLE}$ and $\hat{\lambda}_{MLE}$ using Newton's method. In your solution, code Newton's method and all derivatives yourself. Do not use a package or library for this. Show all your work (including writing down any relevant math).
 
 Initialize your algorithm with $\lambda = 2$. Set your stopping tolerance to `0.001` and maximum iterations to `500`.
 
