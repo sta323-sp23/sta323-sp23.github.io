@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>STA323 - Lab 6:</title>
+<title>STA323 - Lab 6: ascend the likelihood mountain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -15,6 +15,69 @@ span.underline{text-decoration: underline;}
 div.column{display: inline-block; vertical-align: top; width: 50%;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -44,6 +107,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -69,6 +133,9 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="../syllabus.html">syllabus</a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../project.html">project</a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../links.html">links</a>
   </li>  
 </ul>
@@ -89,8 +156,8 @@ ul.task-list{list-style: none;}
   <ul class="collapse">
   <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a>
   <ul class="collapse">
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">1.</a></li>
-  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1">2.</a></li>
+  <li><a href="#rank-nba-teams" id="toc-rank-nba-teams" class="nav-link" data-scroll-target="#rank-nba-teams">1. rank NBA teams</a></li>
+  <li><a href="#text-classifier" id="toc-text-classifier" class="nav-link" data-scroll-target="#text-classifier">2. text classifier</a></li>
   </ul></li>
   <li><a href="#style-guidelines" id="toc-style-guidelines" class="nav-link" data-scroll-target="#style-guidelines">Style guidelines</a></li>
   <li><a href="#submitting-your-lab" id="toc-submitting-your-lab" class="nav-link" data-scroll-target="#submitting-your-lab">Submitting your lab</a></li>
@@ -103,8 +170,8 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 6:</h1>
-<p class="subtitle lead">Due 5:00pm</p>
+<h1 class="title">Lab 6: ascend the likelihood mountain</h1>
+<p class="subtitle lead">Due Thursday March 30 5:00pm</p>
 </div>
 
 
@@ -118,10 +185,13 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>By the end of the lab, you will…</p>
+<blockquote class="blockquote">
+<p>“There are two kinds of climbers: those who climb because their heart sings when they’re in the mountains, and all the rest.” - Alex Lowe</p>
+</blockquote>
+<p>By the end of the lab, you will</p>
 <ul>
-<li></li>
-<li></li>
+<li>implement an MM algorithm to rank sports teams</li>
+<li>construct an MM algorithm from scratch for text document classification</li>
 </ul>
 <div class="callout-warning callout callout-style-default callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -139,18 +209,139 @@ Warning
 <section id="getting-started" class="level1">
 <h1>Getting started</h1>
 <ul>
-<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-5-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
-<li><p>Navigate to your <code>lab-5</code> folder and open the <code>.Rproj</code> file.</p></li>
+<li><p>In the <em>terminal</em> tab, type <code>cd ~</code> to navigate to your home directory. Next <code>git clone git@github.com:sta323-sp23/lab-6-team_name.git</code> where <code>team_name</code> is replaced with your team name (see the excel signup sheet in box or your github).</p></li>
+<li><p>Navigate to your <code>lab-6</code> folder and open the <code>.Rproj</code> file.</p></li>
 <li><p>Open the Quarto (<code>.qmd</code>) file, change the author name to your team name followed by a colon and then the names of the team members.</p></li>
 </ul>
 <section id="exercises" class="level2">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<p>For all exercises, you should respond in the space provided in the template <code>lab-5.qmd</code> and show all your work. In all answers of type <code>double</code>, three significant figures suffices.</p>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section">1.</h3>
+<p>For all exercises, you should respond in the space provided in the template <code>lab-6.qmd</code> and show all your work. In all answers of type <code>double</code>, three significant figures suffices.</p>
+<section id="rank-nba-teams" class="level3">
+<h3 class="anchored" data-anchor-id="rank-nba-teams">1. rank NBA teams</h3>
+<p>For this question, we will use the data set <code>NBA</code> that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>NBA <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/NBA_1516.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>team_id <span class="ot">=</span> <span class="fu">read_csv</span>(<span class="st">"https://sta323-sp23.github.io/data/teams.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(NBA)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Code book:</p>
+<ul>
+<li><code>Home</code>: unique id for home team</li>
+<li><code>Away</code>: unique id for away team</li>
+<li><code>Y</code>: whether the home team won (1) or lost (0)</li>
+</ul>
+<p>The <code>team_id</code> data set contains a dictionary to map between the unique ids from <code>NBA</code> and the actual team name.</p>
+<p>Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using <a href="https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage">the Bradley-Terry model described in class</a>.</p>
+<ul>
+<li>Implement the MM algorithm, <a href="https://sta323-sp23.github.io/slides/lec14.html#/iterate">as described on this slide</a> to estimate <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span>. Your implementation should be able to be adapted to another data set of identical construction (i.e.&nbsp;don’t hard-code data values into your functions). Start your algorithm mwith <span class="math inline">\(\theta_0 = 0.5\)</span> and <span class="math inline">\(\mathbf{p} = \mathbf{1}\)</span> where <span class="math inline">\(\mathbf{1}\)</span> is a vector of 30 1s. Run the MM updates for 100 steps (i.e.&nbsp;update each element of <span class="math inline">\(\mathbf{p}\)</span> and <span class="math inline">\(\theta\)</span> 100 times).</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Using your <code>NBA</code> data frame, create matrix <span class="math inline">\(A = \{a_{ij}\}\)</span> and matrix <span class="math inline">\(B = \{b_{ij}\}\)</span>, as defined on <a href="https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood">this slide</a> from lecture.</li>
+</ul>
+</div>
+</div>
+<ul>
+<li><p>What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?</p></li>
+<li><p>Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?</p></li>
+</ul>
+<section id="optional-extra-credit" class="level4">
+<h4 class="anchored" data-anchor-id="optional-extra-credit"><strong>optional</strong> extra credit</h4>
+<ul>
+<li>Fix <span class="math inline">\(p_1 = 1\)</span> in your algorithm. Re-compute <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span> by constructing 1000 bootstrap data sets (re-sample from the original <code>NBA</code> data set with replacement).</li>
+</ul>
+<p>Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with <span class="math inline">\(\theta\)</span>) by the team’s actual name (not just the ID).</p>
 </section>
-<section id="section-1" class="level3">
-<h3 class="anchored" data-anchor-id="section-1">2.</h3>
+</section>
+<section id="text-classifier" class="level3">
+<h3 class="anchored" data-anchor-id="text-classifier">2. text classifier</h3>
+<p>In this exercise we will work towards re-creating the classifier of <a href="https://www.hindawi.com/journals/isrn/2013/829630/">Ogura, Amano and Kondo (2013)</a> by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.</p>
+<!-- **The data** -->
+<!-- To begin, we'll use a slightly more processed version of the data set from lab 4 that has undergone additional cleaning and been formed as a *document term matrix*. -->
+<!-- ```{r} -->
+<!-- # load data -->
+<!-- ``` -->
+<p><strong>The model</strong></p>
+<p>Let <span class="math inline">\(N_d\)</span> be the total number of documents and let <span class="math inline">\(N_v\)</span> be the total number of unique words in all documents under study. In our model, we assert that the number of occurrences, <span class="math inline">\(X_{ij}\)</span> of word <span class="math inline">\(j\)</span> in document <span class="math inline">\(i\)</span> is Poisson with mean <span class="math inline">\(\lambda_j w_i\)</span> where <span class="math inline">\(w_i\)</span> is the number of words in document <span class="math inline">\(i\)</span>. Furthermore, we assert <span class="math inline">\(\lambda_j \sim gamma(\alpha_{jc}, \beta_{jc})\)</span>, where <span class="math inline">\(\alpha_{jc}\)</span> and <span class="math inline">\(\beta_{jc}\)</span> are parameters specific to word <span class="math inline">\(j\)</span> in a document of class <span class="math inline">\(c\)</span>.</p>
+<p>Assuming each document is independent, we write the likelihood</p>
+<p><span class="math display">\[
+L(\mathbf{\alpha}, \beta) = \prod_{i = 1}^{N_d} \prod_{j = 1}^{N_{v}}
+\frac{\beta_{cj}^{\alpha_{cj}} \Gamma(x_{ij} + \alpha_{cj})w_i^{x_{ij}}}{
+\Gamma(\alpha_{cj}) (w_i + \beta_{cj})^{x_{ij} + \alpha_{cj}} \cdot x_{ij}!
+}.
+\]</span></p>
+<p>Note that each document <span class="math inline">\(i \in \{1, \ldots, N_d \}\)</span> has one of five class labels (e.g.&nbsp;<code>comp.sci</code>) and so <span class="math inline">\(c \in \{1, \ldots 5 \}\)</span>. Effectively, this is the same as fitting five different models of the following form to five sets of data (1 data set for each class):</p>
+<p><span class="math display">\[
+L(\mathbf{\alpha}, \beta) = \prod_{i = 1}^{N_d} \prod_{j = 1}^{N_{v}}
+\frac{\beta_{j}^{\alpha_{j}} \Gamma(x_{ij} + \alpha_{j})w_i^{x_{ij}}}{
+\Gamma(\alpha_{j}) (w_i + \beta_{j})^{x_{ij} + \alpha_{j}} \cdot x_{ij}!
+}.
+\]</span></p>
+<p>Note that <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> are vectors. Since we wish to compute the maximum likelihood estimates <span class="math inline">\(\hat{\alpha}_{MLE}\)</span> and <span class="math inline">\(\hat{\beta}_{MLE}\)</span>, we need to find a function <span class="math inline">\(g\)</span> that minorizes <span class="math inline">\(L(\alpha, \beta)\)</span>.</p>
+<section id="part-1" class="level4">
+<h4 class="anchored" data-anchor-id="part-1">part 1</h4>
+<ul>
+<li>To begin, expand the <span class="math inline">\(\Gamma\)</span> function using the property: <span class="math inline">\(\Gamma(x) = (x-1)!\)</span>. Next, write the log-likelihood.</li>
+</ul>
+</section>
+<section id="part-2" class="level4">
+<h4 class="anchored" data-anchor-id="part-2">part 2</h4>
+<ul>
+<li>Use <a href="https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality">Jensen’s inequality</a> and the <a href="https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization">supporting line minorization</a> to construct <span class="math inline">\(g\)</span>. Write down <span class="math inline">\(g(\alpha, \beta | \alpha_n, \beta_n)\)</span>.</li>
+</ul>
+<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In the slides above on Jensen’s inequality and the supporting line minorization, <span class="math inline">\(f(x) = -\log x\)</span></p>
+</div>
+</div>
+</section>
+<section id="part-3" class="level4">
+<h4 class="anchored" data-anchor-id="part-3">part 3</h4>
+<p>Show that the MM update of <span class="math inline">\(\beta_j\)</span> is</p>
+<p><span class="math display">\[
+\beta_{n+1, j} = \frac{N_d \cdot \alpha_{nj}}{
+\sum_{i=1}^{N_d} \frac{x_{ij} + \alpha_{nj}}{w_i + \beta_{nj}}
+}
+\]</span></p>
+<p>and that the MM update of <span class="math inline">\(\alpha_j\)</span> is</p>
+<p><span class="math display">\[
+\alpha_{n+1, j} = \frac{\sum_{i=1}^{N_d} \sum_{k = 0}^{x_{ij} - 1} \frac{\alpha_{nj}}{\alpha_{nj} + k}}{
+\sum_{i = 1}^{N_d} \log \left(\frac{w_i + \beta_{nj}}{\beta_{nj}}\right)
+}
+\]</span></p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>This exercise ends just shy of implementation. If you were to proceed from here, you would compute the MLEs <span class="math inline">\(\hat{\alpha}, \hat{\beta}\)</span> for each class of documents. Next, when observing a new document <span class="math inline">\(d\)</span>, you would compute the probability document <span class="math inline">\(d\)</span> is of class <span class="math inline">\(c\)</span>: <span class="math inline">\(p(c | d) \propto p(c) \cdot p(d | \alpha_c, \beta_c)\)</span>. Repeat this for each class <span class="math inline">\(c\)</span> and subsequently label document <span class="math inline">\(d\)</span> as the most probable class.</p>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="style-guidelines" class="level2">

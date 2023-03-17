@@ -1,16 +1,19 @@
 ---
-title: "Lab 6:"
+title: "Lab 6: ascend the likelihood mountain"
 subtitle: "Due Thursday March 30 5:00pm"  
 editor: source
 execute:
   eval: false
 ---
 
+> "There are two kinds of climbers: those who climb because their heart sings when they're in the mountains, and all the rest."
+> - Alex Lowe
 
-By the end of the lab, you will build models and implement MM algorithms to...
 
-- rank sports teams
-- classify text documents
+By the end of the lab, you will 
+
+- implement an MM algorithm to rank sports teams
+- construct an MM algorithm from scratch for text document classification
 
 ::: callout-warning
 Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is "accidentally" pushed.
@@ -56,14 +59,14 @@ Assuming the outcome of each game is independent, we can rank teams and jointly 
 
 - Implement the MM algorithm, [as described on this slide](https://sta323-sp23.github.io/slides/lec14.html#/iterate) to estimate $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$. Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith $\theta_0 = 0.5$ and $\mathbf{p} = \mathbf{1}$ where $\mathbf{1}$ is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of $\mathbf{p}$ and $\theta$ 100 times).
 
-- What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?
-
-- Is there a home-court advantage? What are the odds of winning at home vs away?
-
 :::callout-tip
 ## Hint
 - Using your `NBA` data frame, create matrix $A = \{a_{ij}\}$ and matrix $B = \{b_{ij}\}$, as defined on [this slide](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood) from lecture.
 :::
+
+- What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?
+
+- Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?
 
 #### **optional** extra credit
 
@@ -73,15 +76,15 @@ Report the maximum likelihood estimates (based on the actual, original data set)
 
 ### 2. text classifier
 
-In this exercise we will re-create the classifier of [Ogura, Amano and Kondo (2013)](https://www.hindawi.com/journals/isrn/2013/829630/) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.
+In this exercise we will work towards re-creating the classifier of [Ogura, Amano and Kondo (2013)](https://www.hindawi.com/journals/isrn/2013/829630/) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.
 
-**The data**
+<!-- **The data** -->
 
-To begin, we'll use a slightly more processed version of the data set from lab 4 that has undergone additional cleaning and been formed as a *document term matrix*.
+<!-- To begin, we'll use a slightly more processed version of the data set from lab 4 that has undergone additional cleaning and been formed as a *document term matrix*. -->
 
-```{r}
-# load data
-```
+<!-- ```{r} -->
+<!-- # load data -->
+<!-- ``` -->
 
 **The model**
 
@@ -111,14 +114,17 @@ Note that $\alpha$ and $\beta$ are vectors. Since we wish to compute the maximum
 
 - To begin, expand the $\Gamma$ function using the property: $\Gamma(x) = (x-1)!$. Next, write the log-likelihood. 
 
-- Next, use [Jensen's inequality](https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality) and the [supporting line minorization](https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization) to construct $g$. Write down $g(\alpha, \beta | \alpha_n, \beta_n)$. 
+
+#### part 2
+
+- Use [Jensen's inequality](https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality) and the [supporting line minorization](https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization) to construct $g$. Write down $g(\alpha, \beta | \alpha_n, \beta_n)$. 
 
 ::: callout-tip
 ## Hint
 In the slides above on Jensen's inequality and the supporting line minorization, $f(x) = -\log x$
 :::
 
-#### part 2
+#### part 3
 
 Show that the MM update of $\beta_j$ is 
 
@@ -135,22 +141,10 @@ $$
 \sum_{i = 1}^{N_d} \log \left(\frac{w_i + \beta_{nj}}{\beta_{nj}}\right)
 }
 $$
-#### part 3
 
-- Implement the MM algorithm of part 2 to estimate $\hat{\alpha}_{MLE}$ and $\hat{\beta}_{MLE}$ for each class of document. Report your estimates.
-
-#### part 4 
-
-```{r}
-# doc_test = 
-```
-
-
-- For the document `doc_test`, we don't know the class it belongs to. Compute the likelihood under each set of class parameters. For which class do the class parameters maximize the likelihood? 
-
-
-
-
+::: callout-note 
+This exercise ends just shy of implementation. If you were to proceed from here, you would compute the MLEs $\hat{\alpha}, \hat{\beta}$ for each class of documents. Next, when observing a new document $d$, you would compute the probability document $d$ is of class $c$: $p(c | d) \propto p(c) \cdot p(d | \alpha_c, \beta_c)$. Repeat this for each class $c$ and subsequently label document $d$ as the most probable class.
+:::
 
 ## Style guidelines
 

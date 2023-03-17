@@ -45,7 +45,7 @@ In labs, you will apply the concepts discussed in lecture. Labs will focus on bo
 
 #### Exams
 
-There will be two take-home, open notes exams. Through these exams you have the opportunity to demonstrate what you’ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in labs. More details about the content and structure of the exams will be discussed during the semester.
+There will be two take-home, open notes exams. Through these exams you have the opportunity to demonstrate what you've learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in labs. More details about the content and structure of the exams will be discussed during the semester.
 
 #### Final project
 
@@ -65,7 +65,7 @@ Many questions are most effectively answered in-person, so office hours are a va
 
 #### Slack
 
-Outside of class and office hours, any general questions about course content or assignments should be posted on Slack. The instructors and TAs will monitor Slack and reply quickly to your public or private messages. Also, feel free to answer posted questions and ask follow-up questions.
+Outside of class and office hours, any general questions about course content or assignments should be posted on Slack. The instructors and TAs will monitor Slack and reply to your public or private messages. Also, feel free to answer posted questions and ask follow-up questions.
 
 ### Policies
 
@@ -107,7 +107,7 @@ Late work may be submitted with 48 hours of the assignment deadline. Late work s
 
 #### Inclusion
 
-In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke’s Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean.
+In this course, we will strive to create a learning environment that is welcoming to all students and that is in alignment with **Duke's Commitment to Diversity and Inclusion**. If there is any aspect of the class that is not welcoming or accessible to you, please let me know immediately. Additionally, if you are experiencing something outside of class that is affecting your performance in the course, please feel free to talk with me and/or your academic dean.
 
 #### Accessibility
 

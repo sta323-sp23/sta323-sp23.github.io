@@ -2641,56 +2641,56 @@
   {
     "objectID": "labs/lab6.html",
     "href": "labs/lab6.html",
-    "title": "Lab 6:",
+    "title": "Lab 6: ascend the likelihood mountain",
     "section": "",
-    "text": "By the end of the lab, you will…"
+    "text": "“There are two kinds of climbers: those who climb because their heart sings when they’re in the mountains, and all the rest.” - Alex Lowe\nBy the end of the lab, you will"
   },
   {
     "objectID": "labs/lab6.html#exercises",
     "href": "labs/lab6.html#exercises",
-    "title": "Lab 6:",
+    "title": "Lab 6: ascend the likelihood mountain",
     "section": "Exercises",
-    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-5.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2."
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-6.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1. rank NBA teams\nFor this question, we will use the data set NBA that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.\n\nNBA = read_csv(\"https://sta323-sp23.github.io/data/NBA_1516.csv\")\nteam_id = read_csv(\"https://sta323-sp23.github.io/data/teams.csv\")\n\n\nglimpse(NBA)\n\nCode book:\n\nHome: unique id for home team\nAway: unique id for away team\nY: whether the home team won (1) or lost (0)\n\nThe team_id data set contains a dictionary to map between the unique ids from NBA and the actual team name.\nAssuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using the Bradley-Terry model described in class.\n\nImplement the MM algorithm, as described on this slide to estimate \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\). Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith \\(\\theta_0 = 0.5\\) and \\(\\mathbf{p} = \\mathbf{1}\\) where \\(\\mathbf{1}\\) is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of \\(\\mathbf{p}\\) and \\(\\theta\\) 100 times).\n\n\n\n\n\n\n\nHint\n\n\n\n\nUsing your NBA data frame, create matrix \\(A = \\{a_{ij}\\}\\) and matrix \\(B = \\{b_{ij}\\}\\), as defined on this slide from lecture.\n\n\n\n\nWhat are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?\nIs there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?\n\n\noptional extra credit\n\nFix \\(p_1 = 1\\) in your algorithm. Re-compute \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\) by constructing 1000 bootstrap data sets (re-sample from the original NBA data set with replacement).\n\nReport the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with \\(\\theta\\)) by the team’s actual name (not just the ID).\n\n\n\n2. text classifier\nIn this exercise we will work towards re-creating the classifier of Ogura, Amano and Kondo (2013) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.\n\n\n\n\n\nThe model\nLet \\(N_d\\) be the total number of documents and let \\(N_v\\) be the total number of unique words in all documents under study. In our model, we assert that the number of occurrences, \\(X_{ij}\\) of word \\(j\\) in document \\(i\\) is Poisson with mean \\(\\lambda_j w_i\\) where \\(w_i\\) is the number of words in document \\(i\\). Furthermore, we assert \\(\\lambda_j \\sim gamma(\\alpha_{jc}, \\beta_{jc})\\), where \\(\\alpha_{jc}\\) and \\(\\beta_{jc}\\) are parameters specific to word \\(j\\) in a document of class \\(c\\).\nAssuming each document is independent, we write the likelihood\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{cj}^{\\alpha_{cj}} \\Gamma(x_{ij} + \\alpha_{cj})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{cj}) (w_i + \\beta_{cj})^{x_{ij} + \\alpha_{cj}} \\cdot x_{ij}!\n}.\n\\]\nNote that each document \\(i \\in \\{1, \\ldots, N_d \\}\\) has one of five class labels (e.g. comp.sci) and so \\(c \\in \\{1, \\ldots 5 \\}\\). Effectively, this is the same as fitting five different models of the following form to five sets of data (1 data set for each class):\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{j}^{\\alpha_{j}} \\Gamma(x_{ij} + \\alpha_{j})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{j}) (w_i + \\beta_{j})^{x_{ij} + \\alpha_{j}} \\cdot x_{ij}!\n}.\n\\]\nNote that \\(\\alpha\\) and \\(\\beta\\) are vectors. Since we wish to compute the maximum likelihood estimates \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\), we need to find a function \\(g\\) that minorizes \\(L(\\alpha, \\beta)\\).\n\npart 1\n\nTo begin, expand the \\(\\Gamma\\) function using the property: \\(\\Gamma(x) = (x-1)!\\). Next, write the log-likelihood.\n\n\n\npart 2\n\nUse Jensen’s inequality and the supporting line minorization to construct \\(g\\). Write down \\(g(\\alpha, \\beta | \\alpha_n, \\beta_n)\\).\n\n\n\n\n\n\n\nHint\n\n\n\nIn the slides above on Jensen’s inequality and the supporting line minorization, \\(f(x) = -\\log x\\)\n\n\n\n\npart 3\nShow that the MM update of \\(\\beta_j\\) is\n\\[\n\\beta_{n+1, j} = \\frac{N_d \\cdot \\alpha_{nj}}{\n\\sum_{i=1}^{N_d} \\frac{x_{ij} + \\alpha_{nj}}{w_i + \\beta_{nj}}\n}\n\\]\nand that the MM update of \\(\\alpha_j\\) is\n\\[\n\\alpha_{n+1, j} = \\frac{\\sum_{i=1}^{N_d} \\sum_{k = 0}^{x_{ij} - 1} \\frac{\\alpha_{nj}}{\\alpha_{nj} + k}}{\n\\sum_{i = 1}^{N_d} \\log \\left(\\frac{w_i + \\beta_{nj}}{\\beta_{nj}}\\right)\n}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThis exercise ends just shy of implementation. If you were to proceed from here, you would compute the MLEs \\(\\hat{\\alpha}, \\hat{\\beta}\\) for each class of documents. Next, when observing a new document \\(d\\), you would compute the probability document \\(d\\) is of class \\(c\\): \\(p(c | d) \\propto p(c) \\cdot p(d | \\alpha_c, \\beta_c)\\). Repeat this for each class \\(c\\) and subsequently label document \\(d\\) as the most probable class."
   },
   {
     "objectID": "labs/lab6.html#style-guidelines",
     "href": "labs/lab6.html#style-guidelines",
-    "title": "Lab 6:",
+    "title": "Lab 6: ascend the likelihood mountain",
     "section": "Style guidelines",
     "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
   },
   {
     "objectID": "labs/lab6.html#submitting-your-lab",
     "href": "labs/lab6.html#submitting-your-lab",
-    "title": "Lab 6:",
+    "title": "Lab 6: ascend the likelihood mountain",
     "section": "Submitting your lab",
     "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
   },
   {
     "objectID": "labs/lab7.html",
     "href": "labs/lab7.html",
-    "title": "Lab 5:",
+    "title": "Lab 7:",
     "section": "",
     "text": "By the end of the lab, you will…"
   },
   {
     "objectID": "labs/lab7.html#exercises",
     "href": "labs/lab7.html#exercises",
-    "title": "Lab 5:",
+    "title": "Lab 7:",
     "section": "Exercises",
     "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-5.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1.\n\n\n2."
   },
   {
     "objectID": "labs/lab7.html#style-guidelines",
     "href": "labs/lab7.html#style-guidelines",
-    "title": "Lab 5:",
+    "title": "Lab 7:",
     "section": "Style guidelines",
     "text": "Style guidelines\nAll assignments in this course must employ proper coding style, as outlined below:\n\nAll code should obey the 80 character limit per line (i.e. no code should run off the page when rendering or require scrolling). To enable a vertical line in the RStudio IDE that helps guide this, see the style guidelines from lab 0 or ask a member of the teaching team for help.\nAll commas should be followed by a space.\nAll binary operators should be surrounded by space. For example x + y is appropriate. x+y is not.\nAll pipes %>% or |> as well as ggplot layers + should be followed by a new line.\nYou should be consistent with stylistic choices, e.g. only use 1 of = vs <- and %>% vs |>\nYour name should be at the top (in the YAML) of each document under “author:”\nAll code chunks should be named (with names that don’t have spaces, e.g. ex-1, ex-2 etc.)\nFile names in your GitHub repo such as lab-x.qmd must not be changed and left as provided. Additionally, your repo must pass certain basic checks. The results of these checks are visible on GitHub via the badges at the top of your README and the actions tab. These are meant to give you feedback around the structure and reproducibility of your repository and assignment - they do not assess the correctness of your work. You should consider them a necessary but not sufficient condition when turning in your work - passing all of the checks simply means your have met a minimum standard of reproducibility for the assignment.\n\nFundamentally, the check is making sure 1) you only have the files you should in your repository, 2) your .qmd renders.\nIf you have any questions about style, please ask a member of the teaching team."
   },
   {
     "objectID": "labs/lab7.html#submitting-your-lab",
     "href": "labs/lab7.html#submitting-your-lab",
-    "title": "Lab 5:",
+    "title": "Lab 7:",
     "section": "Submitting your lab",
     "text": "Submitting your lab\nTo submit your assignment, simply commit and push your completed lab-x.qmd to your GitHub repo. Your most recent commit 48 hours after the assignment deadline will be graded, and any applicable late penalty will be applied (see the syllabus). For this reason, do not push commits after you are satisfied with your work, or a late penalty will be applied."
   },
