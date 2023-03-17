@@ -1,16 +1,16 @@
 ---
 title: "Lab 6:"
-subtitle: "Due  5:00pm"  
+subtitle: "Due Thursday March 30 5:00pm"  
 editor: source
 execute:
   eval: false
 ---
 
 
-By the end of the lab, you will...
+By the end of the lab, you will build models and implement MM algorithms to...
 
-- 
-- 
+- rank sports teams
+- classify text documents
 
 ::: callout-warning
 Make sure everyone in your team knows when to stop committing! After 5pm on the due date will result in late penalty applying for the team, even if commit is "accidentally" pushed.
@@ -18,19 +18,139 @@ Make sure everyone in your team knows when to stop committing! After 5pm on the 
 
 # Getting started
 
--   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-5-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
+-   In the *terminal* tab, type `cd ~` to navigate to your home directory. Next `git clone git@github.com:sta323-sp23/lab-6-team_name.git` where `team_name` is replaced with your team name (see the excel signup sheet in box or your github).
 
--   Navigate to your `lab-5` folder and open the `.Rproj` file.
+-   Navigate to your `lab-6` folder and open the `.Rproj` file.
 
 -   Open the Quarto (`.qmd`) file, change the author name to your team name followed by a colon and then the names of the team members.
 
 ## Exercises
 
-For all exercises, you should respond in the space provided in the template `lab-5.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
+For all exercises, you should respond in the space provided in the template `lab-6.qmd` and show all your work. In all answers of type `double`, three significant figures suffices.
 
-### 1. 
+### 1. rank NBA teams
 
-### 2. 
+For this question, we will use the data set `NBA` that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.
+
+```{r}
+#| message: false
+#| warning: false
+NBA = read_csv("https://sta323-sp23.github.io/data/NBA_1516.csv")
+team_id = read_csv("https://sta323-sp23.github.io/data/teams.csv")
+```
+
+```{r}
+#| warning: false
+glimpse(NBA)
+```
+
+Code book:
+
+- `Home`: unique id for home team
+- `Away`: unique id for away team
+- `Y`: whether the home team won (1) or lost (0)
+
+The `team_id` data set contains a dictionary to map between the unique ids from `NBA` and the actual team name.
+
+Assuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using [the Bradley-Terry model described in class](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-with-home-court-advantage).
+
+- Implement the MM algorithm, [as described on this slide](https://sta323-sp23.github.io/slides/lec14.html#/iterate) to estimate $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$. Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith $\theta_0 = 0.5$ and $\mathbf{p} = \mathbf{1}$ where $\mathbf{1}$ is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of $\mathbf{p}$ and $\theta$ 100 times).
+
+- What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?
+
+- Is there a home-court advantage? What are the odds of winning at home vs away?
+
+:::callout-tip
+## Hint
+- Using your `NBA` data frame, create matrix $A = \{a_{ij}\}$ and matrix $B = \{b_{ij}\}$, as defined on [this slide](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood) from lecture.
+:::
+
+#### **optional** extra credit
+
+- Fix $p_1 = 1$ in your algorithm. Re-compute $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$ by constructing 1000 bootstrap data sets (re-sample from the original `NBA` data set with replacement).
+
+Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with $\theta$) by the team's actual name (not just the ID).
+
+### 2. text classifier
+
+In this exercise we will re-create the classifier of [Ogura, Amano and Kondo (2013)](https://www.hindawi.com/journals/isrn/2013/829630/) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.
+
+**The data**
+
+To begin, we'll use a slightly more processed version of the data set from lab 4 that has undergone additional cleaning and been formed as a *document term matrix*.
+
+```{r}
+# load data
+```
+
+**The model**
+
+Let $N_d$ be the total number of documents and let $N_v$ be the total number of unique words in all documents under study. In our model, we assert that the number of occurrences, $X_{ij}$ of word $j$ in document $i$ is Poisson with mean $\lambda_j w_i$ where $w_i$ is the number of words in document $i$. Furthermore, we assert $\lambda_j \sim gamma(\alpha_{jc}, \beta_{jc})$, where $\alpha_{jc}$ and $\beta_{jc}$ are parameters specific to word $j$ in a document of class $c$.
+
+Assuming each document is independent, we write the likelihood
+
+$$
+L(\mathbf{\alpha}, \beta) = \prod_{i = 1}^{N_d} \prod_{j = 1}^{N_{v}}
+\frac{\beta_{cj}^{\alpha_{cj}} \Gamma(x_{ij} + \alpha_{cj})w_i^{x_{ij}}}{
+\Gamma(\alpha_{cj}) (w_i + \beta_{cj})^{x_{ij} + \alpha_{cj}} \cdot x_{ij}!
+}.
+$$
+
+Note that each document $i \in \{1, \ldots, N_d \}$ has one of five class labels (e.g. `comp.sci`) and so $c \in \{1, \ldots 5 \}$. Effectively, this is the same as fitting five different models of the following form to five sets of data (1 data set for each class):
+
+$$
+L(\mathbf{\alpha}, \beta) = \prod_{i = 1}^{N_d} \prod_{j = 1}^{N_{v}}
+\frac{\beta_{j}^{\alpha_{j}} \Gamma(x_{ij} + \alpha_{j})w_i^{x_{ij}}}{
+\Gamma(\alpha_{j}) (w_i + \beta_{j})^{x_{ij} + \alpha_{j}} \cdot x_{ij}!
+}.
+$$
+
+Note that $\alpha$ and $\beta$ are vectors. Since we wish to compute the maximum likelihood estimates $\hat{\alpha}_{MLE}$ and $\hat{\beta}_{MLE}$, we need to find a function $g$ that minorizes $L(\alpha, \beta)$.
+
+#### part 1
+
+- To begin, expand the $\Gamma$ function using the property: $\Gamma(x) = (x-1)!$. Next, write the log-likelihood. 
+
+- Next, use [Jensen's inequality](https://sta323-sp23.github.io/slides/lec13.html#/jensens-inequality) and the [supporting line minorization](https://sta323-sp23.github.io/slides/lec13.html#/supporting-line-minorization) to construct $g$. Write down $g(\alpha, \beta | \alpha_n, \beta_n)$. 
+
+::: callout-tip
+## Hint
+In the slides above on Jensen's inequality and the supporting line minorization, $f(x) = -\log x$
+:::
+
+#### part 2
+
+Show that the MM update of $\beta_j$ is 
+
+$$
+\beta_{n+1, j} = \frac{N_d \cdot \alpha_{nj}}{
+\sum_{i=1}^{N_d} \frac{x_{ij} + \alpha_{nj}}{w_i + \beta_{nj}}
+}
+$$
+
+and that the MM update of $\alpha_j$ is
+
+$$
+\alpha_{n+1, j} = \frac{\sum_{i=1}^{N_d} \sum_{k = 0}^{x_{ij} - 1} \frac{\alpha_{nj}}{\alpha_{nj} + k}}{
+\sum_{i = 1}^{N_d} \log \left(\frac{w_i + \beta_{nj}}{\beta_{nj}}\right)
+}
+$$
+#### part 3
+
+- Implement the MM algorithm of part 2 to estimate $\hat{\alpha}_{MLE}$ and $\hat{\beta}_{MLE}$ for each class of document. Report your estimates.
+
+#### part 4 
+
+```{r}
+# doc_test = 
+```
+
+
+- For the document `doc_test`, we don't know the class it belongs to. Compute the likelihood under each set of class parameters. For which class do the class parameters maximize the likelihood? 
+
+
+
+
 
 ## Style guidelines
 
