@@ -253,13 +253,13 @@ Hint
 </div>
 </div>
 <ul>
-<li><p>What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?</p></li>
+<li><p>What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model? Report your estimates <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> together with the team name and id number for the top ten teams in a table.</p></li>
 <li><p>Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?</p></li>
 </ul>
 <section id="optional-extra-credit" class="level4">
 <h4 class="anchored" data-anchor-id="optional-extra-credit"><strong>optional</strong> extra credit</h4>
 <ul>
-<li>Fix <span class="math inline">\(p_1 = 1\)</span> in your algorithm. Re-compute <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span> by constructing 1000 bootstrap data sets (re-sample from the original <code>NBA</code> data set with replacement).</li>
+<li>Fix <span class="math inline">\(p_1 = 1\)</span> in your algorithm. Construct 100 bootstrap data sets (re-sample from the original <code>NBA</code> data set with replacement) and re-compute <span class="math inline">\(\hat{\mathbf{p}}_{MLE}\)</span> and <span class="math inline">\(\hat{\theta}_{MLE}\)</span> for each. Here we choose <code>100</code> for low-computational demand.</li>
 </ul>
 <p>Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with <span class="math inline">\(\theta\)</span>) by the team’s actual name (not just the ID).</p>
 </section>

@@ -63,7 +63,7 @@ schedule %>%
 | 6    | Tue Feb 21 | no lab: exam 1                         |                                 |                |   exam 1 due                                    |         |
 |      | Wed Feb 22 | complexity and parallelization |  [💻](/slides/lec10.html)                                |                          |                                       |         |
 |      | Fri Feb 24 | intro to optimization          |  [💻](/slides/lec11.html)                                |                          |                                       |         |
-| 7    | Tue Feb 28 | Where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         |
+| 7    | Tue Feb 28 | where's zero?                                       |                                 | [lab 5](/labs/lab5.html)                         |                                       |         |
 |      | Wed Mar 01 | Newton-Raphson                  |[💻](/slides/lec12.html)                                  |                          |                                       |         |
 |      | Fri Mar 03 | Newton-Raphson examples           |                                 |                          |                                       |         |
 | 8    | Tue Mar 07 |  continue lab                                      |                                 |                          |                                       |         |
@@ -72,10 +72,10 @@ schedule %>%
 | 9    | Tue Mar 14 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Wed Mar 15 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 |      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
-| 10   | Tue Mar 21 |                                        |                                 |                          |                                       |         |
-|      | Wed Mar 22 | EM algorithm                      |                                 |                          |                                       |         |
+| 10   | Tue Mar 21 | ascend the likelihood                                      |                                 | [lab 6](/labs/lab6.html)                          |                                       |         |
+|      | Wed Mar 22 | EM algorithm                      | [💻](/slides/lec15.html)                                 |                          |                                       |         |
 |      | Fri Mar 24 | Monte Carlo Integration                          |                                 |                          |                                       |         |
-| 11   | Tue Mar 28 |                                        |                                 |                          |                                       |         |
+| 11   | Tue Mar 28 | continue lab                                       |                                 |                          |                                       |         |
 |      | Wed Mar 29 | Importance sampling                                 |                                 |                          |                                       |         |
 |      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   exam 2 release                                   |          |
 | 12   | Tue Apr 04 |  no lab: exam 2                                       |                                 |                          |  exam 2 due                                     |         |

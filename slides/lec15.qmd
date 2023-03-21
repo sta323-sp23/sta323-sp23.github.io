@@ -1,0 +1,294 @@
+---
+title: "EM algorithm"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+## Announcements
+
+-   Reminder: [project](/project.html) announced before spring break.
+
+-   Exam 2 March 31st.
+
+# Expectation-maximization
+
+-   Check out the original article by Dempster, Laird and Rubin [here](https://www.jstor.org/stable/2984875).
+
+> Dempster, Arthur P., Nan M. Laird, and Donald B. Rubin. "Maximum likelihood from incomplete data via the EM algorithm." Journal of the royal statistical society: series B (methodological) 39.1 (1977): 1-22.
+
+## Intro to EM
+
+-   Expectation-maximization "EM" is a special case of the MM algorithm.
+
+-   Fundamentally, we still wish to maximize an objective function $f$ and we need to come up with a surrogate $g$ that minorizes $f$.
+
+-   the common example we'll re-visit is maximum likelihood estimation
+
+. . . 
+
+:::callout-note
+In the EM literature, the surrogate is often labeled "Q". We will use "Q" as well.
+:::
+
+## EM MLE
+
+-   Let $f(y | \theta)$ be the likelihood of observed data $y$ given some vector of parameters $\theta$.
+
+-   Let $h(x|\theta)$ be the likelihood of the **complete data** $x$ given $\theta$. Typically $y \subset x$. Under this paradigm, some data $z = x \setminus y$ are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.
+
+. . .
+
+**Surrogate**
+
+$$
+Q(\theta | \theta_n) = \mathbb{E} [\log h(x | \theta) \ | \ y, \theta_n]
+$$
+
+minorizes the log-likelihood $\log L(\theta) = \log f(y | \theta)$.
+
+. . .
+
+::: callout-note
+The surrogate is defined as an expected alue.
+:::
+
+The algorithm proceed by iterating two steps:
+
+1.  compute the **expectation** to find the surrogate function $Q(\theta | \theta_n)$.
+
+2.  **maximize** the surrogate.
+
+## Information inequality (Gibb's inequality)
+
+To motivate the surrogate function, we'll need one additional inequality in our toolkit.
+
+Suppose $p(x)$ and $q(x)$ are probability densities.
+
+$$
+D_{KL}(p || q)  = \int 
+p(x) 
+\ln \frac{p(x)}{q(x)} 
+dx
+\geq 0
+$$
+
+. . .
+
+Said another way,
+
+$$
+\int p(x) \ln p(x) dx - \int p(x) \ln q(x) dx \geq 0.
+$$
+
+. . .
+
+Said yet another way,
+
+$$
+\mathbb{E_p}\left[
+\ln p(x)
+\right] 
+\geq
+\mathbb{E_p}\left[
+\ln q(x)
+\right] 
+$$
+
+## Verifying the surrogate
+
+#### Claim
+
+$$
+Q(\theta | \theta_n) = \mathbb{E} [\log h(x | \theta) \ | \ y, \theta_n]
+$$
+
+minorizes the log-likelihood $\log L(\theta) = \log f(y | \theta)$.
+
+#### Proof
+
+. . .
+
+1. Assume the complete data $x = (y, z)$, where $y$ is observed and $z$ is missing.
+
+$$
+f(y|\theta) = \frac{h(y,z|\theta)}{g(z|y, \theta)}
+$$
+by Bayes' theorem.
+
+. . . 
+
+2. Log both sides and take the expectation using current iterate $\theta_n$ to parameterize the density of the missing data.
+
+$$
+\underbrace{\log f(y|\theta)}_{L(\theta)} = \underbrace{\int g(z|y, \theta_n) \log h(y,z |\theta) dz}_{Q(\theta|\theta_n)} - \underbrace{\int g(z|y, \theta_n) \log g(z|y, \theta) dz}_{R(\theta|\theta_n)}
+$$
+
+. . . 
+
+Since true $\forall \  \theta$, also true for $\theta_n$,
+
+$$
+L(\theta_n) = {Q(\theta_n|\theta_n)} - {R(\theta_n|\theta_n)}
+$$
+
+## Verification continued
+
+3. Form the difference $L(\theta) - L(\theta_n)$.
+
+$$
+L(\theta) - L(\theta_n) = {Q(\theta|\theta_n)} - {Q(\theta_n|\theta_n)} 
+\underbrace{- \left[{R(\theta|\theta_n)} - {R(\theta_n|\theta_n)}\right]}_{
+\geq~0 \text{ by Gibb's inequality}
+}
+$$
+*notice* the negative sign is included here.
+
+. . . 
+
+4. Drop the positive term for inequality.
+
+$$
+L(\theta) - L(\theta_n) \geq {Q(\theta|\theta_n)} - {Q(\theta_n|\theta_n)} 
+$$
+
+and re-arrange
+
+$$
+L(\theta) \geq {Q(\theta|\theta_n)} - {Q(\theta_n|\theta_n)} + L(\theta_n)
+$$
+
+to see that the log-likelihood dominates the surrogate up to an irrelevant constant.
+
+# Example
+
+## Censored data
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(tidyverse)
+library(knitr)
+```
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+set.seed(5)
+x = rexp(50, rate = .01) %>% round(digits = 3)
+c = 100 # censor time
+
+y = data.frame("obs" = x) %>%
+  mutate(obs = ifelse(obs >=100, 100, obs))
+#sum(x>c)
+# y = x[x<c]
+y %>%
+  rename("Miles at which breaks fail (thousands)" = "obs") %>%
+  head(n = 4) %>%
+  kable(align=rep('c', 4))
+```
+
+Let $x$ be the number of miles (in thousands) at which a car's breaks fail. Measurements stop after 100 thousand miles, thus the data is right-censored.
+
+We model the lifetime of a car's breaks as an exponential random variable with unknown rate of failure $\lambda$.
+
+. . . 
+
+Let $N$ be the total number of observations. The complete data contains both observed and unobserved lifetimes. $N = N_o + N_c$ where $N_o$ is the number of break failures actually observed ($x < 100$) and $N_c$ is the number of censored data points.
+
+#### Complete data likelihood
+
+$$
+\prod_{i = 1}^{N} \lambda e^{-\lambda x_i}
+$$
+## The model
+
+#### Complete data log-likelihood
+
+$$
+L(x |\lambda) = N \log \lambda - \lambda \sum_{i = 1}^N x_i 
+$$
+
+Splitting the fully observed vs censored data,
+
+$$
+L(x |\lambda) = N \log \lambda - \lambda \left( 
+\sum_{i = 1}^{N_o} y_i + \sum_{j = 1}^{N_c} z_j
+\right)
+$$
+where we've split the $x$ into the observed $y$ and unobserved $z$.
+
+## Surrogate
+
+$$
+\begin{aligned}
+Q(\lambda | \lambda_n) &=
+\mathbb{E}\left[
+L(x |\lambda) \ | \ y, \lambda_n
+\right]\\
+&=
+N \log \lambda - \lambda \left(\sum_{i = 1}^{N_o} y_i - 
+\sum_{j = 1}^{N_c} \underbrace{\mathbb{E} [z_j]}_{\text{w.r.t. } z_j |\lambda_n}
+\right)
+\end{aligned}
+$$
+
+. . . 
+
+Note: $z_j = x_j | x_j > c$ where $c = 100$ is the censoring cut-off. Therefore this is an expectation of a [truncated](https://en.wikipedia.org/wiki/Truncated_distribution) exponential.
+
+. . .
+
+- E step:
+
+$$
+Q(\lambda | \lambda_n) = N \log \lambda - \lambda \left(\sum_{i = 1}^{N_o} y_i - 
+\sum_{j = 1}^{N_c} \left(
+c + \frac{1}{\lambda_n} \right)
+\right)
+$$
+. . .
+
+- M step:
+
+$\frac{dQ}{d\lambda} = 0 \implies$
+
+$$
+\lambda_{n+1} = \frac{N}{\sum_{i = 1}^{N_o} y_i + N_c \left( c + \frac{1}{\lambda_n}
+\right)}
+$$
+
+## Exercise
+
+Code the EM algorithm on the previous slide for the simulated data-set of break failures below:
+
+```{r}
+set.seed(5)
+N = 250 # number of observations
+trueLambda = 0.01
+xcomplete = rexp(N, rate = trueLambda) %>% round(digits = 3)
+c = 100 # censor time
+
+x = xcomplete
+x[x >= 100] = 100
+```
+
+Note: you only observe `x`. 
+
+. . . 
+
+Solution:
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/scripts/EM-example.R",
+              destfile = "EM-example.R")
+```
+
+

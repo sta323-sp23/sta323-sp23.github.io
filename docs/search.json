@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nWhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\n\n\n\n\n\n\n\n\nWed Mar 22\nEM algorithm\n\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo Integration\n\n\n\n\n\n\n11\nTue Mar 28\n\n\n\n\n\n\n\n\nWed Mar 29\nImportance sampling\n\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nproject tips\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\nproject peer-review\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo Integration\n\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nImportance sampling\n\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nproject tips\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\nproject peer-review\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
   },
   {
     "objectID": "links.html",
@@ -2650,7 +2650,7 @@
     "href": "labs/lab6.html#exercises",
     "title": "Lab 6: ascend the likelihood mountain",
     "section": "Exercises",
-    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-6.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1. rank NBA teams\nFor this question, we will use the data set NBA that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.\n\nNBA = read_csv(\"https://sta323-sp23.github.io/data/NBA_1516.csv\")\nteam_id = read_csv(\"https://sta323-sp23.github.io/data/teams.csv\")\n\n\nglimpse(NBA)\n\nCode book:\n\nHome: unique id for home team\nAway: unique id for away team\nY: whether the home team won (1) or lost (0)\n\nThe team_id data set contains a dictionary to map between the unique ids from NBA and the actual team name.\nAssuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using the Bradley-Terry model described in class.\n\nImplement the MM algorithm, as described on this slide to estimate \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\). Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith \\(\\theta_0 = 0.5\\) and \\(\\mathbf{p} = \\mathbf{1}\\) where \\(\\mathbf{1}\\) is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of \\(\\mathbf{p}\\) and \\(\\theta\\) 100 times).\n\n\n\n\n\n\n\nHint\n\n\n\n\nUsing your NBA data frame, create matrix \\(A = \\{a_{ij}\\}\\) and matrix \\(B = \\{b_{ij}\\}\\), as defined on this slide from lecture.\n\n\n\n\nWhat are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?\nIs there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?\n\n\noptional extra credit\n\nFix \\(p_1 = 1\\) in your algorithm. Re-compute \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\) by constructing 1000 bootstrap data sets (re-sample from the original NBA data set with replacement).\n\nReport the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with \\(\\theta\\)) by the team’s actual name (not just the ID).\n\n\n\n2. text classifier\nIn this exercise we will work towards re-creating the classifier of Ogura, Amano and Kondo (2013) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.\n\n\n\n\n\nThe model\nLet \\(N_d\\) be the total number of documents and let \\(N_v\\) be the total number of unique words in all documents under study. In our model, we assert that the number of occurrences, \\(X_{ij}\\) of word \\(j\\) in document \\(i\\) is Poisson with mean \\(\\lambda_j w_i\\) where \\(w_i\\) is the number of words in document \\(i\\). Furthermore, we assert \\(\\lambda_j \\sim gamma(\\alpha_{jc}, \\beta_{jc})\\), where \\(\\alpha_{jc}\\) and \\(\\beta_{jc}\\) are parameters specific to word \\(j\\) in a document of class \\(c\\).\nAssuming each document is independent, we write the likelihood\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{cj}^{\\alpha_{cj}} \\Gamma(x_{ij} + \\alpha_{cj})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{cj}) (w_i + \\beta_{cj})^{x_{ij} + \\alpha_{cj}} \\cdot x_{ij}!\n}.\n\\]\nNote that each document \\(i \\in \\{1, \\ldots, N_d \\}\\) has one of five class labels (e.g. comp.sci) and so \\(c \\in \\{1, \\ldots 5 \\}\\). Effectively, this is the same as fitting five different models of the following form to five sets of data (1 data set for each class):\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{j}^{\\alpha_{j}} \\Gamma(x_{ij} + \\alpha_{j})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{j}) (w_i + \\beta_{j})^{x_{ij} + \\alpha_{j}} \\cdot x_{ij}!\n}.\n\\]\nNote that \\(\\alpha\\) and \\(\\beta\\) are vectors. Since we wish to compute the maximum likelihood estimates \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\), we need to find a function \\(g\\) that minorizes \\(L(\\alpha, \\beta)\\).\n\npart 1\n\nTo begin, expand the \\(\\Gamma\\) function using the property: \\(\\Gamma(x) = (x-1)!\\). Next, write the log-likelihood.\n\n\n\npart 2\n\nUse Jensen’s inequality and the supporting line minorization to construct \\(g\\). Write down \\(g(\\alpha, \\beta | \\alpha_n, \\beta_n)\\).\n\n\n\n\n\n\n\nHint\n\n\n\nIn the slides above on Jensen’s inequality and the supporting line minorization, \\(f(x) = -\\log x\\)\n\n\n\n\npart 3\nShow that the MM update of \\(\\beta_j\\) is\n\\[\n\\beta_{n+1, j} = \\frac{N_d \\cdot \\alpha_{nj}}{\n\\sum_{i=1}^{N_d} \\frac{x_{ij} + \\alpha_{nj}}{w_i + \\beta_{nj}}\n}\n\\]\nand that the MM update of \\(\\alpha_j\\) is\n\\[\n\\alpha_{n+1, j} = \\frac{\\sum_{i=1}^{N_d} \\sum_{k = 0}^{x_{ij} - 1} \\frac{\\alpha_{nj}}{\\alpha_{nj} + k}}{\n\\sum_{i = 1}^{N_d} \\log \\left(\\frac{w_i + \\beta_{nj}}{\\beta_{nj}}\\right)\n}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThis exercise ends just shy of implementation. If you were to proceed from here, you would compute the MLEs \\(\\hat{\\alpha}, \\hat{\\beta}\\) for each class of documents. Next, when observing a new document \\(d\\), you would compute the probability document \\(d\\) is of class \\(c\\): \\(p(c | d) \\propto p(c) \\cdot p(d | \\alpha_c, \\beta_c)\\). Repeat this for each class \\(c\\) and subsequently label document \\(d\\) as the most probable class."
+    "text": "Exercises\nFor all exercises, you should respond in the space provided in the template lab-6.qmd and show all your work. In all answers of type double, three significant figures suffices.\n\n1. rank NBA teams\nFor this question, we will use the data set NBA that contains all 1230 regular season NBA games, from 2015-2016 and their outcome.\n\nNBA = read_csv(\"https://sta323-sp23.github.io/data/NBA_1516.csv\")\nteam_id = read_csv(\"https://sta323-sp23.github.io/data/teams.csv\")\n\n\nglimpse(NBA)\n\nCode book:\n\nHome: unique id for home team\nAway: unique id for away team\nY: whether the home team won (1) or lost (0)\n\nThe team_id data set contains a dictionary to map between the unique ids from NBA and the actual team name.\nAssuming the outcome of each game is independent, we can rank teams and jointly model a home-court advantage in the 2015-2016 season using the Bradley-Terry model described in class.\n\nImplement the MM algorithm, as described on this slide to estimate \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\). Your implementation should be able to be adapted to another data set of identical construction (i.e. don’t hard-code data values into your functions). Start your algorithm mwith \\(\\theta_0 = 0.5\\) and \\(\\mathbf{p} = \\mathbf{1}\\) where \\(\\mathbf{1}\\) is a vector of 30 1s. Run the MM updates for 100 steps (i.e. update each element of \\(\\mathbf{p}\\) and \\(\\theta\\) 100 times).\n\n\n\n\n\n\n\nHint\n\n\n\n\nUsing your NBA data frame, create matrix \\(A = \\{a_{ij}\\}\\) and matrix \\(B = \\{b_{ij}\\}\\), as defined on this slide from lecture.\n\n\n\n\nWhat are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model? Report your estimates \\(\\hat{\\mathbf{p}}_{MLE}\\) together with the team name and id number for the top ten teams in a table.\nIs there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?\n\n\noptional extra credit\n\nFix \\(p_1 = 1\\) in your algorithm. Construct 100 bootstrap data sets (re-sample from the original NBA data set with replacement) and re-compute \\(\\hat{\\mathbf{p}}_{MLE}\\) and \\(\\hat{\\theta}_{MLE}\\) for each. Here we choose 100 for low-computational demand.\n\nReport the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with \\(\\theta\\)) by the team’s actual name (not just the ID).\n\n\n\n2. text classifier\nIn this exercise we will work towards re-creating the classifier of Ogura, Amano and Kondo (2013) by using a gamma-Poisson distribution to model the frequency of words in a document. Read section 3.1 of the article for relevant background about this model.\n\n\n\n\n\nThe model\nLet \\(N_d\\) be the total number of documents and let \\(N_v\\) be the total number of unique words in all documents under study. In our model, we assert that the number of occurrences, \\(X_{ij}\\) of word \\(j\\) in document \\(i\\) is Poisson with mean \\(\\lambda_j w_i\\) where \\(w_i\\) is the number of words in document \\(i\\). Furthermore, we assert \\(\\lambda_j \\sim gamma(\\alpha_{jc}, \\beta_{jc})\\), where \\(\\alpha_{jc}\\) and \\(\\beta_{jc}\\) are parameters specific to word \\(j\\) in a document of class \\(c\\).\nAssuming each document is independent, we write the likelihood\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{cj}^{\\alpha_{cj}} \\Gamma(x_{ij} + \\alpha_{cj})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{cj}) (w_i + \\beta_{cj})^{x_{ij} + \\alpha_{cj}} \\cdot x_{ij}!\n}.\n\\]\nNote that each document \\(i \\in \\{1, \\ldots, N_d \\}\\) has one of five class labels (e.g. comp.sci) and so \\(c \\in \\{1, \\ldots 5 \\}\\). Effectively, this is the same as fitting five different models of the following form to five sets of data (1 data set for each class):\n\\[\nL(\\mathbf{\\alpha}, \\beta) = \\prod_{i = 1}^{N_d} \\prod_{j = 1}^{N_{v}}\n\\frac{\\beta_{j}^{\\alpha_{j}} \\Gamma(x_{ij} + \\alpha_{j})w_i^{x_{ij}}}{\n\\Gamma(\\alpha_{j}) (w_i + \\beta_{j})^{x_{ij} + \\alpha_{j}} \\cdot x_{ij}!\n}.\n\\]\nNote that \\(\\alpha\\) and \\(\\beta\\) are vectors. Since we wish to compute the maximum likelihood estimates \\(\\hat{\\alpha}_{MLE}\\) and \\(\\hat{\\beta}_{MLE}\\), we need to find a function \\(g\\) that minorizes \\(L(\\alpha, \\beta)\\).\n\npart 1\n\nTo begin, expand the \\(\\Gamma\\) function using the property: \\(\\Gamma(x) = (x-1)!\\). Next, write the log-likelihood.\n\n\n\npart 2\n\nUse Jensen’s inequality and the supporting line minorization to construct \\(g\\). Write down \\(g(\\alpha, \\beta | \\alpha_n, \\beta_n)\\).\n\n\n\n\n\n\n\nHint\n\n\n\nIn the slides above on Jensen’s inequality and the supporting line minorization, \\(f(x) = -\\log x\\)\n\n\n\n\npart 3\nShow that the MM update of \\(\\beta_j\\) is\n\\[\n\\beta_{n+1, j} = \\frac{N_d \\cdot \\alpha_{nj}}{\n\\sum_{i=1}^{N_d} \\frac{x_{ij} + \\alpha_{nj}}{w_i + \\beta_{nj}}\n}\n\\]\nand that the MM update of \\(\\alpha_j\\) is\n\\[\n\\alpha_{n+1, j} = \\frac{\\sum_{i=1}^{N_d} \\sum_{k = 0}^{x_{ij} - 1} \\frac{\\alpha_{nj}}{\\alpha_{nj} + k}}{\n\\sum_{i = 1}^{N_d} \\log \\left(\\frac{w_i + \\beta_{nj}}{\\beta_{nj}}\\right)\n}\n\\]\n\n\n\n\n\n\nNote\n\n\n\nThis exercise ends just shy of implementation. If you were to proceed from here, you would compute the MLEs \\(\\hat{\\alpha}, \\hat{\\beta}\\) for each class of documents. Next, when observing a new document \\(d\\), you would compute the probability document \\(d\\) is of class \\(c\\): \\(p(c | d) \\propto p(c) \\cdot p(d | \\alpha_c, \\beta_c)\\). Repeat this for each class \\(c\\) and subsequently label document \\(d\\) as the most probable class."
   },
   {
     "objectID": "labs/lab6.html#style-guidelines",
@@ -3288,5 +3288,138 @@
     "title": "MM Algorithm Example",
     "section": "Algebra trick",
     "text": "Algebra trick\n\\[\n\\begin{aligned}\n&\\sum_i \\sum_j a_{ij} \\log p_i + b_{ij} \\log p_j = \\sum_i \\log p_i \\sum_j a_{ij} + \\sum_j \\log p_j \\sum_i b_{ij}\\\\\n\\end{aligned}\n\\]\nNotice \\(\\sum_j a_{ij}\\) is the number of wins of team \\(i\\) at home. We’ll call this term \\(\\alpha_i\\). Similarly, \\(\\sum_i b_{ij}\\) is the number of wins of team \\(j\\) away. We’ll call this term \\(\\beta_j\\).\nSo we have,\n\\[\n\\sum_i \\alpha_i \\log p_i + \\sum_j \\beta_j \\log p_j\n\\]\nSince \\(i\\) and \\(j\\) are both summations from \\(1\\) to \\(n\\), where \\(n\\) is the number of teams, we can equivalently write these with the same index:\n\\[\n\\sum_i (\\alpha_i + \\beta_i) \\log p_i\n\\]\nwhere \\(\\alpha_i\\) is the number of wins of team \\(i\\) at home and \\(\\beta_i\\) is the number of wins of team \\(i\\) away. So \\(\\alpha_i + \\beta_i = w_i\\).\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec15.html#announcements",
+    "href": "slides/lec15.html#announcements",
+    "title": "EM algorithm",
+    "section": "Announcements",
+    "text": "Announcements\n\nReminder: project announced before spring break.\nExam 2 March 31st."
+  },
+  {
+    "objectID": "slides/lec15.html#definition",
+    "href": "slides/lec15.html#definition",
+    "title": "EM algorithm",
+    "section": "Definition",
+    "text": "Definition\n\nExpectation-maximization “EM” is a special case of the MM algorithm.\nFundamentally, we still wish to maximize an objective function \\(f\\) and we need to come up with a surrogate \\(g\\) that minorizes \\(f\\).\nthe common example we’ll re-visit is maximum likelihood estimation\n\n\nMLE\n\nLet \\(f_y(y | \\theta)\\) be the likelihood of observed data \\(y\\) given some vector of parameters \\(\\theta\\).\nLet \\(f_x(X|\\theta)\\) is the likelihood of the complete data \\(x\\) given \\(\\theta\\). Typically \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\n\nClaim:\n\\[\ng(\\theta | \\theta_n) = \\mathbb{E} [\\log f_x(X | \\theta) \\ | \\ Y = y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\ell = \\log f_y(y | \\theta)\\)."
+  },
+  {
+    "objectID": "slides/lec15.html#specialization-of-mm",
+    "href": "slides/lec15.html#specialization-of-mm",
+    "title": "EM algorithm",
+    "section": "Specialization of MM",
+    "text": "Specialization of MM"
+  },
+  {
+    "objectID": "slides/lec15.html#toy-example",
+    "href": "slides/lec15.html#toy-example",
+    "title": "EM algorithm",
+    "section": "Toy example",
+    "text": "Toy example"
+  },
+  {
+    "objectID": "slides/lec15.html#derivation",
+    "href": "slides/lec15.html#derivation",
+    "title": "EM algorithm",
+    "section": "Derivation",
+    "text": "Derivation\n\nlet \\(s(y | \\theta)\\) be the observed data likelihood.\nlet \\(r(x | \\theta)\\) be the complete data likelihood.\n\nThe conditional density of \\(x\\) given \\(y\\),\n\\[\n\\frac{r(x | \\theta)}{s(y|\\theta)}\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#section",
+    "href": "slides/lec15.html#section",
+    "title": "EM algorithm",
+    "section": "",
+    "text": "key idea\nSuppose some of our data is missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\nLet \\(\\ell\\) be the log-likelihood of the observed data \\(y\\). \\(\\ell(y | \\theta)\\).\nConsider observed data \\(y\\). Typically we write down the likelihood as \\(L(\\theta)\\) where \\(\\theta\\) represents the unknown vector of parameters we wish to estimate.\nidea\nLet \\(x\\) represent the complete data, i.e. \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\nThe EM principle lets us maximize a surrogate function of the complete data log-likelihood instead of a surrogate function of the observed data log-likelihood."
+  },
+  {
+    "objectID": "slides/lec15.html#intro-to-em",
+    "href": "slides/lec15.html#intro-to-em",
+    "title": "EM algorithm",
+    "section": "Intro to EM",
+    "text": "Intro to EM\n\nExpectation-maximization “EM” is a special case of the MM algorithm.\nFundamentally, we still wish to maximize an objective function \\(f\\) and we need to come up with a surrogate \\(g\\) that minorizes \\(f\\).\nthe common example we’ll re-visit is maximum likelihood estimation\n\n\n\n\n\n\n\n\nNote\n\n\nIn the EM literature, the surrogate is often labeled “Q”. We will use “Q” as well."
+  },
+  {
+    "objectID": "slides/lec15.html#deriving-the-minorization-background",
+    "href": "slides/lec15.html#deriving-the-minorization-background",
+    "title": "EM algorithm",
+    "section": "Deriving the minorization: background",
+    "text": "Deriving the minorization: background\nInformation inequality (Gibb’s inequality)\nSuppose \\(p(\\mathbf{x})\\) and \\(q(\\mathbf{x})\\) are probability densities.\n\\[\nD_{KL}(p || q)  = \\int\np(\\mathbf{x})\n\\ln \\frac{p(\\mathbf{x})}{q(\\mathbf{x})}\nd\\mathbf{x}\n\\geq 0\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#deriving-the-minorization",
+    "href": "slides/lec15.html#deriving-the-minorization",
+    "title": "EM algorithm",
+    "section": "Deriving the minorization",
+    "text": "Deriving the minorization\nkey idea\nSuppose some of our data is missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\nLet \\(\\ell\\) be the log-likelihood of the observed data \\(y\\). \\(\\ell(y | \\theta)\\).\nConsider observed data \\(y\\). Typically we write down the likelihood as \\(L(\\theta)\\) where \\(\\theta\\) represents the unknown vector of parameters we wish to estimate.\nidea\nLet \\(x\\) represent the complete data, i.e. \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\nThe EM principle lets us maximize a surrogate function of the complete data log-likelihood instead of a surrogate function of the observed data log-likelihood."
+  },
+  {
+    "objectID": "slides/lec15.html#information-inequality-gibbs-inequality",
+    "href": "slides/lec15.html#information-inequality-gibbs-inequality",
+    "title": "EM algorithm",
+    "section": "Information inequality (Gibb’s inequality)",
+    "text": "Information inequality (Gibb’s inequality)\nTo motivate the surrogate function, we’ll need one additional inequality in our toolkit.\nSuppose \\(p(x)\\) and \\(q(x)\\) are probability densities.\n\\[\nD_{KL}(p || q)  = \\int\np(x)\n\\ln \\frac{p(x)}{q(x)}\ndx\n\\geq 0\n\\]\n\nSaid another way,\n\\[\n\\int p(x) \\ln p(x) dx - \\int p(x) \\ln q(x) dx \\geq 0.\n\\]\n\n\nSaid yet another way,\n\\[\n\\mathbb{E_p}\\left[\n\\ln p(x)\n\\right]\n\\geq\n\\mathbb{E_p}\\left[\n\\ln q(x)\n\\right]\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#checking-the-minorization",
+    "href": "slides/lec15.html#checking-the-minorization",
+    "title": "EM algorithm",
+    "section": "Checking the minorization",
+    "text": "Checking the minorization\nClaim\n\\[\ng(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\log L(\\theta) = \\log f(y | \\theta)\\).\n\nProof\n\\[\n\\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n] =\n\\int h(x|\\theta) \\log h(x|\\theta) dx\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#em-mle",
+    "href": "slides/lec15.html#em-mle",
+    "title": "EM algorithm",
+    "section": "EM MLE",
+    "text": "EM MLE\n\nLet \\(f(y | \\theta)\\) be the likelihood of observed data \\(y\\) given some vector of parameters \\(\\theta\\).\nLet \\(h(x|\\theta)\\) be the likelihood of the complete data \\(x\\) given \\(\\theta\\). Typically \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\n\n\nSurrogate\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\log L(\\theta) = \\log f(y | \\theta)\\).\n\n\n\n\n\n\n\n\nNote\n\n\nThe surrogate is defined as an expected alue.\n\n\n\nThe algorithm proceed by iterating two steps:\n\ncompute the expectation to find the surrogate function \\(Q(\\theta | \\theta_n)\\).\nmaximize the surrogate."
+  },
+  {
+    "objectID": "slides/lec15.html#verifying-the-surrogate",
+    "href": "slides/lec15.html#verifying-the-surrogate",
+    "title": "EM algorithm",
+    "section": "Verifying the surrogate",
+    "text": "Verifying the surrogate\nClaim\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\log L(\\theta) = \\log f(y | \\theta)\\).\nProof\n\n\nAssume the complete data \\(x = (y, z)\\), where \\(y\\) is observed and \\(z\\) is missing.\n\n\\[\nf(y|\\theta) = \\frac{h(y,z|\\theta)}{g(z|y, \\theta)}\n\\]\nby Bayes’ theorem.\n\n\n\nLog both sides and take the expectation using current iterate \\(\\theta_n\\) to parameterize the density of the missing data.\n\n\\[\n\\underbrace{\\log f(y|\\theta)}_{L(\\theta)} = \\underbrace{\\int g(z|y, \\theta_n) \\log h(y,z |\\theta) dz}_{Q(\\theta|\\theta_n)} - \\underbrace{\\int g(z|y, \\theta_n) \\log g(z|y, \\theta) dz}_{R(\\theta|\\theta_n)}\n\\]\n\n\nSince true \\(\\forall \\  \\theta\\), also true for \\(\\theta_n\\),\n\\[\nL(\\theta_n) = {Q(\\theta_n|\\theta_n)} - {R(\\theta_n|\\theta_n)}\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#verification-continued",
+    "href": "slides/lec15.html#verification-continued",
+    "title": "EM algorithm",
+    "section": "Verification continued",
+    "text": "Verification continued\n\nForm the difference \\(L(\\theta) - L(\\theta_n)\\).\n\n\\[\nL(\\theta) - L(\\theta_n) = {Q(\\theta|\\theta_n)} - {Q(\\theta_n|\\theta_n)}\n\\underbrace{- \\left[{R(\\theta|\\theta_n)} - {R(\\theta_n|\\theta_n)}\\right]}_{\n\\geq~0 \\text{ by Gibb's inequality}\n}\n\\]\nnotice the negative sign is included here.\n\n\nDrop the positive term for inequality.\n\n\\[\nL(\\theta) - L(\\theta_n) \\geq {Q(\\theta|\\theta_n)} - {Q(\\theta_n|\\theta_n)}\n\\]\nand re-arrange\n\\[\nL(\\theta) \\geq {Q(\\theta|\\theta_n)} - {Q(\\theta_n|\\theta_n)} + L(\\theta_n)\n\\]\nto see that the log-likelihood dominates the surrogate up to an irrelevant constant."
+  },
+  {
+    "objectID": "slides/lec15.html#allele-frequency-estimation",
+    "href": "slides/lec15.html#allele-frequency-estimation",
+    "title": "EM algorithm",
+    "section": "Allele frequency estimation",
+    "text": "Allele frequency estimation\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec15.html#censored-data",
+    "href": "slides/lec15.html#censored-data",
+    "title": "EM algorithm",
+    "section": "Censored data",
+    "text": "Censored data\n\n\n\n\n\n\n\n\nMiles at which breaks fail (thousands)\n\n\n\n\n100.000\n\n\n37.044\n\n\n7.254\n\n\n40.211\n\n\n\n\n\nLet \\(x\\) be the number of miles (in thousands) at which a car’s breaks fail. Measurements stop after 100 thousand miles, thus the data is right-censored.\nWe model the lifetime of a car’s breaks as an exponential random variable with unknown rate of failure \\(\\lambda\\).\n\nLet \\(N\\) be the total number of observations. The complete data contains both observed and unobserved lifetimes. \\(N = N_o + N_c\\) where \\(N_o\\) is the number of break failures actually observed (\\(x < 100\\)) and \\(N_c\\) is the number of censored data points.\nComplete data likelihood\n\\[\n\\prod_{i = 1}^{N} \\lambda e^{-\\lambda x_i}\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#the-model",
+    "href": "slides/lec15.html#the-model",
+    "title": "EM algorithm",
+    "section": "The model",
+    "text": "The model\nComplete data log-likelihood\n\\[\nL(x |\\lambda) = N \\log \\lambda - \\lambda \\sum_{i = 1}^N x_i\n\\]\nSplitting the fully observed vs censored data,\n\\[\nL(x |\\lambda) = N \\log \\lambda - \\lambda \\left(\n\\sum_{i = 1}^{N_o} y_i + \\sum_{j = 1}^{N_c} z_j\n\\right)\n\\]\nwhere we’ve split the \\(x\\) into the observed \\(y\\) and unobserved \\(z\\)."
+  },
+  {
+    "objectID": "slides/lec15.html#surrogate",
+    "href": "slides/lec15.html#surrogate",
+    "title": "EM algorithm",
+    "section": "Surrogate",
+    "text": "Surrogate\n\\[\n\\begin{aligned}\nQ(\\lambda | \\lambda_n) &=\n\\mathbb{E}\\left[\nL(x |\\lambda) \\ | \\ y, \\lambda_n\n\\right]\\\\\n&=\nN \\log \\lambda - \\lambda \\left(\\sum_{i = 1}^{N_o} y_i -\n\\sum_{j = 1}^{N_c} \\underbrace{\\mathbb{E} [z_j]}_{\\text{w.r.t. } z_j |\\lambda_n}\n\\right)\n\\end{aligned}\n\\]\n\nNote: \\(z_j = x_j | x_j > c\\) where \\(c = 100\\) is the censoring cut-off. Therefore this is an expectation of a truncated exponential.\n\n\n\nE step:\n\n\\[\nQ(\\lambda | \\lambda_n) = N \\log \\lambda - \\lambda \\left(\\sum_{i = 1}^{N_o} y_i -\n\\sum_{j = 1}^{N_c} \\left(\nc + \\frac{1}{\\lambda_n} \\right)\n\\right)\n\\]\n\n\n\nM step:\n\n\\(\\frac{dQ}{d\\lambda} = 0 \\implies\\)\n\\[\n\\lambda_{n+1} = \\frac{N}{\\sum_{i = 1}^{N_o} y_i + N_c \\left( c + \\frac{1}{\\lambda_n}\n\\right)}\n\\]"
+  },
+  {
+    "objectID": "slides/lec15.html#exercise",
+    "href": "slides/lec15.html#exercise",
+    "title": "EM algorithm",
+    "section": "Exercise",
+    "text": "Exercise\nCode the EM algorithm on the previous slide for the simulated data-set of break failures below:\n\nset.seed(5)\nN = 250 # number of observations\ntrueLambda = 0.01\nxcomplete = rexp(N, rate = trueLambda) %>% round(digits = 3)\nc = 100 # censor time\n\nx = xcomplete\nx[x >= 100] = 100\n\nNote: you only observe x.\n\nSolution:\n\ndownload.file(\"https://sta323-sp23.github.io/scripts/EM-example.R\",\n              destfile = \"EM-example.R\")\n\n\n\n🔗 sta323-sp23.github.io"
   }
 ]

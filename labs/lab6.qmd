@@ -64,13 +64,13 @@ Assuming the outcome of each game is independent, we can rank teams and jointly 
 - Using your `NBA` data frame, create matrix $A = \{a_{ij}\}$ and matrix $B = \{b_{ij}\}$, as defined on [this slide](https://sta323-sp23.github.io/slides/lec14.html#/bradley-terry-likelihood) from lecture.
 :::
 
-- What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model?
+- What are the ten highest ranked teams (in order) from the 2015-2016 season according to the Bradley Terry model? Report your estimates $\hat{\mathbf{p}}_{MLE}$ together with the team name and id number for the top ten teams in a table.
 
 - Is there a home-court advantage? What are the odds of winning at home vs away? What are the log-odds?
 
 #### **optional** extra credit
 
-- Fix $p_1 = 1$ in your algorithm. Re-compute $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$ by constructing 1000 bootstrap data sets (re-sample from the original `NBA` data set with replacement).
+- Fix $p_1 = 1$ in your algorithm. Construct 100 bootstrap data sets (re-sample from the original `NBA` data set with replacement) and re-compute $\hat{\mathbf{p}}_{MLE}$ and $\hat{\theta}_{MLE}$ for each. Here we choose `100` for low-computational demand.
 
 Report the maximum likelihood estimates (based on the actual, original data set) together with a 95% confidence interval associated with each parameter in a 31 row table. Your table should label each row (except the row associated with $\theta$) by the team's actual name (not just the ID).
 
