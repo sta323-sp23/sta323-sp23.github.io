@@ -31,7 +31,9 @@ format:
 . . . 
 
 :::callout-note
-In the EM literature, the surrogate is often labeled "Q". We will use "Q" as well.
+- In the EM literature, the surrogate is often labeled "Q". We will use "Q" as well.
+
+- In these slides we will write the log-likelihood, $\log f(y | \theta)$ as $L(\theta)$ for convenient notation.
 :::
 
 ## EM MLE
@@ -48,7 +50,7 @@ $$
 Q(\theta | \theta_n) = \mathbb{E} [\log h(x | \theta) \ | \ y, \theta_n]
 $$
 
-minorizes the log-likelihood $\log L(\theta) = \log f(y | \theta)$.
+minorizes the log-likelihood $L(\theta) = \log f(y | \theta)$.
 
 . . .
 
@@ -106,7 +108,7 @@ $$
 Q(\theta | \theta_n) = \mathbb{E} [\log h(x | \theta) \ | \ y, \theta_n]
 $$
 
-minorizes the log-likelihood $\log L(\theta) = \log f(y | \theta)$.
+minorizes the log-likelihood $L(\theta) = \log f(y | \theta)$.
 
 #### Proof
 

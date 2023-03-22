@@ -25,7 +25,7 @@
     "href": "syllabus.html",
     "title": "syllabus",
     "section": "",
-    "text": "course website:\n\n\n\n\n\n\nContact\nTime\nLocation\nSection\n\n\n\n\nDr. Alexander Fisher\nalexander.fisher@duke.edu\nWe: 1:30pm-3:30pm\nOld Chem 207\nLecture\n\n\nDevin Johnson\ndevin.johnson@duke.edu\nMo: 10:00am-12:00pm\nOld Chem 203B\nLab 01\n\n\nTong Lin\ntong.lin@duke.edu\nTh: 9:00am-11:00am\nOld Chem 203B\nLab 02\n\n\n\n\n\n\n\n\n\nLecture\nWe/Fr 12:00 - 1:15pm\nSocial Sciences 136\n\n\nLab 01\nTu 12:00pm - 1:15pm\nOld Chemistry 003\n\n\nLab 02\nTu 1:45pm - 3:00pm\nOld Chemistry 003\n\n\n\n\n\n\nThere are no required textbooks for this course, the following textbooks are recommended for supplementary and reference purposes.\n\nAdvanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)\nR for Data Science - Grolemund, Wickham - O’Reilly, 2016 (978-1491910399)"
+    "text": "course website: sta323-sp23.github.io\n\n\n\n\n\n\nContact\nTime\nLocation\nSection\n\n\n\n\nDr. Alexander Fisher\naaf29@duke.edu\nWe: 1:30pm-3:30pm\nOld Chem 207\nLecture\n\n\nDevin Johnson\ndevin.johnson@duke.edu\nMo: 10:00am-12:00pm\nOld Chem 203B\nLab 01\n\n\nTong Lin\ntong.lin@duke.edu\nTh: 9:00am-11:00am\nOld Chem 203B\nLab 02\n\n\n\n\n\n\n\n\n\nLecture\nWe/Fr 12:00 - 1:15pm\nSocial Sciences 136\n\n\nLab 01\nTu 12:00pm - 1:15pm\nOld Chemistry 003\n\n\nLab 02\nTu 1:45pm - 3:00pm\nOld Chemistry 003\n\n\n\n\n\n\nThere are no required textbooks for this course, the following textbooks are recommended for supplementary and reference purposes.\n\nAdvanced R (2nd ed.) - Wickham - Chapman and Hall/CRC, 2019 (978-0815384571)\nR for Data Science - Grolemund, Wickham - O’Reilly, 2016 (978-1491910399)"
   },
   {
     "objectID": "syllabus.html#additional-resources",
@@ -3336,7 +3336,7 @@
     "href": "slides/lec15.html#intro-to-em",
     "title": "EM algorithm",
     "section": "Intro to EM",
-    "text": "Intro to EM\n\nExpectation-maximization “EM” is a special case of the MM algorithm.\nFundamentally, we still wish to maximize an objective function \\(f\\) and we need to come up with a surrogate \\(g\\) that minorizes \\(f\\).\nthe common example we’ll re-visit is maximum likelihood estimation\n\n\n\n\n\n\n\n\nNote\n\n\nIn the EM literature, the surrogate is often labeled “Q”. We will use “Q” as well."
+    "text": "Intro to EM\n\nExpectation-maximization “EM” is a special case of the MM algorithm.\nFundamentally, we still wish to maximize an objective function \\(f\\) and we need to come up with a surrogate \\(g\\) that minorizes \\(f\\).\nthe common example we’ll re-visit is maximum likelihood estimation\n\n\n\n\n\n\n\n\nNote\n\n\n\nIn the EM literature, the surrogate is often labeled “Q”. We will use “Q” as well.\nIn these slides we will write the log-likelihood, \\(\\log f(y | \\theta)\\) as \\(L(\\theta)\\) for convenient notation."
   },
   {
     "objectID": "slides/lec15.html#deriving-the-minorization-background",
@@ -3371,14 +3371,14 @@
     "href": "slides/lec15.html#em-mle",
     "title": "EM algorithm",
     "section": "EM MLE",
-    "text": "EM MLE\n\nLet \\(f(y | \\theta)\\) be the likelihood of observed data \\(y\\) given some vector of parameters \\(\\theta\\).\nLet \\(h(x|\\theta)\\) be the likelihood of the complete data \\(x\\) given \\(\\theta\\). Typically \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\n\n\nSurrogate\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\log L(\\theta) = \\log f(y | \\theta)\\).\n\n\n\n\n\n\n\n\nNote\n\n\nThe surrogate is defined as an expected alue.\n\n\n\nThe algorithm proceed by iterating two steps:\n\ncompute the expectation to find the surrogate function \\(Q(\\theta | \\theta_n)\\).\nmaximize the surrogate."
+    "text": "EM MLE\n\nLet \\(f(y | \\theta)\\) be the likelihood of observed data \\(y\\) given some vector of parameters \\(\\theta\\).\nLet \\(h(x|\\theta)\\) be the likelihood of the complete data \\(x\\) given \\(\\theta\\). Typically \\(y \\subset x\\). Under this paradigm, some data \\(z = x \\setminus y\\) are missing. Data may be missing in the ordinary sense of dropped observations or in an abstract sense that makes estimation easier.\n\n\nSurrogate\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(L(\\theta) = \\log f(y | \\theta)\\).\n\n\n\n\n\n\n\n\nNote\n\n\nThe surrogate is defined as an expected alue.\n\n\n\nThe algorithm proceed by iterating two steps:\n\ncompute the expectation to find the surrogate function \\(Q(\\theta | \\theta_n)\\).\nmaximize the surrogate."
   },
   {
     "objectID": "slides/lec15.html#verifying-the-surrogate",
     "href": "slides/lec15.html#verifying-the-surrogate",
     "title": "EM algorithm",
     "section": "Verifying the surrogate",
-    "text": "Verifying the surrogate\nClaim\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(\\log L(\\theta) = \\log f(y | \\theta)\\).\nProof\n\n\nAssume the complete data \\(x = (y, z)\\), where \\(y\\) is observed and \\(z\\) is missing.\n\n\\[\nf(y|\\theta) = \\frac{h(y,z|\\theta)}{g(z|y, \\theta)}\n\\]\nby Bayes’ theorem.\n\n\n\nLog both sides and take the expectation using current iterate \\(\\theta_n\\) to parameterize the density of the missing data.\n\n\\[\n\\underbrace{\\log f(y|\\theta)}_{L(\\theta)} = \\underbrace{\\int g(z|y, \\theta_n) \\log h(y,z |\\theta) dz}_{Q(\\theta|\\theta_n)} - \\underbrace{\\int g(z|y, \\theta_n) \\log g(z|y, \\theta) dz}_{R(\\theta|\\theta_n)}\n\\]\n\n\nSince true \\(\\forall \\  \\theta\\), also true for \\(\\theta_n\\),\n\\[\nL(\\theta_n) = {Q(\\theta_n|\\theta_n)} - {R(\\theta_n|\\theta_n)}\n\\]"
+    "text": "Verifying the surrogate\nClaim\n\\[\nQ(\\theta | \\theta_n) = \\mathbb{E} [\\log h(x | \\theta) \\ | \\ y, \\theta_n]\n\\]\nminorizes the log-likelihood \\(L(\\theta) = \\log f(y | \\theta)\\).\nProof\n\n\nAssume the complete data \\(x = (y, z)\\), where \\(y\\) is observed and \\(z\\) is missing.\n\n\\[\nf(y|\\theta) = \\frac{h(y,z|\\theta)}{g(z|y, \\theta)}\n\\]\nby Bayes’ theorem.\n\n\n\nLog both sides and take the expectation using current iterate \\(\\theta_n\\) to parameterize the density of the missing data.\n\n\\[\n\\underbrace{\\log f(y|\\theta)}_{L(\\theta)} = \\underbrace{\\int g(z|y, \\theta_n) \\log h(y,z |\\theta) dz}_{Q(\\theta|\\theta_n)} - \\underbrace{\\int g(z|y, \\theta_n) \\log g(z|y, \\theta) dz}_{R(\\theta|\\theta_n)}\n\\]\n\n\nSince true \\(\\forall \\  \\theta\\), also true for \\(\\theta_n\\),\n\\[\nL(\\theta_n) = {Q(\\theta_n|\\theta_n)} - {R(\\theta_n|\\theta_n)}\n\\]"
   },
   {
     "objectID": "slides/lec15.html#verification-continued",
@@ -3421,5 +3421,12 @@
     "title": "EM algorithm",
     "section": "Exercise",
     "text": "Exercise\nCode the EM algorithm on the previous slide for the simulated data-set of break failures below:\n\nset.seed(5)\nN = 250 # number of observations\ntrueLambda = 0.01\nxcomplete = rexp(N, rate = trueLambda) %>% round(digits = 3)\nc = 100 # censor time\n\nx = xcomplete\nx[x >= 100] = 100\n\nNote: you only observe x.\n\nSolution:\n\ndownload.file(\"https://sta323-sp23.github.io/scripts/EM-example.R\",\n              destfile = \"EM-example.R\")\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "quizzes/quiz05.html",
+    "href": "quizzes/quiz05.html",
+    "title": "Quiz 5",
+    "section": "",
+    "text": "Exercise 1 (2pts)\nWhat does MM stand for?\n\n\nExercise 2 (2pts)\nWhat are the two conditions a surrogate function must satisfy in an MM algorithm?\n\n\n\n04:00"
   }
 ]

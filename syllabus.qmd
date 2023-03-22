@@ -1,11 +1,13 @@
 ---
 title: "syllabus"
+subtitle: "STA 323 - Statistical Computing - Spring 2023"
 fontsize: 12pt
+format: pdf
 ---
 
 ### Logistics
 
-course website:
+course website: [sta323-sp23.github.io](https://sta323-sp23.github.io/)
 
 {{< include _logistics.qmd >}}
 
@@ -99,7 +101,7 @@ The final project and several labs will be completed in teams. All group members
 
 #### Errors in grading
 
-Errors in grading must be brought to the attention of the TA during office hours within 1 week of receiving the grade.
+Errors in grading must be brought to the attention of the TA or instructor during office hours within 1 week of receiving the grade.
 
 #### Late work
 

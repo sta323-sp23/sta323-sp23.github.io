@@ -1,0 +1,20 @@
+---
+title: "Quiz 5"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1 (2pts)
+
+What does MM stand for?
+
+### Exercise 2 (2pts)
+
+What are the two conditions a surrogate function must satisfy in an MM algorithm?
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "4em",
+          color_running_background = "#2774AE")
+```
