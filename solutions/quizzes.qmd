@@ -209,3 +209,42 @@ true or false: Newton's method always converges to the same point, regardless of
 false
 
 :::
+
+
+# quiz 5
+
+::: panel-tabset
+
+### Exercise 1
+
+What does MM stand for?
+
+### Solution
+
+majorize-minimize or minorize-maximize (accept either or both)
+
+:::
+
+::: panel-tabset
+
+### Exercise 2
+
+What are the two conditions a surrogate function must satisfy in an MM algorithm?
+
+### Solution
+
+In majorize-minimize, the surrogate must satisfy tangency:
+
+$$
+g(\theta_n|\theta_n) = f(\theta_n)
+$$
+and $g$ must minorize $f$,
+
+$$
+g(\theta |\theta_n) \leq f(\theta) \ \forall \ \theta
+$$
+
+(In the case of majorization-minimization, $g$ must majorize $f$.)
+
+
+:::
