@@ -74,7 +74,7 @@ schedule %>%
 |      | Fri Mar 17 | NO CLASS: Spring break                 |                                 |                          |                                       |         |
 | 10   | Tue Mar 21 | ascend the likelihood                                      |                                 | [lab 6](/labs/lab6.html)                          |                                       |         |
 |      | Wed Mar 22 | EM algorithm                      | [💻](/slides/lec15.html)                                 |                          |                                       |         |
-|      | Fri Mar 24 | Monte Carlo Integration                          |                                 |                          |                                       |         |
+|      | Fri Mar 24 | Monte Carlo integration                          |  [💻](/slides/lec16.html)                                |                          |                                       |         |
 | 11   | Tue Mar 28 | continue lab                                       |                                 |                          |                                       |         |
 |      | Wed Mar 29 | Importance sampling                                 |                                 |                          |                                       |         |
 |      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   exam 2 release                                   |          |

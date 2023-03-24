@@ -11,7 +11,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo Integration\n\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nImportance sampling\n\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nproject tips\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\nproject peer-review\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nImportance sampling\n\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nproject tips\n\n\n\n\n\n\n\nFri Apr 14\ncovariance\n\n\n\n\n\n\n14\nTue Apr 18\nproject peer-review\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\nSQL\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
   },
   {
     "objectID": "links.html",
@@ -3428,5 +3428,152 @@
     "title": "Quiz 5",
     "section": "",
     "text": "Exercise 1 (2pts)\nWhat does MM stand for?\n\n\nExercise 2 (2pts)\nWhat are the two conditions a surrogate function must satisfy in an MM algorithm?\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec16.html#monte-carlo-integration",
+    "href": "slides/lec16.html#monte-carlo-integration",
+    "title": "Monte Carlo integration",
+    "section": "Monte Carlo integration",
+    "text": "Monte Carlo integration\n\nApproximate a deterministic integral by a stochastic average\nShines when other methods of integration are impossible (e.g. high dimensional integration)\nWorks because of law of large numbers: for a random variable \\(X\\), the sample mean \\(\\bar{x}_N\\) converges to the true mean \\(\\mu\\) as the number of samples \\(N\\) tends to infinity.\n\n\nRecall\n\\[\n\\mathbb{E}[X] = \\int_x x~f_x(x) dx \\approx \\frac{1}{N} \\sum_i^N x_i\n\\]\nwhere \\(f_x(x)\\) is the probability density function for random variable \\(x\\).\n\n\nKey insight\n\nExpectations are integrals and integrals are expectations."
+  },
+  {
+    "objectID": "slides/lec16.html#exercise",
+    "href": "slides/lec16.html#exercise",
+    "title": "Monte Carlo integration",
+    "section": "Exercise",
+    "text": "Exercise\n\nApproximate \\(\\pi\\) in R using 5000 samples \\((x, y)\\) that are iid \\(Uniform(-1, 1)\\).\nPlot the estimate of \\(\\pi\\) on the y-axis and the number of samples on the \\(x-axis\\).\n\n\nRepeat, the two steps above using samples from 5000 samples \\((x, y)\\) that are iid \\(Uniform(-5, 5)\\)"
+  },
+  {
+    "objectID": "slides/lec16.html#statistical-motivation",
+    "href": "slides/lec16.html#statistical-motivation",
+    "title": "Monte Carlo integration",
+    "section": "Statistical motivation",
+    "text": "Statistical motivation\nIntegration is everywhere,\n\nCDF\nComputing means, medians\nComputing marginal probabilities\n\n… and more"
+  },
+  {
+    "objectID": "slides/lec16.html#further-reading",
+    "href": "slides/lec16.html#further-reading",
+    "title": "Monte Carlo integration",
+    "section": "Further reading",
+    "text": "Further reading\n\nThe paper that launched it all: Metropolis, Nicholas, and Stanislaw Ulam. “The monte carlo method.” Journal of the American statistical association 44.247 (1949): 335-341.\nA better introduction: Harrison, Robert L. “Introduction to monte carlo simulation.” AIP conference proceedings. Vol. 1204. No. 1. American Institute of Physics, 2010.\nA Monte Carlo algorithm to estimate a median by Rick Wicklin at SAS"
+  },
+  {
+    "objectID": "slides/lec16.html#estimating-pi",
+    "href": "slides/lec16.html#estimating-pi",
+    "title": "Monte Carlo integration",
+    "section": "Estimating \\(\\pi\\)",
+    "text": "Estimating \\(\\pi\\)"
+  },
+  {
+    "objectID": "slides/lec16.html#the-picture-to-have-in-mind",
+    "href": "slides/lec16.html#the-picture-to-have-in-mind",
+    "title": "Monte Carlo integration",
+    "section": "The picture to have in mind",
+    "text": "The picture to have in mind\n\n\nThe area of the unit circle, \\(A_\\text{circle} = \\pi\\). We’ll pretend we don’t know and want to estimate \\(A_\\text{circle}\\)\n50 random points thrown into the box defined by coordinates (-1, -1), (-1, 1), (1, -1), (1, 1)\n39 points land inside, 11 points outside\n\\(\\frac{39}{50} \\approx \\frac{A_\\text{circle}}{A_\\text{box}}\\)\n\\(A_{\\text{circle}} \\approx .78 \\cdot 4 = 3.12\\)"
+  },
+  {
+    "objectID": "slides/lec16.html#the-picture-to-have-in-mind-1",
+    "href": "slides/lec16.html#the-picture-to-have-in-mind-1",
+    "title": "Monte Carlo integration",
+    "section": "The picture to have in mind",
+    "text": "The picture to have in mind\n\nlibrary(ggplot2)\n\n# Create a data frame with values for x and y coordinates\ndf <- data.frame(x = cos(seq(0, 2*pi, length.out = 100)), \n                 y = sin(seq(0, 2*pi, length.out = 100)))\n\n# Create a ggplot object with the data frame\nggplot(df, aes(x, y)) + \n  geom_path(size = 0.5) +\n  coord_equal() +\n  geom_rect(aes(xmin = -1, xmax = 1, ymin = -1, ymax = 1), \n                   fill = NA, color = \"black\") +\n  theme_bw()\n\n\nThe area of the unit circle is \\(\\frac{\\pi}{4}\\)."
+  },
+  {
+    "objectID": "slides/lec16.html#how-is-this-monte-carlo-integration",
+    "href": "slides/lec16.html#how-is-this-monte-carlo-integration",
+    "title": "Monte Carlo integration",
+    "section": "How is this Monte Carlo integration?",
+    "text": "How is this Monte Carlo integration?\n\\[\n\\begin{aligned}\n\\pi &= \\int_0^1 \\int_0^{2\\pi} r d\\theta dr\\\\\n&= \\int \\int I(x^2 + y^2 < 1) dx dy\\\\\n&= 4 \\mathbb{E}~I(X^2 + Y^2 < 1)\\\\\n&\\approx 4\\cdot\\frac{1}{n}\\sum_{i=1}^n I(X^2 + Y^2  < 1)\n\\end{aligned}\n\\]\nwhere \\(X\\) and \\(Y\\) are iid \\(Uniform(-1, 1)\\) and \\(I()\\) is the indicator function."
+  },
+  {
+    "objectID": "slides/lec16.html#we-can-also-play-with-the-algebra",
+    "href": "slides/lec16.html#we-can-also-play-with-the-algebra",
+    "title": "Monte Carlo integration",
+    "section": "We can also play with the algebra",
+    "text": "We can also play with the algebra"
+  },
+  {
+    "objectID": "slides/lec16.html#exercise-1",
+    "href": "slides/lec16.html#exercise-1",
+    "title": "Monte Carlo integration",
+    "section": "Exercise",
+    "text": "Exercise\nSolution:\n\ndownload.file(\"https://sta323-sp23.github.io/scripts/EM-example.R\",\n              destfile = \"EM-example.R\")"
+  },
+  {
+    "objectID": "slides/lec16.html#why-monte-carlo",
+    "href": "slides/lec16.html#why-monte-carlo",
+    "title": "Monte Carlo integration",
+    "section": "Why Monte Carlo?",
+    "text": "Why Monte Carlo?\nConsider computing the integral\n\\[\nV = \\int h(x) p(x) dx\n\\] where \\(p(x)\\) is a density.\n\nWe could perform numerical integration by computing the Rieman sum of \\(h(x)p(x)\\) over some fine grid of \\(x\\).\nIf \\(h(x)p(x)\\) is bounded, then a grid of mesh size \\(\\delta > 0\\) gives an \\(\\mathcal{O}(\\delta)\\) approximation error.\nIf \\(x\\) is one dimensional, then a grid of mesh size \\(\\delta\\) requires \\(N = \\frac{1}{\\delta}\\) many grid points.\n\n\n\nIf \\(x\\) has dimension \\(p\\), then we need \\(N = \\left(\\frac{1}{\\delta}\\right)^p\\) grid points.\n\n\n\nBy CLT, \\(\\hat{V}_n = \\frac{1}{N} \\sum_{i = 1}^N h(X_i)\\) where \\(X_i \\overset{\\mathrm{iid}}{\\sim} p(x)\\) converges to \\(V\\) at the rate \\(\\sqrt{N}\\), irrespective of \\(p\\)!"
+  },
+  {
+    "objectID": "slides/lec16.html#acknowledgements",
+    "href": "slides/lec16.html#acknowledgements",
+    "title": "Monte Carlo integration",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThe best parts of these slides were adapted from Prof. Surya Tokdar’s notes on Monte Carlo integration.\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec16.html#the-curse-blessing-of-dimensionality",
+    "href": "slides/lec16.html#the-curse-blessing-of-dimensionality",
+    "title": "Monte Carlo integration",
+    "section": "The curse (blessing) of dimensionality ",
+    "text": "The curse (blessing) of dimensionality \nFigure from Betancourt, Michael. “A conceptual introduction to Hamiltonian Monte Carlo.” arXiv preprint arXiv:1701.02434 (2017)."
+  },
+  {
+    "objectID": "slides/lec16.html#finding-pi-another-way",
+    "href": "slides/lec16.html#finding-pi-another-way",
+    "title": "Monte Carlo integration",
+    "section": "Finding \\(\\pi\\) another way",
+    "text": "Finding \\(\\pi\\) another way\nWe also know, analytically, that the area of the unit circle, \\(A_c=\\frac{\\pi}{2}\\). Supposing we don’t know this, we could write our integration,\n\\[\n2 \\int_{-1}^1 \\sqrt{(1 - x^2)}dx = A_c\n\\]\nWe can write this as an expectation,\n\\[\nA_c = \\mathbb{E}~f(x_i) = \\int_{-1}^1 g(x) f_x(x) dx\n\\]\nwhere \\(X \\overset{\\mathrm{iid}}{\\sim} Uniform(-1, 1)\\) and \\(g(x) = \\sqrt{(1 - x^2)}\\)."
+  },
+  {
+    "objectID": "slides/lec16.html#example",
+    "href": "slides/lec16.html#example",
+    "title": "Monte Carlo integration",
+    "section": "Example",
+    "text": "Example\nConsider computing the integral\n\\[\nV = \\int_1^3 x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}} dx\n\\]\nHere, \\(p(x)\\) is the standard normal density and\n\\[\nh(x) = I(x \\in (1, 3))~x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}}\n\\]\n\nSo we can view this as \\(\\mathbb{E}~h(x) \\approx \\frac{1}{N} \\sum_{i=1}^N h(x)\\) where \\(X\\) is standard normal."
+  },
+  {
+    "objectID": "slides/lec16.html#seen-another-way",
+    "href": "slides/lec16.html#seen-another-way",
+    "title": "Monte Carlo integration",
+    "section": "Seen another way",
+    "text": "Seen another way\nWe also know, analytically, that the area of the unit circle, \\(A_c=\\frac{\\pi}{2}\\). Supposing we don’t know this, we could write our integration,\n\\[\n2 \\int_{-1}^1 \\sqrt{(1 - x^2)}dx = A_c\n\\]\nWe can write this as an expectation,\n\\[\n\\begin{aligned}\nA_c &= 2 \\cdot \\mathbb{E}~f(x_i)\\\\\n&= 2\\cdot  \\int_{-1}^1 g(x)~f_x(x) dx\\\\\n&= 2 \\cdot \\int_{-1}^1 g(x) \\cdot \\frac{1}{2}\n\\end{aligned}\n\\]\nwhere \\(X \\overset{\\mathrm{iid}}{\\sim} Uniform(-1, 1)\\) and \\(g(x) = \\sqrt{(1 - x^2)}\\)."
+  },
+  {
+    "objectID": "slides/lec16.html#px-off-from-hx",
+    "href": "slides/lec16.html#px-off-from-hx",
+    "title": "Monte Carlo integration",
+    "section": "\\(p(x)\\) off from \\(h(x)\\)",
+    "text": "\\(p(x)\\) off from \\(h(x)\\)\n\nNote: here \\(h(x) = x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}}\\) (i.e. I am dropping the indicator function for illustrative purposes)"
+  },
+  {
+    "objectID": "slides/lec16.html#samples-not-good-for-hxpx",
+    "href": "slides/lec16.html#samples-not-good-for-hxpx",
+    "title": "Monte Carlo integration",
+    "section": "Samples not good for \\(h(x)p(x)\\)",
+    "text": "Samples not good for \\(h(x)p(x)\\)\n\nplotcode\n\n\n\n\n\n\n\n\n\n\nset.seed(2)\nhp = function(x) {\n  h(x) * dnorm(x)\n}\n\nN = 50\npoints = data.frame(x = rnorm(N, 0, 1),\n                    y = rep(0, N))\n\nggplot() +\n xlim(-4, 8) +\n  geom_function(fun = hp) +\n  geom_point(data = points, aes(x = x, y = y)) +\n  labs(x = \"x\", y = \"\") +\n  theme_minimal() + \n  labs(title = \"h(x)p(x)\") +\n  stat_function(fun = hp, \n                xlim = c(1,3),\n                geom = \"area\",\n                fill = \"steelblue\", alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/lec16.html#resulting-in-large-approximation-error",
+    "href": "slides/lec16.html#resulting-in-large-approximation-error",
+    "title": "Monte Carlo integration",
+    "section": "Resulting in large approximation error",
+    "text": "Resulting in large approximation error\n\nplotcode\n\n\n\n\n\n\n\n\n\n\nlibrary(magrittr)\nset.seed(2)\nN = 1000\nx = rnorm(N, 0, 1)\n\nh1 = function(x) {\nz = h(x)\nz[x < 1] = 0\nz[x > 3] = 0\n  return(z)\n}\n\nestimate = vector(length = N)\nfor (n in 1:N) {\n  estimate[n] = mean(h1(x[1:n]))\n}\n\nV = data.frame(x = seq(N),\n               y = estimate)\n\nV %>%\n  ggplot(aes(x = x, y = y)) +\n  geom_line() +\n  theme_minimal() +\n  labs(x = \"N\", y = \"sample mean\") +\n  scale_x_continuous(trans='log10')"
+  },
+  {
+    "objectID": "slides/lec16.html#a-better-strategy",
+    "href": "slides/lec16.html#a-better-strategy",
+    "title": "Monte Carlo integration",
+    "section": "A better strategy",
+    "text": "A better strategy\n\nNotice that\n\n\\[\nV = \\frac{e^{-\\frac{1}{4}}}{\\sqrt{2}}\n\\int_1^3 x \\frac{1}{\\sqrt{2\\pi(1/2)}}\ne^{-\\frac{(x-2)^2}{2(1/2)}}\n\\]\n\nSo we can approximate \\(V\\) by\n\n\\[\n\\frac{e^{-\\frac{1}{4}}}{\\sqrt{2}}~\\frac{1}{N}\\sum_{i = 1}^N X_i~I(X_i\\in(1,3))\n\\]\nwhere \\(X_i \\overset{\\mathrm{iid}}{\\sim} N(2, (1/\\sqrt{2})^2))\\)"
+  },
+  {
+    "objectID": "slides/lec16.html#comparison",
+    "href": "slides/lec16.html#comparison",
+    "title": "Monte Carlo integration",
+    "section": "Comparison",
+    "text": "Comparison\n\nlibrary(magrittr)\nset.seed(2)\nN = 1000\nx = rnorm(N, 2, sqrt(1/2))\n\nhnew = function(x) {\nx[x < 1] = 0\nx[x > 3] = 0\n  return(x)\n}\n\nC = exp(-1/4) / sqrt(2)\n\nestimate = vector(length = N)\nfor (n in 1:N) {\n  estimate[n] = mean(hnew(x[1:n]))\n}\n\nestimate = estimate*C\n\nV2 = data.frame(x = seq(N),\n               y = estimate)\n\nV %>%\n  ggplot(aes(x = x, y = y)) +\n  geom_line(aes(color = \"Naive approach\")) + \n  geom_line(data = V2, aes(x = x, y = y, col = \"New sampler\")) +\n  theme_minimal() +\n  labs(x = \"N\", y = \"sample mean\") +\n  scale_x_continuous(trans='log10')"
   }
 ]
