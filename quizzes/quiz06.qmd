@@ -1,0 +1,22 @@
+---
+title: "Quiz 6"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1 (2pts)
+
+Monte Carlo integration is most useful for low-dimensional integrals (`TRUE` or `FALSE`)?
+
+### Exercise 2 (2pts)
+
+Describe, in 1 or 2 sentences, how the following image is an example of using Monte Carlo integration to estimate $\pi$.
+
+![](img/MonteCarlo.png)
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "4em",
+          color_running_background = "#2774AE")
+```
