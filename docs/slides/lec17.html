@@ -10,7 +10,7 @@
   <meta name="generator" content="quarto-1.0.38">
 
   <meta name="author" content="Dr.&nbsp;Alexander Fisher">
-  <title>STA323 - Monte Carlo integration</title>
+  <title>STA323 - Importance sampling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -385,131 +385,35 @@
     <div class="slides">
 
 <section id="title-slide" class="center">
-  <h1 class="title">Monte Carlo integration</h1>
+  <h1 class="title">Importance sampling</h1>
   <p class="author">Dr.&nbsp;Alexander Fisher</p>
   <p class="institute">Duke University</p>
 </section>
 
 <section>
-<section id="concept" class="title-slide slide level1 center">
-<h1>Concept</h1>
-
-</section>
-<section id="statistical-motivation" class="slide level2">
-<h2>Statistical motivation</h2>
-<p>Integration is everywhere,</p>
+<section id="announcements" class="title-slide slide level1 center">
+<h1>Announcements</h1>
 <ul>
-<li><p>CDF</p></li>
-<li><p>Computing means, medians</p></li>
-<li><p>Computing marginal probabilities</p></li>
-</ul>
-<p>… and more</p>
-</section>
-<section id="monte-carlo-integration" class="slide level2">
-<h2>Monte Carlo integration</h2>
+<li>Reminders:
 <ul>
-<li><p>Approximate a deterministic integral by a stochastic average</p></li>
-<li><p>Shines when other methods of integration are impossible (e.g.&nbsp;high dimensional integration)</p></li>
-<li><p>Works because of law of large numbers: for a random variable <span class="math inline">\(X\)</span>, the sample mean <span class="math inline">\(\bar{x}_N\)</span> converges to the true mean <span class="math inline">\(\mu\)</span> as the number of samples <span class="math inline">\(N\)</span> tends to infinity.</p></li>
-</ul>
-<div class="fragment">
-<p>Recall</p>
-<p><span class="math display">\[
-\mathbb{E}[X] = \int_x x~f_x(x) dx \approx \frac{1}{N} \sum_i^N x_i
-\]</span></p>
-<p>where <span class="math inline">\(f_x(x)\)</span> is the probability density function for random variable <span class="math inline">\(x\)</span>.</p>
-</div>
-<div class="fragment">
-<h4 id="key-insight">Key insight</h4>
-<ul>
-<li>Expectations are integrals <strong>and</strong> integrals are expectations.</li>
-</ul>
-</div>
-</section></section>
-<section>
-<section id="toy-example-estimating-pi" class="title-slide slide level1 center">
-<h1>Toy example: estimating <span class="math inline">\(\pi\)</span></h1>
-
-</section>
-<section id="the-picture-to-have-in-mind" class="slide level2">
-<h2>The picture to have in mind</h2>
-
-<img data-src="lec16_files/figure-revealjs/unnamed-chunk-2-1.png" width="960" class="r-stretch"><ul>
-<li><p>The area of the unit circle, <span class="math inline">\(A_\text{circle} = \pi\)</span>. We’ll pretend we don’t know and want to estimate <span class="math inline">\(A_\text{circle}\)</span></p></li>
-<li><p>50 random points thrown into the box defined by coordinates (-1, -1), (-1, 1), (1, -1), (1, 1)</p></li>
-<li><p>39 points land inside, 11 points outside</p></li>
-<li><p><span class="math inline">\(\frac{39}{50} \approx \frac{A_\text{circle}}{A_\text{box}}\)</span></p></li>
-<li><p><span class="math inline">\(A_{\text{circle}} \approx .78 \cdot 4 = 3.12\)</span></p></li>
-</ul>
-</section>
-<section id="how-is-this-monte-carlo-integration" class="slide level2">
-<h2>How is this Monte Carlo integration?</h2>
-<p><span class="math display">\[
-\begin{aligned}
-\pi &amp;= \int_0^1 \int_0^{2\pi} r d\theta dr\\
-&amp;= \int \int I(x^2 + y^2 &lt; 1) dx dy\\
-&amp;= 4 \mathbb{E}~I(X^2 + Y^2 &lt; 1)\\
-&amp;\approx 4\cdot\frac{1}{n}\sum_{i=1}^n I(X^2 + Y^2  &lt; 1)
-\end{aligned}
-\]</span></p>
-<p>where <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are iid <span class="math inline">\(Uniform(-1, 1)\)</span> and <span class="math inline">\(I()\)</span> is the indicator function.</p>
-<!-- ## Seen another way -->
-<!-- We also know, analytically, that the area of the unit circle, $A_c=\frac{\pi}{2}$. Supposing we don't know this, we could write our integration, -->
-<!-- $$ -->
-<!-- 2 \int_{-1}^1 \sqrt{(1 - x^2)}dx = A_c -->
-<!-- $$ -->
-<!-- We can write this as an expectation, -->
-<!-- $$ -->
-<!-- \begin{aligned} -->
-<!-- A_c &= 2 \cdot \mathbb{E}~f(x_i)\\ -->
-<!-- &= 2\cdot  \int_{-1}^1 g(x)~f_x(x) dx\\ -->
-<!-- &= 2 \cdot \int_{-1}^1 g(x) \cdot \frac{1}{2} -->
-<!-- \end{aligned} -->
-<!-- $$ -->
-<!-- where $X \overset{\mathrm{iid}}{\sim} Uniform(-1, 1)$  and $g(x) = \sqrt{(1 - x^2)}$. -->
-</section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
-<ol type="1">
-<li><p>Approximate <span class="math inline">\(\pi\)</span> in R using 5000 samples <span class="math inline">\((x, y)\)</span> that are iid <span class="math inline">\(Uniform(-1, 1)\)</span>.</p></li>
-<li><p>Plot the estimate of <span class="math inline">\(\pi\)</span> on the y-axis and the number of samples on the <span class="math inline">\(x-axis\)</span>.</p></li>
-</ol>
-<ul>
-<li>Repeat, the two steps above using samples from 5000 samples <span class="math inline">\((x, y)\)</span> that are iid <span class="math inline">\(Uniform(-5, 5)\)</span></li>
-</ul>
-</section>
-<section id="why-monte-carlo" class="slide level2">
-<h2>Why Monte Carlo?</h2>
-<p>Consider computing the integral</p>
-<p><span class="math display">\[
-V = \int h(x) p(x) dx
-\]</span> where <span class="math inline">\(p(x)\)</span> is a density.</p>
-<ul>
-<li><p>We could perform numerical integration by computing the Rieman sum of <span class="math inline">\(h(x)p(x)\)</span> over some fine grid of <span class="math inline">\(x\)</span>.</p></li>
-<li><p>If <span class="math inline">\(h(x)p(x)\)</span> is bounded, then a grid of mesh size <span class="math inline">\(\delta &gt; 0\)</span> gives an <span class="math inline">\(\mathcal{O}(\delta)\)</span> approximation error.</p></li>
-<li><p>If <span class="math inline">\(x\)</span> is one dimensional, then a grid of mesh size <span class="math inline">\(\delta\)</span> requires <span class="math inline">\(N = \frac{1}{\delta}\)</span> many grid points.</p></li>
+<li>lab 6 due tomorrow</li>
+<li>exam 2 on Friday</li>
+</ul></li>
 </ul>
 <div class="fragment">
 <ul>
-<li>If <span class="math inline">\(x\)</span> has dimension <span class="math inline">\(p\)</span>, then we need <span class="math inline">\(N = \left(\frac{1}{\delta}\right)^p\)</span> grid points.</li>
+<li>quiz</li>
 </ul>
 </div>
-<div class="fragment">
-<p>By CLT, <span class="math inline">\(\hat{V}_n = \frac{1}{N} \sum_{i = 1}^N h(X_i)\)</span> where <span class="math inline">\(X_i \overset{\mathrm{iid}}{\sim} p(x)\)</span> converges to <span class="math inline">\(V\)</span> at the rate <span class="math inline">\(\sqrt{N}\)</span>, irrespective of <span class="math inline">\(p\)</span>!</p>
-</div>
 </section>
-<section id="the-curse-blessing-of-dimensionality" class="slide level2">
-<h2>The curse (blessing) of dimensionality <img data-src="images/Screen%20Shot%202023-03-24%20at%201.45.21%20AM.png"></h2>
-<p>Figure from <a href="https://arxiv.org/pdf/1701.02434.pdf">Betancourt, Michael. “A conceptual introduction to Hamiltonian Monte Carlo.” arXiv preprint arXiv:1701.02434 (2017).</a></p>
-</section></section>
-<section>
-<section id="naive-monte-carlo" class="title-slide slide level1 center">
-<h1>Naive Monte Carlo</h1>
+<section id="last-time" class="slide level2">
+<h2>Last time</h2>
+<div class="cell">
 
-</section>
-<section id="example" class="slide level2">
-<h2>Example</h2>
-<p>Consider computing the integral</p>
+</div>
+<ul>
+<li>We considered computing the integral</li>
+</ul>
 <p><span class="math display">\[
 V = \int_1^3 x~e^{-\frac{(x-4)^2}{2}} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} dx
 \]</span></p>
@@ -527,7 +431,7 @@ h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 <li>Note: here <span class="math inline">\(h(x) = x~e^{-\frac{(x-4)^2}{2}} \frac{1}{\sqrt{2\pi}}\)</span> (i.e.&nbsp;I am dropping the indicator function for illustrative purposes)</li>
 </ul>
 
-<img data-src="lec16_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<img data-src="lec17_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
 <section id="samples-not-good-for-hxpx" class="slide level2">
 <h2>Samples not good for <span class="math inline">\(h(x)p(x)\)</span></h2>
 <div class="panel-tabset">
@@ -536,7 +440,7 @@ h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 <div id="tabset-1-1">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lec16_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
+<p><img data-src="lec17_files/figure-revealjs/unnamed-chunk-6-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -575,7 +479,7 @@ h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 <div id="tabset-2-1">
 <div class="cell">
 <div class="cell-output-display">
-<p><img data-src="lec16_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
+<p><img data-src="lec17_files/figure-revealjs/unnamed-chunk-10-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -583,7 +487,7 @@ h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(magrittr)</span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>N <span class="ot">=</span> <span class="dv">1000</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>N <span class="ot">=</span> <span class="dv">10000</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a>x <span class="ot">=</span> <span class="fu">rnorm</span>(N, <span class="dv">0</span>, <span class="dv">1</span>)</span>
 <span id="cb2-5"><a href="#cb2-5"></a></span>
 <span id="cb2-6"><a href="#cb2-6"></a>h1 <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
@@ -611,52 +515,144 @@ h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 </div>
 </div>
 </div>
-<!-- ## A better strategy -->
-<!-- - Notice that  -->
-<!-- $$ -->
-<!-- V = \frac{e^{-\frac{1}{4}}}{\sqrt{2}} -->
-<!-- \int_1^3 x \frac{1}{\sqrt{2\pi(1/2)}} -->
-<!-- e^{-\frac{(x-2)^2}{2(1/2)}} -->
-<!-- $$ -->
-<!-- - So we can approximate $V$ by  -->
-<!-- $$ -->
-<!-- \frac{e^{-\frac{1}{4}}}{\sqrt{2}}~\frac{1}{N}\sum_{i = 1}^N X_i~I(X_i\in(1,3)) -->
-<!-- $$ -->
-<!-- where $X_i \overset{\mathrm{iid}}{\sim} N(2, (1/\sqrt{2})^2))$ -->
-<!-- ## Comparison -->
-<!-- ```{r} -->
-<!-- library(magrittr) -->
-<!-- set.seed(2) -->
-<!-- N = 1000 -->
-<!-- x = rnorm(N, 2, sqrt(1/2)) -->
-<!-- hnew = function(x) { -->
-<!-- x[x < 1] = 0 -->
-<!-- x[x > 3] = 0 -->
-<!--   return(x) -->
-<!-- } -->
-<!-- C = exp(-1/4) / sqrt(2) -->
-<!-- estimate = vector(length = N) -->
-<!-- for (n in 1:N) { -->
-<!--   estimate[n] = mean(hnew(x[1:n])) -->
-<!-- } -->
-<!-- estimate = estimate*C -->
-<!-- V2 = data.frame(x = seq(N), -->
-<!--                y = estimate) -->
-<!-- V %>% -->
-<!--   ggplot(aes(x = x, y = y)) + -->
-<!--   geom_line(aes(color = "Naive approach")) +  -->
-<!--   geom_line(data = V2, aes(x = x, y = y, col = "New sampler")) + -->
-<!--   theme_minimal() + -->
-<!--   labs(x = "N", y = "sample mean") + -->
-<!--   scale_x_continuous(trans='log10')  -->
-<!-- ``` -->
+</section>
+<section id="a-better-strategy" class="slide level2">
+<h2>A better strategy</h2>
+<ul>
+<li>Notice that</li>
+</ul>
+<p><span class="math display">\[
+V = \frac{e^{-4}}{\sqrt{2}}
+\int_1^3 x \frac{1}{\sqrt{2\pi(1/2)}}
+e^{-\frac{(x-2)^2}{2(1/2)}}
+\]</span></p>
+<ul>
+<li>So we can approximate <span class="math inline">\(V\)</span> by</li>
+</ul>
+<p><span class="math display">\[
+\frac{e^{-4}}{\sqrt{2}}~\frac{1}{N}\sum_{i = 1}^N X_i~I(X_i\in(1,3))
+\]</span></p>
+<p>where <span class="math inline">\(X_i \overset{\mathrm{iid}}{\sim} N(2, (1/\sqrt{2})^2))\)</span></p>
+</section>
+<section id="comparison" class="slide level2">
+<h2>Comparison</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Plot</a></li><li><a href="#tabset-3-2">Code</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="lec17_files/figure-revealjs/unnamed-chunk-14-1.png" width="960"></p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">set.seed</span>(<span class="dv">2</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>N <span class="ot">=</span> <span class="dv">10000</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>x <span class="ot">=</span> <span class="fu">rnorm</span>(N, <span class="dv">2</span>, <span class="fu">sqrt</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb3-5"><a href="#cb3-5"></a></span>
+<span id="cb3-6"><a href="#cb3-6"></a>hnew <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb3-7"><a href="#cb3-7"></a>x[x <span class="sc">&lt;</span> <span class="dv">1</span>] <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>x[x <span class="sc">&gt;</span> <span class="dv">3</span>] <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb3-10"><a href="#cb3-10"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a>C <span class="ot">=</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="dv">4</span>) <span class="sc">/</span> <span class="fu">sqrt</span>(<span class="dv">2</span>)</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="co"># C = sqrt(1/2)</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a></span>
+<span id="cb3-15"><a href="#cb3-15"></a>estimate <span class="ot">=</span> <span class="fu">vector</span>(<span class="at">length =</span> N)</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="cf">for</span> (n <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>N) {</span>
+<span id="cb3-17"><a href="#cb3-17"></a>  estimate[n] <span class="ot">=</span> <span class="fu">mean</span>(<span class="fu">hnew</span>(x[<span class="dv">1</span><span class="sc">:</span>n]))</span>
+<span id="cb3-18"><a href="#cb3-18"></a>}</span>
+<span id="cb3-19"><a href="#cb3-19"></a></span>
+<span id="cb3-20"><a href="#cb3-20"></a>estimate <span class="ot">=</span> estimate<span class="sc">*</span>C</span>
+<span id="cb3-21"><a href="#cb3-21"></a></span>
+<span id="cb3-22"><a href="#cb3-22"></a>V2 <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="fu">seq</span>(N),</span>
+<span id="cb3-23"><a href="#cb3-23"></a>               <span class="at">y =</span> estimate)</span>
+<span id="cb3-24"><a href="#cb3-24"></a></span>
+<span id="cb3-25"><a href="#cb3-25"></a>V <span class="sc">%&gt;%</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb3-27"><a href="#cb3-27"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="st">"Naive approach"</span>)) <span class="sc">+</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a>  <span class="fu">geom_line</span>(<span class="at">data =</span> V2, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">col =</span> <span class="st">"New sampler"</span>)) <span class="sc">+</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"N"</span>, <span class="at">y =</span> <span class="st">"sample mean"</span>) <span class="sc">+</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">trans=</span><span class="st">'log10'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="importance-sampling-identity" class="slide level2">
+<h2>Importance sampling identity</h2>
+<ul>
+<li>One can always write <span class="math inline">\(V\)</span> as</li>
+</ul>
+<p><span class="math display">\[
+V = \int \frac{h(x)p(x)}{q(x)} q(x) dx
+\]</span></p>
+<p>for any density <span class="math inline">\(q\)</span> with <span class="math inline">\(q(x) &gt; 0\)</span> on <span class="math inline">\(\mathcal{X} = \{x : h(x)p(x) \neq 0\}\)</span></p>
+<div class="fragment">
+<ul>
+<li>Thus we can always approximate <span class="math inline">\(V\)</span> by</li>
+</ul>
+<p><span class="math display">\[
+\hat{V}_q = \frac{1}{N} \sum_{i =1}^N w_q(X_i)h(X_i)
+\]</span></p>
+<p>where <span class="math inline">\(w_q(x) = p(x) / q(x)\)</span> and <span class="math inline">\(X_i \overset{\mathrm{iid}}{\sim} q\)</span>. <span class="math inline">\(w_q(x)\)</span> is called the “importance weight”.</p>
+</div>
+<div class="fragment">
+<ul>
+<li>The efficiency of <span class="math inline">\(\hat{V}_q\)</span> is inversely proportional to its variance:</li>
+</ul>
+<p><span class="math display">\[
+\sigma^2_q = \mathbb{V}ar[\hat{V}_q] = \int \frac{h(x)p(x)}{q(x)}h(x)p(x)dx - V^2
+\]</span></p>
+<p>If <span class="math inline">\(h &gt; 0\)</span> on <span class="math inline">\(\mathcal{X}\)</span>, then <span class="math inline">\(\sigma_q^2\)</span> is minimized at <span class="math inline">\(q(x) \propto h(x)p(x)\)</span>.</p>
+</div>
+</section>
+<section id="importance-sampling-recap" class="slide level2">
+<h2>Importance sampling recap</h2>
+<ul>
+<li><p>fundamentally, a trick to help compute expectations in Monte Carlo integration.</p></li>
+<li><p>the strategy of sampling from <span class="math inline">\(q\)</span> different from <span class="math inline">\(p\)</span> is called importance sampling.</p></li>
+<li><p><span class="math inline">\(q\)</span> is the “importance density”.</p></li>
+<li><p><span class="math inline">\(w_q(X_i)\)</span> is the “importance weight” of the sampled <span class="math inline">\(X_i\)</span></p></li>
+<li><p>the optimal <span class="math inline">\(q(x) \propto h(x)p(x)\)</span> choice is never there – since then the problem becomes trivial!</p></li>
+<li><p>but one tries to choose <span class="math inline">\(q(x)\)</span> such that <span class="math inline">\(\sigma^2_q\)</span> is small</p></li>
+</ul>
+</section>
+<section id="posterior-mean-example" class="slide level2">
+<h2>Posterior mean example</h2>
+<ul>
+<li><p>Suppose we know <span class="math inline">\(p(x) = \frac{1}{c} g(x)\)</span> where the functional form <span class="math inline">\(g\)</span> is known but the normalizing constant <span class="math inline">\(c\)</span> is not.</p></li>
+<li><p>It is easy to see that <span class="math inline">\(c = \int h_c(x)p(x)dx\)</span> where <span class="math inline">\(h_c(x) = g(x)/p(x)\)</span>.</p></li>
+<li><p>Therefore,</p></li>
+</ul>
+<p><span class="math display">\[
+\hat{c}_q = \frac{1}{N} \sum_{i = 1}^N w_q(X_i) h_c(X_i) = \frac{1}{N} \sum_{i = 1}^N w_q^*(X_i)
+\]</span></p>
+<p>where <span class="math inline">\(w_q^*(x) = g(x) / q(x)\)</span>. Notice that</p>
+<p><span class="math display">\[
+c = \int g(x) dx = \int w_q^*(x) q(x) dx = \mathbb{E_q}[w_q^*]
+\]</span></p>
+<div class="fragment">
+<ul>
+<li>Hence a simulation consistent estimate of <span class="math inline">\(V\)</span> is</li>
+</ul>
+<p><span class="math display">\[
+\hat{V}_q = \frac{\sum_{i = 1}^N w_q^*(X_i)h(X_i)}{\sum_{i = 1}^N w_q^*}
+\]</span></p>
+</div>
 </section>
 <section id="further-reading" class="slide level2">
 <h2>Further reading</h2>
 <ul>
-<li><p>The paper that launched it all: <a href="https://web.williams.edu/Mathematics/sjmiller/public_html/105Sp10/handouts/MetropolisUlam_TheMonteCarloMethod.pdf">Metropolis, Nicholas, and Stanislaw Ulam. “The monte carlo method.” Journal of the American statistical association 44.247 (1949): 335-341.</a></p></li>
-<li><p>A better introduction: <a href="https://aip.scitation.org/doi/pdf/10.1063/1.3295638?casa_token=GE-qxaAAVGgAAAAA:F3aHIjQWDj45QwH6VL_B6D6FzPRdiiEjVx4NLgWAZ7QAg-_RPyh_-KrvQWEdgsTkysMgEk5Ib_g7">Harrison, Robert L. “Introduction to monte carlo simulation.” AIP conference proceedings. Vol. 1204. No.&nbsp;1. American Institute of Physics, 2010.</a></p></li>
-<li><p><a href="https://blogs.sas.com/content/iml/2018/02/21/monte-carlo-estimate-median.html">A Monte Carlo algorithm to estimate a median</a> by Rick Wicklin at SAS</p></li>
+<li><p>A concise review of importance sampling: <a href="https://www2.stat.duke.edu/~st118/Publication/impsamp.pdf">Tokdar, Surya T., and Robert E. Kass. “Importance sampling: a review.” Wiley Interdisciplinary Reviews: Computational Statistics 2.1 (2010): 54-60.</a></p></li>
+<li><p>A natural extension to handle multi-modality: <a href="https://link.springer.com/article/10.1023/A:1008923215028">Neal, Radford M. “Annealed importance sampling.” Statistics and computing 11 (2001): 125-139.</a></p></li>
+<li><p><a href="https://radfordneal.wordpress.com/2008/08/17/the-harmonic-mean-of-the-likelihood-worst-monte-carlo-method-ever/">Blog post by Radford Neal on “The harmonic mean of the likelihood: worst Monte Carlo method ever”</a></p></li>
+<li><p>Alternative introduction with some motivation: <a href="https://ieeexplore.ieee.org/abstract/document/7974876">Bugallo, Monica F., et al.&nbsp;“Adaptive importance sampling: The past, the present, and the future.” IEEE Signal Processing Magazine 34.4 (2017): 60-79.</a></p></li>
 </ul>
 </section>
 <section id="acknowledgements" class="slide level2">

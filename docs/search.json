@@ -3532,7 +3532,7 @@
     "href": "slides/lec16.html#example",
     "title": "Monte Carlo integration",
     "section": "Example",
-    "text": "Example\nConsider computing the integral\n\\[\nV = \\int_1^3 x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}} dx\n\\]\nHere, \\(p(x)\\) is the standard normal density and\n\\[\nh(x) = I(x \\in (1, 3))~x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}}\n\\]\n\nSo we can view this as \\(\\mathbb{E}~h(x) \\approx \\frac{1}{N} \\sum_{i=1}^N h(x)\\) where \\(X\\) is standard normal."
+    "text": "Example\nConsider computing the integral\n\\[\nV = \\int_1^3 x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}} dx\n\\]\nHere, \\(p(x)\\) is the standard normal density and\n\\[\nh(x) = I(x \\in (1, 3))~x~e^{-\\frac{(x-4)^2}{2}}\n\\]\n\nSo we can view this as \\(\\mathbb{E}~h(x) \\approx \\frac{1}{N} \\sum_{i=1}^N h(x)\\) where \\(X\\) is standard normal."
   },
   {
     "objectID": "slides/lec16.html#seen-another-way",
@@ -3575,5 +3575,103 @@
     "title": "Monte Carlo integration",
     "section": "Comparison",
     "text": "Comparison\n\nlibrary(magrittr)\nset.seed(2)\nN = 1000\nx = rnorm(N, 2, sqrt(1/2))\n\nhnew = function(x) {\nx[x < 1] = 0\nx[x > 3] = 0\n  return(x)\n}\n\nC = exp(-1/4) / sqrt(2)\n\nestimate = vector(length = N)\nfor (n in 1:N) {\n  estimate[n] = mean(hnew(x[1:n]))\n}\n\nestimate = estimate*C\n\nV2 = data.frame(x = seq(N),\n               y = estimate)\n\nV %>%\n  ggplot(aes(x = x, y = y)) +\n  geom_line(aes(color = \"Naive approach\")) + \n  geom_line(data = V2, aes(x = x, y = y, col = \"New sampler\")) +\n  theme_minimal() +\n  labs(x = \"N\", y = \"sample mean\") +\n  scale_x_continuous(trans='log10')"
+  },
+  {
+    "objectID": "slides/lec17.html#last-time",
+    "href": "slides/lec17.html#last-time",
+    "title": "Importance sampling",
+    "section": "Last time",
+    "text": "Last time\n\n\n\n\nWe considered computing the integral\n\n\\[\nV = \\int_1^3 x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}} e^{-\\frac{x^2}{2}} dx\n\\]\nHere, \\(p(x)\\) is the standard normal density and\n\\[\nh(x) = I(x \\in (1, 3))~x~e^{-\\frac{(x-4)^2}{2}}\n\\]\n\nSo we can view this as \\(\\mathbb{E}~h(x) \\approx \\frac{1}{N} \\sum_{i=1}^N h(x)\\) where \\(X\\) is standard normal."
+  },
+  {
+    "objectID": "slides/lec17.html#px-off-from-hx",
+    "href": "slides/lec17.html#px-off-from-hx",
+    "title": "Importance sampling",
+    "section": "\\(p(x)\\) off from \\(h(x)\\)",
+    "text": "\\(p(x)\\) off from \\(h(x)\\)\n\nNote: here \\(h(x) = x~e^{-\\frac{(x-4)^2}{2}} \\frac{1}{\\sqrt{2\\pi}}\\) (i.e. I am dropping the indicator function for illustrative purposes)"
+  },
+  {
+    "objectID": "slides/lec17.html#samples-not-good-for-hxpx",
+    "href": "slides/lec17.html#samples-not-good-for-hxpx",
+    "title": "Importance sampling",
+    "section": "Samples not good for \\(h(x)p(x)\\)",
+    "text": "Samples not good for \\(h(x)p(x)\\)\n\nplotcode\n\n\n\n\n\n\n\n\n\n\nset.seed(2)\nhp = function(x) {\n  h(x) * dnorm(x)\n}\n\nN = 50\npoints = data.frame(x = rnorm(N, 0, 1),\n                    y = rep(0, N))\n\nggplot() +\n xlim(-4, 8) +\n  geom_function(fun = hp) +\n  geom_point(data = points, aes(x = x, y = y)) +\n  labs(x = \"x\", y = \"\") +\n  theme_minimal() + \n  labs(title = \"h(x)p(x)\") +\n  stat_function(fun = hp, \n                xlim = c(1,3),\n                geom = \"area\",\n                fill = \"steelblue\", alpha = 0.5)"
+  },
+  {
+    "objectID": "slides/lec17.html#resulting-in-large-approximation-error",
+    "href": "slides/lec17.html#resulting-in-large-approximation-error",
+    "title": "Importance sampling",
+    "section": "Resulting in large approximation error",
+    "text": "Resulting in large approximation error\n\nplotcode\n\n\n\n\n\n\n\n\n\n\nlibrary(magrittr)\nset.seed(2)\nN = 10000\nx = rnorm(N, 0, 1)\n\nh1 = function(x) {\nz = h(x)\nz[x < 1] = 0\nz[x > 3] = 0\n  return(z)\n}\n\nestimate = vector(length = N)\nfor (n in 1:N) {\n  estimate[n] = mean(h1(x[1:n]))\n}\n\nV = data.frame(x = seq(N),\n               y = estimate)\n\nV %>%\n  ggplot(aes(x = x, y = y)) +\n  geom_line() +\n  theme_minimal() +\n  labs(x = \"N\", y = \"sample mean\") +\n  scale_x_continuous(trans='log10')"
+  },
+  {
+    "objectID": "slides/lec17.html#further-reading",
+    "href": "slides/lec17.html#further-reading",
+    "title": "Importance sampling",
+    "section": "Further reading",
+    "text": "Further reading\n\nA concise review of importance sampling: Tokdar, Surya T., and Robert E. Kass. “Importance sampling: a review.” Wiley Interdisciplinary Reviews: Computational Statistics 2.1 (2010): 54-60.\nA natural extension to handle multi-modality: Neal, Radford M. “Annealed importance sampling.” Statistics and computing 11 (2001): 125-139.\nBlog post by Radford Neal on “The harmonic mean of the likelihood: worst Monte Carlo method ever”\nAlternative introduction with some motivation: Bugallo, Monica F., et al. “Adaptive importance sampling: The past, the present, and the future.” IEEE Signal Processing Magazine 34.4 (2017): 60-79."
+  },
+  {
+    "objectID": "slides/lec17.html#acknowledgements",
+    "href": "slides/lec17.html#acknowledgements",
+    "title": "Importance sampling",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nThe best parts of these slides were adapted from Prof. Surya Tokdar’s notes on Monte Carlo integration.\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec17.html#a-better-strategy",
+    "href": "slides/lec17.html#a-better-strategy",
+    "title": "Importance sampling",
+    "section": "A better strategy",
+    "text": "A better strategy\n\nNotice that\n\n\\[\nV = \\frac{e^{-4}}{\\sqrt{2}}\n\\int_1^3 x \\frac{1}{\\sqrt{2\\pi(1/2)}}\ne^{-\\frac{(x-2)^2}{2(1/2)}}\n\\]\n\nSo we can approximate \\(V\\) by\n\n\\[\n\\frac{e^{-4}}{\\sqrt{2}}~\\frac{1}{N}\\sum_{i = 1}^N X_i~I(X_i\\in(1,3))\n\\]\nwhere \\(X_i \\overset{\\mathrm{iid}}{\\sim} N(2, (1/\\sqrt{2})^2))\\)"
+  },
+  {
+    "objectID": "slides/lec17.html#comparison",
+    "href": "slides/lec17.html#comparison",
+    "title": "Importance sampling",
+    "section": "Comparison",
+    "text": "Comparison\n\nPlotCode\n\n\n\n\n\n\n\n\n\n\nlibrary(magrittr)\nset.seed(2)\nN = 10000\nx = rnorm(N, 2, sqrt(1/2))\n\nhnew = function(x) {\nx[x < 1] = 0\nx[x > 3] = 0\n  return(x)\n}\n\nC = exp(-4) / sqrt(2)\n# C = sqrt(1/2)\n\nestimate = vector(length = N)\nfor (n in 1:N) {\n  estimate[n] = mean(hnew(x[1:n]))\n}\n\nestimate = estimate*C\n\nV2 = data.frame(x = seq(N),\n               y = estimate)\n\nV %>%\n  ggplot(aes(x = x, y = y)) +\n  geom_line(aes(color = \"Naive approach\")) +\n  geom_line(data = V2, aes(x = x, y = y, col = \"New sampler\")) +\n  theme_minimal() +\n  labs(x = \"N\", y = \"sample mean\") +\n  scale_x_continuous(trans='log10')"
+  },
+  {
+    "objectID": "slides/lec17.html#importance-sampling-identity",
+    "href": "slides/lec17.html#importance-sampling-identity",
+    "title": "Importance sampling",
+    "section": "Importance sampling identity",
+    "text": "Importance sampling identity\n\nOne can always write \\(V\\) as\n\n\\[\nV = \\int \\frac{h(x)p(x)}{q(x)} q(x) dx\n\\]\nfor any density \\(q\\) with \\(q(x) > 0\\) on \\(\\mathcal{X} = \\{x : h(x)p(x) \\neq 0\\}\\)\n\n\nThus we can always approximate \\(V\\) by\n\n\\[\n\\hat{V}_q = \\frac{1}{N} \\sum_{i =1}^N w_q(X_i)h(X_i)\n\\]\nwhere \\(w_q(x) = p(x) / q(x)\\) and \\(X_i \\overset{\\mathrm{iid}}{\\sim} q\\). \\(w_q(x)\\) is called the “importance weight”.\n\n\n\nThe efficiency of \\(\\hat{V}_q\\) is inversely proportional to its variance:\n\n\\[\n\\sigma^2_q = \\mathbb{V}ar[\\hat{V}_q] = \\int \\frac{h(x)p(x)}{q(x)}h(x)p(x)dx - V^2\n\\]\nIf \\(h > 0\\) on \\(\\mathcal{X}\\), then \\(\\sigma_q^2\\) is minimized at \\(q(x) \\propto h(x)p(x)\\)."
+  },
+  {
+    "objectID": "slides/lec17.html#importance-sampling",
+    "href": "slides/lec17.html#importance-sampling",
+    "title": "Importance sampling",
+    "section": "Importance sampling",
+    "text": "Importance sampling"
+  },
+  {
+    "objectID": "slides/lec17.html#importance-sampling-recap",
+    "href": "slides/lec17.html#importance-sampling-recap",
+    "title": "Importance sampling",
+    "section": "Importance sampling recap",
+    "text": "Importance sampling recap\n\nfundamentally, a trick to help compute expectations in Monte Carlo integration.\nthe strategy of sampling from \\(q\\) different from \\(p\\) is called importance sampling.\n\\(q\\) is the “importance density”.\n\\(w_q(X_i)\\) is the “importance weight” of the sampled \\(X_i\\)\nthe optimal \\(q(x) \\propto h(x)p(x)\\) choice is never there – since then the problem becomes trivial!\nbut one tries to choose \\(q(x)\\) such that \\(\\sigma^2_q\\) is small"
+  },
+  {
+    "objectID": "slides/lec17.html#exercise",
+    "href": "slides/lec17.html#exercise",
+    "title": "Importance sampling",
+    "section": "Exercise",
+    "text": "Exercise"
+  },
+  {
+    "objectID": "slides/lec17.html#posterior-mean-example",
+    "href": "slides/lec17.html#posterior-mean-example",
+    "title": "Importance sampling",
+    "section": "Posterior mean example",
+    "text": "Posterior mean example\n\nSuppose we know \\(p(x) = \\frac{1}{c} g(x)\\) where the functional form \\(g\\) is known but the normalizing constant \\(c\\) is not.\nIt is easy to see that \\(c = \\int h_c(x)p(x)dx\\) where \\(h_c(x) = g(x)/p(x)\\).\nTherefore,\n\n\\[\n\\hat{c}_q = \\frac{1}{N} \\sum_{i = 1}^N w_q(X_i) h_c(X_i) = \\frac{1}{N} \\sum_{i = 1}^N w_q^*(X_i)\n\\]\nwhere \\(w_q^*(x) = g(x) / q(x)\\). Notice that\n\\[\nc = \\int g(x) dx = \\int w_q^*(x) q(x) dx = \\mathbb{E_q}[w_q^*]\n\\]\n\n\nHence a simulation consistent estimate of \\(V\\) is\n\n\\[\n\\hat{V}_q = \\frac{\\sum_{i = 1}^N w_q^*(X_i)h(X_i)}{\\sum_{i = 1}^N w_q^*}\n\\]"
+  },
+  {
+    "objectID": "quizzes/quiz06.html",
+    "href": "quizzes/quiz06.html",
+    "title": "Quiz 6",
+    "section": "",
+    "text": "Exercise 1 (2pts)\nMonte Carlo integration is most useful for low-dimensional integrals (TRUE or FALSE)?\n\n\nExercise 2 (2pts)\nDescribe in 1 or 2 sentences how the following image is an example of using Monte Carlo integration to estimate \\(\\pi\\).\n\n\n\n\n04:00"
   }
 ]

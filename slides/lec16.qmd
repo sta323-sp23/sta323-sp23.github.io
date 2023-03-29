@@ -164,7 +164,7 @@ $$
 Here, $p(x)$ is the standard normal density and 
 
 $$
-h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}} \frac{1}{\sqrt{2\pi}}
+h(x) = I(x \in (1, 3))~x~e^{-\frac{(x-4)^2}{2}}
 $$
 
 . . . 
@@ -188,7 +188,7 @@ h = function(x) {
 ggplot() +
  xlim(-4, 8) +
   geom_function(fun = h, aes(col = "h(x)")) +
-  geom_function(fun = dnorm, args = list(mean = 0, sd = 1), aes(col = 'f(x)')) +
+  geom_function(fun = dnorm, args = list(mean = 0, sd = 1), aes(col = "p(x)")) +
   labs(x = "x", y = "") +
   theme_minimal() +
   scale_color_manual(values = c("red", "steelblue"))
