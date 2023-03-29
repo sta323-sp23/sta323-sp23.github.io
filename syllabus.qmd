@@ -2,7 +2,7 @@
 title: "syllabus"
 subtitle: "STA 323 - Statistical Computing - Spring 2023"
 fontsize: 12pt
-format: pdf
+format: html
 ---
 
 ### Logistics
