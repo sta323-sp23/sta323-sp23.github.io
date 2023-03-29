@@ -76,7 +76,7 @@ schedule %>%
 |      | Wed Mar 22 | EM algorithm                      | [💻](/slides/lec15.html)                                 |                          |                                       |         |
 |      | Fri Mar 24 | Monte Carlo integration                          |  [💻](/slides/lec16.html)                                |                          |                                       |         |
 | 11   | Tue Mar 28 | continue lab                                       |                                 |                          |                                       |         |
-|      | Wed Mar 29 | Importance sampling                                 |                                 |                          |                                       |         |
+|      | Wed Mar 29 | Importance sampling                                 | [💻](/slides/lec17.html)                                 |                          |                                       |         |
 |      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   exam 2 release                                   |          |
 | 12   | Tue Apr 04 |  no lab: exam 2                                       |                                 |                          |  exam 2 due                                     |         |
 |      | Wed Apr 05 |  shiny I                 |                                 |                          |                                       |         |
