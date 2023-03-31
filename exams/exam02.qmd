@@ -1,0 +1,39 @@
+---
+title: "Exam 02 Instructions"
+author: "Dr. Alexander Fisher"
+---
+
+:::callout-important
+The exam is due 5:00PM Tuesday April 4th
+:::
+
+<!-- [Click here](https://classroom.github.com/a/3VC8ulwc) to begin exam 1. All exam questions are contained in `exam-1-exercises.qmd`. -->
+
+:::callout-important
+Please work in and write your solutions in `exam-2.qmd`. Push your `exam-2.qmd` by the deadline to submit your assignment.
+:::
+
+## Rules
+
+- This is an individual assignment.
+- You may not collaborate or communicate anything about this exam to anyone except the instructor. For example, you may not communicate with other students or post/solicit help on the internet, email or via any other method of communication.
+- You may use R, as well as any notes, books, or existing internet resources to answer exam questions. If you use a resource outside of those we used for class, you should cite it by providing the URL in your rendered PDF and a brief explanation of what the code does.
+- You must cite any code you use as inspiration. A failure to cite is plagiarism. Cite any sources by providing a link to the original source in your exam write-up.
+- If you have questions email the instructor or, preferably, message in slack. Questions should only be about understanding the data or the exam's instructions. You may not ask questions on any topics from past assignments or material related to the exam.
+- The instructor will **NOT** provide code debugging on exam problems. If you are unable to debug yourself, you should comment out code, insert `#| eval: false` etc. as necessary to get your final `html` to render and receive partial credit. Note: ask questions early. Questions asked the day the exam is due may not be answered.
+
+With the exception of major emergencies, late submissions will not be accepted. In the case of a major emergency, you should have your Dean send the instructor an excuse. Start and submit the exam early in order to avoid any last-minute technical issues.
+
+## Render frequently
+
+Commit and push to GitHub frequently. At least after every exercise.
+
+In the event that you run into last minute technical difficulties, whatever is in your GitHub repo at the deadline is what will be graded.
+
+## Academic Integrity
+
+By taking this exam, you pledge to uphold the Duke Community Standard:
+
+- I will not lie, cheat, or steal in my academic endeavors;
+- I will conduct myself honorably in all my endeavors; and
+- I will act if the Standard is compromised.
