@@ -7,7 +7,7 @@ author: "Dr. Alexander Fisher"
 The exam is due 5:00PM Tuesday April 4th
 :::
 
-<!-- [Click here](https://classroom.github.com/a/3VC8ulwc) to begin exam 1. All exam questions are contained in `exam-1-exercises.qmd`. -->
+[Click here](https://classroom.github.com/a/1smYsnBr) to begin exam 2. All exam questions are contained in `exam-1-exercises.qmd`.
 
 :::callout-important
 Please work in and write your solutions in `exam-2.qmd`. Push your `exam-2.qmd` by the deadline to submit your assignment.
