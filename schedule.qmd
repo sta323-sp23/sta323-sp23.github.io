@@ -79,13 +79,13 @@ schedule %>%
 |      | Wed Mar 29 | Importance sampling                                 | [💻](/slides/lec17.html)                                 |                          |                                       |         |
 |      | Fri Mar 31 | review / questions / exam                          |                                 |                          |   [exam 2 release](/exams/exam02.html)                                     |          |
 | 12   | Tue Apr 04 |  no lab: exam 2                                       |                               |                          |  exam 2 due                                     |         |
-|      | Wed Apr 05 |  shiny I                 |                                 |                          |                                       |         |
+|      | Wed Apr 05 |  shiny I                 |  [💻](/slides/lec18.html)                                |                          |                                       |         |
 |      | Fri Apr 07 | shiny II              |                                 |                          |                                       |         |
 | 13   | Tue Apr 11 |                                   |                                 |                          |                                  |         |
-|      | Wed Apr 12 | project tips                   |                                 |                          |                                       |         |
-|      | Fri Apr 14 | covariance                            |                                 |                          |                                       |         |
-| 14   | Tue Apr 18 | project peer-review                                       |                                 |                          |                                       |         |
+|      | Wed Apr 12 | SQL                 |                                 |                          |                                       |         |
+|      | Fri Apr 14 | project tips                          |                                 |                          |                                       |         |
+| 14   | Tue Apr 18 | project workday                                     |                                 |                          |                                       |         |
 |      | Wed Apr 19 | APIs                                   |                                 |                          |                                       |         |
-|      | Fri Apr 21 | SQL                                    |                                 |                          |                                       |         |
+|      | Fri Apr 21 | covariance                                    |                                 |                          |                                       |         |
 | 15   | Tue Apr 25 | project presentations              |                                 |                          |                                       |         |
 |      | Wed Apr 26 |                           |                                 |                          |                                       |         |
