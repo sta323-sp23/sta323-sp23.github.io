@@ -77,7 +77,6 @@ server <- function(input, output) {
       
       g 
     })
-  # input$
 }
 # Build and run the application
 shinyApp(ui = ui, server = server)

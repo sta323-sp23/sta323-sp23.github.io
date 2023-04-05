@@ -193,17 +193,17 @@ The first argument for each output function is `outputId`. This argument is wher
 
 # Shiny demo
 
-<!-- ## Example code -->
+## Code from the in-class example
 
-<!-- ```{r} -->
+Below you can download the example we built in-class.
+```{r}
 
-<!-- #| eval: false -->
+#| eval: false
 
-<!-- download.file("https://sta323-sp23.github.io/scripts/shinyAppBetaBinomial.R", -->
+download.file("https://sta323-sp23.github.io/scripts/BetaBinomialShinyApp.R",
+destfile = "BetaBinomialShinyApp.R")
 
-<!-- destfile = "shinyAppBetaBinomial.R") -->
-
-<!-- ``` -->
+```
 
 ## Further reading
 
