@@ -6,11 +6,11 @@ To receive credit for this assignment, write at the top of your paper your name 
 
 ### Exercise 1 (2pts)
 
-
+TRUE or FALSE: `fluidPage` creates pages with components that scale in real time to fill all available browser width.
 
 ### Exercise 2 (2pts)
 
-
+The two main arguments of the `shinyApp()` function are `ui` and ___.
 
 ```{r}
 #| echo: false

@@ -39,7 +39,15 @@ ui <- fluidPage(
       numericInput("a", "prior # of heads", min = 0,
                    value = 5),
       numericInput("b", "prior # of tails", min = 0,
-                   value = 5)
+                   value = 5),
+      h4("Optional input:"),
+      checkboxInput("options", label = "Show options", value = FALSE),
+      conditionalPanel(
+        "input.options == true",
+      checkboxInput("bw", label = "Black and white theme", value = FALSE),
+      sliderInput("lwd", "Line width",
+                  min = .25, max = 2.25, value = 1)
+      )
     ),
     mainPanel = mainPanel(
       plotOutput("plot")
@@ -62,18 +70,18 @@ server <- function(input, output) {
         xlim(c(0,1)) +
         stat_function(aes(color = "prior"), 
                       fun = dbeta, args = list(shape1 = input$a,
-                                         shape2 = input$b)) +
+                                         shape2 = input$b), lwd = input$lwd) +
         stat_function(aes(color = "likelihood"), fun = dbinom_rescaled,
                       args = list(x = input$x, 
-                                  size = input$n)) +
+                                  size = input$n), lwd = input$lwd) +
         stat_function(aes(color = "posterior"), fun = dbeta,
                           args = list(shape1 = input$a + input$x,
-                                      shape2 = input$b + input$n - input$x)) +
+                                      shape2 = input$b + input$n - input$x), lwd = input$lwd) +
         labs(x = "p", y = "density", color = "distribution")
         
-      # if(input$bw) {
-      #   g = g + theme_bw()
-      # }
+      if(input$bw) {
+        g = g + theme_bw()
+      }
       
       g 
     })

@@ -195,15 +195,25 @@ The first argument for each output function is `outputId`. This argument is wher
 
 ## Code from the in-class example
 
-Below you can download the example we built in-class.
-```{r}
+Below you can download the example we built in-class 04/05.
 
+```{r}
 #| eval: false
 
 download.file("https://sta323-sp23.github.io/scripts/BetaBinomialShinyApp.R",
 destfile = "BetaBinomialShinyApp.R")
 
 ```
+
+Below you can download the example we built in-class 04/07.
+
+```{r}
+#| eval: false
+download.file("https://sta323-sp23.github.io/scripts/ABCShinyApp.R",
+destfile = "ABCShinyApp.R")
+
+```
+
 
 ## Further reading
 

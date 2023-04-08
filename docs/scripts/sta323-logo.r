@@ -26,16 +26,16 @@ x2 = nextPoint(x1)
 sta323_plot = ggplot() +
   xlim(0, 2*pi) +
   ylim(-1, 1) +
-  geom_function(fun = cos, aes(color = "f")) +
+  geom_function(fun = cos, aes(color = "f"), lwd = 1) +
   geom_function(fun = g, args = list(xn = x0), aes(color = "g0"),
-                linetype = 'dashed') + 
+                linetype = 'dashed', lwd = 1) + 
   theme_minimal() +
   # annotate(geom = "point", x = 1, y = cos(1), col = 'steelblue') +
   # annotate(geom = "text", x = 1, y = cos(1)-.1, label = TeX("$x_0$")) +
   # annotate(geom = "point", x = x1, y = g(x1, x0), col = 'steelblue') +
   # annotate(geom = "text", x = x1, y = g(x1, x0)-.1, label = TeX("$x_1$")) +
   geom_function(fun = g, args = list(xn = x1), aes(color = "g1"),
-                linetype = 'dashed') +
+                linetype = 'dashed', lwd = 1) +
   # annotate(geom = "point", x = x1, y = cos(x1), col = 'steelblue') +
   # annotate(geom = "text", x = x1, y = cos(x1)-.1, label = TeX("$x_1$")) +
   # annotate(geom = "point", x = x2, y = g(x2, x1), col = 'steelblue') +
@@ -49,7 +49,9 @@ sta323_plot = ggplot() +
         axis.text.y=element_blank(), # remove y axis labels
         axis.ticks.y=element_blank(),
         panel.grid.major = element_blank(), # remove grid
-                       panel.grid.minor = element_blank())
+                       panel.grid.minor = element_blank()) #+
+  # annotate(geom = "text", x = 3.14, y = 0, 
+  #          label = TeX("$L(\\theta)$"), size = 4)
 
 mu0 = 0
 sd0 = 1
@@ -96,5 +98,5 @@ sta101plot1 = ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
         axis.ticks.x=element_blank()
   )
 
-sticker(sta323_plot, package="STA 323", p_size=9, s_x=0.92, s_y=.75, s_width=2.5, s_height=1,
+sticker(sta323_plot, package="STA 323", p_size=9, s_x=0.92, s_y=.65, s_width=2.5, s_height=1,
         h_fill=fillColor, h_color = "#2774AE", p_color  = titleColor, filename="~/Desktop/test.png")
