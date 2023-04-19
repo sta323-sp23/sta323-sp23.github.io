@@ -2615,6 +2615,139 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n💻\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nImportance sampling\n💻\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n💻\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\n\n\n\n\n\n\n\n\nWed Apr 12\nSQL\n\n\n\n\n\n\n\nFri Apr 14\nproject tips\n\n\n\n\n\n\n14\nTue Apr 18\nproject workday\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n\n\n\n\n\n\n\nFri Apr 21\ncovariance\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n💻\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nimportance sampling\n💻\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n💻\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\nshiny dashboard\n\non GitHub\n\n\n\n\n\nWed Apr 12\nSQL\n\n\n\n\n\n\n\nFri Apr 14\nproject tips\n\n\n\n\n\n\n14\nTue Apr 18\nproject workday\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n💻\n\n\n\n\n\n\nFri Apr 21\ncovariance\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
+  },
+  {
+    "objectID": "slides/lec20.html#overview",
+    "href": "slides/lec20.html#overview",
+    "title": "APIs",
+    "section": "Overview",
+    "text": "Overview"
+  },
+  {
+    "objectID": "slides/lec20.html#code-from-the-in-class-example",
+    "href": "slides/lec20.html#code-from-the-in-class-example",
+    "title": "APIs",
+    "section": "Code from the in-class example",
+    "text": "Code from the in-class example\nBelow you can download the example we built in-class 04/05.\n\ndownload.file(\"https://sta323-sp23.github.io/scripts/BetaBinomialShinyApp.R\",\ndestfile = \"BetaBinomialShinyApp.R\")\n\nBelow you can download the example we built in-class 04/07.\n\ndownload.file(\"https://sta323-sp23.github.io/scripts/ABCShinyApp.R\",\ndestfile = \"ABCShinyApp.R\")"
+  },
+  {
+    "objectID": "slides/lec20.html#further-reading",
+    "href": "slides/lec20.html#further-reading",
+    "title": "APIs",
+    "section": "Further reading",
+    "text": "Further reading\n\nAn Introduction to APIs. (2023). https://zapier.com/learn/apis/\nPodila, P. (2022). HTTP: The Protocol Every Web Developer Must Know - Part 1. https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1–net-31177\nTools for Working with URLs and HTTP. https://httr.r-lib.org////index.html\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec20.html#what-is-an-api",
+    "href": "slides/lec20.html#what-is-an-api",
+    "title": "APIs",
+    "section": "What is an API?",
+    "text": "What is an API?\nAn API is a messenger that takes requests and returns responses. It allows for interaction between applications, databases, and devices.\n\nIf you want to\n\nembed a map on your website, you’ll probably use Google’s API\nembed a tweet on your website, you’ll use Twitter’s API\ntrade stocks in Python or R, you’ll probably use your broker’s API\npull genetic sequence data from GenBank, you’ll use GenBank’s API\ncreate 54 repositories named lab07-[github_team_name], you’ll probably use GitHub’s API"
+  },
+  {
+    "objectID": "slides/lec20.html#client-server-framework-with-an-api",
+    "href": "slides/lec20.html#client-server-framework-with-an-api",
+    "title": "APIs",
+    "section": "Client-server framework with an API",
+    "text": "Client-server framework with an API"
+  },
+  {
+    "objectID": "slides/lec20.html#protocols",
+    "href": "slides/lec20.html#protocols",
+    "title": "APIs",
+    "section": "Protocols",
+    "text": "Protocols\nA computer protocol is a set of rules that govern how multiple computers communicate.\n\nIP: Internet Protocol\nFTP: File Transfer Protocol\nHTTP: Hyper Text Transfer Protocol The key protocol that governs data transfer over the internet Allows HTML, CSS, JS to be transferred from a server to your browser\nHTTPS: Hyper Text Transfer Protocol Secure\n\n\nWhy do we care?\nWeb APIs are built on HTTP. Since so much of what we do is built over the web it is natural for web APIs to follow this protocol."
+  },
+  {
+    "objectID": "slides/lec20.html#urls",
+    "href": "slides/lec20.html#urls",
+    "title": "APIs",
+    "section": "URLs",
+    "text": "URLs"
+  },
+  {
+    "objectID": "slides/lec20.html#query-strings",
+    "href": "slides/lec20.html#query-strings",
+    "title": "APIs",
+    "section": "Query strings",
+    "text": "Query strings\nProvides named parameter(s) and value(s) that modify the behavior of the resulting page.\nFormat generally follows:\nfield1=value1&field2=value2&field3=value3\n\nnote the = and &\n\n\nSome quick examples,\n\nhttp://lmgtfy.com/?q=hello%20world\nhttp://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=1600+Amphitheatre+Parkway\nhttps://nomnom-prod-api.dennys.com/mapbox/geocoding/v5/mapbox.places/raleigh,%20nc.json?types=country,region,postcode,place&country=us,pr,vi,gu,mp,ca"
+  },
+  {
+    "objectID": "slides/lec20.html#url-encoding",
+    "href": "slides/lec20.html#url-encoding",
+    "title": "APIs",
+    "section": "URL encoding",
+    "text": "URL encoding\nThis is will often be handled automatically by your web browser or other tool, but it is useful to know a bit about what is happening\n\nSpaces will encoded as ‘+’ or ‘%20’\nCertain characters are reserved and will be replaced with the percent-encoded version within a URL\n\n\n\n\n!\n#\n$\n&\n’\n(\n)\n\n\n\n\n%21\n%23\n%24\n%26\n%27\n%28\n%29\n\n\n*\n+\n,\n/\n:\n;\n=\n\n\n%2A\n%2B\n%2C\n%2F\n%3A\n%3B\n%3D\n\n\n?\n@\n[\n]\n\n\n\n\n\n%3F\n%40\n%5B\n%5D\n\n\n\n\n\n\n\nCharacters that cannot be converted to the correct charset are replaced with HTML numeric character references (e.g. a \\(\\Sigma\\) would be encoded as Σ )"
+  },
+  {
+    "objectID": "slides/lec20.html#rest-apis",
+    "href": "slides/lec20.html#rest-apis",
+    "title": "APIs",
+    "section": "REST APIs",
+    "text": "REST APIs\nRepresentational State Transfer\n\ndescribes an architectural style for web services (not a standard)\nall communication via http requests\na REST API should specify what it can provide and how to use it, details such as query parameters, response format, request limitations, public use/API keys, method (GET/POST/PUT/DELETE), language support, etc."
+  },
+  {
+    "objectID": "slides/lec20.html#http-methods-verbs",
+    "href": "slides/lec20.html#http-methods-verbs",
+    "title": "APIs",
+    "section": "HTTP methods / verbs",
+    "text": "HTTP methods / verbs\n\nGET: fetch a resource\n\nmost common, literally request info.\n\nPOST: create a new resource\n\nexample: create new GitHub repositories. In general, any data you send to the website.\n\nPUT: update a resource\nDELETE: delete a resource\n\nLess common verbs: HEAD, TRACE, OPTIONS"
+  },
+  {
+    "objectID": "slides/lec20.html#status-codes",
+    "href": "slides/lec20.html#status-codes",
+    "title": "APIs",
+    "section": "Status codes",
+    "text": "Status codes\n\n1xx: informational messages\n2xx: successful\n3xx: redirection\n4xx: client error\n5xx: server error"
+  },
+  {
+    "objectID": "slides/lec20.html#announcements",
+    "href": "slides/lec20.html#announcements",
+    "title": "APIs",
+    "section": "Announcements",
+    "text": "Announcements\nReminder:\n\nLab 7 due today at 5:00pm.\nFinal project presentations during lab Tuesday, April 25."
+  },
+  {
+    "objectID": "slides/lec20.html#example",
+    "href": "slides/lec20.html#example",
+    "title": "APIs",
+    "section": "Example",
+    "text": "Example\nhttps://anapioficeandfire.com/"
+  },
+  {
+    "objectID": "slides/lec19.html#overview",
+    "href": "slides/lec19.html#overview",
+    "title": "Databases, SQL and dplyr",
+    "section": "Overview",
+    "text": "Overview"
+  },
+  {
+    "objectID": "slides/lec19.html#overview-1",
+    "href": "slides/lec19.html#overview-1",
+    "title": "Databases, SQL and dplyr",
+    "section": "Overview",
+    "text": "Overview\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec20.html#documentation",
+    "href": "slides/lec20.html#documentation",
+    "title": "APIs",
+    "section": "Documentation",
+    "text": "Documentation\nWhile there is a lot of standardization, every API is different and you will need to review the documentation of each.\nSee documentation here for AAOIF.\n\nResources/endpoints\n\nRoot - https://www.anapioficeandfire.com/api\nList books - https://www.anapioficeandfire.com/api/books\nSpecific book - https://www.anapioficeandfire.com/api/books/1"
+  },
+  {
+    "objectID": "slides/lec20.html#pagination",
+    "href": "slides/lec20.html#pagination",
+    "title": "APIs",
+    "section": "Pagination",
+    "text": "Pagination\nAn API of Ice And Fire provides a lot of data about the world of Westeros. To prevent our servers from getting cranky, the API will automatically paginate the responses. You will learn how to create requests with pagination parameters and consume the response.\nThings worth noting:\n\nInformation about the pagination is included in the Link header Page numbering is 1-based You can specify how many items you want to receive per page, the maximum is 50\n\nConstructing a request with pagination\n\nYou specify which page you want to access with the ?page parameter, if you don’t provide the ?page parameter the first page will be returned. You can also specify the size of the page with the ?pageSize parameter, if you don’t provide the ?pageSize parameter the default size of 10 will be used."
+  },
+  {
+    "objectID": "slides/lec20.html#exercise",
+    "href": "slides/lec20.html#exercise",
+    "title": "APIs",
+    "section": "Exercise",
+    "text": "Exercise\n\nHow many characters are included in this API?\nWhat percentage of the characters are alive?"
   }
 ]

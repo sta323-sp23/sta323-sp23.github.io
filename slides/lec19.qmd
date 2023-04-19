@@ -1,0 +1,18 @@
+---
+title: "Databases, SQL and dplyr"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# Databases
+
+## Overview
+
+# Structured Query Language (SQL)
+
+## Overview
+
