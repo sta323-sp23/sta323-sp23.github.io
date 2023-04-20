@@ -2615,7 +2615,7 @@
     "href": "schedule.html",
     "title": "schedule",
     "section": "",
-    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n💻\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nimportance sampling\n💻\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n💻\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\nshiny dashboard\n\non GitHub\n\n\n\n\n\nWed Apr 12\nSQL\n\n\n\n\n\n\n\nFri Apr 14\nproject tips\n\n\n\n\n\n\n14\nTue Apr 18\nproject workday\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n💻\n\n\n\n\n\n\nFri Apr 21\ncovariance\n\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
+    "text": "Week\nDate\nTopic\nNotes\nLab\nExam\nProject\n\n\n\n\n0\nFri Jan 13\nwelcome\n💻\n\n\n\n\n\n1\nTue Jan 17\ngit\n💻\nlab 0\n\n\n\n\n\nWed Jan 18\ncontrol flow, loops and functions\n💻\n\n\n\n\n\n\nFri Jan 20\nNAs, lists, NULL and attributes\n💻\n\n\n\n\n\n2\nTue Jan 24\nif it’s a function, fix it\n\nlab 1\n\n\n\n\n\nWed Jan 25\nobject oriented programming\n💻\n\n\n\n\n\n\nFri Jan 27\ntidy data and dplyr\n💻\n\n\n\n\n\n3\nTue Jan 31\ncomputational masonry\n\nlab 2\n\n\n\n\n\nWed Feb 01\nsubsetting\n💻\n\n\n\n\n\n\nFri Feb 03\nggplot2\n💻\n\n\n\n\n\n4\nTue Feb 07\ndream of plots\n\nlab 3\n\n\n\n\n\nWed Feb 08\nfunctional programming and purrr\n💻\n\n\n\n\n\n\nFri Feb 10\nregular expressions\n💻\n\n\n\n\n\n5\nTue Feb 14\nwrangling the written word\n\nlab 4\n\n\n\n\n\nWed Feb 15\ncatch-up\n\n\n\n\n\n\n\nFri Feb 17\nreview / questions / exam\n\n\nexam 1 release\n\n\n\n6\nTue Feb 21\nno lab: exam 1\n\n\nexam 1 due\n\n\n\n\nWed Feb 22\ncomplexity and parallelization\n💻\n\n\n\n\n\n\nFri Feb 24\nintro to optimization\n💻\n\n\n\n\n\n7\nTue Feb 28\nwhere’s zero?\n\nlab 5\n\n\n\n\n\nWed Mar 01\nNewton-Raphson\n💻\n\n\n\n\n\n\nFri Mar 03\nNewton-Raphson examples\n\n\n\n\n\n\n8\nTue Mar 07\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 08\nMM principles\n💻\n\n\n\n\n\n\nFri Mar 10\nMM example\n💻\n\n\n\n\n\n9\nTue Mar 14\nNO CLASS: Spring break\n\n\n\n\n\n\n\nWed Mar 15\nNO CLASS: Spring break\n\n\n\n\n\n\n\nFri Mar 17\nNO CLASS: Spring break\n\n\n\n\n\n\n10\nTue Mar 21\nascend the likelihood\n\nlab 6\n\n\n\n\n\nWed Mar 22\nEM algorithm\n💻\n\n\n\n\n\n\nFri Mar 24\nMonte Carlo integration\n💻\n\n\n\n\n\n11\nTue Mar 28\ncontinue lab\n\n\n\n\n\n\n\nWed Mar 29\nimportance sampling\n💻\n\n\n\n\n\n\nFri Mar 31\nreview / questions / exam\n\n\nexam 2 release\n\n\n\n12\nTue Apr 04\nno lab: exam 2\n\n\nexam 2 due\n\n\n\n\nWed Apr 05\nshiny I\n💻\n\n\n\n\n\n\nFri Apr 07\nshiny II\n\n\n\n\n\n\n13\nTue Apr 11\nshiny dashboard\n\non GitHub\n\n\n\n\n\nWed Apr 12\nSQL\n\n\n\n\n\n\n\nFri Apr 14\nproject tips\n\n\n\n\n\n\n14\nTue Apr 18\nproject workday\n\n\n\n\n\n\n\nWed Apr 19\nAPIs\n💻\n\n\n\n\n\n\nFri Apr 21\ncovariance & PCA\n💻\n\n\n\n\n\n15\nTue Apr 25\nproject presentations\n\n\n\n\n\n\n\nWed Apr 26"
   },
   {
     "objectID": "slides/lec20.html#overview",
@@ -2749,5 +2749,173 @@
     "title": "APIs",
     "section": "Exercise",
     "text": "Exercise\n\nHow many characters are included in this API?\nWhat percentage of the characters are alive?\n\n\nDownload the in-class solution and example API code from 04/19 here:\n\ndownload.file(url = \"https://sta323-sp23.github.io/scripts/apiDemo.R\",\n              destfile = \"apiDemo.R\")"
+  },
+  {
+    "objectID": "slides/lec21.html#goal-of-mds",
+    "href": "slides/lec21.html#goal-of-mds",
+    "title": "Special topic: dimension reduction",
+    "section": "Goal of MDS",
+    "text": "Goal of MDS\n\nThe goal of MDS is to represent \\(q\\) objects (data points) in \\(p\\) dimensions.\nCommon target dimensions are \\(p = 2\\) or \\(p = 3\\) for visualization purposes.\nMDS requires that for every pair of data points \\((i; j) \\in (1, \\ldots, q; 1, \\ldots, q)\\), we observe a dissimilarity measure (distance) \\(d_{ij} = d_{ji}\\).\nThe goal of MDS is to estimate \\(p \\times q\\) parameter matrix \\(\\mathbf{X}\\) where the \\(i\\)th column \\(\\mathbf{x}_i\\) is estimated by minimizing the function\n\n\\[\nf(\\mathbf{X}) = \\sum_{1 \\leq i \\leq j \\leq q} w_{ij} (d_{ij} - ||\\mathbf{x}_i - \\mathbf{x}_j||)^2\n\\]\nwhere \\(w_{ij} = w_{ji}\\) is a nonnegative weight and \\(||\\cdot||\\) is an arbitrary norm, often taken to be the Euclidean (\\(L_2\\)) norm."
+  },
+  {
+    "objectID": "slides/lec21.html#covariance",
+    "href": "slides/lec21.html#covariance",
+    "title": "Special topic: dimension reduction",
+    "section": "Covariance",
+    "text": "Covariance\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec21.html#covariance-and-correlation",
+    "href": "slides/lec21.html#covariance-and-correlation",
+    "title": "Covariance and Principal Components",
+    "section": "Covariance and correlation",
+    "text": "Covariance and correlation\nEmpirical covariance between two variables\n\\[\ncov(X,Y) = \\frac{1}{n-1} \\sum_{i = 1}^{n} (x_i - \\bar{x})(y_i - \\bar{y})\n\\]\nEmpirical correlation between two variables,\n\\[\n\\rho_{XY} = \\frac{cov(X,Y)}{\\sigma_X \\sigma_Y}\n\\]\nwhere \\(\\sigma_X\\) and \\(\\sigma_Y\\) are the standard deviation of X and Y respectively.\n\nNotice that the correlation matrix is just the covariance matrix of the standardized data.\nEasy to see from definition of covariance\n\\[\ncov(X, Y) = \\mathbb{E} [(X - \\mathbb{E}[X] ) (Y - \\mathbb{E}[Y])]\n\\]"
+  },
+  {
+    "objectID": "slides/lec21.html#data",
+    "href": "slides/lec21.html#data",
+    "title": "Covariance and Principal Components",
+    "section": "Data",
+    "text": "Data\n\n\n\nHawks is a subset of a data set by the same name in the Stat2Data package. Today we will focus on the following measurements of 891 hawks:\n\nSpecies: CH = cooper’s, RT = red-tailed, SS = sharp-shinned\nWeight: body weight in grams\nWing: length in mm of primary wing feather from tip to wrist it attaches to\nCulmen: length in mm of the upper bill from the tip to where it bumps into the fleshy part of the bird\nHallux: length in mm of the killing talon\n\n\nHawks = read_csv(\"https://sta101-fa22.netlify.app/static/appex/data/Hawks.csv\")\n\n\nglimpse(Hawks)\n\nRows: 891\nColumns: 5\n$ Species <chr> \"RT\", \"RT\", \"CH\", \"SS\", \"RT\", \"RT\", \"RT\", \"RT\", \"RT\", \"RT\", \"R…\n$ Weight  <dbl> 920, 990, 470, 170, 1090, 960, 855, 1210, 1120, 1010, 1010, 11…\n$ Wing    <dbl> 385, 381, 265, 205, 412, 370, 375, 412, 405, 393, 371, 390, 41…\n$ Culmen  <dbl> 25.7, 26.7, 18.7, 12.5, 28.5, 25.3, 27.2, 29.3, 26.0, 26.3, 25…\n$ Hallux  <dbl> 30.1, 31.3, 23.5, 14.3, 32.2, 30.1, 30.0, 31.3, 30.2, 30.8, 29…"
+  },
+  {
+    "objectID": "slides/lec21.html#examples",
+    "href": "slides/lec21.html#examples",
+    "title": "Covariance and Principle Components",
+    "section": "Examples",
+    "text": "Examples\nTwo measurements\nLet’s look at weight and wing length.\n\nHawks %>%\n  ggplot(aes(x = Weight, y = Wing)) +\n  geom_point() +\n  theme_bw()\n\n\n\n\n\n# Standardize data\nHawks2 = Hawks %>%\n  mutate(sWeight = (Weight - mean(Weight)) / sd(Weight),\n         sWing = (Wing - mean(Wing)) / sd(Wing))\n\nHawks2 %>%\n  ggplot(aes(x = sWeight, y = sWing)) +\n  geom_point() +\n  theme_bw()\n\n\n\n\nHow can we describe the variability of the data?\n\n# Covariance matrix\ncovMatrix1 = Hawks %>%\n  select(Weight, Wing) %>%\n  cov()\n\ncovMatrix1\n\n          Weight      Wing\nWeight 214310.57 41247.975\nWing    41247.97  9085.273\n\ncovMatrix2 = Hawks2 %>%\n  select(sWeight, sWing) %>%\n  cov()\n\ncovMatrix2\n\n          sWeight     sWing\nsWeight 1.0000000 0.9347852\nsWing   0.9347852 1.0000000\n\n\nCovariance matrix \\(\\Sigma\\) collects variances and covariances together,\n\\[\n\\Sigma = \\begin{pmatrix}\\sigma_x^2 & \\sigma_{xy}^2\\\\\\ \\sigma_{xy}^2 & \\sigma_y^2\\end{pmatrix}\n\\]\nHow can we visualize the covariance matrix above?\n\noffline example of matrix multiplication\n\nThe “matrix inverse” helps. The inverse of \\(\\Sigma\\) is denoted \\(\\Sigma^{-1}\\). The property of the inverse is:\n\\[\n\\Sigma^{-1} \\Sigma = \\begin{pmatrix}1 & 0\\\\\\ 0 & 1 \\end{pmatrix}\n\\]\n\\[\nz^T \\Sigma^{-1} z = c^2\n\\]\nwhere \\(z = (x, y)\\) and \\(\\Sigma^{-1} = \\begin{pmatrix}s_x^2 & s_{xy}^2\\\\\\ s_{xy}^2 & s_y^2\\end{pmatrix}\\). Where have we seen this before? Hint: ?pnorm or see multivariate normal"
+  },
+  {
+    "objectID": "slides/lec21.html#section",
+    "href": "slides/lec21.html#section",
+    "title": "Covariance and Principal Components",
+    "section": "",
+    "text": "The axes of the ellipse provide the most informative directions to measure the data. In \\(n\\)-dimensions, where we have a \\(n\\)-dimensional ellipsoid, it can be useful to look at \\(p<n\\) axes. The largest \\(p\\) axes are called the “principal components”.\n\nExample of “principal component analysis” in action: genes mirror geography within Europe and an associated news article discussing the work."
+  },
+  {
+    "objectID": "slides/lec21.html#section-1",
+    "href": "slides/lec21.html#section-1",
+    "title": "Covariance and Principle Components",
+    "section": "",
+    "text": "The axes of the ellipse provide the most informative directions to measure the data. In \\(n\\)-dimensions, where we have a \\(n\\)-dimensional ellipsoid, it can be useful to look at \\(p<n\\) axes. The largest \\(p\\) axes are called the “principal components”.\n\nExample of “principle component analysis” in action: genes mirror geography within Europe and an associated news article discussing the work.\n\n\n\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec21.html#cov-and-cor-demo",
+    "href": "slides/lec21.html#cov-and-cor-demo",
+    "title": "Covariance and Principal Components",
+    "section": "cov and cor demo",
+    "text": "cov and cor demo\n\nx = c(1, 2, 3, 4, 5)\ny = c(0.5, 3, 2.2, 5, 5.5)\n\n\ndemocovariance matrixcorrelation matrix\n\n\n\n# covariance\ncov(x, y)\n\n[1] 3\n\n# correlation\ncor(x, y)\n\n[1] 0.9243906\n\n# covariance of standardized variables\nxs = (x - mean(x)) / sd(x)# x-standardized\nys = (y - mean(y)) / sd(y)# y-standardized\n\ncov(xs, ys)\n\n[1] 0.9243906\n\n\n\n\n\nd = data.frame(x = x, y = y)\ncov(d)\n\n    x     y\nx 2.5 3.000\ny 3.0 4.213\n\n\n\n\n\nd = data.frame(x = x, y = y)\ncor(d)\n\n          x         y\nx 1.0000000 0.9243906\ny 0.9243906 1.0000000"
+  },
+  {
+    "objectID": "slides/lec21.html#visualizing-covariance",
+    "href": "slides/lec21.html#visualizing-covariance",
+    "title": "Covariance and Principal Components",
+    "section": "Visualizing covariance",
+    "text": "Visualizing covariance\nLet’s look at hawk weight and wing length.\n\nDataCovariance matrixVisualize covariance\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# Covariance matrix\ncovMatrix1 = Hawks %>%\n  select(Weight, Wing) %>%\n  cov()\n\ncovMatrix1\n\n          Weight      Wing\nWeight 214310.57 41247.975\nWing    41247.97  9085.273"
+  },
+  {
+    "objectID": "slides/lec21.html#next",
+    "href": "slides/lec21.html#next",
+    "title": "Covariance and Principle Components",
+    "section": "next",
+    "text": "next\nCovariance matrix \\(\\Sigma\\) collects variances and covariances together,\n\\[\n\\Sigma = \\begin{pmatrix}\\sigma_x^2 & \\sigma_{xy}^2\\\\\\ \\sigma_{xy}^2 & \\sigma_y^2\\end{pmatrix}\n\\]\nHow can we visualize the covariance matrix above?\n\noffline example of matrix multiplication\n\nThe “matrix inverse” helps. The inverse of \\(\\Sigma\\) is denoted \\(\\Sigma^{-1}\\). The property of the inverse is:\n\\[\n\\Sigma^{-1} \\Sigma = \\begin{pmatrix}1 & 0\\\\\\ 0 & 1 \\end{pmatrix}\n\\]\n\\[\nz^T \\Sigma^{-1} z = c^2\n\\]\nwhere \\(z = (x, y)\\) and \\(\\Sigma^{-1} = \\begin{pmatrix}s_x^2 & s_{xy}^2\\\\\\ s_{xy}^2 & s_y^2\\end{pmatrix}\\). Where have we seen this before? Hint: ?pnorm or see multivariate normal"
+  },
+  {
+    "objectID": "slides/lec21.html#behind-the-scenes-the-math",
+    "href": "slides/lec21.html#behind-the-scenes-the-math",
+    "title": "Covariance and Principle Components",
+    "section": "Behind the scenes: the math",
+    "text": "Behind the scenes: the math\nCovariance matrix \\(\\Sigma\\) collects variances and covariances together,\n\\[\n\\Sigma = \\begin{pmatrix}\\sigma_x^2 & \\sigma_{xy}^2\\\\\\ \\sigma_{xy}^2 & \\sigma_y^2\\end{pmatrix}\n\\]\nHow can we visualize the covariance matrix above?\nThe “matrix inverse” helps. The inverse of \\(\\Sigma\\) is denoted \\(\\Sigma^{-1}\\). The property of the inverse is:\n\\[\n\\Sigma^{-1} \\Sigma = \\begin{pmatrix}1 & 0\\\\\\ 0 & 1 \\end{pmatrix}\n\\]\n\\[\nz^T \\Sigma^{-1} z = c^2\n\\]\nwhere \\(z = (x, y)\\) and \\(\\Sigma^{-1} = \\begin{pmatrix}s_x^2 & s_{xy}^2\\\\\\ s_{xy}^2 & s_y^2\\end{pmatrix}\\). Where have we seen this before? Hint: ?pnorm or see multivariate normal"
+  },
+  {
+    "objectID": "slides/lec21.html#the-mathematics-of-the-covariance-ellipsoid",
+    "href": "slides/lec21.html#the-mathematics-of-the-covariance-ellipsoid",
+    "title": "Covariance and Principal Components",
+    "section": "The mathematics of the covariance ellipsoid",
+    "text": "The mathematics of the covariance ellipsoid\nCovariance matrix \\(\\Sigma\\) collects variances and covariances together,\n\\[\n\\Sigma = \\begin{pmatrix}\\sigma_x^2 & \\sigma_{xy}^2\\\\\\ \\sigma_{xy}^2 & \\sigma_y^2\\end{pmatrix}\n\\]\nHow can we visualize the covariance matrix above?\nThe “matrix inverse” helps. The inverse of \\(\\Sigma\\) is denoted \\(\\Sigma^{-1}\\). The property of the inverse is:\n\\[\n\\Sigma^{-1} \\Sigma = \\begin{pmatrix}1 & 0\\\\\\ 0 & 1 \\end{pmatrix}\n\\]\nWe can visualize the covariance matrix by forming the quadratic,\n\\[\nz^T \\Sigma^{-1} z = c^2,\n\\]\nwhere \\(z = (x, y)\\) and \\(\\Sigma^{-1} = \\begin{pmatrix}s_x^2 & s_{xy}^2\\\\\\ s_{xy}^2 & s_y^2\\end{pmatrix}\\). Where have we seen this before? Hint: see multivariate normal"
+  },
+  {
+    "objectID": "slides/lec21.html#notice-the-linear-equations",
+    "href": "slides/lec21.html#notice-the-linear-equations",
+    "title": "Covariance and Principal Components",
+    "section": "Notice the linear equations",
+    "text": "Notice the linear equations\nBy multiplying out the product in scalar notation\n\\[\n\\begin{pmatrix} x & y\\end{pmatrix}\n\\begin{pmatrix}s_x^2 & s_{xy}^2\\\\\\ s_{xy}^2 & s_y^2\\end{pmatrix}\n\\begin{pmatrix} x\\\\\\ y \\end{pmatrix}\n= c^2\n\\]\n\\[\n(x s_x^2 + y s_{xy}^2 \\ \\ \\ \\ x s_{xy}^2 + y s_y^2) \\begin{pmatrix} x\\\\\\ y \\end{pmatrix} = c^2\n\\]\n\\[\nx^2 s_x^2 + 2x y \\cdot s_{xy}^2 + y^2 s_y^2 = c^2\n\\]\nThis is the equation of an ellipse where our choice of \\(c\\) defines the size of the ellipse."
+  },
+  {
+    "objectID": "slides/lec21.html#connection-mvn",
+    "href": "slides/lec21.html#connection-mvn",
+    "title": "Covariance and Principal Components",
+    "section": "Connection: MVN",
+    "text": "Connection: MVN\n\nSimulate dataplotcode\n\n\n\nlibrary(mvtnorm)\nset.seed(1)\n\nmu = c(5, 10)\nsigma = matrix(data = c(2, .8, .8, 1), ncol = 2, nrow = 2)\n\npoints = rmvnorm(n = 500,\n        mean = mu,\n        sigma = sigma)\n\nd = tibble(x = points[,1],\n           y = points[,2]) \n\nd %>%\n  head(n = 5)\n\n# A tibble: 5 × 2\n      x     y\n  <dbl> <dbl>\n1  4.20  9.96\n2  4.41 11.2 \n3  5.17  9.34\n4  5.92 10.9 \n5  5.68  9.91\n\n\n\n\n\n\n\n\n\n\n\n\nellipsePoints = data.frame(ellipse(sigma))\nellipsePoints[\"x\"] = ellipsePoints[\"x\"] + mu[1]\nellipsePoints[\"y\"] = ellipsePoints[\"y\"] + mu[2]\n\nd %>%\n  ggplot(aes(x = x, y = y)) + \n  geom_point() +\n  theme_bw() +\n  geom_path(aes(x = x, y = y), data = ellipsePoints,\n             color = 'steelblue')\n\nWhat \\(c\\) was used?\n?ellipse has the answer… \\(c^2 \\approx 6\\) for 2-d variables.\n\nqchisq(0.95, 2)\n\n[1] 5.991465"
+  },
+  {
+    "objectID": "slides/lec21.html#exercise",
+    "href": "slides/lec21.html#exercise",
+    "title": "Covariance and Principal Components",
+    "section": "Exercise",
+    "text": "Exercise\n\nprompt1 - standardize2 - solve quadratic3 - plot comparison4 - plot code\n\n\nPerform a sanity check. Plot the ellipse manually using the formula from a previous slide and using \\(c^2\\) = 6. To avoid having to re-center on the centroid, you can standardize the data.\n\n\n\nHawks2 = Hawks %>%\n  mutate(sWeight = (Weight - mean(Weight)) / sd(Weight),\n         sWing = (Wing - mean(Wing)) / sd(Wing))\n\ncovMatrix2 = Hawks2 %>%\n  select(sWeight, sWing) %>%\n  cov()\n\ncovMatrix2\n\n          sWeight     sWing\nsWeight 1.0000000 0.9347852\nsWing   0.9347852 1.0000000\n\n\nNext, get \\(\\Sigma^{-1}\\):\n\nsolve(covMatrix2)\n\n          sWeight     sWing\nsWeight  7.925401 -7.408548\nsWing   -7.408548  7.925401\n\n\n\n\nNext, we manually solve the quadratic equation using the quadratic formula (set \\(c^2 = 6\\))\n\\[\nx^2 s_x^2 + 2x y \\cdot s_{xy}^2 + y^2 s_y^2 = 6\n\\]\n\nsx = 7.925401\nsxy = -7.408548\nsy = 7.925401\n\nf = function(x) {\n  A = sy \n  B = 2 * x * sxy\n  C = (x * x * sx) - 6\n\n  (-B + sqrt(B^2 - (4* A * C))) / (2 * A)\n}\n\nf2 = function(x) {\n  A = sy \n  B = 2 * x * sxy\n  C = (x * x * sx) - 6\n\n  (-B - sqrt(B^2 - (4* A * C))) / (2 * A)\n}\n\n\n\n\n\n\n\n\n\n\n\nset.seed(1)\n# Grab the points (x,y) that satisfy the equation\nellipsePoints = data.frame(ellipse(covMatrix2))\nm1 = data.frame(x = seq(-3, 3, by = 0.001)) %>%\n  mutate(y = f(x)) %>%\n  filter(!is.nan(y))\n\nm2 = m1 %>%\n  mutate(y = f2(x)) %>%\n  filter(!is.nan(y))\n\nmanualEllipsePoints = rbind(m1, m2) %>%\n  slice_sample(n = 200)\n\nHawks2 %>%\n  ggplot(aes(x = sWeight, y = sWing)) +\n  geom_point() +\n  theme_bw() +\n  geom_path(aes(x = sWeight, y = sWing,\n                 color = \"ellipse()\"), data = ellipsePoints) +\n  geom_point(aes(x = x, y = y, color = \"manual\"), \n            data = manualEllipsePoints, alpha = 1,\n            size = 1,) +\n  labs(title = \"Standardized wing vs weight\")"
+  },
+  {
+    "objectID": "slides/lec21.html#further-reading",
+    "href": "slides/lec21.html#further-reading",
+    "title": "Covariance and Principal Components",
+    "section": "Further reading",
+    "text": "Further reading\nThis lecture is inspired by\n\nFriendly, Michael, Georges Monette, and John Fox. “Elliptical insights: understanding statistical methods through elliptical geometry.” (2013): 1-39.\n\nFor further reading on principal component analysis in action, see\n\nNovembre, John, et al. “Genes mirror geography within Europe.” Nature 456.7218 (2008): 98-101.\n\nand an associated news article discussing the work.\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "slides/lec21.html#principal-components",
+    "href": "slides/lec21.html#principal-components",
+    "title": "Covariance and Principal Components",
+    "section": "Principal components",
+    "text": "Principal components\nThe axes of the ellipse provide the most informative directions to measure the data. In \\(n\\)-dimensions, where we have a \\(n\\)-dimensional ellipsoid, it can be useful to look at \\(p<n\\) axes. The largest \\(p\\) axes are called the “principal components”.\n\nExample of “principal component analysis” in action: genes mirror geography within Europe and an associated news article discussing the work."
+  },
+  {
+    "objectID": "slides/lec21.html#principal-components-1",
+    "href": "slides/lec21.html#principal-components-1",
+    "title": "Covariance and Principal Components",
+    "section": "Principal components",
+    "text": "Principal components\nThe axes of the ellipse provide the most informative directions to measure the data. In \\(n\\)-dimensions, where we have a \\(n\\)-dimensional ellipsoid, it can be useful to look at \\(p<n\\) axes. The largest axis is called the “first” principal component. The second largest axis is called the “second” principal component and so on."
+  },
+  {
+    "objectID": "slides/lec21.html#compute-principal-components",
+    "href": "slides/lec21.html#compute-principal-components",
+    "title": "Covariance and Principal Components",
+    "section": "Compute principal components",
+    "text": "Compute principal components\n\ncomputeplotcode\n\n\n\n# get PCs\nHawks %>%\n  select(Weight, Wing) %>%\n  prcomp(scale = TRUE)\n\nStandard deviations (1, .., p=2):\n[1] 1.3909656 0.2553718\n\nRotation (n x k) = (2 x 2):\n              PC1        PC2\nWeight -0.7071068  0.7071068\nWing   -0.7071068 -0.7071068\n\n\n\n\n\n\n\n\n\n\n\n\n# make plot\nHawks %>%\n    mutate(pc1 = (0.7071068 * Weight) + (0.7071068 * Wing)) %>%\n    ggplot(aes(x = pc1, y = 0, color = Species)) + \n    geom_point()"
+  },
+  {
+    "objectID": "slides/lec21.html#pca-summary",
+    "href": "slides/lec21.html#pca-summary",
+    "title": "Covariance and Principal Components",
+    "section": "PCA summary",
+    "text": "PCA summary\n\n“Principal components” refers to the ranked orthogonal axes of the ellipsoid generated from the covariance matrix of the data.\nThe components are ranked largest to smallest.\nPCA is a dimension-reduction technique. Often we examine the first 1 to 3 principal components to create visualizations of high-dimensional data.\nWhat we gain in simplicity we often lose in interpretability. The ‘dimensions’ that capture the maximum variability of the data are created from linear combinations of the variables. These linear combinations are often difficult to interpret / motivate."
+  },
+  {
+    "objectID": "slides/lec21.html#higher-dimensional-example",
+    "href": "slides/lec21.html#higher-dimensional-example",
+    "title": "Covariance and Principal Components",
+    "section": "Higher dimensional example",
+    "text": "Higher dimensional example\n\nplotcode\n\n\n\n\n\n\n\n\n\n\nhpc = Hawks %>%\n  select(Weight, Wing, Culmen, Hallux) %>%\n  prcomp(scale = FALSE) %>%\n  .[\"rotation\"] %>%\n  as.data.frame() %>%\n  setNames(., paste0(\"PC\", seq(4)))\n\n# explicitly mapping\nHawks %>%\n  mutate(PC1 = (hpc$PC1[1] * Weight) + \n           (hpc$PC1[2] * Wing) + \n           (hpc$PC1[3] * Culmen) + \n           (hpc$PC1[4] * Hallux),\n         PC2 = (hpc$PC2[1] * Weight) + \n           (hpc$PC2[2] * Wing) + \n           (hpc$PC2[3] * Culmen) + \n           (hpc$PC2[4] * Hallux)) %>%\n  ggplot(aes(x = PC1, y = PC2, color = Species)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/lec-dimension-reduction.html#goal-of-mds",
+    "href": "slides/lec-dimension-reduction.html#goal-of-mds",
+    "title": "Special topic: dimension reduction",
+    "section": "Goal of MDS",
+    "text": "Goal of MDS\n\nThe goal of MDS is to represent \\(q\\) objects (data points) in \\(p\\) dimensions.\nCommon target dimensions are \\(p = 2\\) or \\(p = 3\\) for visualization purposes.\nMDS requires that for every pair of data points \\((i; j) \\in (1, \\ldots, q; 1, \\ldots, q)\\), we observe a dissimilarity measure (often distance) \\(d_{ij} = d_{ji}\\).\nThe goal of MDS is to estimate \\(p \\times q\\) parameter matrix \\(\\mathbf{X}\\) where the \\(i\\)th column \\(\\mathbf{x}_i\\) is estimated by minimizing the function\n\n\\[\nf(\\mathbf{X}) = \\sum_{1 \\leq i \\leq j \\leq q} w_{ij} (d_{ij} - ||\\mathbf{x}_i - \\mathbf{x}_j||)^2\n\\]\nwhere \\(w_{ij} = w_{ji}\\) is a nonnegative weight and \\(||\\cdot||\\) is an arbitrary norm, often taken to be the Euclidean (\\(L_2\\)) norm."
+  },
+  {
+    "objectID": "slides/lec-dimension-reduction.html#properties-of-the-objective",
+    "href": "slides/lec-dimension-reduction.html#properties-of-the-objective",
+    "title": "Special topic: dimension reduction",
+    "section": "Properties of the objective",
+    "text": "Properties of the objective\nThe function\n\\[\nf(\\mathbf{X}) = \\sum_{1 \\leq i \\leq j \\leq q} w_{ij} (d_{ij} - ||\\mathbf{x}_i - \\mathbf{x}_j||)^2\n\\]\nis"
+  },
+  {
+    "objectID": "slides/lec-dimension-reduction.html#covariance",
+    "href": "slides/lec-dimension-reduction.html#covariance",
+    "title": "Special topic: dimension reduction",
+    "section": "Covariance",
+    "text": "Covariance\n\n\n🔗 sta323-sp23.github.io"
   }
 ]

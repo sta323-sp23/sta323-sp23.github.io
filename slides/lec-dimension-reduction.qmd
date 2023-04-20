@@ -1,0 +1,53 @@
+---
+title: "Special topic: dimension reduction"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# Announcements
+
+Reminder:
+
+-   Final project presentations during lab Tuesday, April 25.
+
+# Multi-dimensional scaling (MDS)
+
+## Goal of MDS
+
+- The goal of MDS is to represent $q$ objects (data points) in $p$ dimensions.
+
+- Common target dimensions are $p = 2$ or $p = 3$ for visualization purposes.
+
+- MDS requires that for every pair of data points $(i; j) \in (1, \ldots, q; 1, \ldots, q)$, we observe a dissimilarity measure (often distance) $d_{ij} = d_{ji}$. 
+
+- The goal of MDS is to estimate $p \times q$ parameter matrix $\mathbf{X}$ where the $i$th column $\mathbf{x}_i$ is estimated by minimizing the function
+
+$$
+f(\mathbf{X}) = \sum_{1 \leq i \leq j \leq q} w_{ij} (d_{ij} - ||\mathbf{x}_i - \mathbf{x}_j||)^2
+$$
+
+where $w_{ij} = w_{ji}$ is a nonnegative weight and $||\cdot||$ is an arbitrary norm, often taken to be the Euclidean ($L_2$) norm.
+
+## Properties of the objective
+
+The function
+
+$$
+f(\mathbf{X}) = \sum_{1 \leq i \leq j \leq q} w_{ij} (d_{ij} - ||\mathbf{x}_i - \mathbf{x}_j||)^2
+$$
+
+is
+
+
+
+# MDS (an MM solution)
+
+# Principle component analysis
+
+## Covariance
+
+
