@@ -7,3 +7,5 @@
 /.quarto/
 */*/Bradley-Terry-NBA.R
 scripts/Bradley-Terry-NBA.R
+scripts/*Instructor.R
+/docs/scripts/*Instructor.R

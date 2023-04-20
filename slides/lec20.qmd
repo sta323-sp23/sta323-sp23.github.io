@@ -99,7 +99,7 @@ This is will often be handled automatically by your web browser or other tool, b
 | ?   | @   | [   | ]   |
 | %3F | %40 | %5B | %5D |
 
-- Characters that cannot be converted to the correct charset are replaced with HTML numeric character references (e.g. a $\Sigma$ would be encoded as &#931; )
+- Characters that cannot be converted to the correct charset are replaced with HTML numeric character references (e.g. a $\Sigma$ would be encoded as `&#931;` )
 
 ## REST APIs
 
@@ -173,6 +173,17 @@ An API of Ice And Fire provides a lot of data about the world of Westeros. To pr
 - How many characters are included in this API?
 
 - What percentage of the characters are alive?
+
+. . . 
+
+Download the in-class solution and example API code from 04/19 here:
+
+```{r}
+#| eval: false
+download.file(url = "https://sta323-sp23.github.io/scripts/apiDemo.R",
+              destfile = "apiDemo.R")
+```
+
 
 
 # Another example

@@ -2678,7 +2678,7 @@
     "href": "slides/lec20.html#url-encoding",
     "title": "APIs",
     "section": "URL encoding",
-    "text": "URL encoding\nThis is will often be handled automatically by your web browser or other tool, but it is useful to know a bit about what is happening\n\nSpaces will encoded as ‘+’ or ‘%20’\nCertain characters are reserved and will be replaced with the percent-encoded version within a URL\n\n\n\n\n!\n#\n$\n&\n’\n(\n)\n\n\n\n\n%21\n%23\n%24\n%26\n%27\n%28\n%29\n\n\n*\n+\n,\n/\n:\n;\n=\n\n\n%2A\n%2B\n%2C\n%2F\n%3A\n%3B\n%3D\n\n\n?\n@\n[\n]\n\n\n\n\n\n%3F\n%40\n%5B\n%5D\n\n\n\n\n\n\n\nCharacters that cannot be converted to the correct charset are replaced with HTML numeric character references (e.g. a \\(\\Sigma\\) would be encoded as Σ )"
+    "text": "URL encoding\nThis is will often be handled automatically by your web browser or other tool, but it is useful to know a bit about what is happening\n\nSpaces will encoded as ‘+’ or ‘%20’\nCertain characters are reserved and will be replaced with the percent-encoded version within a URL\n\n\n\n\n!\n#\n$\n&\n’\n(\n)\n\n\n\n\n%21\n%23\n%24\n%26\n%27\n%28\n%29\n\n\n*\n+\n,\n/\n:\n;\n=\n\n\n%2A\n%2B\n%2C\n%2F\n%3A\n%3B\n%3D\n\n\n?\n@\n[\n]\n\n\n\n\n\n%3F\n%40\n%5B\n%5D\n\n\n\n\n\n\n\nCharacters that cannot be converted to the correct charset are replaced with HTML numeric character references (e.g. a \\(\\Sigma\\) would be encoded as &#931; )"
   },
   {
     "objectID": "slides/lec20.html#rest-apis",
@@ -2748,6 +2748,6 @@
     "href": "slides/lec20.html#exercise",
     "title": "APIs",
     "section": "Exercise",
-    "text": "Exercise\n\nHow many characters are included in this API?\nWhat percentage of the characters are alive?"
+    "text": "Exercise\n\nHow many characters are included in this API?\nWhat percentage of the characters are alive?\n\n\nDownload the in-class solution and example API code from 04/19 here:\n\ndownload.file(url = \"https://sta323-sp23.github.io/scripts/apiDemo.R\",\n              destfile = \"apiDemo.R\")"
   }
 ]
