@@ -303,3 +303,44 @@ The two main arguments of the `shinyApp()` function are `ui` and ___.
 server
 
 :::
+
+# quiz 8
+
+::: panel-tabset
+
+### Exercise 1
+
+API stands for __.
+
+### Solution
+
+application programming interface
+
+:::
+
+::: panel-tabset
+
+### Exercise 2
+
+What does a 200-level status code indicate?
+
+### Solution
+
+successful request
+
+:::
+
+
+::: panel-tabset
+
+### Exercise 3
+
+What does a 400-level status code indicate?
+
+### Solution
+
+client error
+
+:::
+
+

@@ -1,0 +1,25 @@
+---
+title: "Quiz 8"
+---
+
+To receive credit for this assignment, write at the top of your paper your name and Duke netID. For example, my netID is `aaf29`.
+
+### Exercise 1 (2pts)
+
+API stands for __.
+
+### Exercise 2 (1pt)
+
+What does a 200-level status code indicate?
+
+### Exercise 3 (1pt)
+
+What does a 400-level status code indicate?
+
+
+```{r}
+#| echo: false
+library(countdown)
+countdown(minutes = 4, font_size = "4em",
+          color_running_background = "#2774AE")
+```
