@@ -1,0 +1,237 @@
+---
+title: "Cryptanalysis"
+subtitle: "STA 323"
+editor: source
+format: html
+execute:
+  error: true
+---
+
+These notes are adapted from and build on the R code found [here](https://www.r-bloggers.com/2013/01/text-decryption-using-mcmc/) and [The Markov Chain Monte Carlo Revolution](https://math.uchicago.edu/~shmuel/Network-course-readings/MCMCRev.pdf) by Persi Diaconis.
+
+## Load the data
+
+```{r load-data}
+#| eval: false
+warandpeace = readLines(
+  "https://sta323.github.io/data/warandpeace.txt")
+frequency = read.table(
+  "https://sta323.github.io/data/frequencies.txt")
+colnames(frequency) = c(toupper(letters), "") # edit column names
+secret_message = readLines(
+  "https://sta323.github.io/data/ciphertext.txt")
+```
+
+## Exercise 
+
+Here we determine how often one character follows another using the text from the very long book, War and Peace. We include a whitespace character as a 27th character in our alphabet.
+
+To reduce computational demand, we will load the object created by this analysis but leave the code below for reference. 
+
+The result of the below analysis is in the object `frequency`.
+
+The `letter` row denotes the first character in a 2 character sequence while columns determine the second character in the character sequence.
+
+- What should be the sum of a row? Check this for the first row of the data frame.
+
+```{r}
+#| label: freq-analysis
+#| echo: false
+#| message: false
+
+# warandpeace = toupper(warandpeace)
+# N = length(warandpeace)
+# 
+# trans.mat = matrix(0, 27, 27)
+# rownames(trans.mat) = colnames(trans.mat) = c(toupper(letters), "")
+# lastletter = ""
+# for (ln in 1:N) {
+#   if (ln %% 1000 == 0) {
+#     cat("Line", ln, "\n")
+#   }
+#   for (pos in 1:nchar(warandpeace[ln])) {
+#     curletter = substring(warandpeace[ln], pos, pos)
+#     if (curletter %in% toupper(letters)) {
+#       trans.mat[rownames(trans.mat) == lastletter,
+#                 colnames(trans.mat) == curletter] =
+#         trans.mat[rownames(trans.mat) == lastletter,
+#                   colnames(trans.mat) == curletter] + 1
+#       lastletter = curletter
+#     } else {
+#       if (lastletter != "") {
+#         trans.mat[rownames(trans.mat) == lastletter, 27] =
+#           trans.mat[rownames(trans.mat) == lastletter, 27] + 1
+#         lastletter = ""
+#       }
+#     }
+#   }
+#   curletter = ""
+#   if (lastletter != "") {
+#     trans.mat[rownames(trans.mat) == lastletter, 27] =
+#       trans.mat[rownames(trans.mat) == lastletter, 27] + 1
+#   }
+#   lastletter = ""
+# }
+# 
+# trans.prob.mat = sweep(trans.mat + 1, 1, rowSums(trans.mat + 1), FUN = "/")
+
+```
+
+
+- Create a [heatmap](https://ggplot2.tidyverse.org/reference/geom_bin_2d.html?q=heat#arguments) of character frequency, where the y-axis is the first letter and the x-axis is the second letter in a two letter chain. 
+
+Hint: You can use `melt` from the `reshape2` package. Click [here](http://www.sthda.com/english/wiki/ggplot2-quick-correlation-matrix-heatmap-r-software-and-data-visualization) for an example.
+
+```{r frequency-plot}
+# code here
+```
+
+## MCMC
+
+We will use a famous statistical algorithm, Markov chain Monte Carlo (MCMC) to break the substitution cipher.
+
+MCMC is composed of three essential components:
+
+1. Ability. A way to propose any possible key.
+2. Feedback. A way to evaluate how good a given key is.
+3. Curiosity. A way to leave a good key for a worse key.
+
+#### The analogy of the blind monkey.
+
+
+```{r echo=F, out.width = "49%", out.height="50%",fig.show='hold',fig.align='center'}
+
+knitr::include_graphics(c("https://sta101.github.io/static/img/monkey.png","https://sta101.github.io/static/img/pond.png"))
+
+```
+
+
+There's a monkey on an island with many ponds. The monkey has been tasked with finding the largest body of water on the island. The only trouble is, he is blind. In order to find the largest body of water, he throws rocks randomly and listens for a splash. If he hears a splash, he knows there's a body of water where he last threw. He continues to throw more rocks in that direction to find out how big the pool is. Occasionally he gets bored and wanders off to look for another pond. In this way, he uses the MCMC algorithm to find the largest body of water.
+
+#### Making the connection.
+
+1. Ability (throw a rock). The Monkey can walk around and throw the rock anywhere on the island, ensuring that given enough time, he will cover every inch of the island.
+
+2. Feedback (test for waters). Every time the Monkey throws the rock, he receives feedback by listening for a splash. A large splash means a deep pond and encourages him to continue throwing in that direction to figure out the perimeter of the pond.
+
+3. Curiosity (boredom). If the monkey finds the second largest pond on the island, he might get stuck throwing rocks in it for a long time. By occasionally walking away from a large pond, he will reach the largest pond quicker.
+
+
+## Exercise
+
+Let's write out together what MCMC looks like when decrpyting a secret message.
+
+1. Ability
+
+2. Feedback
+
+3. Curiosity
+
+## Exercise
+
+Here we load some functions that will help us decode the message.
+
+```{r functions, echo = F}
+trans.prob.mat = frequency
+
+trans.mat = matrix(0, 27, 27)
+rownames(trans.mat) = colnames(trans.mat) = c(toupper(letters), "")
+
+decode <- function(mapping, coded) {
+  coded = toupper(coded)
+  decoded = coded
+  for (i in 1:nchar(coded)) {
+    if (substring(coded, i, i) %in% toupper(letters)) {
+      substring(decoded, i, i) = toupper(letters[mapping == substring(coded, i, i)])
+    }
+  }
+  decoded
+}
+
+
+log.prob <- function(mapping, decoded) {
+  logprob = 0
+  
+  lastletter = ""
+  for (i in 1:nchar(decoded)) {
+    curletter = substring(decoded, i, i)
+    if (curletter %in% toupper(letters)) {
+      logprob = logprob + log(trans.prob.mat[rownames(trans.mat) == lastletter,
+                                             colnames(trans.mat) == curletter])
+      lastletter = curletter
+    } else {
+      if (lastletter != "") {
+        logprob = logprob + log(trans.prob.mat[rownames(trans.mat) == lastletter, 27])
+        lastletter = ""
+      }
+    }
+  }
+  
+  if (lastletter != "") {
+    logprob = logprob + log(trans.prob.mat[rownames(trans.mat) == lastletter, 27])
+    lastletter = ""
+  }
+  logprob
+}
+```
+
+
+Run the code below to break the secret message. If the message is unintelligible after several iterations, you may try re-starting with a new seed. What is this equivalent to in the monkey analogy above?
+
+```{r mcmc-crpytanalysis, eval = F, echo = F}
+set.seed(6)
+coded = secret_message
+mapping = sample(toupper(letters)) # initialize a random mapping
+i = 1
+iters = 300
+mcmcAttack = function(coded) {
+  cur.decode = decode(mapping, coded)
+  cur.loglike = log.prob(mapping, cur.decode)
+  max.loglike = cur.loglike
+  max.decode = cur.decode
+  while (i <= iters) {
+    proposal = sample(1:26, 2) # select 2 letters to switch
+    prop.mapping = mapping
+    prop.mapping[proposal[1]] = mapping[proposal[2]]
+    prop.mapping[proposal[2]] = mapping[proposal[1]]
+    
+    prop.decode = decode(prop.mapping, coded)
+    prop.loglike = log.prob(prop.mapping, prop.decode)
+    
+    if (runif(1) < exp(prop.loglike - cur.loglike)) {
+      mapping = prop.mapping
+      cur.decode = prop.decode
+      cur.loglike = prop.loglike
+      
+      if (cur.loglike > max.loglike) {
+        max.loglike = cur.loglike
+        max.decode = cur.decode
+      }
+      
+      if (i %% 25 == 0) {
+        cat(i, cur.decode, "\n")
+      }
+      i = i + 1
+    }
+  }
+  cat("best guess: ", max.decode)
+}
+
+mcmcAttack(coded)
+```
+
+## (Optional) exercise
+
+Try your own message!
+
+
+Create your own message in the code below and call `mcmcAttack(coded)` on your message to decode it!
+
+```{r my-secret-message, eval = F, echo = F}
+set.seed(6)
+correctTxt = "YOUR TEXT HERE"
+coded = decode(sample(toupper(letters)), correctTxt)
+# call function here
+```
+
+- You might think about what makes the message easy or difficult to attack, e.g. does length of the message affect its susceptibility to attack? What else might?

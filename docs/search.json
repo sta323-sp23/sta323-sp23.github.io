@@ -2924,5 +2924,89 @@
     "title": "Quiz 8",
     "section": "",
     "text": "Exercise 1 (2pts)\nAPI stands for __.\n\n\nExercise 2 (1pt)\nWhat does a 200-level status code indicate?\n\n\nExercise 3 (1pt)\nWhat does a 400-level status code indicate?\n\n\n\n04:00"
+  },
+  {
+    "objectID": "slides/lec22.html#motivation",
+    "href": "slides/lec22.html#motivation",
+    "title": "Cryptanalysis",
+    "section": "Motivation",
+    "text": "Motivation\n\nDiaconis, Persi. “The markov chain monte carlo revolution.” Bulletin of the American Mathematical Society 46.2 (2009): 179-205."
+  },
+  {
+    "objectID": "slides/lec22.html#terminology",
+    "href": "slides/lec22.html#terminology",
+    "title": "Cryptanalysis",
+    "section": "Terminology",
+    "text": "Terminology\n\ncryptography: making secret messages\n\nsubstitution\ntransposition\n\ncryptanalysis: breaking secret messages\ncryptology: the study of cryptography and cryptanalysis\n\n\n\nplain text: the actual message\ncipher text: the encrypted message"
+  },
+  {
+    "objectID": "slides/lec22.html#substitution-cipher",
+    "href": "slides/lec22.html#substitution-cipher",
+    "title": "Cryptanalysis",
+    "section": "Substitution cipher",
+    "text": "Substitution cipher\n\nIdea: each character of plaintext is substitude with another character\n\n\nExample:\n\n\n\n\n\nFrom https://en.wikipedia.org/wiki/Substitution_cipher"
+  },
+  {
+    "objectID": "slides/lec22.html#basic-terminology",
+    "href": "slides/lec22.html#basic-terminology",
+    "title": "Cryptanalysis",
+    "section": "Basic terminology",
+    "text": "Basic terminology\n\ncryptography: making secret messages (encryption)\n\nsubstitution\ntransposition\n\ncryptanalysis: breaking secret messages (decryption)\ncryptology: the study of cryptography and cryptanalysis\n\n\n\nplain text: the actual message\ncipher text: the encrypted message\nkey: information to encode (or decode) cryptographic key\nsymmetric (same key for encryption and decryption)\nasymmetric (different key to encrypt and decrypt)"
+  },
+  {
+    "objectID": "slides/lec22.html#exercise",
+    "href": "slides/lec22.html#exercise",
+    "title": "Cryptanalysis",
+    "section": "Exercise",
+    "text": "Exercise\n\nGiven the message below is encoded with a substitution cipher, how many possible keys are there?\n\n\n\n\n\nsecret_message\n\n[1] \"REART COSFRA COS AU DR UT EUA AU DR ACOA BL ACR MIRLABUE ZCRACRT ABL EUDFRT BE ACR SBEV AU LIPPRT ACR LFBENL OEV OTTUZL UP UIATONRUIL PUTAIER UT AU AOQR OTSL ONOBELA O LRO UP ATUIDFRL OEV DK UGGULBEN REV ACRS\"\n\n\n\nTrying every possible key is known as a “brute force” approach. Chat with your neighbor and develop a strategy better than the brute force approach.\nContinue the exercise by downloading the file below\n\n\ndownload.file(url = \"https://sta323-sp23.github.io/scripts/cryptanalysis.qmd\",\n              destfile = \"cryptanalysis.qmd\")\n\n\n\n🔗 sta323-sp23.github.io"
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html",
+    "href": "scripts/cryptanalysis.html",
+    "title": "Cryptanalysis",
+    "section": "",
+    "text": "These notes are adapted from and build on the R code found here and The Markov Chain Monte Carlo Revolution by Persi Diaconis."
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#load-the-data",
+    "href": "scripts/cryptanalysis.html#load-the-data",
+    "title": "Cryptanalysis",
+    "section": "Load the data",
+    "text": "Load the data\n\nwarandpeace = readLines(\n  \"https://sta323.github.io/data/warandpeace.txt\")\nfrequency = read.table(\n  \"https://sta323.github.io/data/frequencies.txt\")\ncolnames(frequency) = c(toupper(letters), \"\") # edit column names\nsecret_message = readLines(\n  \"https://sta323.github.io/data/ciphertext.txt\")"
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#exercise",
+    "href": "scripts/cryptanalysis.html#exercise",
+    "title": "Cryptanalysis",
+    "section": "Exercise",
+    "text": "Exercise\nHere we determine how often one character follows another using the text from the very long book, War and Peace. We include a whitespace character as a 27th character in our alphabet.\nTo reduce computational demand, we will load the object created by this analysis but leave the code below for reference.\nThe result of the below analysis is in the object frequency.\nThe letter row denotes the first character in a 2 character sequence while columns determine the second character in the character sequence.\n\nWhat should be the sum of a row? Check this for the first row of the data frame.\n\n\n\n\n\nCreate a heatmap of character frequency, where the y-axis is the first letter and the x-axis is the second letter in a two letter chain.\n\nHint: You can use melt from the reshape2 package. Click here for an example.\n\n# code here"
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#mcmc",
+    "href": "scripts/cryptanalysis.html#mcmc",
+    "title": "Cryptanalysis",
+    "section": "MCMC",
+    "text": "MCMC\nWe will use a famous statistical algorithm, Markov chain Monte Carlo (MCMC) to break the substitution cipher.\nMCMC is composed of three essential components:\n\nAbility. A way to propose any possible key.\nFeedback. A way to evaluate how good a given key is.\nCuriosity. A way to leave a good key for a worse key.\n\n\nThe analogy of the blind monkey.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThere’s a monkey on an island with many ponds. The monkey has been tasked with finding the largest body of water on the island. The only trouble is, he is blind. In order to find the largest body of water, he throws rocks randomly and listens for a splash. If he hears a splash, he knows there’s a body of water where he last threw. He continues to throw more rocks in that direction to find out how big the pool is. Occasionally he gets bored and wanders off to look for another pond. In this way, he uses the MCMC algorithm to find the largest body of water.\n\n\nMaking the connection.\n\nAbility (throw a rock). The Monkey can walk around and throw the rock anywhere on the island, ensuring that given enough time, he will cover every inch of the island.\nFeedback (test for waters). Every time the Monkey throws the rock, he receives feedback by listening for a splash. A large splash means a deep pond and encourages him to continue throwing in that direction to figure out the perimeter of the pond.\nCuriosity (boredom). If the monkey finds the second largest pond on the island, he might get stuck throwing rocks in it for a long time. By occasionally walking away from a large pond, he will reach the largest pond quicker."
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#exercise-1",
+    "href": "scripts/cryptanalysis.html#exercise-1",
+    "title": "Cryptanalysis",
+    "section": "Exercise",
+    "text": "Exercise\nLet’s write out together what MCMC looks like when decrpyting a secret message.\n\nAbility\nFeedback\nCuriosity"
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#exercise-2",
+    "href": "scripts/cryptanalysis.html#exercise-2",
+    "title": "Cryptanalysis",
+    "section": "Exercise",
+    "text": "Exercise\nHere we load some functions that will help us decode the message.\n\n\n\nRun the code below to break the secret message. If the message is unintelligible after several iterations, you may try re-starting with a new seed. What is this equivalent to in the monkey analogy above?"
+  },
+  {
+    "objectID": "scripts/cryptanalysis.html#optional-exercise",
+    "href": "scripts/cryptanalysis.html#optional-exercise",
+    "title": "Cryptanalysis",
+    "section": "(Optional) exercise",
+    "text": "(Optional) exercise\nTry your own message!\nCreate your own message in the code below and call mcmcAttack(coded) on your message to decode it!\n\n\n\n\nYou might think about what makes the message easy or difficult to attack, e.g. does length of the message affect its susceptibility to attack? What else might?"
   }
 ]

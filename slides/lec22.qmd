@@ -1,0 +1,79 @@
+---
+title: "Cryptanalysis"
+author: "Dr. Alexander Fisher"
+execute:
+  warning: true
+format: 
+    revealjs:
+      smaller: true
+---
+
+# Announcements
+
+Reminder:
+
+-   Final project report due today 5pm.
+-   $>80$% course evaluations = +1 pt extra credit to project
+
+# Cryptanalysis
+
+## Basic terminology
+
+-   cryptography: making secret messages (encryption)
+    -   substitution
+    -   transposition
+-   cryptanalysis: breaking secret messages (decryption)
+-   cryptology: the study of cryptography and cryptanalysis
+
+. . .
+
+-   plain text: the actual message
+-   cipher text: the encrypted message
+-   key: information to encode (or decode) cryptographic key
+  - symmetric (same key for encryption and decryption)
+  - asymmetric (different key to encrypt and decrypt)
+
+## Motivation
+
+![](https://sta101.github.io/static/img/prisonLetter.png){width="75%"}
+
+[Diaconis, Persi. "The markov chain monte carlo revolution." Bulletin of the American Mathematical Society 46.2 (2009): 179-205.](https://math.uchicago.edu/~shmuel/Network-course-readings/MCMCRev.pdf)
+
+## Substitution cipher
+
+-   Idea: each character of plaintext is substitude with another character
+
+. . .
+
+Example:
+
+![](images/ex-rot13.png){fig-align="center" width="600"}
+
+From <https://en.wikipedia.org/wiki/Substitution_cipher>
+
+## Exercise
+
+- Given the message below is encoded with a substitution cipher, how many possible keys are there?
+
+```{r}
+#| echo: false
+#| warning: false
+#| message: false
+secret_message = readLines("../data/ciphertext.txt")
+```
+
+
+```{r}
+secret_message
+```
+
+- Trying every possible key is known as a "brute force" approach. Chat with your neighbor and develop a strategy better than the brute force approach.
+
+- Continue the exercise by downloading the file below
+
+```{r}
+#| eval: false
+download.file(url = "https://sta323-sp23.github.io/scripts/cryptanalysis.qmd",
+              destfile = "cryptanalysis.qmd")
+```
+
