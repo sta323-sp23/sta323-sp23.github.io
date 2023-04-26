@@ -14,12 +14,12 @@ These notes are adapted from and build on the R code found [here](https://www.r-
 ```{r load-data}
 #| eval: false
 warandpeace = readLines(
-  "https://sta323.github.io/data/warandpeace.txt")
+  "https://sta323-sp23.github.io/data/warandpeace.txt")
 frequency = read.table(
-  "https://sta323.github.io/data/frequencies.txt")
+  "https://sta323-sp23.github.io/data/frequencies.txt")
 colnames(frequency) = c(toupper(letters), "") # edit column names
 secret_message = readLines(
-  "https://sta323.github.io/data/ciphertext.txt")
+  "https://sta323-sp23.github.io/data/ciphertext.txt")
 ```
 
 ## Exercise 

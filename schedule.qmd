@@ -88,4 +88,4 @@ schedule %>%
 |      | Wed Apr 19 | APIs                                   |   [💻](/slides/lec20.html)                               |                          |                                       |         |
 |      | Fri Apr 21 | covariance & PCA                                    | [💻](/slides/lec21.html)                                |                          |                                       |         |
 | 15   | Tue Apr 25 | project presentations              |                                 |                          |                                       |         |
-|      | Wed Apr 26 |                           |                                 |                          |                                       |         |
+|      | Wed Apr 26 | special topic: cryptanalysis                         |  [💻](/slides/lec22.html)                               |                          |                                       |         |
