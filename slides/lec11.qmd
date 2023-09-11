@@ -144,7 +144,9 @@ $$
 
 . . . 
 
-Since densities evaluate between 0 and 1, multiplying many together (as we often do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.
+Since densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.
+
+- Note: sometimes densities evaluate to greater than 1 (e.g. `dnorm(0, 0, 0.001)`) and multiplying several together can result in *overflow*.
 
 . . .
 

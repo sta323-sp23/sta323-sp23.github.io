@@ -4,6 +4,7 @@
 .Ruserdata
 .DS_Store
 */.DS_Store
+*/*/.DS_Store
 /.quarto/
 */*/Bradley-Terry-NBA.R
 scripts/Bradley-Terry-NBA.R

@@ -502,7 +502,10 @@
 L(\mu) = \prod_{i = 1}^{n} f_x(x_i |\mu)
 \]</span></p>
 <div class="fragment">
-<p>Since densities evaluate between 0 and 1, multiplying many together (as we often do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.</p>
+<p>Since densities often evaluate between 0 and 1, multiplying many together (as we usually do in likelihoods) can quickly result in floating point underflow. That is, numbers smaller than the computer can actually represent in memory.</p>
+<ul>
+<li>Note: sometimes densities evaluate to greater than 1 (e.g.&nbsp;<code>dnorm(0, 0, 0.001)</code>) and multiplying several together can result in <em>overflow</em>.</li>
+</ul>
 </div>
 <div class="fragment">
 <h4 id="log-to-the-rescue">log to the rescue!</h4>
